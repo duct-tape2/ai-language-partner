@@ -14,6 +14,7 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .claude-for-oss/
+claude-for-oss-status/
 
 *.sqlite
 *.sqlite-shm

@@ -37,13 +37,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
+          python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08 --out-dir claude-for-oss-status
 
       - name: Write job summary
-        run: cat .claude-for-oss/claude_for_oss_status.md >> "$GITHUB_STEP_SUMMARY"
+        run: cat claude-for-oss-status/claude_for_oss_status.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload status artifact
         uses: actions/upload-artifact@v4
         with:
           name: claude-for-oss-status
-          path: .claude-for-oss/
+          path: claude-for-oss-status/
