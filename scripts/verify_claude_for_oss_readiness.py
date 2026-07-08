@@ -59,12 +59,24 @@ def github_json(path_or_url: str, token: str | None) -> dict[str, object]:
         return json.loads(response.read().decode("utf-8"))
 
 
-def github_count(path: str, token: str | None) -> int:
-    params = urllib.parse.urlencode({"per_page": "1"})
-    data = github_json(f"{path}?{params}", token)
-    if isinstance(data, list):
-        return len(data)
+def github_search_count(query: str, token: str | None) -> int:
+    params = urllib.parse.urlencode({"q": query, "per_page": "1"})
+    data = github_json(f"/search/issues?{params}", token)
     return int(data.get("total_count", 0))
+
+
+def github_issue_count(repo: str, token: str | None) -> int:
+    total = 0
+    for page in range(1, 11):
+        params = urllib.parse.urlencode({"state": "all", "per_page": "100", "page": str(page)})
+        issues = github_json(f"/repos/{repo}/issues?{params}", token)
+        if not isinstance(issues, list):
+            break
+        issue_count = sum(1 for issue in issues if isinstance(issue, dict) and "pull_request" not in issue)
+        total += issue_count
+        if len(issues) < 100:
+            break
+    return total
 
 
 def check(name: str, passed: bool, detail: str) -> bool:
@@ -103,8 +115,8 @@ def main(argv: list[str]) -> int:
         passed &= check("GitHub repo exists and is public", False, exc.read().decode("utf-8"))
 
     try:
-        issues = github_count(f"/search/issues?q=repo:{repo}+is:issue", token)
-        merged_prs = github_count(f"/search/issues?q=repo:{repo}+is:pr+is:merged", token)
+        issues = github_issue_count(repo, token)
+        merged_prs = github_search_count(f"repo:{repo} is:pr is:merged", token)
         passed &= check("starter issues exist", issues >= 30, f"{issues} issue(s)")
         passed &= check("merged PRs exist", merged_prs >= 20, f"{merged_prs} merged PR(s)")
     except urllib.error.HTTPError as exc:
