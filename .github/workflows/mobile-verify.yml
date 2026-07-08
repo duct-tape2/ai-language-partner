@@ -1,6 +1,12 @@
 name: Mobile Verify
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "apps/mobile/**"
+      - "packages/shared/**"
+      - ".github/workflows/mobile-verify.yml"
   pull_request:
     paths:
       - "apps/mobile/**"

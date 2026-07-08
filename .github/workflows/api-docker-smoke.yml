@@ -1,6 +1,11 @@
 name: API Docker Smoke
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "apps/api/**"
+      - ".github/workflows/api-docker-smoke.yml"
   pull_request:
     paths:
       - "apps/api/**"
