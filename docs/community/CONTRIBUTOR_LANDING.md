@@ -13,6 +13,9 @@ the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [starter issue index](STARTER_ISSUE_INDEX.md) if you want a lane-by-lane list
 of currently open tasks.
 
+For step-by-step issue-specific guidance, see the
+[first PR recipes](FIRST_PR_RECIPES.md).
+
 ## Pick Your Lane
 
 | I can help with... | Start here | Good first outcome |

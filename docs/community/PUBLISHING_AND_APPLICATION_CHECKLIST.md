@@ -82,8 +82,9 @@ Open the repository settings and enable:
   coordination issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
 - The public first-PR help desk discussion is available at
   `https://github.com/duct-tape2/ai-language-partner/discussions/53`
-- The `Starter Issue Index` workflow keeps
-  `docs/community/STARTER_ISSUE_INDEX.md` fresh after issue changes.
+- The `Starter Issue Index` workflow refreshes
+  `docs/community/STARTER_ISSUE_INDEX.md` and
+  `docs/community/FIRST_PR_RECIPES.md` by opening a PR after issue changes.
 - GitHub Pages should publish from `main` / `docs` so the contributor page is
   shareable outside GitHub issue search.
 - Branch protection should be enabled for `main`: one approving PR review,
@@ -136,6 +137,7 @@ Run:
 cd /Users/ijeong-geun/OSS/ai-language-partner
 python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/render_starter_issue_index.py duct-tape2/ai-language-partner --date 2026-07-08
+GITHUB_TOKEN=... python scripts/post_first_pr_recipes.py duct-tape2/ai-language-partner --date 2026-07-08
 GITHUB_TOKEN=... python scripts/verify_github_governance.py duct-tape2/ai-language-partner
 GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08

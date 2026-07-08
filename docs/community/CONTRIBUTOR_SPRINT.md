@@ -15,8 +15,12 @@ reviewable first contributions genuinely easy.
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
+- First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
+- First PR recipe comments: posted to 18 open `good first issue` items on
+  2026-07-08; rerun `scripts/post_first_pr_recipes.py` to fill only missing
+  comments.
 - Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`
 - Kickoff issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
 - First PR help desk discussion:
@@ -26,6 +30,7 @@ reviewable first contributions genuinely easy.
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
+  opens a refresh PR instead of pushing directly to protected `main`.
 - Maintainer review runbook: `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
@@ -180,6 +185,7 @@ For a non-failing status artifact suitable for weekly monitoring:
 python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
 python scripts/verify_outreach_queue.py
 python scripts/render_outreach_messages.py
+python scripts/post_first_pr_recipes.py duct-tape2/ai-language-partner --date 2026-07-08
 ```
 
 Only submit the Phase B application when the readiness script proves 20 unique

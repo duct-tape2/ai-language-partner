@@ -22,6 +22,8 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required.
+- First PR recipes: posted to 18 open `good first issue` items and tracked in
+  `docs/community/FIRST_PR_RECIPES.md`
 - Community-builder count: 0 unique external merged PR contributors so far
 - Status: not ready for Phase B; suitable only for a "Don't quite fit?" early
   application
@@ -70,6 +72,7 @@ The public repo includes:
 - contributor sprint kickoff, PR welcome, issue welcome, and weekly Claude OSS
   monitor workflows
 - fixture-tested contributor evidence counting rules
+- issue-specific first PR recipes posted on starter issues
 
 ## Current Limitation
 

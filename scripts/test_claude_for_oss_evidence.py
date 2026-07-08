@@ -21,6 +21,7 @@ import export_claude_for_oss_evidence as evidence  # noqa: E402
 import build_pr_review_packet as review_packet  # noqa: E402
 import render_starter_issue_index as issue_index  # noqa: E402
 import verify_github_governance as governance  # noqa: E402
+import post_first_pr_recipes as first_pr_recipes  # noqa: E402
 
 
 def issue_item(
@@ -200,6 +201,39 @@ class GovernanceCheckTest(unittest.TestCase):
             self.assertFalse(governance.check("example", False, "not ok"))
         self.assertIn("PASS: example - ok", stream.getvalue())
         self.assertIn("FAIL: example - not ok", stream.getvalue())
+
+
+class FirstPrRecipeTest(unittest.TestCase):
+    def test_recipe_infers_backend_files_and_checks(self) -> None:
+        issue = first_pr_recipes.Issue(
+            number=40,
+            title="backend: add OpenAPI example for dialogue pack listing",
+            url="https://example.test/issues/40",
+            body="Acceptance: includes response shape.",
+            labels=("good first issue", "docs", "backend"),
+        )
+
+        recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
+
+        self.assertIn(first_pr_recipes.MARKER, recipe)
+        self.assertIn("contracts/openapi_v0.yaml", recipe)
+        self.assertIn("cd apps/api && python -m pytest", recipe)
+        self.assertIn("Closes #40", recipe)
+
+    def test_recipe_infers_language_review_manual_check(self) -> None:
+        issue = first_pr_recipes.Issue(
+            number=7,
+            title="content: review yui v1 beginner dialogue Korean translations",
+            url="https://example.test/issues/7",
+            body="Acceptance: fixes unnatural Korean explanations.",
+            labels=("good first issue", "content", "language-review"),
+        )
+
+        recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
+
+        self.assertIn("packs/yui/v1/story.json", recipe)
+        self.assertIn("manual language/content review", recipe)
+        self.assertIn("generated/private assets", recipe)
 
 
 if __name__ == "__main__":

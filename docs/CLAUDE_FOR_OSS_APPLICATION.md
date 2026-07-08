@@ -81,6 +81,7 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required.
+- First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`
 
 ## Local Evidence Commands
