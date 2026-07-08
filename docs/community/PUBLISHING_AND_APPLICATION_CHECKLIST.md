@@ -20,6 +20,21 @@ cd /Users/ijeong-geun/OSS/ai-language-partner
 GITHUB_TOKEN=... scripts/bootstrap_public_github_repo.sh sinmb79/ai-language-partner
 ```
 
+If the token was just copied from GitHub in Chrome, avoid pasting it into the
+terminal:
+
+```bash
+cd /Users/ijeong-geun/OSS/ai-language-partner
+scripts/bootstrap_from_clipboard_token.sh sinmb79/ai-language-partner
+```
+
+The clipboard helper refuses non-GitHub-looking text and clears the clipboard
+after the bootstrap exits.
+
+For a classic personal access token, use the narrowest practical scopes for
+this public repo bootstrap: `public_repo` and `workflow`. The `workflow` scope
+is required because this repository intentionally tracks GitHub Actions files.
+
 Manual settings:
 
 - Owner: `sinmb79`
