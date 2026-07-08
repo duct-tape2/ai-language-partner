@@ -122,4 +122,7 @@ Validate the queue before a recruiting session:
 
 ```bash
 python scripts/verify_outreach_queue.py
+python scripts/render_outreach_messages.py
 ```
+
+Rendered copy/paste messages live in `docs/community/OUTREACH_MESSAGES.md`.

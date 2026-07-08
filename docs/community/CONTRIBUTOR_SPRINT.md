@@ -18,6 +18,7 @@ reviewable first contributions genuinely easy.
 - Contributor interest form:
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
+- Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
 - Maintainer-authored PRs do not count.
@@ -169,6 +170,7 @@ For a non-failing status artifact suitable for weekly monitoring:
 ```bash
 python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
 python scripts/verify_outreach_queue.py
+python scripts/render_outreach_messages.py
 ```
 
 Only submit the Phase B application when the readiness script proves 20 unique

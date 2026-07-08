@@ -44,10 +44,12 @@ REQUIRED_FILES = [
     "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/OUTREACH_QUEUE.json",
+    "docs/community/OUTREACH_MESSAGES.md",
     "docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md",
     "scripts/snapshot_claude_for_oss_status.py",
     "scripts/create_contributor_sprint_kickoff_issue.py",
     "scripts/verify_outreach_queue.py",
+    "scripts/render_outreach_messages.py",
 ]
 
 
