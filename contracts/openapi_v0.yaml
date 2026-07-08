@@ -1,0 +1,4505 @@
+openapi: 3.0.3
+info:
+  title: AI Language Partner Mobile API
+  version: 0.1.0
+  description: Shared API contract for Claude frontend and Codex backend. Do not change without contract request.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  projectId: { type: string }
+  /v1/personas:
+    get:
+      operationId: listPersonas
+      responses:
+        '200':
+          description: personas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  personas:
+                    type: array
+                    items: { $ref: '#/components/schemas/Persona' }
+  /v1/practice-rooms:
+    get:
+      operationId: listPracticeRooms
+      responses:
+        '200':
+          description: practice rooms
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  practiceRooms:
+                    type: array
+                    items: { $ref: '#/components/schemas/PracticeRoom' }
+  /v1/practice-rooms/{practiceRoomId}:
+    get:
+      operationId: getPracticeRoom
+      parameters:
+        - in: path
+          name: practiceRoomId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: practice room
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  practiceRoom: { $ref: '#/components/schemas/PracticeRoom' }
+  /v1/courses:
+    get:
+      operationId: listCourses
+      responses:
+        '200':
+          description: courses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  courses:
+                    type: array
+                    items: { $ref: '#/components/schemas/Course' }
+  /v1/courses/{courseId}:
+    get:
+      operationId: getCourse
+      parameters:
+        - in: path
+          name: courseId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: course
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  course: { $ref: '#/components/schemas/Course' }
+  /v1/content/validate:
+    post:
+      operationId: validateContentBundle
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentBundleRequest' }
+      responses:
+        '200':
+          description: content validation report
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  report: { $ref: '#/components/schemas/ContentQualityReport' }
+  /v1/content/import:
+    post:
+      operationId: importContentBundle
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentImportRequest' }
+      responses:
+        '200':
+          description: content import dry-run or applied result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  dryRun: { type: boolean }
+                  applied: { type: boolean }
+                  importedCounts:
+                    type: object
+                    properties:
+                      courses: { type: integer }
+                      practiceRooms: { type: integer }
+                  version: { $ref: '#/components/schemas/ContentVersionSummary' }
+                  report: { $ref: '#/components/schemas/ContentQualityReport' }
+  /v1/content/quality-report:
+    get:
+      operationId: getContentQualityReport
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+      responses:
+        '200':
+          description: current stored content quality report
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  report: { $ref: '#/components/schemas/ContentQualityReport' }
+  /v1/content/translation-memory:
+    get:
+      operationId: listTranslationMemory
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: query
+          required: false
+          schema: { type: string }
+        - in: query
+          name: sourceLanguage
+          required: false
+          schema: { type: string, default: ko }
+        - in: query
+          name: targetLanguage
+          required: false
+          schema: { type: string, default: ja }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: translation memory entries for content QA and authoring
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entries:
+                    type: array
+                    items: { $ref: '#/components/schemas/TranslationMemoryEntry' }
+    post:
+      operationId: upsertTranslationMemory
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/TranslationMemoryUpsertRequest' }
+      responses:
+        '200':
+          description: translation memory upsert result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  upsertedCounts:
+                    type: object
+                    properties:
+                      entries: { type: integer }
+  /v1/content/translation-memory/suggest:
+    post:
+      operationId: suggestTranslationMemory
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/TranslationMemorySuggestRequest' }
+      responses:
+        '200':
+          description: ranked exact/fuzzy translation memory suggestions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  suggestions:
+                    type: array
+                    items: { $ref: '#/components/schemas/TranslationMemorySuggestion' }
+  /v1/content/bulk-qa:
+    post:
+      operationId: runContentBulkQa
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentBulkQaRequest' }
+      responses:
+        '200':
+          description: bulk QA report for current, versioned, or submitted content bundles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  source: { type: string }
+                  report: { $ref: '#/components/schemas/ContentBulkQaReport' }
+  /v1/content/assignments:
+    get:
+      operationId: listContentAssignments
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: status
+          required: false
+          schema: { type: string, enum: [todo, in_progress, blocked, done] }
+        - in: query
+          name: assignee
+          required: false
+          schema: { type: string }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: content workflow assignments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  assignments:
+                    type: array
+                    items: { $ref: '#/components/schemas/ContentAssignment' }
+  /v1/content/assignments/{assignmentId}/status:
+    post:
+      operationId: updateContentAssignmentStatus
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: assignmentId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentAssignmentStatusRequest' }
+      responses:
+        '200':
+          description: updated content assignment status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  assignment: { $ref: '#/components/schemas/ContentAssignment' }
+  /v1/content/versions:
+    get:
+      operationId: listContentVersions
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: saved content version snapshots
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  versions:
+                    type: array
+                    items: { $ref: '#/components/schemas/ContentVersionSummary' }
+  /v1/content/versions/{versionId}:
+    get:
+      operationId: getContentVersion
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: full content version snapshot
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version: { $ref: '#/components/schemas/ContentVersion' }
+  /v1/content/versions/{versionId}/branch:
+    post:
+      operationId: branchContentVersion
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentBranchRequest' }
+      responses:
+        '200':
+          description: branched content version and optional assignment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  version: { $ref: '#/components/schemas/ContentVersion' }
+                  assignment:
+                    anyOf:
+                      - $ref: '#/components/schemas/ContentAssignment'
+                      - type: 'null'
+  /v1/content/versions/{versionId}/assign:
+    post:
+      operationId: assignContentVersion
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentAssignmentRequest' }
+      responses:
+        '200':
+          description: created or updated content assignment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  assignment: { $ref: '#/components/schemas/ContentAssignment' }
+  /v1/content/versions/{versionId}/submit-review:
+    post:
+      operationId: submitContentVersionReview
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReviewRequest' }
+      responses:
+        '200':
+          description: content version submitted for reviewer approval
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ContentVersionWorkflowResponse' }
+  /v1/content/versions/{versionId}/approve:
+    post:
+      operationId: approveContentVersion
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReviewRequest' }
+      responses:
+        '200':
+          description: content version approved by a reviewer
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ContentVersionWorkflowResponse' }
+  /v1/content/versions/{versionId}/reject:
+    post:
+      operationId: rejectContentVersion
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReviewRequest' }
+      responses:
+        '200':
+          description: content version rejected by a reviewer
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ContentVersionWorkflowResponse' }
+  /v1/content/versions/{versionId}/publish:
+    post:
+      operationId: publishContentVersion
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: versionId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: publish a saved content version snapshot
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  version: { $ref: '#/components/schemas/ContentVersion' }
+                  importedCounts: { $ref: '#/components/schemas/ContentImportedCounts' }
+                  report: { $ref: '#/components/schemas/ContentQualityReport' }
+  /v1/content/operations/jobs:
+    get:
+      operationId: listContentOperationJobs
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: status
+          required: false
+          schema: { type: string, enum: [queued, running, succeeded, failed, canceled] }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, default: 50, minimum: 1, maximum: 200 }
+      responses:
+        '200':
+          description: queued and historical content operation jobs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobs:
+                    type: array
+                    items: { $ref: '#/components/schemas/ContentOperationJob' }
+    post:
+      operationId: createContentOperationJob
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentOperationJobRequest' }
+      responses:
+        '200':
+          description: queued a content operation job
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  job: { $ref: '#/components/schemas/ContentOperationJob' }
+  /v1/content/operations/jobs/run-next:
+    post:
+      operationId: runNextContentOperationJob
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentOperationJobRunNextRequest' }
+      responses:
+        '200':
+          description: claimed and ran the next queued content operation job
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  job:
+                    nullable: true
+                    allOf:
+                      - $ref: '#/components/schemas/ContentOperationJob'
+                  result:
+                    type: object
+                    additionalProperties: true
+                  error: { type: string, nullable: true }
+  /v1/content/operations/jobs/{jobId}:
+    get:
+      operationId: getContentOperationJob
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: jobId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: content operation job detail
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job: { $ref: '#/components/schemas/ContentOperationJob' }
+  /v1/content/operations/jobs/{jobId}/cancel:
+    post:
+      operationId: cancelContentOperationJob
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: jobId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentOperationJobCancelRequest' }
+      responses:
+        '200':
+          description: canceled a queued content operation job
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  job: { $ref: '#/components/schemas/ContentOperationJob' }
+  /v1/content/scheduler/runs:
+    get:
+      operationId: listContentSchedulerRuns
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: status
+          required: false
+          schema: { type: string, enum: [running, succeeded, failed] }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, default: 50, minimum: 1, maximum: 200 }
+      responses:
+        '200':
+          description: managed content scheduler run history
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  runs:
+                    type: array
+                    items: { $ref: '#/components/schemas/ContentSchedulerRun' }
+  /v1/content/scheduler/run-once:
+    post:
+      operationId: runContentSchedulerOnce
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentSchedulerRunOnceRequest' }
+      responses:
+        '200':
+          description: ran one managed content scheduler tick across due releases and queued operation jobs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  run: { $ref: '#/components/schemas/ContentSchedulerRun' }
+                  releaseWorker:
+                    type: object
+                    additionalProperties: true
+                  operationJobs:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: true
+  /v1/content/releases:
+    get:
+      operationId: listContentReleases
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: status
+          required: false
+          schema: { type: string, enum: [planned, scheduled, applied, rolled_back, canceled] }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: content release plans and release history
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  releases:
+                    type: array
+                    items: { $ref: '#/components/schemas/ContentRelease' }
+    post:
+      operationId: createContentRelease
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReleaseRequest' }
+      responses:
+        '200':
+          description: planned content release with quality guardrail snapshot
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  release: { $ref: '#/components/schemas/ContentRelease' }
+                  report: { $ref: '#/components/schemas/ContentQualityReport' }
+  /v1/content/releases/{releaseId}/apply:
+    post:
+      operationId: applyContentRelease
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: releaseId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReleaseApplyRequest' }
+      responses:
+        '200':
+          description: applied approved content release to the live catalog
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  release: { $ref: '#/components/schemas/ContentRelease' }
+                  version: { $ref: '#/components/schemas/ContentVersion' }
+                  previousPublishedVersion:
+                    nullable: true
+                    allOf:
+                      - $ref: '#/components/schemas/ContentVersion'
+  /v1/content/releases/run-due:
+    post:
+      operationId: runDueContentReleases
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReleaseRunDueRequest' }
+      responses:
+        '200':
+          description: applied due scheduled/planned content releases for a release worker
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  ranAt: { type: string }
+                  checkedCount: { type: integer }
+                  appliedCount: { type: integer }
+                  skippedCount: { type: integer }
+                  appliedReleases:
+                    type: array
+                    items: { $ref: '#/components/schemas/ContentRelease' }
+                  skipped:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: true
+  /v1/content/releases/{releaseId}/rollback:
+    post:
+      operationId: rollbackContentRelease
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: releaseId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ContentReleaseRollbackRequest' }
+      responses:
+        '200':
+          description: rolled an applied content release back to the previous published version
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  release: { $ref: '#/components/schemas/ContentRelease' }
+                  version: { $ref: '#/components/schemas/ContentVersion' }
+  /v1/experiments:
+    get:
+      operationId: listExperiments
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: status
+          required: false
+          schema: { type: string, enum: [draft, running, paused, archived] }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 100 }
+      responses:
+        '200':
+          description: admin-visible experiment definitions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  experiments:
+                    type: array
+                    items: { $ref: '#/components/schemas/Experiment' }
+    post:
+      operationId: upsertExperiment
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ExperimentRequest' }
+      responses:
+        '200':
+          description: created or updated experiment definition
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  experiment: { $ref: '#/components/schemas/Experiment' }
+  /v1/experiments/assignments:
+    get:
+      operationId: listMyExperimentAssignments
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: query
+          name: exposure
+          required: false
+          schema: { type: boolean, default: true }
+      responses:
+        '200':
+          description: learner-stable assignments for all running experiments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  assignments:
+                    type: array
+                    items: { $ref: '#/components/schemas/ExperimentAssignment' }
+                  exposureLogged: { type: boolean }
+                  assignmentCount: { type: integer }
+  /v1/experiments/{experimentKey}/analytics:
+    get:
+      operationId: getExperimentAnalytics
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: experimentKey
+          required: true
+          schema: { type: string }
+        - in: query
+          name: minimumExposedLearners
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 100000, default: 30 }
+      responses:
+        '200':
+          description: admin-visible experiment analytics by variant
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  analytics: { $ref: '#/components/schemas/ExperimentAnalytics' }
+  /v1/experiments/{experimentKey}/decisions:
+    get:
+      operationId: listExperimentDecisions
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: experimentKey
+          required: true
+          schema: { type: string }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: stored experiment decision proposals and applied decisions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  decisions:
+                    type: array
+                    items: { $ref: '#/components/schemas/ExperimentDecision' }
+    post:
+      operationId: proposeExperimentDecision
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: experimentKey
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ExperimentDecisionRequest' }
+      responses:
+        '200':
+          description: proposed experiment decision with guardrail evidence
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  decision: { $ref: '#/components/schemas/ExperimentDecision' }
+                  guardrail:
+                    type: object
+                    additionalProperties: true
+  /v1/experiments/{experimentKey}/decisions/{decisionId}/apply:
+    post:
+      operationId: applyExperimentDecision
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: experimentKey
+          required: true
+          schema: { type: string }
+        - in: path
+          name: decisionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ExperimentDecisionApplyRequest' }
+      responses:
+        '200':
+          description: applied experiment decision and resulting experiment state
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  decision: { $ref: '#/components/schemas/ExperimentDecision' }
+                  experiment: { $ref: '#/components/schemas/Experiment' }
+  /v1/experiments/{experimentKey}/status:
+    post:
+      operationId: updateExperimentStatus
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: experimentKey
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ExperimentStatusRequest' }
+      responses:
+        '200':
+          description: updated experiment lifecycle status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  experiment: { $ref: '#/components/schemas/Experiment' }
+  /v1/experiments/{experimentKey}/events:
+    post:
+      operationId: recordExperimentEvent
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: experimentKey
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ExperimentEventRequest' }
+      responses:
+        '200':
+          description: learner experiment exposure, conversion, or custom event
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  event: { $ref: '#/components/schemas/ExperimentEvent' }
+  /v1/auth/register:
+    post:
+      operationId: registerAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthRegisterRequest' }
+      responses:
+        '200':
+          description: registered account and tokens
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/auth/login:
+    post:
+      operationId: loginAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthLoginRequest' }
+      responses:
+        '200':
+          description: account tokens
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/auth/oidc:
+    post:
+      operationId: loginWithOidcIdToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthOidcRequest' }
+      responses:
+        '200':
+          description: account tokens from a verified OIDC identity token
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/auth/oauth/pkce/start:
+    post:
+      operationId: startOAuthAuthorizationCodePkce
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthOAuthPkceStartRequest' }
+      responses:
+        '200':
+          description: OAuth authorization URL with stored one-time PKCE state
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthOAuthPkceStartResponse' }
+  /v1/auth/oauth/pkce/callback:
+    post:
+      operationId: completeOAuthAuthorizationCodePkce
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthOAuthPkceCallbackRequest' }
+      responses:
+        '200':
+          description: account tokens from an OAuth authorization-code PKCE callback
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/auth/sso/discovery:
+    get:
+      operationId: discoverEnterpriseSsoConnection
+      parameters:
+        - in: query
+          name: email
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: enterprise SSO connection matched by email domain
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthSsoDiscoveryResponse' }
+  /v1/auth/sso/pkce/start:
+    post:
+      operationId: startEnterpriseSsoAuthorizationCodePkce
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthSsoPkceStartRequest' }
+      responses:
+        '200':
+          description: enterprise SSO authorization URL with stored one-time PKCE state
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthSsoPkceStartResponse' }
+  /v1/auth/sso/pkce/callback:
+    post:
+      operationId: completeEnterpriseSsoAuthorizationCodePkce
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthSsoPkceCallbackRequest' }
+      responses:
+        '200':
+          description: account tokens from an enterprise SSO authorization-code PKCE callback
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/admin/auth/sso-connections:
+    get:
+      operationId: listEnterpriseSsoConnections
+      parameters:
+        - in: query
+          name: includeDisabled
+          required: false
+          schema: { type: boolean, default: true }
+      responses:
+        '200':
+          description: admin enterprise SSO connection list
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthSsoConnectionListResponse' }
+  /v1/admin/auth/sso-connections/{connectionId}:
+    put:
+      operationId: upsertEnterpriseSsoConnection
+      parameters:
+        - in: path
+          name: connectionId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthSsoConnectionRequest' }
+      responses:
+        '200':
+          description: admin enterprise SSO connection upsert response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, connection]
+                properties:
+                  ok: { type: boolean }
+                  connection: { $ref: '#/components/schemas/EnterpriseSsoConnection' }
+  /v1/auth/refresh:
+    post:
+      operationId: refreshAccountSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthRefreshRequest' }
+      responses:
+        '200':
+          description: refreshed account tokens
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/auth/me:
+    get:
+      operationId: getAuthAccount
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+      responses:
+        '200':
+          description: current account
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  account: { $ref: '#/components/schemas/AuthAccount' }
+                  session: { $ref: '#/components/schemas/AuthSession' }
+  /v1/auth/logout:
+    post:
+      operationId: logoutAccountSession
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+      responses:
+        '200':
+          description: logout result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+  /v1/auth/devices:
+    get:
+      operationId: listAccountDevices
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+        - in: query
+          name: includeRevoked
+          required: false
+          schema: { type: boolean, default: false }
+      responses:
+        '200':
+          description: account device trust registry
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  devices:
+                    type: array
+                    items: { $ref: '#/components/schemas/AuthDevice' }
+                  currentDeviceId: { type: string, nullable: true }
+                  activeDeviceCount: { type: integer }
+  /v1/auth/devices/attestation/challenge:
+    post:
+      operationId: issueAccountDeviceAttestationChallenge
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthDeviceAttestationChallengeRequest' }
+      responses:
+        '200':
+          description: one-time signed challenge for the current bound device
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthDeviceAttestationChallengeResponse' }
+  /v1/auth/devices/trust:
+    post:
+      operationId: trustCurrentAccountDevice
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthTrustDeviceRequest' }
+      responses:
+        '200':
+          description: current bound device trusted by account-session confirmation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  device: { $ref: '#/components/schemas/AuthDevice' }
+  /v1/auth/devices/{deviceId}:
+    delete:
+      operationId: revokeAccountDevice
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+        - in: path
+          name: deviceId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: account device revoked and matching bound sessions revoked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  revokedDeviceId: { type: string }
+                  revokedSessionCount: { type: integer }
+                  device: { $ref: '#/components/schemas/AuthDevice' }
+  /v1/auth/sessions:
+    get:
+      operationId: listAccountSessions
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+        - in: query
+          name: includeRevoked
+          required: false
+          schema: { type: boolean, default: false }
+      responses:
+        '200':
+          description: account sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessions:
+                    type: array
+                    items: { $ref: '#/components/schemas/AuthSession' }
+                  currentSessionId: { type: string }
+                  activeSessionCount: { type: integer }
+  /v1/auth/sessions/{sessionId}:
+    delete:
+      operationId: revokeAccountSession
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+        - in: path
+          name: sessionId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: account session revoked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  revokedSessionId: { type: string }
+                  selfRevoked: { type: boolean }
+  /v1/auth/logout-all:
+    post:
+      operationId: logoutAllAccountSessions
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+        - in: query
+          name: keepCurrent
+          required: false
+          schema: { type: boolean, default: false }
+      responses:
+        '200':
+          description: all account sessions revoked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  revokedCount: { type: integer }
+                  currentSessionKept: { type: boolean }
+  /v1/auth/change-password:
+    post:
+      operationId: changeAccountPassword
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthChangePasswordRequest' }
+      responses:
+        '200':
+          description: password changed and replacement tokens issued
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthTokenResponse' }
+  /v1/auth/account:
+    delete:
+      operationId: deleteAccount
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AuthDeleteAccountRequest' }
+      responses:
+        '200':
+          description: account disabled after password re-authentication
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  accountDisabled: { type: boolean }
+                  privacyDeletion:
+                    type: object
+  /v1/conversations:
+    post:
+      operationId: createConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CreateConversationRequest' }
+      responses:
+        '200':
+          description: conversation
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CreateConversationResponse' }
+  /v1/conversations/{conversationId}/turns:
+    post:
+      operationId: createConversationTurn
+      parameters:
+        - in: path
+          name: conversationId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CreateTurnRequest' }
+      responses:
+        '200':
+          description: turn response
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CreateTurnResponse' }
+  /v1/voices:
+    get:
+      operationId: listVoices
+      responses:
+        '200':
+          description: curated persona voice gallery
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/VoiceCatalogItem' }
+  /v1/voices/samples/{voiceId}.wav:
+    get:
+      operationId: getVoiceSample
+      parameters:
+        - in: path
+          name: voiceId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: prebuilt or mock voice preview wav
+          content:
+            audio/wav:
+              schema: { type: string, format: binary }
+  /v1/tts/synthesize:
+    post:
+      operationId: synthesizeTts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/TtsRequest' }
+      responses:
+        '200':
+          description: tts
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TtsResponse' }
+  /v1/stt/transcribe:
+    post:
+      operationId: transcribeAudio
+      x-manualRequestBody: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SttRequest' }
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file: { type: string, format: binary }
+                language: { type: string, enum: [ja, ko, en], default: ja }
+                hintLineIds:
+                  type: array
+                  items: { type: string }
+      responses:
+        '200':
+          description: stt
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SttResponse' }
+  /v1/dialogue/match:
+    post:
+      operationId: matchDialogue
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DialogueMatchRequest' }
+      responses:
+        '200':
+          description: stateless dialogue-bank utterance match
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DialogueMatchResponse' }
+  /v1/dialogue/packs:
+    get:
+      operationId: listDialoguePacks
+      responses:
+        '200':
+          description: downloadable dialogue persona packs
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/DialoguePackSummary' }
+  /v1/dialogue/packs/{personaId}/{packVersion}.zip:
+    get:
+      operationId: getDialoguePackZip
+      parameters:
+        - in: path
+          name: personaId
+          required: true
+          schema: { type: string }
+        - in: path
+          name: packVersion
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: zipped dialogue persona pack
+          content:
+            application/zip:
+              schema: { type: string, format: binary }
+  /v1/dialogue/unmatched:
+    post:
+      operationId: logDialogueUnmatched
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DialogueUnmatchedRequest' }
+      responses:
+        '202':
+          description: unmatched utterance accepted for offline bank expansion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accepted: { type: boolean }
+                  id: { type: string }
+  /v1/review-cards:
+    get:
+      operationId: listReviewCards
+      responses:
+        '200':
+          description: review cards
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviewCards:
+                    type: array
+                    items: { $ref: '#/components/schemas/ReviewCard' }
+    post:
+      operationId: createReviewCard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ReviewCardRequest' }
+      responses:
+        '200':
+          description: saved review card
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviewCard: { $ref: '#/components/schemas/ReviewCard' }
+  /v1/progress/today:
+    get:
+      operationId: getTodayProgress
+      responses:
+        '200':
+          description: today progress
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TodayProgress' }
+  /v1/gamification/me:
+    get:
+      operationId: getMyGamificationSummary
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner XP, streak, daily quest, and weekly leaderboard summary
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/GamificationSummary' }
+  /v1/reputation/me:
+    get:
+      operationId: getMyReputation
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner-facing multi-signal reputation and anti-cheat profile
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LearnerReputationProfile' }
+  /v1/friends:
+    get:
+      operationId: getFriends
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: current learner friends and pending invites
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FriendsSummary' }
+  /v1/friends/recommendations:
+    get:
+      operationId: getFriendRecommendations
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 50, default: 10 }
+      responses:
+        '200':
+          description: social friend recommendations excluding existing friends and pending invites
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FriendRecommendationsResponse' }
+  /v1/social/discovery:
+    get:
+      operationId: getSocialDiscovery
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 50, default: 10 }
+        - in: query
+          name: targetLanguage
+          required: false
+          schema: { type: string }
+      responses:
+        '200':
+          description: discoverable social learners excluding friends, pending invites, private learners, and blocks
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SocialDiscoveryResponse' }
+  /v1/social/settings:
+    get:
+      operationId: getSocialSettings
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner social discovery and invite privacy settings
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SocialSettings' }
+    put:
+      operationId: updateSocialSettings
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SocialSettingsRequest' }
+      responses:
+        '200':
+          description: updated learner social discovery and invite privacy settings
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SocialSettings' }
+  /v1/social/blocks:
+    get:
+      operationId: listSocialBlocks
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner social block list
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SocialBlocksResponse' }
+  /v1/social/blocks/{blockedLearnerId}:
+    post:
+      operationId: blockSocialLearner
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: blockedLearnerId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: blocked learner and removed pending/active social edges
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SocialBlockResponse' }
+    delete:
+      operationId: unblockSocialLearner
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: blockedLearnerId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: removed a learner social block
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SocialUnblockResponse' }
+  /v1/friends/invites:
+    post:
+      operationId: createFriendInvite
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/FriendInviteRequest' }
+      responses:
+        '200':
+          description: created or reused friend invite
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FriendInviteResponse' }
+  /v1/friends/invites/{inviteId}/accept:
+    post:
+      operationId: acceptFriendInvite
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: inviteId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: accepted friend invite and active relationship
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FriendInviteAcceptResponse' }
+  /v1/friends/{friendLearnerId}:
+    delete:
+      operationId: removeFriend
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: friendLearnerId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: removed active friend relationship
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RemoveFriendResponse' }
+  /v1/friends/quests:
+    get:
+      operationId: getFriendQuests
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: query
+          name: partnerLearnerId
+          required: false
+          schema: { type: string }
+      responses:
+        '200':
+          description: current learner friend quests
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FriendQuestsResponse' }
+  /v1/friends/quests/{questId}/claim:
+    post:
+      operationId: claimFriendQuestReward
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: questId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: claimed friend quest reward
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FriendQuestClaimResponse' }
+  /v1/rewards/inventory:
+    get:
+      operationId: getRewardInventory
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: current learner reward inventory and active boosts
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RewardInventorySummary' }
+  /v1/rewards/shop:
+    get:
+      operationId: getRewardShop
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: reward shop catalog with learner balances
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RewardShopResponse' }
+  /v1/admin/rewards/shop:
+    get:
+      operationId: listAdminRewardShop
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      responses:
+        '200':
+          description: admin reward shop policy catalog
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RewardShopAdminResponse' }
+  /v1/admin/rewards/shop/{rewardKey}:
+    put:
+      operationId: upsertAdminRewardShopItem
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: rewardKey
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RewardShopItemUpdateRequest' }
+      responses:
+        '200':
+          description: updated reward shop policy item
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RewardShopItemUpdateResponse' }
+  /v1/rewards/shop/{rewardKey}/purchase:
+    post:
+      operationId: purchaseReward
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: rewardKey
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: purchased reward inventory item
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RewardPurchaseResponse' }
+  /v1/rewards/boosts/{rewardKey}/activate:
+    post:
+      operationId: activateXpBoost
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: rewardKey
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: activated XP boost
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ActivateXpBoostResponse' }
+  /v1/achievements/me:
+    get:
+      operationId: getMyAchievements
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner achievement progress and awarded badges
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AchievementsSummary' }
+  /v1/leagues/me:
+    get:
+      operationId: getMyLeagueStatus
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner weekly league tier and rank status
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LeagueStatus' }
+  /v1/leaderboards/weekly:
+    get:
+      operationId: getWeeklyLeaderboard
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 100, default: 20 }
+      responses:
+        '200':
+          description: current week XP leaderboard
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WeeklyLeaderboard' }
+  /v1/admin/xp-abuse-flags:
+    get:
+      operationId: listAdminXpAbuseFlags
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: learnerId
+          required: false
+          schema: { type: string }
+        - in: query
+          name: status
+          required: false
+          schema: { type: string, enum: [open, reviewing, resolved, dismissed] }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 100 }
+      responses:
+        '200':
+          description: admin-visible XP abuse and leaderboard exclusion flags
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/XpAbuseFlagsResponse' }
+  /v1/admin/xp-abuse-flags/{flagId}/status:
+    post:
+      operationId: updateXpAbuseFlagStatus
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: flagId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/XpAbuseFlagReviewRequest' }
+      responses:
+        '200':
+          description: reviewed or resolved XP abuse flag
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/XpAbuseFlagReviewResponse' }
+  /v1/admin/reputation/learners:
+    get:
+      operationId: listAdminReputationLearners
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: band
+          required: false
+          schema: { type: string, enum: [trusted, low, medium, high, critical] }
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 100 }
+      responses:
+        '200':
+          description: admin multi-signal reputation review queue
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LearnerReputationListResponse' }
+  /v1/admin/reputation/learners/{learnerId}:
+    get:
+      operationId: getAdminReputationLearner
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: path
+          name: learnerId
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: admin multi-signal reputation profile for one learner
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LearnerReputationProfile' }
+  /v1/entitlements/me:
+    get:
+      operationId: getMyEntitlements
+      responses:
+        '200':
+          description: entitlements
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Entitlement' }
+  /v1/events:
+    post:
+      operationId: trackEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AnalyticsEvent' }
+      responses:
+        '200':
+          description: event accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+  /v1/review-cards/due:
+    get:
+      operationId: listDueReviewCards
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 20 }
+      responses:
+        '200':
+          description: due review cards
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviewCards:
+                    type: array
+                    items: { $ref: '#/components/schemas/ReviewCard' }
+  /v1/review-cards/{reviewCardId}/grade:
+    post:
+      operationId: gradeReviewCard
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+        - in: path
+          name: reviewCardId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ReviewGradeRequest' }
+      responses:
+        '200':
+          description: graded review card
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviewCard: { $ref: '#/components/schemas/ReviewCard' }
+  /v1/profile/me:
+    get:
+      operationId: getMyProfile
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner profile
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile: { $ref: '#/components/schemas/LearnerProfile' }
+    put:
+      operationId: updateMyProfile
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ProfileRequest' }
+      responses:
+        '200':
+          description: updated learner profile
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile: { $ref: '#/components/schemas/LearnerProfile' }
+  /v1/recommendations/today:
+    get:
+      operationId: getTodayRecommendations
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: profile-aware recommendations
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/RecommendationsResponse' }
+  /v1/memory/summary:
+    get:
+      operationId: getMemorySummary
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: half-life inspired learner memory summary
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MemorySummary' }
+  /v1/pronunciation/score:
+    post:
+      operationId: scorePronunciation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PronunciationScoreRequest' }
+      responses:
+        '200':
+          description: pronunciation score
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PronunciationScore' }
+  /v1/export/anki:
+    get:
+      operationId: exportAnkiCsv
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: Anki-compatible CSV export
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AnkiCsvExport' }
+  /v1/export/anki-apkg:
+    get:
+      operationId: exportAnkiApkg
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: Anki APKG export
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AnkiApkgExport' }
+  /v1/export/anki-connect:
+    post:
+      operationId: exportAnkiConnect
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AnkiConnectExportRequest' }
+      responses:
+        '200':
+          description: AnkiConnect export result
+          content:
+            application/json:
+              schema: { type: object, additionalProperties: true }
+  /v1/grammar/jlpt:
+    get:
+      operationId: listJlptGrammar
+      parameters:
+        - in: query
+          name: level
+          required: false
+          schema: { type: string }
+        - in: query
+          name: tag
+          required: false
+          schema: { type: string }
+      responses:
+        '200':
+          description: JLPT grammar points
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  grammarPoints:
+                    type: array
+                    items: { $ref: '#/components/schemas/GrammarPoint' }
+  /v1/mistakes/korean-patterns:
+    get:
+      operationId: listKoreanMistakePatterns
+      parameters:
+        - in: query
+          name: category
+          required: false
+          schema: { type: string }
+        - in: query
+          name: tag
+          required: false
+          schema: { type: string }
+      responses:
+        '200':
+          description: Korean learner mistake patterns
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mistakePatterns:
+                    type: array
+                    items: { $ref: '#/components/schemas/KoreanMistakePattern' }
+  /v1/weaknesses/summary:
+    get:
+      operationId: getWeaknessSummary
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner weakness summary
+          content:
+            application/json:
+              schema: { type: object, additionalProperties: true }
+  /v1/providers/status:
+    get:
+      operationId: getProviderStatus
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: provider and open-core boundary status
+          content:
+            application/json:
+              schema: { type: object, additionalProperties: true }
+  /v1/admin/ops-console:
+    get:
+      operationId: getAdminOpsConsole
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      responses:
+        '200':
+          description: admin operations console for content releases, jobs, scheduler runs, experiments, audit trail, and release/job action controls
+          content:
+            text/html:
+              schema: { type: string }
+  /v1/admin/content-console:
+    get:
+      operationId: getAdminContentConsole
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+      responses:
+        '200':
+          description: admin content authoring console for validation, import dry runs, bulk QA, translation memory, branching, and assignments
+          content:
+            text/html:
+              schema: { type: string }
+  /v1/admin/experiment-console:
+    get:
+      operationId: getAdminExperimentConsole
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - $ref: '#/components/parameters/AdminRoleHeader'
+        - $ref: '#/components/parameters/AdminUserHeader'
+        - in: query
+          name: experimentKey
+          required: false
+          schema: { type: string }
+        - in: query
+          name: minimumExposedLearners
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 100000, default: 30 }
+      responses:
+        '200':
+          description: read-only admin experiment decision console for variant analytics, guardrail preview, decision history, and audit trail
+          content:
+            text/html:
+              schema: { type: string }
+  /v1/usage/summary:
+    get:
+      operationId: getUsageSummary
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner-scoped usage summary
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  usage: { $ref: '#/components/schemas/UsageSummary' }
+  /v1/audit-log:
+    get:
+      operationId: listAuditLog
+      parameters:
+        - $ref: '#/components/parameters/AdminKeyHeader'
+        - in: query
+          name: limit
+          required: false
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: admin audit log
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  auditLogs:
+                    type: array
+                    items: { type: object, additionalProperties: true }
+  /v1/privacy/me:
+    delete:
+      operationId: deleteMyData
+      parameters:
+        - $ref: '#/components/parameters/LearnerIdHeader'
+      responses:
+        '200':
+          description: learner-scoped privacy deletion
+          content:
+            application/json:
+              schema: { type: object, additionalProperties: true }
+components:
+  parameters:
+    LearnerIdHeader:
+      in: header
+      name: X-Learner-Id
+      required: false
+      schema: { type: string }
+      description: Optional learner scope for local/dev mode. Hosted/token mode should use X-Learner-Token.
+    LearnerTokenHeader:
+      in: header
+      name: X-Learner-Token
+      required: false
+      schema: { type: string }
+      description: Expiring HMAC-signed learner token, format v2:{learnerId}:{expiresAtUnix}:{signature}.
+    AdminKeyHeader:
+      in: header
+      name: X-Admin-Key
+      required: true
+      schema: { type: string }
+      description: Admin key required for audit-log access.
+    AdminRoleHeader:
+      in: header
+      name: X-Admin-Role
+      required: false
+      schema: { type: string, enum: [viewer, editor, reviewer, publisher, owner] }
+      description: Optional admin role for content workflow gates. Missing role defaults to owner after a valid admin key.
+    AdminUserHeader:
+      in: header
+      name: X-Admin-User
+      required: false
+      schema: { type: string }
+      description: Optional admin actor label stored in content workflow audit metadata.
+    AuthorizationHeader:
+      in: header
+      name: Authorization
+      required: true
+      schema: { type: string }
+      description: Bearer account access token.
+  schemas:
+    Persona:
+      type: object
+      required: [id, displayName, role, voiceStyle]
+      properties:
+        id: { type: string }
+        displayName: { type: string }
+        japaneseName: { type: string }
+        role: { type: string }
+        voiceStyle: { type: string }
+        teachingStyle: { type: string }
+        avatarEmoji: { type: string }
+        defaultLanguageMix:
+          type: object
+          properties:
+            ko: { type: integer }
+            ja: { type: integer }
+    PracticeRoom:
+      type: object
+      required: [id, title, primaryPhraseKo, primaryPhraseJa, personaId]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        primaryPhraseKo: { type: string }
+        primaryPhraseJa: { type: string }
+        alternativePhrasesJa:
+          type: array
+          items: { type: string }
+        personaId: { type: string }
+        scenario: { type: string }
+        openingMessage: { type: string }
+        courseId: { type: string }
+        courseTitle: { type: string }
+        unitId: { type: string }
+        unitTitle: { type: string }
+        unitOrder: { type: integer }
+        lessonId: { type: string }
+        lessonTitle: { type: string }
+        lessonOrder: { type: integer }
+        roomOrder: { type: integer }
+        tags:
+          type: array
+          items: { type: string }
+    Course:
+      type: object
+      required: [id, title, targetLanguage, nativeLanguage, level, units]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        targetLanguage: { type: string }
+        nativeLanguage: { type: string }
+        level: { type: string }
+        descriptionKo: { type: string }
+        units:
+          type: array
+          items: { $ref: '#/components/schemas/CourseUnit' }
+    CourseUnit:
+      type: object
+      required: [id, title, order, lessons]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        order: { type: integer }
+        skillTags:
+          type: array
+          items: { type: string }
+        lessons:
+          type: array
+          items: { $ref: '#/components/schemas/CourseLesson' }
+    CourseLesson:
+      type: object
+      required: [id, title, order, practiceRoomIds]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        order: { type: integer }
+        practiceRoomIds:
+          type: array
+          items: { type: string }
+    ContentBundleRequest:
+      type: object
+      properties:
+        courses:
+          type: array
+          items: { $ref: '#/components/schemas/Course' }
+        practiceRooms:
+          type: array
+          items: { $ref: '#/components/schemas/PracticeRoom' }
+    ContentImportRequest:
+      allOf:
+        - $ref: '#/components/schemas/ContentBundleRequest'
+        - type: object
+          properties:
+            dryRun: { type: boolean, default: true }
+            replaceExisting: { type: boolean, default: true }
+    ContentImportedCounts:
+      type: object
+      properties:
+        courses: { type: integer }
+        practiceRooms: { type: integer }
+    ContentSnapshotCounts:
+      type: object
+      properties:
+        courses: { type: integer }
+        practiceRooms: { type: integer }
+    ContentVersionSummary:
+      type: object
+      required: [id, status, source, createdAt, importedCounts, report, snapshotCounts]
+      properties:
+        id: { type: string }
+        label: { type: string, nullable: true }
+        status: { type: string, enum: [draft, in_review, approved, rejected, published] }
+        parentVersionId: { type: string, nullable: true }
+        branchName: { type: string, nullable: true }
+        source: { type: string }
+        createdBy: { type: string, nullable: true }
+        submittedBy: { type: string, nullable: true }
+        reviewedBy: { type: string, nullable: true }
+        reviewNote: { type: string, nullable: true }
+        createdAt: { type: string }
+        submittedAt: { type: string, nullable: true }
+        reviewedAt: { type: string, nullable: true }
+        publishedAt: { type: string, nullable: true }
+        importedCounts: { $ref: '#/components/schemas/ContentImportedCounts' }
+        report: { $ref: '#/components/schemas/ContentQualityReport' }
+        snapshotCounts: { $ref: '#/components/schemas/ContentSnapshotCounts' }
+    ContentReviewRequest:
+      type: object
+      properties:
+        note: { type: string, nullable: true }
+    ContentBranchRequest:
+      type: object
+      properties:
+        label: { type: string, nullable: true }
+        branchName: { type: string, nullable: true }
+        assignee: { type: string, nullable: true }
+        priority: { type: string, enum: [low, normal, high, urgent], default: normal }
+        dueAt: { type: string, nullable: true }
+        note: { type: string, nullable: true }
+    ContentAssignmentRequest:
+      type: object
+      required: [assignee]
+      properties:
+        assignee: { type: string }
+        priority: { type: string, enum: [low, normal, high, urgent], default: normal }
+        dueAt: { type: string, nullable: true }
+        note: { type: string, nullable: true }
+        status: { type: string, enum: [todo, in_progress, blocked, done], default: todo }
+    ContentAssignmentStatusRequest:
+      type: object
+      required: [status]
+      properties:
+        status: { type: string, enum: [todo, in_progress, blocked, done] }
+        note: { type: string, nullable: true }
+    ContentAssignment:
+      type: object
+      required: [id, versionId, assignee, status, priority, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        versionId: { type: string }
+        versionStatus: { type: string }
+        versionLabel: { type: string, nullable: true }
+        parentVersionId: { type: string, nullable: true }
+        branchName: { type: string, nullable: true }
+        assignee: { type: string }
+        status: { type: string, enum: [todo, in_progress, blocked, done] }
+        priority: { type: string, enum: [low, normal, high, urgent] }
+        note: { type: string, nullable: true }
+        dueAt: { type: string, nullable: true }
+        createdBy: { type: string, nullable: true }
+        updatedBy: { type: string, nullable: true }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+        completedAt: { type: string, nullable: true }
+    ContentReleaseRequest:
+      type: object
+      required: [versionId, title]
+      properties:
+        versionId: { type: string, minLength: 1, maxLength: 120 }
+        title: { type: string, minLength: 1, maxLength: 160 }
+        releaseStrategy: { type: string, enum: [immediate, scheduled, canary], default: immediate }
+        rolloutPercent: { type: integer, minimum: 1, maximum: 100, default: 100 }
+        catalogScope: { type: string, enum: [incremental, full_catalog], default: incremental }
+        scheduledAt: { type: string, nullable: true }
+        guardrails:
+          type: object
+          additionalProperties: true
+        note: { type: string, maxLength: 1000, nullable: true }
+    ContentReleaseApplyRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [apply-content-release] }
+        force: { type: boolean, default: false }
+        note: { type: string, maxLength: 1000, nullable: true }
+    ContentReleaseRunDueRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [run-due-content-releases] }
+        limit: { type: integer, minimum: 1, maximum: 200, default: 50 }
+    ContentReleaseRollbackRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [rollback-content-release] }
+        note: { type: string, maxLength: 1000, nullable: true }
+    ContentOperationJobRequest:
+      type: object
+      required: [jobType]
+      properties:
+        jobType: { type: string, enum: [validate_bundle, import_bundle, run_due_releases] }
+        priority: { type: string, enum: [low, normal, high, urgent], default: normal }
+        payload:
+          type: object
+          additionalProperties: true
+    ContentOperationJobRunNextRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [run-next-content-operation-job] }
+    ContentOperationJobCancelRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [cancel-content-operation-job] }
+    ContentSchedulerRunOnceRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [run-content-scheduler-once] }
+        schedulerKey: { type: string, minLength: 1, maxLength: 80, default: content_ops }
+        leaseOwner: { type: string, minLength: 1, maxLength: 120, default: local-scheduler }
+        maxOperationJobs: { type: integer, minimum: 0, maximum: 20, default: 1 }
+        releaseLimit: { type: integer, minimum: 1, maximum: 200, default: 50 }
+    ContentOperationJob:
+      type: object
+      required: [id, jobType, status, priority, payload, result, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        jobType: { type: string, enum: [validate_bundle, import_bundle, run_due_releases] }
+        status: { type: string, enum: [queued, running, succeeded, failed, canceled] }
+        priority: { type: string, enum: [low, normal, high, urgent] }
+        payload:
+          type: object
+          additionalProperties: true
+        result:
+          type: object
+          additionalProperties: true
+        error: { type: string, nullable: true }
+        createdBy: { type: string, nullable: true }
+        claimedBy: { type: string, nullable: true }
+        canceledBy: { type: string, nullable: true }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+        claimedAt: { type: string, nullable: true }
+        completedAt: { type: string, nullable: true }
+        canceledAt: { type: string, nullable: true }
+    ContentSchedulerRun:
+      type: object
+      required: [id, schedulerKey, status, leaseOwner, startedAt, heartbeatAt, maxOperationJobs, releaseLimit, result]
+      properties:
+        id: { type: string }
+        schedulerKey: { type: string }
+        status: { type: string, enum: [running, succeeded, failed] }
+        leaseOwner: { type: string }
+        actor: { type: string, nullable: true }
+        startedAt: { type: string }
+        heartbeatAt: { type: string }
+        completedAt: { type: string, nullable: true }
+        maxOperationJobs: { type: integer }
+        releaseLimit: { type: integer }
+        result:
+          type: object
+          additionalProperties: true
+        error: { type: string, nullable: true }
+    ContentRelease:
+      type: object
+      required: [id, versionId, title, status, releaseStrategy, rolloutPercent, catalogScope, guardrails, createdAt]
+      properties:
+        id: { type: string }
+        versionId: { type: string }
+        title: { type: string }
+        status: { type: string, enum: [planned, scheduled, applied, rolled_back, canceled] }
+        releaseStrategy: { type: string, enum: [immediate, scheduled, canary] }
+        rolloutPercent: { type: integer }
+        catalogScope: { type: string, enum: [incremental, full_catalog] }
+        scheduledAt: { type: string, nullable: true }
+        guardrails:
+          type: object
+          additionalProperties: true
+        note: { type: string, nullable: true }
+        previousPublishedVersionId: { type: string, nullable: true }
+        importedCounts: { $ref: '#/components/schemas/ContentImportedCounts' }
+        rollbackImportedCounts: { $ref: '#/components/schemas/ContentImportedCounts' }
+        createdBy: { type: string, nullable: true }
+        appliedBy: { type: string, nullable: true }
+        rolledBackBy: { type: string, nullable: true }
+        createdAt: { type: string }
+        appliedAt: { type: string, nullable: true }
+        rolledBackAt: { type: string, nullable: true }
+        rollbackNote: { type: string, nullable: true }
+    ContentVersionWorkflowResponse:
+      type: object
+      properties:
+        ok: { type: boolean }
+        version: { $ref: '#/components/schemas/ContentVersion' }
+    ContentVersion:
+      allOf:
+        - $ref: '#/components/schemas/ContentVersionSummary'
+        - type: object
+          required: [courses, practiceRooms]
+          properties:
+            courses:
+              type: array
+              items: { $ref: '#/components/schemas/Course' }
+            practiceRooms:
+              type: array
+              items: { $ref: '#/components/schemas/PracticeRoom' }
+    ContentQualityIssue:
+      type: object
+      required: [code, message, pointer]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        pointer: { type: string }
+      additionalProperties: true
+    ContentQualityReport:
+      type: object
+      required: [valid, errors, warnings, counts]
+      properties:
+        valid: { type: boolean }
+        errors:
+          type: array
+          items: { $ref: '#/components/schemas/ContentQualityIssue' }
+        warnings:
+          type: array
+          items: { $ref: '#/components/schemas/ContentQualityIssue' }
+        counts:
+          type: object
+          properties:
+            personas: { type: integer }
+            courses: { type: integer }
+            units: { type: integer }
+            lessons: { type: integer }
+            practiceRooms: { type: integer }
+            practiceRoomRefs: { type: integer }
+            roomsWithCoursePlacement: { type: integer }
+        courseIds:
+          type: array
+          items: { type: string }
+        missingPersonaIds:
+          type: array
+          items: { type: string }
+        missingPracticeRoomRefs:
+          type: array
+          items: { type: string }
+        duplicatePracticeRoomRefs:
+          type: array
+          items: { type: string }
+        orphanPracticeRoomIds:
+          type: array
+          items: { type: string }
+        referencedPracticeRoomIds:
+          type: array
+          items: { type: string }
+    TranslationMemoryEntry:
+      type: object
+      required: [id, sourceLanguage, targetLanguage, sourceText, targetText, tags, quality, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        sourceLanguage: { type: string }
+        targetLanguage: { type: string }
+        sourceText: { type: string }
+        targetText: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        sourceRef: { type: string, nullable: true }
+        quality: { type: integer, minimum: 0, maximum: 100 }
+        createdBy: { type: string, nullable: true }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+    TranslationMemoryEntryRequest:
+      type: object
+      required: [sourceText, targetText]
+      properties:
+        sourceLanguage: { type: string, default: ko }
+        targetLanguage: { type: string, default: ja }
+        sourceText: { type: string }
+        targetText: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        sourceRef: { type: string, nullable: true }
+        quality: { type: integer, minimum: 0, maximum: 100, default: 100 }
+    TranslationMemoryUpsertRequest:
+      type: object
+      properties:
+        entries:
+          type: array
+          items: { $ref: '#/components/schemas/TranslationMemoryEntryRequest' }
+    TranslationMemorySuggestRequest:
+      type: object
+      required: [sourceText]
+      properties:
+        sourceText: { type: string }
+        sourceLanguage: { type: string, default: ko }
+        targetLanguage: { type: string, default: ja }
+        limit: { type: integer, minimum: 1, maximum: 20, default: 5 }
+    TranslationMemorySuggestion:
+      allOf:
+        - $ref: '#/components/schemas/TranslationMemoryEntry'
+        - type: object
+          required: [similarityScore, matchType]
+          properties:
+            similarityScore: { type: number }
+            matchType: { type: string, enum: [exact, fuzzy] }
+    ContentBulkQaRequest:
+      allOf:
+        - $ref: '#/components/schemas/ContentBundleRequest'
+        - type: object
+          properties:
+            versionId: { type: string, nullable: true }
+            useCurrent: { type: boolean, default: true }
+            includeTranslationMemory: { type: boolean, default: true }
+    ContentBulkQaReport:
+      type: object
+      required: [valid, qualityReport, issues, counts, translationMemorySuggestions]
+      properties:
+        valid: { type: boolean }
+        qualityReport: { $ref: '#/components/schemas/ContentQualityReport' }
+        issues:
+          type: array
+          items: { $ref: '#/components/schemas/ContentQualityIssue' }
+        counts:
+          type: object
+          properties:
+            roomsChecked: { type: integer }
+            translationMemoryExactMatches: { type: integer }
+            translationMemoryFuzzyMatches: { type: integer }
+            translationMemoryMissing: { type: integer }
+            translationMemoryConflicts: { type: integer }
+        translationMemorySuggestions:
+          type: array
+          items:
+            type: object
+            properties:
+              practiceRoomId: { type: string }
+              sourceText: { type: string }
+              targetText: { type: string }
+              suggestions:
+                type: array
+                items: { $ref: '#/components/schemas/TranslationMemorySuggestion' }
+    ExperimentVariant:
+      type: object
+      required: [key, label, weight, payload]
+      properties:
+        key: { type: string }
+        label: { type: string }
+        weight: { type: integer, minimum: 0, maximum: 1000 }
+        payload:
+          type: object
+          additionalProperties: true
+    ExperimentVariantRequest:
+      type: object
+      required: [key]
+      properties:
+        key: { type: string }
+        label: { type: string, nullable: true }
+        weight: { type: integer, minimum: 0, maximum: 1000, default: 1 }
+        payload:
+          type: object
+          additionalProperties: true
+    Experiment:
+      type: object
+      required: [id, key, name, status, variants, allocation, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        key: { type: string }
+        name: { type: string }
+        status: { type: string, enum: [draft, running, paused, archived] }
+        variants:
+          type: array
+          items: { $ref: '#/components/schemas/ExperimentVariant' }
+        allocation:
+          type: object
+          additionalProperties: true
+        createdBy: { type: string, nullable: true }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+    ExperimentRequest:
+      type: object
+      required: [key, name, variants]
+      properties:
+        key: { type: string }
+        name: { type: string }
+        status: { type: string, enum: [draft, running, paused, archived], default: draft }
+        variants:
+          type: array
+          items: { $ref: '#/components/schemas/ExperimentVariantRequest' }
+        allocation:
+          type: object
+          additionalProperties: true
+    ExperimentStatusRequest:
+      type: object
+      required: [status]
+      properties:
+        status: { type: string, enum: [draft, running, paused, archived] }
+    ExperimentAssignment:
+      type: object
+      required: [id, learnerId, experimentKey, variantKey, variant, assignedAt]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        experimentKey: { type: string }
+        experimentName: { type: string }
+        experimentStatus: { type: string, enum: [draft, running, paused, archived] }
+        variantKey: { type: string }
+        variant: { $ref: '#/components/schemas/ExperimentVariant' }
+        assignedAt: { type: string }
+        exposureEventId: { type: string }
+    ExperimentEventRequest:
+      type: object
+      required: [eventName]
+      properties:
+        eventName: { type: string }
+        payload:
+          type: object
+          additionalProperties: true
+    ExperimentEvent:
+      type: object
+      required: [id, learnerId, experimentKey, variantKey, eventName, payload, createdAt]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        experimentKey: { type: string }
+        variantKey: { type: string }
+        eventName: { type: string }
+        payload:
+          type: object
+          additionalProperties: true
+        createdAt: { type: string }
+        assignment: { $ref: '#/components/schemas/ExperimentAssignment' }
+    ExperimentAnalyticsTotals:
+      type: object
+      required: [assignmentCount, exposureEventCount, exposedLearnerCount, conversionEventCount, convertedLearnerCount, customEventCount]
+      properties:
+        assignmentCount: { type: integer }
+        exposureEventCount: { type: integer }
+        exposedLearnerCount: { type: integer }
+        conversionEventCount: { type: integer }
+        convertedLearnerCount: { type: integer }
+        customEventCount: { type: integer }
+    ExperimentVariantAnalytics:
+      type: object
+      required:
+        - variantKey
+        - variant
+        - assignmentCount
+        - exposureEventCount
+        - exposedLearnerCount
+        - conversionEventCount
+        - convertedLearnerCount
+        - customEventCount
+        - eventCounts
+        - uniqueLearnerEventCounts
+        - assignmentExposureRate
+        - exposedConversionRate
+        - assignmentConversionRate
+        - decisionEligible
+      properties:
+        variantKey: { type: string }
+        variant: { $ref: '#/components/schemas/ExperimentVariant' }
+        assignmentCount: { type: integer }
+        exposureEventCount: { type: integer }
+        exposedLearnerCount: { type: integer }
+        conversionEventCount: { type: integer }
+        convertedLearnerCount: { type: integer }
+        customEventCount: { type: integer }
+        eventCounts:
+          type: object
+          additionalProperties: { type: integer }
+        uniqueLearnerEventCounts:
+          type: object
+          additionalProperties: { type: integer }
+        assignmentExposureRate: { type: number }
+        exposedConversionRate: { type: number }
+        assignmentConversionRate: { type: number }
+        conversionRateConfidenceInterval95:
+          type: object
+          properties:
+            lower: { type: number, nullable: true }
+            upper: { type: number, nullable: true }
+        baselineVariantKey: { type: string, nullable: true }
+        absoluteLiftFromBaseline: { type: number, nullable: true }
+        relativeLiftFromBaseline: { type: number, nullable: true }
+        standardError: { type: number, nullable: true }
+        zScore: { type: number, nullable: true }
+        pValue:
+          type: number
+          nullable: true
+          description: Two-sided two-proportion z-test p-value against the control/baseline variant.
+        confidenceInterval95:
+          type: object
+          properties:
+            lower: { type: number, nullable: true }
+            upper: { type: number, nullable: true }
+        statisticallySignificant: { type: boolean }
+        sampleSizeWarning: { type: string, nullable: true }
+        decisionEligible: { type: boolean }
+        firstAssignedAt: { type: string, nullable: true }
+        lastAssignedAt: { type: string, nullable: true }
+        firstEventAt: { type: string, nullable: true }
+        lastEventAt: { type: string, nullable: true }
+    ExperimentAnalytics:
+      type: object
+      required:
+        - experiment
+        - minimumExposedLearners
+        - totals
+        - variants
+        - decisionReady
+        - analysisNotes
+      properties:
+        experiment: { $ref: '#/components/schemas/Experiment' }
+        minimumExposedLearners: { type: integer }
+        statisticalSignificanceAlpha: { type: number }
+        controlVariantKey: { type: string, nullable: true }
+        totals: { $ref: '#/components/schemas/ExperimentAnalyticsTotals' }
+        variants:
+          type: array
+          items: { $ref: '#/components/schemas/ExperimentVariantAnalytics' }
+        bestObservedVariantKey: { type: string, nullable: true }
+        decisionReady: { type: boolean }
+        winnerVariantKey: { type: string, nullable: true }
+        decisionRecommendation:
+          type: string
+          enum: [collect_more_data, no_statistically_significant_winner, promote_winner]
+        significantPositiveVariantKeys:
+          type: array
+          items: { type: string }
+        analysisNotes:
+          type: array
+          items: { type: string }
+    ExperimentDecisionRequest:
+      type: object
+      properties:
+        action:
+          type: string
+          enum: [auto, collect_more_data, promote_variant, pause, archive, no_winner]
+          default: auto
+        variantKey: { type: string, maxLength: 80, nullable: true }
+        minimumExposedLearners: { type: integer, minimum: 1, maximum: 100000, default: 30 }
+        reason: { type: string, maxLength: 1000, nullable: true }
+        requireDecisionReady: { type: boolean, default: true }
+        requireStatisticalSignificance: { type: boolean, default: true }
+    ExperimentDecisionApplyRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation: { type: string, enum: [apply-experiment-decision] }
+        note: { type: string, maxLength: 1000, nullable: true }
+    ExperimentDecision:
+      type: object
+      required: [id, experimentKey, action, status, minimumExposedLearners, analyticsSnapshot, guardrail, createdAt]
+      properties:
+        id: { type: string }
+        experimentKey: { type: string }
+        action: { type: string, enum: [collect_more_data, promote_variant, pause, archive, no_winner] }
+        variantKey: { type: string, nullable: true }
+        status: { type: string, enum: [proposed, applied] }
+        reason: { type: string, nullable: true }
+        minimumExposedLearners: { type: integer }
+        analyticsSnapshot: { $ref: '#/components/schemas/ExperimentAnalytics' }
+        guardrail:
+          type: object
+          additionalProperties: true
+        createdBy: { type: string, nullable: true }
+        createdAt: { type: string }
+        appliedBy: { type: string, nullable: true }
+        appliedAt: { type: string, nullable: true }
+        applyNote: { type: string, nullable: true }
+        experimentAfterApply:
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/Experiment'
+    AuthRegisterRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string }
+        password: { type: string, minLength: 8, maxLength: 256 }
+        learnerId: { type: string }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    AuthLoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string }
+        password: { type: string, minLength: 1, maxLength: 256 }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    AuthOidcRequest:
+      type: object
+      required: [provider, idToken]
+      properties:
+        provider: { type: string, minLength: 1, maxLength: 80 }
+        idToken:
+          type: string
+          description: OIDC-compatible ID token verified against configured issuer, audience, provider allowlist, expiry, nonce, email_verified claim, and either HS256 secret or RS256 JWKS public key.
+        nonce: { type: string }
+        learnerId: { type: string }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    AuthOAuthPkceStartRequest:
+      type: object
+      required: [provider, redirectUri, codeChallenge]
+      properties:
+        provider: { type: string, minLength: 1, maxLength: 80 }
+        redirectUri: { type: string, minLength: 8, maxLength: 512 }
+        codeChallenge:
+          type: string
+          minLength: 43
+          maxLength: 128
+          description: S256 PKCE code challenge. The backend stores this plus a hashed state, never the code verifier.
+        codeChallengeMethod: { type: string, enum: [S256], default: S256 }
+        scope: { type: string, maxLength: 256 }
+        nonce: { type: string, maxLength: 160 }
+        learnerId: { type: string }
+        deviceLabel: { type: string }
+    AuthOAuthPkceStartResponse:
+      type: object
+      required: [ok, provider, authorizationUrl, state, nonce, redirectUri, codeChallengeMethod, expiresAt]
+      properties:
+        ok: { type: boolean }
+        provider: { type: string }
+        authorizationUrl: { type: string }
+        state:
+          type: string
+          description: One-time OAuth state. Backend stores only its SHA-256 hash.
+        nonce: { type: string }
+        redirectUri: { type: string }
+        codeChallengeMethod: { type: string, enum: [S256] }
+        expiresAt: { type: string }
+    AuthOAuthPkceCallbackRequest:
+      type: object
+      required: [provider, state, code, codeVerifier, redirectUri]
+      properties:
+        provider: { type: string, minLength: 1, maxLength: 80 }
+        state: { type: string, minLength: 16, maxLength: 256 }
+        code:
+          type: string
+          minLength: 10
+          maxLength: 4096
+          description: Provider authorization code. Configured providers exchange this at the token endpoint; dev/local mode can verify a signed local code for tests.
+        codeVerifier: { type: string, minLength: 43, maxLength: 128 }
+        redirectUri: { type: string, minLength: 8, maxLength: 512 }
+        learnerId: { type: string }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    EnterpriseSsoConnection:
+      type: object
+      required: [id, provider, organizationName, domains, redirectUris, status, enabled]
+      properties:
+        id: { type: string }
+        provider: { type: string }
+        organizationName: { type: string }
+        domains:
+          type: array
+          items: { type: string }
+        redirectUris:
+          type: array
+          items: { type: string }
+        requiredEmailDomain: { type: string, nullable: true }
+        status: { type: string, enum: [enabled, disabled] }
+        enabled: { type: boolean }
+        createdAt: { type: string, nullable: true }
+        updatedAt: { type: string, nullable: true }
+    AuthSsoConnectionRequest:
+      type: object
+      required: [provider, organizationName, domains, redirectUris]
+      properties:
+        provider: { type: string, minLength: 1, maxLength: 80 }
+        organizationName: { type: string, minLength: 1, maxLength: 160 }
+        domains:
+          type: array
+          items: { type: string }
+        redirectUris:
+          type: array
+          items: { type: string }
+        requiredEmailDomain: { type: string, maxLength: 160 }
+        status: { type: string, enum: [enabled, disabled], default: enabled }
+    AuthSsoConnectionListResponse:
+      type: object
+      required: [connections, count]
+      properties:
+        connections:
+          type: array
+          items: { $ref: '#/components/schemas/EnterpriseSsoConnection' }
+        count: { type: integer }
+    AuthSsoDiscoveryResponse:
+      type: object
+      required: [ok, emailDomain, matched]
+      properties:
+        ok: { type: boolean }
+        emailDomain: { type: string }
+        matched: { type: boolean }
+        connection:
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/EnterpriseSsoConnection'
+    AuthSsoPkceStartRequest:
+      type: object
+      required: [email, redirectUri, codeChallenge]
+      properties:
+        email: { type: string, minLength: 3, maxLength: 320 }
+        redirectUri: { type: string, minLength: 8, maxLength: 512 }
+        codeChallenge:
+          type: string
+          minLength: 43
+          maxLength: 128
+          description: S256 PKCE code challenge. The backend stores this plus a hashed state tied to the enterprise SSO connection.
+        codeChallengeMethod: { type: string, enum: [S256], default: S256 }
+        scope: { type: string, maxLength: 256 }
+        nonce: { type: string, maxLength: 160 }
+        learnerId: { type: string }
+        deviceLabel: { type: string }
+    AuthSsoPkceStartResponse:
+      type: object
+      required: [ok, provider, connectionId, connection, authorizationUrl, state, nonce, redirectUri, codeChallengeMethod, expiresAt]
+      properties:
+        ok: { type: boolean }
+        provider: { type: string }
+        connectionId: { type: string }
+        connection: { $ref: '#/components/schemas/EnterpriseSsoConnection' }
+        authorizationUrl: { type: string }
+        state:
+          type: string
+          description: One-time SSO OAuth state. Backend stores only its SHA-256 hash and connection id.
+        nonce: { type: string }
+        redirectUri: { type: string }
+        codeChallengeMethod: { type: string, enum: [S256] }
+        expiresAt: { type: string }
+    AuthSsoPkceCallbackRequest:
+      type: object
+      required: [connectionId, state, code, codeVerifier, redirectUri]
+      properties:
+        connectionId: { type: string, minLength: 1, maxLength: 80 }
+        state: { type: string, minLength: 16, maxLength: 256 }
+        code:
+          type: string
+          minLength: 10
+          maxLength: 4096
+          description: Enterprise SSO authorization code. Configured providers exchange this at the token endpoint; dev/local mode can verify a signed local code for tests.
+        codeVerifier: { type: string, minLength: 43, maxLength: 128 }
+        redirectUri: { type: string, minLength: 8, maxLength: 512 }
+        learnerId: { type: string }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    AuthRefreshRequest:
+      type: object
+      required: [refreshToken]
+      properties:
+        refreshToken: { type: string }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    AuthChangePasswordRequest:
+      type: object
+      required: [currentPassword, newPassword]
+      properties:
+        currentPassword: { type: string, minLength: 1, maxLength: 256 }
+        newPassword: { type: string, minLength: 8, maxLength: 256 }
+        deviceLabel: { type: string }
+        deviceId: { type: string }
+    AuthDeleteAccountRequest:
+      type: object
+      properties:
+        password: { type: string, minLength: 1, maxLength: 256 }
+        confirmation:
+          type: string
+          description: OIDC-linked accounts can be disabled with an active bearer session and confirmation value delete-my-account.
+    AuthTrustDeviceRequest:
+      type: object
+      required: [confirmation]
+      properties:
+        confirmation:
+          type: string
+          enum: [trust-this-device]
+          description: Explicit account-session confirmation to trust the currently bound device.
+        deviceLabel: { type: string, maxLength: 120 }
+        platform: { type: string, maxLength: 80 }
+        attestationProvider:
+          type: string
+          maxLength: 80
+          description: Provider hint such as self_attested, signed_challenge, public_key_challenge, webauthn_public_key, apple_app_attest, or android_play_integrity. signed_challenge verifies a server-issued one-time HMAC challenge when AI_LANGUAGE_PARTNER_DEVICE_ATTESTATION_SECRET is configured; public_key_challenge verifies an RS256 signature from a public RSA JWK; webauthn_public_key verifies a WebAuthn-style ES256 assertion from a P-256 public JWK, including challenge, origin, RP ID hash, user presence, authenticatorData, and clientDataJSON.
+        attestationSubject:
+          type: string
+          maxLength: 2048
+          description: Optional device-key subject or public JWK JSON; backend stores only a hash/thumbprint.
+        evidence:
+          type: object
+          additionalProperties: true
+          description: signed_challenge evidence requires challengeId, challenge, signature, and optional algorithm hmac-sha256. public_key_challenge evidence requires the same attestationSubject used when issuing the challenge, challengeId, challenge, RS256 signature, and either attestationSubject JWK JSON or evidence.publicKeyJwk. webauthn_public_key evidence requires challengeId, challenge, algorithm webauthn-es256, clientDataJSON, authenticatorData, and an ES256 signature over authenticatorData || SHA256(clientDataJSON).
+    AuthDeviceAttestationChallengeRequest:
+      type: object
+      properties:
+        attestationProvider:
+          type: string
+          maxLength: 80
+          default: signed_challenge
+        attestationSubject:
+          type: string
+          maxLength: 2048
+    AuthDeviceAttestationChallengeResponse:
+      type: object
+      required: [challengeId, challenge, expiresAt, attestationProvider, attestationSubject, signatureAlgorithm, message]
+      properties:
+        challengeId: { type: string }
+        challenge: { type: string }
+        expiresAt: { type: string }
+        attestationProvider: { type: string }
+        attestationSubject: { type: string }
+        signatureAlgorithm: { type: string, enum: [hmac-sha256, rs256, webauthn-es256] }
+        message:
+          type: string
+          description: Canonical JSON string to sign with HMAC-SHA256 or RS256 depending on signatureAlgorithm. For webauthn-es256, clients bind this challenge through clientDataJSON and sign authenticatorData || SHA256(clientDataJSON).
+    AuthAccount:
+      type: object
+      required: [id, email, learnerId, authProvider]
+      properties:
+        id: { type: string }
+        email: { type: string }
+        learnerId: { type: string }
+        createdAt: { type: string, nullable: true }
+        disabledAt: { type: string, nullable: true }
+        authProvider: { type: string, enum: [password, oidc] }
+        identityProvider: { type: string, nullable: true }
+    AuthDeviceTrust:
+      type: object
+      properties:
+        deviceId: { type: string, nullable: true }
+        status: { type: string, enum: [not_bound, untracked, untrusted, trusted, revoked] }
+        trusted: { type: boolean }
+        attestationProvider: { type: string, nullable: true }
+        attestationVerified: { type: boolean }
+        verificationMode:
+          type: string
+          enum: [not_bound, untracked, not_verified, account_confirmed_not_platform_verified, signed_challenge_hmac, public_key_challenge_rs256, webauthn_assertion_es256, platform_verified]
+        trustedAt: { type: string, nullable: true }
+        revokedAt: { type: string, nullable: true }
+    AuthDevice:
+      type: object
+      properties:
+        id: { type: string }
+        deviceLabel: { type: string, nullable: true }
+        platform: { type: string, nullable: true }
+        trustStatus: { type: string, enum: [untrusted, trusted, revoked] }
+        trusted: { type: boolean }
+        attestationProvider: { type: string, nullable: true }
+        attestationVerified: { type: boolean }
+        verificationMode:
+          type: string
+          enum: [not_verified, account_confirmed_not_platform_verified, signed_challenge_hmac, public_key_challenge_rs256, webauthn_assertion_es256, platform_verified]
+        trustedAt: { type: string, nullable: true }
+        revokedAt: { type: string, nullable: true }
+        lastSeenAt: { type: string, nullable: true }
+        createdAt: { type: string, nullable: true }
+        updatedAt: { type: string, nullable: true }
+        isCurrent: { type: boolean }
+    AuthSession:
+      type: object
+      properties:
+        id: { type: string }
+        deviceLabel: { type: string, nullable: true }
+        deviceBound: { type: boolean }
+        deviceTrust: { $ref: '#/components/schemas/AuthDeviceTrust' }
+        accessExpiresAt: { type: string }
+        refreshExpiresAt: { type: string }
+        revokedAt: { type: string, nullable: true }
+        createdAt: { type: string, nullable: true }
+        lastUsedAt: { type: string, nullable: true }
+        isCurrent: { type: boolean }
+    AuthTokenResponse:
+      type: object
+      required: [account, tokenType, accessTokenFormat, accessToken, refreshToken, accessExpiresAt, refreshExpiresAt]
+      properties:
+        account: { $ref: '#/components/schemas/AuthAccount' }
+        tokenType: { type: string, enum: [Bearer] }
+        accessTokenFormat: { type: string, enum: [jwt_hs256] }
+        accessToken:
+          type: string
+          description: HS256-signed JWT account access token. Backend stores only its SHA-256 hash for revocation lookup.
+        refreshToken: { type: string }
+        accessExpiresAt: { type: string }
+        refreshExpiresAt: { type: string }
+        deviceTrust: { $ref: '#/components/schemas/AuthDeviceTrust' }
+        oauth:
+          type: object
+          nullable: true
+          properties:
+            provider: { type: string }
+            stateConsumed: { type: boolean }
+            codeExchangeMode: { type: string, enum: [token_endpoint_id_token, local_signed_code, unconfigured] }
+        sso:
+          type: object
+          nullable: true
+          properties:
+            connectionId: { type: string }
+            provider: { type: string }
+            identityProvider: { type: string }
+            organizationName: { type: string }
+            emailDomain: { type: string }
+    CreateConversationRequest:
+      type: object
+      required: [personaId, practiceRoomId]
+      properties:
+        personaId: { type: string }
+        practiceRoomId: { type: string }
+        mode: { type: string, enum: [practice, free_chat, shadowing, roleplay] }
+    CreateConversationResponse:
+      type: object
+      required: [conversationId, persona, practiceRoom]
+      properties:
+        conversationId: { type: string }
+        learnerId: { type: string }
+        persona: { $ref: '#/components/schemas/Persona' }
+        practiceRoom: { $ref: '#/components/schemas/PracticeRoom' }
+    CreateTurnRequest:
+      type: object
+      required: [inputType]
+      properties:
+        inputType: { type: string, enum: [text, audio, mock_audio] }
+        text: { type: string }
+        audioBase64: { type: string }
+        requestTts: { type: boolean }
+    CreateTurnResponse:
+      type: object
+      required: [conversationId, assistantText, spokenText, suggestedUserReply, corrections, reviewCards, usage]
+      properties:
+        conversationId: { type: string }
+        learnerId: { type: string }
+        userText: { type: string }
+        assistantText: { type: string }
+        spokenText: { type: string }
+        suggestedUserReply: { type: string }
+        audioUrl: { type: string, nullable: true }
+        corrections:
+          type: array
+          items: { $ref: '#/components/schemas/Correction' }
+        reviewCards:
+          type: array
+          items: { $ref: '#/components/schemas/ReviewCard' }
+        usage: { $ref: '#/components/schemas/UsageRecord' }
+        pronunciation: { $ref: '#/components/schemas/PronunciationScore' }
+    Correction:
+      type: object
+      required: [category, original, corrected, explanationKo]
+      properties:
+        category: { type: string }
+        original: { type: string }
+        corrected: { type: string }
+        explanationKo: { type: string }
+        severity: { type: string, enum: [minor, medium, important] }
+        isKoreanLiteral: { type: boolean }
+    ReviewCard:
+      type: object
+      required: [id, front, back]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        front: { type: string }
+        back: { type: string }
+        example: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        dueAt: { type: string }
+        easeFactor: { type: number }
+        intervalDays: { type: integer }
+        reviewCount: { type: integer }
+        lapses: { type: integer }
+        memoryStrengthDays: { type: number }
+        memoryDifficulty: { type: number }
+        lastReviewQuality: { type: integer, nullable: true }
+        recallProbability: { type: number }
+        recallRisk: { type: string, enum: [new, high, medium, low, unknown] }
+        daysSinceReview: { type: number, nullable: true }
+        lastReviewedAt: { type: string, nullable: true }
+    ReviewCardRequest:
+      type: object
+      required: [front, back]
+      properties:
+        id: { type: string }
+        front: { type: string }
+        back: { type: string }
+        example: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        dueAt: { type: string }
+    ReviewGradeRequest:
+      type: object
+      required: [quality]
+      properties:
+        quality: { type: integer, minimum: 0, maximum: 5 }
+    UsageRecord:
+      type: object
+      properties:
+        llmInputTokens: { type: integer }
+        llmOutputTokens: { type: integer }
+        sttSeconds: { type: number }
+        ttsCharacters: { type: integer }
+        ttsSeconds: { type: number }
+        cacheHit: { type: boolean }
+    TtsRequest:
+      type: object
+      required: [text, personaId, language]
+      properties:
+        text: { type: string }
+        personaId: { type: string }
+        language: { type: string, enum: [ja, ko, en] }
+        speed: { type: number }
+        emotion: { type: string }
+    TtsResponse:
+      type: object
+      required: [provider, cacheHit, spokenText]
+      properties:
+        audioUrl: { type: string, nullable: true }
+        audioBase64: { type: string, nullable: true }
+        provider:
+          type: string
+          enum:
+            - mock
+            - local_tts
+            - external_tts
+            - device_speech
+            - openai_tts
+            - edge_tts
+            - edge_tts_fallback_mock
+            - voicevox_compat
+            - voicevox_compat_fallback_mock
+            - voicevox_compat_fallback_edge_tts
+            - voicevox_compat_fallback_edge_tts_fallback_mock
+            - elevenlabs_tts
+            - openai_tts_fallback_mock
+            - elevenlabs_tts_fallback_mock
+        cacheHit: { type: boolean }
+        spokenText: { type: string }
+        durationMs: { type: integer }
+        contentType: { type: string }
+        voiceUsed: { type: string }
+    SttRequest:
+      type: object
+      properties:
+        audioBase64: { type: string }
+        language: { type: string, enum: [ja, ko, en] }
+        mockText: { type: string }
+        hintLineIds:
+          type: array
+          items: { type: string }
+    SttResponse:
+      type: object
+      required: [text, provider]
+      properties:
+        text: { type: string }
+        provider:
+          type: string
+          enum:
+            - mock
+            - local_stt
+            - external_stt
+            - openai_stt
+            - openai_stt_fallback_mock
+            - whisper_cpp
+            - whisper_cpp_fallback_mock
+        confidence: { type: number }
+        latencyMs: { type: integer }
+    VoiceCatalogItem:
+      type: object
+      required: [voiceId, engine, characterName, styleName, sampleUrl, creditText]
+      properties:
+        voiceId: { type: string }
+        engine: { type: string }
+        characterName: { type: string }
+        styleName: { type: string }
+        sampleUrl: { type: string }
+        personaId: { type: string, nullable: true }
+        creditText: { type: string }
+    DialogueMatchRequest:
+      type: object
+      required: [personaId, packVersion, utterance, candidateLineIds]
+      properties:
+        personaId: { type: string }
+        packVersion: { type: string }
+        utterance: { type: string }
+        candidateLineIds:
+          type: array
+          items: { type: string }
+        globalIntents: { type: boolean, default: true }
+    DialogueMatchResponse:
+      type: object
+      required: [tier, score, latencyMs]
+      properties:
+        tier: { type: string, enum: [match, confirm, fallback] }
+        matchedLineId: { type: string, nullable: true }
+        score: { type: number }
+        confirmLineId: { type: string, nullable: true }
+        globalIntent:
+          type: string
+          nullable: true
+          enum: [repeat, hint, quit, slow, null]
+        latencyMs: { type: integer }
+    DialoguePackSummary:
+      type: object
+      required: [personaId, packVersion, sizeBytes, topics, levels]
+      properties:
+        personaId: { type: string }
+        packVersion: { type: string }
+        sizeBytes: { type: integer }
+        topics:
+          type: array
+          items: { type: string }
+        levels:
+          type: array
+          items: { type: string }
+        scenarioCount: { type: integer }
+        lineCount: { type: integer }
+        audioCount: { type: integer }
+    DialogueUnmatchedRequest:
+      type: object
+      required: [personaId, nodeId, utterance]
+      properties:
+        personaId: { type: string }
+        packVersion: { type: string, default: v1 }
+        nodeId: { type: string }
+        utterance: { type: string }
+        sttConfidence: { type: number, nullable: true }
+    TodayProgress:
+      type: object
+      properties:
+        date: { type: string }
+        streakDays: { type: integer }
+        completedMissions: { type: integer }
+        spokenSentenceCount: { type: integer }
+        reviewCardsCreated: { type: integer }
+        xpEarnedToday: { type: integer }
+        dailyQuestsCompleted: { type: integer }
+        dailyQuestCount: { type: integer }
+    XpSummary:
+      type: object
+      required: [learnerId, todayXp, weekXp, totalXp, eventCount, weekStart]
+      properties:
+        learnerId: { type: string }
+        todayXp: { type: integer }
+        weekXp: { type: integer }
+        totalXp: { type: integer }
+        eventCount: { type: integer }
+        weekStart: { type: string }
+    StreakSummary:
+      type: object
+      required: [learnerId, currentStreak, longestStreak, activeDays, isActiveToday]
+      properties:
+        learnerId: { type: string }
+        currentStreak: { type: integer }
+        longestStreak: { type: integer }
+        activeDays: { type: integer }
+        lastActiveDate: { type: string, nullable: true }
+        isActiveToday: { type: boolean }
+    DailyQuest:
+      type: object
+      required: [key, title, metric, source, target, progress, rawProgress, rewardXp, completed, dayKey]
+      properties:
+        key: { type: string }
+        title: { type: string }
+        metric: { type: string, enum: [source_count, xp_sum] }
+        source: { type: string }
+        target: { type: integer }
+        progress: { type: integer }
+        rawProgress: { type: integer }
+        rewardXp: { type: integer }
+        completed: { type: boolean }
+        completedAt: { type: string, nullable: true }
+        dayKey: { type: string }
+    LeaderboardEntry:
+      type: object
+      required: [rank, learnerId, xp, eventCount, isCurrentLearner, leaderboardExcluded, exclusionReasons]
+      properties:
+        rank: { type: integer }
+        learnerId: { type: string }
+        xp: { type: integer }
+        eventCount: { type: integer }
+        isCurrentLearner: { type: boolean }
+        leaderboardExcluded: { type: boolean }
+        exclusionReasons:
+          type: array
+          items: { type: string }
+    WeeklyLeaderboard:
+      type: object
+      required: [weekStart, weekEnd, entries, excludedLearnerCount]
+      properties:
+        weekStart: { type: string }
+        weekEnd: { type: string }
+        entries:
+          type: array
+          items: { $ref: '#/components/schemas/LeaderboardEntry' }
+        currentLearnerRank: { type: integer, nullable: true }
+        excludedLearnerCount: { type: integer }
+    LeagueTier:
+      type: object
+      required: [key, name, minWeeklyXp]
+      properties:
+        key: { type: string }
+        name: { type: string }
+        minWeeklyXp: { type: integer }
+    LeagueStatus:
+      type: object
+      required: [currentTier, weekXp, weekStart]
+      properties:
+        currentTier: { $ref: '#/components/schemas/LeagueTier' }
+        nextTier:
+          anyOf:
+            - $ref: '#/components/schemas/LeagueTier'
+            - type: 'null'
+        weekXp: { type: integer }
+        progressToNextTier: { type: number, nullable: true }
+        currentRank: { type: integer, nullable: true }
+        weekStart: { type: string }
+    AchievementProgress:
+      type: object
+      required: [key, title, description, level, maxLevel, metric, source, target, progress, rawProgress, completed, rewardGems, awarded]
+      properties:
+        key: { type: string }
+        title: { type: string }
+        description: { type: string }
+        level: { type: integer }
+        maxLevel: { type: integer }
+        metric: { type: string }
+        source: { type: string }
+        target: { type: integer }
+        progress: { type: integer }
+        rawProgress: { type: integer }
+        completed: { type: boolean }
+        rewardGems: { type: integer }
+        awarded: { type: boolean }
+        awardedAt: { type: string, nullable: true }
+    AchievementsSummary:
+      type: object
+      required: [awardedCount, totalCount, trackCount, completedTrackCount, achievements]
+      properties:
+        awardedCount: { type: integer }
+        totalCount: { type: integer }
+        trackCount: { type: integer }
+        completedTrackCount: { type: integer }
+        achievements:
+          type: array
+          items: { $ref: '#/components/schemas/AchievementProgress' }
+    XpAbuseFlag:
+      type: object
+      required: [id, learnerId, dayKey, reason, severity, status, evidence, leaderboardExcluded, createdAt]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        dayKey: { type: string }
+        reason: { type: string }
+        severity: { type: string }
+        status: { type: string, enum: [open, reviewing, resolved, dismissed] }
+        evidence:
+          type: object
+          additionalProperties: true
+        leaderboardExcluded: { type: boolean }
+        reviewedBy: { type: string, nullable: true }
+        resolutionNote: { type: string, nullable: true }
+        resolvedAt: { type: string, nullable: true }
+        createdAt: { type: string }
+    XpAbuseFlagsResponse:
+      type: object
+      required: [flags, count]
+      properties:
+        flags:
+          type: array
+          items: { $ref: '#/components/schemas/XpAbuseFlag' }
+        count: { type: integer }
+    XpAbuseFlagReviewRequest:
+      type: object
+      required: [status]
+      properties:
+        status: { type: string, enum: [open, reviewing, resolved, dismissed] }
+        note: { type: string, nullable: true, maxLength: 1000 }
+    XpAbuseFlagReviewResponse:
+      type: object
+      required: [ok, flag]
+      properties:
+        ok: { type: boolean }
+        flag: { $ref: '#/components/schemas/XpAbuseFlag' }
+    ReputationSignal:
+      type: object
+      required: [key, label, severity, weight, evidence]
+      properties:
+        key: { type: string }
+        label: { type: string }
+        severity: { type: string, enum: [low, medium, high, critical] }
+        weight: { type: integer, minimum: 0, maximum: 100 }
+        evidence:
+          type: object
+          additionalProperties: true
+    ReputationSummary:
+      type: object
+      required:
+        - openXpAbuseFlagCount
+        - blockingXpAbuseFlagCount
+        - resolvedOrDismissedXpAbuseFlagCount
+        - incomingBlockCount
+        - outgoingBlockCount
+        - weekXp
+        - weekEventCount
+        - weekSourceCount
+        - deviceCount
+        - trustedDeviceCount
+        - untrustedDeviceCount
+        - revokedDeviceCount
+        - activeSessionCount
+      properties:
+        openXpAbuseFlagCount: { type: integer }
+        blockingXpAbuseFlagCount: { type: integer }
+        resolvedOrDismissedXpAbuseFlagCount: { type: integer }
+        incomingBlockCount: { type: integer }
+        outgoingBlockCount: { type: integer }
+        weekXp: { type: integer }
+        weekEventCount: { type: integer }
+        weekSourceCount: { type: integer }
+        deviceCount: { type: integer }
+        trustedDeviceCount: { type: integer }
+        untrustedDeviceCount: { type: integer }
+        revokedDeviceCount: { type: integer }
+        activeSessionCount: { type: integer }
+    LearnerReputationProfile:
+      type: object
+      required: [learnerId, riskScore, riskBand, reviewRecommended, leaderboardEligible, signals, summary, xpAbuseFlags]
+      properties:
+        learnerId: { type: string }
+        riskScore: { type: integer, minimum: 0, maximum: 100 }
+        riskBand: { type: string, enum: [trusted, low, medium, high, critical] }
+        reviewRecommended: { type: boolean }
+        leaderboardEligible: { type: boolean }
+        latestSignalAt: { type: string, nullable: true }
+        signals:
+          type: array
+          items: { $ref: '#/components/schemas/ReputationSignal' }
+        summary: { $ref: '#/components/schemas/ReputationSummary' }
+        xpAbuseFlags:
+          type: array
+          items: { $ref: '#/components/schemas/XpAbuseFlag' }
+    LearnerReputationListResponse:
+      type: object
+      required: [profiles, count]
+      properties:
+        profiles:
+          type: array
+          items: { $ref: '#/components/schemas/LearnerReputationProfile' }
+        count: { type: integer }
+    FriendInviteRequest:
+      type: object
+      required: [friendLearnerId]
+      properties:
+        friendLearnerId: { type: string }
+        message: { type: string, nullable: true }
+    FriendInvite:
+      type: object
+      required: [id, requesterLearnerId, addresseeLearnerId, status, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        requesterLearnerId: { type: string }
+        addresseeLearnerId: { type: string }
+        status: { type: string, enum: [pending, accepted, declined, blocked] }
+        message: { type: string, nullable: true }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+        respondedAt: { type: string, nullable: true }
+    FriendRelationship:
+      type: object
+      required: [id, learnerId, friendLearnerId, status, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        friendLearnerId: { type: string }
+        status: { type: string, enum: [active, removed] }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+        removedAt: { type: string, nullable: true }
+    FriendsSummary:
+      type: object
+      required: [learnerId, friends, incomingInvites, outgoingInvites, friendCount]
+      properties:
+        learnerId: { type: string }
+        friends:
+          type: array
+          items: { $ref: '#/components/schemas/FriendRelationship' }
+        incomingInvites:
+          type: array
+          items: { $ref: '#/components/schemas/FriendInvite' }
+        outgoingInvites:
+          type: array
+          items: { $ref: '#/components/schemas/FriendInvite' }
+        friendCount: { type: integer }
+    FriendRecommendationProfile:
+      type: object
+      required: [nativeLanguage, targetLanguage, level, jlptLevel]
+      properties:
+        nativeLanguage: { type: string }
+        targetLanguage: { type: string }
+        level: { type: string }
+        jlptLevel: { type: string }
+    FriendRecommendation:
+      type: object
+      required: [learnerId, score, reasonCodes, weekXp, eventCount, profile, sharedSources, alreadyFriend, pendingInvite]
+      properties:
+        learnerId: { type: string }
+        score: { type: number }
+        reasonCodes:
+          type: array
+          items: { type: string }
+        weekXp: { type: integer }
+        eventCount: { type: integer }
+        lastActiveAt: { type: string, nullable: true }
+        profile: { $ref: '#/components/schemas/FriendRecommendationProfile' }
+        sharedSources:
+          type: array
+          items: { type: string }
+        alreadyFriend: { type: boolean }
+        pendingInvite: { type: boolean }
+    FriendRecommendationsResponse:
+      type: object
+      required: [learnerId, weekStart, weekEnd, recommendations, count, excludedFriendCount, excludedPendingInviteCount, excludedBlockedCount, excludedPrivateCount]
+      properties:
+        learnerId: { type: string }
+        weekStart: { type: string }
+        weekEnd: { type: string }
+        recommendations:
+          type: array
+          items: { $ref: '#/components/schemas/FriendRecommendation' }
+        count: { type: integer }
+        excludedFriendCount: { type: integer }
+        excludedPendingInviteCount: { type: integer }
+        excludedBlockedCount: { type: integer }
+        excludedPrivateCount: { type: integer }
+    SocialSettings:
+      type: object
+      required: [learnerId, discoverable, allowFriendInvites, showWeeklyXp, createdAt, updatedAt]
+      properties:
+        learnerId: { type: string }
+        discoverable: { type: boolean }
+        allowFriendInvites: { type: boolean }
+        showWeeklyXp: { type: boolean }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+    SocialSettingsRequest:
+      type: object
+      required: [discoverable, allowFriendInvites, showWeeklyXp]
+      properties:
+        discoverable: { type: boolean }
+        allowFriendInvites: { type: boolean }
+        showWeeklyXp: { type: boolean }
+    SocialBlock:
+      type: object
+      required: [id, blockerLearnerId, blockedLearnerId, createdAt]
+      properties:
+        id: { type: string }
+        blockerLearnerId: { type: string }
+        blockedLearnerId: { type: string }
+        createdAt: { type: string }
+    SocialBlocksResponse:
+      type: object
+      required: [learnerId, blocks, count]
+      properties:
+        learnerId: { type: string }
+        blocks:
+          type: array
+          items: { $ref: '#/components/schemas/SocialBlock' }
+        count: { type: integer }
+    SocialBlockResponse:
+      type: object
+      required: [blocked, reason]
+      properties:
+        block:
+          anyOf:
+            - $ref: '#/components/schemas/SocialBlock'
+            - type: 'null'
+        blocked: { type: boolean }
+        reason: { type: string }
+    SocialUnblockResponse:
+      type: object
+      required: [unblocked, learnerId, blockedLearnerId]
+      properties:
+        unblocked: { type: boolean }
+        learnerId: { type: string }
+        blockedLearnerId: { type: string }
+    SocialDiscoveryCandidate:
+      type: object
+      required: [learnerId, score, reasonCodes, eventCount, profile, mutualFriendCount, mutualFriendLearnerIds, canInvite, friendQuestEligible]
+      properties:
+        learnerId: { type: string }
+        score: { type: number }
+        reasonCodes:
+          type: array
+          items: { type: string }
+        weekXp: { type: integer, nullable: true }
+        eventCount: { type: integer }
+        lastActiveAt: { type: string, nullable: true }
+        profile: { $ref: '#/components/schemas/FriendRecommendationProfile' }
+        mutualFriendCount: { type: integer }
+        mutualFriendLearnerIds:
+          type: array
+          items: { type: string }
+        canInvite: { type: boolean }
+        friendQuestEligible: { type: boolean }
+    SocialDiscoveryResponse:
+      type: object
+      required: [learnerId, weekStart, weekEnd, candidates, count, excludedFriendOrPendingCount, excludedBlockedCount, excludedPrivateCount]
+      properties:
+        learnerId: { type: string }
+        weekStart: { type: string }
+        weekEnd: { type: string }
+        candidates:
+          type: array
+          items: { $ref: '#/components/schemas/SocialDiscoveryCandidate' }
+        count: { type: integer }
+        excludedFriendOrPendingCount: { type: integer }
+        excludedBlockedCount: { type: integer }
+        excludedPrivateCount: { type: integer }
+    FriendInviteResponse:
+      type: object
+      required: [created, reason]
+      properties:
+        invite:
+          anyOf:
+            - $ref: '#/components/schemas/FriendInvite'
+            - type: 'null'
+        relationship:
+          anyOf:
+            - $ref: '#/components/schemas/FriendRelationship'
+            - type: 'null'
+        created: { type: boolean }
+        reason: { type: string }
+    FriendInviteAcceptResponse:
+      type: object
+      required: [accepted, alreadyResponded]
+      properties:
+        invite: { $ref: '#/components/schemas/FriendInvite' }
+        relationship:
+          anyOf:
+            - $ref: '#/components/schemas/FriendRelationship'
+            - type: 'null'
+        accepted: { type: boolean }
+        alreadyResponded: { type: boolean }
+    RemoveFriendResponse:
+      type: object
+      required: [relationship, removed]
+      properties:
+        relationship: { $ref: '#/components/schemas/FriendRelationship' }
+        removed: { type: boolean }
+    RewardCatalogItem:
+      type: object
+      required: [key, type, title]
+      properties:
+        key: { type: string }
+        type: { type: string }
+        title: { type: string }
+        description: { type: string, nullable: true }
+        multiplier: { type: number, nullable: true }
+        durationSeconds: { type: integer, nullable: true }
+        quantity: { type: integer, nullable: true }
+    RewardCurrencyBalance:
+      type: object
+      required: [currencyKey, balance]
+      properties:
+        currencyKey: { type: string }
+        balance: { type: integer }
+    RewardShopItem:
+      type: object
+      required: [rewardKey, rewardType, title, priceCurrency, priceAmount, available, active, affordable, sortOrder, purchasedToday, currentInventoryQuantity]
+      properties:
+        rewardKey: { type: string }
+        rewardType: { type: string }
+        title: { type: string }
+        description: { type: string, nullable: true }
+        priceCurrency: { type: string }
+        priceAmount: { type: integer }
+        available: { type: boolean }
+        active: { type: boolean }
+        affordable: { type: boolean }
+        dailyPurchaseLimit: { type: integer, nullable: true }
+        inventoryLimit: { type: integer, nullable: true }
+        startsAt: { type: string, nullable: true }
+        endsAt: { type: string, nullable: true }
+        sortOrder: { type: integer }
+        purchasedToday: { type: integer }
+        remainingDailyPurchases: { type: integer, nullable: true }
+        currentInventoryQuantity: { type: integer }
+        remainingInventory: { type: integer, nullable: true }
+    RewardShopResponse:
+      type: object
+      required: [items, balances]
+      properties:
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/RewardShopItem' }
+        balances:
+          type: array
+          items: { $ref: '#/components/schemas/RewardCurrencyBalance' }
+    RewardShopPolicyItem:
+      type: object
+      required: [rewardKey, rewardType, title, priceCurrency, priceAmount, available, sortOrder, createdAt, updatedAt]
+      properties:
+        rewardKey: { type: string }
+        rewardType: { type: string }
+        title: { type: string }
+        description: { type: string, nullable: true }
+        priceCurrency: { type: string }
+        priceAmount: { type: integer }
+        available: { type: boolean }
+        dailyPurchaseLimit: { type: integer, nullable: true }
+        inventoryLimit: { type: integer, nullable: true }
+        startsAt: { type: string, nullable: true }
+        endsAt: { type: string, nullable: true }
+        sortOrder: { type: integer }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+        updatedBy: { type: string, nullable: true }
+    RewardShopAdminResponse:
+      type: object
+      required: [items, count, catalog]
+      properties:
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/RewardShopPolicyItem' }
+        count: { type: integer }
+        catalog:
+          type: array
+          items: { $ref: '#/components/schemas/RewardCatalogItem' }
+    RewardShopItemUpdateRequest:
+      type: object
+      required: [priceCurrency, priceAmount, available, sortOrder]
+      properties:
+        priceCurrency: { type: string, default: gems }
+        priceAmount: { type: integer, minimum: 0 }
+        available: { type: boolean }
+        dailyPurchaseLimit: { type: integer, nullable: true, minimum: 0 }
+        inventoryLimit: { type: integer, nullable: true, minimum: 0 }
+        startsAt: { type: string, nullable: true }
+        endsAt: { type: string, nullable: true }
+        sortOrder: { type: integer, minimum: 0 }
+    RewardShopItemUpdateResponse:
+      type: object
+      required: [item, updated]
+      properties:
+        item: { $ref: '#/components/schemas/RewardShopPolicyItem' }
+        updated: { type: boolean }
+    RewardInventoryItem:
+      type: object
+      required: [id, learnerId, rewardKey, rewardType, title, quantity, metadata, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        rewardKey: { type: string }
+        rewardType: { type: string }
+        title: { type: string }
+        description: { type: string, nullable: true }
+        quantity: { type: integer }
+        metadata:
+          type: object
+          additionalProperties: true
+        createdAt: { type: string }
+        updatedAt: { type: string }
+    ActiveXpBoost:
+      type: object
+      required: [id, learnerId, rewardKey, multiplier, startedAt, expiresAt, source, metadata]
+      properties:
+        id: { type: string }
+        learnerId: { type: string }
+        rewardKey: { type: string }
+        multiplier: { type: number }
+        startedAt: { type: string }
+        expiresAt: { type: string }
+        source: { type: string }
+        metadata:
+          type: object
+          additionalProperties: true
+    RewardInventorySummary:
+      type: object
+      required: [items, activeXpBoosts, catalog, balances]
+      properties:
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/RewardInventoryItem' }
+        activeXpBoosts:
+          type: array
+          items: { $ref: '#/components/schemas/ActiveXpBoost' }
+        catalog:
+          type: array
+          items: { $ref: '#/components/schemas/RewardCatalogItem' }
+        balances:
+          type: array
+          items: { $ref: '#/components/schemas/RewardCurrencyBalance' }
+    RewardPurchaseResponse:
+      type: object
+      required: [purchased, reason, shop]
+      properties:
+        purchased: { type: boolean }
+        reason: { type: string }
+        inventoryItem:
+          anyOf:
+            - $ref: '#/components/schemas/RewardInventoryItem'
+            - type: 'null'
+        shop: { $ref: '#/components/schemas/RewardShopResponse' }
+    FriendQuest:
+      type: object
+      required: [id, key, title, learnerId, partnerLearnerId, weekKey, weekStart, weekEnd, targetXp, learnerXp, partnerXp, combinedXp, progress, progressRatio, completed, claimed, reward, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        key: { type: string }
+        title: { type: string }
+        learnerId: { type: string }
+        partnerLearnerId: { type: string }
+        weekKey: { type: string }
+        weekStart: { type: string }
+        weekEnd: { type: string }
+        targetXp: { type: integer }
+        learnerXp: { type: integer }
+        partnerXp: { type: integer }
+        combinedXp: { type: integer }
+        progress: { type: integer }
+        progressRatio: { type: number }
+        completed: { type: boolean }
+        claimed: { type: boolean }
+        claimedAt: { type: string, nullable: true }
+        reward: { $ref: '#/components/schemas/RewardCatalogItem' }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+    FriendQuestsResponse:
+      type: object
+      required: [friendQuests, suggestedPartnerLearnerId, weekStart, weekEnd]
+      properties:
+        friendQuests:
+          type: array
+          items: { $ref: '#/components/schemas/FriendQuest' }
+        suggestedPartnerLearnerId: { type: string }
+        weekStart: { type: string }
+        weekEnd: { type: string }
+    FriendQuestClaimResponse:
+      type: object
+      required: [quest, claimed, alreadyClaimed]
+      properties:
+        quest: { $ref: '#/components/schemas/FriendQuest' }
+        rewardItem:
+          anyOf:
+            - $ref: '#/components/schemas/RewardInventoryItem'
+            - type: 'null'
+        claimed: { type: boolean }
+        alreadyClaimed: { type: boolean }
+    ActivateXpBoostResponse:
+      type: object
+      required: [activeBoost, inventory, activated]
+      properties:
+        activeBoost:
+          anyOf:
+            - $ref: '#/components/schemas/ActiveXpBoost'
+            - type: 'null'
+        inventory: { $ref: '#/components/schemas/RewardInventorySummary' }
+        activated: { type: boolean }
+    GamificationSummary:
+      type: object
+      required: [xp, streak, dailyQuests, friends, friendQuests, rewardInventory, activeXpBoosts, weeklyLeaderboard, league, achievements, xpAbuseFlags]
+      properties:
+        xp: { $ref: '#/components/schemas/XpSummary' }
+        streak: { $ref: '#/components/schemas/StreakSummary' }
+        dailyQuests:
+          type: array
+          items: { $ref: '#/components/schemas/DailyQuest' }
+        friends: { $ref: '#/components/schemas/FriendsSummary' }
+        friendQuests:
+          type: array
+          items: { $ref: '#/components/schemas/FriendQuest' }
+        rewardInventory: { $ref: '#/components/schemas/RewardInventorySummary' }
+        activeXpBoosts:
+          type: array
+          items: { $ref: '#/components/schemas/ActiveXpBoost' }
+        weeklyLeaderboard: { $ref: '#/components/schemas/WeeklyLeaderboard' }
+        league: { $ref: '#/components/schemas/LeagueStatus' }
+        achievements: { $ref: '#/components/schemas/AchievementsSummary' }
+        xpAbuseFlags:
+          type: array
+          items: { $ref: '#/components/schemas/XpAbuseFlag' }
+    Entitlement:
+      type: object
+      properties:
+        plan: { type: string, enum: [master_sandbox, free, basic, plus, pro] }
+        voiceMinutesPerMonth: { oneOf: [{type: integer}, {type: string}] }
+        maxPersonas: { oneOf: [{type: integer}, {type: string}] }
+        customPersona: { type: boolean }
+        reviewCardsLimit: { oneOf: [{type: integer}, {type: string}] }
+        premiumVoices: { type: boolean }
+    AnalyticsEvent:
+      type: object
+      required: [eventName]
+      properties:
+        eventName: { type: string }
+        userId: { type: string }
+        sessionId: { type: string }
+        payload: { type: object, additionalProperties: true }
+    LearnerProfile:
+      type: object
+      properties:
+        learnerId: { type: string }
+        nativeLanguage: { type: string }
+        targetLanguage: { type: string }
+        level: { type: string }
+        jlptLevel: { type: string }
+        goals:
+          type: array
+          items: { type: string }
+        weakTags:
+          type: array
+          items: { type: string }
+        preferredPersonaId: { type: string }
+    ProfileRequest:
+      type: object
+      properties:
+        nativeLanguage: { type: string }
+        targetLanguage: { type: string }
+        level: { type: string }
+        jlptLevel: { type: string }
+        goals:
+          type: array
+          items: { type: string }
+        weakTags:
+          type: array
+          items: { type: string }
+        preferredPersonaId: { type: string }
+    RecommendationsResponse:
+      type: object
+      properties:
+        profile: { $ref: '#/components/schemas/LearnerProfile' }
+        progress: { $ref: '#/components/schemas/TodayProgress' }
+        dueReviewCards:
+          type: array
+          items: { $ref: '#/components/schemas/ReviewCard' }
+        recommendedPracticeRooms:
+          type: array
+          items:
+            type: object
+            properties:
+              score: { type: number }
+              practiceRoom: { $ref: '#/components/schemas/PracticeRoom' }
+              reason: { type: string }
+        nextBestAction: { type: string }
+        signalSummary: { $ref: '#/components/schemas/LearnerSignalSummary' }
+        memorySummary: { $ref: '#/components/schemas/MemorySummary' }
+    MemorySummary:
+      type: object
+      properties:
+        cardCount: { type: integer }
+        reviewedCardCount: { type: integer }
+        newCardCount: { type: integer }
+        averageRecallProbability: { type: number, nullable: true }
+        atRiskCards:
+          type: array
+          items: { $ref: '#/components/schemas/ReviewCard' }
+        tagMastery:
+          type: array
+          items: { $ref: '#/components/schemas/TagMemoryMastery' }
+        pressureTags:
+          type: array
+          items: { type: string }
+        model: { type: string }
+    TagMemoryMastery:
+      type: object
+      properties:
+        tag: { type: string }
+        cardCount: { type: integer }
+        averageRecallProbability: { type: number }
+        atRiskCount: { type: integer }
+        lapses: { type: integer }
+        masteryState: { type: string, enum: [new, fragile, developing, stable] }
+    LearnerSignalSummary:
+      type: object
+      properties:
+        weakTags:
+          type: array
+          items:
+            type: object
+            properties:
+              tag: { type: string }
+              count: { type: integer }
+        correctionCategories:
+          type: array
+          items:
+            type: object
+            properties:
+              category: { type: string }
+              count: { type: integer }
+        lapseTags:
+          type: array
+          items:
+            type: object
+            properties:
+              tag: { type: string }
+              count: { type: integer }
+        recentPracticeRoomIds:
+          type: array
+          items: { type: string }
+        completedPracticeRoomIdsToday:
+          type: array
+          items: { type: string }
+        pressureTags:
+          type: array
+          items: { type: string }
+    PronunciationScoreRequest:
+      type: object
+      required: [expectedText, actualText]
+      properties:
+        expectedText: { type: string }
+        actualText: { type: string }
+        audioBase64: { type: string }
+        language: { type: string, enum: [ja, ko, en] }
+    PronunciationScore:
+      type: object
+      properties:
+        provider: { type: string }
+        expectedText: { type: string }
+        actualText: { type: string }
+        score: { type: integer }
+        rating: { type: string }
+        scoringMode: { type: string }
+        acousticEvidencePresent: { type: boolean }
+        feedbackKo: { type: string }
+    AnkiCsvExport:
+      type: object
+      properties:
+        format: { type: string, enum: [csv] }
+        filename: { type: string }
+        content: { type: string }
+    AnkiApkgExport:
+      type: object
+      properties:
+        format: { type: string, enum: [apkg] }
+        filename: { type: string }
+        contentBase64: { type: string }
+        noteCount: { type: integer }
+    AnkiConnectExportRequest:
+      type: object
+      properties:
+        deckName: { type: string }
+        modelName: { type: string }
+        apply: { type: boolean }
+        ankiConnectUrl: { type: string }
+    GrammarPoint:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string }
+        level: { type: string }
+        title: { type: string }
+        pattern: { type: string }
+        meaningKo: { type: string }
+        exampleJa: { type: string }
+        exampleKo: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+    KoreanMistakePattern:
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string }
+        category: { type: string }
+        wrongJa: { type: string }
+        betterJa: { type: string }
+        explanationKo: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+    UsageSummary:
+      type: object
+      properties:
+        llmInputTokens: { type: integer }
+        llmOutputTokens: { type: integer }
+        sttSeconds: { type: number }
+        ttsCharacters: { type: integer }
+        ttsSeconds: { type: number }
+        ttsCacheHits: { type: integer }
+        usageRecords: { type: integer }
+        ttsCacheEntries: { type: integer }
+        estimatedMode: { type: string }

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "dialogue_bank_story_v1",
+  "personaId": "yui",
+  "packVersion": "v1",
+  "scenarios": [
+    {
+      "scenarioId": "yui_greetings_intro_n5",
+      "personaId": "yui",
+      "packVersion": "v1",
+      "topicId": "greetings_intro",
+      "title": "인사·자기소개",
+      "level": "N5",
+      "nodes": [
+        {
+          "nodeId": "yui_fx_node_01",
+          "assistantLineId": "yui_fx_a01",
+          "assistantText": "こんにちは！今日は元気だった？",
+          "assistantKo": "안녕! 오늘 잘 지냈어?",
+          "choices": [
+            { "lineId": "yui_fx_u01a", "text": "うん、元気だよ", "ko": "응, 잘 지냈어", "nextNodeId": "yui_fx_node_02" },
+            { "lineId": "yui_fx_u01b", "text": "ちょっと疲れたかな", "ko": "조금 피곤한가", "nextNodeId": "yui_fx_node_02" }
+          ]
+        },
+        {
+          "nodeId": "yui_fx_node_02",
+          "assistantLineId": "yui_fx_a02",
+          "assistantText": "そっか。名前を教えてくれる？",
+          "assistantKo": "그렇구나. 이름을 알려줄래?",
+          "choices": [
+            { "lineId": "yui_fx_u02a", "text": "私はミンです", "ko": "저는 민입니다", "nextNodeId": "yui_fx_node_03" },
+            { "lineId": "yui_fx_u02b", "text": "ミンといいます", "ko": "민이라고 합니다", "nextNodeId": "yui_fx_node_03" }
+          ]
+        },
+        {
+          "nodeId": "yui_fx_node_03",
+          "assistantLineId": "yui_fx_a03",
+          "assistantText": "また話せて嬉しいな。またね！",
+          "assistantKo": "또 얘기해서 기뻐. 또 봐!",
+          "choices": []
+        }
+      ]
+    }
+  ]
+}

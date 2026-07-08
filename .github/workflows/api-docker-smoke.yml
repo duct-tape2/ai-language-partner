@@ -1,0 +1,58 @@
+name: API Docker Smoke
+
+on:
+  pull_request:
+    paths:
+      - "apps/api/**"
+      - ".github/workflows/api-docker-smoke.yml"
+  workflow_dispatch:
+
+jobs:
+  api-docker-smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    env:
+      AI_LANGUAGE_PARTNER_DOCKER_SMOKE_REQUIRED: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install verifier dependencies
+        run: python -m pip install pyyaml
+
+      - name: Run required Docker smoke
+        run: |
+          set -o pipefail
+          python scripts/verify_docker_smoke.py | tee docker_smoke_result.json
+
+      - name: Assert required smoke evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path("docker_smoke_result.json").read_text(encoding="utf-8"))
+          required = {
+              "passed": True,
+              "runtimeSmokeRequired": True,
+              "runtimeEvidenceComplete": True,
+          }
+          for key, expected in required.items():
+              actual = payload.get(key)
+              if actual is not expected:
+                  raise SystemExit(f"{key} expected {expected!r}, got {actual!r}")
+
+          checks = payload.get("runtimeChecks", {})
+          for check_id in ["container_runtime_available", "docker_python_multipart_import"]:
+              status = checks.get(check_id, {}).get("status")
+              if status != "passed":
+                  raise SystemExit(f"{check_id} expected passed, got {status!r}")
+          PY

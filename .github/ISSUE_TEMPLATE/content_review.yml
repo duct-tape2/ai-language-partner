@@ -1,0 +1,25 @@
+name: Language/content review
+description: Review Japanese/Korean learner content, dialogue, or docs.
+title: "content: "
+labels: ["content", "language-review", "help wanted"]
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Review scope
+      description: Which pack, lesson, screen, or document needs review?
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Review criteria
+      value: |
+        - Natural Japanese
+        - Korean explanation clarity
+        - Beginner-safe wording
+        - No cultural stereotyping
+        - No generated content without review notes
+    validations:
+      required: true
+

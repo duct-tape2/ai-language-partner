@@ -1,0 +1,12 @@
+[project]
+name = "ai-language-partner-api"
+version = "0.1.0"
+description = "Backend API for AI Language Partner Mobile"
+requires-python = ">=3.9"
+dependencies = ["fastapi", "uvicorn[standard]", "pydantic", "genanki"]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "PyYAML"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

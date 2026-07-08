@@ -1,0 +1,754 @@
+{
+  "schemaVersion": "dialogue_bank_manifest_v1",
+  "personaId": "ren",
+  "packVersion": "v3",
+  "generatedAt": "2026-07-03T09:24:42Z",
+  "runtimeLlmCalls": false,
+  "ttsProvider": "aivis_speech_engine",
+  "voiceUsed": "aivis_fumifumi_ノーマル_45",
+  "topics": [
+    "food_order",
+    "greetings_intro",
+    "hobbies",
+    "today",
+    "weather_seasons"
+  ],
+  "levels": [
+    "N5",
+    "N4"
+  ],
+  "scenarioCount": 10,
+  "lineCount": 75,
+  "audioCount": 75,
+  "variantCount": 960,
+  "audio": [
+    {
+      "lineId": "ren_greetings_intro_n5_a01",
+      "path": "audio/ren_greetings_intro_n5_a01.wav",
+      "category": "dialogue",
+      "text": "まずは自然にあいさつしましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a02",
+      "path": "audio/ren_greetings_intro_n5_a02.wav",
+      "category": "dialogue",
+      "text": "名前を短く言ってみましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a03",
+      "path": "audio/ren_greetings_intro_n5_a03.wav",
+      "category": "dialogue",
+      "text": "出身も一言で言えます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a04",
+      "path": "audio/ren_greetings_intro_n5_a04.wav",
+      "category": "dialogue",
+      "text": "勉強していることを伝えましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a05",
+      "path": "audio/ren_greetings_intro_n5_a05.wav",
+      "category": "dialogue",
+      "text": "相手に会えてうれしい気持ちを足します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a06",
+      "path": "audio/ren_greetings_intro_n5_a06.wav",
+      "category": "dialogue",
+      "text": "最後はやわらかく締めましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a01",
+      "path": "audio/ren_greetings_intro_n4_a01.wav",
+      "category": "dialogue",
+      "text": "自己紹介に理由を一つ足しましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a02",
+      "path": "audio/ren_greetings_intro_n4_a02.wav",
+      "category": "dialogue",
+      "text": "最近の目標を言ってみましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a03",
+      "path": "audio/ren_greetings_intro_n4_a03.wav",
+      "category": "dialogue",
+      "text": "相手にも質問を返します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a04",
+      "path": "audio/ren_greetings_intro_n4_a04.wav",
+      "category": "dialogue",
+      "text": "少しくだけた言い方も試します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a05",
+      "path": "audio/ren_greetings_intro_n4_a05.wav",
+      "category": "dialogue",
+      "text": "会話を続けたい意思を出します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a06",
+      "path": "audio/ren_greetings_intro_n4_a06.wav",
+      "category": "dialogue",
+      "text": "丁寧に締めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n5_a01",
+      "path": "audio/ren_today_n5_a01.wav",
+      "category": "dialogue",
+      "text": "今日の気分から言ってみましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n5_a02",
+      "path": "audio/ren_today_n5_a02.wav",
+      "category": "dialogue",
+      "text": "したことを一つ足します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n5_a03",
+      "path": "audio/ren_today_n5_a03.wav",
+      "category": "dialogue",
+      "text": "場所も言えます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n5_a04",
+      "path": "audio/ren_today_n5_a04.wav",
+      "category": "dialogue",
+      "text": "人と会ったかを話します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n5_a05",
+      "path": "audio/ren_today_n5_a05.wav",
+      "category": "dialogue",
+      "text": "今の状態を短く言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n5_a06",
+      "path": "audio/ren_today_n5_a06.wav",
+      "category": "dialogue",
+      "text": "明日の予定で締めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n4_a01",
+      "path": "audio/ren_today_n4_a01.wav",
+      "category": "dialogue",
+      "text": "理由をつけて一文にしましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n4_a02",
+      "path": "audio/ren_today_n4_a02.wav",
+      "category": "dialogue",
+      "text": "時間の流れを入れます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n4_a03",
+      "path": "audio/ren_today_n4_a03.wav",
+      "category": "dialogue",
+      "text": "気持ちをもう少し自然にします。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n4_a04",
+      "path": "audio/ren_today_n4_a04.wav",
+      "category": "dialogue",
+      "text": "相手に聞き返します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n4_a05",
+      "path": "audio/ren_today_n4_a05.wav",
+      "category": "dialogue",
+      "text": "次の行動を言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_today_n4_a06",
+      "path": "audio/ren_today_n4_a06.wav",
+      "category": "dialogue",
+      "text": "自然な締めの一言です。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n5_a01",
+      "path": "audio/ren_food_order_n5_a01.wav",
+      "category": "dialogue",
+      "text": "店員さんに注文してみましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n5_a02",
+      "path": "audio/ren_food_order_n5_a02.wav",
+      "category": "dialogue",
+      "text": "飲み物も頼めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n5_a03",
+      "path": "audio/ren_food_order_n5_a03.wav",
+      "category": "dialogue",
+      "text": "数を言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n5_a04",
+      "path": "audio/ren_food_order_n5_a04.wav",
+      "category": "dialogue",
+      "text": "苦手な味を伝えます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n5_a05",
+      "path": "audio/ren_food_order_n5_a05.wav",
+      "category": "dialogue",
+      "text": "おすすめを聞きます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n5_a06",
+      "path": "audio/ren_food_order_n5_a06.wav",
+      "category": "dialogue",
+      "text": "会計で締めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n4_a01",
+      "path": "audio/ren_food_order_n4_a01.wav",
+      "category": "dialogue",
+      "text": "丁寧に注文を始めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n4_a02",
+      "path": "audio/ren_food_order_n4_a02.wav",
+      "category": "dialogue",
+      "text": "条件をつけます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n4_a03",
+      "path": "audio/ren_food_order_n4_a03.wav",
+      "category": "dialogue",
+      "text": "アレルギーを伝えます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n4_a04",
+      "path": "audio/ren_food_order_n4_a04.wav",
+      "category": "dialogue",
+      "text": "待ち時間を聞きます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n4_a05",
+      "path": "audio/ren_food_order_n4_a05.wav",
+      "category": "dialogue",
+      "text": "味の感想を言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_food_order_n4_a06",
+      "path": "audio/ren_food_order_n4_a06.wav",
+      "category": "dialogue",
+      "text": "持ち帰りを頼みます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a01",
+      "path": "audio/ren_hobbies_n5_a01.wav",
+      "category": "dialogue",
+      "text": "好きなことを言ってみましょう。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a02",
+      "path": "audio/ren_hobbies_n5_a02.wav",
+      "category": "dialogue",
+      "text": "よくすることを言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a03",
+      "path": "audio/ren_hobbies_n5_a03.wav",
+      "category": "dialogue",
+      "text": "週末の行動です。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a04",
+      "path": "audio/ren_hobbies_n5_a04.wav",
+      "category": "dialogue",
+      "text": "頻度を足します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a05",
+      "path": "audio/ren_hobbies_n5_a05.wav",
+      "category": "dialogue",
+      "text": "相手にも聞きます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a06",
+      "path": "audio/ren_hobbies_n5_a06.wav",
+      "category": "dialogue",
+      "text": "一緒にする提案です。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a01",
+      "path": "audio/ren_hobbies_n4_a01.wav",
+      "category": "dialogue",
+      "text": "理由をつけて話します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a02",
+      "path": "audio/ren_hobbies_n4_a02.wav",
+      "category": "dialogue",
+      "text": "最近はまっていることです。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a03",
+      "path": "audio/ren_hobbies_n4_a03.wav",
+      "category": "dialogue",
+      "text": "経験を言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a04",
+      "path": "audio/ren_hobbies_n4_a04.wav",
+      "category": "dialogue",
+      "text": "好みを比べます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a05",
+      "path": "audio/ren_hobbies_n4_a05.wav",
+      "category": "dialogue",
+      "text": "おすすめを求めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a06",
+      "path": "audio/ren_hobbies_n4_a06.wav",
+      "category": "dialogue",
+      "text": "次の約束につなげます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a01",
+      "path": "audio/ren_weather_seasons_n5_a01.wav",
+      "category": "dialogue",
+      "text": "今日の天気を言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a02",
+      "path": "audio/ren_weather_seasons_n5_a02.wav",
+      "category": "dialogue",
+      "text": "雨や雪も言えます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a03",
+      "path": "audio/ren_weather_seasons_n5_a03.wav",
+      "category": "dialogue",
+      "text": "好きな季節です。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a04",
+      "path": "audio/ren_weather_seasons_n5_a04.wav",
+      "category": "dialogue",
+      "text": "苦手な季節です。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a05",
+      "path": "audio/ren_weather_seasons_n5_a05.wav",
+      "category": "dialogue",
+      "text": "服装を話します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a06",
+      "path": "audio/ren_weather_seasons_n5_a06.wav",
+      "category": "dialogue",
+      "text": "明日の天気を聞きます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a01",
+      "path": "audio/ren_weather_seasons_n4_a01.wav",
+      "category": "dialogue",
+      "text": "体感を自然に言います。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a02",
+      "path": "audio/ren_weather_seasons_n4_a02.wav",
+      "category": "dialogue",
+      "text": "予定との関係を話します。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a03",
+      "path": "audio/ren_weather_seasons_n4_a03.wav",
+      "category": "dialogue",
+      "text": "季節の好みを詳しくします。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a04",
+      "path": "audio/ren_weather_seasons_n4_a04.wav",
+      "category": "dialogue",
+      "text": "注意を伝えます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a05",
+      "path": "audio/ren_weather_seasons_n4_a05.wav",
+      "category": "dialogue",
+      "text": "相手の地域を聞きます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a06",
+      "path": "audio/ren_weather_seasons_n4_a06.wav",
+      "category": "dialogue",
+      "text": "自然な感想で締めます。 いい感じに決めよう。",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_001",
+      "text": "お、いいね。",
+      "path": "audio/ren_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_002",
+      "text": "今のノリ悪くない。",
+      "path": "audio/ren_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_003",
+      "text": "そのまま行こう。",
+      "path": "audio/ren_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_004",
+      "text": "ちょい待ち。",
+      "path": "audio/ren_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_005",
+      "text": "聞こえてるぞ。",
+      "path": "audio/ren_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_001",
+      "text": "今の、こっちの意味で合ってる？",
+      "path": "audio/ren_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_002",
+      "text": "もう一回いっとく？",
+      "path": "audio/ren_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_003",
+      "text": "この返事を狙った感じ？",
+      "path": "audio/ren_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_004",
+      "text": "近いから確認な。",
+      "path": "audio/ren_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_005",
+      "text": "どっちで返したい？",
+      "path": "audio/ren_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_001",
+      "text": "悪い、今のは拾えなかった。",
+      "path": "audio/ren_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_002",
+      "text": "候補に寄せてもう一回。",
+      "path": "audio/ren_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_003",
+      "text": "短く言い直してみ。",
+      "path": "audio/ren_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_004",
+      "text": "もう少しゆっくり頼む。",
+      "path": "audio/ren_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_005",
+      "text": "いったんこの場面のセリフに戻ろう。",
+      "path": "audio/ren_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    }
+  ],
+  "filler": [
+    {
+      "lineId": "ren_filler_001",
+      "text": "お、いいね。",
+      "path": "audio/ren_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_002",
+      "text": "今のノリ悪くない。",
+      "path": "audio/ren_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_003",
+      "text": "そのまま行こう。",
+      "path": "audio/ren_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_004",
+      "text": "ちょい待ち。",
+      "path": "audio/ren_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_filler_005",
+      "text": "聞こえてるぞ。",
+      "path": "audio/ren_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    }
+  ],
+  "confirm": [
+    {
+      "lineId": "ren_confirm_001",
+      "text": "今の、こっちの意味で合ってる？",
+      "path": "audio/ren_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_002",
+      "text": "もう一回いっとく？",
+      "path": "audio/ren_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_003",
+      "text": "この返事を狙った感じ？",
+      "path": "audio/ren_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_004",
+      "text": "近いから確認な。",
+      "path": "audio/ren_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_confirm_005",
+      "text": "どっちで返したい？",
+      "path": "audio/ren_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "aivis_fumifumi_ノーマル_45",
+      "engine": "aivis_speech"
+    }
+  ],
+  "fallback": [
+    {
+      "lineId": "ren_fallback_001",
+      "text": "悪い、今のは拾えなかった。",
+      "path": "audio/ren_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_002",
+      "text": "候補に寄せてもう一回。",
+      "path": "audio/ren_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_003",
+      "text": "短く言い直してみ。",
+      "path": "audio/ren_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_004",
+      "text": "もう少しゆっくり頼む。",
+      "path": "audio/ren_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    },
+    {
+      "lineId": "ren_fallback_005",
+      "text": "いったんこの場面のセリフに戻ろう。",
+      "path": "audio/ren_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "aivis_fumifumi_ノーマル_46",
+      "engine": "aivis_speech"
+    }
+  ],
+  "engineBaseUrl": "http://127.0.0.1:10101",
+  "sourcePackVersion": "v2"
+}

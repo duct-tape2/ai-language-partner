@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      AI_LANGUAGE_PARTNER_DB_PATH: /data/language_partner.sqlite3
+      AI_LANGUAGE_PARTNER_LLM_PROVIDER: mock
+      AI_LANGUAGE_PARTNER_TTS_PROVIDER: mock
+      AI_LANGUAGE_PARTNER_STT_PROVIDER: mock
+    volumes:
+      - ai_language_partner_api_data:/data
+
+volumes:
+  ai_language_partner_api_data:

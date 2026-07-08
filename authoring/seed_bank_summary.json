@@ -1,0 +1,25 @@
+{
+  "personaPacks": {
+    "yui": {
+      "scenarios": 10,
+      "variants": 960,
+      "audio": 75,
+      "packBytes": 1484792
+    },
+    "haruka": {
+      "scenarios": 10,
+      "variants": 960,
+      "audio": 75,
+      "packBytes": 1688870
+    },
+    "ren": {
+      "scenarios": 10,
+      "variants": 960,
+      "audio": 75,
+      "packBytes": 1473276
+    }
+  },
+  "scenarioCount": 30,
+  "variantCount": 2880,
+  "audioCount": 225
+}

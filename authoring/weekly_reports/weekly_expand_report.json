@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "unmatchedRows": 50,
+  "clusterCount": 1,
+  "clusters": [
+    {
+      "personaId": "yui",
+      "nodeId": "yui_today_n5_node_01",
+      "normalized": "今日はちょっと疲れた",
+      "count": 50,
+      "examples": [
+        "今日はちょっと疲れた"
+      ],
+      "recommendedAction": "add_variant",
+      "approved": false,
+      "targetLineId": ""
+    }
+  ]
+}

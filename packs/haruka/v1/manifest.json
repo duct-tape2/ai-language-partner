@@ -1,0 +1,542 @@
+{
+  "schemaVersion": "dialogue_bank_manifest_v1",
+  "personaId": "haruka",
+  "packVersion": "v1",
+  "generatedAt": "2026-07-02T07:05:08Z",
+  "runtimeLlmCalls": false,
+  "ttsProvider": "local_mock_prebuilt",
+  "voiceUsed": "voicevox_hau_normal",
+  "topics": [
+    "food_order",
+    "greetings_intro",
+    "hobbies",
+    "today",
+    "weather_seasons"
+  ],
+  "levels": [
+    "N5",
+    "N4"
+  ],
+  "scenarioCount": 10,
+  "lineCount": 75,
+  "audioCount": 75,
+  "variantCount": 960,
+  "audio": [
+    {
+      "lineId": "haruka_greetings_intro_n5_a01",
+      "path": "audio/haruka_greetings_intro_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n5_a02",
+      "path": "audio/haruka_greetings_intro_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n5_a03",
+      "path": "audio/haruka_greetings_intro_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n5_a04",
+      "path": "audio/haruka_greetings_intro_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n5_a05",
+      "path": "audio/haruka_greetings_intro_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n5_a06",
+      "path": "audio/haruka_greetings_intro_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n4_a01",
+      "path": "audio/haruka_greetings_intro_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n4_a02",
+      "path": "audio/haruka_greetings_intro_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n4_a03",
+      "path": "audio/haruka_greetings_intro_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n4_a04",
+      "path": "audio/haruka_greetings_intro_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n4_a05",
+      "path": "audio/haruka_greetings_intro_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_greetings_intro_n4_a06",
+      "path": "audio/haruka_greetings_intro_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n5_a01",
+      "path": "audio/haruka_today_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n5_a02",
+      "path": "audio/haruka_today_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n5_a03",
+      "path": "audio/haruka_today_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n5_a04",
+      "path": "audio/haruka_today_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n5_a05",
+      "path": "audio/haruka_today_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n5_a06",
+      "path": "audio/haruka_today_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n4_a01",
+      "path": "audio/haruka_today_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n4_a02",
+      "path": "audio/haruka_today_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n4_a03",
+      "path": "audio/haruka_today_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n4_a04",
+      "path": "audio/haruka_today_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n4_a05",
+      "path": "audio/haruka_today_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_today_n4_a06",
+      "path": "audio/haruka_today_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n5_a01",
+      "path": "audio/haruka_food_order_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n5_a02",
+      "path": "audio/haruka_food_order_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n5_a03",
+      "path": "audio/haruka_food_order_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n5_a04",
+      "path": "audio/haruka_food_order_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n5_a05",
+      "path": "audio/haruka_food_order_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n5_a06",
+      "path": "audio/haruka_food_order_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n4_a01",
+      "path": "audio/haruka_food_order_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n4_a02",
+      "path": "audio/haruka_food_order_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n4_a03",
+      "path": "audio/haruka_food_order_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n4_a04",
+      "path": "audio/haruka_food_order_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n4_a05",
+      "path": "audio/haruka_food_order_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_food_order_n4_a06",
+      "path": "audio/haruka_food_order_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n5_a01",
+      "path": "audio/haruka_hobbies_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n5_a02",
+      "path": "audio/haruka_hobbies_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n5_a03",
+      "path": "audio/haruka_hobbies_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n5_a04",
+      "path": "audio/haruka_hobbies_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n5_a05",
+      "path": "audio/haruka_hobbies_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n5_a06",
+      "path": "audio/haruka_hobbies_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n4_a01",
+      "path": "audio/haruka_hobbies_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n4_a02",
+      "path": "audio/haruka_hobbies_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n4_a03",
+      "path": "audio/haruka_hobbies_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n4_a04",
+      "path": "audio/haruka_hobbies_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n4_a05",
+      "path": "audio/haruka_hobbies_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_hobbies_n4_a06",
+      "path": "audio/haruka_hobbies_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n5_a01",
+      "path": "audio/haruka_weather_seasons_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n5_a02",
+      "path": "audio/haruka_weather_seasons_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n5_a03",
+      "path": "audio/haruka_weather_seasons_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n5_a04",
+      "path": "audio/haruka_weather_seasons_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n5_a05",
+      "path": "audio/haruka_weather_seasons_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n5_a06",
+      "path": "audio/haruka_weather_seasons_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n4_a01",
+      "path": "audio/haruka_weather_seasons_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n4_a02",
+      "path": "audio/haruka_weather_seasons_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n4_a03",
+      "path": "audio/haruka_weather_seasons_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n4_a04",
+      "path": "audio/haruka_weather_seasons_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n4_a05",
+      "path": "audio/haruka_weather_seasons_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_weather_seasons_n4_a06",
+      "path": "audio/haruka_weather_seasons_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "haruka_filler_001",
+      "text": "はい、確認します。",
+      "path": "audio/haruka_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_002",
+      "text": "発音は落ち着いています。",
+      "path": "audio/haruka_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_003",
+      "text": "文の形はいいです。",
+      "path": "audio/haruka_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_004",
+      "text": "少し待ってください。",
+      "path": "audio/haruka_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_005",
+      "text": "聞き取れています。",
+      "path": "audio/haruka_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_confirm_001",
+      "text": "今の意図はこちらで合っていますか。",
+      "path": "audio/haruka_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_002",
+      "text": "もう一度、同じ内容で言えますか。",
+      "path": "audio/haruka_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_003",
+      "text": "この選択肢に近いでしょうか。",
+      "path": "audio/haruka_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_004",
+      "text": "意味は近いので確認します。",
+      "path": "audio/haruka_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_005",
+      "text": "どの表現を使いたいですか。",
+      "path": "audio/haruka_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_fallback_001",
+      "text": "すみません、現在の場面では判断できませんでした。",
+      "path": "audio/haruka_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_002",
+      "text": "候補文に近い形で言い直しましょう。",
+      "path": "audio/haruka_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_003",
+      "text": "短い文にしてもう一度お願いします。",
+      "path": "audio/haruka_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_004",
+      "text": "ゆっくり発話してください。",
+      "path": "audio/haruka_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_005",
+      "text": "この練習では場面内の表現に戻ります。",
+      "path": "audio/haruka_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    }
+  ],
+  "filler": [
+    {
+      "lineId": "haruka_filler_001",
+      "text": "はい、確認します。",
+      "path": "audio/haruka_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_002",
+      "text": "発音は落ち着いています。",
+      "path": "audio/haruka_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_003",
+      "text": "文の形はいいです。",
+      "path": "audio/haruka_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_004",
+      "text": "少し待ってください。",
+      "path": "audio/haruka_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    },
+    {
+      "lineId": "haruka_filler_005",
+      "text": "聞き取れています。",
+      "path": "audio/haruka_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_hau_normal"
+    }
+  ],
+  "confirm": [
+    {
+      "lineId": "haruka_confirm_001",
+      "text": "今の意図はこちらで合っていますか。",
+      "path": "audio/haruka_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_002",
+      "text": "もう一度、同じ内容で言えますか。",
+      "path": "audio/haruka_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_003",
+      "text": "この選択肢に近いでしょうか。",
+      "path": "audio/haruka_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_004",
+      "text": "意味は近いので確認します。",
+      "path": "audio/haruka_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    },
+    {
+      "lineId": "haruka_confirm_005",
+      "text": "どの表現を使いたいですか。",
+      "path": "audio/haruka_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_hau_whisper"
+    }
+  ],
+  "fallback": [
+    {
+      "lineId": "haruka_fallback_001",
+      "text": "すみません、現在の場面では判断できませんでした。",
+      "path": "audio/haruka_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_002",
+      "text": "候補文に近い形で言い直しましょう。",
+      "path": "audio/haruka_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_003",
+      "text": "短い文にしてもう一度お願いします。",
+      "path": "audio/haruka_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_004",
+      "text": "ゆっくり発話してください。",
+      "path": "audio/haruka_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    },
+    {
+      "lineId": "haruka_fallback_005",
+      "text": "この練習では場面内の表現に戻ります。",
+      "path": "audio/haruka_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_nurserobo_normal"
+    }
+  ]
+}

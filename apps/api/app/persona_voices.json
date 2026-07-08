@@ -1,0 +1,106 @@
+{
+  "yui": {
+    "displayName": "유이",
+    "defaultVoiceId": "aivis_まお_ノーマル_1",
+    "emotions": {
+      "default": "aivis_まお_ノーマル_1",
+      "gentle": "aivis_まお_あまあま_10",
+      "happy": "aivis_まお_あまあま_11",
+      "excited": "aivis_まお_からかい_19",
+      "whisper": "aivis_まお_せつなめ_24",
+      "confirm": "aivis_まお_おちつき_13",
+      "fallback": "aivis_まお_ノーマル_2"
+    }
+  },
+  "haruka": {
+    "displayName": "하루카 센세",
+    "defaultVoiceId": "aivis_morioki_ノーマル_41",
+    "emotions": {
+      "default": "aivis_morioki_ノーマル_41",
+      "gentle": "aivis_morioki_ノーマル_42",
+      "happy": "aivis_morioki_ノーマル_43",
+      "excited": "aivis_morioki_ノーマル_43",
+      "whisper": "aivis_morioki_ノーマル_44",
+      "confirm": "aivis_morioki_ノーマル_41",
+      "fallback": "aivis_morioki_ノーマル_42"
+    }
+  },
+  "ren": {
+    "displayName": "렌 선배",
+    "defaultVoiceId": "aivis_fumifumi_ノーマル_45",
+    "emotions": {
+      "default": "aivis_fumifumi_ノーマル_45",
+      "gentle": "aivis_fumifumi_ノーマル_46",
+      "happy": "aivis_fumifumi_ノーマル_47",
+      "excited": "aivis_fumifumi_ノーマル_47",
+      "whisper": "aivis_fumifumi_ノーマル_48",
+      "confirm": "aivis_fumifumi_ノーマル_45",
+      "fallback": "aivis_fumifumi_ノーマル_46"
+    }
+  },
+  "akari": {
+    "displayName": "아카리",
+    "defaultVoiceId": "aivis_コハク_ノーマル_25",
+    "emotions": {
+      "default": "aivis_コハク_ノーマル_25",
+      "gentle": "aivis_コハク_あまあま_30",
+      "happy": "aivis_コハク_あまあま_31",
+      "excited": "aivis_コハク_あまあま_31",
+      "whisper": "aivis_コハク_せつなめ_36",
+      "confirm": "aivis_コハク_せつなめ_33",
+      "fallback": "aivis_コハク_ノーマル_26"
+    }
+  },
+  "takeshi": {
+    "displayName": "타케시",
+    "defaultVoiceId": "aivis_fumifumi_ノーマル_47",
+    "emotions": {
+      "default": "aivis_fumifumi_ノーマル_47",
+      "gentle": "aivis_fumifumi_ノーマル_46",
+      "happy": "aivis_fumifumi_ノーマル_47",
+      "excited": "aivis_fumifumi_ノーマル_47",
+      "whisper": "aivis_fumifumi_ノーマル_48",
+      "confirm": "aivis_fumifumi_ノーマル_45",
+      "fallback": "aivis_fumifumi_ノーマル_46"
+    }
+  },
+  "sachiko": {
+    "displayName": "사치코",
+    "defaultVoiceId": "aivis_morioki_ノーマル_42",
+    "emotions": {
+      "default": "aivis_morioki_ノーマル_42",
+      "gentle": "aivis_morioki_ノーマル_42",
+      "happy": "aivis_morioki_ノーマル_43",
+      "excited": "aivis_morioki_ノーマル_43",
+      "whisper": "aivis_morioki_ノーマル_44",
+      "confirm": "aivis_morioki_ノーマル_41",
+      "fallback": "aivis_morioki_ノーマル_42"
+    }
+  },
+  "kota": {
+    "displayName": "코타",
+    "defaultVoiceId": "aivis_fumifumi_ノーマル_48",
+    "emotions": {
+      "default": "aivis_fumifumi_ノーマル_48",
+      "gentle": "aivis_fumifumi_ノーマル_46",
+      "happy": "aivis_fumifumi_ノーマル_47",
+      "excited": "aivis_fumifumi_ノーマル_47",
+      "whisper": "aivis_fumifumi_ノーマル_48",
+      "confirm": "aivis_fumifumi_ノーマル_45",
+      "fallback": "aivis_fumifumi_ノーマル_46"
+    }
+  },
+  "shiro": {
+    "displayName": "시로",
+    "defaultVoiceId": "aivis_コハク_ノーマル_28",
+    "emotions": {
+      "default": "aivis_コハク_ノーマル_28",
+      "gentle": "aivis_コハク_あまあま_30",
+      "happy": "aivis_コハク_あまあま_31",
+      "excited": "aivis_コハク_あまあま_31",
+      "whisper": "aivis_コハク_せつなめ_36",
+      "confirm": "aivis_コハク_せつなめ_33",
+      "fallback": "aivis_コハク_ノーマル_26"
+    }
+  }
+}

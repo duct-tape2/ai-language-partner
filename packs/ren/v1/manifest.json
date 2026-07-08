@@ -1,0 +1,542 @@
+{
+  "schemaVersion": "dialogue_bank_manifest_v1",
+  "personaId": "ren",
+  "packVersion": "v1",
+  "generatedAt": "2026-07-02T07:05:09Z",
+  "runtimeLlmCalls": false,
+  "ttsProvider": "local_mock_prebuilt",
+  "voiceUsed": "voicevox_zundamon_normal",
+  "topics": [
+    "food_order",
+    "greetings_intro",
+    "hobbies",
+    "today",
+    "weather_seasons"
+  ],
+  "levels": [
+    "N5",
+    "N4"
+  ],
+  "scenarioCount": 10,
+  "lineCount": 75,
+  "audioCount": 75,
+  "variantCount": 960,
+  "audio": [
+    {
+      "lineId": "ren_greetings_intro_n5_a01",
+      "path": "audio/ren_greetings_intro_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a02",
+      "path": "audio/ren_greetings_intro_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a03",
+      "path": "audio/ren_greetings_intro_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a04",
+      "path": "audio/ren_greetings_intro_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a05",
+      "path": "audio/ren_greetings_intro_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n5_a06",
+      "path": "audio/ren_greetings_intro_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a01",
+      "path": "audio/ren_greetings_intro_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a02",
+      "path": "audio/ren_greetings_intro_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a03",
+      "path": "audio/ren_greetings_intro_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a04",
+      "path": "audio/ren_greetings_intro_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a05",
+      "path": "audio/ren_greetings_intro_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_greetings_intro_n4_a06",
+      "path": "audio/ren_greetings_intro_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n5_a01",
+      "path": "audio/ren_today_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n5_a02",
+      "path": "audio/ren_today_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n5_a03",
+      "path": "audio/ren_today_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n5_a04",
+      "path": "audio/ren_today_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n5_a05",
+      "path": "audio/ren_today_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n5_a06",
+      "path": "audio/ren_today_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n4_a01",
+      "path": "audio/ren_today_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n4_a02",
+      "path": "audio/ren_today_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n4_a03",
+      "path": "audio/ren_today_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n4_a04",
+      "path": "audio/ren_today_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n4_a05",
+      "path": "audio/ren_today_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_today_n4_a06",
+      "path": "audio/ren_today_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n5_a01",
+      "path": "audio/ren_food_order_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n5_a02",
+      "path": "audio/ren_food_order_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n5_a03",
+      "path": "audio/ren_food_order_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n5_a04",
+      "path": "audio/ren_food_order_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n5_a05",
+      "path": "audio/ren_food_order_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n5_a06",
+      "path": "audio/ren_food_order_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n4_a01",
+      "path": "audio/ren_food_order_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n4_a02",
+      "path": "audio/ren_food_order_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n4_a03",
+      "path": "audio/ren_food_order_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n4_a04",
+      "path": "audio/ren_food_order_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n4_a05",
+      "path": "audio/ren_food_order_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_food_order_n4_a06",
+      "path": "audio/ren_food_order_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a01",
+      "path": "audio/ren_hobbies_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a02",
+      "path": "audio/ren_hobbies_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a03",
+      "path": "audio/ren_hobbies_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a04",
+      "path": "audio/ren_hobbies_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a05",
+      "path": "audio/ren_hobbies_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n5_a06",
+      "path": "audio/ren_hobbies_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a01",
+      "path": "audio/ren_hobbies_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a02",
+      "path": "audio/ren_hobbies_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a03",
+      "path": "audio/ren_hobbies_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a04",
+      "path": "audio/ren_hobbies_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a05",
+      "path": "audio/ren_hobbies_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_hobbies_n4_a06",
+      "path": "audio/ren_hobbies_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a01",
+      "path": "audio/ren_weather_seasons_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a02",
+      "path": "audio/ren_weather_seasons_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a03",
+      "path": "audio/ren_weather_seasons_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a04",
+      "path": "audio/ren_weather_seasons_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a05",
+      "path": "audio/ren_weather_seasons_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n5_a06",
+      "path": "audio/ren_weather_seasons_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a01",
+      "path": "audio/ren_weather_seasons_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a02",
+      "path": "audio/ren_weather_seasons_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a03",
+      "path": "audio/ren_weather_seasons_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a04",
+      "path": "audio/ren_weather_seasons_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a05",
+      "path": "audio/ren_weather_seasons_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_weather_seasons_n4_a06",
+      "path": "audio/ren_weather_seasons_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "ren_filler_001",
+      "text": "お、いいね。",
+      "path": "audio/ren_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_002",
+      "text": "今のノリ悪くない。",
+      "path": "audio/ren_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_003",
+      "text": "そのまま行こう。",
+      "path": "audio/ren_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_004",
+      "text": "ちょい待ち。",
+      "path": "audio/ren_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_005",
+      "text": "聞こえてるぞ。",
+      "path": "audio/ren_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_confirm_001",
+      "text": "今の、こっちの意味で合ってる？",
+      "path": "audio/ren_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_002",
+      "text": "もう一回いっとく？",
+      "path": "audio/ren_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_003",
+      "text": "この返事を狙った感じ？",
+      "path": "audio/ren_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_004",
+      "text": "近いから確認な。",
+      "path": "audio/ren_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_005",
+      "text": "どっちで返したい？",
+      "path": "audio/ren_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_fallback_001",
+      "text": "悪い、今のは拾えなかった。",
+      "path": "audio/ren_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_002",
+      "text": "候補に寄せてもう一回。",
+      "path": "audio/ren_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_003",
+      "text": "短く言い直してみ。",
+      "path": "audio/ren_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_004",
+      "text": "もう少しゆっくり頼む。",
+      "path": "audio/ren_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_005",
+      "text": "いったんこの場面のセリフに戻ろう。",
+      "path": "audio/ren_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    }
+  ],
+  "filler": [
+    {
+      "lineId": "ren_filler_001",
+      "text": "お、いいね。",
+      "path": "audio/ren_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_002",
+      "text": "今のノリ悪くない。",
+      "path": "audio/ren_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_003",
+      "text": "そのまま行こう。",
+      "path": "audio/ren_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_004",
+      "text": "ちょい待ち。",
+      "path": "audio/ren_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_filler_005",
+      "text": "聞こえてるぞ。",
+      "path": "audio/ren_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_zundamon_normal"
+    }
+  ],
+  "confirm": [
+    {
+      "lineId": "ren_confirm_001",
+      "text": "今の、こっちの意味で合ってる？",
+      "path": "audio/ren_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_002",
+      "text": "もう一回いっとく？",
+      "path": "audio/ren_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_003",
+      "text": "この返事を狙った感じ？",
+      "path": "audio/ren_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_004",
+      "text": "近いから確認な。",
+      "path": "audio/ren_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    },
+    {
+      "lineId": "ren_confirm_005",
+      "text": "どっちで返したい？",
+      "path": "audio/ren_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_zundamon_whisper"
+    }
+  ],
+  "fallback": [
+    {
+      "lineId": "ren_fallback_001",
+      "text": "悪い、今のは拾えなかった。",
+      "path": "audio/ren_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_002",
+      "text": "候補に寄せてもう一回。",
+      "path": "audio/ren_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_003",
+      "text": "短く言い直してみ。",
+      "path": "audio/ren_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_004",
+      "text": "もう少しゆっくり頼む。",
+      "path": "audio/ren_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    },
+    {
+      "lineId": "ren_fallback_005",
+      "text": "いったんこの場面のセリフに戻ろう。",
+      "path": "audio/ren_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_zundamon_normal"
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "schemaVersion": "dialogue_bank_manifest_v1",
+  "personaId": "yui",
+  "packVersion": "v1",
+  "generatedAt": "2026-07-02T07:05:07Z",
+  "runtimeLlmCalls": false,
+  "ttsProvider": "local_mock_prebuilt",
+  "voiceUsed": "voicevox_metan_normal",
+  "topics": [
+    "food_order",
+    "greetings_intro",
+    "hobbies",
+    "today",
+    "weather_seasons"
+  ],
+  "levels": [
+    "N5",
+    "N4"
+  ],
+  "scenarioCount": 10,
+  "lineCount": 75,
+  "audioCount": 75,
+  "variantCount": 960,
+  "audio": [
+    {
+      "lineId": "yui_greetings_intro_n5_a01",
+      "path": "audio/yui_greetings_intro_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n5_a02",
+      "path": "audio/yui_greetings_intro_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n5_a03",
+      "path": "audio/yui_greetings_intro_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n5_a04",
+      "path": "audio/yui_greetings_intro_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n5_a05",
+      "path": "audio/yui_greetings_intro_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n5_a06",
+      "path": "audio/yui_greetings_intro_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n4_a01",
+      "path": "audio/yui_greetings_intro_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n4_a02",
+      "path": "audio/yui_greetings_intro_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n4_a03",
+      "path": "audio/yui_greetings_intro_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n4_a04",
+      "path": "audio/yui_greetings_intro_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n4_a05",
+      "path": "audio/yui_greetings_intro_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_greetings_intro_n4_a06",
+      "path": "audio/yui_greetings_intro_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n5_a01",
+      "path": "audio/yui_today_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n5_a02",
+      "path": "audio/yui_today_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n5_a03",
+      "path": "audio/yui_today_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n5_a04",
+      "path": "audio/yui_today_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n5_a05",
+      "path": "audio/yui_today_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n5_a06",
+      "path": "audio/yui_today_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n4_a01",
+      "path": "audio/yui_today_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n4_a02",
+      "path": "audio/yui_today_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n4_a03",
+      "path": "audio/yui_today_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n4_a04",
+      "path": "audio/yui_today_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n4_a05",
+      "path": "audio/yui_today_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_today_n4_a06",
+      "path": "audio/yui_today_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n5_a01",
+      "path": "audio/yui_food_order_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n5_a02",
+      "path": "audio/yui_food_order_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n5_a03",
+      "path": "audio/yui_food_order_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n5_a04",
+      "path": "audio/yui_food_order_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n5_a05",
+      "path": "audio/yui_food_order_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n5_a06",
+      "path": "audio/yui_food_order_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n4_a01",
+      "path": "audio/yui_food_order_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n4_a02",
+      "path": "audio/yui_food_order_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n4_a03",
+      "path": "audio/yui_food_order_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n4_a04",
+      "path": "audio/yui_food_order_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n4_a05",
+      "path": "audio/yui_food_order_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_food_order_n4_a06",
+      "path": "audio/yui_food_order_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n5_a01",
+      "path": "audio/yui_hobbies_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n5_a02",
+      "path": "audio/yui_hobbies_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n5_a03",
+      "path": "audio/yui_hobbies_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n5_a04",
+      "path": "audio/yui_hobbies_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n5_a05",
+      "path": "audio/yui_hobbies_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n5_a06",
+      "path": "audio/yui_hobbies_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n4_a01",
+      "path": "audio/yui_hobbies_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n4_a02",
+      "path": "audio/yui_hobbies_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n4_a03",
+      "path": "audio/yui_hobbies_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n4_a04",
+      "path": "audio/yui_hobbies_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n4_a05",
+      "path": "audio/yui_hobbies_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_hobbies_n4_a06",
+      "path": "audio/yui_hobbies_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n5_a01",
+      "path": "audio/yui_weather_seasons_n5_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n5_a02",
+      "path": "audio/yui_weather_seasons_n5_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n5_a03",
+      "path": "audio/yui_weather_seasons_n5_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n5_a04",
+      "path": "audio/yui_weather_seasons_n5_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n5_a05",
+      "path": "audio/yui_weather_seasons_n5_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n5_a06",
+      "path": "audio/yui_weather_seasons_n5_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n4_a01",
+      "path": "audio/yui_weather_seasons_n4_a01.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n4_a02",
+      "path": "audio/yui_weather_seasons_n4_a02.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n4_a03",
+      "path": "audio/yui_weather_seasons_n4_a03.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n4_a04",
+      "path": "audio/yui_weather_seasons_n4_a04.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n4_a05",
+      "path": "audio/yui_weather_seasons_n4_a05.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_weather_seasons_n4_a06",
+      "path": "audio/yui_weather_seasons_n4_a06.wav",
+      "category": "dialogue"
+    },
+    {
+      "lineId": "yui_filler_001",
+      "text": "うん、いい感じ。",
+      "path": "audio/yui_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_002",
+      "text": "その調子だよ。",
+      "path": "audio/yui_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_003",
+      "text": "今の自然だった。",
+      "path": "audio/yui_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_004",
+      "text": "ちょっと待ってね。",
+      "path": "audio/yui_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_005",
+      "text": "聞こえてるよ。",
+      "path": "audio/yui_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_confirm_001",
+      "text": "今のはこういう意味で合ってる？",
+      "path": "audio/yui_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_002",
+      "text": "もう一回だけ言ってみる？",
+      "path": "audio/yui_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_003",
+      "text": "この表現を選ぶ感じでいい？",
+      "path": "audio/yui_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_004",
+      "text": "近いよ、少し確認しよう。",
+      "path": "audio/yui_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_005",
+      "text": "どっちの意味か教えて。",
+      "path": "audio/yui_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_fallback_001",
+      "text": "ごめん、今の言い方は拾えなかった。",
+      "path": "audio/yui_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_002",
+      "text": "候補から近いものを選んでみて。",
+      "path": "audio/yui_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_003",
+      "text": "短く言い直してくれる？",
+      "path": "audio/yui_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_004",
+      "text": "もう少しゆっくりお願い。",
+      "path": "audio/yui_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_005",
+      "text": "今はこの場面の表現で練習しよう。",
+      "path": "audio/yui_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    }
+  ],
+  "filler": [
+    {
+      "lineId": "yui_filler_001",
+      "text": "うん、いい感じ。",
+      "path": "audio/yui_filler_001.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_002",
+      "text": "その調子だよ。",
+      "path": "audio/yui_filler_002.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_003",
+      "text": "今の自然だった。",
+      "path": "audio/yui_filler_003.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_004",
+      "text": "ちょっと待ってね。",
+      "path": "audio/yui_filler_004.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    },
+    {
+      "lineId": "yui_filler_005",
+      "text": "聞こえてるよ。",
+      "path": "audio/yui_filler_005.wav",
+      "category": "filler",
+      "voiceUsed": "voicevox_metan_normal"
+    }
+  ],
+  "confirm": [
+    {
+      "lineId": "yui_confirm_001",
+      "text": "今のはこういう意味で合ってる？",
+      "path": "audio/yui_confirm_001.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_002",
+      "text": "もう一回だけ言ってみる？",
+      "path": "audio/yui_confirm_002.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_003",
+      "text": "この表現を選ぶ感じでいい？",
+      "path": "audio/yui_confirm_003.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_004",
+      "text": "近いよ、少し確認しよう。",
+      "path": "audio/yui_confirm_004.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    },
+    {
+      "lineId": "yui_confirm_005",
+      "text": "どっちの意味か教えて。",
+      "path": "audio/yui_confirm_005.wav",
+      "category": "confirm",
+      "voiceUsed": "voicevox_metan_whisper"
+    }
+  ],
+  "fallback": [
+    {
+      "lineId": "yui_fallback_001",
+      "text": "ごめん、今の言い方は拾えなかった。",
+      "path": "audio/yui_fallback_001.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_002",
+      "text": "候補から近いものを選んでみて。",
+      "path": "audio/yui_fallback_002.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_003",
+      "text": "短く言い直してくれる？",
+      "path": "audio/yui_fallback_003.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_004",
+      "text": "もう少しゆっくりお願い。",
+      "path": "audio/yui_fallback_004.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    },
+    {
+      "lineId": "yui_fallback_005",
+      "text": "今はこの場面の表現で練習しよう。",
+      "path": "audio/yui_fallback_005.wav",
+      "category": "fallback",
+      "voiceUsed": "voicevox_himari_normal"
+    }
+  ]
+}

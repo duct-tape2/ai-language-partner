@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+pydantic
+genanki
+redis
+python-multipart>=0.0.31

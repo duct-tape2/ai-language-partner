@@ -1,0 +1,29 @@
+name: Good first issue
+description: A scoped task suitable for new contributors.
+title: "docs: "
+labels: ["good first issue", "help wanted", "needs-triage"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Suggested files
+      description: Point contributors to likely files or docs.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use checkboxes so a contributor knows when the task is done.
+      value: |
+        - [ ] The change is focused and reviewable.
+        - [ ] Docs or tests are updated if behavior changes.
+        - [ ] No generated audio, archives, databases, or local engine files are committed.
+    validations:
+      required: true
+

@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security reports
+    url: https://github.com/sinmb79/ai-language-partner/security/advisories
+    about: Please use a private advisory for security issues when available.
+

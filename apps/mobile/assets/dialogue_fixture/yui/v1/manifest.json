@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "dialogue_bank_manifest_v1",
+  "personaId": "yui",
+  "packVersion": "v1",
+  "ttsProvider": "device_speech_mock",
+  "voiceUsed": "device_tts_yui",
+  "topics": ["greetings_intro"],
+  "levels": ["N5"],
+  "scenarioCount": 1,
+  "lineCount": 3,
+  "audioCount": 3,
+  "audio": [
+    { "lineId": "yui_fx_a01", "path": "audio/yui_fx_a01.wav", "category": "dialogue", "text": "こんにちは！今日は元気だった？" },
+    { "lineId": "yui_fx_a02", "path": "audio/yui_fx_a02.wav", "category": "dialogue", "text": "そっか。名前を教えてくれる？" },
+    { "lineId": "yui_fx_a03", "path": "audio/yui_fx_a03.wav", "category": "dialogue", "text": "また話せて嬉しいな。またね！" }
+  ],
+  "filler": [
+    { "lineId": "yui_filler_001", "path": "audio/yui_filler_001.wav", "category": "filler", "text": "うんうん" },
+    { "lineId": "yui_filler_002", "path": "audio/yui_filler_002.wav", "category": "filler", "text": "なるほどね" },
+    { "lineId": "yui_filler_003", "path": "audio/yui_filler_003.wav", "category": "filler", "text": "えーっと" }
+  ],
+  "confirm": [
+    { "lineId": "yui_confirm_001", "path": "audio/yui_confirm_001.wav", "category": "confirm", "text": "今のはこういう意味で合ってる？" },
+    { "lineId": "yui_confirm_002", "path": "audio/yui_confirm_002.wav", "category": "confirm", "text": "もう一回言ってくれる？" }
+  ],
+  "fallback": [
+    { "lineId": "yui_fallback_001", "path": "audio/yui_fallback_001.wav", "category": "fallback", "text": "ごめん、今の言い方は拾えなかった。" },
+    { "lineId": "yui_fallback_002", "path": "audio/yui_fallback_002.wav", "category": "fallback", "text": "うーん、もう少しゆっくり話してくれる？" }
+  ]
+}
