@@ -41,9 +41,9 @@ reviewable first contributions genuinely easy.
 - Awesome Japanese listing suggestion issue:
   `https://github.com/yudataguy/awesome-japanese/issues/149`
 - Discovery listing tracker: `docs/community/DISCOVERY_LISTINGS.md`
-- First PR recipe comments: posted to 18 open `good first issue` items on
-  2026-07-08; rerun `scripts/post_first_pr_recipes.py` to fill only missing
-  comments.
+- First PR recipe comments: posted to 26 open `good first issue` items on
+  2026-07-08; rerun `scripts/post_first_pr_recipes.py --apply` to create or
+  update marker-based comments.
 - Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`
 - Kickoff issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
 - First PR help desk discussion:

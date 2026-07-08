@@ -6,7 +6,7 @@ searching the whole repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Generated on: `2026-07-08`
-- Issues covered: `18`
+- Issues covered: `26`
 
 ## [#1: docs: add Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
 
@@ -158,6 +158,43 @@ Useful links:
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
 
+## [#8: content: review yui v1 Japanese naturalness](https://github.com/duct-tape2/ai-language-partner/issues/8)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `packs/yui/v1/story.json`
+- `packs/yui/v1/variants.csv`
+
+**Acceptance signal**
+
+Acceptance: PR improves Japanese dialogue while preserving beginner level.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `manual language/content review: explain what wording you checked`
+
+**PR body checklist**
+
+- Link this issue: `Closes #8` or `Refs #8`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
 ## [#11: content: add notes for Korean learners on particle mistakes](https://github.com/duct-tape2/ai-language-partner/issues/11)
 
 <!-- ai-language-partner:first-pr-recipe -->
@@ -185,6 +222,44 @@ Acceptance: adds concise examples for は/が, を/に, and で/に.
 **PR body checklist**
 
 - Link this issue: `Closes #11` or `Refs #11`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
+## [#12: content: add beginner-safe cultural note review checklist](https://github.com/duct-tape2/ai-language-partner/issues/12)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `docs/community/CONTRIBUTOR_LANDING.md`
+- `apps/mobile/src/culture/cultureNotes.ts`
+
+**Acceptance signal**
+
+Acceptance: checklist avoids stereotypes and flags context-sensitive terms. ## Accessibility and Mobile UX
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `cd apps/mobile && npm run verify`
+- `manual language/content review: explain what wording you checked`
+
+**PR body checklist**
+
+- Link this issue: `Closes #12` or `Refs #12`
 - Explain what changed and why it helps learners or contributors
 - Say which check you ran, or say that it was docs/content review only
 - Do not commit generated audio, archives, local engines, SQLite files, secrets,
@@ -259,6 +334,44 @@ Acceptance: no technical jargon; tells learner what to do next.
 **PR body checklist**
 
 - Link this issue: `Closes #15` or `Refs #15`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
+## [#16: mobile: document mock mode indicators](https://github.com/duct-tape2/ai-language-partner/issues/16)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `docs/ARCHITECTURE.md`
+- `docs/ja/index.md`
+- `docs/ko/index.md`
+
+**Acceptance signal**
+
+Acceptance: explains when UI is fixture-backed versus live API-backed.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `cd apps/mobile && npm run verify`
+
+**PR body checklist**
+
+- Link this issue: `Closes #16` or `Refs #16`
 - Explain what changed and why it helps learners or contributors
 - Say which check you ran, or say that it was docs/content review only
 - Do not commit generated audio, archives, local engines, SQLite files, secrets,
@@ -536,6 +649,44 @@ Useful links:
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
 
+## [#35: docs: add Japanese explanation of the no-runtime-LLM design](https://github.com/duct-tape2/ai-language-partner/issues/35)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `docs/ja/index.md`
+- `docs/index.md`
+- `docs/ARCHITECTURE.md`
+
+**Acceptance signal**
+
+Acceptance: Japanese text explains cost, privacy, latency, and quality control tradeoffs neutrally.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `manual language/content review: explain what wording you checked`
+
+**PR body checklist**
+
+- Link this issue: `Closes #35` or `Refs #35`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
 ## [#36: content: add beginner examples for giving restaurant preferences](https://github.com/duct-tape2/ai-language-partner/issues/36)
 
 <!-- ai-language-partner:first-pr-recipe -->
@@ -676,6 +827,156 @@ Acceptance: improves `docs/community/FIRST_PR_WALKTHROUGH.md` with clearer first
 **PR body checklist**
 
 - Link this issue: `Closes #44` or `Refs #44`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
+## [#45: docs: add maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`
+
+**Acceptance signal**
+
+Acceptance: summarizes useful-review requirements before merging counted external PRs.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `manual docs review: verify links and wording`
+
+**PR body checklist**
+
+- Link this issue: `Closes #45` or `Refs #45`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
+## [#46: content: add Korean notes for Japanese sentence-final particles](https://github.com/duct-tape2/ai-language-partner/issues/46)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `docs/ko/index.md`
+- `apps/mobile/src/grammar/grammarData.ts`
+- `apps/mobile/src/mistakes/mistakesData.ts`
+
+**Acceptance signal**
+
+Acceptance: covers よ, ね, よね, かな at a beginner-safe level with Korean explanations.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `cd apps/mobile && npm run verify`
+- `manual language/content review: explain what wording you checked`
+
+**PR body checklist**
+
+- Link this issue: `Closes #46` or `Refs #46`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
+## [#47: content: add cultural-safety review examples](https://github.com/duct-tape2/ai-language-partner/issues/47)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `apps/mobile/src/culture/cultureNotes.ts`
+- `docs/community/CONTRIBUTOR_LANDING.md`
+
+**Acceptance signal**
+
+Acceptance: includes examples of stereotypes to avoid and context-sensitive wording to review carefully.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `cd apps/mobile && npm run verify`
+- `manual language/content review: explain what wording you checked`
+
+**PR body checklist**
+
+- Link this issue: `Closes #47` or `Refs #47`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
+- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+
+
+## [#50: docs: add public roadmap for dialogue-bank packs](https://github.com/duct-tape2/ai-language-partner/issues/50)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `docs/community/CONTRIBUTOR_GROWTH_PLAN.md`
+- `docs/community/CONTRIBUTOR_SPRINT.md`
+
+**Acceptance signal**
+
+Acceptance: lists planned persona/topic/JLPT pack areas and names which items are suitable for external language review.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `manual docs review: verify links and wording`
+
+**PR body checklist**
+
+- Link this issue: `Closes #50` or `Refs #50`
 - Explain what changed and why it helps learners or contributors
 - Say which check you ran, or say that it was docs/content review only
 - Do not commit generated audio, archives, local engines, SQLite files, secrets,

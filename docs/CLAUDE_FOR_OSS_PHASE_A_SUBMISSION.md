@@ -23,7 +23,7 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required.
-- First PR recipes: posted to 18 open `good first issue` items and tracked in
+- First PR recipes: posted to 26 open `good first issue` items and tracked in
   `docs/community/FIRST_PR_RECIPES.md`
 - No-install first PR board: 27 browser-editable issue slots with generated
   issue comments, tracked in `docs/community/NO_INSTALL_FIRST_PRS.md` and

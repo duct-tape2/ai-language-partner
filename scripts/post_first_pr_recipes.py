@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render and optionally post first-PR recipe comments for starter issues."""
+"""Render and optionally upsert first-PR recipe comments for starter issues."""
 
 from __future__ import annotations
 
@@ -70,7 +70,7 @@ def fetch_issues(repo: str, token: str | None, label: str) -> list[Issue]:
     return sorted(issues, key=lambda issue: issue.number)
 
 
-def has_existing_recipe(repo: str, number: int, token: str | None) -> bool:
+def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[str, object] | None:
     for page in range(1, 6):
         url = f"https://api.github.com/repos/{repo}/issues/{number}/comments?per_page=100&page={page}"
         comments = github_json(url, token)
@@ -78,18 +78,24 @@ def has_existing_recipe(repo: str, number: int, token: str | None) -> bool:
             raise TypeError("GitHub comments response was not a list")
         for comment in comments:
             if isinstance(comment, dict) and MARKER in str(comment.get("body") or ""):
-                return True
+                return comment
         if len(comments) < 100:
             break
-    return False
+    return None
 
 
-def post_recipe(repo: str, number: int, token: str, body: str) -> str:
+def upsert_recipe(repo: str, number: int, token: str, body: str) -> tuple[str, str]:
+    existing = existing_recipe_comment(repo, number, token)
+    if existing:
+        result = github_json(str(existing["url"]), token, method="PATCH", payload={"body": body})
+        if not isinstance(result, dict):
+            raise TypeError("GitHub comment response was not an object")
+        return "updated", str(result.get("html_url") or "")
     url = f"https://api.github.com/repos/{repo}/issues/{number}/comments"
     result = github_json(url, token, method="POST", payload={"body": body})
     if not isinstance(result, dict):
         raise TypeError("GitHub comment response was not an object")
-    return str(result.get("html_url") or "")
+    return "posted", str(result.get("html_url") or "")
 
 
 def likely_files(issue: Issue) -> list[str]:
@@ -101,10 +107,16 @@ def likely_files(issue: Issue) -> list[str]:
         files += ["docs/ko/index.md", "apps/api/README.md", "README.md"]
     elif "mobile mock" in title:
         files += ["docs/ja/index.md", "apps/mobile/README.md", "README.md"]
+    elif "mock mode indicators" in title:
+        files += ["docs/ARCHITECTURE.md", "docs/ja/index.md", "docs/ko/index.md"]
     elif "glossary" in title:
         files += ["docs/ARCHITECTURE.md", "README.md"]
+    elif "cultural note review checklist" in title:
+        files += ["docs/community/CONTRIBUTOR_LANDING.md", "apps/mobile/src/culture/cultureNotes.ts"]
     elif "yui" in title:
         files += ["packs/yui/v1/story.json", "packs/yui/v1/variants.csv"]
+    elif "no-runtime-llm design" in title:
+        files += ["docs/ja/index.md", "docs/index.md", "docs/ARCHITECTURE.md"]
     elif "restaurant" in title:
         files += ["packs/yui/v1/story.json", "packs/haruka/v1/story.json", "authoring/scenarios/"]
     elif "particle" in title:
@@ -129,6 +141,12 @@ def likely_files(issue: Issue) -> list[str]:
         files += ["docs/community/FIRST_PR_WALKTHROUGH.md", "docs/ko/index.md", "docs/ja/index.md"]
     elif "why no runtime llm" in title:
         files += ["README.md", "docs/ARCHITECTURE.md", "docs/index.md"]
+    elif "maintainer review checklist" in title:
+        files += ["docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md"]
+    elif "cultural-safety review examples" in title:
+        files += ["apps/mobile/src/culture/cultureNotes.ts", "docs/community/CONTRIBUTOR_LANDING.md"]
+    elif "dialogue-bank packs" in title:
+        files += ["docs/community/CONTRIBUTOR_GROWTH_PLAN.md", "docs/community/CONTRIBUTOR_SPRINT.md"]
 
     if not files:
         if "mobile" in labels or "accessibility" in labels:
@@ -255,16 +273,15 @@ def main(argv: list[str]) -> int:
             print("--apply requires GITHUB_TOKEN or GH_TOKEN", file=sys.stderr)
             return 2
         posted = 0
-        skipped = 0
+        updated = 0
         for issue in issues:
-            if has_existing_recipe(args.repo, issue.number, token):
-                skipped += 1
-                print(f"skip #{issue.number}: recipe already posted")
-                continue
-            url = post_recipe(args.repo, issue.number, token, render_recipe(args.repo, issue))
-            posted += 1
-            print(f"posted #{issue.number}: {url}")
-        print(f"posted={posted} skipped={skipped}")
+            action, url = upsert_recipe(args.repo, issue.number, token, render_recipe(args.repo, issue))
+            if action == "posted":
+                posted += 1
+            else:
+                updated += 1
+            print(f"{action} #{issue.number}: {url}")
+        print(f"posted={posted} updated={updated}")
     return 0
 
 

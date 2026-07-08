@@ -7,7 +7,7 @@ then follow the first PR walkthrough.
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Generated on: `2026-07-08`
 - Open issues indexed: `51`
-- Good first issues: `18`
+- Good first issues: `26`
 - Help wanted issues: `15`
 - First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`
@@ -37,7 +37,7 @@ Expo, React Native, labels, touch targets, layout.
 | [#13: mobile: audit touch target sizes in bottom tabs](https://github.com/duct-tape2/ai-language-partner/issues/13) | `good first issue`, `accessibility`, `mobile`, `up-for-grabs` |
 | [#14: mobile: add accessibility labels to voice preview controls](https://github.com/duct-tape2/ai-language-partner/issues/14) | `accessibility`, `mobile` |
 | [#15: mobile: improve empty state copy for Daily Talk pack loading](https://github.com/duct-tape2/ai-language-partner/issues/15) | `good first issue`, `mobile`, `up-for-grabs`, `first-timers-only` |
-| [#16: mobile: document mock mode indicators](https://github.com/duct-tape2/ai-language-partner/issues/16) | `docs`, `mobile` |
+| [#16: mobile: document mock mode indicators](https://github.com/duct-tape2/ai-language-partner/issues/16) | `good first issue`, `docs`, `mobile`, `up-for-grabs`, `first-timers-only` |
 | [#17: mobile: add regression check for duplicate screen labels](https://github.com/duct-tape2/ai-language-partner/issues/17) | `help wanted`, `mobile`, `tests` |
 | [#18: mobile: review Korean UI strings for consistency](https://github.com/duct-tape2/ai-language-partner/issues/18) | `good first issue`, `language-review`, `mobile`, `up-for-grabs`, `first-timers-only` |
 | [#27: tests: add mobile package script inventory check](https://github.com/duct-tape2/ai-language-partner/issues/27) | `mobile`, `tests` |
@@ -52,19 +52,19 @@ FastAPI, OpenAPI, local STT/TTS setup, provider docs.
 
 | Issue | Labels |
 |---|---|
-| [#3: docs: clarify local whisper.cpp setup on macOS](https://github.com/duct-tape2/ai-language-partner/issues/3) | `help wanted`, `docs`, `stt` |
-| [#4: docs: clarify AivisSpeech and VOICEVOX-compatible setup](https://github.com/duct-tape2/ai-language-partner/issues/4) | `help wanted`, `docs`, `tts` |
-| [#6: docs: add API curl examples for Daily Talk endpoints](https://github.com/duct-tape2/ai-language-partner/issues/6) | `help wanted`, `docs`, `backend` |
+| [#3: docs: clarify local whisper.cpp setup on macOS](https://github.com/duct-tape2/ai-language-partner/issues/3) | `help wanted`, `docs`, `stt`, `up-for-grabs` |
+| [#4: docs: clarify AivisSpeech and VOICEVOX-compatible setup](https://github.com/duct-tape2/ai-language-partner/issues/4) | `help wanted`, `docs`, `tts`, `up-for-grabs` |
+| [#6: docs: add API curl examples for Daily Talk endpoints](https://github.com/duct-tape2/ai-language-partner/issues/6) | `help wanted`, `docs`, `backend`, `up-for-grabs` |
 | [#19: backend: add provider-status example response to docs](https://github.com/duct-tape2/ai-language-partner/issues/19) | `good first issue`, `docs`, `backend`, `up-for-grabs`, `first-timers-only` |
-| [#20: backend: add dialogue match threshold explanation](https://github.com/duct-tape2/ai-language-partner/issues/20) | `docs`, `backend` |
+| [#20: backend: add dialogue match threshold explanation](https://github.com/duct-tape2/ai-language-partner/issues/20) | `docs`, `backend`, `up-for-grabs` |
 | [#21: backend: add tests for malformed dialogue pack metadata](https://github.com/duct-tape2/ai-language-partner/issues/21) | `help wanted`, `backend`, `tests` |
 | [#22: backend: add tests for path traversal rejection on pack zip route](https://github.com/duct-tape2/ai-language-partner/issues/22) | `good first issue`, `backend`, `tests`, `up-for-grabs` |
-| [#23: backend: document Redis rate-limit optional setup](https://github.com/duct-tape2/ai-language-partner/issues/23) | `docs`, `backend` |
-| [#24: backend: add OpenAPI examples for auth device trust](https://github.com/duct-tape2/ai-language-partner/issues/24) | `docs`, `backend` |
+| [#23: backend: document Redis rate-limit optional setup](https://github.com/duct-tape2/ai-language-partner/issues/23) | `docs`, `backend`, `up-for-grabs` |
+| [#24: backend: add OpenAPI examples for auth device trust](https://github.com/duct-tape2/ai-language-partner/issues/24) | `docs`, `backend`, `up-for-grabs` |
 | [#28: tests: add pack source schema check](https://github.com/duct-tape2/ai-language-partner/issues/28) | `help wanted`, `backend`, `tests` |
 | [#34: docs: add Korean troubleshooting notes for backend dependency install](https://github.com/duct-tape2/ai-language-partner/issues/34) | `good first issue`, `docs`, `backend`, `up-for-grabs`, `first-timers-only` |
 | [#40: backend: add OpenAPI example for dialogue pack listing](https://github.com/duct-tape2/ai-language-partner/issues/40) | `good first issue`, `docs`, `backend`, `up-for-grabs`, `first-timers-only` |
-| [#41: backend: document provider fallback labels](https://github.com/duct-tape2/ai-language-partner/issues/41) | `docs`, `backend` |
+| [#41: backend: document provider fallback labels](https://github.com/duct-tape2/ai-language-partner/issues/41) | `docs`, `backend`, `up-for-grabs` |
 | [#49: backend: add malformed multipart upload test for STT endpoint](https://github.com/duct-tape2/ai-language-partner/issues/49) | `backend`, `tests` |
 
 ## Tests/tooling
@@ -85,16 +85,16 @@ Japanese naturalness, Korean learner notes, JLPT review.
 | Issue | Labels |
 |---|---|
 | [#7: content: review yui v1 beginner dialogue Korean translations](https://github.com/duct-tape2/ai-language-partner/issues/7) | `good first issue`, `content`, `language-review`, `up-for-grabs`, `first-timers-only` |
-| [#8: content: review yui v1 Japanese naturalness](https://github.com/duct-tape2/ai-language-partner/issues/8) | `help wanted`, `content`, `language-review` |
+| [#8: content: review yui v1 Japanese naturalness](https://github.com/duct-tape2/ai-language-partner/issues/8) | `help wanted`, `good first issue`, `content`, `language-review`, `up-for-grabs`, `first-timers-only` |
 | [#9: content: review haruka v1 polite-tone consistency](https://github.com/duct-tape2/ai-language-partner/issues/9) | `content`, `language-review` |
 | [#10: content: review ren v1 casual-tone consistency](https://github.com/duct-tape2/ai-language-partner/issues/10) | `content`, `language-review` |
 | [#11: content: add notes for Korean learners on particle mistakes](https://github.com/duct-tape2/ai-language-partner/issues/11) | `good first issue`, `docs`, `content`, `up-for-grabs`, `first-timers-only` |
-| [#12: content: add beginner-safe cultural note review checklist](https://github.com/duct-tape2/ai-language-partner/issues/12) | `docs`, `content` |
-| [#35: docs: add Japanese explanation of the no-runtime-LLM design](https://github.com/duct-tape2/ai-language-partner/issues/35) | `help wanted`, `docs`, `language-review` |
+| [#12: content: add beginner-safe cultural note review checklist](https://github.com/duct-tape2/ai-language-partner/issues/12) | `good first issue`, `docs`, `content`, `up-for-grabs`, `first-timers-only` |
+| [#35: docs: add Japanese explanation of the no-runtime-LLM design](https://github.com/duct-tape2/ai-language-partner/issues/35) | `help wanted`, `good first issue`, `docs`, `language-review`, `up-for-grabs`, `first-timers-only` |
 | [#36: content: add beginner examples for giving restaurant preferences](https://github.com/duct-tape2/ai-language-partner/issues/36) | `good first issue`, `content`, `language-review`, `up-for-grabs`, `first-timers-only` |
 | [#37: content: review honorific consistency in onboarding examples](https://github.com/duct-tape2/ai-language-partner/issues/37) | `content`, `language-review` |
-| [#46: content: add Korean notes for Japanese sentence-final particles](https://github.com/duct-tape2/ai-language-partner/issues/46) | `content`, `language-review` |
-| [#47: content: add cultural-safety review examples](https://github.com/duct-tape2/ai-language-partner/issues/47) | `docs`, `content` |
+| [#46: content: add Korean notes for Japanese sentence-final particles](https://github.com/duct-tape2/ai-language-partner/issues/46) | `good first issue`, `content`, `language-review`, `up-for-grabs`, `first-timers-only` |
+| [#47: content: add cultural-safety review examples](https://github.com/duct-tape2/ai-language-partner/issues/47) | `good first issue`, `docs`, `content`, `up-for-grabs`, `first-timers-only` |
 
 ## Release/community
 
@@ -105,8 +105,8 @@ Issue taxonomy, review process, roadmap, sprint coordination.
 | [#29: chore: add issue-label taxonomy document](https://github.com/duct-tape2/ai-language-partner/issues/29) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#30: chore: add release checklist for generated voice assets](https://github.com/duct-tape2/ai-language-partner/issues/30) | `docs`, `release` |
 | [#44: docs: improve first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
-| [#45: docs: add maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | `docs`, `community` |
-| [#50: docs: add public roadmap for dialogue-bank packs](https://github.com/duct-tape2/ai-language-partner/issues/50) | `help wanted`, `docs`, `community` |
+| [#45: docs: add maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
+| [#50: docs: add public roadmap for dialogue-bank packs](https://github.com/duct-tape2/ai-language-partner/issues/50) | `help wanted`, `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#52: community: 20 contributor sprint kickoff](https://github.com/duct-tape2/ai-language-partner/issues/52) | `help wanted`, `community` |
 
 ## Korean/Japanese docs

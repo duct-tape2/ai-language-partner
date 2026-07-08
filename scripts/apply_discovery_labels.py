@@ -44,6 +44,24 @@ FIRST_TIMERS_ISSUES = {
     40,
     42,
     44,
+    8,
+    12,
+    16,
+    35,
+    45,
+    46,
+    47,
+    50,
+}
+
+UP_FOR_GRABS_ISSUES = FIRST_TIMERS_ISSUES | {
+    3,
+    4,
+    6,
+    20,
+    23,
+    24,
+    41,
 }
 
 
@@ -96,8 +114,27 @@ def fetch_good_first_issues(repo: str, token: str | None) -> list[dict[str, obje
     return sorted(issues, key=lambda issue: int(issue.get("number", 0)))
 
 
+def fetch_issue(repo: str, token: str | None, number: int) -> dict[str, object]:
+    data = github_json(f"https://api.github.com/repos/{repo}/issues/{number}", token)
+    if not isinstance(data, dict):
+        raise TypeError("GitHub issue response was not an object")
+    return data
+
+
+def fetch_discovery_issues(repo: str, token: str | None) -> list[dict[str, object]]:
+    issues_by_number = {
+        int(issue.get("number", 0)): issue
+        for issue in fetch_good_first_issues(repo, token)
+        if int(issue.get("number", 0))
+    }
+    for number in sorted(UP_FOR_GRABS_ISSUES):
+        if number not in issues_by_number:
+            issues_by_number[number] = fetch_issue(repo, token, number)
+    return [issues_by_number[number] for number in sorted(issues_by_number)]
+
+
 def apply_labels(repo: str, token: str | None, dry_run: bool) -> tuple[int, int]:
-    issues = fetch_good_first_issues(repo, token)
+    issues = fetch_discovery_issues(repo, token)
     updated = 0
     skipped = 0
     for issue in issues:
@@ -105,6 +142,7 @@ def apply_labels(repo: str, token: str | None, dry_run: bool) -> tuple[int, int]
         existing = {str(label.get("name", "")) for label in issue.get("labels", []) if isinstance(label, dict)}
         desired = {"up-for-grabs"}
         if number in FIRST_TIMERS_ISSUES:
+            desired.add("good first issue")
             desired.add("first-timers-only")
         missing = sorted(desired - existing)
         if not missing:

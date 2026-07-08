@@ -404,7 +404,9 @@ class DiscoveryLabelsTest(unittest.TestCase):
     def test_first_timers_subset_is_not_empty_and_excludes_harder_issue(self) -> None:
         self.assertIn(1, discovery_labels.FIRST_TIMERS_ISSUES)
         self.assertIn(44, discovery_labels.FIRST_TIMERS_ISSUES)
+        self.assertIn(50, discovery_labels.FIRST_TIMERS_ISSUES)
         self.assertNotIn(22, discovery_labels.FIRST_TIMERS_ISSUES)
+        self.assertIn(24, discovery_labels.UP_FOR_GRABS_ISSUES)
         self.assertIn("up-for-grabs", discovery_labels.DISCOVERY_LABELS)
         self.assertIn("first-timers-only", discovery_labels.DISCOVERY_LABELS)
 
