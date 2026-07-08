@@ -78,7 +78,7 @@ Open the repository settings and enable:
 - Dependency graph and Dependabot alerts
 - Branch protection for `main` after the initial push
 - The `Contributor Sprint Kickoff` workflow has created the public community
-  coordination issue.
+  coordination issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
 
 ## 3. Verify the public snapshot
 

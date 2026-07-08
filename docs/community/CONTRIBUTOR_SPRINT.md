@@ -13,7 +13,7 @@ reviewable first contributions genuinely easy.
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`
-- Kickoff issue: created by `.github/workflows/contributor-sprint-kickoff.yml`
+- Kickoff issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
 - Maintainer-authored PRs do not count.
