@@ -50,6 +50,7 @@ REQUIRED_FILES = [
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/STARTER_ISSUE_INDEX.md",
+    "docs/community/NO_INSTALL_FIRST_PRS.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md",
     "docs/community/FIRST_PR_RECIPES.md",

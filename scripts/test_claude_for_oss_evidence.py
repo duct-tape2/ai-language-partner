@@ -249,6 +249,17 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("github.rest.issues.createComment", workflow)
 
 
+class NoInstallFirstPrBoardTest(unittest.TestCase):
+    def test_no_install_board_links_browser_edit_tasks_and_guardrails(self) -> None:
+        board = Path("docs/community/NO_INSTALL_FIRST_PRS.md").read_text(encoding="utf-8")
+
+        self.assertIn("https://github.com/duct-tape2/ai-language-partner/edit/main/", board)
+        self.assertIn("first-timers-only", board)
+        self.assertIn("No command-line check is required", board)
+        self.assertIn("Do not split trivial", board)
+        self.assertIn("Do not add `.wav`, `.zip`, `.npy`, `.sqlite`", board)
+
+
 class DiscoveryLabelsTest(unittest.TestCase):
     def test_first_timers_subset_is_not_empty_and_excludes_harder_issue(self) -> None:
         self.assertIn(1, discovery_labels.FIRST_TIMERS_ISSUES)

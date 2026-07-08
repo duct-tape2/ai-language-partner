@@ -16,6 +16,11 @@ of currently open tasks.
 For step-by-step issue-specific guidance, see the
 [first PR recipes](FIRST_PR_RECIPES.md).
 
+If you want to contribute without installing anything, start with the
+[no-install first PR board](NO_INSTALL_FIRST_PRS.md). It links directly to
+GitHub web-editor tasks for docs, Korean/Japanese review, and beginner dialogue
+content.
+
 ## Pick Your Lane
 
 | I can help with... | Start here | Good first outcome |
@@ -41,6 +46,10 @@ with the lane you prefer, or open a
 3. Read the [first PR walkthrough](FIRST_PR_WALKTHROUGH.md).
 4. Make one focused change.
 5. Open a PR that links the issue and names the check you ran.
+
+For docs or language review, the fastest path is the
+[no-install first PR board](NO_INSTALL_FIRST_PRS.md): pick a row, use the
+direct edit link, and submit a focused browser-only PR.
 
 If you need a maintainer to suggest a first issue, use the
 [contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).

@@ -10,6 +10,10 @@ Start here:
 
 `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 
+If you want to avoid local setup entirely, use the no-install board:
+
+`https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
+
 Good first issues should include:
 
 - A clear goal
@@ -19,6 +23,21 @@ Good first issues should include:
   maintainer-only credentials
 
 ## Make the Change
+
+### Browser-Only Docs Or Language Review
+
+For docs, Korean/Japanese wording, and dialogue text review, you can use the
+GitHub web editor:
+
+1. Open an issue from the no-install board.
+2. Click the direct edit link for the suggested file.
+3. Edit one focused piece of text.
+4. Choose "Create a new branch for this commit and start a pull request".
+
+No local STT/TTS engine, generated audio, private data, or API key is needed for
+these PRs.
+
+### Local Development
 
 ```bash
 git clone https://github.com/duct-tape2/ai-language-partner.git

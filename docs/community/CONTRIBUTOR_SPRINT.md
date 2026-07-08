@@ -15,6 +15,9 @@ reviewable first contributions genuinely easy.
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
+- No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
+- No-install board sprint update:
+  `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914131827`
 - First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
