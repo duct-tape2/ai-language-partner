@@ -70,7 +70,7 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Contributors: `https://github.com/duct-tape2/ai-language-partner/graphs/contributors`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
-- Latest repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28933354403`
+- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28933532532`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`
 
 ## Local Evidence Commands

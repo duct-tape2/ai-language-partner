@@ -14,7 +14,7 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - Visibility: public
 - Default branch: `main`
 - Starter/community issues: 51
-- Repo hygiene action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28933354403`)
+- Repo hygiene action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28933532532`)
 - Community-builder count: 0 unique external merged PR contributors so far
 - Status: not ready for Phase B; suitable only for a "Don't quite fit?" early
   application
@@ -80,5 +80,5 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 - Issues: `https://github.com/duct-tape2/ai-language-partner/issues`
 - Good first issues: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
-- Latest green hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28933354403`
+- Recent green hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28933532532`
 - Contributor evidence doc: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/CLAUDE_FOR_OSS_APPLICATION.md`
