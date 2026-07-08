@@ -63,6 +63,7 @@ REQUIRED_FILES = [
     "scripts/build_pr_review_packet.py",
     "scripts/verify_github_governance.py",
     "scripts/post_first_pr_recipes.py",
+    "scripts/apply_discovery_labels.py",
 ]
 
 

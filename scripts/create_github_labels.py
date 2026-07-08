@@ -27,6 +27,8 @@ LABELS = ROOT / "docs" / "community" / "LABELS.md"
 COLORS = {
     "good first issue": "7057ff",
     "help wanted": "008672",
+    "up-for-grabs": "0e8a16",
+    "first-timers-only": "7057ff",
     "docs": "0075ca",
     "content": "fbca04",
     "language-review": "d93f0b",

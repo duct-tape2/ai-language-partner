@@ -22,6 +22,7 @@ import build_pr_review_packet as review_packet  # noqa: E402
 import render_starter_issue_index as issue_index  # noqa: E402
 import verify_github_governance as governance  # noqa: E402
 import post_first_pr_recipes as first_pr_recipes  # noqa: E402
+import apply_discovery_labels as discovery_labels  # noqa: E402
 
 
 def issue_item(
@@ -245,6 +246,15 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Japanese naturalness review", workflow)
         self.assertIn("FIRST_PR_RECIPES.md", workflow)
         self.assertIn("github.rest.issues.createComment", workflow)
+
+
+class DiscoveryLabelsTest(unittest.TestCase):
+    def test_first_timers_subset_is_not_empty_and_excludes_harder_issue(self) -> None:
+        self.assertIn(1, discovery_labels.FIRST_TIMERS_ISSUES)
+        self.assertIn(44, discovery_labels.FIRST_TIMERS_ISSUES)
+        self.assertNotIn(22, discovery_labels.FIRST_TIMERS_ISSUES)
+        self.assertIn("up-for-grabs", discovery_labels.DISCOVERY_LABELS)
+        self.assertIn("first-timers-only", discovery_labels.DISCOVERY_LABELS)
 
 
 if __name__ == "__main__":

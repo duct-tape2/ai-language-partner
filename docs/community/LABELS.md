@@ -6,6 +6,8 @@ Use these labels consistently when opening the 30+ starter issues.
 |---|---|
 | `good first issue` | Small, low-context work suitable for a new contributor |
 | `help wanted` | Maintainer wants external contributors, not just internal follow-up |
+| `up-for-grabs` | Scoped and available for external contributors |
+| `first-timers-only` | Lowest-context starter task suitable for a first OSS PR |
 | `docs` | README, setup, architecture, API examples, or contributor docs |
 | `content` | Dialogue bank, examples, JLPT notes, learner-facing wording |
 | `language-review` | Japanese/Korean naturalness, tone, cultural fit, or pedagogy review |

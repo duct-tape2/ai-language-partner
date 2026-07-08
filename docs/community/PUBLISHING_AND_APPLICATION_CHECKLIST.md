@@ -69,6 +69,7 @@ Use `GITHUB_TOKEN` or `GH_TOKEN` with repo issue/label permissions:
 cd /Users/ijeong-geun/OSS/ai-language-partner
 GITHUB_TOKEN=... python scripts/create_github_labels.py duct-tape2/ai-language-partner
 GITHUB_TOKEN=... python scripts/create_github_issue_seeds.py duct-tape2/ai-language-partner
+GITHUB_TOKEN=... python scripts/apply_discovery_labels.py duct-tape2/ai-language-partner
 ```
 
 Open the repository settings and enable:
@@ -84,6 +85,9 @@ Open the repository settings and enable:
   `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - The `Contributor Interest Triage` workflow replies to contributor interest
   issues with lane-specific starter links.
+- `up-for-grabs` and `first-timers-only` labels should be applied to scoped
+  starter issues so first-time external contributors can find them through
+  GitHub search.
 - The `Starter Issue Index` workflow refreshes
   `docs/community/STARTER_ISSUE_INDEX.md` and
   `docs/community/FIRST_PR_RECIPES.md` by opening a PR after issue changes.

@@ -18,6 +18,9 @@ reviewable first contributions genuinely easy.
 - First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
+- Discovery labels:
+  `up-for-grabs` marks scoped external work; `first-timers-only` marks the
+  lowest-context issues for a first OSS PR.
 - First PR recipe comments: posted to 18 open `good first issue` items on
   2026-07-08; rerun `scripts/post_first_pr_recipes.py` to fill only missing
   comments.
@@ -188,6 +191,7 @@ python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner 
 python scripts/verify_outreach_queue.py
 python scripts/render_outreach_messages.py
 python scripts/post_first_pr_recipes.py duct-tape2/ai-language-partner --date 2026-07-08
+GITHUB_TOKEN=... python scripts/apply_discovery_labels.py duct-tape2/ai-language-partner
 ```
 
 Only submit the Phase B application when the readiness script proves 20 unique
