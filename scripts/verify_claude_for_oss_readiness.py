@@ -39,6 +39,7 @@ REQUIRED_FILES = [
     ".github/workflows/contributor-sprint-kickoff.yml",
     ".github/workflows/issue-welcome.yml",
     ".github/workflows/pr-welcome.yml",
+    ".github/workflows/starter-issue-index.yml",
     "docs/CLAUDE_FOR_OSS_APPLICATION.md",
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_LANDING.md",

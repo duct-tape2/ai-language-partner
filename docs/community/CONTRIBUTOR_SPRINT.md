@@ -20,6 +20,7 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
+- Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
 - Maintainer-authored PRs do not count.
