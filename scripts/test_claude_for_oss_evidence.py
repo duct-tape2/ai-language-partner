@@ -380,11 +380,13 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome for Beginners", names)
         self.assertIn("Awesome for Non-Programmers", names)
         self.assertIn("Awesome Language Learning", names)
+        self.assertIn("Awesome Japanese", {listing.name for listing in discovery_snapshot.LISTING_ISSUES})
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
             "name": "Example Listing",
             "url": "https://example.test/pull/1",
+            "kind": "PR",
             "state": "open",
             "merged": False,
             "mergeable": True,
@@ -392,10 +394,21 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             "checks": ["Project Changes: completed success"],
             "contributor_link": "https://example.test/labels/first-timers-only",
         }
+        issue_status = {
+            "name": "Example Issue",
+            "url": "https://example.test/issues/2",
+            "kind": "Issue",
+            "state": "open",
+            "merged": "n/a",
+            "mergeable": "awaiting maintainer acknowledgement",
+            "draft": False,
+            "checks": ["issue submitted before PR per contribution guidelines"],
+            "contributor_link": "https://example.test/first-pr",
+        }
 
         with patch.object(discovery_snapshot, "count_open_issues", side_effect=[18, 16]), patch.object(
             discovery_snapshot, "fetch_listing_pr", return_value=listing_status
-        ):
+        ), patch.object(discovery_snapshot, "fetch_listing_issue", return_value=issue_status):
             markdown = discovery_snapshot.build_markdown("duct-tape2/ai-language-partner", token=None)
 
         self.assertIn(discovery_snapshot.MARKER, markdown)
@@ -403,7 +416,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Open `first-timers-only` issues: `16`", markdown)
         self.assertIn("do not", markdown)
         self.assertIn("count as Claude for OSS contributor evidence", markdown)
-        self.assertIn("[PR](https://example.test/pull/1)", markdown)
+        self.assertIn("[link](https://example.test/pull/1)", markdown)
+        self.assertIn("awaiting maintainer acknowledgement", markdown)
 
 
 if __name__ == "__main__":

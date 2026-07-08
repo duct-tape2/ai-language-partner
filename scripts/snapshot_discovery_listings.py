@@ -31,6 +31,14 @@ class ListingPr:
     contributor_link: str
 
 
+@dataclass(frozen=True)
+class ListingIssue:
+    name: str
+    repo: str
+    number: int
+    contributor_link: str
+
+
 LISTING_PRS = [
     ListingPr(
         name="Up For Grabs",
@@ -54,6 +62,16 @@ LISTING_PRS = [
         name="Awesome Language Learning",
         repo="Vuizur/awesome-language-learning",
         number=31,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+    ),
+]
+
+
+LISTING_ISSUES = [
+    ListingIssue(
+        name="Awesome Japanese",
+        repo="yudataguy/Awesome-Japanese",
+        number=149,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
     ),
 ]
@@ -107,12 +125,30 @@ def fetch_listing_pr(pr: ListingPr, token: str | None) -> dict[str, object]:
     return {
         "name": pr.name,
         "url": str(data.get("html_url", "")),
+        "kind": "PR",
         "state": str(data.get("state", "")),
         "merged": bool(data.get("merged", False)),
         "mergeable": data.get("mergeable"),
         "draft": bool(data.get("draft", False)),
         "checks": checks,
         "contributor_link": pr.contributor_link,
+    }
+
+
+def fetch_listing_issue(issue: ListingIssue, token: str | None) -> dict[str, object]:
+    data = github_json(f"https://api.github.com/repos/{issue.repo}/issues/{issue.number}", token)
+    if not isinstance(data, dict):
+        raise TypeError("GitHub issue response was not an object")
+    return {
+        "name": issue.name,
+        "url": str(data.get("html_url", "")),
+        "kind": "Issue",
+        "state": str(data.get("state", "")),
+        "merged": "n/a",
+        "mergeable": "awaiting maintainer acknowledgement",
+        "draft": False,
+        "checks": ["issue submitted before PR per contribution guidelines"],
+        "contributor_link": issue.contributor_link,
     }
 
 
@@ -125,7 +161,16 @@ def build_markdown(repo: str, token: str | None) -> str:
         checks = "; ".join(status["checks"]) if status["checks"] else "none reported"
         status = {**status, "checks": checks}
         listing_rows.append(
-            "| {name} | {state} | {merged} | {mergeable} | [PR]({url}) | [issues]({contributor_link}) | {checks} |".format(
+            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {checks} |".format(
+                **status,
+            )
+        )
+    for issue in LISTING_ISSUES:
+        status = fetch_listing_issue(issue, token)
+        checks = "; ".join(status["checks"]) if status["checks"] else "none reported"
+        status = {**status, "checks": checks}
+        listing_rows.append(
+            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {checks} |".format(
                 **status,
             )
         )
@@ -142,8 +187,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"- Open `up-for-grabs` issues: `{up_for_grabs}`",
         f"- Open `first-timers-only` issues: `{first_timers}`",
         "",
-        "| Listing | State | Merged | Mergeable | PR | Contributor link | Checks |",
-        "|---|---|---|---|---|---|---|",
+        "| Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Checks |",
+        "|---|---|---|---|---|---|---|---|",
         *listing_rows,
     ]
     return "\n".join(rows)

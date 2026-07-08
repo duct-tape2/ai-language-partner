@@ -14,6 +14,7 @@ from unique external contributors count for the community-builder threshold.
 | Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` |
 | Awesome for Non-Programmers | PR open | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` |
 | Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` |
+| Awesome Japanese | Issue open, waiting for maintainer acknowledgement before PR | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` |
 
 Public sprint update:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
@@ -29,6 +30,8 @@ Automated status comment:
 - After a listing merges, update `docs/CLAUDE_FOR_OSS_APPLICATION.md` with the
   merged listing URL and keep the contributor count separate from listing
   evidence.
+- For listing repos that require a suggestion issue before a PR, wait for
+  maintainer acknowledgement before opening the PR.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
 ## Useful Search Links
