@@ -55,6 +55,33 @@ def post_issue(repo: str, token: str, issue: dict[str, object]) -> dict[str, obj
         return json.loads(response.read().decode("utf-8"))
 
 
+def existing_issue_titles(repo: str, token: str) -> set[str]:
+    titles: set[str] = set()
+    for page in range(1, 11):
+        params = f"state=all&per_page=100&page={page}"
+        request = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/issues?{params}",
+            headers={
+                "Accept": "application/vnd.github+json",
+                "Authorization": f"Bearer {token}",
+                "User-Agent": "ai-language-partner-issue-seeder",
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+        )
+        with urllib.request.urlopen(request, timeout=30) as response:
+            issues = json.loads(response.read().decode("utf-8"))
+        if not isinstance(issues, list):
+            break
+        for issue in issues:
+            if isinstance(issue, dict) and "pull_request" not in issue:
+                title = issue.get("title")
+                if isinstance(title, str):
+                    titles.add(title)
+        if len(issues) < 100:
+            break
+    return titles
+
+
 def main(argv: list[str]) -> int:
     if len(argv) != 2:
         print("usage: create_github_issue_seeds.py owner/repo", file=sys.stderr)
@@ -67,7 +94,12 @@ def main(argv: list[str]) -> int:
     if len(issues) < 30:
         print(f"expected at least 30 issues, parsed {len(issues)}", file=sys.stderr)
         return 1
+    existing_titles = existing_issue_titles(argv[1], token)
     for issue in issues:
+        title = str(issue.get("title") or "")
+        if title in existing_titles:
+            print(f"skipped existing issue: {title}")
+            continue
         try:
             created = post_issue(argv[1], token, issue)
         except urllib.error.HTTPError as exc:

@@ -13,6 +13,13 @@ cd /Users/ijeong-geun/OSS/ai-language-partner
 GITHUB_TOKEN=... python scripts/create_github_repository.py sinmb79/ai-language-partner
 ```
 
+Or run the full bootstrap after `GITHUB_TOKEN` is available:
+
+```bash
+cd /Users/ijeong-geun/OSS/ai-language-partner
+GITHUB_TOKEN=... scripts/bootstrap_public_github_repo.sh sinmb79/ai-language-partner
+```
+
 Manual settings:
 
 - Owner: `sinmb79`
