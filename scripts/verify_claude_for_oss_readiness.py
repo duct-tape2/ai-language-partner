@@ -59,6 +59,7 @@ REQUIRED_FILES = [
     "scripts/render_outreach_messages.py",
     "scripts/render_starter_issue_index.py",
     "scripts/build_pr_review_packet.py",
+    "scripts/verify_github_governance.py",
 ]
 
 
@@ -138,6 +139,28 @@ def main(argv: list[str]) -> int:
         passed &= check("GitHub repo has pushed source", pushed, str(repo_data.get("pushed_at") or "missing"))
     except urllib.error.HTTPError as exc:
         passed &= check("GitHub repo exists and is public", False, exc.read().decode("utf-8"))
+
+    try:
+        protection = github_json(f"/repos/{repo}/branches/main/protection", token)
+        force_push = protection.get("allow_force_pushes") if isinstance(protection.get("allow_force_pushes"), dict) else {}
+        deletions = protection.get("allow_deletions") if isinstance(protection.get("allow_deletions"), dict) else {}
+        reviews = (
+            protection.get("required_pull_request_reviews")
+            if isinstance(protection.get("required_pull_request_reviews"), dict)
+            else {}
+        )
+        conversations = (
+            protection.get("required_conversation_resolution")
+            if isinstance(protection.get("required_conversation_resolution"), dict)
+            else {}
+        )
+        passed &= check("GitHub main branch protection", bool(protection.get("url")), str(protection.get("url") or "missing"))
+        passed &= check("GitHub pull request review required", int(reviews.get("required_approving_review_count") or 0) >= 1, str(reviews))
+        passed &= check("GitHub force pushes disabled", not bool(force_push.get("enabled")), str(force_push))
+        passed &= check("GitHub branch deletions disabled", not bool(deletions.get("enabled")), str(deletions))
+        passed &= check("GitHub conversation resolution required", bool(conversations.get("enabled")), str(conversations))
+    except urllib.error.HTTPError as exc:
+        passed &= check("GitHub main branch protection", False, exc.read().decode("utf-8"))
 
     try:
         issues = github_issue_count(repo, token)

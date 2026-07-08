@@ -86,6 +86,8 @@ Open the repository settings and enable:
   `docs/community/STARTER_ISSUE_INDEX.md` fresh after issue changes.
 - GitHub Pages should publish from `main` / `docs` so the contributor page is
   shareable outside GitHub issue search.
+- Branch protection should be enabled for `main`: one approving PR review,
+  force pushes and branch deletion disabled, conversation resolution required.
 
 ## 3. Verify the public snapshot
 
@@ -134,6 +136,7 @@ Run:
 cd /Users/ijeong-geun/OSS/ai-language-partner
 python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/render_starter_issue_index.py duct-tape2/ai-language-partner --date 2026-07-08
+GITHUB_TOKEN=... python scripts/verify_github_governance.py duct-tape2/ai-language-partner
 GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner

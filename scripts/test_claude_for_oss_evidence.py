@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import sys
 import unittest
+from contextlib import redirect_stdout
+from io import StringIO
 from pathlib import Path
 from unittest.mock import patch
 
@@ -18,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import export_claude_for_oss_evidence as evidence  # noqa: E402
 import build_pr_review_packet as review_packet  # noqa: E402
 import render_starter_issue_index as issue_index  # noqa: E402
+import verify_github_governance as governance  # noqa: E402
 
 
 def issue_item(
@@ -187,6 +190,16 @@ class PrReviewPacketTest(unittest.TestCase):
         self.assertEqual(packet.blockers, ())
         self.assertIn("docs/content review: verify links and wording manually", packet.markdown)
         self.assertIn("Countable candidate: `yes`", packet.markdown)
+
+
+class GovernanceCheckTest(unittest.TestCase):
+    def test_governance_check_prints_pass_fail_marker(self) -> None:
+        stream = StringIO()
+        with redirect_stdout(stream):
+            self.assertTrue(governance.check("example", True, "ok"))
+            self.assertFalse(governance.check("example", False, "not ok"))
+        self.assertIn("PASS: example - ok", stream.getvalue())
+        self.assertIn("FAIL: example - not ok", stream.getvalue())
 
 
 if __name__ == "__main__":

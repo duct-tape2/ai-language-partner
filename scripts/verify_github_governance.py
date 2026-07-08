@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+"""Verify public GitHub governance settings used for contributor trust."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+
+
+def github_json(path_or_url: str, token: str | None) -> object:
+    url = path_or_url if path_or_url.startswith("https://") else f"https://api.github.com{path_or_url}"
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "ai-language-partner-governance-check",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    request = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def check(name: str, passed: bool, detail: str) -> bool:
+    marker = "PASS" if passed else "FAIL"
+    print(f"{marker}: {name} - {detail}")
+    return passed
+
+
+def main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("repo", help="GitHub repo in owner/name form")
+    args = parser.parse_args(argv[1:])
+
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    repo = args.repo
+    passed = True
+
+    repo_data = github_json(f"/repos/{repo}", token)
+    if not isinstance(repo_data, dict):
+        raise TypeError("repo response was not an object")
+    passed &= check("repository is public", not bool(repo_data.get("private")), str(repo_data.get("html_url")))
+    passed &= check("issues enabled", bool(repo_data.get("has_issues")), str(repo_data.get("has_issues")))
+    passed &= check("discussions enabled", bool(repo_data.get("has_discussions")), str(repo_data.get("has_discussions")))
+    passed &= check(
+        "homepage is contributor page",
+        str(repo_data.get("homepage")) == f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[1]}/",
+        str(repo_data.get("homepage")),
+    )
+
+    pages = github_json(f"/repos/{repo}/pages", token)
+    if not isinstance(pages, dict):
+        raise TypeError("pages response was not an object")
+    source = pages.get("source") if isinstance(pages.get("source"), dict) else {}
+    passed &= check("GitHub Pages built", str(pages.get("status")) == "built", str(pages.get("html_url")))
+    passed &= check("GitHub Pages source", source.get("branch") == "main" and source.get("path") == "/docs", str(source))
+
+    profile = github_json(f"/repos/{repo}/community/profile", token)
+    if not isinstance(profile, dict):
+        raise TypeError("community profile response was not an object")
+    passed &= check("community profile health", int(profile.get("health_percentage") or 0) >= 100, str(profile.get("health_percentage")))
+
+    try:
+        protection = github_json(f"/repos/{repo}/branches/main/protection", token)
+    except urllib.error.HTTPError as exc:
+        passed &= check("main branch protection", False, exc.read().decode("utf-8"))
+    else:
+        if not isinstance(protection, dict):
+            raise TypeError("branch protection response was not an object")
+        force_push = protection.get("allow_force_pushes") if isinstance(protection.get("allow_force_pushes"), dict) else {}
+        deletions = protection.get("allow_deletions") if isinstance(protection.get("allow_deletions"), dict) else {}
+        reviews = (
+            protection.get("required_pull_request_reviews")
+            if isinstance(protection.get("required_pull_request_reviews"), dict)
+            else {}
+        )
+        conversations = (
+            protection.get("required_conversation_resolution")
+            if isinstance(protection.get("required_conversation_resolution"), dict)
+            else {}
+        )
+        passed &= check("main branch protection", True, str(protection.get("url")))
+        passed &= check("pull request review required", int(reviews.get("required_approving_review_count") or 0) >= 1, str(reviews))
+        passed &= check("force pushes disabled", not bool(force_push.get("enabled")), str(force_push))
+        passed &= check("branch deletions disabled", not bool(deletions.get("enabled")), str(deletions))
+        passed &= check("conversation resolution required", bool(conversations.get("enabled")), str(conversations))
+
+    if not passed:
+        print("\nResult: GitHub governance needs attention.")
+        return 1
+    print("\nResult: GitHub governance checks passed.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))

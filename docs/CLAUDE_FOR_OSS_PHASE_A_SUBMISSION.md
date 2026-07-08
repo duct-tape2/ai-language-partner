@@ -19,6 +19,9 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - Starter/community issues: 51
 - Repo hygiene action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28934450835`)
 - GitHub Pages deployment: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28934469903`)
+- Governance: `main` branch protection enabled; one approving PR review
+  required; force pushes and branch deletion disabled; conversation resolution
+  required.
 - Community-builder count: 0 unique external merged PR contributors so far
 - Status: not ready for Phase B; suitable only for a "Don't quite fit?" early
   application
