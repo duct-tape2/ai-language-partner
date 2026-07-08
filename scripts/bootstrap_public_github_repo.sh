@@ -3,8 +3,12 @@ set -euo pipefail
 
 REPO="${1:-sinmb79/ai-language-partner}"
 
+if [[ -z "${GITHUB_TOKEN:-}" && -n "${GH_TOKEN:-}" ]]; then
+  export GITHUB_TOKEN="$GH_TOKEN"
+fi
+
 if [[ -z "${GITHUB_TOKEN:-}" ]]; then
-  echo "GITHUB_TOKEN is required" >&2
+  echo "GITHUB_TOKEN or GH_TOKEN is required" >&2
   exit 2
 fi
 
@@ -26,6 +30,7 @@ git push -u origin main
 python3 scripts/create_github_labels.py "$REPO"
 python3 scripts/create_github_issue_seeds.py "$REPO"
 
+python3 scripts/update_claude_application_evidence.py "$REPO" --dry-run || true
 python3 scripts/verify_claude_for_oss_readiness.py "$REPO" || true
 
 echo

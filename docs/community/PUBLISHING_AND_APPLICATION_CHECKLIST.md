@@ -44,7 +44,7 @@ git push -u origin main
 
 ## 2. Bootstrap community metadata
 
-Use a GitHub token with repo issue/label permissions:
+Use `GITHUB_TOKEN` or `GH_TOKEN` with repo issue/label permissions:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
@@ -106,6 +106,7 @@ Run:
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
 GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since 2025-07-08
+GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py sinmb79/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py sinmb79/ai-language-partner
 ```
 

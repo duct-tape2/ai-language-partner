@@ -92,6 +92,7 @@ git shortlog -sn --since=2025-07-08 --all
 find . -type f | grep -Ei 'local_engines|artifacts|handoff|reference_archive|\\.sqlite|\\.zip|\\.wav|\\.npy' && exit 1 || true
 git grep -nE 'sk-[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}' -- .
 python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since=2025-07-08
+python scripts/update_claude_application_evidence.py sinmb79/ai-language-partner --since=2025-07-08
 python scripts/verify_claude_for_oss_readiness.py sinmb79/ai-language-partner
 ```
 

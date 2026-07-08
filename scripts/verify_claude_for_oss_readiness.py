@@ -78,7 +78,7 @@ def main(argv: list[str]) -> int:
         print("usage: verify_claude_for_oss_readiness.py owner/repo", file=sys.stderr)
         return 2
     repo = argv[1]
-    token = os.environ.get("GITHUB_TOKEN")
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 
     passed = True
 

@@ -10,6 +10,10 @@ authored, reviewed, and voiced ahead of time into an offline **dialogue
 bank** under `packs/`. Contributions must preserve that guarantee. See
 `docs/ARCHITECTURE.md` for the rationale and full data flow.
 
+New contributors can start with
+`docs/community/FIRST_PR_WALKTHROUGH.md` and the GitHub issues labeled
+`good first issue`.
+
 ---
 
 ## Repository invariants

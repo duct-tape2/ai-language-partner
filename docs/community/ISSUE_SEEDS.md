@@ -201,10 +201,10 @@ small enough for one contributor to finish without needing private context.
     Acceptance: tests contributor de-duplication, maintainer exclusion, and bot
     exclusion without calling the GitHub API.
 
-44. `docs: add first PR walkthrough`
+44. `docs: improve first PR walkthrough`
     Labels: `docs`, `community`, `good first issue`
-    Acceptance: shows fork, branch, edit, local check, PR, and review flow for a
-    first-time contributor.
+    Acceptance: improves `docs/community/FIRST_PR_WALKTHROUGH.md` with clearer
+    first-time contributor steps or localized Korean/Japanese notes.
 
 45. `docs: add maintainer review checklist`
     Labels: `docs`, `community`

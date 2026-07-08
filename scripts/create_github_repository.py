@@ -60,9 +60,9 @@ def main(argv: list[str]) -> int:
         print("usage: create_github_repository.py owner/repo", file=sys.stderr)
         return 2
 
-    token = os.environ.get("GITHUB_TOKEN")
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
-        print("GITHUB_TOKEN is required", file=sys.stderr)
+        print("GITHUB_TOKEN or GH_TOKEN is required", file=sys.stderr)
         return 2
 
     owner, repo_name = argv[1].split("/", 1)

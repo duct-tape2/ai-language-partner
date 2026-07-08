@@ -162,7 +162,7 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--exclude", action="append", default=[], help="Extra GitHub login to exclude")
     args = parser.parse_args(argv[1:])
 
-    token = os.environ.get("GITHUB_TOKEN")
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     try:
         prs = collect_evidence(args.repo, args.since, set(args.exclude), token)
     except urllib.error.HTTPError as exc:
