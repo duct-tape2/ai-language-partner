@@ -93,6 +93,8 @@ Open the repository settings and enable:
   but do not count as Claude for OSS contributor evidence.
 - Keep `scripts/snapshot_discovery_listings.py` in sync with every external
   listing PR so the public sprint issue shows current review and merge status.
+- Run `scripts/post_no_install_first_pr_guides.py` after changing the
+  no-install board so browser-only contributor issues get direct edit links.
 - The `Starter Issue Index` workflow refreshes
   `docs/community/STARTER_ISSUE_INDEX.md` and
   `docs/community/FIRST_PR_RECIPES.md` by opening a PR after issue changes.

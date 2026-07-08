@@ -42,6 +42,7 @@ REQUIRED_FILES = [
     ".github/workflows/pr-welcome.yml",
     ".github/workflows/starter-issue-index.yml",
     ".github/workflows/discovery-listings-monitor.yml",
+    ".github/workflows/no-install-first-pr-guides.yml",
     "docs/CLAUDE_FOR_OSS_APPLICATION.md",
     "docs/index.md",
     "docs/_config.yml",
@@ -51,6 +52,7 @@ REQUIRED_FILES = [
     "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/STARTER_ISSUE_INDEX.md",
     "docs/community/NO_INSTALL_FIRST_PRS.md",
+    "docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md",
     "docs/community/FIRST_PR_RECIPES.md",
@@ -68,6 +70,7 @@ REQUIRED_FILES = [
     "scripts/verify_github_governance.py",
     "scripts/post_first_pr_recipes.py",
     "scripts/apply_discovery_labels.py",
+    "scripts/post_no_install_first_pr_guides.py",
 ]
 
 

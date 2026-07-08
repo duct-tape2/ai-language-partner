@@ -18,6 +18,8 @@ reviewable first contributions genuinely easy.
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
 - No-install board sprint update:
   `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914131827`
+- No-install guide comments:
+  `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`

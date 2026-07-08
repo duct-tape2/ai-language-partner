@@ -1,0 +1,45 @@
+name: No-Install First PR Guides
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "docs/community/NO_INSTALL_FIRST_PRS.md"
+      - "scripts/post_no_install_first_pr_guides.py"
+      - ".github/workflows/no-install-first-pr-guides.yml"
+  pull_request:
+    paths:
+      - "docs/community/NO_INSTALL_FIRST_PRS.md"
+      - "scripts/post_no_install_first_pr_guides.py"
+      - ".github/workflows/no-install-first-pr-guides.yml"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  no-install-guides:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Render no-install guide comments
+        run: |
+          python scripts/post_no_install_first_pr_guides.py duct-tape2/ai-language-partner --date "$(date -u +%F)"
+
+      - name: Post no-install guide comments
+        if: github.event_name != 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/post_no_install_first_pr_guides.py duct-tape2/ai-language-partner --date "$(date -u +%F)" --apply
+
+      - name: Write job summary
+        run: cat docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md >> "$GITHUB_STEP_SUMMARY"

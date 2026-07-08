@@ -26,6 +26,9 @@ Useful issue searches:
 - `first-timers-only`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Afirst-timers-only`
 - `up-for-grabs`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aup-for-grabs`
 
+The generated issue-comment text is tracked in
+[`NO_INSTALL_FIRST_PR_COMMENTS.md`](NO_INSTALL_FIRST_PR_COMMENTS.md).
+
 ## Best Browser-Only Issues
 
 | Issue | Good PR shape | Source file | Direct edit link |

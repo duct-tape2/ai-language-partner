@@ -24,6 +24,7 @@ import verify_github_governance as governance  # noqa: E402
 import post_first_pr_recipes as first_pr_recipes  # noqa: E402
 import apply_discovery_labels as discovery_labels  # noqa: E402
 import snapshot_discovery_listings as discovery_snapshot  # noqa: E402
+import post_no_install_first_pr_guides as no_install_guides  # noqa: E402
 
 
 def issue_item(
@@ -258,6 +259,37 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("No command-line check is required", board)
         self.assertIn("Do not split trivial", board)
         self.assertIn("Do not add `.wav`, `.zip`, `.npy`, `.sqlite`", board)
+
+    def test_parse_no_install_board_and_render_comment(self) -> None:
+        board = """
+| Issue | Good PR shape | Source file | Direct edit link |
+|---|---|---|---|
+| [#44: first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44) | Improve this repo's first-PR instructions | `docs/community/FIRST_PR_WALKTHROUGH.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/FIRST_PR_WALKTHROUGH.md) |
+"""
+
+        tasks = no_install_guides.parse_board(board)
+        comment = no_install_guides.render_comment("duct-tape2/ai-language-partner", tasks[0])
+
+        self.assertEqual(len(tasks), 1)
+        self.assertEqual(tasks[0].number, 44)
+        self.assertIn(no_install_guides.MARKER, comment)
+        self.assertIn("Direct edit link", comment)
+        self.assertIn("Closes #44", comment)
+        self.assertIn("Tiny split", comment)
+
+    def test_no_install_workflow_posts_only_outside_pull_requests(self) -> None:
+        workflow = Path(".github/workflows/no-install-first-pr-guides.yml").read_text(encoding="utf-8")
+
+        self.assertIn("post_no_install_first_pr_guides.py", workflow)
+        self.assertIn("github.event_name != 'pull_request'", workflow)
+
+    def test_generated_no_install_comments_cover_board_tasks(self) -> None:
+        comments = Path("docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md").read_text(encoding="utf-8")
+
+        self.assertIn("Issues covered: `11`", comments)
+        self.assertIn(no_install_guides.MARKER, comments)
+        self.assertIn("Closes #1", comments)
+        self.assertIn("Closes #44", comments)
 
 
 class DiscoveryLabelsTest(unittest.TestCase):
