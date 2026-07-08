@@ -76,8 +76,9 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
-- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28934450835`
-- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28934469903`
+- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28936333901`
+- Recent green starter issue index run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28936333894`
+- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28936333174`
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required.
