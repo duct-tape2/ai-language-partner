@@ -31,14 +31,17 @@ Then push the prepared source-only snapshot:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-git remote add origin git@github.com:sinmb79/ai-language-partner.git
+git remote add origin https://github.com/sinmb79/ai-language-partner.git
 git push -u origin main
 ```
 
-If SSH is not configured, use:
+If using the bootstrap script, HTTPS push is authenticated from `GITHUB_TOKEN`
+or `GH_TOKEN` without storing the token in the remote URL.
+
+If SSH is configured and preferred, use:
 
 ```bash
-git remote add origin https://github.com/sinmb79/ai-language-partner.git
+git remote add origin git@github.com:sinmb79/ai-language-partner.git
 git push -u origin main
 ```
 

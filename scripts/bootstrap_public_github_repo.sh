@@ -21,11 +21,20 @@ fi
 python3 scripts/check_public_tree.py
 python3 scripts/create_github_repository.py "$REPO"
 
-if ! git remote get-url origin >/dev/null 2>&1; then
-  git remote add origin "git@github.com:${REPO}.git"
+REMOTE_URL="https://github.com/${REPO}.git"
+if git remote get-url origin >/dev/null 2>&1; then
+  current_origin="$(git remote get-url origin)"
+  if [[ "$current_origin" == git@github.com:* ]]; then
+    git remote set-url origin "$REMOTE_URL"
+  fi
+else
+  git remote add origin "$REMOTE_URL"
 fi
 
-git push -u origin main
+git \
+  -c credential.helper= \
+  -c credential.helper='!f() { echo username=x-access-token; echo password=$GITHUB_TOKEN; }; f' \
+  push -u origin main
 
 python3 scripts/create_github_labels.py "$REPO"
 python3 scripts/create_github_issue_seeds.py "$REPO"
