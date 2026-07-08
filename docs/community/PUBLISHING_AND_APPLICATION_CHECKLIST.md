@@ -40,6 +40,7 @@ Manual settings:
 - Owner: `duct-tape2`
 - Name: `ai-language-partner`
 - Visibility: public
+- Public contributor page: `https://duct-tape2.github.io/ai-language-partner/`
 - Do not initialize with README, license, or `.gitignore`
 
 Then push the prepared source-only snapshot:
@@ -83,6 +84,8 @@ Open the repository settings and enable:
   `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - The `Starter Issue Index` workflow keeps
   `docs/community/STARTER_ISSUE_INDEX.md` fresh after issue changes.
+- GitHub Pages should publish from `main` / `docs` so the contributor page is
+  shareable outside GitHub issue search.
 
 ## 3. Verify the public snapshot
 

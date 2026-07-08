@@ -10,6 +10,7 @@ reviewable first contributions genuinely easy.
 ## Current Status
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
+- Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - Good first issues:

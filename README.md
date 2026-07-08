@@ -8,6 +8,10 @@
 [![Mobile Verify](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml)
 [![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
 
+[Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
+[Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
+[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
+
 ---
 
 ## Community sprint: first PRs welcome

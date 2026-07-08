@@ -20,6 +20,9 @@ TEMPLATES = {
 추천 이슈/목록:
 {issue_query}
 
+기여자 페이지:
+https://duct-tape2.github.io/ai-language-partner/
+
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
@@ -37,6 +40,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 おすすめ issue:
 {issue_query}
 
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
@@ -53,6 +59,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from {audience}.
 Suggested issue/list:
 {issue_query}
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
 
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
