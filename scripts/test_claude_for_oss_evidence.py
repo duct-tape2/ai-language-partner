@@ -392,10 +392,12 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
     def test_generated_no_install_comments_cover_board_tasks(self) -> None:
         comments = Path("docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md").read_text(encoding="utf-8")
 
-        self.assertIn("Issues covered: `11`", comments)
+        self.assertIn("Issues covered: `27`", comments)
         self.assertIn(no_install_guides.MARKER, comments)
         self.assertIn("Closes #1", comments)
+        self.assertIn("Closes #24", comments)
         self.assertIn("Closes #44", comments)
+        self.assertIn("Closes #50", comments)
 
 
 class DiscoveryLabelsTest(unittest.TestCase):
