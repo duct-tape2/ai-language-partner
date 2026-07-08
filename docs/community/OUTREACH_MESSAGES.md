@@ -22,6 +22,9 @@ useful merged external PRs count.
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs
 
+5분 첫 PR 가이드:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
@@ -51,6 +54,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 아래 이슈에서 작은 기여를 찾고 있어요.
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues/34
+
+5분 첫 PR 가이드:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -82,6 +88,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 おすすめ issue:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22
 
+5分で始める最初の PR:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
 
@@ -111,6 +120,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 以下の issue で小さな貢献を募集しています。
 おすすめ issue:
 https://github.com/duct-tape2/ai-language-partner/issues/35
+
+5分で始める最初の PR:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
@@ -142,6 +154,9 @@ I'm looking for a small, useful contribution from JLPT beginner-content reviewer
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -171,6 +186,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Language teachers or tutors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/36
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -202,6 +220,9 @@ I'm looking for a small, useful contribution from React Native accessibility con
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -231,6 +252,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Expo developers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/39
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -262,6 +286,9 @@ I'm looking for a small, useful contribution from FastAPI contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -291,6 +318,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from OpenAPI documentation contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/40
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -322,6 +352,9 @@ I'm looking for a small, useful contribution from Python test contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -351,6 +384,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Security-minded test contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/22
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -382,6 +418,9 @@ I'm looking for a small, useful contribution from OSS maintainer communities.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/45
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -411,6 +450,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Local-first software communities.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/31
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -442,6 +484,9 @@ I'm looking for a small, useful contribution from Privacy-preserving education b
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/41
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -471,6 +516,9 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 아래 이슈에서 작은 기여를 찾고 있어요.
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues/44
+
+5분 첫 PR 가이드:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -502,6 +550,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues/46
 
+5분 첫 PR 가이드:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
@@ -531,6 +582,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Mobile UI reviewers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/13
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -562,6 +616,9 @@ I'm looking for a small, useful contribution from API example writers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/6
 
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -591,6 +648,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Repo tooling contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/43
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/

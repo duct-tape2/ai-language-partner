@@ -20,6 +20,9 @@ TEMPLATES = {
 추천 이슈/목록:
 {issue_query}
 
+5분 첫 PR 가이드:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
@@ -40,6 +43,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 おすすめ issue:
 {issue_query}
 
+5分で始める最初の PR:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
 
@@ -59,6 +65,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from {audience}.
 Suggested issue/list:
 {issue_query}
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
