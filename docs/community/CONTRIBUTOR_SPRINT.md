@@ -26,6 +26,7 @@ reviewable first contributions genuinely easy.
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
+- Maintainer review runbook: `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
 - Maintainer-authored PRs do not count.
@@ -167,6 +168,7 @@ comment lightweight: it is contributor guidance, not a counting decision.
 After every merged external PR:
 
 ```bash
+python scripts/build_pr_review_packet.py duct-tape2/ai-language-partner <PR_NUMBER>
 python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner

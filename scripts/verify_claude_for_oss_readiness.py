@@ -49,6 +49,7 @@ REQUIRED_FILES = [
     "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/STARTER_ISSUE_INDEX.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
+    "docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md",
     "docs/community/OUTREACH_QUEUE.json",
     "docs/community/OUTREACH_MESSAGES.md",
     "docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md",
@@ -57,6 +58,7 @@ REQUIRED_FILES = [
     "scripts/verify_outreach_queue.py",
     "scripts/render_outreach_messages.py",
     "scripts/render_starter_issue_index.py",
+    "scripts/build_pr_review_packet.py",
 ]
 
 

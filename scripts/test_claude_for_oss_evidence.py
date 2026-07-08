@@ -16,6 +16,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import export_claude_for_oss_evidence as evidence  # noqa: E402
+import build_pr_review_packet as review_packet  # noqa: E402
 import render_starter_issue_index as issue_index  # noqa: E402
 
 
@@ -141,6 +142,51 @@ class StarterIssueIndexTest(unittest.TestCase):
         self.assertIn("| Mobile/accessibility | 1 |", markdown)
         self.assertIn("| Dialogue/content review | 1 |", markdown)
         self.assertIn("[#3: content: review yui](https://example.test/3)", markdown)
+
+
+class PrReviewPacketTest(unittest.TestCase):
+    def test_packet_blocks_maintainer_generated_files_and_missing_issue(self) -> None:
+        pr = {
+            "number": 51,
+            "title": "docs: update audio examples",
+            "body": "",
+            "html_url": "https://example.test/pull/51",
+            "user": {"login": "duct-tape2", "type": "User"},
+            "author_association": "OWNER",
+            "draft": False,
+            "merged": True,
+            "labels": [{"name": "docs"}],
+        }
+        files = [{"filename": "docs/example.md"}, {"filename": "packs/haruka/v1/audio.wav"}]
+
+        packet = review_packet.build_packet("duct-tape2/ai-language-partner", pr, files)
+
+        self.assertFalse(packet.countable_candidate)
+        self.assertIn("maintainer-authored PR", packet.blockers)
+        self.assertIn("generated/private files changed", packet.blockers)
+        self.assertIn("no issue reference", " ".join(packet.blockers))
+        self.assertIn("packs/haruka/v1/audio.wav", packet.markdown)
+
+    def test_packet_accepts_useful_external_merged_pr_candidate(self) -> None:
+        pr = {
+            "number": 88,
+            "title": "docs: clarify setup, closes #34",
+            "body": "Closes #34",
+            "html_url": "https://example.test/pull/88",
+            "user": {"login": "new-helper", "type": "User"},
+            "author_association": "CONTRIBUTOR",
+            "draft": False,
+            "merged": True,
+            "labels": [{"name": "docs"}],
+        }
+        files = [{"filename": "docs/community/CONTRIBUTOR_LANDING.md"}]
+
+        packet = review_packet.build_packet("duct-tape2/ai-language-partner", pr, files)
+
+        self.assertTrue(packet.countable_candidate)
+        self.assertEqual(packet.blockers, ())
+        self.assertIn("docs/content review: verify links and wording manually", packet.markdown)
+        self.assertIn("Countable candidate: `yes`", packet.markdown)
 
 
 if __name__ == "__main__":

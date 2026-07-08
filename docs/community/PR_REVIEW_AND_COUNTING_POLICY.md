@@ -38,12 +38,17 @@ Do not count:
 
 Use a lightweight but visible review process:
 
-1. Confirm the issue link and acceptance criteria.
-2. Run or request the relevant checks.
-3. Leave one maintainer review comment that names what was verified.
-4. Merge.
-5. Add the PR to `docs/CLAUDE_FOR_OSS_APPLICATION.md` or regenerate evidence
+1. Build a review packet with
+   `scripts/build_pr_review_packet.py duct-tape2/ai-language-partner <PR_NUMBER>`.
+2. Confirm the issue link and acceptance criteria.
+3. Run or request the relevant checks.
+4. Leave one maintainer review comment that names what was verified.
+5. Merge.
+6. Add the PR to `docs/CLAUDE_FOR_OSS_APPLICATION.md` or regenerate evidence
    with `scripts/export_claude_for_oss_evidence.py`.
+
+See `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md` for the full command
+sequence.
 
 ## Evidence Command
 
