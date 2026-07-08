@@ -126,6 +126,7 @@ Run:
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
 python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
+GITHUB_TOKEN=... python scripts/render_starter_issue_index.py duct-tape2/ai-language-partner --date 2026-07-08
 GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner

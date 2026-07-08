@@ -16,6 +16,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import export_claude_for_oss_evidence as evidence  # noqa: E402
+import render_starter_issue_index as issue_index  # noqa: E402
 
 
 def issue_item(
@@ -108,6 +109,38 @@ class EvidenceCountingTest(unittest.TestCase):
 
         self.assertIn("Korean \\| Japanese", table)
         self.assertNotIn("Korean | Japanese quickstart](https", table)
+
+
+class StarterIssueIndexTest(unittest.TestCase):
+    def test_lane_for_prioritizes_work_area_labels(self) -> None:
+        cases = [
+            (("docs", "backend"), "Backend/API docs"),
+            (("docs", "mobile"), "Mobile/accessibility"),
+            (("docs", "tests"), "Tests/tooling"),
+            (("content", "language-review"), "Dialogue/content review"),
+            (("docs", "community"), "Release/community"),
+            (("docs",), "Korean/Japanese docs"),
+        ]
+
+        for labels, expected in cases:
+            with self.subTest(labels=labels):
+                issue = issue_index.Issue(1, "docs: example", "https://example.test/1", labels)
+                self.assertEqual(issue_index.lane_for(issue), expected)
+
+    def test_render_markdown_groups_issues(self) -> None:
+        issues = [
+            issue_index.Issue(1, "docs: backend example", "https://example.test/1", ("docs", "backend")),
+            issue_index.Issue(2, "mobile: label controls", "https://example.test/2", ("mobile", "accessibility")),
+            issue_index.Issue(3, "content: review yui", "https://example.test/3", ("content", "good first issue")),
+        ]
+
+        markdown = issue_index.render_markdown("duct-tape2/ai-language-partner", issues, "2026-07-08")
+
+        self.assertIn("Open issues indexed: `3`", markdown)
+        self.assertIn("| Backend/API docs | 1 |", markdown)
+        self.assertIn("| Mobile/accessibility | 1 |", markdown)
+        self.assertIn("| Dialogue/content review | 1 |", markdown)
+        self.assertIn("[#3: content: review yui](https://example.test/3)", markdown)
 
 
 if __name__ == "__main__":

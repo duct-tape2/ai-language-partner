@@ -11,6 +11,7 @@ reviewable first contributions genuinely easy.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
+- Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`

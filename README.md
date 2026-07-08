@@ -27,8 +27,9 @@ and metric-only changes are excluded.
 | Backend/API docs | [backend docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs) | OpenAPI examples, local STT/TTS setup notes |
 | Tests/tooling | [tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | small fixture tests or verification scripts |
 
-Start with the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md),
-the [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md), or the
+Start with the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
+the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), the
+[first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md), or the
 [20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52).
 If you want a maintainer to suggest a task, open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).

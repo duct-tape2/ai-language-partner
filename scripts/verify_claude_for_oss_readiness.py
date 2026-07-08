@@ -42,6 +42,7 @@ REQUIRED_FILES = [
     "docs/CLAUDE_FOR_OSS_APPLICATION.md",
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_LANDING.md",
+    "docs/community/STARTER_ISSUE_INDEX.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/OUTREACH_QUEUE.json",
     "docs/community/OUTREACH_MESSAGES.md",
@@ -50,6 +51,7 @@ REQUIRED_FILES = [
     "scripts/create_contributor_sprint_kickoff_issue.py",
     "scripts/verify_outreach_queue.py",
     "scripts/render_outreach_messages.py",
+    "scripts/render_starter_issue_index.py",
 ]
 
 
