@@ -150,3 +150,88 @@ small enough for one contributor to finish without needing private context.
     Acceptance: documents current `npm audit` advisories, proposes a target Expo
     SDK upgrade path, and lists compatibility checks required before any forced
     dependency upgrade is merged.
+
+34. `docs: add Korean troubleshooting notes for backend dependency install`
+    Labels: `docs`, `backend`, `good first issue`
+    Acceptance: covers common Python venv, pip, and macOS command-line tools
+    failures without assuming private maintainer context.
+
+35. `docs: add Japanese explanation of the no-runtime-LLM design`
+    Labels: `docs`, `language-review`, `help wanted`
+    Acceptance: Japanese text explains cost, privacy, latency, and quality
+    control tradeoffs neutrally.
+
+36. `content: add beginner examples for giving restaurant preferences`
+    Labels: `content`, `language-review`, `good first issue`
+    Acceptance: adds beginner-safe Japanese examples with Korean notes and does
+    not introduce generated audio or binary assets.
+
+37. `content: review honorific consistency in onboarding examples`
+    Labels: `content`, `language-review`
+    Acceptance: flags or fixes mismatched speech levels and explains the choice
+    in the PR summary.
+
+38. `mobile: add accessibility label audit for Daily Talk controls`
+    Labels: `mobile`, `accessibility`, `help wanted`
+    Acceptance: record, stop, replay, hint, and suggested-reply controls expose
+    useful labels for screen-reader users.
+
+39. `mobile: improve small-screen layout for Voice Gallery cards`
+    Labels: `mobile`, `accessibility`
+    Acceptance: verifies long Korean/Japanese voice names do not overlap or
+    overflow on narrow mobile widths.
+
+40. `backend: add OpenAPI example for dialogue pack listing`
+    Labels: `backend`, `docs`, `good first issue`
+    Acceptance: `contracts/openapi_v0.yaml` includes a realistic response
+    example for `GET /v1/dialogue/packs`.
+
+41. `backend: document provider fallback labels`
+    Labels: `backend`, `docs`
+    Acceptance: explains `mock`, `whisper_cpp_fallback_mock`,
+    `voicevox_compat_fallback_*`, and why honest provider labels matter.
+
+42. `tests: add script check that issue seed count stays above 30`
+    Labels: `tests`, `community`, `good first issue`
+    Acceptance: CI or a repo script fails if `docs/community/ISSUE_SEEDS.md`
+    parses fewer than 30 issues.
+
+43. `tests: add contributor evidence script fixture test`
+    Labels: `tests`, `community`
+    Acceptance: tests contributor de-duplication, maintainer exclusion, and bot
+    exclusion without calling the GitHub API.
+
+44. `docs: add first PR walkthrough`
+    Labels: `docs`, `community`, `good first issue`
+    Acceptance: shows fork, branch, edit, local check, PR, and review flow for a
+    first-time contributor.
+
+45. `docs: add maintainer review checklist`
+    Labels: `docs`, `community`
+    Acceptance: summarizes useful-review requirements before merging counted
+    external PRs.
+
+46. `content: add Korean notes for Japanese sentence-final particles`
+    Labels: `content`, `language-review`
+    Acceptance: covers よ, ね, よね, かな at a beginner-safe level with Korean
+    explanations.
+
+47. `content: add cultural-safety review examples`
+    Labels: `content`, `docs`
+    Acceptance: includes examples of stereotypes to avoid and context-sensitive
+    wording to review carefully.
+
+48. `mobile: add regression guard for missing accessibility labels`
+    Labels: `mobile`, `tests`, `accessibility`
+    Acceptance: extends frontend regression checks to catch unlabeled key
+    controls where practical.
+
+49. `backend: add malformed multipart upload test for STT endpoint`
+    Labels: `backend`, `tests`
+    Acceptance: malformed or missing audio upload returns a clear 4xx response
+    without leaking tracebacks.
+
+50. `docs: add public roadmap for dialogue-bank packs`
+    Labels: `docs`, `community`, `help wanted`
+    Acceptance: lists planned persona/topic/JLPT pack areas and names which
+    items are suitable for external language review.

@@ -6,7 +6,14 @@ The target is real community contribution, not a cosmetic metric.
 
 ## 1. Publish the clean repository
 
-Create an empty public GitHub repository:
+Create an empty public GitHub repository, either manually or with the helper:
+
+```bash
+cd /Users/ijeong-geun/OSS/ai-language-partner
+GITHUB_TOKEN=... python scripts/create_github_repository.py sinmb79/ai-language-partner
+```
+
+Manual settings:
 
 - Owner: `sinmb79`
 - Name: `ai-language-partner`
@@ -92,6 +99,7 @@ Run:
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
 GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since 2025-07-08
+GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py sinmb79/ai-language-partner
 ```
 
 Copy the generated Markdown table into
