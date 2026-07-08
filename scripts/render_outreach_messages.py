@@ -26,6 +26,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+질문/첫 PR 상담:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.""",
     "short-japanese": """韓国語話者向けの日本語学習アプリ OSS を公開しました。
 実行時に LLM を呼ばず、事前作成の dialogue bank とローカル STT/TTS で会話練習を行う local-first プロジェクトです。
@@ -40,6 +43,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 生成音声や private data は不要です。日本語の自然さ、初級者向け表現、ドキュメント改善などの PR を歓迎します。""",
     "short-english": """I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
 The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
@@ -53,6 +59,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.""",
 }

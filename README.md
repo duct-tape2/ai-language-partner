@@ -31,7 +31,8 @@ Start with the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
 the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), the
 [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md), or the
 [20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52).
-If you want a maintainer to suggest a task, open a
+If you want a maintainer to suggest a task, ask in the
+[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) or open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
 
 ---

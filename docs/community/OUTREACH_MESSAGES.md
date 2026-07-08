@@ -28,6 +28,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+질문/첫 PR 상담:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.
 ```
 
@@ -51,6 +54,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+질문/첫 PR 상담:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.
 ```
@@ -76,6 +82,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 生成音声や private data は不要です。日本語の自然さ、初級者向け表現、ドキュメント改善などの PR を歓迎します。
 ```
 
@@ -99,6 +108,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 生成音声や private data は不要です。日本語の自然さ、初級者向け表現、ドキュメント改善などの PR を歓迎します。
 ```
@@ -124,6 +136,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -147,6 +162,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
@@ -172,6 +190,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -195,6 +216,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
@@ -220,6 +244,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -243,6 +270,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
@@ -268,6 +298,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -291,6 +324,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
@@ -316,6 +352,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -339,6 +378,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
@@ -364,6 +406,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -387,6 +432,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+질문/첫 PR 상담:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.
 ```
@@ -412,6 +460,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+질문/첫 PR 상담:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.
 ```
 
@@ -435,6 +486,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
@@ -460,6 +514,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
@@ -483,6 +540,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/START
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```

@@ -21,7 +21,9 @@ lane-by-lane list of currently open tasks.
 | FastAPI/OpenAPI examples | [Backend docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs) | Clear examples or provider docs |
 | Tests/tooling | [Tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | Focused repo, API, or fixture checks |
 
-If you are not sure where to start, comment on the
+If you are not sure where to start, ask in the
+[First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53),
+comment on the
 [20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
 with the lane you prefer, or open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).

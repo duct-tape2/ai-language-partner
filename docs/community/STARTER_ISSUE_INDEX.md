@@ -10,6 +10,7 @@ then follow the first PR walkthrough.
 - Good first issues: `18`
 - Help wanted issues: `15`
 - First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)
+- First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 
 Only useful, reviewable PRs count toward the Claude for OSS

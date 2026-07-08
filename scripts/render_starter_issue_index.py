@@ -136,6 +136,8 @@ def render_markdown(repo: str, issues: list[Issue], generated_on: str) -> str:
         f"- Good first issues: `{good_first}`",
         f"- Help wanted issues: `{help_wanted}`",
         "- First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)",
+        "- First PR help desk: "
+        f"`https://github.com/{repo}/discussions/53`",
         "- Contributor interest form: "
         f"`https://github.com/{repo}/issues/new?template=contributor_interest.yml`",
         "",

@@ -79,6 +79,8 @@ Open the repository settings and enable:
 - Branch protection for `main` after the initial push
 - The `Contributor Sprint Kickoff` workflow has created the public community
   coordination issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
+- The public first-PR help desk discussion is available at
+  `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - The `Starter Issue Index` workflow keeps
   `docs/community/STARTER_ISSUE_INDEX.md` fresh after issue changes.
 
