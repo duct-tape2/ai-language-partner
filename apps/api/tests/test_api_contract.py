@@ -2073,6 +2073,7 @@ def test_acoustic_pronunciation_dataset_depth_privacy_and_audit(tmp_path):
 
 def test_rate_limiting_records_audit_log(tmp_path, monkeypatch):
     monkeypatch.setenv("AI_LANGUAGE_PARTNER_RATE_LIMIT_PER_MINUTE", "2")
+    monkeypatch.setattr("app.rate_limit.time.time", lambda: 1_725_000_000.0)
     client = TestClient(create_app(tmp_path / "rate-limit.sqlite3"))
     assert client.get("/health").status_code == 200
     assert client.get("/health").status_code == 200
@@ -2085,6 +2086,7 @@ def test_rate_limiting_records_audit_log(tmp_path, monkeypatch):
 
 def test_rate_limiting_uses_learner_hint_to_avoid_cross_learner_localhost_collisions(tmp_path, monkeypatch):
     monkeypatch.setenv("AI_LANGUAGE_PARTNER_RATE_LIMIT_PER_MINUTE", "1")
+    monkeypatch.setattr("app.rate_limit.time.time", lambda: 1_725_000_000.0)
     client = TestClient(create_app(tmp_path / "rate-limit-learners.sqlite3"))
 
     assert client.get("/health", headers={"X-Learner-Id": "alpha"}).status_code == 200

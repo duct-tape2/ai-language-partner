@@ -10,7 +10,7 @@ import sys
 
 FORBIDDEN_PATH = re.compile(
     r"(^|/)(local_engines|artifacts|handoff|reference_archive)(/|$)"
-    r"|(\.sqlite|\.sqlite-shm|\.sqlite-wal|\.db|\.zip|\.wav|\.mp3|\.npy|\.bin|\.pyc|\.log)$",
+    r"|(\.sqlite|\.sqlite-shm|\.sqlite-wal|\.db|\.zip|\.wav|\.mp3|\.m4a|\.aac|\.flac|\.ogg|\.npy|\.bin|\.pyc|\.log)$",
     re.IGNORECASE,
 )
 
@@ -53,4 +53,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

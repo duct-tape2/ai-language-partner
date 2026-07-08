@@ -9,6 +9,7 @@ program.
 - Maintainer: `sinmb79`
 - License: MIT
 - Project: local-first Japanese speaking practice for Korean learners
+- Program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - Core principle: no runtime LLM or external generation API on the Daily Talk
   request path
 
@@ -90,4 +91,8 @@ Run these before applying:
 git shortlog -sn --since=2025-07-08 --all
 find . -type f | grep -Ei 'local_engines|artifacts|handoff|reference_archive|\\.sqlite|\\.zip|\\.wav|\\.npy' && exit 1 || true
 git grep -nE 'sk-[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}' -- .
+python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since=2025-07-08
 ```
+
+See `docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md` for the full
+publish, issue-seeding, and application sequence.

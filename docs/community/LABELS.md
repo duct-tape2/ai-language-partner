@@ -14,8 +14,9 @@ Use these labels consistently when opening the 30+ starter issues.
 | `mobile` | Expo/React Native UI, navigation, client API, mobile fixtures |
 | `tests` | Backend pytest, mobile verify scripts, hygiene checks |
 | `release` | Packaging, generated assets, versioning, release notes |
+| `security` | Dependency advisories, hardening, responsible disclosure follow-up |
+| `community` | Contributor onboarding, labels, issue hygiene, and review process |
 | `needs-triage` | Newly opened issue that still needs maintainer shaping |
 
 Do not use labels to imply an issue is easy unless the acceptance criteria are
 clear and the likely file paths are named.
-

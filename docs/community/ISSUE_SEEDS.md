@@ -145,3 +145,8 @@ small enough for one contributor to finish without needing private context.
     Labels: `docs`, `help wanted`
     Acceptance: neutral comparison; no vendor attacks or unsupported claims.
 
+33. `mobile: plan Expo SDK upgrade for transitive security advisories`
+    Labels: `mobile`, `security`, `help wanted`
+    Acceptance: documents current `npm audit` advisories, proposes a target Expo
+    SDK upgrade path, and lists compatibility checks required before any forced
+    dependency upgrade is merged.
