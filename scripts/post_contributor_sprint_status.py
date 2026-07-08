@@ -14,6 +14,8 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from export_claude_for_oss_evidence import collect_evidence, default_since
+from post_no_install_first_pr_guides import BOARD as NO_INSTALL_BOARD_PATH
+from post_no_install_first_pr_guides import parse_board as parse_no_install_board
 
 
 MARKER = "<!-- ai-language-partner:contributor-sprint-status -->"
@@ -123,7 +125,21 @@ def escape_table_cell(value: str) -> str:
     return value.replace("|", "\\|")
 
 
-def render_status(repo: str, since: str, generated_on: str, contributor_count: int, issues: list[SpotlightIssue]) -> str:
+def no_install_task_count() -> int:
+    try:
+        return len(parse_no_install_board(NO_INSTALL_BOARD_PATH.read_text(encoding="utf-8")))
+    except OSError:
+        return 0
+
+
+def render_status(
+    repo: str,
+    since: str,
+    generated_on: str,
+    contributor_count: int,
+    issues: list[SpotlightIssue],
+    no_install_count: int = 0,
+) -> str:
     needed = max(0, 20 - contributor_count)
     phase = "ready" if contributor_count >= 20 else "not ready"
     issue_rows = [
@@ -153,6 +169,7 @@ def render_status(repo: str, since: str, generated_on: str, contributor_count: i
             "",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
+            f"- Browser-only no-install issue slots: `{no_install_count}`",
             f"- First PR help desk: {HELP_DESK}",
             f"- Contributor interest form: {INTEREST_FORM}",
             "",
@@ -200,7 +217,7 @@ def upsert_issue_comment(repo: str, issue: int, body: str, token: str) -> str:
 def build_status(repo: str, since: str, generated_on: str, token: str | None) -> str:
     evidence = collect_evidence(repo, since, set(), token)
     issues = fetch_spotlight_issues(repo, token)
-    return render_status(repo, since, generated_on, len(evidence), issues)
+    return render_status(repo, since, generated_on, len(evidence), issues, no_install_task_count())
 
 
 def main(argv: list[str]) -> int:

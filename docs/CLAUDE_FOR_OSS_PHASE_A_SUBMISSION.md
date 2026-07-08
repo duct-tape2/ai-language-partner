@@ -17,13 +17,17 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - Visibility: public
 - Default branch: `main`
 - Starter/community issues: 51
-- Repo hygiene action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28934450835`)
-- GitHub Pages deployment: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28934469903`)
+- Repo hygiene action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827790`)
+- GitHub Pages deployment: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827257`)
+- No-install first PR guide action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827750`)
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required.
 - First PR recipes: posted to 18 open `good first issue` items and tracked in
   `docs/community/FIRST_PR_RECIPES.md`
+- No-install first PR board: 27 browser-editable issue slots with generated
+  issue comments, tracked in `docs/community/NO_INSTALL_FIRST_PRS.md` and
+  `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - Community-builder count: 0 unique external merged PR contributors so far
 - Status: not ready for Phase B; suitable only for a "Don't quite fit?" early
   application
@@ -69,6 +73,7 @@ The public repo includes:
 - GitHub Pages contributor page with Korean and Japanese entry pages
 - security, code of conduct, contribution docs, PR template, issue templates
 - 51 scoped issues for first-time and external contributors
+- 27 browser-editable no-install first PR paths with issue-specific comments
 - contributor sprint kickoff, PR welcome, issue welcome, and weekly Claude OSS
   monitor workflows
 - fixture-tested contributor evidence counting rules
@@ -94,6 +99,8 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 - Issues: `https://github.com/duct-tape2/ai-language-partner/issues`
 - Good first issues: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
-- Recent green hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28934450835`
-- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28934469903`
+- Recent green hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827790`
+- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827257`
+- Recent green no-install guide run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827750`
+- No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - Contributor evidence doc: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/CLAUDE_FOR_OSS_APPLICATION.md`

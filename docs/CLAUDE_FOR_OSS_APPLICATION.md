@@ -76,13 +76,16 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
-- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28936333901`
+- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827790`
 - Recent green starter issue index run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28936333894`
-- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28936333174`
+- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827257`
+- Recent green no-install guide run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827750`
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required.
 - First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
+- No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
+- No-install issue guide comments: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - Up For Grabs listing PR: `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR: `https://github.com/MunGell/awesome-for-beginners/pull/2072`
 - Awesome for Non-Programmers listing PR: `https://github.com/szabgab/awesome-for-non-programmers/pull/107`

@@ -17,12 +17,13 @@ reviewable first contributions genuinely easy.
 - Five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
+  with 27 browser-editable issue slots
 - No-install board sprint update:
   `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914131827`
 - Contributor sprint status comment:
   `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914319802`
 - No-install guide comments:
-  `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
+  `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md` generated for 27 issues
 - First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
