@@ -13,6 +13,7 @@ from unique external contributors count for the community-builder threshold.
 | Up For Grabs | PR open, automated check passed | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` |
 | Awesome for Non-Programmers | PR open | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` |
+| Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` |
 
 Public sprint update:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
@@ -35,3 +36,5 @@ Automated status comment:
 - `up-for-grabs`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aup-for-grabs`
 - `first-timers-only`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Afirst-timers-only`
 - `good first issue`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
+- `good-first-issue` topic: `https://github.com/topics/good-first-issue`
+- `language-learning` topic: `https://github.com/topics/language-learning`

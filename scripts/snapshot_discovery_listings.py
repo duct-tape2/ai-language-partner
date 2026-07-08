@@ -50,6 +50,12 @@ LISTING_PRS = [
         number=107,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md",
     ),
+    ListingPr(
+        name="Awesome Language Learning",
+        repo="Vuizur/awesome-language-learning",
+        number=31,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+    ),
 ]
 
 

@@ -379,6 +379,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Up For Grabs", names)
         self.assertIn("Awesome for Beginners", names)
         self.assertIn("Awesome for Non-Programmers", names)
+        self.assertIn("Awesome Language Learning", names)
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
