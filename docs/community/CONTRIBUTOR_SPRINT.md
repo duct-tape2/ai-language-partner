@@ -21,6 +21,8 @@ reviewable first contributions genuinely easy.
 - Discovery labels:
   `up-for-grabs` marks scoped external work; `first-timers-only` marks the
   lowest-context issues for a first OSS PR.
+- Up For Grabs listing PR:
+  `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - First PR recipe comments: posted to 18 open `good first issue` items on
   2026-07-08; rerun `scripts/post_first_pr_recipes.py` to fill only missing
   comments.

@@ -83,6 +83,7 @@ threshold is not met yet. Do not submit Phase B with this status.
   required; force pushes and branch deletion disabled; conversation resolution
   required.
 - First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
+- Up For Grabs listing PR: `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`
 
 ## Local Evidence Commands
