@@ -53,28 +53,17 @@ the last 12 months:
 Fill this only with real merged PRs from unique external contributors. Do not
 count maintainer-authored PRs, bots, duplicate identities, or trivial spam.
 
+- Evidence generated from: `duct-tape2/ai-language-partner`
+- Since: `2025-07-08`
+- Unique external contributors counted: `0`
+- Status: `NOT READY for Phase B`
+- Remaining contributors needed: `20`
+
 | # | Contributor | PR URL | Area | Merged date | Review note |
 |---|---|---|---|---|---|
-| 1 | TBD | TBD | TBD | TBD | TBD |
-| 2 | TBD | TBD | TBD | TBD | TBD |
-| 3 | TBD | TBD | TBD | TBD | TBD |
-| 4 | TBD | TBD | TBD | TBD | TBD |
-| 5 | TBD | TBD | TBD | TBD | TBD |
-| 6 | TBD | TBD | TBD | TBD | TBD |
-| 7 | TBD | TBD | TBD | TBD | TBD |
-| 8 | TBD | TBD | TBD | TBD | TBD |
-| 9 | TBD | TBD | TBD | TBD | TBD |
-| 10 | TBD | TBD | TBD | TBD | TBD |
-| 11 | TBD | TBD | TBD | TBD | TBD |
-| 12 | TBD | TBD | TBD | TBD | TBD |
-| 13 | TBD | TBD | TBD | TBD | TBD |
-| 14 | TBD | TBD | TBD | TBD | TBD |
-| 15 | TBD | TBD | TBD | TBD | TBD |
-| 16 | TBD | TBD | TBD | TBD | TBD |
-| 17 | TBD | TBD | TBD | TBD | TBD |
-| 18 | TBD | TBD | TBD | TBD | TBD |
-| 19 | TBD | TBD | TBD | TBD | TBD |
-| 20 | TBD | TBD | TBD | TBD | TBD |
+
+Current table has fewer than 20 rows because the official community-builder
+threshold is not met yet. Do not submit Phase B with this status.
 
 ## Verification Links
 
