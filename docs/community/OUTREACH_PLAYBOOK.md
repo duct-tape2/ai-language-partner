@@ -13,6 +13,8 @@ Week 1:
 - Pin 10 issues that are low-context and reviewable in under one hour.
 - Ask for language/content review first; it matches the project domain and is
   easier for non-coders to contribute meaningfully.
+- Work through `docs/community/OUTREACH_QUEUE.json` in small batches and fill
+  `posted_url` only after a real public post exists.
 
 Week 2:
 
@@ -115,3 +117,9 @@ Start with communities where the project has natural fit:
 
 Avoid mass posting identical messages. Tailor each post to the community and
 point to a small set of relevant issues.
+
+Validate the queue before a recruiting session:
+
+```bash
+python scripts/verify_outreach_queue.py
+```

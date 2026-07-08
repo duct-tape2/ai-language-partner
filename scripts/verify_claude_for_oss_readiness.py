@@ -43,9 +43,11 @@ REQUIRED_FILES = [
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
+    "docs/community/OUTREACH_QUEUE.json",
     "docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md",
     "scripts/snapshot_claude_for_oss_status.py",
     "scripts/create_contributor_sprint_kickoff_issue.py",
+    "scripts/verify_outreach_queue.py",
 ]
 
 
@@ -105,6 +107,9 @@ def main(argv: list[str]) -> int:
 
     ok, output = run_local(["python3", "scripts/check_public_tree.py"])
     passed &= check("local public tree hygiene", ok, output or "ok")
+
+    outreach_ok, outreach_output = run_local(["python3", "scripts/verify_outreach_queue.py"])
+    passed &= check("outreach queue", outreach_ok, outreach_output or "ok")
 
     missing = [path for path in REQUIRED_FILES if not (ROOT / path).exists()]
     passed &= check("required public files", not missing, ", ".join(missing) if missing else "all present")

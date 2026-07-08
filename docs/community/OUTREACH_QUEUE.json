@@ -1,0 +1,214 @@
+{
+  "repo": "duct-tape2/ai-language-partner",
+  "goal": "Recruit real external contributors for the Claude for OSS community-builder route.",
+  "rules": [
+    "Do not mass-post identical messages.",
+    "Do not use fake accounts, sockpuppets, or paid spam.",
+    "Invite people to useful, scoped issues only.",
+    "Track public post URLs only after they exist.",
+    "A posted outreach item is not contributor evidence; only useful merged external PRs count."
+  ],
+  "status_values": ["draft", "posted", "responded", "pr-open", "merged-counted", "closed"],
+  "items": [
+    {
+      "id": "outreach_01",
+      "audience": "Korean Japanese-learning study group",
+      "lane": "Korean docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs",
+      "message_template": "short-korean",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Ask for backend setup and learner-note review."
+    },
+    {
+      "id": "outreach_02",
+      "audience": "Korean Japanese-learning Discord or study chat",
+      "lane": "Korean docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/34",
+      "message_template": "short-korean",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Invite macOS/Python setup troubleshooting notes."
+    },
+    {
+      "id": "outreach_03",
+      "audience": "Japanese language reviewers",
+      "lane": "Japanese review",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22",
+      "message_template": "short-japanese",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Ask for beginner-safe naturalness review."
+    },
+    {
+      "id": "outreach_04",
+      "audience": "Native/fluent Japanese speakers",
+      "lane": "Japanese review",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/35",
+      "message_template": "short-japanese",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Focus on Japanese explanation of no-runtime-LLM design."
+    },
+    {
+      "id": "outreach_05",
+      "audience": "JLPT beginner-content reviewers",
+      "lane": "Dialogue content",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Invite reviewed source text, not generated media."
+    },
+    {
+      "id": "outreach_06",
+      "audience": "Language teachers or tutors",
+      "lane": "Dialogue content",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/36",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Ask for beginner restaurant-preference examples."
+    },
+    {
+      "id": "outreach_07",
+      "audience": "React Native accessibility contributors",
+      "lane": "Accessibility/mobile",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Invite labels, touch targets, and small-screen review."
+    },
+    {
+      "id": "outreach_08",
+      "audience": "Expo developers",
+      "lane": "Accessibility/mobile",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/39",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Focus on narrow mobile layout for Voice Gallery cards."
+    },
+    {
+      "id": "outreach_09",
+      "audience": "FastAPI contributors",
+      "lane": "Backend/API docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Invite API examples and provider-status docs."
+    },
+    {
+      "id": "outreach_10",
+      "audience": "OpenAPI documentation contributors",
+      "lane": "Backend/API docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/40",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Ask for dialogue pack listing response examples."
+    },
+    {
+      "id": "outreach_11",
+      "audience": "Python test contributors",
+      "lane": "Tests/tooling",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Invite focused tests that do not require local engines."
+    },
+    {
+      "id": "outreach_12",
+      "audience": "Security-minded test contributors",
+      "lane": "Tests/tooling",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/22",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Path traversal rejection test is scoped and useful."
+    },
+    {
+      "id": "outreach_13",
+      "audience": "OSS maintainer communities",
+      "lane": "Release/community",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/45",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Ask for maintainer review checklist improvements."
+    },
+    {
+      "id": "outreach_14",
+      "audience": "Local-first software communities",
+      "lane": "Release/community",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/31",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Explain why no runtime LLM is used."
+    },
+    {
+      "id": "outreach_15",
+      "audience": "Privacy-preserving education builders",
+      "lane": "Backend/API docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/41",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Provider fallback labels and honest local-first behavior."
+    },
+    {
+      "id": "outreach_16",
+      "audience": "Korean technical writers",
+      "lane": "Korean docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/44",
+      "message_template": "short-korean",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Improve first PR walkthrough with localized notes."
+    },
+    {
+      "id": "outreach_17",
+      "audience": "Japanese/Korean bilingual learners",
+      "lane": "Dialogue content",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/46",
+      "message_template": "short-korean",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Sentence-final particle notes for Korean learners."
+    },
+    {
+      "id": "outreach_18",
+      "audience": "Mobile UI reviewers",
+      "lane": "Accessibility/mobile",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/13",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Touch target audit in bottom tabs."
+    },
+    {
+      "id": "outreach_19",
+      "audience": "API example writers",
+      "lane": "Backend/API docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/6",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Daily Talk endpoint curl examples."
+    },
+    {
+      "id": "outreach_20",
+      "audience": "Repo tooling contributors",
+      "lane": "Tests/tooling",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/43",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Contributor evidence script fixture tests."
+    }
+  ]
+}
