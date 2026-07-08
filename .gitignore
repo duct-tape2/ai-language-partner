@@ -13,6 +13,7 @@ web-build/
 __pycache__/
 .pytest_cache/
 *.pyc
+.claude-for-oss/
 
 *.sqlite
 *.sqlite-shm
@@ -32,4 +33,3 @@ packs/*/*/audio/
 *.mp3
 *.npy
 *.bin
-

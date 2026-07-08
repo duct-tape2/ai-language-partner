@@ -1,0 +1,43 @@
+name: Claude OSS Monitor
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/snapshot_claude_for_oss_status.py"
+      - "scripts/export_claude_for_oss_evidence.py"
+      - ".github/workflows/claude-oss-monitor.yml"
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  claude-oss-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Snapshot Claude for OSS status
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
+
+      - name: Write job summary
+        run: cat .claude-for-oss/claude_for_oss_status.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload status artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-for-oss-status
+          path: .claude-for-oss/

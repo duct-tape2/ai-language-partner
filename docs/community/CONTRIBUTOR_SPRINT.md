@@ -156,5 +156,11 @@ python scripts/update_claude_application_evidence.py duct-tape2/ai-language-part
 python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 ```
 
+For a non-failing status artifact suitable for weekly monitoring:
+
+```bash
+python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
+```
+
 Only submit the Phase B application when the readiness script proves 20 unique
 external merged PR contributors.
