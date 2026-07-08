@@ -1,0 +1,160 @@
+# 20 Contributor Sprint
+
+This sprint is the practical path to the Claude for OSS community-builder
+criterion: 20+ unique external contributors with merged PRs in the last 12
+months.
+
+The goal is not to manufacture activity. The goal is to make twenty useful,
+reviewable first contributions genuinely easy.
+
+## Current Status
+
+- Repository: `https://github.com/duct-tape2/ai-language-partner`
+- Good first issues:
+  `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
+- Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`
+- Counted external contributors: 0
+- Remaining external contributors needed: 20
+- Maintainer-authored PRs do not count.
+
+## Sprint Rules
+
+- One counted PR per unique external human contributor.
+- Every counted PR must link an issue or clearly name the problem it solves.
+- Every counted PR must improve docs, content, accessibility, tests, API
+  examples, setup clarity, or maintainability.
+- Every counted PR needs a maintainer review comment before merge.
+- Do not count bots, duplicate identities, maintainer-controlled accounts, or
+  trivial PR splits.
+
+## Issue Lanes
+
+Use these lanes to invite contributors by skill level and domain. Keep the
+links focused so a first-time contributor sees a short menu, not a wall of
+fifty issues.
+
+| Lane | Target contributors | Starter issues | What counts |
+|---|---|---|---|
+| Korean docs | Korean-speaking learners and technical writers | #1, #11, #34, #44, #46 | Clearer setup, learner notes, or first-PR guidance |
+| Japanese review | Japanese speakers and language reviewers | #2, #8, #35, #37 | Naturalness, beginner safety, tone consistency |
+| Dialogue content | Language teachers, JLPT reviewers, bilingual learners | #7, #9, #10, #36, #47 | Reviewed source text without generated audio/binaries |
+| Accessibility/mobile | Expo, React Native, accessibility reviewers | #13, #14, #18, #38, #39, #48 | Better labels, touch targets, no narrow-screen overlap |
+| Backend/API docs | FastAPI users and API docs contributors | #6, #19, #20, #40, #41 | OpenAPI examples, provider docs, threshold explanations |
+| Tests/tooling | Python/TypeScript contributors | #21, #22, #25, #28, #42, #43, #49 | Focused tests or repo checks that run locally/CI |
+| Release/community | OSS maintainers and process reviewers | #29, #30, #45, #50 | Cleaner labels, review checklist, roadmap, release process |
+
+## 20-Slot Contributor Board
+
+Fill this only after real PRs are opened or merged. Do not pre-fill names.
+
+| Slot | Contributor | Issue | PR | Area | Status | Counting decision |
+|---|---|---|---|---|---|---|
+| 1 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 2 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 3 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 4 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 5 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 6 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 7 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 8 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 9 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 10 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 11 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 12 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 13 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 14 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 15 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 16 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 17 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 18 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 19 | TBD | TBD | TBD | TBD | recruiting | TBD |
+| 20 | TBD | TBD | TBD | TBD | recruiting | TBD |
+
+Status values:
+
+- `recruiting`: contributor has not committed to an issue yet
+- `assigned`: contributor is working on a scoped issue
+- `pr-open`: PR is open and needs review
+- `changes-requested`: maintainer left actionable review
+- `merged-counted`: merged and eligible for the evidence packet
+- `merged-not-counted`: merged but excluded from the external contributor count
+
+## First Outreach Batch
+
+Use this batch before broad posting. Send targeted messages to people who can
+review language, docs, or accessibility without installing local engines.
+
+| Batch | Audience | Issues to send | Ask |
+|---|---|---|---|
+| A | Korean Japanese learners | #1, #11, #34, #46 | Improve Korean explanations or setup notes |
+| B | Native/fluent Japanese reviewers | #8, #35, #37 | Review naturalness and beginner level |
+| C | React Native/accessibility contributors | #13, #14, #38, #39 | Audit labels, touch targets, small screens |
+| D | FastAPI/API docs contributors | #6, #19, #40, #41 | Add examples and provider/status docs |
+| E | Test-minded contributors | #21, #22, #25, #42, #49 | Add narrow tests or repo checks |
+
+## Message Templates
+
+### Short Korean
+
+```text
+한국어권 일본어 학습자를 위한 local-first OSS를 공개했습니다.
+런타임 LLM 없이 사전 저작 dialogue bank + 로컬 STT/TTS로 회화 연습을 만드는 프로젝트입니다.
+
+처음 기여하기 쉬운 작은 이슈를 찾고 있어요:
+{issue_url}
+
+문서/언어 검수 PR도 실제 사용자 가치가 있으면 환영합니다. 생성 음성, 로컬 엔진, private data는 필요 없습니다.
+```
+
+### Short Japanese
+
+```text
+韓国語話者向けの日本語学習アプリ OSS を公開しました。
+実行時に LLM を呼ばず、事前作成の dialogue bank とローカル STT/TTS で会話練習を行う local-first プロジェクトです。
+
+小さな貢献を募集しています:
+{issue_url}
+
+日本語の自然さ、初級者向け表現、ドキュメント改善などの PR を歓迎します。
+```
+
+### Short English
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for small, useful first contributions:
+{issue_url}
+
+Docs, content review, accessibility, API examples, and focused tests all help.
+```
+
+## Maintainer Review Script
+
+Use this comment shape on every PR that might count:
+
+```text
+Thanks for the focused contribution. I checked:
+
+- linked issue / problem statement:
+- user or contributor value:
+- no generated/private assets:
+- no runtime-LLM dependency added:
+- relevant check:
+
+Decision: merge / request changes / merge but do not count for Claude for OSS evidence.
+```
+
+## Evidence Update
+
+After every merged external PR:
+
+```bash
+python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
+python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
+python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
+```
+
+Only submit the Phase B application when the readiness script proves 20 unique
+external merged PR contributors.

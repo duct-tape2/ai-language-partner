@@ -12,7 +12,9 @@ bank** under `packs/`. Contributions must preserve that guarantee. See
 
 New contributors can start with
 `docs/community/FIRST_PR_WALKTHROUGH.md` and the GitHub issues labeled
-`good first issue`.
+`good first issue`. Maintainers coordinating the Claude for OSS
+community-builder route should use `docs/community/CONTRIBUTOR_SPRINT.md` for
+issue lanes, outreach batches, and counting decisions.
 
 ---
 
