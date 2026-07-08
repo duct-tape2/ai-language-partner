@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 9 * * 1"
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/snapshot_claude_for_oss_status.py"
+      - "scripts/export_claude_for_oss_evidence.py"
+      - ".github/workflows/claude-oss-monitor.yml"
   pull_request:
     paths:
       - "scripts/snapshot_claude_for_oss_status.py"
