@@ -47,6 +47,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 - Contributor interest triage workflow:
   `.github/workflows/contributor-interest-triage.yml`
+- Issue claim guidance workflow:
+  `.github/workflows/issue-claim-guidance.yml`
 - Contributor sprint status workflow:
   `.github/workflows/contributor-sprint-status.yml`
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
@@ -73,6 +75,10 @@ reviewable first contributions genuinely easy.
 Use these lanes to invite contributors by skill level and domain. Keep the
 links focused so a first-time contributor sees a short menu, not a wall of
 fifty issues.
+
+Contributors can comment `/claim` on an issue before starting. The
+`Issue Claim Guidance` workflow replies once with the short PR checklist and
+reminds them to link the issue from the PR body.
 
 | Lane | Target contributors | Starter issues | What counts |
 |---|---|---|---|

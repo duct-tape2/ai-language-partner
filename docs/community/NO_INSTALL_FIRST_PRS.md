@@ -11,11 +11,12 @@ typos into separate PRs just to increase the count.
 ## How To Send A Browser-Only PR
 
 1. Pick one issue from the table below.
-2. Open the linked source file.
-3. Click the pencil icon on GitHub, or use the direct edit link.
-4. Make one focused improvement.
-5. Use a PR title like `docs: improve Korean backend mock quickstart`.
-6. In the PR body, write `Closes #ISSUE_NUMBER` and mention that the change is
+2. Comment `/claim` on the issue if you want to avoid duplicate work.
+3. Open the linked source file.
+4. Click the pencil icon on GitHub, or use the direct edit link.
+5. Make one focused improvement.
+6. Use a PR title like `docs: improve Korean backend mock quickstart`.
+7. In the PR body, write `Closes #ISSUE_NUMBER` and mention that the change is
    docs/content review.
 
 No command-line check is required for plain wording review. If you edit JSON or

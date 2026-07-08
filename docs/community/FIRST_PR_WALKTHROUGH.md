@@ -16,6 +16,9 @@ If you want to avoid local setup entirely, use the no-install board:
 
 `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 
+To avoid duplicate work, comment `/claim` on the issue before you start. The
+repo will reply with the short PR checklist for that issue.
+
 Good first issues should include:
 
 - A clear goal

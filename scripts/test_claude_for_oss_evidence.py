@@ -289,6 +289,16 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues: write", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
 
+    def test_issue_claim_guidance_workflow_handles_claim_comments(self) -> None:
+        workflow = Path(".github/workflows/issue-claim-guidance.yml").read_text(encoding="utf-8")
+
+        self.assertIn("issue_comment:", workflow)
+        self.assertIn("/claim", workflow)
+        self.assertIn("ai-language-partner:issue-claim-guidance", workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
+        self.assertIn("issues: write", workflow)
+        self.assertIn("issue.pull_request", workflow)
+
 
 class ContributorSprintStatusTest(unittest.TestCase):
     def test_render_status_links_fastest_first_pr_and_counting_rules(self) -> None:

@@ -46,7 +46,7 @@ with the lane you prefer, or open a
 ## Fastest First PR Path
 
 1. Pick one issue from the table above.
-2. Comment on the issue if you want to avoid duplicate work.
+2. Comment `/claim` on the issue if you want to avoid duplicate work.
 3. Read the [first PR walkthrough](FIRST_PR_WALKTHROUGH.md).
 4. Make one focused change.
 5. Open a PR that links the issue and names the check you ran.

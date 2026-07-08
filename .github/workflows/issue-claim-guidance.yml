@@ -1,0 +1,69 @@
+name: Issue Claim Guidance
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  claim-guidance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post claim-to-PR guidance
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const comment = context.payload.comment;
+            if (!issue || !comment || issue.pull_request || comment.user.type === "Bot") {
+              return;
+            }
+
+            const body = comment.body || "";
+            const claimPattern =
+              /(^|\n)\s*\/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bcan i take this\b|제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます/i;
+            if (!claimPattern.test(body)) {
+              return;
+            }
+
+            const marker = "<!-- ai-language-partner:issue-claim-guidance -->";
+            const { owner, repo } = context.repo;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: issue.number,
+              per_page: 100,
+            });
+            if (comments.some((existing) => existing.body && existing.body.includes(marker))) {
+              core.info("Issue claim guidance already exists.");
+              return;
+            }
+
+            const response = [
+              marker,
+              `Thanks, @${comment.user.login}. Treating this as a claim signal for #${issue.number}.`,
+              "",
+              "Fast path to a first PR:",
+              "",
+              "1. Use the five-minute first PR guide: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+              "2. Keep the change focused on this issue.",
+              `3. In the PR body, write \`Closes #${issue.number}\` or \`Refs #${issue.number}\`.`,
+              "4. Mention the check you ran, or say it was docs/content/language review only.",
+              "",
+              "Guardrails:",
+              "",
+              "- Do not add generated audio, archives, SQLite files, screenshots, local engine folders, secrets, private notes, or API keys.",
+              "- Preserve the no-runtime-LLM rule for the Daily Talk path.",
+              "- If two people claim the same issue, maintainers will help split or redirect the work.",
+              "",
+              "This comment is contributor guidance, not Claude for OSS evidence. Only useful merged PRs from real external contributors count.",
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issue.number,
+              body: response,
+            });

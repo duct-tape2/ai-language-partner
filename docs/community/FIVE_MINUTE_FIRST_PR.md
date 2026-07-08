@@ -7,6 +7,9 @@ private data.
 Pick one row, open the edit link, make one focused improvement, and create a
 pull request from GitHub's web editor.
 
+If you want to avoid duplicate work, comment `/claim` on the issue first. An
+automated reply will point you back to the PR checklist for that issue.
+
 Only real, useful PRs count toward Claude for OSS evidence. Do not split
 trivial typo fixes into separate PRs just to increase numbers.
 

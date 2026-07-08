@@ -35,6 +35,8 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 질문/첫 PR 상담:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
 
+원하는 이슈가 있으면 `/claim`이라고 댓글을 남기면 짧은 PR 체크리스트가 자동으로 달립니다.
+
 생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.""",
     "short-japanese": """韓国語話者向けの日本語学習アプリ OSS を公開しました。
 実行時に LLM を呼ばず、事前作成の dialogue bank とローカル STT/TTS で会話練習を行う local-first プロジェクトです。
@@ -58,6 +60,8 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
 
+気になる issue があれば `/claim` とコメントすると、短い PR checklist が自動返信されます。
+
 生成音声や private data は不要です。日本語の自然さ、初級者向け表現、ドキュメント改善などの PR を歓迎します。""",
     "short-english": """I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
 The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
@@ -80,6 +84,8 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
 
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.""",
 }

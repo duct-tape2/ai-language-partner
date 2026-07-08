@@ -40,6 +40,7 @@ REQUIRED_FILES = [
     ".github/workflows/contributor-sprint-status.yml",
     ".github/workflows/contributor-interest-triage.yml",
     ".github/workflows/issue-welcome.yml",
+    ".github/workflows/issue-claim-guidance.yml",
     ".github/workflows/pr-welcome.yml",
     ".github/workflows/pr-review-packet.yml",
     ".github/workflows/starter-issue-index.yml",
