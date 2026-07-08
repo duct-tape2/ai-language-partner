@@ -22,6 +22,9 @@ useful merged external PRs count.
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs
 
+이슈 색인:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -42,6 +45,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 아래 이슈에서 작은 기여를 찾고 있어요.
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues/34
+
+이슈 색인:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -64,6 +70,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 おすすめ issue:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -84,6 +93,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 以下の issue で小さな貢献を募集しています。
 おすすめ issue:
 https://github.com/duct-tape2/ai-language-partner/issues/35
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -106,6 +118,9 @@ I'm looking for a small, useful contribution from JLPT beginner-content reviewer
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -126,6 +141,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Language teachers or tutors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/36
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -148,6 +166,9 @@ I'm looking for a small, useful contribution from React Native accessibility con
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -168,6 +189,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Expo developers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/39
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -190,6 +214,9 @@ I'm looking for a small, useful contribution from FastAPI contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -210,6 +237,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from OpenAPI documentation contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/40
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -232,6 +262,9 @@ I'm looking for a small, useful contribution from Python test contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -252,6 +285,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Security-minded test contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/22
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -274,6 +310,9 @@ I'm looking for a small, useful contribution from OSS maintainer communities.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/45
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -294,6 +333,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Local-first software communities.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/31
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -316,6 +358,9 @@ I'm looking for a small, useful contribution from Privacy-preserving education b
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/41
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -336,6 +381,9 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 아래 이슈에서 작은 기여를 찾고 있어요.
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues/44
+
+이슈 색인:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -358,6 +406,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTR
 추천 이슈/목록:
 https://github.com/duct-tape2/ai-language-partner/issues/46
 
+이슈 색인:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -378,6 +429,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Mobile UI reviewers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/13
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
@@ -400,6 +454,9 @@ I'm looking for a small, useful contribution from API example writers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/6
 
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 
@@ -420,6 +477,9 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Repo tooling contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/43
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
