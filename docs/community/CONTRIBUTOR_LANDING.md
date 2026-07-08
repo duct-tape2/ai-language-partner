@@ -1,0 +1,61 @@
+# Contributor Landing
+
+Welcome. This project is looking for small, useful public contributions from
+language learners, Korean/Japanese reviewers, mobile accessibility reviewers,
+FastAPI/API docs contributors, and test-minded developers.
+
+You do not need local speech engines, private data, generated audio, or API
+keys to make a useful first PR.
+
+## Pick Your Lane
+
+| I can help with... | Start here | Good first outcome |
+|---|---|---|
+| Korean docs or learner notes | [Korean docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs) | Clearer setup or learner explanation |
+| Japanese naturalness review | [Language-review issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22) | Beginner-safe wording and tone |
+| Dialogue content review | [Content issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent) | Reviewed source text, no generated assets |
+| Mobile accessibility | [Accessibility issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility) | Better labels, touch targets, or layout |
+| FastAPI/OpenAPI examples | [Backend docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs) | Clear examples or provider docs |
+| Tests/tooling | [Tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | Focused repo, API, or fixture checks |
+
+If you are not sure where to start, comment on the
+[20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
+with the lane you prefer.
+
+## Fastest First PR Path
+
+1. Pick one issue from the table above.
+2. Comment on the issue if you want to avoid duplicate work.
+3. Read the [first PR walkthrough](FIRST_PR_WALKTHROUGH.md).
+4. Make one focused change.
+5. Open a PR that links the issue and names the check you ran.
+
+Docs-only and language-review PRs are welcome when they improve real learner or
+contributor experience.
+
+## What Not To Commit
+
+Please do not commit:
+
+- generated `.wav`, `.zip`, `.npy`, `.sqlite`, `.db`, `.bin`, or screenshot files
+- local speech engine folders
+- private notes, handoff files, or personal paths
+- secrets, tokens, API keys, or private datasets
+
+The repository intentionally keeps generated voice assets and local engines out
+of Git.
+
+## Project Rule
+
+The Daily Talk path avoids runtime LLM/API calls. Learner audio is transcribed
+locally, matched against reviewed dialogue-bank lines, and answered with local
+TTS assets. Contributions should preserve that local-first design.
+
+## Claude for OSS Note
+
+This project is building toward the Claude for OSS community-builder route:
+20+ unique external contributors with useful merged PRs in the last 12 months.
+
+Only real external contributors count. Maintainer-authored PRs, bots, duplicate
+identities, and trivial metric-only PRs are excluded. See the
+[PR review and counting policy](PR_REVIEW_AND_COUNTING_POLICY.md).

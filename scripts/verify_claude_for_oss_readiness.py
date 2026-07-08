@@ -39,6 +39,7 @@ REQUIRED_FILES = [
     ".github/workflows/pr-welcome.yml",
     "docs/CLAUDE_FOR_OSS_APPLICATION.md",
     "docs/community/ISSUE_SEEDS.md",
+    "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md",
     "scripts/snapshot_claude_for_oss_status.py",

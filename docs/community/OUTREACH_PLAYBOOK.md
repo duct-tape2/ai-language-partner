@@ -48,6 +48,9 @@ Week 4:
 
 처음 기여하기 쉬운 이슈:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
+기여자 안내:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 ```
 
 ## Outreach Copy: Japanese
@@ -64,6 +67,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Good first issues:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
+Contributor landing:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 ```
 
 ## Outreach Copy: English
@@ -81,6 +87,9 @@ Useful small contributions:
 
 Good first issues:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
+Contributor landing:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
 ```
 
 ## Review Promise

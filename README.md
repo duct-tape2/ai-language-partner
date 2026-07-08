@@ -22,10 +22,12 @@ tests without large binary assets.
 ## Contributing entry points
 
 The project is ready for small, reviewable public contributions. Start with the
-[`good first issue` list](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+[`contributor landing page`](docs/community/CONTRIBUTOR_LANDING.md), the
+[`good first issue` list](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22),
 or the [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md). The
-[20 contributor sprint](docs/community/CONTRIBUTOR_SPRINT.md) groups issues by
-skill area for the Claude for OSS community-builder route.
+[20 contributor sprint](docs/community/CONTRIBUTOR_SPRINT.md) and
+[kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
+group issues by skill area for the Claude for OSS community-builder route.
 
 Useful first contributions include Korean/Japanese documentation fixes, JLPT
 sample-content review, accessibility labels, OpenAPI examples, local STT/TTS
