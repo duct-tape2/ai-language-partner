@@ -13,8 +13,8 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - License: MIT
 - Visibility: public
 - Default branch: `main`
-- Starter issues: 50
-- Repo hygiene action: green
+- Starter/community issues: 51
+- Repo hygiene action: green (`https://github.com/duct-tape2/ai-language-partner/actions/runs/28933354403`)
 - Community-builder count: 0 unique external merged PR contributors so far
 - Status: not ready for Phase B; suitable only for a "Don't quite fit?" early
   application
@@ -25,8 +25,9 @@ I maintain `ai-language-partner`, a local-first open-source Japanese speaking
 practice app for Korean speakers. It uses pre-authored dialogue banks and local
 STT/TTS rather than runtime LLM/API calls for the core speaking loop. The repo
 is public, MIT-licensed, has CI hygiene checks, contributor docs, issue
-templates, and 50 scoped starter issues for external language review,
-accessibility, docs, tests, FastAPI examples, and Expo polish.
+templates, and 51 scoped starter/community issues for external language review,
+accessibility, docs, tests, FastAPI examples, Expo polish, and contributor
+coordination.
 
 The project does not yet meet the numeric Claude for OSS thresholds. I am
 applying under the "Don't quite fit?" guidance because the project is designed
@@ -57,7 +58,10 @@ The public repo includes:
 - public-tree hygiene scan
 - GitHub Actions workflows
 - security, code of conduct, contribution docs, PR template, issue templates
-- 50 scoped issues for first-time and external contributors
+- 51 scoped issues for first-time and external contributors
+- contributor sprint kickoff, PR welcome, issue welcome, and weekly Claude OSS
+  monitor workflows
+- fixture-tested contributor evidence counting rules
 
 ## Current Limitation
 
@@ -76,4 +80,5 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 - Issues: `https://github.com/duct-tape2/ai-language-partner/issues`
 - Good first issues: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
+- Latest green hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28933354403`
 - Contributor evidence doc: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/CLAUDE_FOR_OSS_APPLICATION.md`
