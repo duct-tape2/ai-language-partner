@@ -16,6 +16,9 @@ from unique external contributors count for the community-builder threshold.
 Public sprint update:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
 
+Automated status comment:
+`https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370`
+
 ## Maintainer Follow-Up
 
 - Check listing PRs daily until merged or reviewed.

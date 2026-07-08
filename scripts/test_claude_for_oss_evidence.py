@@ -23,6 +23,7 @@ import render_starter_issue_index as issue_index  # noqa: E402
 import verify_github_governance as governance  # noqa: E402
 import post_first_pr_recipes as first_pr_recipes  # noqa: E402
 import apply_discovery_labels as discovery_labels  # noqa: E402
+import snapshot_discovery_listings as discovery_snapshot  # noqa: E402
 
 
 def issue_item(
@@ -255,6 +256,32 @@ class DiscoveryLabelsTest(unittest.TestCase):
         self.assertNotIn(22, discovery_labels.FIRST_TIMERS_ISSUES)
         self.assertIn("up-for-grabs", discovery_labels.DISCOVERY_LABELS)
         self.assertIn("first-timers-only", discovery_labels.DISCOVERY_LABELS)
+
+
+class DiscoveryListingSnapshotTest(unittest.TestCase):
+    def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
+        listing_status = {
+            "name": "Example Listing",
+            "url": "https://example.test/pull/1",
+            "state": "open",
+            "merged": False,
+            "mergeable": True,
+            "draft": False,
+            "checks": ["Project Changes: completed success"],
+            "contributor_link": "https://example.test/labels/first-timers-only",
+        }
+
+        with patch.object(discovery_snapshot, "count_open_issues", side_effect=[18, 16]), patch.object(
+            discovery_snapshot, "fetch_listing_pr", return_value=listing_status
+        ):
+            markdown = discovery_snapshot.build_markdown("duct-tape2/ai-language-partner", token=None)
+
+        self.assertIn(discovery_snapshot.MARKER, markdown)
+        self.assertIn("Open `up-for-grabs` issues: `18`", markdown)
+        self.assertIn("Open `first-timers-only` issues: `16`", markdown)
+        self.assertIn("do not", markdown)
+        self.assertIn("count as Claude for OSS contributor evidence", markdown)
+        self.assertIn("[PR](https://example.test/pull/1)", markdown)
 
 
 if __name__ == "__main__":

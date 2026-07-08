@@ -1,0 +1,41 @@
+name: Discovery Listings Monitor
+
+on:
+  schedule:
+    - cron: "20 9 * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/snapshot_discovery_listings.py"
+      - ".github/workflows/discovery-listings-monitor.yml"
+  pull_request:
+    paths:
+      - "scripts/snapshot_discovery_listings.py"
+      - ".github/workflows/discovery-listings-monitor.yml"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  discovery-listings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Snapshot discovery listings
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/snapshot_discovery_listings.py --out discovery-listings-status.md --comment
+
+      - name: Write job summary
+        run: cat discovery-listings-status.md >> "$GITHUB_STEP_SUMMARY"
