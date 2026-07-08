@@ -21,6 +21,11 @@ The packet summarizes:
 
 The packet is a triage aid, not a final counting decision.
 
+New PRs also get an automated review-packet comment from
+`.github/workflows/pr-review-packet.yml`. The workflow checks out the trusted
+base branch only and reads PR metadata/files through the GitHub API; it does
+not execute contributor code.
+
 ## 2. Review for usefulness
 
 A PR can count only when it improves real user, contributor, documentation,
@@ -53,6 +58,8 @@ Decision: merge / request changes / merge but do not count for Claude for OSS ev
 ```
 
 The automated PR welcome comment is not a review decision.
+The automated PR review-packet comment is also not a review decision; it only
+prepares the checklist so the human review can be faster and more consistent.
 
 ## 4. Merge and update evidence
 

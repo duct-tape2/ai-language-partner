@@ -25,6 +25,7 @@ import post_first_pr_recipes as first_pr_recipes  # noqa: E402
 import apply_discovery_labels as discovery_labels  # noqa: E402
 import snapshot_discovery_listings as discovery_snapshot  # noqa: E402
 import post_no_install_first_pr_guides as no_install_guides  # noqa: E402
+import post_pr_review_packet as pr_review_comment  # noqa: E402
 
 
 def issue_item(
@@ -194,6 +195,35 @@ class PrReviewPacketTest(unittest.TestCase):
         self.assertEqual(packet.blockers, ())
         self.assertIn("docs/content review: verify links and wording manually", packet.markdown)
         self.assertIn("Countable candidate: `yes`", packet.markdown)
+
+
+class PrReviewPacketCommentTest(unittest.TestCase):
+    def test_render_comment_wraps_packet_as_non_decision_triage_aid(self) -> None:
+        packet = review_packet.ReviewPacket(
+            markdown="# PR Review Packet: #88\n\n- Countable candidate: `no`",
+            countable_candidate=False,
+            blockers=("PR is not merged yet",),
+        )
+
+        with patch.object(pr_review_comment, "fetch_pr_packet", return_value=packet):
+            comment = pr_review_comment.render_comment("duct-tape2/ai-language-partner", 88, "token")
+
+        self.assertIn(pr_review_comment.MARKER, comment)
+        self.assertIn("Automated Maintainer Review Packet", comment)
+        self.assertIn("not a merge decision", comment)
+        self.assertIn("not Claude for OSS evidence by itself", comment)
+        self.assertIn("# PR Review Packet: #88", comment)
+        self.assertIn("Countable candidate: `no`", comment)
+
+    def test_pr_review_packet_workflow_uses_trusted_base_checkout(self) -> None:
+        workflow = Path(".github/workflows/pr-review-packet.yml").read_text(encoding="utf-8")
+
+        self.assertIn("pull_request_target:", workflow)
+        self.assertIn("Checkout trusted base branch", workflow)
+        self.assertIn("ref: ${{ github.event.pull_request.base.ref }}", workflow)
+        self.assertIn("pull-requests: read", workflow)
+        self.assertIn("python scripts/post_pr_review_packet.py", workflow)
+        self.assertNotIn("github.event.pull_request.head", workflow)
 
 
 class GovernanceCheckTest(unittest.TestCase):
