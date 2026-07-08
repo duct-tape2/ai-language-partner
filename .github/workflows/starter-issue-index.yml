@@ -12,6 +12,10 @@ on:
       - "scripts/render_starter_issue_index.py"
       - ".github/workflows/starter-issue-index.yml"
 
+concurrency:
+  group: starter-issue-index-${{ github.repository }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
   issues: read
@@ -49,13 +53,13 @@ jobs:
         if: steps.diff.outputs.changed == 'true'
         id: branch
         run: |
-          branch="automation/starter-issue-index-${GITHUB_RUN_ID}"
+          branch="automation/starter-issue-index"
           git checkout -b "$branch"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/community/STARTER_ISSUE_INDEX.md docs/community/FIRST_PR_RECIPES.md
           git commit -m "docs: refresh starter issue index"
-          git push origin "$branch"
+          git push --force origin "$branch"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
 
       - name: Open refresh PR
@@ -75,19 +79,29 @@ jobs:
               core.info(`Refresh PR already exists: ${existing[0].html_url}`);
               return;
             }
-            const { data: pr } = await github.rest.pulls.create({
-              owner,
-              repo,
-              title: "docs: refresh starter issue index",
-              head: branch,
-              base: "main",
-              body: [
-                "Automated refresh for starter issue contributor docs.",
-                "",
-                "- `docs/community/STARTER_ISSUE_INDEX.md`",
-                "- `docs/community/FIRST_PR_RECIPES.md`",
-                "",
-                "This PR exists because `main` requires PR review for governance.",
-              ].join("\n"),
-            });
-            core.info(`Created refresh PR: ${pr.html_url}`);
+            try {
+              const { data: pr } = await github.rest.pulls.create({
+                owner,
+                repo,
+                title: "docs: refresh starter issue index",
+                head: branch,
+                base: "main",
+                body: [
+                  "Automated refresh for starter issue contributor docs.",
+                  "",
+                  "- `docs/community/STARTER_ISSUE_INDEX.md`",
+                  "- `docs/community/FIRST_PR_RECIPES.md`",
+                  "",
+                  "This PR exists because `main` requires PR review for governance.",
+                ].join("\n"),
+              });
+              core.info(`Created refresh PR: ${pr.html_url}`);
+            } catch (error) {
+              if (error.status === 403) {
+                const compareUrl = `https://github.com/${owner}/${repo}/compare/main...${branch}?expand=1`;
+                core.warning(`Could not create PR with GITHUB_TOKEN: ${error.message}`);
+                core.warning(`Open the refresh PR manually if needed: ${compareUrl}`);
+                return;
+              }
+              throw error;
+            }
