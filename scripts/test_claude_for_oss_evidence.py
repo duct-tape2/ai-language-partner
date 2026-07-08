@@ -274,6 +274,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
         self.assertIn("ai-language-partner:contributor-interest-triage", workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("Korean docs or learner notes", workflow)
         self.assertIn("Japanese naturalness review", workflow)
         self.assertIn("FIRST_PR_RECIPES.md", workflow)

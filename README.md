@@ -11,6 +11,7 @@
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
+[Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
 [Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
 [No-install first PRs](docs/community/NO_INSTALL_FIRST_PRS.md) ·
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
@@ -34,7 +35,8 @@ and metric-only changes are excluded.
 | Backend/API docs | [backend docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs) | OpenAPI examples, local STT/TTS setup notes |
 | Tests/tooling | [tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | small fixture tests or verification scripts |
 
-Start with the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
+Start with the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
+the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
 the [no-install first PR board](docs/community/NO_INSTALL_FIRST_PRS.md),
 the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), the
 [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md), or the

@@ -8,6 +8,8 @@ changes can be useful without private context.
 
 Start here:
 
+`https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md`
+
 `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 
 If you want to avoid local setup entirely, use the no-install board:

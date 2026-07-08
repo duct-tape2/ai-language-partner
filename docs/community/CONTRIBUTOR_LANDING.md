@@ -13,6 +13,10 @@ the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [starter issue index](STARTER_ISSUE_INDEX.md) if you want a lane-by-lane list
 of currently open tasks.
 
+For the lowest-friction route, use the
+[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md). It links directly to
+browser-editable issues and includes a PR body template.
+
 For step-by-step issue-specific guidance, see the
 [first PR recipes](FIRST_PR_RECIPES.md).
 
@@ -48,6 +52,7 @@ with the lane you prefer, or open a
 5. Open a PR that links the issue and names the check you ran.
 
 For docs or language review, the fastest path is the
+[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md) or the
 [no-install first PR board](NO_INSTALL_FIRST_PRS.md): pick a row, use the
 direct edit link, and submit a focused browser-only PR.
 

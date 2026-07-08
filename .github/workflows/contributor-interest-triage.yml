@@ -112,6 +112,7 @@ jobs:
             const selected = laneMap.find((lane) => body.includes(lane.match)) || {
               title: "Not sure yet",
               links: [
+                "Five-minute first PR: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
                 "Starter issue index: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md",
                 "First PR recipes: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md",
                 "First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53",
@@ -128,10 +129,11 @@ jobs:
               "",
               "How to turn this into a first PR:",
               "",
-              "1. Pick one issue and comment that you want to work on it.",
-              "2. Use the first PR recipe on that issue or in `docs/community/FIRST_PR_RECIPES.md`.",
-              "3. Open a focused PR that links the issue, e.g. `Closes #123`.",
-              "4. Mention the check you ran, or say it was docs/content review only.",
+              "1. Start with the five-minute first PR guide: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+              "2. Pick one issue and comment that you want to work on it.",
+              "3. Use the first PR recipe on that issue or in `docs/community/FIRST_PR_RECIPES.md`.",
+              "4. Open a focused PR that links the issue, e.g. `Closes #123`.",
+              "5. Mention the check you ran, or say it was docs/content review only.",
               "",
               "No generated audio, local engines, private data, secrets, screenshots, or SQLite files are needed for a useful first PR.",
               "",

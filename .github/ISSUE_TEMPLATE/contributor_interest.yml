@@ -8,7 +8,10 @@ body:
       value: |
         Thanks for helping `ai-language-partner`.
 
-        You do not need local speech engines, generated audio, private data, or API keys for a useful first PR. Start with the contributor landing page if you are not sure which lane fits:
+        You do not need local speech engines, generated audio, private data, or API keys for a useful first PR. The fastest browser-only route is here:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+        Start with the contributor landing page if you are not sure which lane fits:
         https://duct-tape2.github.io/ai-language-partner/
 
         After you submit this form, an automated triage comment will suggest lane-specific starter issues.

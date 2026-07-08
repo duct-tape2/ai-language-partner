@@ -29,6 +29,9 @@ Useful issue searches:
 The generated issue-comment text is tracked in
 [`NO_INSTALL_FIRST_PR_COMMENTS.md`](NO_INSTALL_FIRST_PR_COMMENTS.md).
 
+For the shortest path with PR title/body examples, use the
+[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md).
+
 ## Best Browser-Only Issues
 
 | Issue | Good PR shape | Source file | Direct edit link |

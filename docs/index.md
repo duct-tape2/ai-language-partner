@@ -18,6 +18,7 @@ keys to make a useful first contribution.
 
 Start here:
 
+- [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
 - [Starter issue index](community/STARTER_ISSUE_INDEX.md)
