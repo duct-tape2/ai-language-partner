@@ -1,0 +1,42 @@
+name: Issue Welcome
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post issue guidance
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            if (!issue || issue.pull_request || issue.user.type === "Bot") {
+              return;
+            }
+
+            const body = [
+              `Thanks for opening this, @${issue.user.login}.`,
+              "",
+              "Useful next steps:",
+              "",
+              "- Contributor landing: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md",
+              "- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md",
+              "- 20 contributor sprint kickoff: https://github.com/duct-tape2/ai-language-partner/issues/52",
+              "",
+              "For a first PR, please keep the change small and avoid generated audio, archives, SQLite files, local engine folders, secrets, or private notes.",
+              "",
+              "A maintainer will help scope this into a focused issue when needed."
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body
+            });

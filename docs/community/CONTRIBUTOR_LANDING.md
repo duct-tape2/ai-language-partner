@@ -20,7 +20,8 @@ keys to make a useful first PR.
 
 If you are not sure where to start, comment on the
 [20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
-with the lane you prefer.
+with the lane you prefer, or open a
+[contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
 
 ## Fastest First PR Path
 
@@ -29,6 +30,9 @@ with the lane you prefer.
 3. Read the [first PR walkthrough](FIRST_PR_WALKTHROUGH.md).
 4. Make one focused change.
 5. Open a PR that links the issue and names the check you ran.
+
+If you need a maintainer to suggest a first issue, use the
+[contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
 
 Docs-only and language-review PRs are welcome when they improve real learner or
 contributor experience.

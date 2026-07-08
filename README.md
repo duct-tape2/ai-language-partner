@@ -28,6 +28,8 @@ or the [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md). The
 [20 contributor sprint](docs/community/CONTRIBUTOR_SPRINT.md) and
 [kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
 group issues by skill area for the Claude for OSS community-builder route.
+If you want a maintainer to suggest a task, use the
+[contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
 
 Useful first contributions include Korean/Japanese documentation fixes, JLPT
 sample-content review, accessibility labels, OpenAPI examples, local STT/TTS

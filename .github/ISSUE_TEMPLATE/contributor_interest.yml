@@ -1,0 +1,52 @@
+name: Contributor interest or issue claim
+description: Introduce yourself, pick a contribution lane, or claim a starter issue.
+title: "community: contributor interest"
+labels: ["community", "help wanted", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping `ai-language-partner`.
+
+        You do not need local speech engines, generated audio, private data, or API keys for a useful first PR. Start with the contributor landing page if you are not sure which lane fits:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Contribution lane
+      description: Pick the closest lane. It is fine if this changes later.
+      options:
+        - Korean docs or learner notes
+        - Japanese naturalness review
+        - Dialogue content review
+        - Mobile accessibility
+        - FastAPI/OpenAPI examples
+        - Tests/tooling
+        - Release/community process
+        - Not sure yet
+    validations:
+      required: true
+  - type: input
+    id: issue
+    attributes:
+      label: Issue you want to work on
+      description: Paste the issue URL or number if you have one.
+      placeholder: "https://github.com/duct-tape2/ai-language-partner/issues/..."
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Tell maintainers what you can review or change.
+      placeholder: "Example: I can review beginner Japanese naturalness and Korean explanations."
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Constraints
+      description: Anything maintainers should know before suggesting an issue?
+      value: |
+        - [ ] I need a docs-only or content-review task.
+        - [ ] I can run backend Python checks.
+        - [ ] I can run mobile TypeScript checks.
+        - [ ] I can review Korean/Japanese wording.
