@@ -6,6 +6,7 @@ program.
 ## Repository
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
+- Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
 - Maintainer: `duct-tape2`
 - License: MIT
 - Project: local-first Japanese speaking practice for Korean learners
@@ -68,9 +69,11 @@ threshold is not met yet. Do not submit Phase B with this status.
 ## Verification Links
 
 - Contributors: `https://github.com/duct-tape2/ai-language-partner/graphs/contributors`
+- Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
-- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28933532532`
+- Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28934450835`
+- Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28934469903`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`
 
 ## Local Evidence Commands
