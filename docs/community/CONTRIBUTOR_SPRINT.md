@@ -14,10 +14,13 @@ reviewable first contributions genuinely easy.
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
+- Five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
 - No-install board sprint update:
   `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914131827`
+- Contributor sprint status comment:
+  `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914319802`
 - No-install guide comments:
   `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
@@ -44,6 +47,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 - Contributor interest triage workflow:
   `.github/workflows/contributor-interest-triage.yml`
+- Contributor sprint status workflow:
+  `.github/workflows/contributor-sprint-status.yml`
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
@@ -200,6 +205,7 @@ For a non-failing status artifact suitable for weekly monitoring:
 
 ```bash
 python scripts/snapshot_claude_for_oss_status.py duct-tape2/ai-language-partner --since 2025-07-08
+python scripts/post_contributor_sprint_status.py duct-tape2/ai-language-partner --since 2025-07-08 --out contributor-sprint-status.md
 python scripts/verify_outreach_queue.py
 python scripts/render_outreach_messages.py
 python scripts/post_first_pr_recipes.py duct-tape2/ai-language-partner --date 2026-07-08

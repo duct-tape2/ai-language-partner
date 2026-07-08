@@ -26,6 +26,7 @@ import apply_discovery_labels as discovery_labels  # noqa: E402
 import snapshot_discovery_listings as discovery_snapshot  # noqa: E402
 import post_no_install_first_pr_guides as no_install_guides  # noqa: E402
 import post_pr_review_packet as pr_review_comment  # noqa: E402
+import post_contributor_sprint_status as sprint_status  # noqa: E402
 
 
 def issue_item(
@@ -279,6 +280,35 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Japanese naturalness review", workflow)
         self.assertIn("FIRST_PR_RECIPES.md", workflow)
         self.assertIn("github.rest.issues.createComment", workflow)
+
+    def test_contributor_sprint_status_workflow_posts_single_status_comment(self) -> None:
+        workflow = Path(".github/workflows/contributor-sprint-status.yml").read_text(encoding="utf-8")
+
+        self.assertIn("post_contributor_sprint_status.py", workflow)
+        self.assertIn("--comment", workflow)
+        self.assertIn("issues: write", workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
+
+
+class ContributorSprintStatusTest(unittest.TestCase):
+    def test_render_status_links_fastest_first_pr_and_counting_rules(self) -> None:
+        issues = [
+            sprint_status.SpotlightIssue(
+                number=1,
+                title="docs: add Korean quick-start",
+                url="https://example.test/issues/1",
+                labels=("good first issue", "docs", "first-timers-only"),
+            )
+        ]
+
+        markdown = sprint_status.render_status("duct-tape2/ai-language-partner", "2025-07-08", "2026-07-08", 3, issues)
+
+        self.assertIn(sprint_status.MARKER, markdown)
+        self.assertIn("Unique external merged PR contributors: `3/20`", markdown)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.md", markdown)
+        self.assertIn("not Claude", markdown)
+        self.assertIn("[#1: docs: add Korean quick-start]", markdown)
+        self.assertIn("Maintainer-authored PRs, bots", markdown)
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):

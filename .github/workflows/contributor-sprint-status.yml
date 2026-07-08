@@ -1,0 +1,45 @@
+name: Contributor Sprint Status
+
+on:
+  schedule:
+    - cron: "40 9 * * 1,4"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/post_contributor_sprint_status.py"
+      - ".github/workflows/contributor-sprint-status.yml"
+      - "docs/community/FIVE_MINUTE_FIRST_PR.md"
+      - "docs/community/NO_INSTALL_FIRST_PRS.md"
+  pull_request:
+    paths:
+      - "scripts/post_contributor_sprint_status.py"
+      - ".github/workflows/contributor-sprint-status.yml"
+      - "docs/community/FIVE_MINUTE_FIRST_PR.md"
+      - "docs/community/NO_INSTALL_FIRST_PRS.md"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  contributor-sprint-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Post contributor sprint status
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/post_contributor_sprint_status.py duct-tape2/ai-language-partner --since 2025-07-08 --out contributor-sprint-status.md --comment
+
+      - name: Write job summary
+        run: cat contributor-sprint-status.md >> "$GITHUB_STEP_SUMMARY"
