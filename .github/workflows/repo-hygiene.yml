@@ -21,3 +21,5 @@ jobs:
       - name: Check public tree
         run: python scripts/check_public_tree.py
 
+      - name: Test Claude for OSS evidence helpers
+        run: python -m unittest discover -s scripts -p 'test_*.py'
