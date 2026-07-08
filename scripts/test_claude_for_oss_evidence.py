@@ -259,6 +259,13 @@ class DiscoveryLabelsTest(unittest.TestCase):
 
 
 class DiscoveryListingSnapshotTest(unittest.TestCase):
+    def test_listing_prs_track_current_external_channels(self) -> None:
+        names = {listing.name for listing in discovery_snapshot.LISTING_PRS}
+
+        self.assertIn("Up For Grabs", names)
+        self.assertIn("Awesome for Beginners", names)
+        self.assertIn("Awesome for Non-Programmers", names)
+
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
             "name": "Example Listing",

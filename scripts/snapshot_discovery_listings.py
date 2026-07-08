@@ -44,6 +44,12 @@ LISTING_PRS = [
         number=2072,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only",
     ),
+    ListingPr(
+        name="Awesome for Non-Programmers",
+        repo="szabgab/awesome-for-non-programmers",
+        number=107,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md",
+    ),
 ]
 
 

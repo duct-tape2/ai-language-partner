@@ -25,6 +25,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR:
   `https://github.com/MunGell/awesome-for-beginners/pull/2072`
+- Awesome for Non-Programmers listing PR:
+  `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
 - Discovery listing tracker: `docs/community/DISCOVERY_LISTINGS.md`
 - First PR recipe comments: posted to 18 open `good first issue` items on
   2026-07-08; rerun `scripts/post_first_pr_recipes.py` to fill only missing

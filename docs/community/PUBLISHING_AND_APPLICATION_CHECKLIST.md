@@ -91,6 +91,8 @@ Open the repository settings and enable:
 - External discovery listings should be tracked in
   `docs/community/DISCOVERY_LISTINGS.md`; these increase contributor discovery
   but do not count as Claude for OSS contributor evidence.
+- Keep `scripts/snapshot_discovery_listings.py` in sync with every external
+  listing PR so the public sprint issue shows current review and merge status.
 - The `Starter Issue Index` workflow refreshes
   `docs/community/STARTER_ISSUE_INDEX.md` and
   `docs/community/FIRST_PR_RECIPES.md` by opening a PR after issue changes.

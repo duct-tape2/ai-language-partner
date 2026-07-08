@@ -12,6 +12,7 @@ from unique external contributors count for the community-builder threshold.
 | GitHub issue labels | Active | 18 open `up-for-grabs` issues and 16 open `first-timers-only` issues on 2026-07-08 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Up For Grabs | PR open, automated check passed | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` |
+| Awesome for Non-Programmers | PR open | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` |
 
 Public sprint update:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
