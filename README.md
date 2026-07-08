@@ -19,6 +19,19 @@ tests without large binary assets.
 
 ---
 
+## Contributing entry points
+
+The project is ready for small, reviewable public contributions. Start with the
+[`good first issue` list](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+or the [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md).
+
+Useful first contributions include Korean/Japanese documentation fixes, JLPT
+sample-content review, accessibility labels, OpenAPI examples, local STT/TTS
+setup notes, and focused test fixtures. Generated audio, local engines, SQLite
+files, private notes, and large binary packs should stay out of Git.
+
+---
+
 ## One-line pitch
 
 A React Native / Expo app + FastAPI backend that teaches Japanese to Korean speakers through a **pre-authored dialogue bank**: your speech is recognized locally (whisper.cpp), matched against the expected lines of the current scene, and answered instantly with **pre-synthesized native-quality voice** from a local TTS engine (AivisSpeech / VOICEVOX-compatible). No LLM runs at request time — every persona line was authored, reviewed, and voiced ahead of time, so responses are sub-second, always native-quality, and cost nothing per turn.
