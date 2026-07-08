@@ -77,6 +77,8 @@ Open the repository settings and enable:
 - Actions
 - Dependency graph and Dependabot alerts
 - Branch protection for `main` after the initial push
+- The `Contributor Sprint Kickoff` workflow has created the public community
+  coordination issue.
 
 ## 3. Verify the public snapshot
 
@@ -138,6 +140,8 @@ Counting rules:
 - Exclude `duct-tape2`, bots, duplicate identities, and maintainer-authored PRs
 - Keep issue links and review comments on every counted PR
 - Docs-only PRs count only when they improve real user/contributor experience
+- Confirm the `PR Welcome` workflow commented on new external PRs and then add
+  a human maintainer review before merge.
 
 ## 6. Application sentence
 

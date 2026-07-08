@@ -1,0 +1,49 @@
+name: PR Welcome
+
+on:
+  pull_request_target:
+    types: [opened, ready_for_review]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post contributor guidance
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr || pr.user.type === "Bot") {
+              return;
+            }
+
+            const body = [
+              `Thanks for opening this PR, @${pr.user.login}.`,
+              "",
+              "A maintainer will review it against the public contribution rules:",
+              "",
+              "- Link the issue this PR closes or advances.",
+              "- Keep the change focused and reviewable.",
+              "- Do not add generated audio, archives, SQLite files, local engine folders, or secrets.",
+              "- Preserve the no-runtime-LLM rule for the Daily Talk path.",
+              "- Mention the smallest relevant check you ran, or why the PR is docs/content-only.",
+              "",
+              "Useful links:",
+              "",
+              "- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md",
+              "- Contributor sprint lanes: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_SPRINT.md",
+              "- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md",
+              "",
+              "For Claude for OSS evidence, only real external contributors with useful merged PRs are counted. Maintainer-authored PRs, bots, duplicate identities, and trivial metric-only PRs are excluded."
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body
+            });

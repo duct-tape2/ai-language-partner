@@ -13,6 +13,7 @@ reviewable first contributions genuinely easy.
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`
+- Kickoff issue: created by `.github/workflows/contributor-sprint-kickoff.yml`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
 - Maintainer-authored PRs do not count.
@@ -145,6 +146,9 @@ Thanks for the focused contribution. I checked:
 
 Decision: merge / request changes / merge but do not count for Claude for OSS evidence.
 ```
+
+New PRs also receive the automated `PR Welcome` workflow comment. Keep that
+comment lightweight: it is contributor guidance, not a counting decision.
 
 ## Evidence Update
 

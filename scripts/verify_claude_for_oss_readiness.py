@@ -35,11 +35,14 @@ REQUIRED_FILES = [
     ".github/workflows/mobile-verify.yml",
     ".github/workflows/api-docker-smoke.yml",
     ".github/workflows/claude-oss-monitor.yml",
+    ".github/workflows/contributor-sprint-kickoff.yml",
+    ".github/workflows/pr-welcome.yml",
     "docs/CLAUDE_FOR_OSS_APPLICATION.md",
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md",
     "scripts/snapshot_claude_for_oss_status.py",
+    "scripts/create_contributor_sprint_kickoff_issue.py",
 ]
 
 

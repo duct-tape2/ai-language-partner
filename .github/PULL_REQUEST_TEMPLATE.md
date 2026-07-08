@@ -24,3 +24,6 @@
 
 -
 
+Maintainers: leave a human review comment before merging any PR that might be
+counted for Claude for OSS evidence. The automated welcome comment is not a
+review decision.
