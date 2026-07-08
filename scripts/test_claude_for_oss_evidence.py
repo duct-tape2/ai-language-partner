@@ -27,6 +27,7 @@ import snapshot_discovery_listings as discovery_snapshot  # noqa: E402
 import post_no_install_first_pr_guides as no_install_guides  # noqa: E402
 import post_pr_review_packet as pr_review_comment  # noqa: E402
 import post_contributor_sprint_status as sprint_status  # noqa: E402
+import update_claude_application_evidence as evidence_update  # noqa: E402
 
 
 def issue_item(
@@ -271,6 +272,16 @@ class FirstPrRecipeTest(unittest.TestCase):
 
 
 class WorkflowFixtureTest(unittest.TestCase):
+    def test_claude_oss_evidence_refresh_opens_pr_not_direct_main_push(self) -> None:
+        workflow = Path(".github/workflows/claude-oss-evidence-refresh.yml").read_text(encoding="utf-8")
+
+        self.assertIn("pull_request_target:", workflow)
+        self.assertIn("github.event.pull_request.merged == true", workflow)
+        self.assertIn("--allow-not-ready", workflow)
+        self.assertIn("automation/claude-oss-evidence", workflow)
+        self.assertIn("github.rest.pulls.create", workflow)
+        self.assertIn("ref: main", workflow)
+
     def test_contributor_interest_triage_workflow_has_lane_links(self) -> None:
         workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
@@ -319,6 +330,30 @@ class ContributorSprintStatusTest(unittest.TestCase):
         self.assertIn("not Claude", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("Maintainer-authored PRs, bots", markdown)
+
+
+class ApplicationEvidenceUpdateTest(unittest.TestCase):
+    def test_replace_section_updates_only_contributor_evidence_block(self) -> None:
+        text = "\n".join(
+            [
+                "# App",
+                "",
+                "## Contributor Evidence",
+                "",
+                "old evidence",
+                "",
+                "## Verification Links",
+                "",
+                "links",
+            ]
+        )
+        section = "## Contributor Evidence\n\nnew evidence"
+
+        updated = evidence_update.replace_section(text, section)
+
+        self.assertIn("new evidence", updated)
+        self.assertNotIn("old evidence", updated)
+        self.assertIn("## Verification Links", updated)
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):

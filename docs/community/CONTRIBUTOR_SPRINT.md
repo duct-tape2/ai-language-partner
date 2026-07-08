@@ -55,6 +55,8 @@ reviewable first contributions genuinely easy.
   `.github/workflows/issue-claim-guidance.yml`
 - Contributor sprint status workflow:
   `.github/workflows/contributor-sprint-status.yml`
+- Claude for OSS evidence refresh workflow:
+  `.github/workflows/claude-oss-evidence-refresh.yml`
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
@@ -210,6 +212,9 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 ```
+
+The `Claude OSS Evidence Refresh` workflow also runs after merged PR activity
+and opens a refresh PR when `docs/CLAUDE_FOR_OSS_APPLICATION.md` changes.
 
 For a non-failing status artifact suitable for weekly monitoring:
 

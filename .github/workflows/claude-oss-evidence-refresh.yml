@@ -1,0 +1,104 @@
+name: Claude OSS Evidence Refresh
+
+on:
+  pull_request_target:
+    types: [closed]
+  workflow_dispatch:
+  schedule:
+    - cron: "10 9 * * 1,4"
+
+concurrency:
+  group: claude-oss-evidence-refresh-${{ github.repository }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: write
+
+jobs:
+  refresh-evidence:
+    if: github.event_name != 'pull_request_target' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh Claude for OSS evidence packet
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08 --allow-not-ready
+
+      - name: Check for evidence changes
+        id: diff
+        run: |
+          if git diff --quiet -- docs/CLAUDE_FOR_OSS_APPLICATION.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit refreshed evidence to branch
+        if: steps.diff.outputs.changed == 'true'
+        id: branch
+        run: |
+          branch="automation/claude-oss-evidence"
+          git checkout -B "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/CLAUDE_FOR_OSS_APPLICATION.md
+          git commit -m "docs: refresh Claude for OSS evidence"
+          git push --force origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Open evidence refresh PR
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = "${{ steps.branch.outputs.branch }}";
+            const { owner, repo } = context.repo;
+            const { data: existing } = await github.rest.pulls.list({
+              owner,
+              repo,
+              state: "open",
+              head: `${owner}:${branch}`,
+            });
+            if (existing.length > 0) {
+              core.info(`Evidence refresh PR already exists: ${existing[0].html_url}`);
+              return;
+            }
+            try {
+              const { data: pr } = await github.rest.pulls.create({
+                owner,
+                repo,
+                title: "docs: refresh Claude for OSS evidence",
+                head: branch,
+                base: "main",
+                body: [
+                  "Automated refresh of the Claude for OSS evidence packet after merged PR activity.",
+                  "",
+                  "- Updates `docs/CLAUDE_FOR_OSS_APPLICATION.md`",
+                  "- Keeps the public count honest even before Phase B is ready",
+                  "",
+                  "This PR exists because `main` requires PR review for governance.",
+                ].join("\n"),
+              });
+              core.info(`Created evidence refresh PR: ${pr.html_url}`);
+            } catch (error) {
+              if (error.status === 403) {
+                const compareUrl = `https://github.com/${owner}/${repo}/compare/main...${branch}?expand=1`;
+                core.warning(`Could not create PR with GITHUB_TOKEN: ${error.message}`);
+                core.warning(`Open the evidence refresh PR manually if needed: ${compareUrl}`);
+                return;
+              }
+              throw error;
+            }

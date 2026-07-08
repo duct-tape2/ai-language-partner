@@ -68,6 +68,11 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--since", default=default_since(), help="Earliest merged date, YYYY-MM-DD")
     parser.add_argument("--exclude", action="append", default=[], help="Extra GitHub login to exclude")
     parser.add_argument("--dry-run", action="store_true", help="Print the replacement section without editing")
+    parser.add_argument(
+        "--allow-not-ready",
+        action="store_true",
+        help="Return success after updating even when the 20-contributor threshold is not met",
+    )
     args = parser.parse_args(argv[1:])
 
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -86,6 +91,8 @@ def main(argv: list[str]) -> int:
     APPLICATION_DOC.write_text(updated, encoding="utf-8")
     print(f"updated {APPLICATION_DOC}")
     print(f"unique external contributors counted: {count}")
+    if args.allow_not_ready:
+        return 0
     return 0 if count >= 20 else 1
 
 

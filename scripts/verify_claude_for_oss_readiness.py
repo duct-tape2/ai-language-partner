@@ -35,6 +35,7 @@ REQUIRED_FILES = [
     ".github/workflows/repo-hygiene.yml",
     ".github/workflows/mobile-verify.yml",
     ".github/workflows/api-docker-smoke.yml",
+    ".github/workflows/claude-oss-evidence-refresh.yml",
     ".github/workflows/claude-oss-monitor.yml",
     ".github/workflows/contributor-sprint-kickoff.yml",
     ".github/workflows/contributor-sprint-status.yml",
