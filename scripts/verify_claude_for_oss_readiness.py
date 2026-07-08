@@ -37,6 +37,7 @@ REQUIRED_FILES = [
     ".github/workflows/api-docker-smoke.yml",
     ".github/workflows/claude-oss-monitor.yml",
     ".github/workflows/contributor-sprint-kickoff.yml",
+    ".github/workflows/contributor-interest-triage.yml",
     ".github/workflows/issue-welcome.yml",
     ".github/workflows/pr-welcome.yml",
     ".github/workflows/starter-issue-index.yml",

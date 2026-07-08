@@ -1,0 +1,146 @@
+name: Contributor Interest Triage
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post lane-specific first PR guidance
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            if (!issue || issue.pull_request || issue.user.type === "Bot") {
+              return;
+            }
+
+            const labels = (issue.labels || []).map((label) => label.name);
+            const isInterest =
+              issue.title.toLowerCase().includes("contributor interest") ||
+              (labels.includes("community") && (issue.body || "").includes("Contribution lane"));
+            if (!isInterest) {
+              return;
+            }
+
+            const marker = "<!-- ai-language-partner:contributor-interest-triage -->";
+            const { owner, repo } = context.repo;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: issue.number,
+              per_page: 100,
+            });
+            if (comments.some((comment) => comment.body && comment.body.includes(marker))) {
+              core.info("Contributor interest triage comment already exists.");
+              return;
+            }
+
+            const body = issue.body || "";
+            const laneMap = [
+              {
+                match: "Korean docs or learner notes",
+                title: "Korean docs / learner notes",
+                links: [
+                  "Korean guide: https://duct-tape2.github.io/ai-language-partner/ko/",
+                  "Docs good first issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs",
+                  "Backend Korean troubleshooting issue: https://github.com/duct-tape2/ai-language-partner/issues/34",
+                ],
+              },
+              {
+                match: "Japanese naturalness review",
+                title: "Japanese naturalness review",
+                links: [
+                  "Japanese guide: https://duct-tape2.github.io/ai-language-partner/ja/",
+                  "Language-review issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22",
+                  "Yui beginner naturalness issue: https://github.com/duct-tape2/ai-language-partner/issues/8",
+                ],
+              },
+              {
+                match: "Dialogue content review",
+                title: "Dialogue content review",
+                links: [
+                  "Content issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent",
+                  "Yui Korean translation review: https://github.com/duct-tape2/ai-language-partner/issues/7",
+                  "Restaurant preference examples: https://github.com/duct-tape2/ai-language-partner/issues/36",
+                ],
+              },
+              {
+                match: "Mobile accessibility",
+                title: "Mobile accessibility",
+                links: [
+                  "Accessibility issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility",
+                  "Bottom tab touch targets: https://github.com/duct-tape2/ai-language-partner/issues/13",
+                  "Daily Talk accessibility labels: https://github.com/duct-tape2/ai-language-partner/issues/38",
+                ],
+              },
+              {
+                match: "FastAPI/OpenAPI examples",
+                title: "FastAPI / OpenAPI examples",
+                links: [
+                  "Backend docs issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs",
+                  "Provider-status example: https://github.com/duct-tape2/ai-language-partner/issues/19",
+                  "Dialogue pack listing example: https://github.com/duct-tape2/ai-language-partner/issues/40",
+                ],
+              },
+              {
+                match: "Tests/tooling",
+                title: "Tests / tooling",
+                links: [
+                  "Tests issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests",
+                  "Path traversal test: https://github.com/duct-tape2/ai-language-partner/issues/22",
+                  "Issue seed count check: https://github.com/duct-tape2/ai-language-partner/issues/42",
+                ],
+              },
+              {
+                match: "Release/community process",
+                title: "Release / community process",
+                links: [
+                  "Community issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity",
+                  "First PR walkthrough improvement: https://github.com/duct-tape2/ai-language-partner/issues/44",
+                  "Maintainer review checklist: https://github.com/duct-tape2/ai-language-partner/issues/45",
+                ],
+              },
+            ];
+
+            const selected = laneMap.find((lane) => body.includes(lane.match)) || {
+              title: "Not sure yet",
+              links: [
+                "Starter issue index: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md",
+                "First PR recipes: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md",
+                "First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53",
+              ],
+            };
+
+            const response = [
+              marker,
+              `Thanks, @${issue.user.login}. Suggested lane: **${selected.title}**.`,
+              "",
+              "Good next links:",
+              "",
+              ...selected.links.map((link) => `- ${link}`),
+              "",
+              "How to turn this into a first PR:",
+              "",
+              "1. Pick one issue and comment that you want to work on it.",
+              "2. Use the first PR recipe on that issue or in `docs/community/FIRST_PR_RECIPES.md`.",
+              "3. Open a focused PR that links the issue, e.g. `Closes #123`.",
+              "4. Mention the check you ran, or say it was docs/content review only.",
+              "",
+              "No generated audio, local engines, private data, secrets, screenshots, or SQLite files are needed for a useful first PR.",
+              "",
+              "For Claude for OSS evidence, only useful merged PRs from real external contributors count. The maintainer will review usefulness before merge.",
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issue.number,
+              body: response,
+            });

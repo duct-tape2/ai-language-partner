@@ -82,6 +82,8 @@ Open the repository settings and enable:
   coordination issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
 - The public first-PR help desk discussion is available at
   `https://github.com/duct-tape2/ai-language-partner/discussions/53`
+- The `Contributor Interest Triage` workflow replies to contributor interest
+  issues with lane-specific starter links.
 - The `Starter Issue Index` workflow refreshes
   `docs/community/STARTER_ISSUE_INDEX.md` and
   `docs/community/FIRST_PR_RECIPES.md` by opening a PR after issue changes.

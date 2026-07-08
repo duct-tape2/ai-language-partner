@@ -236,5 +236,16 @@ class FirstPrRecipeTest(unittest.TestCase):
         self.assertIn("generated/private assets", recipe)
 
 
+class WorkflowFixtureTest(unittest.TestCase):
+    def test_contributor_interest_triage_workflow_has_lane_links(self) -> None:
+        workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
+
+        self.assertIn("ai-language-partner:contributor-interest-triage", workflow)
+        self.assertIn("Korean docs or learner notes", workflow)
+        self.assertIn("Japanese naturalness review", workflow)
+        self.assertIn("FIRST_PR_RECIPES.md", workflow)
+        self.assertIn("github.rest.issues.createComment", workflow)
+
+
 if __name__ == "__main__":
     unittest.main()
