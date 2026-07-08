@@ -2,7 +2,7 @@
 """Create or update GitHub labels from docs/community/LABELS.md.
 
 Usage:
-  GITHUB_TOKEN=... python scripts/create_github_labels.py sinmb79/ai-language-partner
+  GITHUB_TOKEN=... python scripts/create_github_labels.py duct-tape2/ai-language-partner
 
 The script uses only the Python standard library. It intentionally keeps label
 metadata in docs/community/LABELS.md so public contributors can see the same

@@ -33,7 +33,7 @@ The Claude for OSS approval target is the community-builder criterion:
 - Use `docs/community/PR_REVIEW_AND_COUNTING_POLICY.md` before counting a PR
   toward the Claude for OSS evidence packet.
 - Regenerate evidence weekly:
-  `python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner`.
+  `python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner`.
 
 ## Outreach Copy
 

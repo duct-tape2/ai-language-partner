@@ -11,7 +11,7 @@ graph so the application packet stays credible.
 
 A PR can be counted when all are true:
 
-- The author is a real external contributor, not `sinmb79`, a bot, a duplicate
+- The author is a real external contributor, not `duct-tape2`, a bot, a duplicate
   identity, or a maintainer-controlled account
 - The PR is merged into `main`
 - The change has user, contributor, documentation, test, accessibility,
@@ -48,7 +48,7 @@ Use a lightweight but visible review process:
 ## Evidence Command
 
 ```bash
-GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since 2025-07-08
+GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 ```
 
 The script excludes the repository owner, bots, collaborators, and duplicate

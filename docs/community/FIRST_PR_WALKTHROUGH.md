@@ -8,7 +8,7 @@ changes can be useful without private context.
 
 Start here:
 
-`https://github.com/sinmb79/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
+`https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 
 Good first issues should include:
 
@@ -21,7 +21,7 @@ Good first issues should include:
 ## Make the Change
 
 ```bash
-git clone https://github.com/sinmb79/ai-language-partner.git
+git clone https://github.com/duct-tape2/ai-language-partner.git
 cd ai-language-partner
 git checkout -b docs/my-first-contribution
 ```

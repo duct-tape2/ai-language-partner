@@ -2,7 +2,7 @@
 """Verify whether this repo is ready for a Claude for OSS application.
 
 Usage:
-  GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py sinmb79/ai-language-partner
+  GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 
 This script is intentionally strict: failing means "do not apply yet" unless
 using the Phase A exception text that explicitly says the numeric criterion has

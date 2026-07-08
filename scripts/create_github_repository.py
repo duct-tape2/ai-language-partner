@@ -2,7 +2,7 @@
 """Create the public GitHub repository used for the Claude for OSS campaign.
 
 Usage:
-  GITHUB_TOKEN=... python scripts/create_github_repository.py sinmb79/ai-language-partner
+  GITHUB_TOKEN=... python scripts/create_github_repository.py duct-tape2/ai-language-partner
 
 The token should belong to the repository owner and have permission to create
 public repositories. The script does not configure a git remote or push source;
@@ -108,7 +108,7 @@ def main(argv: list[str]) -> int:
         {"names": TOPICS},
     )
     print("configured: description, issues, wiki=false, topics")
-    print("next: git remote add origin git@github.com:sinmb79/ai-language-partner.git && git push -u origin main")
+    print("next: git remote add origin git@github.com:duct-tape2/ai-language-partner.git && git push -u origin main")
     return 0
 
 

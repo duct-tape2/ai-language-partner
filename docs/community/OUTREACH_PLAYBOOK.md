@@ -47,7 +47,7 @@ Week 4:
 - FastAPI 예제와 테스트 보강
 
 처음 기여하기 쉬운 이슈:
-https://github.com/sinmb79/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 ```
 
 ## Outreach Copy: Japanese
@@ -63,7 +63,7 @@ https://github.com/sinmb79/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+lab
 - FastAPI ドキュメントとテスト追加
 
 Good first issues:
-https://github.com/sinmb79/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 ```
 
 ## Outreach Copy: English
@@ -80,7 +80,7 @@ Useful small contributions:
 - Local STT/TTS setup docs
 
 Good first issues:
-https://github.com/sinmb79/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 ```
 
 ## Review Promise

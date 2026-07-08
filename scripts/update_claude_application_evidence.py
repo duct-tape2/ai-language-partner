@@ -2,7 +2,7 @@
 """Update docs/CLAUDE_FOR_OSS_APPLICATION.md with current PR evidence.
 
 Usage:
-  GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py sinmb79/ai-language-partner --since 2025-07-08
+  GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 
 The script replaces only the "Contributor Evidence" section and leaves the
 application copy untouched. It fails when GitHub cannot be queried so the

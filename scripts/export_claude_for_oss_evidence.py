@@ -2,8 +2,8 @@
 """Export merged-PR contributor evidence for Claude for OSS.
 
 Usage:
-  python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner
-  GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since 2025-07-08
+  python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner
+  GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 
 The output is a Markdown table suitable for docs/CLAUDE_FOR_OSS_APPLICATION.md.
 It counts unique external PR authors only once and excludes the repo owner,

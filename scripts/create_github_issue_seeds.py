@@ -2,7 +2,7 @@
 """Create GitHub issues from docs/community/ISSUE_SEEDS.md.
 
 Usage:
-  GITHUB_TOKEN=... python scripts/create_github_issue_seeds.py sinmb79/ai-language-partner
+  GITHUB_TOKEN=... python scripts/create_github_issue_seeds.py duct-tape2/ai-language-partner
 
 The script uses only the Python standard library. It expects the seed file to
 use numbered entries with title lines, a following Labels line, and an

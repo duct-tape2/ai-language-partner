@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="${1:-sinmb79/ai-language-partner}"
+REPO="${1:-duct-tape2/ai-language-partner}"
 
 if [[ -z "${GITHUB_TOKEN:-}" && -n "${GH_TOKEN:-}" ]]; then
   export GITHUB_TOKEN="$GH_TOKEN"

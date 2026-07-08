@@ -10,14 +10,14 @@ Create an empty public GitHub repository, either manually or with the helper:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-GITHUB_TOKEN=... python scripts/create_github_repository.py sinmb79/ai-language-partner
+GITHUB_TOKEN=... python scripts/create_github_repository.py duct-tape2/ai-language-partner
 ```
 
 Or run the full bootstrap after `GITHUB_TOKEN` is available:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-GITHUB_TOKEN=... scripts/bootstrap_public_github_repo.sh sinmb79/ai-language-partner
+GITHUB_TOKEN=... scripts/bootstrap_public_github_repo.sh duct-tape2/ai-language-partner
 ```
 
 If the token was just copied from GitHub in Chrome, avoid pasting it into the
@@ -25,7 +25,7 @@ terminal:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-scripts/bootstrap_from_clipboard_token.sh sinmb79/ai-language-partner
+scripts/bootstrap_from_clipboard_token.sh duct-tape2/ai-language-partner
 ```
 
 The clipboard helper refuses non-GitHub-looking text and clears the clipboard
@@ -37,7 +37,7 @@ is required because this repository intentionally tracks GitHub Actions files.
 
 Manual settings:
 
-- Owner: `sinmb79`
+- Owner: `duct-tape2`
 - Name: `ai-language-partner`
 - Visibility: public
 - Do not initialize with README, license, or `.gitignore`
@@ -46,7 +46,7 @@ Then push the prepared source-only snapshot:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-git remote add origin https://github.com/sinmb79/ai-language-partner.git
+git remote add origin https://github.com/duct-tape2/ai-language-partner.git
 git push -u origin main
 ```
 
@@ -56,7 +56,7 @@ or `GH_TOKEN` without storing the token in the remote URL.
 If SSH is configured and preferred, use:
 
 ```bash
-git remote add origin git@github.com:sinmb79/ai-language-partner.git
+git remote add origin git@github.com:duct-tape2/ai-language-partner.git
 git push -u origin main
 ```
 
@@ -66,8 +66,8 @@ Use `GITHUB_TOKEN` or `GH_TOKEN` with repo issue/label permissions:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-GITHUB_TOKEN=... python scripts/create_github_labels.py sinmb79/ai-language-partner
-GITHUB_TOKEN=... python scripts/create_github_issue_seeds.py sinmb79/ai-language-partner
+GITHUB_TOKEN=... python scripts/create_github_labels.py duct-tape2/ai-language-partner
+GITHUB_TOKEN=... python scripts/create_github_issue_seeds.py duct-tape2/ai-language-partner
 ```
 
 Open the repository settings and enable:
@@ -123,9 +123,9 @@ Run:
 
 ```bash
 cd /Users/ijeong-geun/OSS/ai-language-partner
-GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py sinmb79/ai-language-partner --since 2025-07-08
-GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py sinmb79/ai-language-partner --since 2025-07-08
-GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py sinmb79/ai-language-partner
+GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
+GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
+GITHUB_TOKEN=... python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 ```
 
 Copy the generated Markdown table into
@@ -134,7 +134,7 @@ Copy the generated Markdown table into
 Counting rules:
 
 - Count one meaningful merged PR per external contributor
-- Exclude `sinmb79`, bots, duplicate identities, and maintainer-authored PRs
+- Exclude `duct-tape2`, bots, duplicate identities, and maintainer-authored PRs
 - Keep issue links and review comments on every counted PR
 - Docs-only PRs count only when they improve real user/contributor experience
 

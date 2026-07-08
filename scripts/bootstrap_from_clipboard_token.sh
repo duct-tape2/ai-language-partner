@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="${1:-sinmb79/ai-language-partner}"
+REPO="${1:-duct-tape2/ai-language-partner}"
 
 if ! command -v pbpaste >/dev/null 2>&1; then
   echo "pbpaste is required on macOS" >&2
