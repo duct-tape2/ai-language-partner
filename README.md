@@ -4,6 +4,35 @@
 
 > 한국인 일본어 학습자를 위한 회화 앱 — 런타임 LLM 없이 사전 저작 대화은행 + 로컬 STT/TTS로 진짜 사람처럼 바로 대답합니다.
 
+[![Repo Hygiene](https://github.com/duct-tape2/ai-language-partner/actions/workflows/repo-hygiene.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/repo-hygiene.yml)
+[![Mobile Verify](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml)
+[![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
+
+---
+
+## Community sprint: first PRs welcome
+
+This repo is building a real public contribution record for the Claude for OSS
+community-builder route. Current evidence status is tracked in
+[`docs/CLAUDE_FOR_OSS_APPLICATION.md`](docs/CLAUDE_FOR_OSS_APPLICATION.md):
+only useful external PRs count, and maintainer PRs, bots, duplicate identities,
+and metric-only changes are excluded.
+
+| Lane | Best first link | Useful PR shape |
+|---|---|---|
+| Korean/Japanese docs | [docs good first issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs) | clearer setup notes, learner-facing Korean explanations |
+| Japanese naturalness | [language-review issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22) | beginner-safe dialogue wording, tone review |
+| Dialogue content | [content issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent) | reviewed `story.json` / `variants.csv` improvements |
+| Mobile accessibility | [accessibility issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility) | labels, touch targets, contrast, layout fixes |
+| Backend/API docs | [backend docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs) | OpenAPI examples, local STT/TTS setup notes |
+| Tests/tooling | [tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | small fixture tests or verification scripts |
+
+Start with the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md),
+the [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md), or the
+[20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52).
+If you want a maintainer to suggest a task, open a
+[contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
+
 ---
 
 ## Public OSS snapshot
@@ -19,22 +48,15 @@ tests without large binary assets.
 
 ---
 
-## Contributing entry points
-
-The project is ready for small, reviewable public contributions. Start with the
-[`contributor landing page`](docs/community/CONTRIBUTOR_LANDING.md), the
-[`good first issue` list](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22),
-or the [first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md). The
-[20 contributor sprint](docs/community/CONTRIBUTOR_SPRINT.md) and
-[kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
-group issues by skill area for the Claude for OSS community-builder route.
-If you want a maintainer to suggest a task, use the
-[contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
+## Contribution guardrails
 
 Useful first contributions include Korean/Japanese documentation fixes, JLPT
 sample-content review, accessibility labels, OpenAPI examples, local STT/TTS
-setup notes, and focused test fixtures. Generated audio, local engines, SQLite
-files, private notes, and large binary packs should stay out of Git.
+setup notes, and focused test fixtures.
+
+Generated audio, local engines, SQLite files, private notes, screenshots, and
+large binary packs should stay out of Git. The public repo is source-only so a
+fresh clone can review, test, and contribute without private assets.
 
 ---
 
