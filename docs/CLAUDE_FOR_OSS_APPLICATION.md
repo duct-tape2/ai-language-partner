@@ -84,6 +84,8 @@ threshold is not met yet. Do not submit Phase B with this status.
   required.
 - First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
 - Up For Grabs listing PR: `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
+- Awesome for Beginners listing PR: `https://github.com/MunGell/awesome-for-beginners/pull/2072`
+- Discovery listing tracker: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/DISCOVERY_LISTINGS.md`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`
 
 ## Local Evidence Commands
