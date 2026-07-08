@@ -23,7 +23,7 @@ useful merged external PRs count.
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs
 
 기여자 페이지:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ko/
 
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
@@ -53,7 +53,7 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues/34
 
 기여자 페이지:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ko/
 
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
@@ -83,7 +83,7 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22
 
 Contributor page:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ja/
 
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
@@ -113,7 +113,7 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues/35
 
 Contributor page:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ja/
 
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
@@ -473,7 +473,7 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 https://github.com/duct-tape2/ai-language-partner/issues/44
 
 기여자 페이지:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ko/
 
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
@@ -503,7 +503,7 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues/46
 
 기여자 페이지:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ko/
 
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md

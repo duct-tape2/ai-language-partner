@@ -18,6 +18,8 @@ keys to make a useful first contribution.
 
 Start here:
 
+- [한국어 기여자 안내](ko/)
+- [日本語コントリビューター向け案内](ja/)
 - [Starter issue index](community/STARTER_ISSUE_INDEX.md)
 - [Contributor landing](community/CONTRIBUTOR_LANDING.md)
 - [First PR walkthrough](community/FIRST_PR_WALKTHROUGH.md)

@@ -21,7 +21,7 @@ TEMPLATES = {
 {issue_query}
 
 기여자 페이지:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ko/
 
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
@@ -41,7 +41,7 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 {issue_query}
 
 Contributor page:
-https://duct-tape2.github.io/ai-language-partner/
+https://duct-tape2.github.io/ai-language-partner/ja/
 
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md

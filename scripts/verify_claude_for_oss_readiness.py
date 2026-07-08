@@ -43,6 +43,8 @@ REQUIRED_FILES = [
     "docs/CLAUDE_FOR_OSS_APPLICATION.md",
     "docs/index.md",
     "docs/_config.yml",
+    "docs/ko/index.md",
+    "docs/ja/index.md",
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_LANDING.md",
     "docs/community/STARTER_ISSUE_INDEX.md",

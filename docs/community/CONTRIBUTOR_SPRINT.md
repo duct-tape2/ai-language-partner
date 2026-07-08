@@ -11,6 +11,8 @@ reviewable first contributions genuinely easy.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
+- Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - Good first issues:

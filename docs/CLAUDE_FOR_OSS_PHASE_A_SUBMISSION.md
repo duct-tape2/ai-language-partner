@@ -10,6 +10,8 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
+- Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Maintainer account: `duct-tape2`
 - License: MIT
 - Visibility: public
@@ -59,7 +61,7 @@ The public repo includes:
 - source-only dialogue-bank fixtures
 - public-tree hygiene scan
 - GitHub Actions workflows
-- GitHub Pages contributor page
+- GitHub Pages contributor page with Korean and Japanese entry pages
 - security, code of conduct, contribution docs, PR template, issue templates
 - 51 scoped issues for first-time and external contributors
 - contributor sprint kickoff, PR welcome, issue welcome, and weekly Claude OSS
@@ -81,6 +83,8 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 
 - Repo: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
+- Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Issues: `https://github.com/duct-tape2/ai-language-partner/issues`
 - Good first issues: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
