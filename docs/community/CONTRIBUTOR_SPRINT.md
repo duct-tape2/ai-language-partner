@@ -112,6 +112,8 @@ reviewable first contributions genuinely easy.
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
 - Contributor share kit: `docs/community/SHARE_KIT.md`
+- Outreach batch status workflow: `.github/workflows/outreach-batch-status.yml`
+  updates the kickoff issue with the next concrete recruiting batch
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
   opens a refresh PR instead of pushing directly to protected `main`.
 - Maintainer review runbook: `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`

@@ -33,6 +33,7 @@ import snapshot_contributor_funnel as contributor_funnel  # noqa: E402
 import audit_claude_for_oss_account as account_audit  # noqa: E402
 import post_contributor_call_update as contributor_call_update  # noqa: E402
 import verify_claude_for_oss_readiness as readiness  # noqa: E402
+import post_outreach_batch_status as outreach_batch  # noqa: E402
 
 
 def issue_item(
@@ -767,10 +768,62 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("NO_INSTALL_FIRST_PRS.html", share_kit)
         self.assertIn("OUTREACH_QUEUE.json", share_kit)
         self.assertIn("verify_outreach_queue.py", share_kit)
+        self.assertIn("post_outreach_batch_status.py", share_kit)
         self.assertIn("SHARE_KIT.md", readme)
         self.assertIn("SHARE_KIT.html", index)
         self.assertIn("SHARE_KIT.html", landing)
         self.assertIn("SHARE_KIT.md", playbook)
+
+    def test_outreach_batch_status_selects_actionable_items_and_stays_honest(self) -> None:
+        items = [
+            {
+                "id": "outreach_01",
+                "audience": "Korean Japanese-learning study group",
+                "lane": "Korean docs",
+                "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/1",
+                "status": "draft",
+                "notes": "Ask for setup review.",
+            },
+            {
+                "id": "outreach_02",
+                "audience": "Japanese reviewers",
+                "lane": "Japanese review",
+                "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/8",
+                "status": "responded",
+                "notes": "Follow up with first PR guide.",
+            },
+            {
+                "id": "outreach_03",
+                "audience": "Already counted",
+                "lane": "Done",
+                "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/9",
+                "status": "merged-counted",
+                "notes": "Done.",
+            },
+        ]
+
+        selected = outreach_batch.next_batch(items, limit=2)
+        markdown = outreach_batch.build_markdown(
+            "duct-tape2/ai-language-partner",
+            "2026-07-09",
+            limit=2,
+        )
+
+        self.assertEqual([item["id"] for item in selected], ["outreach_02", "outreach_01"])
+        self.assertIn(outreach_batch.MARKER, markdown)
+        self.assertIn("not Claude for OSS evidence", markdown)
+        self.assertIn("only useful merged PRs", markdown)
+        self.assertIn("Contributor share kit", markdown)
+        self.assertIn("OUTREACH_MESSAGES.html", markdown)
+        self.assertIn("Next Outreach Batch", markdown)
+
+    def test_outreach_batch_workflow_posts_to_kickoff_issue(self) -> None:
+        workflow = Path(".github/workflows/outreach-batch-status.yml").read_text(encoding="utf-8")
+
+        self.assertIn("post_outreach_batch_status.py", workflow)
+        self.assertIn("issues: write", workflow)
+        self.assertIn("--comment", workflow)
+        self.assertIn("Checkout trusted base branch", workflow)
 
     def test_outreach_queue_tracks_public_discussion_post(self) -> None:
         payload = json.loads(Path("docs/community/OUTREACH_QUEUE.json").read_text(encoding="utf-8"))
@@ -911,6 +964,8 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn(".github/workflows/pr-triage-labels.yml", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/pr-merge-followup.yml", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/SHARE_KIT.md", readiness.REQUIRED_FILES)
+        self.assertIn(".github/workflows/outreach-batch-status.yml", readiness.REQUIRED_FILES)
+        self.assertIn("scripts/post_outreach_batch_status.py", readiness.REQUIRED_FILES)
 
     def test_language_review_first_pr_kit_is_reviewable_and_counting_safe(self) -> None:
         kit = Path("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md").read_text(encoding="utf-8")

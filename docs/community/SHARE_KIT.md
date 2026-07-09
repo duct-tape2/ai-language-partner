@@ -121,6 +121,7 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 ```bash
 python3 scripts/verify_outreach_queue.py
 python3 scripts/render_outreach_messages.py
+python3 scripts/post_outreach_batch_status.py --repo duct-tape2/ai-language-partner --out outreach-batch-status.md
 ```
 
 4. If someone claims an issue, ask them to comment `/claim` on the issue so the

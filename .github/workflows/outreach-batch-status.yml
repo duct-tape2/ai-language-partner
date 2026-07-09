@@ -1,0 +1,41 @@
+name: Outreach Batch Status
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 1 * * 1-5"
+  push:
+    branches: [main]
+    paths:
+      - "docs/community/OUTREACH_QUEUE.json"
+      - "docs/community/OUTREACH_MESSAGES.md"
+      - "docs/community/SHARE_KIT.md"
+      - "scripts/post_outreach_batch_status.py"
+      - ".github/workflows/outreach-batch-status.yml"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  outreach-batch-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted base branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update outreach batch status
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/post_outreach_batch_status.py --repo duct-tape2/ai-language-partner --out outreach-batch-status.md --comment
+
+      - name: Write job summary
+        run: cat outreach-batch-status.md >> "$GITHUB_STEP_SUMMARY"
