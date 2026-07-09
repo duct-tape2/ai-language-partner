@@ -6,6 +6,7 @@ count as Claude for OSS contributor evidence until real external PRs are
 merged in this repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
+- GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `japanese-learning`, `korean-language`, `korean-learners`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
 - Open `up-for-grabs` issues: `34`
 - Open `first-timers-only` issues: `24`
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
@@ -59,7 +60,10 @@ merged in this repository.
 - `good-first-issue` topic: `https://github.com/topics/good-first-issue`
 - `good-first-pr` topic: `https://github.com/topics/good-first-pr`
 - `help-wanted` topic: `https://github.com/topics/help-wanted`
+- `japanese-learning` topic: `https://github.com/topics/japanese-learning`
 - `language-learning` topic: `https://github.com/topics/language-learning`
 - `learn-japanese` topic: `https://github.com/topics/learn-japanese`
+- `local-first` topic: `https://github.com/topics/local-first`
+- `react-native` topic: `https://github.com/topics/react-native`
 - Good First Issue project submission criteria:
   `https://github.com/DeepSourceCorp/good-first-issue`

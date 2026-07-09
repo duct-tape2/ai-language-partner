@@ -253,8 +253,11 @@ class GovernanceCheckTest(unittest.TestCase):
         source = Path("scripts/verify_github_governance.py").read_text(encoding="utf-8")
 
         self.assertIn("DISCOVERY_TOPICS", source)
+        self.assertIn("DOMAIN_TOPICS", source)
         self.assertIn("help-wanted", source)
+        self.assertIn("korean-learners", source)
         self.assertIn("contributor discovery topics", source)
+        self.assertIn("domain discovery topics", source)
         self.assertIn('build_type == "workflow"', source)
 
     def test_pages_workflow_deploys_docs_with_jekyll(self) -> None:

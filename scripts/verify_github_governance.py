@@ -23,6 +23,20 @@ DISCOVERY_TOPICS = {
     "up-for-grabs",
 }
 
+DOMAIN_TOPICS = {
+    "accessibility",
+    "education",
+    "expo",
+    "fastapi",
+    "japanese-language",
+    "japanese-learning",
+    "korean-language",
+    "korean-learners",
+    "language-learning",
+    "local-first",
+    "react-native",
+}
+
 
 def github_json(path_or_url: str, token: str | None) -> object:
     url = path_or_url if path_or_url.startswith("https://") else f"https://api.github.com{path_or_url}"
@@ -93,6 +107,14 @@ def main(argv: list[str]) -> int:
         "contributor discovery topics",
         not missing_topics,
         "missing " + ", ".join(missing_topics) if missing_topics else ", ".join(sorted(DISCOVERY_TOPICS)),
+    )
+    missing_domain_topics = sorted(DOMAIN_TOPICS - topic_names)
+    passed &= check(
+        "domain discovery topics",
+        not missing_domain_topics,
+        "missing " + ", ".join(missing_domain_topics)
+        if missing_domain_topics
+        else ", ".join(sorted(DOMAIN_TOPICS)),
     )
 
     pages = github_json(f"/repos/{repo}/pages", token)

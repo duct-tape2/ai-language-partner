@@ -223,6 +223,13 @@ def fetch_demo_release(repo: str, token: str | None) -> dict[str, str]:
     return {"url": str(data.get("html_url") or ""), "asset": asset_url, "status": status}
 
 
+def fetch_repo_topics(repo: str, token: str | None) -> list[str]:
+    data = github_json(f"https://api.github.com/repos/{repo}/topics", token)
+    if not isinstance(data, dict):
+        raise TypeError("GitHub topics response was not an object")
+    return sorted(name for name in data.get("names", []) if isinstance(name, str))
+
+
 def directory_rows(repo: str, token: str | None) -> list[str]:
     contributors = len(collect_evidence(repo, default_since(), set(), token))
     state = "eligible" if contributors >= 10 else "locked"
@@ -247,6 +254,8 @@ def build_markdown(repo: str, token: str | None) -> str:
     up_for_grabs = count_open_issues(repo, "up-for-grabs", token)
     first_timers = count_open_issues(repo, "first-timers-only", token)
     demo_release = fetch_demo_release(repo, token)
+    topics = fetch_repo_topics(repo, token)
+    topic_list = ", ".join(f"`{topic}`" for topic in topics) if topics else "none reported"
     listing_rows = []
     for pr in LISTING_PRS:
         status = fetch_listing_pr(pr, token)
@@ -279,6 +288,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         "merged in this repository.",
         "",
         f"- Repository: `https://github.com/{repo}`",
+        f"- GitHub topics: {topic_list}",
         f"- Open `up-for-grabs` issues: `{up_for_grabs}`",
         f"- Open `first-timers-only` issues: `{first_timers}`",
         f"- Hosted web demo: {HOSTED_DEMO_URL}",
@@ -323,8 +333,11 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- `good-first-issue` topic: `https://github.com/topics/good-first-issue`",
         "- `good-first-pr` topic: `https://github.com/topics/good-first-pr`",
         "- `help-wanted` topic: `https://github.com/topics/help-wanted`",
+        "- `japanese-learning` topic: `https://github.com/topics/japanese-learning`",
         "- `language-learning` topic: `https://github.com/topics/language-learning`",
         "- `learn-japanese` topic: `https://github.com/topics/learn-japanese`",
+        "- `local-first` topic: `https://github.com/topics/local-first`",
+        "- `react-native` topic: `https://github.com/topics/react-native`",
         "- Good First Issue project submission criteria:",
         "  `https://github.com/DeepSourceCorp/good-first-issue`",
     ]
