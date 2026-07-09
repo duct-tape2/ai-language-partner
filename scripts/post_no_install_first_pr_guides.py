@@ -19,6 +19,7 @@ BOARD = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PRS.md"
 DEFAULT_OUT = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PR_COMMENTS.md"
 MARKER = "<!-- ai-language-partner:no-install-first-pr -->"
 KOREAN_FIVE_MINUTE_FIRST_PR = "docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
+KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ko.yml"
 
 
 @dataclass(frozen=True)
@@ -97,6 +98,7 @@ backend, STT/TTS engine, generated audio, private data, or API key is needed.
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - First issue matcher: https://github.com/{repo}/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - Korean five-minute first PR: https://github.com/{repo}/blob/main/{KOREAN_FIVE_MINUTE_FIRST_PR}
+- Korean contributor interest form: https://github.com/{repo}/issues/new?template={KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE}
 - Source file: `{task.source_file}`
 - Direct edit link: {task.edit_url}
 - No-install board: https://github.com/{repo}/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md

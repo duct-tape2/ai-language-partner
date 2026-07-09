@@ -720,6 +720,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("Direct edit link", comment)
         self.assertIn("FIRST_ISSUE_MATCHER.md", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", comment)
+        self.assertIn("contributor_interest_ko.yml", comment)
         self.assertIn("Closes #44", comment)
         self.assertIn("Tiny split", comment)
 
@@ -736,6 +737,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn(no_install_guides.MARKER, comments)
         self.assertIn("Hosted web demo", comments)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", comments)
+        self.assertIn("contributor_interest_ko.yml", comments)
         self.assertIn("Closes #1", comments)
         self.assertIn("Closes #24", comments)
         self.assertIn("Closes #44", comments)
