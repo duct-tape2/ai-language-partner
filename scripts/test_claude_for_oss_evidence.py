@@ -759,6 +759,12 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("first--timers--only-friendly", readme)
         self.assertIn("https://github.com/duct-tape2/ai-language-partner/contribute", readme)
         self.assertIn("https://github.com/duct-tape2/ai-language-partner/contribute", index)
+        self.assertIn("New here from GitHub topics", readme)
+        self.assertIn("Pick a first PR in 30 seconds", readme)
+        self.assertIn("27 no-install issue slots", readme)
+        self.assertIn("arrived from GitHub topics", index)
+        self.assertIn("Match by skill/time in 30 seconds", index)
+        self.assertIn("27 no-install issue slots", index)
 
     def test_codespaces_first_pr_route_is_publicly_linked(self) -> None:
         devcontainer = json.loads(Path(".devcontainer/devcontainer.json").read_text(encoding="utf-8"))

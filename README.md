@@ -9,6 +9,13 @@
 [![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
+New here from GitHub topics, Up For Grabs, or a good-first-issue directory?
+Pick a first PR in 30 seconds:
+[match by skill/time](docs/community/FIRST_ISSUE_MATCHER.md) ·
+[browser-only 5-minute PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
+[27 no-install issue slots](docs/community/NO_INSTALL_FIRST_PRS.md) ·
+[ask for a suggested issue](https://github.com/duct-tape2/ai-language-partner/discussions/53)
+
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
 [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute) ·
@@ -39,6 +46,15 @@ community-builder route. Current evidence status is tracked in
 [`docs/CLAUDE_FOR_OSS_APPLICATION.md`](docs/CLAUDE_FOR_OSS_APPLICATION.md):
 only useful external PRs count, and maintainer PRs, bots, duplicate identities,
 and metric-only changes are excluded.
+
+Fastest path:
+
+1. Use the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md) if you
+   are choosing by skill or time.
+2. Use the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md)
+   for a browser-only docs/content PR.
+3. Use the [Codespaces first PR route](docs/community/CODESPACES_FIRST_PR.md)
+   if you want to run checks without local setup.
 
 | Lane | Best first link | Useful PR shape |
 |---|---|---|

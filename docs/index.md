@@ -16,6 +16,14 @@ reviewed, low-latency, privacy-conscious, and low-cost to deploy.
 You do not need local speech engines, generated audio, private data, or API
 keys to make a useful first contribution.
 
+If you arrived from GitHub topics, Up For Grabs, or a good-first-issue
+directory, use one of these setup-free routes first:
+
+- [Match by skill/time in 30 seconds](community/FIRST_ISSUE_MATCHER.html)
+- [Open a browser-only five-minute PR](community/FIVE_MINUTE_FIRST_PR.html)
+- [Choose from 27 no-install issue slots](community/NO_INSTALL_FIRST_PRS.html)
+- [Ask for a suggested issue](https://github.com/duct-tape2/ai-language-partner/discussions/53)
+
 Start here:
 
 - [Hosted web demo](demo/)
