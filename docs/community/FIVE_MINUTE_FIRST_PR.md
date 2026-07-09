@@ -4,6 +4,9 @@ Use this route if you want to make a useful first contribution without
 installing Expo, FastAPI, local STT/TTS engines, generated audio, API keys, or
 private data.
 
+Korean-speaking contributors can use the
+[한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.md).
+
 Pick one row, open the edit link, make one focused improvement, and create a
 pull request from GitHub's web editor.
 
