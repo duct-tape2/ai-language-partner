@@ -102,6 +102,8 @@ threshold is not met yet. Do not submit Phase B with this status.
   - Hosted-demo follow-up: `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475`
 - Awesome Language Learning listing PR: `https://github.com/Vuizur/awesome-language-learning/pull/31`
   - Hosted-demo follow-up: `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535`
+- Awesome Japanese Learning Resources listing PR:
+  `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5`
 - Awesome Japanese listing suggestion issue: deferred until the project has a
   clearer app-store/release-build path; hosted demo is now the first maturity
   step

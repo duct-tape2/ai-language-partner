@@ -75,6 +75,12 @@ LISTING_PRS = [
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
         followup_url="https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535",
     ),
+    ListingPr(
+        name="Awesome Japanese Learning Resources",
+        repo="ailanguagetutor/awesome-japanese-learning-resources",
+        number=5,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+    ),
 ]
 
 

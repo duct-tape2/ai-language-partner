@@ -58,6 +58,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/Vuizur/awesome-language-learning/pull/31`
   hosted-demo follow-up:
   `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535`
+- Awesome Japanese Learning Resources listing PR:
+  `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5`
 - Awesome Japanese listing suggestion issue: deferred until the app has a
   stronger app-store/release-build path; the hosted web demo is the first
   maturity step
