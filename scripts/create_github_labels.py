@@ -43,6 +43,7 @@ COLORS = {
     "claimed": "d4c5f9",
     "external-pr": "1d76db",
     "needs-maintainer-review": "fbca04",
+    "merged-external-pr-candidate": "0e8a16",
 }
 
 

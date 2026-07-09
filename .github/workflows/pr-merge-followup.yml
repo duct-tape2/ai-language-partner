@@ -1,0 +1,87 @@
+name: PR Merge Followup
+
+on:
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  merge-followup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Thank external merged contributors
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr || !pr.merged || !pr.user || pr.user.type === "Bot") {
+              return;
+            }
+
+            const { owner, repo } = context.repo;
+            const login = pr.user.login.toLowerCase();
+            const ownerLogin = owner.toLowerCase();
+            const association = pr.author_association || "";
+            const maintainerAssociations = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
+            const isMaintainer = login === ownerLogin || maintainerAssociations.has(association);
+            if (isMaintainer) {
+              return;
+            }
+
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: pr.number,
+              labels: ["merged-external-pr-candidate"],
+            });
+
+            try {
+              await github.rest.issues.removeLabel({
+                owner,
+                repo,
+                issue_number: pr.number,
+                name: "needs-maintainer-review",
+              });
+            } catch (error) {
+              if (error.status !== 404) {
+                throw error;
+              }
+            }
+
+            const marker = "<!-- ai-language-partner:pr-merge-followup -->";
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: pr.number,
+              per_page: 100,
+            });
+            if (comments.some((comment) => comment.body && comment.body.includes(marker))) {
+              core.info("PR merge followup comment already exists.");
+              return;
+            }
+
+            const body = [
+              marker,
+              `Thanks again, @${pr.user.login}. This PR has been merged.`,
+              "",
+              "Maintainers marked it as `merged-external-pr-candidate` for later evidence review.",
+              "That label is not a final Claude for OSS counting decision; the public counting policy still applies.",
+              "",
+              "Useful next links:",
+              "",
+              "- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html",
+              "- Five-minute first PR guide: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
+              "- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
+              "- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53",
+              "- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html",
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: pr.number,
+              body,
+            });

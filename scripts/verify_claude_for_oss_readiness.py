@@ -48,6 +48,7 @@ REQUIRED_FILES = [
     ".github/workflows/pr-welcome.yml",
     ".github/workflows/pr-review-packet.yml",
     ".github/workflows/pr-triage-labels.yml",
+    ".github/workflows/pr-merge-followup.yml",
     ".github/workflows/starter-issue-index.yml",
     ".github/workflows/discovery-listings-monitor.yml",
     ".github/workflows/no-install-first-pr-guides.yml",

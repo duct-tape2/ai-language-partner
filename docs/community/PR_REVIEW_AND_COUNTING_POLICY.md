@@ -44,7 +44,9 @@ Use a lightweight but visible review process:
 3. Run or request the relevant checks.
 4. Leave one maintainer review comment that names what was verified.
 5. Merge.
-6. Add the PR to `docs/CLAUDE_FOR_OSS_APPLICATION.md` or regenerate evidence
+6. Check any `merged-external-pr-candidate` label as an evidence-review cue,
+   not as an automatic counting decision.
+7. Add the PR to `docs/CLAUDE_FOR_OSS_APPLICATION.md` or regenerate evidence
    with `scripts/export_claude_for_oss_evidence.py`.
 
 See `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md` for the full command

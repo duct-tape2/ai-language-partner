@@ -447,6 +447,30 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("\"external-pr\"", label_script)
         self.assertIn("\"needs-maintainer-review\"", label_script)
 
+    def test_pr_merge_followup_marks_candidates_without_final_counting_claim(self) -> None:
+        workflow = Path(".github/workflows/pr-merge-followup.yml").read_text(encoding="utf-8")
+        labels_doc = Path("docs/community/LABELS.md").read_text(encoding="utf-8")
+        label_script = Path("scripts/create_github_labels.py").read_text(encoding="utf-8")
+        runbook = Path("docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md").read_text(encoding="utf-8")
+        policy = Path("docs/community/PR_REVIEW_AND_COUNTING_POLICY.md").read_text(encoding="utf-8")
+
+        self.assertIn("pull_request_target:", workflow)
+        self.assertIn("types: [closed]", workflow)
+        self.assertIn("pr.merged", workflow)
+        self.assertIn("merged-external-pr-candidate", workflow)
+        self.assertIn("not a final Claude for OSS counting decision", workflow)
+        self.assertIn("issues.addLabels", workflow)
+        self.assertIn("issues.removeLabel", workflow)
+        self.assertIn("issues.createComment", workflow)
+        self.assertIn("OWNER", workflow)
+        self.assertIn("MEMBER", workflow)
+        self.assertIn("COLLABORATOR", workflow)
+        self.assertIn("merged-external-pr-candidate", labels_doc)
+        self.assertIn("\"merged-external-pr-candidate\"", label_script)
+        self.assertIn("merged-external-pr-candidate", runbook)
+        self.assertIn("evidence-review queue only", runbook)
+        self.assertIn("evidence-review cue", policy)
+
     def test_pull_request_template_collects_countable_pr_signals(self) -> None:
         template = Path(".github/PULL_REQUEST_TEMPLATE.md").read_text(encoding="utf-8")
 
@@ -854,6 +878,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_JA.md", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/pr-triage-labels.yml", readiness.REQUIRED_FILES)
+        self.assertIn(".github/workflows/pr-merge-followup.yml", readiness.REQUIRED_FILES)
 
     def test_language_review_first_pr_kit_is_reviewable_and_counting_safe(self) -> None:
         kit = Path("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md").read_text(encoding="utf-8")

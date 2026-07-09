@@ -22,6 +22,7 @@ Use these labels consistently when opening the 30+ starter issues.
 | `claimed` | A contributor has signaled they are working on the issue |
 | `external-pr` | Pull request opened by an external non-maintainer contributor |
 | `needs-maintainer-review` | External pull request is ready for human maintainer response |
+| `merged-external-pr-candidate` | Merged external PR awaiting evidence review |
 
 Do not use labels to imply an issue is easy unless the acceptance criteria are
 clear and the likely file paths are named.

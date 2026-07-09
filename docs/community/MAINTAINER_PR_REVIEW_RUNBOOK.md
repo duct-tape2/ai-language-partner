@@ -65,6 +65,11 @@ prepares the checklist so the human review can be faster and more consistent.
 
 After a useful external PR is merged:
 
+- The `PR Merge Followup` workflow labels external merged PRs as
+  `merged-external-pr-candidate` and posts a thank-you comment.
+- Treat that label as an evidence-review queue only. It is not a final counting
+  decision.
+
 ```bash
 GITHUB_TOKEN=... python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
 GITHUB_TOKEN=... python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08
