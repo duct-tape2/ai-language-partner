@@ -7,9 +7,11 @@
 [![Repo Hygiene](https://github.com/duct-tape2/ai-language-partner/actions/workflows/repo-hygiene.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/repo-hygiene.yml)
 [![Mobile Verify](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml)
 [![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
 [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
+[GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute) ·
 [Call for contributors](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html) ·
 [한국어 기여자 모집](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html) ·
 [日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html) ·
@@ -46,7 +48,8 @@ and metric-only changes are excluded.
 | Backend/API docs | [backend docs issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs) | OpenAPI examples, local STT/TTS setup notes |
 | Tests/tooling | [tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | small fixture tests or verification scripts |
 
-Start with the [call for contributors](docs/community/CALL_FOR_CONTRIBUTORS.md),
+Start with the [GitHub /contribute page](https://github.com/duct-tape2/ai-language-partner/contribute),
+the [call for contributors](docs/community/CALL_FOR_CONTRIBUTORS.md),
 the [한국어 기여자 모집](docs/community/CALL_FOR_CONTRIBUTORS_KO.md),
 the [日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html),
 the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),

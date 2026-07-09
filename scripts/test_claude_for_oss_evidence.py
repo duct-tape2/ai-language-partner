@@ -709,6 +709,14 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
         self.assertIn("숫자를 채우기 위한", guide)
 
+    def test_readme_and_pages_link_github_contribute_route(self) -> None:
+        readme = Path("README.md").read_text(encoding="utf-8")
+        index = Path("docs/index.md").read_text(encoding="utf-8")
+
+        self.assertIn("first--timers--only-friendly", readme)
+        self.assertIn("https://github.com/duct-tape2/ai-language-partner/contribute", readme)
+        self.assertIn("https://github.com/duct-tape2/ai-language-partner/contribute", index)
+
     def test_japanese_first_pr_route_is_publicly_linked(self) -> None:
         guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_JA.md").read_text(encoding="utf-8")
         call = Path("docs/community/CALL_FOR_CONTRIBUTORS_JA.md").read_text(encoding="utf-8")

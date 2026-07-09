@@ -19,6 +19,7 @@ keys to make a useful first contribution.
 Start here:
 
 - [Hosted web demo](demo/)
+- [GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute)
 - [Call for contributors](community/CALL_FOR_CONTRIBUTORS.html)
 - [한국어 기여자 모집](community/CALL_FOR_CONTRIBUTORS_KO.html)
 - [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.html)
@@ -56,6 +57,7 @@ Useful first contribution lanes:
 
 - [GitHub repository](https://github.com/duct-tape2/ai-language-partner)
 - [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/)
+- [GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute)
 - [Open issues](https://github.com/duct-tape2/ai-language-partner/issues)
 - [Good first issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 - [Discussions](https://github.com/duct-tape2/ai-language-partner/discussions)
