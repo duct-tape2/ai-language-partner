@@ -63,7 +63,7 @@ def paged_github_json(url: str, token: str | None) -> list[dict[str, object]]:
 def suggested_checks(paths: list[str]) -> list[str]:
     checks = ["python3 scripts/check_public_tree.py"]
     if any(path.startswith("apps/api/") or path.startswith("contracts/") for path in paths):
-        checks.append("cd apps/api && python -m pytest")
+        checks.append("cd apps/api && .venv/bin/python -m pytest")
     if any(path.startswith("apps/mobile/") or path.startswith("packages/shared/") for path in paths):
         checks.append("cd apps/mobile && npm run verify")
     if any(path.startswith("scripts/") for path in paths):

@@ -203,6 +203,24 @@ class PrReviewPacketTest(unittest.TestCase):
         self.assertIn("docs/content review: verify links and wording manually", packet.markdown)
         self.assertIn("Countable candidate: `yes`", packet.markdown)
 
+    def test_pr_review_packet_suggests_codespaces_backend_check(self) -> None:
+        pr = {
+            "number": 88,
+            "title": "backend: clarify provider status, closes #19",
+            "body": "Closes #19",
+            "html_url": "https://example.test/pull/88",
+            "user": {"login": "api-helper", "type": "User"},
+            "author_association": "CONTRIBUTOR",
+            "draft": False,
+            "merged": True,
+            "labels": [{"name": "backend"}],
+        }
+        files = [{"filename": "apps/api/README.md"}]
+
+        packet = review_packet.build_packet("duct-tape2/ai-language-partner", pr, files)
+
+        self.assertIn("cd apps/api && .venv/bin/python -m pytest", packet.markdown)
+
 
 class PrReviewPacketCommentTest(unittest.TestCase):
     def test_render_comment_wraps_packet_as_non_decision_triage_aid(self) -> None:
@@ -383,6 +401,18 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues.listComments", workflow)
         self.assertIn("PR welcome comment already exists", workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
+        self.assertIn("Closes #123", workflow)
+        self.assertIn("CODESPACES_FIRST_PR.html", workflow)
+
+    def test_pull_request_template_collects_countable_pr_signals(self) -> None:
+        template = Path(".github/PULL_REQUEST_TEMPLATE.md").read_text(encoding="utf-8")
+
+        self.assertIn("Closes #ISSUE_NUMBER", template)
+        self.assertIn("Docs/content review only", template)
+        self.assertIn("python3 scripts/check_public_tree.py", template)
+        self.assertIn("cd apps/api && .venv/bin/python -m pytest", template)
+        self.assertIn("CODESPACES_FIRST_PR.html", template)
+        self.assertIn("First PR help desk", template)
 
     def test_issue_and_interest_workflows_link_hosted_demo(self) -> None:
         issue_workflow = Path(".github/workflows/issue-welcome.yml").read_text(encoding="utf-8")
