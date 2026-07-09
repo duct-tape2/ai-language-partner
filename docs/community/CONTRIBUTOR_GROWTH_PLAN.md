@@ -34,6 +34,8 @@ The Claude for OSS approval target is the community-builder criterion:
   toward the Claude for OSS evidence packet.
 - Run the 20-contributor sprint from `docs/community/CONTRIBUTOR_SPRINT.md`
   so outreach, issue assignment, review, and evidence updates stay auditable.
+- Keep the contributor funnel monitor current so open external PRs, claim
+  signals, and contributor interest issues are visible from the kickoff issue.
 - Regenerate evidence weekly:
   `python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner`.
 

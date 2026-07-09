@@ -28,6 +28,7 @@ import post_no_install_first_pr_guides as no_install_guides  # noqa: E402
 import post_pr_review_packet as pr_review_comment  # noqa: E402
 import post_contributor_sprint_status as sprint_status  # noqa: E402
 import update_claude_application_evidence as evidence_update  # noqa: E402
+import snapshot_contributor_funnel as contributor_funnel  # noqa: E402
 
 
 def issue_item(
@@ -311,6 +312,16 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues: write", workflow)
         self.assertIn("issue.pull_request", workflow)
 
+    def test_contributor_funnel_monitor_uses_trusted_base_checkout(self) -> None:
+        workflow = Path(".github/workflows/contributor-funnel-monitor.yml").read_text(encoding="utf-8")
+
+        self.assertIn("pull_request_target:", workflow)
+        self.assertIn("issue_comment:", workflow)
+        self.assertIn("Checkout trusted base branch", workflow)
+        self.assertIn("ref: main", workflow)
+        self.assertIn("snapshot_contributor_funnel.py", workflow)
+        self.assertIn("--comment", workflow)
+
     def test_pr_welcome_workflow_is_single_comment_and_links_demo(self) -> None:
         workflow = Path(".github/workflows/pr-welcome.yml").read_text(encoding="utf-8")
 
@@ -348,6 +359,69 @@ class ContributorSprintStatusTest(unittest.TestCase):
         self.assertIn("not Claude", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("Maintainer-authored PRs, bots", markdown)
+
+
+class ContributorFunnelStatusTest(unittest.TestCase):
+    def test_contributor_interest_issues_exclude_maintainer_and_bots(self) -> None:
+        fixtures = [
+            contributor_funnel.IssueItem(52, "community: sprint", "https://example.test/52", "github-actions[bot]", "", "", ()),
+            contributor_funnel.IssueItem(53, "community: maintainer note", "https://example.test/53", "duct-tape2", "", "", ()),
+            contributor_funnel.IssueItem(54, "community: contributor interest", "https://example.test/54", "new-helper", "", "", ()),
+        ]
+
+        with patch.object(contributor_funnel, "search_issues", return_value=fixtures):
+            issues = contributor_funnel.contributor_interest_issues("duct-tape2/ai-language-partner", token=None)
+
+        self.assertEqual([issue.number for issue in issues], [54])
+
+    def test_render_funnel_status_tracks_open_prs_claims_and_entry_points(self) -> None:
+        pr = contributor_funnel.IssueItem(
+            number=88,
+            title="docs: improve setup",
+            url="https://example.test/pull/88",
+            login="new-helper",
+            created_at="2026-07-09T00:00:00Z",
+            updated_at="2026-07-09T01:00:00Z",
+            labels=("docs",),
+        )
+        interest = contributor_funnel.IssueItem(
+            number=89,
+            title="community: contributor interest",
+            url="https://example.test/issues/89",
+            login="reviewer",
+            created_at="2026-07-09T00:00:00Z",
+            updated_at="2026-07-09T02:00:00Z",
+            labels=("community",),
+        )
+        claim = contributor_funnel.ClaimSignal(
+            issue_number=1,
+            issue_title="docs: add Korean quick-start",
+            issue_url="https://example.test/issues/1",
+            login="new-helper",
+            comment_url="https://example.test/issues/1#comment",
+            created_at="2026-07-09T03:00:00Z",
+        )
+
+        with patch.object(contributor_funnel, "collect_evidence", return_value=[object(), object()]), patch.object(
+            contributor_funnel, "open_external_prs", return_value=[pr]
+        ), patch.object(contributor_funnel, "issue_claim_signals", return_value=[claim]), patch.object(
+            contributor_funnel, "contributor_interest_issues", return_value=[interest]
+        ), patch.object(contributor_funnel, "open_starter_issues", return_value=[]), patch.object(
+            contributor_funnel, "count_open_issues", side_effect=[34, 24]
+        ), patch.object(
+            contributor_funnel, "no_install_task_count", return_value=27
+        ):
+            markdown = contributor_funnel.build_markdown("duct-tape2/ai-language-partner", "2025-07-09", "2026-07-09", token=None)
+
+        self.assertIn(contributor_funnel.MARKER, markdown)
+        self.assertIn("Unique external merged PR contributors: `2/20`", markdown)
+        self.assertIn("Open external PRs needing maintainer attention: `1`", markdown)
+        self.assertIn("Active claim signals on open issues: `1`", markdown)
+        self.assertIn("Open contributor interest issues: `1`", markdown)
+        self.assertIn("Hosted web demo", markdown)
+        self.assertIn("[#88: docs: improve setup]", markdown)
+        self.assertIn("[#1: docs: add Korean quick-start]", markdown)
+        self.assertIn("within 24 hours", markdown)
 
 
 class ApplicationEvidenceUpdateTest(unittest.TestCase):
