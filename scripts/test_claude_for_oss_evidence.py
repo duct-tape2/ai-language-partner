@@ -673,6 +673,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Language Learning", names)
         self.assertIn("Awesome Japanese Learning Resources", names)
         self.assertIn("Awesome Japanese Study Materials", names)
+        self.assertIn("Awesome Local-First", names)
         self.assertIn("Awesome Japanese", {listing.name for listing in discovery_snapshot.LISTING_ISSUES})
 
     def test_good_first_issue_directory_is_locked_until_ten_contributors(self) -> None:

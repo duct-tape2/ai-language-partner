@@ -62,6 +62,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5`
 - Awesome Japanese Study Materials listing PR:
   `https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8`
+- Awesome Local-First listing PR:
+  `https://github.com/alexanderop/awesome-local-first/pull/46`
 - Awesome Japanese listing suggestion issue: deferred until the app has a
   stronger app-store/release-build path; the hosted web demo is the first
   maturity step

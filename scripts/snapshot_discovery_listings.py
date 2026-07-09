@@ -87,6 +87,12 @@ LISTING_PRS = [
         number=8,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
     ),
+    ListingPr(
+        name="Awesome Local-First",
+        repo="alexanderop/awesome-local-first",
+        number=46,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+    ),
 ]
 
 

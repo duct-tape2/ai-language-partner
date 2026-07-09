@@ -8,7 +8,7 @@ from unique external contributors count for the community-builder threshold.
 
 | Channel | Status | Evidence | Contributor entry point | Follow-up |
 |---|---|---|---|---|
-| GitHub topics | Active | `help-wanted`, `good-first-issue`, `up-for-grabs`, `first-timers-only`, and `beginner-friendly` topics are on the repo | `https://github.com/duct-tape2/ai-language-partner` | - |
+| GitHub topics | Active | Contributor-discovery topics include `help-wanted`, `good-first-issue`, `good-first-pr`, `up-for-grabs`, `first-timers-only`, `first-contributions`, `contributions-welcome`, `beginner-friendly`, and `learn-japanese` | `https://github.com/duct-tape2/ai-language-partner` | - |
 | Hosted web demo | Active mock-mode demo | `https://duct-tape2.github.io/ai-language-partner/demo/` | `https://duct-tape2.github.io/ai-language-partner/` | - |
 | GitHub release | Active prerelease | `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09` | `https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip` | - |
 | GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` | - |
@@ -18,6 +18,7 @@ from unique external contributors count for the community-builder threshold.
 | Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` | `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535` |
 | Awesome Japanese Learning Resources | PR open | `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
 | Awesome Japanese Study Materials | PR open | `https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
+| Awesome Local-First | PR open | `https://github.com/alexanderop/awesome-local-first/pull/46` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
 | Awesome Japanese | Deferred by maintainer until the app is more mature / app-store-ready | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md` | - |
 | Good First Issue | Locked until contributor count improves | `https://github.com/DeepSourceCorp/good-first-issue` requires at least 10 contributors before submitting a repository | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | Submit the form only after 10 real external contributors |
 
@@ -47,7 +48,9 @@ Automated status comment:
 - `first-timers-only`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Afirst-timers-only`
 - `good first issue`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - `good-first-issue` topic: `https://github.com/topics/good-first-issue`
+- `good-first-pr` topic: `https://github.com/topics/good-first-pr`
 - `help-wanted` topic: `https://github.com/topics/help-wanted`
 - `language-learning` topic: `https://github.com/topics/language-learning`
+- `learn-japanese` topic: `https://github.com/topics/learn-japanese`
 - Good First Issue project submission criteria:
   `https://github.com/DeepSourceCorp/good-first-issue`

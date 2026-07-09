@@ -13,9 +13,13 @@ import urllib.request
 
 DISCOVERY_TOPICS = {
     "beginner-friendly",
+    "contributions-welcome",
+    "first-contributions",
     "first-timers-only",
     "good-first-issue",
+    "good-first-pr",
     "help-wanted",
+    "learn-japanese",
     "up-for-grabs",
 }
 
