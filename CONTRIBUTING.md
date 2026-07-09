@@ -16,6 +16,14 @@ New contributors can start with
 community-builder route should use `docs/community/CONTRIBUTOR_SPRINT.md` for
 issue lanes, outreach batches, and counting decisions.
 
+If you do not want to install Python, Node, Expo, or FastAPI locally, open the
+repo in Codespaces:
+
+`https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1293331196`
+
+Then use `docs/community/CODESPACES_FIRST_PR.md` for the shortest cloud setup
+and check commands.
+
 ---
 
 ## Repository invariants
@@ -54,6 +62,25 @@ tests:
 
 Everything runs in **fully-local mock mode by default** — you do not need the
 STT/TTS engines or any API key to develop or run the test suite.
+
+## Codespaces setup
+
+The repository includes `.devcontainer/devcontainer.json` for contributors who
+want a cloud workspace. Codespaces installs Python 3.11, Node.js 20, backend
+test dependencies, and mobile npm dependencies.
+
+Quick checks inside Codespaces:
+
+```bash
+cd apps/api
+.venv/bin/python -m pytest
+
+cd ../mobile
+npm run verify
+```
+
+See `docs/community/CODESPACES_FIRST_PR.md` for port forwarding and mock-mode
+run commands.
 
 ---
 

@@ -637,6 +637,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("CALL_FOR_CONTRIBUTORS.html", messages)
         self.assertIn("Contributor call", messages)
         self.assertIn("FIRST_ISSUE_MATCHER.html", messages)
+        self.assertIn("CODESPACES_FIRST_PR.html", messages)
 
     def test_outreach_queue_tracks_public_discussion_post(self) -> None:
         payload = json.loads(Path("docs/community/OUTREACH_QUEUE.json").read_text(encoding="utf-8"))
@@ -716,6 +717,23 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("first--timers--only-friendly", readme)
         self.assertIn("https://github.com/duct-tape2/ai-language-partner/contribute", readme)
         self.assertIn("https://github.com/duct-tape2/ai-language-partner/contribute", index)
+
+    def test_codespaces_first_pr_route_is_publicly_linked(self) -> None:
+        devcontainer = json.loads(Path(".devcontainer/devcontainer.json").read_text(encoding="utf-8"))
+        guide = Path("docs/community/CODESPACES_FIRST_PR.md").read_text(encoding="utf-8")
+        readme = Path("README.md").read_text(encoding="utf-8")
+        index = Path("docs/index.md").read_text(encoding="utf-8")
+        landing = Path("docs/community/CONTRIBUTOR_LANDING.md").read_text(encoding="utf-8")
+        contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
+
+        self.assertIn("postCreateCommand", devcontainer)
+        self.assertIn("apps/api/requirements.txt", devcontainer["postCreateCommand"])
+        self.assertIn("npm ci", devcontainer["postCreateCommand"])
+        self.assertIn("1293331196", guide)
+        self.assertIn("CODESPACES_FIRST_PR.md", readme)
+        self.assertIn("CODESPACES_FIRST_PR.html", index)
+        self.assertIn("CODESPACES_FIRST_PR.html", landing)
+        self.assertIn("CODESPACES_FIRST_PR.md", contributing)
 
     def test_japanese_first_pr_route_is_publicly_linked(self) -> None:
         guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_JA.md").read_text(encoding="utf-8")

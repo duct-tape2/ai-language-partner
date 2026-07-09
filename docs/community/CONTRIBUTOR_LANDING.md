@@ -23,6 +23,9 @@ For the lowest-friction route, use the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.html). It links directly to
 browser-editable issues and includes a PR body template.
 
+If you want to run tests without setting up your own machine, use the
+[Codespaces first PR guide](CODESPACES_FIRST_PR.html).
+
 Korean-speaking contributors can use the
 [한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.html).
 
@@ -79,6 +82,10 @@ For docs or language review, the fastest path is the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.html) or the
 [no-install first PR board](NO_INSTALL_FIRST_PRS.html): pick a row, use the
 direct edit link, and submit a focused browser-only PR.
+
+For tests, backend docs, or mobile checks, use the
+[Codespaces first PR guide](CODESPACES_FIRST_PR.html) if you do not want to
+install Python, Node, or Expo locally.
 
 If you need a maintainer to suggest a first issue, use the
 [contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).

@@ -24,6 +24,9 @@ TEMPLATES = {
 5분 첫 PR 가이드:
 {community_pages}/FIVE_MINUTE_FIRST_PR.html
 
+Codespaces 첫 PR 가이드:
+{community_pages}/CODESPACES_FIRST_PR.html
+
 첫 이슈 매처:
 {community_pages}/FIRST_ISSUE_MATCHER.html
 
@@ -58,6 +61,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 5分で始める最初の PR:
 {community_pages}/FIVE_MINUTE_FIRST_PR.html
 
+Codespaces first PR:
+{community_pages}/CODESPACES_FIRST_PR.html
+
 First issue matcher:
 {community_pages}/FIRST_ISSUE_MATCHER.html
 
@@ -91,6 +97,9 @@ Suggested issue/list:
 
 Five-minute first PR guide:
 {community_pages}/FIVE_MINUTE_FIRST_PR.html
+
+Codespaces first PR guide:
+{community_pages}/CODESPACES_FIRST_PR.html
 
 First issue matcher:
 {community_pages}/FIRST_ISSUE_MATCHER.html

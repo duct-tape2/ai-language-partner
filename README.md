@@ -12,6 +12,7 @@
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
 [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute) ·
+[Open in Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1293331196) ·
 [Call for contributors](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html) ·
 [한국어 기여자 모집](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html) ·
 [日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html) ·
@@ -54,6 +55,7 @@ the [한국어 기여자 모집](docs/community/CALL_FOR_CONTRIBUTORS_KO.md),
 the [日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html),
 the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),
 the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
+the [Codespaces first PR route](docs/community/CODESPACES_FIRST_PR.md),
 the [한국어 5분 첫 PR route](docs/community/FIVE_MINUTE_FIRST_PR_KO.md),
 the [日本語 5分 first PR route](docs/community/FIVE_MINUTE_FIRST_PR_JA.md),
 the [language review first PR kit](docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md),
