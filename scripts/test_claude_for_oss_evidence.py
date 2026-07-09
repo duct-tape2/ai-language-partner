@@ -306,9 +306,26 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issue_comment:", workflow)
         self.assertIn("/claim", workflow)
         self.assertIn("ai-language-partner:issue-claim-guidance", workflow)
+        self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("issue.pull_request", workflow)
+
+    def test_pr_welcome_workflow_is_single_comment_and_links_demo(self) -> None:
+        workflow = Path(".github/workflows/pr-welcome.yml").read_text(encoding="utf-8")
+
+        self.assertIn("pull_request_target:", workflow)
+        self.assertIn("ai-language-partner:pr-welcome", workflow)
+        self.assertIn("issues.listComments", workflow)
+        self.assertIn("PR welcome comment already exists", workflow)
+        self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
+
+    def test_issue_and_interest_workflows_link_hosted_demo(self) -> None:
+        issue_workflow = Path(".github/workflows/issue-welcome.yml").read_text(encoding="utf-8")
+        interest_workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
+
+        self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", issue_workflow)
+        self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", interest_workflow)
 
 
 class ContributorSprintStatusTest(unittest.TestCase):
@@ -326,6 +343,7 @@ class ContributorSprintStatusTest(unittest.TestCase):
 
         self.assertIn(sprint_status.MARKER, markdown)
         self.assertIn("Unique external merged PR contributors: `3/20`", markdown)
+        self.assertIn("Hosted web demo", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", markdown)
         self.assertIn("not Claude", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
@@ -394,6 +412,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
 
         self.assertIn("Issues covered: `27`", comments)
         self.assertIn(no_install_guides.MARKER, comments)
+        self.assertIn("Hosted web demo", comments)
         self.assertIn("Closes #1", comments)
         self.assertIn("Closes #24", comments)
         self.assertIn("Closes #44", comments)

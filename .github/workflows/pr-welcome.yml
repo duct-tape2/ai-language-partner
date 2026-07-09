@@ -21,7 +21,21 @@ jobs:
               return;
             }
 
+            const marker = "<!-- ai-language-partner:pr-welcome -->";
+            const { owner, repo } = context.repo;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: pr.number,
+              per_page: 100,
+            });
+            if (comments.some((comment) => comment.body && comment.body.includes(marker))) {
+              core.info("PR welcome comment already exists.");
+              return;
+            }
+
             const body = [
+              marker,
               `Thanks for opening this PR, @${pr.user.login}.`,
               "",
               "A maintainer will review it against the public contribution rules:",
@@ -34,6 +48,7 @@ jobs:
               "",
               "Useful links:",
               "",
+              "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
               "- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md",
               "- Contributor sprint lanes: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_SPRINT.md",
               "- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md",
@@ -43,8 +58,8 @@ jobs:
             ].join("\n");
 
             await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner,
+              repo,
               issue_number: pr.number,
               body
             });

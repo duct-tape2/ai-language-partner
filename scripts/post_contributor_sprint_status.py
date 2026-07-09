@@ -24,6 +24,7 @@ FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/do
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
+HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 
 
 @dataclass(frozen=True)
@@ -167,6 +168,7 @@ def render_status(
             "",
             "## Fastest First PR Path",
             "",
+            f"- Hosted web demo: {HOSTED_DEMO}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- Browser-only no-install issue slots: `{no_install_count}`",

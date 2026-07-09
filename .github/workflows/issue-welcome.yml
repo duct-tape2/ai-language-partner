@@ -25,6 +25,7 @@ jobs:
               "",
               "Useful next steps:",
               "",
+              "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
               "- Contributor landing: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md",
               "- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md",
               "- 20 contributor sprint kickoff: https://github.com/duct-tape2/ai-language-partner/issues/52",

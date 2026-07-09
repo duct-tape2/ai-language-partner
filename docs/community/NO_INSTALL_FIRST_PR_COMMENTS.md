@@ -5,7 +5,7 @@ They are posted to matching issues with a marker so reruns update the same
 comment instead of creating duplicates.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-08`
+- Generated on: `2026-07-09`
 - Issues covered: `27`
 
 ## [#1: Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
@@ -22,6 +22,7 @@ Add or clarify Korean setup notes for running the backend in mock mode
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -53,6 +54,7 @@ Add Japanese notes for running the mobile app without local engines
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ja/index.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ja/index.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -84,6 +86,7 @@ Clarify ffmpeg, model path, env vars, and fallback behavior for local STT setup
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -115,6 +118,7 @@ Clarify local TTS engine process setup, licensing boundaries, and the `/speakers
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -146,6 +150,7 @@ Define learner-facing terms such as dialogue bank, pack, node, line, fallback
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ARCHITECTURE.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ARCHITECTURE.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -177,6 +182,7 @@ Add curl examples for packs, match, unmatched, voices, and provider status
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -208,6 +214,7 @@ Review beginner Korean translations without touching generated audio
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `packs/yui/v1/story.json`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -239,6 +246,7 @@ Review Japanese dialogue for natural beginner-safe wording while keeping line ID
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `packs/yui/v1/story.json`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -270,6 +278,7 @@ Add concise Korean notes about common Japanese particle mistakes
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ko/index.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -301,6 +310,7 @@ Add a short checklist for reviewing cultural notes without stereotypes or overge
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/community/CONTRIBUTOR_LANDING.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/CONTRIBUTOR_LANDING.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -332,6 +342,7 @@ Document how fixture-backed mock mode differs from live API-backed mode
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ARCHITECTURE.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ARCHITECTURE.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -363,6 +374,7 @@ Review Korean labels and suggest consistent wording
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `apps/mobile/src/i18n.ts`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/i18n.ts
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -394,6 +406,7 @@ Add example `/v1/providers/status` responses for mock, fallback, and local engin
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -425,6 +438,7 @@ Explain match, confirm, and fallback thresholds in learner-friendly language
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ARCHITECTURE.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ARCHITECTURE.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -456,6 +470,7 @@ Document optional Redis rate-limit setup for local and production use without ex
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -487,6 +502,7 @@ Add or improve OpenAPI examples for self-attested and public-key device trust fl
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `contracts/openapi_v0.yaml`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/contracts/openapi_v0.yaml
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -518,6 +534,7 @@ Clarify when to use each public issue label
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/community/LABELS.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/LABELS.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -549,6 +566,7 @@ Add a short FAQ answer explaining the local-first dialogue-bank design
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/index.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/index.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -580,6 +598,7 @@ Add Korean troubleshooting notes for Python dependency install failures
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -611,6 +630,7 @@ Add neutral Japanese explanation of cost, privacy, latency, and quality-control 
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ja/index.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ja/index.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -642,6 +662,7 @@ Add beginner-safe examples for expressing restaurant preferences
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `packs/yui/v1/variants.csv`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/variants.csv
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -673,6 +694,7 @@ Explain honest provider labels such as `mock` and `voicevox_compat_fallback_*`
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/backend/API_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -704,6 +726,7 @@ Improve this repo's first-PR instructions for new contributors
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/community/FIRST_PR_WALKTHROUGH.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -735,6 +758,7 @@ Improve the checklist maintainers use before merging counted external PRs
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -766,6 +790,7 @@ Add beginner-safe Korean explanations for よ, ね, よね, and かな
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/ko/index.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -797,6 +822,7 @@ Add examples of stereotype-prone or context-sensitive wording to review carefull
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `apps/mobile/src/culture/cultureNotes.ts`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/culture/cultureNotes.ts
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
@@ -828,6 +854,7 @@ Add a public roadmap for persona, topic, JLPT, and language-review pack areas
 
 **Start here**
 
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Source file: `docs/community/CONTRIBUTOR_GROWTH_PLAN.md`
 - Direct edit link: https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/CONTRIBUTOR_GROWTH_PLAN.md
 - No-install board: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md

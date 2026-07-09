@@ -7,6 +7,11 @@ private data.
 Pick one row, open the edit link, make one focused improvement, and create a
 pull request from GitHub's web editor.
 
+If you want to see what the project feels like before editing docs or content,
+open the hosted mock-mode demo:
+
+`https://duct-tape2.github.io/ai-language-partner/demo/`
+
 If you want to avoid duplicate work, comment `/claim` on the issue first. An
 automated reply will point you back to the PR checklist for that issue.
 
@@ -14,6 +19,10 @@ Only real, useful PRs count toward Claude for OSS evidence. Do not split
 trivial typo fixes into separate PRs just to increase numbers.
 
 ## Fastest Routes
+
+The table below is the shortest menu. If a row is already claimed, use the
+full [no-install first PR board](NO_INSTALL_FIRST_PRS.md), which has 27
+browser-editable issue slots.
 
 | Route | Best if you can... | Issue | Edit link |
 |---|---|---|---|
