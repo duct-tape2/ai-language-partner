@@ -42,10 +42,16 @@ reviewable first contributions genuinely easy.
   `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR:
   `https://github.com/MunGell/awesome-for-beginners/pull/2072`
+  hosted-demo follow-up:
+  `https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431`
 - Awesome for Non-Programmers listing PR:
   `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
+  hosted-demo follow-up:
+  `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475`
 - Awesome Language Learning listing PR:
   `https://github.com/Vuizur/awesome-language-learning/pull/31`
+  hosted-demo follow-up:
+  `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535`
 - Awesome Japanese listing suggestion issue: deferred until the app has a
   stronger app-store/release-build path; the hosted web demo is the first
   maturity step

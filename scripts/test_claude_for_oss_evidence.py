@@ -525,6 +525,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             "draft": False,
             "checks": ["Project Changes: completed success"],
             "contributor_link": "https://example.test/labels/first-timers-only",
+            "followup_url": "https://example.test/pull/1#comment",
         }
         issue_status = {
             "name": "Example Issue",
@@ -536,6 +537,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             "draft": False,
             "checks": ["issue submitted before PR per contribution guidelines"],
             "contributor_link": "https://example.test/first-pr",
+            "followup_url": "",
         }
 
         release_status = {
@@ -560,6 +562,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Web demo prerelease: `active`", markdown)
         self.assertIn("https://example.test/releases/demo.zip", markdown)
         self.assertIn("[link](https://example.test/pull/1)", markdown)
+        self.assertIn("[update](https://example.test/pull/1#comment)", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 
     def test_closed_listing_issue_is_not_reported_as_waiting(self) -> None:

@@ -32,6 +32,7 @@ class ListingPr:
     repo: str
     number: int
     contributor_link: str
+    followup_url: str = ""
 
 
 @dataclass(frozen=True)
@@ -54,18 +55,21 @@ LISTING_PRS = [
         repo="MunGell/awesome-for-beginners",
         number=2072,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only",
+        followup_url="https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431",
     ),
     ListingPr(
         name="Awesome for Non-Programmers",
         repo="szabgab/awesome-for-non-programmers",
         number=107,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md",
+        followup_url="https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475",
     ),
     ListingPr(
         name="Awesome Language Learning",
         repo="Vuizur/awesome-language-learning",
         number=31,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+        followup_url="https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535",
     ),
 ]
 
@@ -135,6 +139,7 @@ def fetch_listing_pr(pr: ListingPr, token: str | None) -> dict[str, object]:
         "draft": bool(data.get("draft", False)),
         "checks": checks,
         "contributor_link": pr.contributor_link,
+        "followup_url": pr.followup_url,
     }
 
 
@@ -159,6 +164,7 @@ def fetch_listing_issue(issue: ListingIssue, token: str | None) -> dict[str, obj
         "draft": False,
         "checks": ["issue submitted before PR per contribution guidelines"],
         "contributor_link": issue.contributor_link,
+        "followup_url": "",
     }
 
 
@@ -186,18 +192,20 @@ def build_markdown(repo: str, token: str | None) -> str:
     for pr in LISTING_PRS:
         status = fetch_listing_pr(pr, token)
         checks = "; ".join(status["checks"]) if status["checks"] else "none reported"
-        status = {**status, "checks": checks}
+        followup = f"[update]({status['followup_url']})" if status["followup_url"] else "-"
+        status = {**status, "checks": checks, "followup": followup}
         listing_rows.append(
-            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {checks} |".format(
+            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {followup} | {checks} |".format(
                 **status,
             )
         )
     for issue in LISTING_ISSUES:
         status = fetch_listing_issue(issue, token)
         checks = "; ".join(status["checks"]) if status["checks"] else "none reported"
-        status = {**status, "checks": checks}
+        followup = f"[update]({status['followup_url']})" if status["followup_url"] else "-"
+        status = {**status, "checks": checks, "followup": followup}
         listing_rows.append(
-            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {checks} |".format(
+            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {followup} | {checks} |".format(
                 **status,
             )
         )
@@ -218,8 +226,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         + (f" - {demo_release['url']}" if demo_release["url"] else ""),
         f"- Web demo asset: {demo_release['asset'] or 'missing'}",
         "",
-        "| Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Checks |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Follow-up | Checks |",
+        "|---|---|---|---|---|---|---|---|---|",
         *listing_rows,
     ]
     return "\n".join(rows)
