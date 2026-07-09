@@ -13,6 +13,7 @@ program.
 - License: MIT
 - Project: local-first Japanese speaking practice for Korean learners
 - Program page checked: `https://claude.com/contact-sales/claude-for-oss`
+  on `2026-07-09`
 - Core principle: no runtime LLM or external generation API on the Daily Talk
   request path
 
@@ -57,7 +58,7 @@ Fill this only with real merged PRs from unique external contributors. Do not
 count maintainer-authored PRs, bots, duplicate identities, or trivial spam.
 
 - Evidence generated from: `duct-tape2/ai-language-partner`
-- Since: `2025-07-08`
+- Since: `2025-07-09`
 - Unique external contributors counted: `0`
 - Status: `NOT READY for Phase B`
 - Remaining contributors needed: `20`
@@ -86,11 +87,16 @@ threshold is not met yet. Do not submit Phase B with this status.
 - First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
 - No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - No-install issue guide comments: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
-- Up For Grabs listing PR: `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
+- Discovery labels: 34 open `up-for-grabs` issues, 24 open
+  `first-timers-only` issues, and 26 open `good first issue` items
+- Up For Grabs listing PR: merged and live
+  `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR: `https://github.com/MunGell/awesome-for-beginners/pull/2072`
 - Awesome for Non-Programmers listing PR: `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
 - Awesome Language Learning listing PR: `https://github.com/Vuizur/awesome-language-learning/pull/31`
-- Awesome Japanese listing suggestion issue: `https://github.com/yudataguy/awesome-japanese/issues/149`
+- Awesome Japanese listing suggestion issue: deferred until the project has a
+  clearer install/release path
+  `https://github.com/yudataguy/awesome-japanese/issues/149`
 - Discovery listing tracker: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/DISCOVERY_LISTINGS.md`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`
 
@@ -99,11 +105,11 @@ threshold is not met yet. Do not submit Phase B with this status.
 Run these before applying:
 
 ```bash
-git shortlog -sn --since=2025-07-08 --all
+git shortlog -sn --since=2025-07-09 --all
 find . -type f | grep -Ei 'local_engines|artifacts|handoff|reference_archive|\\.sqlite|\\.zip|\\.wav|\\.npy' && exit 1 || true
 git grep -nE 'sk-[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}' -- .
-python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since=2025-07-08
-python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since=2025-07-08
+python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since=2025-07-09
+python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since=2025-07-09
 python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 ```
 

@@ -458,6 +458,26 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("[link](https://example.test/pull/1)", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 
+    def test_closed_listing_issue_is_not_reported_as_waiting(self) -> None:
+        issue = discovery_snapshot.ListingIssue(
+            name="Example Issue",
+            repo="example/repo",
+            number=2,
+            contributor_link="https://example.test/first-pr",
+        )
+        payload = {
+            "html_url": "https://example.test/issues/2",
+            "state": "closed",
+            "state_reason": "completed",
+        }
+
+        with patch.object(discovery_snapshot, "github_json", return_value=payload):
+            status = discovery_snapshot.fetch_listing_issue(issue, token=None)
+
+        self.assertEqual(status["state"], "closed")
+        self.assertIn("closed (completed)", status["mergeable"])
+        self.assertNotIn("awaiting maintainer acknowledgement", status["mergeable"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -13,6 +13,9 @@ the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [starter issue index](STARTER_ISSUE_INDEX.md) if you want a lane-by-lane list
 of currently open tasks.
 
+If you want to help make the project easier for non-contributors to try, see
+the [installable demo release plan](INSTALLABLE_DEMO_RELEASE_PLAN.md).
+
 For the lowest-friction route, use the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md). It links directly to
 browser-editable issues and includes a PR body template.

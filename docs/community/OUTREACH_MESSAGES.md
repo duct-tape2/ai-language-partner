@@ -5,7 +5,7 @@ identical messages. A posted message is not Claude for OSS evidence; only
 useful merged external PRs count.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
-- Items: `20`
+- Items: `21`
 
 ## outreach_01: Korean Japanese-learning study group
 
@@ -686,6 +686,41 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Repo tooling contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/43
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
+Contributor landing:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
+
+Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
+```
+
+## outreach_21: OSS release and demo maintainers
+
+- Lane: `Release/community`
+- Status: `draft`
+- Posted URL: `TBD`
+- Notes: Installable web demo path and release maturity follow-up.
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for a small, useful contribution from OSS release and demo maintainers.
+Suggested issue/list:
+https://github.com/duct-tape2/ai-language-partner/issues/54
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md

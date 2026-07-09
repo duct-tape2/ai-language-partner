@@ -30,7 +30,9 @@ reviewable first contributions genuinely easy.
 - Discovery labels:
   `up-for-grabs` marks scoped external work; `first-timers-only` marks the
   lowest-context issues for a first OSS PR.
-- Up For Grabs listing PR:
+  Current discovery count: 34 `up-for-grabs`, 24 `first-timers-only`, and 26
+  `good first issue` items.
+- Up For Grabs listing PR: merged and live
   `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR:
   `https://github.com/MunGell/awesome-for-beginners/pull/2072`
@@ -38,7 +40,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
 - Awesome Language Learning listing PR:
   `https://github.com/Vuizur/awesome-language-learning/pull/31`
-- Awesome Japanese listing suggestion issue:
+- Awesome Japanese listing suggestion issue: deferred until the app has a
+  clearer install/release path
   `https://github.com/yudataguy/awesome-japanese/issues/149`
 - Discovery listing tracker: `docs/community/DISCOVERY_LISTINGS.md`
 - First PR recipe comments: posted to 26 open `good first issue` items on
@@ -95,7 +98,7 @@ reminds them to link the issue from the PR body.
 | Accessibility/mobile | Expo, React Native, accessibility reviewers | #13, #14, #18, #38, #39, #48 | Better labels, touch targets, no narrow-screen overlap |
 | Backend/API docs | FastAPI users and API docs contributors | #6, #19, #20, #40, #41 | OpenAPI examples, provider docs, threshold explanations |
 | Tests/tooling | Python/TypeScript contributors | #21, #22, #25, #28, #42, #43, #49 | Focused tests or repo checks that run locally/CI |
-| Release/community | OSS maintainers and process reviewers | #29, #30, #45, #50 | Cleaner labels, review checklist, roadmap, release process |
+| Release/community | OSS maintainers and process reviewers | #29, #30, #45, #50, #54 | Cleaner labels, review checklist, roadmap, release/demo process |
 
 ## 20-Slot Contributor Board
 

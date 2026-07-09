@@ -37,6 +37,17 @@ The Claude for OSS approval target is the community-builder criterion:
 - Regenerate evidence weekly:
   `python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner`.
 
+## Discovery Channel Follow-Up
+
+- Up For Grabs is the first live external contributor discovery channel.
+- Awesome Japanese should wait until the project has a clearer end-user install
+  path, preferably an app-store or release build. The maintainer explicitly
+  asked to come back after the project is more mature, so do not reopen that
+  listing route until the install/release gap is fixed. Track the gap in
+  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
+- Keep open listing PRs current, but avoid duplicate submissions to the same
+  directory.
+
 ## Outreach Copy
 
 > I just opened `ai-language-partner`, a local-first Japanese speaking practice

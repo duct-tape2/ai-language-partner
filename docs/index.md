@@ -26,6 +26,7 @@ Start here:
 - [First PR recipes](community/FIRST_PR_RECIPES.md)
 - [Contributor landing](community/CONTRIBUTOR_LANDING.md)
 - [First PR walkthrough](community/FIRST_PR_WALKTHROUGH.md)
+- [Installable demo release plan](community/INSTALLABLE_DEMO_RELEASE_PLAN.md)
 - [First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 - [Contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml)
 

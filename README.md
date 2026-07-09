@@ -14,7 +14,8 @@
 [Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
 [Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
 [No-install first PRs](docs/community/NO_INSTALL_FIRST_PRS.md) ·
-[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
+[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) ·
+[Demo/release plan](docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md)
 
 ---
 
@@ -349,7 +350,7 @@ Self-assessment against popular apps (Duolingo / LingoDeer / Renshuu / Busuu) an
 6. **Social features** — currently skeleton; make friends/leagues real.
 7. **Onboarding placement test** — expand the lightweight placement flow.
 
-**Operational follow-ups**: rebuild/restart the public demo server to serve the current backend; confirm on-device mic permissions (Expo config) on a real device; keep the demo (`8000`) build in sync with the latest backend.
+**Operational follow-ups**: rebuild/restart the public demo server to serve the current backend; confirm on-device mic permissions (Expo config) on a real device; keep the demo (`8000`) build in sync with the latest backend. See the [installable demo release plan](docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md) for the public demo and app-store-readiness gates.
 
 ---
 

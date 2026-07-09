@@ -4,7 +4,8 @@ Use this only for an honest early application before the official
 community-builder threshold is met. The Phase B path remains the main route:
 20+ unique external contributors with merged PRs in the last 12 months.
 
-Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
+Official program page checked on `2026-07-09`:
+`https://claude.com/contact-sales/claude-for-oss`
 
 ## Current Evidence
 
@@ -28,6 +29,10 @@ Official program page checked: `https://claude.com/contact-sales/claude-for-oss`
 - No-install first PR board: 27 browser-editable issue slots with generated
   issue comments, tracked in `docs/community/NO_INSTALL_FIRST_PRS.md` and
   `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
+- Discovery labels: 34 open `up-for-grabs` issues, 24 open
+  `first-timers-only` issues, and 26 open `good first issue` items
+- Up For Grabs listing: merged and live
+  (`https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`)
 - Community-builder count: 0 unique external merged PR contributors so far
 - Status: not ready for Phase B; suitable only for a "Don't quite fit?" early
   application

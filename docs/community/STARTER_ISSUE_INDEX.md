@@ -5,10 +5,10 @@ contributors. Pick one focused issue, comment if you want to claim it,
 then follow the first PR walkthrough.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-08`
-- Open issues indexed: `51`
+- Generated on: `2026-07-09`
+- Open issues indexed: `52`
 - Good first issues: `26`
-- Help wanted issues: `15`
+- Help wanted issues: `16`
 - First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
@@ -25,7 +25,7 @@ more PRs.
 | Backend/API docs | 14 | FastAPI, OpenAPI, local STT/TTS setup, provider docs |
 | Tests/tooling | 4 | Python, TypeScript, CI, repo checks, fixtures |
 | Dialogue/content review | 11 | Japanese naturalness, Korean learner notes, JLPT review |
-| Release/community | 6 | Issue taxonomy, review process, roadmap, sprint coordination |
+| Release/community | 7 | Issue taxonomy, review process, roadmap, sprint coordination |
 | Korean/Japanese docs | 5 | Setup docs, architecture notes, learner-facing explanation |
 
 ## Mobile/accessibility
@@ -108,6 +108,7 @@ Issue taxonomy, review process, roadmap, sprint coordination.
 | [#45: docs: add maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#50: docs: add public roadmap for dialogue-bank packs](https://github.com/duct-tape2/ai-language-partner/issues/50) | `help wanted`, `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#52: community: 20 contributor sprint kickoff](https://github.com/duct-tape2/ai-language-partner/issues/52) | `help wanted`, `community` |
+| [#54: release: publish installable web demo path](https://github.com/duct-tape2/ai-language-partner/issues/54) | `help wanted`, `docs`, `release`, `up-for-grabs` |
 
 ## Korean/Japanese docs
 

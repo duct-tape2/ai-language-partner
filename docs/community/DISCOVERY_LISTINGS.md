@@ -9,12 +9,12 @@ from unique external contributors count for the community-builder threshold.
 | Channel | Status | Evidence | Contributor entry point |
 |---|---|---|---|
 | GitHub topics | Active | `up-for-grabs`, `first-timers-only`, `beginner-friendly` topics are on the repo | `https://github.com/duct-tape2/ai-language-partner` |
-| GitHub issue labels | Active | 18 open `up-for-grabs` issues and 16 open `first-timers-only` issues on 2026-07-08 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
-| Up For Grabs | PR open, automated check passed | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
+| GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
+| Up For Grabs | Merged and live | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` |
 | Awesome for Non-Programmers | PR open | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` |
 | Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` |
-| Awesome Japanese | Issue open, waiting for maintainer acknowledgement before PR | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` |
+| Awesome Japanese | Deferred by maintainer until the app is more mature / app-store-ready | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md` |
 
 Public sprint update:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
@@ -24,14 +24,16 @@ Automated status comment:
 
 ## Maintainer Follow-Up
 
-- Check listing PRs daily until merged or reviewed.
+- Check open listing PRs daily until merged or reviewed.
 - If a maintainer requests changes, fix them in the listing fork and record the
   resolution here.
 - After a listing merges, update `docs/CLAUDE_FOR_OSS_APPLICATION.md` with the
   merged listing URL and keep the contributor count separate from listing
   evidence.
-- For listing repos that require a suggestion issue before a PR, wait for
-  maintainer acknowledgement before opening the PR.
+- For Awesome Japanese, do not reopen or submit a PR until the project has a
+  clearer end-user install path, preferably an app-store or release build.
+- Track that maturity work in
+  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
 ## Useful Search Links

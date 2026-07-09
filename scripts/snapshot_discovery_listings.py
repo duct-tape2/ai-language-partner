@@ -139,13 +139,20 @@ def fetch_listing_issue(issue: ListingIssue, token: str | None) -> dict[str, obj
     data = github_json(f"https://api.github.com/repos/{issue.repo}/issues/{issue.number}", token)
     if not isinstance(data, dict):
         raise TypeError("GitHub issue response was not an object")
+    state = str(data.get("state", ""))
+    reason = str(data.get("state_reason") or "")
+    if state == "open":
+        next_step = "awaiting maintainer acknowledgement"
+    else:
+        reason_label = f" ({reason})" if reason else ""
+        next_step = f"closed{reason_label}; follow up only after maturity changes"
     return {
         "name": issue.name,
         "url": str(data.get("html_url", "")),
         "kind": "Issue",
-        "state": str(data.get("state", "")),
+        "state": state,
         "merged": "n/a",
-        "mergeable": "awaiting maintainer acknowledgement",
+        "mergeable": next_step,
         "draft": False,
         "checks": ["issue submitted before PR per contribution guidelines"],
         "contributor_link": issue.contributor_link,
