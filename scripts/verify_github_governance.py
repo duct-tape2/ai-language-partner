@@ -99,8 +99,11 @@ def main(argv: list[str]) -> int:
     if not isinstance(pages, dict):
         raise TypeError("pages response was not an object")
     source = pages.get("source") if isinstance(pages.get("source"), dict) else {}
+    build_type = str(pages.get("build_type") or "")
     passed &= check("GitHub Pages built", str(pages.get("status")) == "built", str(pages.get("html_url")))
-    passed &= check("GitHub Pages source", source.get("branch") == "main" and source.get("path") == "/docs", str(source))
+    source_ok = build_type == "workflow" or (source.get("branch") == "main" and source.get("path") == "/docs")
+    source_detail = build_type if build_type == "workflow" else str(source)
+    passed &= check("GitHub Pages source", source_ok, source_detail)
 
     profile = github_json(f"/repos/{repo}/community/profile", token)
     if not isinstance(profile, dict):

@@ -253,6 +253,17 @@ class GovernanceCheckTest(unittest.TestCase):
         self.assertIn("DISCOVERY_TOPICS", source)
         self.assertIn("help-wanted", source)
         self.assertIn("contributor discovery topics", source)
+        self.assertIn('build_type == "workflow"', source)
+
+    def test_pages_workflow_deploys_docs_with_jekyll(self) -> None:
+        workflow = Path(".github/workflows/pages.yml").read_text(encoding="utf-8")
+
+        self.assertIn("actions/configure-pages", workflow)
+        self.assertIn("actions/jekyll-build-pages", workflow)
+        self.assertIn("source: docs", workflow)
+        self.assertIn("actions/deploy-pages", workflow)
+        self.assertIn("pages: write", workflow)
+        self.assertIn("id-token: write", workflow)
 
 
 class FirstPrRecipeTest(unittest.TestCase):
