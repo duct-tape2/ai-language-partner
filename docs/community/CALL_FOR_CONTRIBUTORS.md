@@ -22,7 +22,7 @@ Share link:
 - Korean call for contributors:
   `https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html`
 - Japanese call for contributors:
-  `https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html`
+  `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CALL_FOR_CONTRIBUTORS_JA.md`
 - Korean contributor guide: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor guide: `https://duct-tape2.github.io/ai-language-partner/ja/`
 

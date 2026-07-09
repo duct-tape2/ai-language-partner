@@ -23,7 +23,7 @@ KOREAN_CONTRIBUTOR_CALL = (
     "https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html"
 )
 JAPANESE_CONTRIBUTOR_CALL = (
-    "https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html"
+    "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CALL_FOR_CONTRIBUTORS_JA.md"
 )
 KOREAN_FIVE_MINUTE_FIRST_PR = (
     "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
