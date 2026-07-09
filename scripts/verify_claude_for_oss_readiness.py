@@ -55,6 +55,7 @@ REQUIRED_FILES = [
     "docs/ja/index.md",
     "docs/community/ISSUE_SEEDS.md",
     "docs/community/CONTRIBUTOR_LANDING.md",
+    "docs/community/CALL_FOR_CONTRIBUTORS.md",
     "docs/community/STARTER_ISSUE_INDEX.md",
     "docs/community/FIVE_MINUTE_FIRST_PR.md",
     "docs/community/NO_INSTALL_FIRST_PRS.md",

@@ -53,6 +53,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 기여자 안내:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+공유용 모집 페이지:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 ```
 
 ## Outreach Copy: Japanese
@@ -72,6 +75,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 ```
 
 ## Outreach Copy: English
@@ -92,6 +98,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Contributor landing:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 ```
 
 ## Review Promise

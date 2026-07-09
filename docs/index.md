@@ -19,6 +19,7 @@ keys to make a useful first contribution.
 Start here:
 
 - [Hosted web demo](demo/)
+- [Call for contributors](community/CALL_FOR_CONTRIBUTORS.md)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)

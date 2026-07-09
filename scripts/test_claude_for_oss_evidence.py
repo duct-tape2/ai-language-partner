@@ -448,6 +448,25 @@ class ApplicationEvidenceUpdateTest(unittest.TestCase):
         self.assertIn("## Verification Links", updated)
 
 
+class ContributorCallPageTest(unittest.TestCase):
+    def test_contributor_call_page_is_shareable_and_honest(self) -> None:
+        page = Path("docs/community/CALL_FOR_CONTRIBUTORS.md").read_text(encoding="utf-8")
+
+        self.assertIn("layout: page", page)
+        self.assertIn("https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html", page)
+        self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", page)
+        self.assertIn("No-install first PR board", page)
+        self.assertIn("20+ unique external contributors", page)
+        self.assertIn("Maintainer PRs", page)
+        self.assertIn("metric-only changes are excluded", page)
+
+    def test_outreach_messages_link_contributor_call(self) -> None:
+        messages = Path("docs/community/OUTREACH_MESSAGES.md").read_text(encoding="utf-8")
+
+        self.assertIn("CALL_FOR_CONTRIBUTORS.html", messages)
+        self.assertIn("Contributor call", messages)
+
+
 class NoInstallFirstPrBoardTest(unittest.TestCase):
     def test_no_install_board_links_browser_edit_tasks_and_guardrails(self) -> None:
         board = Path("docs/community/NO_INSTALL_FIRST_PRS.md").read_text(encoding="utf-8")
