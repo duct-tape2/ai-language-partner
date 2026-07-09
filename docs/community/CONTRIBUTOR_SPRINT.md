@@ -16,6 +16,7 @@ reviewable first contributions genuinely easy.
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
 - Call for contributors: `docs/community/CALL_FOR_CONTRIBUTORS.md`
+- Korean call for contributors: `docs/community/CALL_FOR_CONTRIBUTORS_KO.md`
 - Call for contributors discussion:
   `https://github.com/duct-tape2/ai-language-partner/discussions/55`
 - Web demo prerelease:

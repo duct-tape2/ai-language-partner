@@ -19,6 +19,8 @@ Share link:
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Call for contributors discussion:
   `https://github.com/duct-tape2/ai-language-partner/discussions/55`
+- Korean call for contributors:
+  `https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html`
 - Korean contributor guide: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor guide: `https://duct-tape2.github.io/ai-language-partner/ja/`
 

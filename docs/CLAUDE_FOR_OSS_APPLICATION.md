@@ -78,6 +78,8 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
+- Korean call for contributors:
+  `https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
 - Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827790`

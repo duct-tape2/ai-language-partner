@@ -11,6 +11,7 @@
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
 [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [Call for contributors](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html) ·
+[한국어 기여자 모집](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html) ·
 [Contributor discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
@@ -42,6 +43,7 @@ and metric-only changes are excluded.
 | Tests/tooling | [tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | small fixture tests or verification scripts |
 
 Start with the [call for contributors](docs/community/CALL_FOR_CONTRIBUTORS.md),
+the [한국어 기여자 모집](docs/community/CALL_FOR_CONTRIBUTORS_KO.md),
 the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),
 the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
 the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
