@@ -380,6 +380,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.html", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", workflow)
+        self.assertIn("NO_INSTALL_FIRST_PRS.html", workflow)
+        self.assertIn("CODESPACES_FIRST_PR.html", workflow)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("github.rest.issues.addLabels", workflow)
@@ -423,6 +425,9 @@ class WorkflowFixtureTest(unittest.TestCase):
 
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", issue_workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.html", issue_workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.html", issue_workflow)
+        self.assertIn("NO_INSTALL_FIRST_PRS.html", issue_workflow)
+        self.assertIn("CODESPACES_FIRST_PR.html", issue_workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", interest_workflow)
 
 
