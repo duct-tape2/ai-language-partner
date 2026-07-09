@@ -94,6 +94,7 @@ backend, STT/TTS engine, generated audio, private data, or API key is needed.
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- First issue matcher: https://github.com/{repo}/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - Source file: `{task.source_file}`
 - Direct edit link: {task.edit_url}
 - No-install board: https://github.com/{repo}/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md

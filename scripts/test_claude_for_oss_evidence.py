@@ -268,6 +268,7 @@ class FirstPrRecipeTest(unittest.TestCase):
         recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
 
         self.assertIn(first_pr_recipes.MARKER, recipe)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", recipe)
         self.assertIn("contracts/openapi_v0.yaml", recipe)
         self.assertIn("cd apps/api && python -m pytest", recipe)
         self.assertIn("Closes #40", recipe)
@@ -325,6 +326,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("/claim", workflow)
         self.assertIn("ai-language-partner:issue-claim-guidance", workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("issue.pull_request", workflow)
@@ -353,6 +355,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         interest_workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", issue_workflow)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", issue_workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", interest_workflow)
 
 
@@ -624,6 +627,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertEqual(tasks[0].number, 44)
         self.assertIn(no_install_guides.MARKER, comment)
         self.assertIn("Direct edit link", comment)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", comment)
         self.assertIn("Closes #44", comment)
         self.assertIn("Tiny split", comment)
 

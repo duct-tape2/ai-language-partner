@@ -5,7 +5,7 @@ also posted as issue comments so first-time contributors can start without
 searching the whole repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-08`
+- Generated on: `2026-07-09`
 - Issues covered: `26`
 
 ## [#1: docs: add Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
@@ -42,6 +42,7 @@ Acceptance: backend setup works without STT/TTS engines; Korean instructions inc
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -80,6 +81,7 @@ Acceptance: mobile setup covers npm install, Expo web, and mock API defaults.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -117,6 +119,7 @@ Acceptance: defines persona, pack, node, lineId, variants, match, confirm, fallb
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -154,6 +157,7 @@ Acceptance: PR fixes unnatural Korean explanations without changing line IDs.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -191,6 +195,7 @@ Acceptance: PR improves Japanese dialogue while preserving beginner level.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -230,6 +235,7 @@ Acceptance: adds concise examples for は/が, を/に, and で/に.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -268,6 +274,7 @@ Acceptance: checklist avoids stereotypes and flags context-sensitive terms. ## A
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -305,6 +312,7 @@ Acceptance: identifies and fixes any tab target below common mobile guidance.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -342,6 +350,7 @@ Acceptance: no technical jargon; tells learner what to do next.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -380,6 +389,7 @@ Acceptance: explains when UI is fixture-backed versus live API-backed.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -419,6 +429,7 @@ Acceptance: consistent honorifics and app terminology. ## Backend and API
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -457,6 +468,7 @@ Acceptance: includes mock, fallback, and local engine examples.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -495,6 +507,7 @@ Acceptance: `..` and slash injection return 400/404 safely.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -532,6 +545,7 @@ Acceptance: CI fails if generated engines, databases, zip, wav, or npy files are
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -569,6 +583,7 @@ Acceptance: documents labels and when maintainers apply them.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -607,6 +622,7 @@ Acceptance: explains cost, latency, privacy, and quality-control tradeoffs.
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -645,6 +661,7 @@ Acceptance: covers common Python venv, pip, and macOS command-line tools failure
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -683,6 +700,7 @@ Acceptance: Japanese text explains cost, privacy, latency, and quality control t
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -721,6 +739,7 @@ Acceptance: adds beginner-safe Japanese examples with Korean notes and does not 
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -759,6 +778,7 @@ Acceptance: `contracts/openapi_v0.yaml` includes a realistic response example fo
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -797,6 +817,7 @@ Acceptance: CI or a repo script fails if `docs/community/ISSUE_SEEDS.md` parses 
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -835,6 +856,7 @@ Acceptance: improves `docs/community/FIRST_PR_WALKTHROUGH.md` with clearer first
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -871,6 +893,7 @@ Acceptance: summarizes useful-review requirements before merging counted externa
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -910,6 +933,7 @@ Acceptance: covers よ, ね, よね, かな at a beginner-safe level with Korean
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -948,6 +972,7 @@ Acceptance: includes examples of stereotypes to avoid and context-sensitive word
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -985,5 +1010,6 @@ Acceptance: lists planned persona/topic/JLPT pack areas and names which items ar
 Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
