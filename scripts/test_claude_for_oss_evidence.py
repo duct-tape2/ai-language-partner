@@ -578,13 +578,17 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         ), patch.object(
             contributor_funnel, "no_install_task_count", return_value=27
         ):
-            markdown = contributor_funnel.build_markdown("duct-tape2/ai-language-partner", "2025-07-09", "2026-07-09", token=None)
+            markdown = contributor_funnel.build_markdown("duct-tape2/ai-language-partner", "2025-07-09", "2026-07-10", token=None)
 
         self.assertIn(contributor_funnel.MARKER, markdown)
         self.assertIn("Unique external merged PR contributors: `2/20`", markdown)
         self.assertIn("Open external PRs needing maintainer attention: `1`", markdown)
         self.assertIn("Active claim signals on open issues: `1`", markdown)
         self.assertIn("Open contributor interest issues: `1`", markdown)
+        self.assertIn("Maintainer response SLA target: `24h`", markdown)
+        self.assertIn("Open external PRs over SLA: `1`", markdown)
+        self.assertIn("Active claim signals over SLA: `1`", markdown)
+        self.assertIn("Contributor interest issues over SLA: `1`", markdown)
         self.assertIn("Open `claimed` issues: `3`", markdown)
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("Call for contributors discussion", markdown)
@@ -597,6 +601,9 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", markdown)
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
+        self.assertIn("| PR | Author | Updated | SLA |", markdown)
+        self.assertIn("| Issue | Contributor | Claim comment | SLA |", markdown)
+        self.assertIn("`overdue (", markdown)
         self.assertIn("within 24 hours", markdown)
 
 

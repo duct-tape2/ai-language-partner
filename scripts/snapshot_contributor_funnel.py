@@ -23,6 +23,7 @@ MARKER = "<!-- ai-language-partner:contributor-funnel-status -->"
 DEFAULT_REPO = "duct-tape2/ai-language-partner"
 DEFAULT_ISSUE = 52
 MAINTAINER_LOGINS = {"duct-tape2", "sinmb79"}
+MAINTAINER_SLA_HOURS = 24
 HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
@@ -137,6 +138,57 @@ def no_install_task_count() -> int:
         return 0
 
 
+def parse_utc_datetime(value: str) -> dt.datetime | None:
+    if not value:
+        return None
+    clean = value.strip()
+    if not clean:
+        return None
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", clean):
+        day = dt.date.fromisoformat(clean)
+        return dt.datetime.combine(day, dt.time.max, tzinfo=dt.timezone.utc)
+    if clean.endswith("Z"):
+        clean = f"{clean[:-1]}+00:00"
+    try:
+        parsed = dt.datetime.fromisoformat(clean)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=dt.timezone.utc)
+    return parsed.astimezone(dt.timezone.utc)
+
+
+def age_hours(timestamp: str, generated_on: str) -> int | None:
+    started_at = parse_utc_datetime(timestamp)
+    generated_at = parse_utc_datetime(generated_on)
+    if not started_at or not generated_at:
+        return None
+    elapsed = max(0, int((generated_at - started_at).total_seconds() // 3600))
+    return elapsed
+
+
+def sla_status(timestamp: str, generated_on: str, target_hours: int = MAINTAINER_SLA_HOURS) -> str:
+    hours = age_hours(timestamp, generated_on)
+    if hours is None:
+        return "unknown"
+    if hours >= target_hours:
+        return "overdue"
+    if hours >= max(1, target_hours - 6):
+        return "due soon"
+    return "ok"
+
+
+def sla_cell(timestamp: str, generated_on: str) -> str:
+    hours = age_hours(timestamp, generated_on)
+    if hours is None:
+        return "`unknown`"
+    return f"`{sla_status(timestamp, generated_on)} ({hours}h)`"
+
+
+def over_sla_count(timestamps: list[str], generated_on: str) -> int:
+    return sum(1 for timestamp in timestamps if sla_status(timestamp, generated_on) == "overdue")
+
+
 def is_external(item: IssueItem) -> bool:
     return bool(item.login) and item.login not in MAINTAINER_LOGINS and not item.login.endswith("[bot]")
 
@@ -200,23 +252,33 @@ def escape_cell(value: str) -> str:
     return value.replace("|", "\\|")
 
 
-def render_issue_rows(items: list[IssueItem], empty: str) -> list[str]:
+def render_issue_rows(items: list[IssueItem], empty: str, generated_on: str | None = None) -> list[str]:
     if not items:
+        if generated_on:
+            return [f"| {empty} | - | - | - |"]
         return [f"| {empty} | - | - |"]
     rows = []
     for item in items[:10]:
-        rows.append(f"| [#{item.number}: {escape_cell(item.title)}]({item.url}) | `{item.login}` | `{item.updated_at[:10]}` |")
+        if generated_on:
+            rows.append(
+                f"| [#{item.number}: {escape_cell(item.title)}]({item.url}) | `{item.login}` | "
+                f"`{item.updated_at[:10]}` | {sla_cell(item.updated_at, generated_on)} |"
+            )
+        else:
+            rows.append(
+                f"| [#{item.number}: {escape_cell(item.title)}]({item.url}) | `{item.login}` | `{item.updated_at[:10]}` |"
+            )
     return rows
 
 
-def render_claim_rows(claims: list[ClaimSignal]) -> list[str]:
+def render_claim_rows(claims: list[ClaimSignal], generated_on: str) -> list[str]:
     if not claims:
-        return ["| No active claim signals found | - | - |"]
+        return ["| No active claim signals found | - | - | - |"]
     rows = []
     for claim in claims[:10]:
         rows.append(
             f"| [#{claim.issue_number}: {escape_cell(claim.issue_title)}]({claim.issue_url}) | "
-            f"`{claim.login}` | [comment]({claim.comment_url}) |"
+            f"`{claim.login}` | [comment]({claim.comment_url}) | {sla_cell(claim.created_at, generated_on)} |"
         )
     return rows
 
@@ -232,6 +294,9 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
     claimed = count_open_issues(repo, "claimed", token)
     needed = max(0, 20 - len(evidence))
     phase = "ready" if len(evidence) >= 20 else "not ready"
+    external_prs_over_sla = over_sla_count([item.updated_at for item in external_prs], generated_on)
+    claims_over_sla = over_sla_count([claim.created_at for claim in claims], generated_on)
+    interests_over_sla = over_sla_count([item.updated_at for item in interests], generated_on)
 
     return "\n".join(
         [
@@ -251,6 +316,10 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Open external PRs needing maintainer attention: `{len(external_prs)}`",
             f"- Active claim signals on open issues: `{len(claims)}`",
             f"- Open contributor interest issues: `{len(interests)}`",
+            f"- Maintainer response SLA target: `{MAINTAINER_SLA_HOURS}h`",
+            f"- Open external PRs over SLA: `{external_prs_over_sla}`",
+            f"- Active claim signals over SLA: `{claims_over_sla}`",
+            f"- Contributor interest issues over SLA: `{interests_over_sla}`",
             f"- Open `up-for-grabs` issues: `{up_for_grabs}`",
             f"- Open `first-timers-only` issues: `{first_timers}`",
             f"- Open `claimed` issues: `{claimed}`",
@@ -273,21 +342,21 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             "",
             "## Open External PRs",
             "",
-            "| PR | Author | Updated |",
-            "|---|---|---|",
-            *render_issue_rows(external_prs, "No open external PRs"),
+            "| PR | Author | Updated | SLA |",
+            "|---|---|---|---|",
+            *render_issue_rows(external_prs, "No open external PRs", generated_on),
             "",
             "## Active Claim Signals",
             "",
-            "| Issue | Contributor | Claim comment |",
-            "|---|---|---|",
-            *render_claim_rows(claims),
+            "| Issue | Contributor | Claim comment | SLA |",
+            "|---|---|---|---|",
+            *render_claim_rows(claims, generated_on),
             "",
             "## Contributor Interest Issues",
             "",
-            "| Issue | Author | Updated |",
-            "|---|---|---|",
-            *render_issue_rows(interests, "No contributor interest issues"),
+            "| Issue | Author | Updated | SLA |",
+            "|---|---|---|---|",
+            *render_issue_rows(interests, "No contributor interest issues", generated_on),
             "",
             "## Starter Issue Spotlight",
             "",
