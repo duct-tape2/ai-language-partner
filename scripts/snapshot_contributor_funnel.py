@@ -27,6 +27,7 @@ HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
+CALL_DISCUSSION = "https://github.com/duct-tape2/ai-language-partner/discussions/55"
 CLAIM_RE = re.compile(
     r"(^|\n)\s*/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bcan i take this\b|"
     r"제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます",
@@ -240,6 +241,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             "## Fastest Contributor Entry Points",
             "",
             f"- Hosted web demo: {HOSTED_DEMO}",
+            f"- Call for contributors discussion: {CALL_DISCUSSION}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- First PR help desk: {HELP_DESK}",

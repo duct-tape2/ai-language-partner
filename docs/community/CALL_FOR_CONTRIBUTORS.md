@@ -17,6 +17,8 @@ Share link:
 
 - Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
+- Call for contributors discussion:
+  `https://github.com/duct-tape2/ai-language-partner/discussions/55`
 - Korean contributor guide: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor guide: `https://duct-tape2.github.io/ai-language-partner/ja/`
 

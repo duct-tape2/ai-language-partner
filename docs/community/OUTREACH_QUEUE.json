@@ -11,6 +11,16 @@
   "status_values": ["draft", "posted", "responded", "pr-open", "merged-counted", "closed"],
   "items": [
     {
+      "id": "outreach_00",
+      "audience": "Repository visitors and GitHub topic browsers",
+      "lane": "Release/community",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/discussions/55",
+      "message_template": "short-english",
+      "status": "posted",
+      "posted_url": "https://github.com/duct-tape2/ai-language-partner/discussions/55",
+      "notes": "Public call-for-contributors discussion anchored in this repo."
+    },
+    {
       "id": "outreach_01",
       "audience": "Korean Japanese-learning study group",
       "lane": "Korean docs",

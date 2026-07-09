@@ -7,6 +7,7 @@ can be checked in CI without live API access.
 
 from __future__ import annotations
 
+import json
 import sys
 import unittest
 from contextlib import redirect_stdout
@@ -419,6 +420,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Active claim signals on open issues: `1`", markdown)
         self.assertIn("Open contributor interest issues: `1`", markdown)
         self.assertIn("Hosted web demo", markdown)
+        self.assertIn("Call for contributors discussion", markdown)
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("within 24 hours", markdown)
@@ -465,6 +467,15 @@ class ContributorCallPageTest(unittest.TestCase):
 
         self.assertIn("CALL_FOR_CONTRIBUTORS.html", messages)
         self.assertIn("Contributor call", messages)
+
+    def test_outreach_queue_tracks_public_discussion_post(self) -> None:
+        payload = json.loads(Path("docs/community/OUTREACH_QUEUE.json").read_text(encoding="utf-8"))
+        items = payload["items"]
+        posted = [item for item in items if item["posted_url"]]
+
+        self.assertGreaterEqual(len(items), 22)
+        self.assertTrue(any(item["posted_url"] == "https://github.com/duct-tape2/ai-language-partner/discussions/55" for item in posted))
+        self.assertTrue(any(item["id"] == "outreach_00" and item["status"] == "posted" for item in items))
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):

@@ -5,7 +5,48 @@ identical messages. A posted message is not Claude for OSS evidence; only
 useful merged external PRs count.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
-- Items: `21`
+- Items: `22`
+
+## outreach_00: Repository visitors and GitHub topic browsers
+
+- Lane: `Release/community`
+- Status: `posted`
+- Posted URL: `https://github.com/duct-tape2/ai-language-partner/discussions/55`
+- Notes: Public call-for-contributors discussion anchored in this repo.
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for a small, useful contribution from Repository visitors and GitHub topic browsers.
+Suggested issue/list:
+https://github.com/duct-tape2/ai-language-partner/discussions/55
+
+Five-minute first PR guide:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
+Hosted web demo:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
+
+Starter issue index:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+
+Contributor landing:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
+
+Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
+```
 
 ## outreach_01: Korean Japanese-learning study group
 

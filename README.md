@@ -11,6 +11,7 @@
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
 [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [Call for contributors](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html) ·
+[Contributor discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
 [Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·

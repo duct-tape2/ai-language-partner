@@ -20,6 +20,7 @@ Start here:
 
 - [Hosted web demo](demo/)
 - [Call for contributors](community/CALL_FOR_CONTRIBUTORS.md)
+- [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
