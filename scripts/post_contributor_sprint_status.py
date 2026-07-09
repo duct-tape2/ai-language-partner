@@ -28,6 +28,7 @@ JAPANESE_FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
+SHARE_KIT = f"{COMMUNITY_PAGES}/SHARE_KIT.html"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
 KOREAN_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml"
@@ -184,6 +185,7 @@ def render_status(
             f"- Japanese five-minute first PR guide: {JAPANESE_FIRST_PR_GUIDE}",
             f"- Language review first PR kit: {LANGUAGE_REVIEW_KIT}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
+            f"- Contributor share kit: {SHARE_KIT}",
             f"- Browser-only no-install issue slots: `{no_install_count}`",
             f"- First PR help desk: {HELP_DESK}",
             f"- Contributor interest form: {INTEREST_FORM}",

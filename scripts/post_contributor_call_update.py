@@ -33,6 +33,7 @@ FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
 NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
+SHARE_KIT = f"{COMMUNITY_PAGES}/SHARE_KIT.html"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 CONTRIBUTOR_INTEREST = (
     "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
@@ -101,6 +102,7 @@ def render_comment(repo: str, since: str, generated_on: str, contributor_count: 
             f"- Try the hosted mock-mode demo: {HOSTED_DEMO}",
             f"- Korean contributor call: {KOREAN_CONTRIBUTOR_CALL}",
             f"- Japanese contributor call: {JAPANESE_CONTRIBUTOR_CALL}",
+            f"- Contributor share kit: {SHARE_KIT}",
             f"- Korean five-minute first PR: {KOREAN_FIVE_MINUTE_FIRST_PR}",
             f"- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}",
             f"- Pick by time/skill: {FIRST_ISSUE_MATCHER}",
