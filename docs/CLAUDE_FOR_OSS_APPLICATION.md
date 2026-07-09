@@ -81,7 +81,7 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Korean call for contributors:
   `https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html`
 - Japanese call for contributors:
-  `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CALL_FOR_CONTRIBUTORS_JA.md`
+  `https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
 - Actions: `https://github.com/duct-tape2/ai-language-partner/actions`
 - Recent green repo hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827790`
@@ -91,18 +91,18 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Governance: `main` branch protection enabled; one approving PR review
   required; force pushes and branch deletion disabled; conversation resolution
   required; the 20-contributor sprint kickoff issue is pinned.
-- First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
-- No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
+- First PR recipes: `https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_RECIPES.html`
+- No-install first PR board: `https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html`
 - Korean five-minute first PR:
-  `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md`
+  `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_KO.html`
 - Korean contributor interest form:
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
 - Japanese five-minute first PR:
-  `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md`
+  `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_JA.html`
 - Japanese contributor interest form:
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml`
 - Language review first PR kit:
-  `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md`
+  `https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html`
 - No-install issue guide comments: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`

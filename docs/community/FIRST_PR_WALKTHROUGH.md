@@ -10,13 +10,13 @@ Start here:
 
 `https://duct-tape2.github.io/ai-language-partner/demo/`
 
-`https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md`
+`https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html`
 
 `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 
 If you want to avoid local setup entirely, use the no-install board:
 
-`https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
+`https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html`
 
 To avoid duplicate work, comment `/claim` on the issue before you start. The
 repo will reply with the short PR checklist for that issue.

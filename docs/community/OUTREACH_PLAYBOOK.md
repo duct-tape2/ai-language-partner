@@ -52,7 +52,7 @@ Week 4:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 
 기여자 안내:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 공유용 모집 페이지:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
@@ -74,7 +74,7 @@ Good first issues:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
@@ -97,7 +97,7 @@ Good first issues:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html

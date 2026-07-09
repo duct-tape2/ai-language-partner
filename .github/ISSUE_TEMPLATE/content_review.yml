@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         For a first language-review PR, start with the review kit:
-        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
+        https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 
         It lists safe files, issue routes, and what not to change.
   - type: textarea

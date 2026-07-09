@@ -49,10 +49,10 @@ jobs:
               "Useful links:",
               "",
               "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
-              "- First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md",
-              "- Contributor sprint lanes: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_SPRINT.md",
-              "- Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md",
-              "- Maintainer review runbook: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md",
+              "- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html",
+              "- Contributor sprint lanes: https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_SPRINT.html",
+              "- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html",
+              "- Maintainer review runbook: https://duct-tape2.github.io/ai-language-partner/community/MAINTAINER_PR_REVIEW_RUNBOOK.html",
               "",
               "For Claude for OSS evidence, only real external contributors with useful merged PRs are counted. Maintainer-authored PRs, bots, duplicate identities, and trivial metric-only PRs are excluded."
             ].join("\n");

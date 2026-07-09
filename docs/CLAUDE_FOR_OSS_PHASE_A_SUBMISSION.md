@@ -114,5 +114,5 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 - Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827257`
 - Recent green no-install guide run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827750`
 - Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
-- No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
+- No-install first PR board: `https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html`
 - Contributor evidence doc: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/CLAUDE_FOR_OSS_APPLICATION.md`

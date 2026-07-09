@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / "docs" / "community" / "OUTREACH_QUEUE.json"
 OUTPUT = ROOT / "docs" / "community" / "OUTREACH_MESSAGES.md"
+COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 
 TEMPLATES = {
     "short-korean": """한국어권 일본어 학습자를 위한 local-first OSS를 공개했습니다.
@@ -21,10 +22,10 @@ TEMPLATES = {
 {issue_query}
 
 5분 첫 PR 가이드:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+{community_pages}/FIVE_MINUTE_FIRST_PR.html
 
 첫 이슈 매처:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+{community_pages}/FIRST_ISSUE_MATCHER.html
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -36,10 +37,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 이슈 색인:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+{community_pages}/STARTER_ISSUE_INDEX.html
 
 기여자 안내:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+{community_pages}/CONTRIBUTOR_LANDING.html
 
 질문/첫 PR 상담:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -55,10 +56,10 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 {issue_query}
 
 5分で始める最初の PR:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+{community_pages}/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+{community_pages}/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
@@ -70,10 +71,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+{community_pages}/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+{community_pages}/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -89,10 +90,10 @@ Suggested issue/list:
 {issue_query}
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+{community_pages}/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+{community_pages}/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -104,10 +105,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+{community_pages}/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+{community_pages}/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -126,6 +127,7 @@ def render_message(item: dict[str, object]) -> str:
     return template.format(
         audience=str(item["audience"]),
         issue_query=str(item["issue_query"]),
+        community_pages=COMMUNITY_PAGES,
     )
 
 

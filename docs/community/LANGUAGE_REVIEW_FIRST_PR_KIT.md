@@ -85,8 +85,8 @@ Notes:
 
 Use one of these entry points:
 
-- First issue matcher: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md`
-- No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
+- First issue matcher: `https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html`
+- No-install first PR board: `https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html`
 - Japanese contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml`
 - Korean contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`

@@ -26,6 +26,11 @@ DEFAULT_ISSUE = 52
 DEMO_RELEASE_TAG = "demo-web-2026-07-09"
 DEMO_RELEASE_ASSET = "ai-language-partner-web-demo-2026-07-09.zip"
 HOSTED_DEMO_URL = "https://duct-tape2.github.io/ai-language-partner/demo/"
+COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
+CONTRIBUTOR_LANDING_URL = f"{COMMUNITY_PAGES}/CONTRIBUTOR_LANDING.html"
+FIRST_ISSUE_MATCHER_URL = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
+FIVE_MINUTE_FIRST_PR_URL = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
+INSTALLABLE_DEMO_PLAN_URL = f"{COMMUNITY_PAGES}/INSTALLABLE_DEMO_RELEASE_PLAN.html"
 GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-issue"
 GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
 
@@ -65,39 +70,39 @@ LISTING_PRS = [
         name="Awesome for Non-Programmers",
         repo="szabgab/awesome-for-non-programmers",
         number=107,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md",
+        contributor_link=CONTRIBUTOR_LANDING_URL,
         followup_url="https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475",
     ),
     ListingPr(
         name="Awesome Language Learning",
         repo="Vuizur/awesome-language-learning",
         number=31,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+        contributor_link=FIVE_MINUTE_FIRST_PR_URL,
         followup_url="https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535",
     ),
     ListingPr(
         name="Awesome Japanese Learning Resources",
         repo="ailanguagetutor/awesome-japanese-learning-resources",
         number=5,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+        contributor_link=FIRST_ISSUE_MATCHER_URL,
     ),
     ListingPr(
         name="Awesome Japanese Study Materials",
         repo="naghim/Awesome-Japanese-Study-Materials",
         number=8,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+        contributor_link=FIRST_ISSUE_MATCHER_URL,
     ),
     ListingPr(
         name="Awesome Local-First",
         repo="alexanderop/awesome-local-first",
         number=46,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+        contributor_link=FIRST_ISSUE_MATCHER_URL,
     ),
     ListingPr(
         name="Awesome Language Learning Japanese Page",
         repo="jqhoogland/awesome-language-learning",
         number=20,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+        contributor_link=FIRST_ISSUE_MATCHER_URL,
     ),
     ListingPr(
         name="Awesome Open Source School",
@@ -113,7 +118,7 @@ LISTING_ISSUES = [
         name="Awesome Japanese",
         repo="yudataguy/Awesome-Japanese",
         number=149,
-        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
+        contributor_link=FIVE_MINUTE_FIRST_PR_URL,
     ),
 ]
 
@@ -228,7 +233,7 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
     )
     return [
         "| Good First Issue | Directory | {state} | n/a | {next_step} | [link]({project}) | "
-        "[entry](https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md) | "
+        f"[entry]({FIRST_ISSUE_MATCHER_URL}) | "
         "[form]({form}) | README criteria |".format(
             state=state,
             next_step=next_step,
@@ -284,6 +289,44 @@ def build_markdown(repo: str, token: str | None) -> str:
         "| Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Follow-up | Checks |",
         "|---|---|---|---|---|---|---|---|---|",
         *listing_rows,
+        "",
+        "## Public Status Links",
+        "",
+        "- Public sprint update:",
+        "  `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`",
+        "- Automated discovery status comment:",
+        "  `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370`",
+        "- Public contributor call:",
+        "  `https://github.com/duct-tape2/ai-language-partner/discussions/55`",
+        "- Canonical auto-updated contributor call comment:",
+        "  `https://github.com/duct-tape2/ai-language-partner/discussions/55#discussioncomment-17582510`",
+        "",
+        "## Maintainer Follow-Up",
+        "",
+        "- Check open listing PRs daily until merged or reviewed.",
+        "- If a maintainer requests changes, fix them in the listing fork and record the",
+        "  resolution here.",
+        "- After a listing merges, update `docs/CLAUDE_FOR_OSS_APPLICATION.md` with the",
+        "  merged listing URL and keep the contributor count separate from listing",
+        "  evidence.",
+        "- For Awesome Japanese, wait for a stronger app-store or release-build story",
+        "  before reopening.",
+        "- Track that maturity work in",
+        "  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.",
+        "- Do not open duplicate listing PRs or use misleading beginner labels.",
+        "",
+        "## Useful Search Links",
+        "",
+        "- `up-for-grabs`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aup-for-grabs`",
+        "- `first-timers-only`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Afirst-timers-only`",
+        "- `good first issue`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`",
+        "- `good-first-issue` topic: `https://github.com/topics/good-first-issue`",
+        "- `good-first-pr` topic: `https://github.com/topics/good-first-pr`",
+        "- `help-wanted` topic: `https://github.com/topics/help-wanted`",
+        "- `language-learning` topic: `https://github.com/topics/language-learning`",
+        "- `learn-japanese` topic: `https://github.com/topics/learn-japanese`",
+        "- Good First Issue project submission criteria:",
+        "  `https://github.com/DeepSourceCorp/good-first-issue`",
     ]
     return "\n".join(rows)
 

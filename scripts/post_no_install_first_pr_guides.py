@@ -18,11 +18,14 @@ ROOT = Path(__file__).resolve().parents[1]
 BOARD = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PRS.md"
 DEFAULT_OUT = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PR_COMMENTS.md"
 MARKER = "<!-- ai-language-partner:no-install-first-pr -->"
-KOREAN_FIVE_MINUTE_FIRST_PR = "docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
+COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
+FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
+KOREAN_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
 KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ko.yml"
-JAPANESE_FIVE_MINUTE_FIRST_PR = "docs/community/FIVE_MINUTE_FIRST_PR_JA.md"
+JAPANESE_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
 JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ja.yml"
-LANGUAGE_REVIEW_KIT = "docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md"
+LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
+NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 
 
 @dataclass(frozen=True)
@@ -99,15 +102,15 @@ backend, STT/TTS engine, generated audio, private data, or API key is needed.
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
-- First issue matcher: https://github.com/{repo}/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
-- Korean five-minute first PR: https://github.com/{repo}/blob/main/{KOREAN_FIVE_MINUTE_FIRST_PR}
+- First issue matcher: {FIRST_ISSUE_MATCHER}
+- Korean five-minute first PR: {KOREAN_FIVE_MINUTE_FIRST_PR}
 - Korean contributor interest form: https://github.com/{repo}/issues/new?template={KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE}
-- Japanese five-minute first PR: https://github.com/{repo}/blob/main/{JAPANESE_FIVE_MINUTE_FIRST_PR}
+- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}
 - Japanese contributor interest form: https://github.com/{repo}/issues/new?template={JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE}
-- Language review first PR kit: https://github.com/{repo}/blob/main/{LANGUAGE_REVIEW_KIT}
+- Language review first PR kit: {LANGUAGE_REVIEW_KIT}
 - Source file: `{task.source_file}`
 - Direct edit link: {task.edit_url}
-- No-install board: https://github.com/{repo}/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md
+- No-install board: {NO_INSTALL_BOARD}
 
 **PR checklist**
 

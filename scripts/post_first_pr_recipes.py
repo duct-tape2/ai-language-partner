@@ -228,10 +228,10 @@ change focused and avoid generated/private assets.
 Useful links:
 
 - Contributor page: https://{owner}.github.io/{name}/
-- First issue matcher: https://github.com/{repo}/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
-- Language review first PR kit: https://github.com/{repo}/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
-- First PR walkthrough: https://github.com/{repo}/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
-- Counting policy: https://github.com/{repo}/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
+- First issue matcher: https://{owner}.github.io/{name}/community/FIRST_ISSUE_MATCHER.html
+- Language review first PR kit: https://{owner}.github.io/{name}/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
+- First PR walkthrough: https://{owner}.github.io/{name}/community/FIRST_PR_WALKTHROUGH.html
+- Counting policy: https://{owner}.github.io/{name}/community/PR_REVIEW_AND_COUNTING_POLICY.html
 """
 
 

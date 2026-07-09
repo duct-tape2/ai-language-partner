@@ -19,22 +19,19 @@ MARKER = "<!-- ai-language-partner:contributor-call-update -->"
 DEFAULT_REPO = "duct-tape2/ai-language-partner"
 DEFAULT_DISCUSSION = 55
 HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
+COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 KOREAN_CONTRIBUTOR_CALL = (
     "https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html"
 )
 JAPANESE_CONTRIBUTOR_CALL = (
-    "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CALL_FOR_CONTRIBUTORS_JA.md"
+    "https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html"
 )
-KOREAN_FIVE_MINUTE_FIRST_PR = (
-    "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
-)
-JAPANESE_FIVE_MINUTE_FIRST_PR = (
-    "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md"
-)
-FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md"
-FIVE_MINUTE_FIRST_PR = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
-NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
-LANGUAGE_REVIEW_KIT = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md"
+KOREAN_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
+JAPANESE_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
+FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
+FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
+NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
+LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 CONTRIBUTOR_INTEREST = (
     "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"

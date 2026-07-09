@@ -1,40 +1,41 @@
-# Contributor Discovery Listings
+<!-- discovery-listings-status -->
+# Contributor Discovery Listing Status
 
-These listings help external contributors find scoped starter issues. They are
-not Claude for OSS contributor evidence by themselves; only useful merged PRs
-from unique external contributors count for the community-builder threshold.
+These channels help external contributors find starter issues. They do not
+count as Claude for OSS contributor evidence until real external PRs are
+merged in this repository.
 
-## Current Listings
+- Repository: `https://github.com/duct-tape2/ai-language-partner`
+- Open `up-for-grabs` issues: `34`
+- Open `first-timers-only` issues: `24`
+- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Web demo prerelease: `active` - https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09
+- Web demo asset: https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip
 
-| Channel | Status | Evidence | Contributor entry point | Follow-up |
-|---|---|---|---|---|
-| GitHub topics | Active | Contributor-discovery topics include `help-wanted`, `good-first-issue`, `good-first-pr`, `up-for-grabs`, `first-timers-only`, `first-contributions`, `contributions-welcome`, `beginner-friendly`, and `learn-japanese` | `https://github.com/duct-tape2/ai-language-partner` | - |
-| Hosted web demo | Active mock-mode demo | `https://duct-tape2.github.io/ai-language-partner/demo/` | `https://duct-tape2.github.io/ai-language-partner/` | - |
-| GitHub release | Active prerelease | `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09` | `https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip` | - |
-| GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` | - |
-| Up For Grabs | Merged and live | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` | - |
-| Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` | `https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431` |
-| Awesome for Non-Programmers | Merged and live | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` | `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475` |
-| Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` | `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535` |
-| Awesome Japanese Learning Resources | PR open | `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
-| Awesome Japanese Study Materials | PR open | `https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
-| Awesome Local-First | PR open | `https://github.com/alexanderop/awesome-local-first/pull/46` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
-| Awesome Language Learning Japanese Page | PR open | `https://github.com/jqhoogland/awesome-language-learning/pull/20` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
-| Awesome Open Source School | PR open | `https://github.com/zefanja/awesome-opensource-school/pull/16` | `https://duct-tape2.github.io/ai-language-partner/demo/` | - |
-| Awesome Japanese | Deferred by maintainer until the app is more mature / app-store-ready | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md` | - |
-| Good First Issue | Locked until contributor count improves | `https://github.com/DeepSourceCorp/good-first-issue` requires at least 10 contributors before submitting a repository | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | Submit the form only after 10 real external contributors |
+| Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Follow-up | Checks |
+|---|---|---|---|---|---|---|---|---|
+| Up For Grabs | PR | closed | True | None | [link](https://github.com/up-for-grabs/up-for-grabs.net/pull/5916) | [entry](https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs) | - | content: completed success; upload: completed success; javascript: completed success; docker: completed success; site: completed success; Redirect rules - up-for-grabs-test-bench: completed neutral; Header rules - up-for-grabs-test-bench: completed neutral; Pages changed - up-for-grabs-test-bench: completed neutral; Project Changes: completed success |
+| Awesome for Beginners | PR | open | False | True | [link](https://github.com/MunGell/awesome-for-beginners/pull/2072) | [entry](https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only) | [update](https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431) | none reported |
+| Awesome for Non-Programmers | PR | closed | True | None | [link](https://github.com/szabgab/awesome-for-non-programmers/pull/107) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | [update](https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475) | none reported |
+| Awesome Language Learning | PR | open | False | True | [link](https://github.com/Vuizur/awesome-language-learning/pull/31) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | [update](https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535) | none reported |
+| Awesome Japanese Learning Resources | PR | open | False | True | [link](https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
+| Awesome Japanese Study Materials | PR | open | False | True | [link](https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
+| Awesome Local-First | PR | open | False | True | [link](https://github.com/alexanderop/awesome-local-first/pull/46) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
+| Awesome Language Learning Japanese Page | PR | open | False | True | [link](https://github.com/jqhoogland/awesome-language-learning/pull/20) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
+| Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
+| Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
+| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 
-Public sprint update:
-`https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
+## Public Status Links
 
-Automated status comment:
-`https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370`
-
-Public contributor call:
-`https://github.com/duct-tape2/ai-language-partner/discussions/55`
-
-Canonical auto-updated contributor call comment:
-`https://github.com/duct-tape2/ai-language-partner/discussions/55#discussioncomment-17582510`
+- Public sprint update:
+  `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
+- Automated discovery status comment:
+  `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370`
+- Public contributor call:
+  `https://github.com/duct-tape2/ai-language-partner/discussions/55`
+- Canonical auto-updated contributor call comment:
+  `https://github.com/duct-tape2/ai-language-partner/discussions/55#discussioncomment-17582510`
 
 ## Maintainer Follow-Up
 
@@ -44,8 +45,8 @@ Canonical auto-updated contributor call comment:
 - After a listing merges, update `docs/CLAUDE_FOR_OSS_APPLICATION.md` with the
   merged listing URL and keep the contributor count separate from listing
   evidence.
-- For Awesome Japanese, the hosted web demo closes the first usability gap, but
-  wait for a stronger app-store or release-build story before reopening.
+- For Awesome Japanese, wait for a stronger app-store or release-build story
+  before reopening.
 - Track that maturity work in
   `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - Do not open duplicate listing PRs or use misleading beginner labels.

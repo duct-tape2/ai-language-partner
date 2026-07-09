@@ -23,10 +23,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/discussions/55
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -38,10 +38,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -67,10 +67,10 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+label%3Adocs
 
 5분 첫 PR 가이드:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 첫 이슈 매처:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -82,10 +82,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 이슈 색인:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 기여자 안내:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 질문/첫 PR 상담:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -111,10 +111,10 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues/34
 
 5분 첫 PR 가이드:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 첫 이슈 매처:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -126,10 +126,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 이슈 색인:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 기여자 안내:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 질문/첫 PR 상담:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -155,10 +155,10 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22
 
 5分で始める最初の PR:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
@@ -170,10 +170,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -199,10 +199,10 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues/35
 
 5分で始める最初の PR:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
@@ -214,10 +214,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -243,10 +243,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Acontent
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -258,10 +258,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -287,10 +287,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/36
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -302,10 +302,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -331,10 +331,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Aaccessibility
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -346,10 +346,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -375,10 +375,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/39
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -390,10 +390,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -419,10 +419,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -434,10 +434,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -463,10 +463,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/40
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -478,10 +478,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -507,10 +507,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -522,10 +522,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -551,10 +551,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/22
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -566,10 +566,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -595,10 +595,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/45
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -610,10 +610,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -639,10 +639,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/31
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -654,10 +654,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -683,10 +683,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/41
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -698,10 +698,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -727,10 +727,10 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 https://github.com/duct-tape2/ai-language-partner/issues/44
 
 5분 첫 PR 가이드:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 첫 이슈 매처:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -742,10 +742,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 이슈 색인:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 기여자 안내:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 질문/첫 PR 상담:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -771,10 +771,10 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 https://github.com/duct-tape2/ai-language-partner/issues/46
 
 5분 첫 PR 가이드:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 첫 이슈 매처:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -786,10 +786,10 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 이슈 색인:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 기여자 안내:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 질문/첫 PR 상담:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -815,10 +815,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/13
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -830,10 +830,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -859,10 +859,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/6
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -874,10 +874,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -903,10 +903,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/43
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -918,10 +918,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53
@@ -947,10 +947,10 @@ Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/54
 
 Five-minute first PR guide:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 
 First issue matcher:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -962,10 +962,10 @@ Contributor call:
 https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
 
 Starter issue index:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
 
 Contributor landing:
-https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
 
 First PR help desk:
 https://github.com/duct-tape2/ai-language-partner/discussions/53

@@ -11,16 +11,16 @@ body:
         로컬 음성 엔진, 생성 음성 파일, private data, API key가 없어도 의미 있는 첫 PR을 보낼 수 있습니다.
 
         한국어 5분 첫 PR 가이드:
-        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md
+        https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_KO.html
 
         한국어 기여자 모집 페이지:
         https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html
 
         30초 이슈 추천:
-        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+        https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
         언어 검수 첫 PR kit:
-        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
+        https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 
         이 form을 제출하면 자동 triage 댓글이 분야별 starter issue를 추천합니다.
 
