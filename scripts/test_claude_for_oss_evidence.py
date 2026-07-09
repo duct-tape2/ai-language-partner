@@ -639,6 +639,8 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("addDiscussionComment", source)
         self.assertIn("updateDiscussionComment", source)
         self.assertIn("ai-language-partner:contributor-call-update", source)
+        self.assertIn("github-actions[bot]", source)
+        self.assertIn("preferred_author", source)
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):

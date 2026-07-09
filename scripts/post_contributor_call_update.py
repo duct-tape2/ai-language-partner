@@ -113,6 +113,7 @@ def discussion_and_marker_comment(
     repo: str,
     discussion_number: int,
     token: str,
+    preferred_author: str | None = None,
 ) -> tuple[str, str | None, str | None]:
     owner, name = repo.split("/", 1)
     data = graphql(
@@ -126,6 +127,9 @@ def discussion_and_marker_comment(
                   id
                   body
                   url
+                  author {
+                    login
+                  }
                 }
               }
             }
@@ -141,14 +145,31 @@ def discussion_and_marker_comment(
         raise RuntimeError(f"discussion #{discussion_number} was not found in {repo}")
     discussion_id = str(discussion.get("id") or "")
     comments = discussion.get("comments") if isinstance(discussion.get("comments"), dict) else {}
+    fallback: tuple[str, str | None, str | None] | None = None
     for comment in comments.get("nodes", []):
         if isinstance(comment, dict) and MARKER in str(comment.get("body") or ""):
-            return discussion_id, str(comment.get("id") or ""), str(comment.get("url") or "")
+            author = comment.get("author") if isinstance(comment.get("author"), dict) else {}
+            login = str(author.get("login") or "")
+            candidate = (discussion_id, str(comment.get("id") or ""), str(comment.get("url") or ""))
+            if preferred_author and login == preferred_author:
+                return candidate
+            if fallback is None:
+                fallback = candidate
+    if preferred_author:
+        return discussion_id, None, None
+    if fallback:
+        return fallback
     return discussion_id, None, None
 
 
 def upsert_discussion_comment(repo: str, discussion_number: int, body: str, token: str) -> str:
-    discussion_id, comment_id, existing_url = discussion_and_marker_comment(repo, discussion_number, token)
+    preferred_author = "github-actions[bot]" if os.environ.get("GITHUB_ACTIONS") else None
+    discussion_id, comment_id, existing_url = discussion_and_marker_comment(
+        repo,
+        discussion_number,
+        token,
+        preferred_author=preferred_author,
+    )
     if comment_id:
         data = graphql(
             """
