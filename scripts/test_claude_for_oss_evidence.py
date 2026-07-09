@@ -463,6 +463,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Open `first-timers-only` issues: `16`", markdown)
         self.assertIn("do not", markdown)
         self.assertIn("count as Claude for OSS contributor evidence", markdown)
+        self.assertIn("Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/", markdown)
         self.assertIn("Web demo prerelease: `active`", markdown)
         self.assertIn("https://example.test/releases/demo.zip", markdown)
         self.assertIn("[link](https://example.test/pull/1)", markdown)
@@ -487,6 +488,28 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertEqual(status["state"], "closed")
         self.assertIn("closed (completed)", status["mergeable"])
         self.assertNotIn("awaiting maintainer acknowledgement", status["mergeable"])
+
+
+class PagesDemoTest(unittest.TestCase):
+    def test_pages_demo_uses_project_page_safe_paths(self) -> None:
+        demo = Path("docs/demo")
+        index = demo / "index.html"
+        self.assertTrue(index.is_file())
+        self.assertFalse((demo / "_expo").exists())
+        self.assertTrue((demo / "expo-static").is_dir())
+
+        html = index.read_text(encoding="utf-8")
+        self.assertIn('href="favicon.ico"', html)
+        self.assertIn('src="expo-static/static/js/web/', html)
+        self.assertNotIn('href="/favicon.ico"', html)
+        self.assertNotIn('src="/_expo/', html)
+
+        js_files = list((demo / "expo-static" / "static" / "js" / "web").glob("*.js"))
+        self.assertTrue(js_files)
+        for js_file in js_files:
+            with self.subTest(js_file=js_file.name):
+                text = js_file.read_text(encoding="utf-8")
+                self.assertNotIn('uri:"/assets/', text)
 
 
 if __name__ == "__main__":

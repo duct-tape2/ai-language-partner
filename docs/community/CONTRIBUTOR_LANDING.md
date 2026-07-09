@@ -8,6 +8,7 @@ You do not need local speech engines, private data, generated audio, or API
 keys to make a useful first PR.
 
 Start with the [public contributor page](https://duct-tape2.github.io/ai-language-partner/),
+the [hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/),
 the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [日本語 guide](https://duct-tape2.github.io/ai-language-partner/ja/), or the
 [starter issue index](STARTER_ISSUE_INDEX.md) if you want a lane-by-lane list

@@ -23,6 +23,7 @@ DEFAULT_REPO = "duct-tape2/ai-language-partner"
 DEFAULT_ISSUE = 52
 DEMO_RELEASE_TAG = "demo-web-2026-07-09"
 DEMO_RELEASE_ASSET = "ai-language-partner-web-demo-2026-07-09.zip"
+HOSTED_DEMO_URL = "https://duct-tape2.github.io/ai-language-partner/demo/"
 
 
 @dataclass(frozen=True)
@@ -212,6 +213,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"- Repository: `https://github.com/{repo}`",
         f"- Open `up-for-grabs` issues: `{up_for_grabs}`",
         f"- Open `first-timers-only` issues: `{first_timers}`",
+        f"- Hosted web demo: {HOSTED_DEMO_URL}",
         f"- Web demo prerelease: `{demo_release['status']}`"
         + (f" - {demo_release['url']}" if demo_release["url"] else ""),
         f"- Web demo asset: {demo_release['asset'] or 'missing'}",

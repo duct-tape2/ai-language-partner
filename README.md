@@ -9,6 +9,7 @@
 [![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
 
 [Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
+[Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
 [Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
@@ -64,6 +65,11 @@ The first generated web demo artifact is published as a GitHub prerelease:
 [`demo-web-2026-07-09`](https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09).
 It is a downloadable Expo web build snapshot for contributors and directory
 reviewers, not an app-store release.
+
+A hosted mock-mode web demo is also available at
+[`https://duct-tape2.github.io/ai-language-partner/demo/`](https://duct-tape2.github.io/ai-language-partner/demo/).
+It runs from the public Pages tree, uses fixture-backed providers, and does not
+require private API keys or local speech engines.
 
 ---
 

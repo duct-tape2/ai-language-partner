@@ -40,11 +40,12 @@ The Claude for OSS approval target is the community-builder criterion:
 ## Discovery Channel Follow-Up
 
 - Up For Grabs is the first live external contributor discovery channel.
-- Awesome Japanese should wait until the project has a clearer end-user install
-  path, preferably an app-store or release build. The maintainer explicitly
-  asked to come back after the project is more mature, so do not reopen that
-  listing route until the install/release gap is fixed. Track the gap in
-  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
+- The hosted web demo gives directory reviewers a click-to-inspect path:
+  `https://duct-tape2.github.io/ai-language-partner/demo/`.
+- Awesome Japanese should still wait for a stronger app-store or release-build
+  story. The maintainer explicitly asked to come back after the project is more
+  mature, so do not reopen that listing route until the remaining release gap is
+  fixed. Track the gap in `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - Keep open listing PRs current, but avoid duplicate submissions to the same
   directory.
 

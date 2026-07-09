@@ -1,0 +1,9 @@
+{
+  "generatedBy": "scripts/build_pages_demo.py",
+  "mode": "mock",
+  "apiBase": "",
+  "notes": [
+    "Hosted GitHub Pages demo for contributors and directory reviewers.",
+    "Mock providers are intentional; no private API keys or local engines are required."
+  ]
+}

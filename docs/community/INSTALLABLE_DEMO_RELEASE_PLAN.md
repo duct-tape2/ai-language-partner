@@ -31,7 +31,7 @@ One-origin exported web demo:
 
 ```bash
 cd apps/mobile
-EXPO_PUBLIC_USE_MOCK_API=false EXPO_PUBLIC_API_BASE_URL="" npx expo export --platform web
+EXPO_PUBLIC_USE_MOCK_API=true EXPO_PUBLIC_API_BASE_URL="" npx expo export --platform web
 
 cd ../api
 source .venv/bin/activate
@@ -55,6 +55,20 @@ A public demo is ready when all of these are true:
 - The README links to either a hosted demo URL or a release artifact with clear
   "what works in this build" notes.
 
+## Hosted Web Demo
+
+Current hosted mock-mode demo:
+
+- URL: `https://duct-tape2.github.io/ai-language-partner/demo/`
+- Build command: `python3 scripts/build_pages_demo.py`
+- Source path: `docs/demo/`
+- Mode: fixture-backed mock providers; no private API keys, generated audio, or
+  local speech engines required
+
+The Pages demo is a contributor and directory-review aid. It is not an
+app-store release and should not be counted as Claude for OSS contributor
+evidence.
+
 ## Published Demo Artifact
 
 Current prerelease:
@@ -77,26 +91,29 @@ Verified on `2026-07-09`:
 |---|---|---|
 | Mobile verify | PASS | `cd apps/mobile && npm run verify` |
 | Backend pytest | PASS | `cd apps/api && .venv/bin/python -m pytest` reported 61 passed |
-| Expo web export | PASS | `EXPO_PUBLIC_USE_MOCK_API=false EXPO_PUBLIC_API_BASE_URL="" npx expo export --platform web` exported `apps/mobile/dist` |
+| Expo web export | PASS | `EXPO_PUBLIC_USE_MOCK_API=true EXPO_PUBLIC_API_BASE_URL="" npx expo export --platform web` exported `apps/mobile/dist` |
 | One-origin demo server | PASS | `cd apps/api && .venv/bin/python scripts/serve_demo.py 8123` served `/health` and `/` with HTTP 200 |
+| Pages hosted demo build | PASS | `python3 scripts/build_pages_demo.py` staged `docs/demo/` with project-page-safe paths |
 
 The generated `apps/mobile/dist` directory is ignored and should remain a
-local/release artifact unless a release workflow explicitly packages it.
+local/release artifact. The checked-in `docs/demo/` tree is the GitHub Pages
+hosted demo snapshot and must be regenerated with `scripts/build_pages_demo.py`.
 
 ## Release Ladder
 
 | Stage | Target | Evidence to publish |
 |---|---|---|
 | Local source demo | Contributors can run web/mock mode locally | README commands, passing CI, no private assets |
-| Hosted web demo | Readers can click and inspect the app in a browser | Demo URL, `/health`, mock-mode disclosure |
+| Hosted web demo | Readers can click and inspect the app in a browser | `https://duct-tape2.github.io/ai-language-partner/demo/`, mock-mode disclosure |
 | Downloadable release | Testers can install or run a packaged build | GitHub Release notes, platform artifact, checksums if applicable |
 | App-store-ready build | Directory maintainers can send normal learners to it | App Store/TestFlight/Play/Internal Testing link or equivalent |
 
 ## External Listing Follow-Up
 
 Awesome Japanese asked us to come back when the app is more mature and easier
-for readers to use. Do not reopen that route until at least the hosted web demo
-stage is complete, and prefer waiting for an app-store-ready build.
+for readers to use. The hosted web demo now satisfies the click-to-inspect step,
+but prefer waiting for a stronger app-store-ready build before reopening that
+route.
 
 Up For Grabs is already live, so contributor discovery can continue through
 starter issues while the user-facing demo path matures.

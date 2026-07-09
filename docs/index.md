@@ -18,6 +18,7 @@ keys to make a useful first contribution.
 
 Start here:
 
+- [Hosted web demo](demo/)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
@@ -44,6 +45,7 @@ Useful first contribution lanes:
 ## Project Links
 
 - [GitHub repository](https://github.com/duct-tape2/ai-language-partner)
+- [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/)
 - [Open issues](https://github.com/duct-tape2/ai-language-partner/issues)
 - [Good first issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 - [Discussions](https://github.com/duct-tape2/ai-language-partner/discussions)

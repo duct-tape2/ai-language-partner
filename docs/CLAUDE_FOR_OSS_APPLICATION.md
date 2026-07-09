@@ -7,6 +7,7 @@ program.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Maintainer: `duct-tape2`
@@ -73,6 +74,7 @@ threshold is not met yet. Do not submit Phase B with this status.
 
 - Contributors: `https://github.com/duct-tape2/ai-language-partner/graphs/contributors`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Merged PRs: `https://github.com/duct-tape2/ai-language-partner/pulls?q=is%3Apr+is%3Amerged`
@@ -87,6 +89,7 @@ threshold is not met yet. Do not submit Phase B with this status.
 - First PR recipes: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md`
 - No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - No-install issue guide comments: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
 - Discovery labels: 34 open `up-for-grabs` issues, 24 open
   `first-timers-only` issues, and 26 open `good first issue` items
@@ -96,7 +99,8 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Awesome for Non-Programmers listing PR: `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
 - Awesome Language Learning listing PR: `https://github.com/Vuizur/awesome-language-learning/pull/31`
 - Awesome Japanese listing suggestion issue: deferred until the project has a
-  clearer install/release path
+  clearer app-store/release-build path; hosted demo is now the first maturity
+  step
   `https://github.com/yudataguy/awesome-japanese/issues/149`
 - Discovery listing tracker: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/DISCOVERY_LISTINGS.md`
 - Dependency graph: `https://github.com/duct-tape2/ai-language-partner/network/dependencies`

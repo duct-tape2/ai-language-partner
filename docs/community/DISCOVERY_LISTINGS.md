@@ -9,6 +9,7 @@ from unique external contributors count for the community-builder threshold.
 | Channel | Status | Evidence | Contributor entry point |
 |---|---|---|---|
 | GitHub topics | Active | `up-for-grabs`, `first-timers-only`, `beginner-friendly` topics are on the repo | `https://github.com/duct-tape2/ai-language-partner` |
+| Hosted web demo | Active mock-mode demo | `https://duct-tape2.github.io/ai-language-partner/demo/` | `https://duct-tape2.github.io/ai-language-partner/` |
 | GitHub release | Active prerelease | `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09` | `https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip` |
 | GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Up For Grabs | Merged and live | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
@@ -31,8 +32,8 @@ Automated status comment:
 - After a listing merges, update `docs/CLAUDE_FOR_OSS_APPLICATION.md` with the
   merged listing URL and keep the contributor count separate from listing
   evidence.
-- For Awesome Japanese, do not reopen or submit a PR until the project has a
-  clearer end-user install path, preferably an app-store or release build.
+- For Awesome Japanese, the hosted web demo closes the first usability gap, but
+  wait for a stronger app-store or release-build story before reopening.
 - Track that maturity work in
   `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - Do not open duplicate listing PRs or use misleading beginner labels.

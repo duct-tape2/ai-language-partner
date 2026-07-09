@@ -11,6 +11,7 @@ reviewable first contributions genuinely easy.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
@@ -43,7 +44,8 @@ reviewable first contributions genuinely easy.
 - Awesome Language Learning listing PR:
   `https://github.com/Vuizur/awesome-language-learning/pull/31`
 - Awesome Japanese listing suggestion issue: deferred until the app has a
-  clearer install/release path
+  stronger app-store/release-build path; the hosted web demo is the first
+  maturity step
   `https://github.com/yudataguy/awesome-japanese/issues/149`
 - Discovery listing tracker: `docs/community/DISCOVERY_LISTINGS.md`
 - First PR recipe comments: posted to 26 open `good first issue` items on

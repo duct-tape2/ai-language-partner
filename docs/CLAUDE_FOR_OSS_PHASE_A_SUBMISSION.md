@@ -11,6 +11,7 @@ Official program page checked on `2026-07-09`:
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Maintainer account: `duct-tape2`
@@ -29,6 +30,7 @@ Official program page checked on `2026-07-09`:
 - No-install first PR board: 27 browser-editable issue slots with generated
   issue comments, tracked in `docs/community/NO_INSTALL_FIRST_PRS.md` and
   `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
 - Discovery labels: 34 open `up-for-grabs` issues, 24 open
   `first-timers-only` issues, and 26 open `good first issue` items
@@ -80,7 +82,8 @@ The public repo includes:
 - security, code of conduct, contribution docs, PR template, issue templates
 - 51 scoped issues for first-time and external contributors
 - 27 browser-editable no-install first PR paths with issue-specific comments
-- downloadable Expo web demo prerelease with SHA-256 and mock-mode notes
+- hosted mock-mode web demo plus a downloadable Expo web demo prerelease with
+  SHA-256 and mock-mode notes
 - contributor sprint kickoff, PR welcome, issue welcome, and weekly Claude OSS
   monitor workflows
 - fixture-tested contributor evidence counting rules
@@ -101,6 +104,7 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 
 - Repo: `https://github.com/duct-tape2/ai-language-partner`
 - Contributor page: `https://duct-tape2.github.io/ai-language-partner/`
+- Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Korean contributor page: `https://duct-tape2.github.io/ai-language-partner/ko/`
 - Japanese contributor page: `https://duct-tape2.github.io/ai-language-partner/ja/`
 - Issues: `https://github.com/duct-tape2/ai-language-partner/issues`
