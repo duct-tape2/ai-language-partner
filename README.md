@@ -11,6 +11,7 @@
 
 New here from GitHub topics, Up For Grabs, or a good-first-issue directory?
 Pick a first PR in 30 seconds:
+[directory fast lane](docs/community/DIRECTORY_FIRST_PR.md) ·
 [match by skill/time](docs/community/FIRST_ISSUE_MATCHER.md) ·
 [browser-only 5-minute PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
 [27 no-install issue slots](docs/community/NO_INSTALL_FIRST_PRS.md) ·
@@ -27,6 +28,7 @@ Pick a first PR in 30 seconds:
 [Contributor discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
+[Directory first PR](docs/community/DIRECTORY_FIRST_PR.md) ·
 [First issue matcher](docs/community/FIRST_ISSUE_MATCHER.md) ·
 [Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
 [한국어 5분 첫 PR](docs/community/FIVE_MINUTE_FIRST_PR_KO.md) ·
@@ -71,6 +73,7 @@ the [call for contributors](docs/community/CALL_FOR_CONTRIBUTORS.md),
 the [한국어 기여자 모집](docs/community/CALL_FOR_CONTRIBUTORS_KO.md),
 the [日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html),
 the [contributor share kit](docs/community/SHARE_KIT.md),
+the [directory first PR fast lane](docs/community/DIRECTORY_FIRST_PR.md),
 the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),
 the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
 the [Codespaces first PR route](docs/community/CODESPACES_FIRST_PR.md),

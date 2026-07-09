@@ -23,6 +23,7 @@ DEFAULT_ISSUE = 52
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
+DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
 KOREAN_FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
 JAPANESE_FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
@@ -178,6 +179,7 @@ def render_status(
             "## Fastest First PR Path",
             "",
             f"- Hosted web demo: {HOSTED_DEMO}",
+            f"- Directory first PR fast lane: {DIRECTORY_FIRST_PR}",
             f"- First issue matcher: {FIRST_ISSUE_MATCHER}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
             f"- Codespaces first PR guide: {CODESPACES_FIRST_PR}",

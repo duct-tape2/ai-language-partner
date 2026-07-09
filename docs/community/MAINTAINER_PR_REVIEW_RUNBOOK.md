@@ -43,6 +43,10 @@ Do not count:
 
 ## 3. Leave a human review comment
 
+Use `docs/community/MAINTAINER_RESPONSE_SNIPPETS.md` for fast, consistent
+responses when a PR needs a first reply, a small change request, a missing issue
+link, or a final merge follow-up.
+
 Use this shape before merge:
 
 ```text

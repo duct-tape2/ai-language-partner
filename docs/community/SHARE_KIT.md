@@ -19,6 +19,7 @@ external contributors count.
 | Need | Link |
 |---|---|
 | Try the app in a browser | `https://duct-tape2.github.io/ai-language-partner/demo/` |
+| External directory visitors | `https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html` |
 | Pick by skill/time | `https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html` |
 | Browser-only first PR | `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html` |
 | Korean first PR guide | `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_KO.html` |
@@ -40,6 +41,9 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 30초 이슈 매처:
 https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
+외부 디렉터리 방문자용 빠른 첫 PR:
+https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
+
 설치 없이 가능한 첫 PR:
 https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 
@@ -57,6 +61,9 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 30秒で issue を選ぶ:
 https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 
+外部ディレクトリから来た人向けの first PR fast lane:
+https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
+
 インストール不要の first PR:
 https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 
@@ -73,6 +80,9 @@ https://duct-tape2.github.io/ai-language-partner/demo/
 
 Pick an issue in 30 seconds:
 https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+
+External directory first PR fast lane:
+https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 
 No-install first PR board:
 https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html

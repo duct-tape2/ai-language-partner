@@ -23,6 +23,7 @@ Add or clarify Korean setup notes for running the backend in mock mode
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -64,6 +65,7 @@ Add Japanese notes for running the mobile app without local engines
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -105,6 +107,7 @@ Clarify ffmpeg, model path, env vars, and fallback behavior for local STT setup
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -146,6 +149,7 @@ Clarify local TTS engine process setup, licensing boundaries, and the `/speakers
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -187,6 +191,7 @@ Define learner-facing terms such as dialogue bank, pack, node, line, fallback
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -228,6 +233,7 @@ Add curl examples for packs, match, unmatched, voices, and provider status
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -269,6 +275,7 @@ Review beginner Korean translations without touching generated audio
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -310,6 +317,7 @@ Review Japanese dialogue for natural beginner-safe wording while keeping line ID
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -351,6 +359,7 @@ Add concise Korean notes about common Japanese particle mistakes
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -392,6 +401,7 @@ Add a short checklist for reviewing cultural notes without stereotypes or overge
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -433,6 +443,7 @@ Document how fixture-backed mock mode differs from live API-backed mode
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -474,6 +485,7 @@ Review Korean labels and suggest consistent wording
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -515,6 +527,7 @@ Add example `/v1/providers/status` responses for mock, fallback, and local engin
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -556,6 +569,7 @@ Explain match, confirm, and fallback thresholds in learner-friendly language
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -597,6 +611,7 @@ Document optional Redis rate-limit setup for local and production use without ex
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -638,6 +653,7 @@ Add or improve OpenAPI examples for self-attested and public-key device trust fl
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -679,6 +695,7 @@ Clarify when to use each public issue label
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -720,6 +737,7 @@ Add a short FAQ answer explaining the local-first dialogue-bank design
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -761,6 +779,7 @@ Add Korean troubleshooting notes for Python dependency install failures
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -802,6 +821,7 @@ Add neutral Japanese explanation of cost, privacy, latency, and quality-control 
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -843,6 +863,7 @@ Add beginner-safe examples for expressing restaurant preferences
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -884,6 +905,7 @@ Explain honest provider labels such as `mock` and `voicevox_compat_fallback_*`
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -925,6 +947,7 @@ Improve this repo's first-PR instructions for new contributors
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -966,6 +989,7 @@ Improve the checklist maintainers use before merging counted external PRs
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -1007,6 +1031,7 @@ Add beginner-safe Korean explanations for よ, ね, よね, and かな
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -1048,6 +1073,7 @@ Add examples of stereotype-prone or context-sensitive wording to review carefull
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
@@ -1089,6 +1115,7 @@ Add a public roadmap for persona, topic, JLPT, and language-review pack areas
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
 - Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html

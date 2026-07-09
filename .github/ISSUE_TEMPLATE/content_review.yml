@@ -9,6 +9,9 @@ body:
         For a first language-review PR, start with the review kit:
         https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 
+        If you arrived from an external directory or awesome list, use:
+        https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
+
         It lists safe files, issue routes, and what not to change.
   - type: textarea
     id: scope

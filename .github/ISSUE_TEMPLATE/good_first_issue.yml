@@ -3,6 +3,16 @@ description: A scoped task suitable for new contributors.
 title: "docs: "
 labels: ["good first issue", "help wanted", "needs-triage"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Make this issue easy to finish from an external directory listing.
+        Prefer one focused file, a direct edit URL, and clear acceptance criteria.
+
+        Contributor fast lanes:
+        https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
+        https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
+        https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
   - type: textarea
     id: goal
     attributes:
@@ -14,7 +24,23 @@ body:
     id: files
     attributes:
       label: Suggested files
-      description: Point contributors to likely files or docs.
+      description: Point contributors to likely files or docs. Include a direct GitHub edit URL when possible.
+      placeholder: |
+        - `docs/...`
+        - Direct edit: https://github.com/duct-tape2/ai-language-partner/edit/main/...
+  - type: dropdown
+    id: first_pr_route
+    attributes:
+      label: First PR route
+      description: Choose the lowest-friction route that fits this task.
+      options:
+        - Browser-only docs/content edit
+        - Language/content review
+        - Codespaces testable change
+        - Local backend check recommended
+        - Local mobile check recommended
+    validations:
+      required: true
   - type: textarea
     id: acceptance
     attributes:
@@ -26,4 +52,3 @@ body:
         - [ ] No generated audio, archives, databases, or local engine files are committed.
     validations:
       required: true
-

@@ -64,6 +64,7 @@ REQUIRED_FILES = [
     "docs/community/CALL_FOR_CONTRIBUTORS_KO.md",
     "docs/community/CALL_FOR_CONTRIBUTORS_JA.md",
     "docs/community/STARTER_ISSUE_INDEX.md",
+    "docs/community/DIRECTORY_FIRST_PR.md",
     "docs/community/FIVE_MINUTE_FIRST_PR.md",
     "docs/community/FIVE_MINUTE_FIRST_PR_KO.md",
     "docs/community/FIVE_MINUTE_FIRST_PR_JA.md",
@@ -72,6 +73,7 @@ REQUIRED_FILES = [
     "docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md",
+    "docs/community/MAINTAINER_RESPONSE_SNIPPETS.md",
     "docs/community/FIRST_PR_RECIPES.md",
     "docs/community/SHARE_KIT.md",
     "docs/community/OUTREACH_QUEUE.json",
@@ -93,6 +95,9 @@ REQUIRED_FILES = [
     "scripts/post_first_pr_recipes.py",
     "scripts/apply_discovery_labels.py",
     "scripts/post_no_install_first_pr_guides.py",
+    "scripts/push_current_branch_from_clipboard_token.sh",
+    "scripts/create_pr_from_clipboard_token.py",
+    "scripts/publish_pending_claude_oss_work_from_clipboard_token.sh",
 ]
 
 

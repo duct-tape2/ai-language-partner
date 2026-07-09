@@ -19,6 +19,7 @@ keys to make a useful first contribution.
 If you arrived from GitHub topics, Up For Grabs, or a good-first-issue
 directory, use one of these setup-free routes first:
 
+- [Directory first PR fast lane](community/DIRECTORY_FIRST_PR.html)
 - [Match by skill/time in 30 seconds](community/FIRST_ISSUE_MATCHER.html)
 - [Open a browser-only five-minute PR](community/FIVE_MINUTE_FIRST_PR.html)
 - [Choose from 27 no-install issue slots](community/NO_INSTALL_FIRST_PRS.html)
@@ -34,6 +35,7 @@ Start here:
 - [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.html)
 - [Contributor share kit](community/SHARE_KIT.html)
 - [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
+- [Directory first PR fast lane](community/DIRECTORY_FIRST_PR.html)
 - [First issue matcher](community/FIRST_ISSUE_MATCHER.html)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.html)
 - [Codespaces first PR](community/CODESPACES_FIRST_PR.html)

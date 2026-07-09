@@ -303,6 +303,7 @@ class FirstPrRecipeTest(unittest.TestCase):
         recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
 
         self.assertIn(first_pr_recipes.MARKER, recipe)
+        self.assertIn("DIRECTORY_FIRST_PR.html", recipe)
         self.assertIn("FIRST_ISSUE_MATCHER.html", recipe)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", recipe)
         self.assertIn("CODESPACES_FIRST_PR.html", recipe)
@@ -327,6 +328,7 @@ class FirstPrRecipeTest(unittest.TestCase):
         self.assertIn("packs/yui/v1/story.json", recipe)
         self.assertIn("manual language/content review", recipe)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", recipe)
+        self.assertIn("DIRECTORY_FIRST_PR.html", recipe)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", recipe)
         self.assertIn("CODESPACES_FIRST_PR.html", recipe)
         self.assertIn("generated/private assets", recipe)
@@ -347,6 +349,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
         self.assertIn("ai-language-partner:contributor-interest-triage", workflow)
+        self.assertIn("DIRECTORY_FIRST_PR.html", workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.html", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", workflow)
@@ -383,6 +386,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues: write", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         status_script = Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8")
+        self.assertIn("DIRECTORY_FIRST_PR.html", status_script)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", status_script)
         self.assertIn("contributor_interest_ko.yml", status_script)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", status_script)
@@ -396,7 +400,11 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issue_comment:", workflow)
         self.assertIn("/claim", workflow)
         self.assertIn("ai-language-partner:issue-claim-guidance", workflow)
+        self.assertIn("claimantMarker", workflow)
+        self.assertIn("already had the `claimed` label", workflow)
+        self.assertIn("nearby unclaimed issue", workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
+        self.assertIn("DIRECTORY_FIRST_PR.html", workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.html", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", workflow)
         self.assertIn("NO_INSTALL_FIRST_PRS.html", workflow)
@@ -425,6 +433,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues.listComments", workflow)
         self.assertIn("PR welcome comment already exists", workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
+        self.assertIn("DIRECTORY_FIRST_PR.html", workflow)
         self.assertIn("Closes #123", workflow)
         self.assertIn("CODESPACES_FIRST_PR.html", workflow)
         self.assertIn("labels external PRs for maintainer review", workflow)
@@ -454,6 +463,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         label_script = Path("scripts/create_github_labels.py").read_text(encoding="utf-8")
         runbook = Path("docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md").read_text(encoding="utf-8")
         policy = Path("docs/community/PR_REVIEW_AND_COUNTING_POLICY.md").read_text(encoding="utf-8")
+        snippets = Path("docs/community/MAINTAINER_RESPONSE_SNIPPETS.md").read_text(encoding="utf-8")
 
         self.assertIn("pull_request_target:", workflow)
         self.assertIn("types: [closed]", workflow)
@@ -471,6 +481,12 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("merged-external-pr-candidate", runbook)
         self.assertIn("evidence-review queue only", runbook)
         self.assertIn("evidence-review cue", policy)
+        self.assertIn("MAINTAINER_RESPONSE_SNIPPETS.md", runbook)
+        self.assertIn("MAINTAINER_RESPONSE_SNIPPETS.md", policy)
+        self.assertIn("First Response To A New PR", snippets)
+        self.assertIn("Missing Issue Link", snippets)
+        self.assertIn("Not Counted But Appreciated", snippets)
+        self.assertIn("Final Counting Checklist", snippets)
 
     def test_pull_request_template_collects_countable_pr_signals(self) -> None:
         template = Path(".github/PULL_REQUEST_TEMPLATE.md").read_text(encoding="utf-8")
@@ -479,19 +495,35 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Docs/content review only", template)
         self.assertIn("python3 scripts/check_public_tree.py", template)
         self.assertIn("cd apps/api && .venv/bin/python -m pytest", template)
+        self.assertIn("DIRECTORY_FIRST_PR.html", template)
         self.assertIn("CODESPACES_FIRST_PR.html", template)
         self.assertIn("First PR help desk", template)
+
+    def test_issue_templates_preserve_fast_lane_fields(self) -> None:
+        good_first = Path(".github/ISSUE_TEMPLATE/good_first_issue.yml").read_text(encoding="utf-8")
+        content_review = Path(".github/ISSUE_TEMPLATE/content_review.yml").read_text(encoding="utf-8")
+
+        self.assertIn("DIRECTORY_FIRST_PR.html", good_first)
+        self.assertIn("NO_INSTALL_FIRST_PRS.html", good_first)
+        self.assertIn("FIRST_ISSUE_MATCHER.html", good_first)
+        self.assertIn("Direct edit:", good_first)
+        self.assertIn("First PR route", good_first)
+        self.assertIn("Browser-only docs/content edit", good_first)
+        self.assertIn("DIRECTORY_FIRST_PR.html", content_review)
+        self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", content_review)
 
     def test_issue_and_interest_workflows_link_hosted_demo(self) -> None:
         issue_workflow = Path(".github/workflows/issue-welcome.yml").read_text(encoding="utf-8")
         interest_workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", issue_workflow)
+        self.assertIn("DIRECTORY_FIRST_PR.html", issue_workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.html", issue_workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", issue_workflow)
         self.assertIn("NO_INSTALL_FIRST_PRS.html", issue_workflow)
         self.assertIn("CODESPACES_FIRST_PR.html", issue_workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", interest_workflow)
+        self.assertIn("DIRECTORY_FIRST_PR.html", interest_workflow)
 
 
 class ContributorSprintStatusTest(unittest.TestCase):
@@ -734,6 +766,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("layout: page", page)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html", page)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", page)
+        self.assertIn("DIRECTORY_FIRST_PR.html", page)
         self.assertIn("FIRST_ISSUE_MATCHER.html", page)
         self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", page)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", page)
@@ -764,6 +797,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Do not mass-post identical messages", share_kit)
         self.assertIn("Only useful merged PRs", share_kit)
         self.assertIn("external contributors count", share_kit)
+        self.assertIn("DIRECTORY_FIRST_PR.html", share_kit)
         self.assertIn("FIRST_ISSUE_MATCHER.html", share_kit)
         self.assertIn("NO_INSTALL_FIRST_PRS.html", share_kit)
         self.assertIn("OUTREACH_QUEUE.json", share_kit)
@@ -773,6 +807,22 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("SHARE_KIT.html", index)
         self.assertIn("SHARE_KIT.html", landing)
         self.assertIn("SHARE_KIT.md", playbook)
+
+    def test_directory_first_pr_fast_lane_is_publicly_linked_and_counting_safe(self) -> None:
+        guide = Path("docs/community/DIRECTORY_FIRST_PR.md").read_text(encoding="utf-8")
+        readme = Path("README.md").read_text(encoding="utf-8")
+        index = Path("docs/index.md").read_text(encoding="utf-8")
+        landing = Path("docs/community/CONTRIBUTOR_LANDING.md").read_text(encoding="utf-8")
+
+        self.assertIn("layout: page", guide)
+        self.assertIn("Start In 60 Seconds", guide)
+        self.assertIn("For Good First Issue", guide)
+        self.assertIn("Closes #ISSUE_NUMBER", guide)
+        self.assertIn("Only useful merged external PRs count", guide)
+        self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
+        self.assertIn("DIRECTORY_FIRST_PR.md", readme)
+        self.assertIn("DIRECTORY_FIRST_PR.html", index)
+        self.assertIn("DIRECTORY_FIRST_PR.html", landing)
 
     def test_outreach_batch_status_selects_actionable_items_and_stays_honest(self) -> None:
         items = [
@@ -885,6 +935,8 @@ class ContributorCallPageTest(unittest.TestCase):
         readme = Path("README.md").read_text(encoding="utf-8")
 
         self.assertIn("한국어 5분 첫 PR", call)
+        self.assertIn("DIRECTORY_FIRST_PR.html", template)
+        self.assertIn("DIRECTORY_FIRST_PR.html", ko_template)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", template)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", ko_template)
         self.assertIn("CALL_FOR_CONTRIBUTORS_KO.html", ko_template)
@@ -938,6 +990,8 @@ class ContributorCallPageTest(unittest.TestCase):
         ja_index = Path("docs/ja/index.md").read_text(encoding="utf-8")
 
         self.assertIn("日本語 5分 first PR", call)
+        self.assertIn("DIRECTORY_FIRST_PR.html", template)
+        self.assertIn("DIRECTORY_FIRST_PR.html", ja_template)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", template)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", ja_template)
         self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", ja_template)
@@ -959,13 +1013,63 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_KO.md", readiness.REQUIRED_FILES)
         self.assertIn(".github/ISSUE_TEMPLATE/contributor_interest_ja.yml", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/CALL_FOR_CONTRIBUTORS_JA.md", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/DIRECTORY_FIRST_PR.md", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_JA.md", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/MAINTAINER_RESPONSE_SNIPPETS.md", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/pr-triage-labels.yml", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/pr-merge-followup.yml", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/SHARE_KIT.md", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/outreach-batch-status.yml", readiness.REQUIRED_FILES)
         self.assertIn("scripts/post_outreach_batch_status.py", readiness.REQUIRED_FILES)
+        self.assertIn("scripts/push_current_branch_from_clipboard_token.sh", readiness.REQUIRED_FILES)
+        self.assertIn("scripts/create_pr_from_clipboard_token.py", readiness.REQUIRED_FILES)
+        self.assertIn("scripts/publish_pending_claude_oss_work_from_clipboard_token.sh", readiness.REQUIRED_FILES)
+
+    def test_clipboard_branch_push_helper_avoids_storing_tokens(self) -> None:
+        helper = Path("scripts/push_current_branch_from_clipboard_token.sh").read_text(encoding="utf-8")
+        checklist = Path("docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md").read_text(encoding="utf-8")
+
+        self.assertIn("pbpaste", helper)
+        self.assertIn("pbcopy", helper)
+        self.assertIn("GIT_TERMINAL_PROMPT=0", helper)
+        self.assertIn("credential.helper=", helper)
+        self.assertIn("username=x-access-token", helper)
+        self.assertNotIn("github.com/${TOKEN}", helper)
+        self.assertIn("push_current_branch_from_clipboard_token.sh", checklist)
+        self.assertIn("add-ai-language-partner", checklist)
+
+    def test_clipboard_pr_helper_creates_existing_or_new_pr_without_gh(self) -> None:
+        helper = Path("scripts/create_pr_from_clipboard_token.py").read_text(encoding="utf-8")
+        checklist = Path("docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md").read_text(encoding="utf-8")
+
+        self.assertIn("pbpaste", helper)
+        self.assertIn("pbcopy", helper)
+        self.assertIn("TOKEN_PREFIXES", helper)
+        self.assertIn("--token-source", helper)
+        self.assertIn("env_token", helper)
+        self.assertIn("existing_open_pr", helper)
+        self.assertIn("https://api.github.com/repos/{repo}/pulls", helper)
+        self.assertIn("maintainer_can_modify", helper)
+        self.assertIn("create_pr_from_clipboard_token.py", checklist)
+        self.assertIn("github/forgoodfirstissue", checklist)
+        self.assertIn("duct-tape2:add-ai-language-partner", checklist)
+
+    def test_one_shot_publish_helper_pushes_internal_and_listing_prs(self) -> None:
+        helper = Path("scripts/publish_pending_claude_oss_work_from_clipboard_token.sh").read_text(encoding="utf-8")
+        checklist = Path("docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md").read_text(encoding="utf-8")
+
+        self.assertIn("pbpaste", helper)
+        self.assertIn("pbcopy", helper)
+        self.assertIn("codex/directory-first-pr-fast-lane", helper)
+        self.assertIn("/private/tmp/forgoodfirstissue", helper)
+        self.assertIn("github/forgoodfirstissue", helper)
+        self.assertIn("--token-source env", helper)
+        self.assertIn("credential.helper=", helper)
+        self.assertIn("refusing to publish from dirty worktree", helper)
+        self.assertIn("publish_pending_claude_oss_work_from_clipboard_token.sh", checklist)
+        self.assertIn("reads the copied token", checklist)
+        self.assertIn("clears the clipboard", checklist)
 
     def test_language_review_first_pr_kit_is_reviewable_and_counting_safe(self) -> None:
         kit = Path("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md").read_text(encoding="utf-8")
@@ -1040,6 +1144,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("Issues covered: `27`", comments)
         self.assertIn(no_install_guides.MARKER, comments)
         self.assertIn("Hosted web demo", comments)
+        self.assertIn("DIRECTORY_FIRST_PR.html", comments)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", comments)
         self.assertIn("CODESPACES_FIRST_PR.html", comments)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", comments)
@@ -1080,6 +1185,16 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Language Learning Japanese Page", names)
         self.assertIn("Awesome Open Source School", names)
         self.assertIn("Awesome Japanese", {listing.name for listing in discovery_snapshot.LISTING_ISSUES})
+
+    def test_pending_local_listing_rows_track_pr_ready_branches(self) -> None:
+        rows = discovery_snapshot.pending_local_listing_rows()
+
+        self.assertEqual(len(rows), 1)
+        self.assertIn("For Good First Issue", rows[0])
+        self.assertIn("pending push", rows[0])
+        self.assertIn("DIRECTORY_FIRST_PR.html", rows[0])
+        self.assertIn("/private/tmp/forgoodfirstissue:add-ai-language-partner", rows[0])
+        self.assertIn("not contributor evidence", rows[0])
 
     def test_good_first_issue_directory_is_locked_until_ten_contributors(self) -> None:
         with patch.object(discovery_snapshot, "collect_evidence", return_value=[object(), object()]):
@@ -1131,6 +1246,10 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         ), patch.object(
             discovery_snapshot, "fetch_repo_topics", return_value=["good-first-issue", "language-learning"]
         ), patch.object(
+            discovery_snapshot,
+            "pending_local_listing_rows",
+            return_value=["| For Good First Issue | PR-ready local branch | pending push | n/a | token required | [link](https://example.test/fgfi) | [entry](https://example.test/directory) | `/tmp/branch` | prepared locally |"],
+        ), patch.object(
             discovery_snapshot, "directory_rows", return_value=["| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://example.test/gfi) | [issues](https://example.test/first) | - | README criteria |"]
         ):
             markdown = discovery_snapshot.build_markdown("duct-tape2/ai-language-partner", token=None)
@@ -1146,6 +1265,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("https://example.test/releases/demo.zip", markdown)
         self.assertIn("[link](https://example.test/pull/1)", markdown)
         self.assertIn("[update](https://example.test/pull/1#comment)", markdown)
+        self.assertIn("For Good First Issue", markdown)
         self.assertIn("Good First Issue", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 

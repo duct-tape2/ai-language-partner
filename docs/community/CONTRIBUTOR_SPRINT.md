@@ -119,6 +119,8 @@ reviewable first contributions genuinely easy.
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
   opens a refresh PR instead of pushing directly to protected `main`.
 - Maintainer review runbook: `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`
+- Maintainer response snippets:
+  `docs/community/MAINTAINER_RESPONSE_SNIPPETS.md`
 - Counted external contributors: 0
 - Remaining external contributors needed: 20
 - Maintainer-authored PRs do not count.

@@ -13,7 +13,8 @@ the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [한국어 contributor call](CALL_FOR_CONTRIBUTORS_KO.html), the
 [日本語 guide](https://duct-tape2.github.io/ai-language-partner/ja/), the
 [日本語 contributor call](CALL_FOR_CONTRIBUTORS_JA.html), the
-[contributor share kit](SHARE_KIT.html), or the
+[contributor share kit](SHARE_KIT.html), the
+[directory first PR fast lane](DIRECTORY_FIRST_PR.html), or the
 [starter issue index](STARTER_ISSUE_INDEX.html) if you want a lane-by-lane list
 of currently open tasks.
 
@@ -23,6 +24,10 @@ the [installable demo release plan](INSTALLABLE_DEMO_RELEASE_PLAN.html).
 For the lowest-friction route, use the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.html). It links directly to
 browser-editable issues and includes a PR body template.
+
+If you came from an external good-first-issue directory, start with the
+[directory first PR fast lane](DIRECTORY_FIRST_PR.html). It compresses the demo,
+issue choice, `/claim`, and PR body steps into one page.
 
 If you want to run tests without setting up your own machine, use the
 [Codespaces first PR guide](CODESPACES_FIRST_PR.html).
