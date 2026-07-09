@@ -93,6 +93,18 @@ LISTING_PRS = [
         number=46,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
     ),
+    ListingPr(
+        name="Awesome Language Learning Japanese Page",
+        repo="jqhoogland/awesome-language-learning",
+        number=20,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+    ),
+    ListingPr(
+        name="Awesome Open Source School",
+        repo="zefanja/awesome-opensource-school",
+        number=16,
+        contributor_link="https://duct-tape2.github.io/ai-language-partner/demo/",
+    ),
 ]
 
 
@@ -216,7 +228,7 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
     )
     return [
         "| Good First Issue | Directory | {state} | n/a | {next_step} | [link]({project}) | "
-        "[issues](https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md) | "
+        "[entry](https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md) | "
         "[form]({form}) | README criteria |".format(
             state=state,
             next_step=next_step,
@@ -237,7 +249,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         followup = f"[update]({status['followup_url']})" if status["followup_url"] else "-"
         status = {**status, "checks": checks, "followup": followup}
         listing_rows.append(
-            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {followup} | {checks} |".format(
+            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [entry]({contributor_link}) | {followup} | {checks} |".format(
                 **status,
             )
         )
@@ -247,7 +259,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         followup = f"[update]({status['followup_url']})" if status["followup_url"] else "-"
         status = {**status, "checks": checks, "followup": followup}
         listing_rows.append(
-            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [issues]({contributor_link}) | {followup} | {checks} |".format(
+            "| {name} | {kind} | {state} | {merged} | {mergeable} | [link]({url}) | [entry]({contributor_link}) | {followup} | {checks} |".format(
                 **status,
             )
         )

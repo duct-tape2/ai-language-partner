@@ -19,6 +19,8 @@ from unique external contributors count for the community-builder threshold.
 | Awesome Japanese Learning Resources | PR open | `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
 | Awesome Japanese Study Materials | PR open | `https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
 | Awesome Local-First | PR open | `https://github.com/alexanderop/awesome-local-first/pull/46` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
+| Awesome Language Learning Japanese Page | PR open | `https://github.com/jqhoogland/awesome-language-learning/pull/20` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
+| Awesome Open Source School | PR open | `https://github.com/zefanja/awesome-opensource-school/pull/16` | `https://duct-tape2.github.io/ai-language-partner/demo/` | - |
 | Awesome Japanese | Deferred by maintainer until the app is more mature / app-store-ready | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md` | - |
 | Good First Issue | Locked until contributor count improves | `https://github.com/DeepSourceCorp/good-first-issue` requires at least 10 contributors before submitting a repository | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | Submit the form only after 10 real external contributors |
 
