@@ -17,6 +17,9 @@ body:
         Start with the contributor landing page if you are not sure which lane fits:
         https://duct-tape2.github.io/ai-language-partner/
 
+        Korean contributor call:
+        https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html
+
         After you submit this form, an automated triage comment will suggest lane-specific starter issues.
   - type: dropdown
     id: lane

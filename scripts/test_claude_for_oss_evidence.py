@@ -622,6 +622,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Remaining contributors needed: `17`", comment)
         self.assertIn("FIRST_ISSUE_MATCHER.md", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", comment)
+        self.assertIn("CALL_FOR_CONTRIBUTORS_KO.html", comment)
         self.assertIn("awesome-local-first/pull/46", comment)
         self.assertIn("not Claude for OSS evidence by", comment)
 
