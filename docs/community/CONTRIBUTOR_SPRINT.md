@@ -71,6 +71,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5`
 - Awesome Japanese Study Materials listing PR:
   `https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8`
+- Awesome Japanese Resources listing PR:
+  `https://github.com/Sara-Lib/Awesome-Japanese-resources/pull/1`
 - Awesome Local-First listing PR:
   `https://github.com/alexanderop/awesome-local-first/pull/46`
 - Awesome Language Learning Japanese page listing PR:

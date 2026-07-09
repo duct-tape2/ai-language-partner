@@ -1075,6 +1075,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Language Learning", names)
         self.assertIn("Awesome Japanese Learning Resources", names)
         self.assertIn("Awesome Japanese Study Materials", names)
+        self.assertIn("Awesome Japanese Resources", names)
         self.assertIn("Awesome Local-First", names)
         self.assertIn("Awesome Language Learning Japanese Page", names)
         self.assertIn("Awesome Open Source School", names)

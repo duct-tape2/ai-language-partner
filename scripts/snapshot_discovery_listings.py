@@ -95,6 +95,12 @@ LISTING_PRS = [
         contributor_link=FIRST_ISSUE_MATCHER_URL,
     ),
     ListingPr(
+        name="Awesome Japanese Resources",
+        repo="Sara-Lib/Awesome-Japanese-resources",
+        number=1,
+        contributor_link=CONTRIBUTOR_LANDING_URL,
+    ),
+    ListingPr(
         name="Awesome Local-First",
         repo="alexanderop/awesome-local-first",
         number=46,
