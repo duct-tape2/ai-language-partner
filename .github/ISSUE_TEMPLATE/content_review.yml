@@ -3,6 +3,13 @@ description: Review Japanese/Korean learner content, dialogue, or docs.
 title: "content: "
 labels: ["content", "language-review", "help wanted"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        For a first language-review PR, start with the review kit:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
+
+        It lists safe files, issue routes, and what not to change.
   - type: textarea
     id: scope
     attributes:
@@ -22,4 +29,3 @@ body:
         - No generated content without review notes
     validations:
       required: true
-

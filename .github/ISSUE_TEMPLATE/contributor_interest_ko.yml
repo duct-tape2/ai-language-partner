@@ -19,6 +19,9 @@ body:
         30초 이슈 추천:
         https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
+        언어 검수 첫 PR kit:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
+
         이 form을 제출하면 자동 triage 댓글이 분야별 starter issue를 추천합니다.
 
         Contribution lane / 기여 분야를 아래에서 골라주세요.

@@ -19,6 +19,9 @@ body:
         30秒 issue matcher:
         https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
+        Language review first PR kit:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
+
         この form を送ると、選んだ分野に合わせて starter issue を案内する自動コメントが付きます。
 
         Contribution lane / 貢献分野を下から選んでください。

@@ -43,6 +43,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -82,6 +83,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -120,6 +122,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -158,6 +161,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -196,6 +200,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -236,6 +241,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -275,6 +281,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -313,6 +320,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -351,6 +359,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -390,6 +399,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -430,6 +440,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -469,6 +480,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -508,6 +520,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -546,6 +559,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -584,6 +598,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -623,6 +638,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -662,6 +678,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -701,6 +718,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -740,6 +758,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -779,6 +798,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -818,6 +838,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -857,6 +878,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -894,6 +916,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -934,6 +957,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -973,6 +997,7 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 
@@ -1011,5 +1036,6 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+- Language review first PR kit: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md
 - First PR walkthrough: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_WALKTHROUGH.md
 - Counting policy: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md

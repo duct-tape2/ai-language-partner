@@ -64,6 +64,7 @@ REQUIRED_FILES = [
     "docs/community/FIVE_MINUTE_FIRST_PR.md",
     "docs/community/FIVE_MINUTE_FIRST_PR_KO.md",
     "docs/community/FIVE_MINUTE_FIRST_PR_JA.md",
+    "docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md",
     "docs/community/NO_INSTALL_FIRST_PRS.md",
     "docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md",
     "docs/community/CONTRIBUTOR_SPRINT.md",

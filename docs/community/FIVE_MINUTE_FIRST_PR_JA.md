@@ -32,6 +32,8 @@ count しません。
 | 文化安全性レビュー | [#47](https://github.com/duct-tape2/ai-language-partner/issues/47) | [culture notes を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/culture/cultureNotes.ts) |
 
 さらに多くの候補は [No-install first PR board](NO_INSTALL_FIRST_PRS.md) にあります。
+日本語・韓国語・文化メモのレビュー範囲で迷う場合は
+[Language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md) を見てください。
 
 ## PR title examples
 

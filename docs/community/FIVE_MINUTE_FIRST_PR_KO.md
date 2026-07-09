@@ -36,6 +36,8 @@ count하지 않습니다.
 
 더 많은 선택지는 [설치 없이 가능한 첫 PR 목록](NO_INSTALL_FIRST_PRS.md)에
 있습니다.
+일본어/한국어/문화 메모 검수 범위를 고르기 어렵다면
+[Language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md)을 보세요.
 
 ## PR 제목 예시
 

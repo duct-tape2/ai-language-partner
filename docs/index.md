@@ -27,6 +27,7 @@ Start here:
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
 - [한국어 5분 첫 PR](community/FIVE_MINUTE_FIRST_PR_KO.md)
 - [日本語 5分 first PR](community/FIVE_MINUTE_FIRST_PR_JA.md)
+- [Language review first PR kit](community/LANGUAGE_REVIEW_FIRST_PR_KIT.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
 - [Starter issue index](community/STARTER_ISSUE_INDEX.md)

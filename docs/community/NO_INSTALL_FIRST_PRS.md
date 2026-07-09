@@ -32,6 +32,8 @@ The generated issue-comment text is tracked in
 
 For the shortest path with PR title/body examples, use the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md).
+For Japanese/Korean wording, dialogue, or cultural-safety review, use the
+[language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md).
 
 ## Best Browser-Only Issues
 

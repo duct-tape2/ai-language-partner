@@ -20,6 +20,7 @@
 [Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
 [한국어 5분 첫 PR](docs/community/FIVE_MINUTE_FIRST_PR_KO.md) ·
 [日本語 5分 first PR](docs/community/FIVE_MINUTE_FIRST_PR_JA.md) ·
+[Language review first PR kit](docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md) ·
 [Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
 [No-install first PRs](docs/community/NO_INSTALL_FIRST_PRS.md) ·
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) ·
@@ -52,6 +53,7 @@ the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),
 the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
 the [한국어 5분 첫 PR route](docs/community/FIVE_MINUTE_FIRST_PR_KO.md),
 the [日本語 5分 first PR route](docs/community/FIVE_MINUTE_FIRST_PR_JA.md),
+the [language review first PR kit](docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md),
 the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
 the [no-install first PR board](docs/community/NO_INSTALL_FIRST_PRS.md),
 the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), the

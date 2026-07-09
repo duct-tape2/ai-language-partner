@@ -50,6 +50,7 @@ More choices:
 - First issue matcher: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md`
 - Five-minute first PR: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md`
 - Japanese five-minute first PR: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md`
+- Language review first PR kit: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md`
 - No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - Starter issue index: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md`
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`

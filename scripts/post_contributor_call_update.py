@@ -34,6 +34,7 @@ JAPANESE_FIVE_MINUTE_FIRST_PR = (
 FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md"
 FIVE_MINUTE_FIRST_PR = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
+LANGUAGE_REVIEW_KIT = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 CONTRIBUTOR_INTEREST = (
     "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
@@ -106,6 +107,7 @@ def render_comment(repo: str, since: str, generated_on: str, contributor_count: 
             f"- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}",
             f"- Pick by time/skill: {FIRST_ISSUE_MATCHER}",
             f"- Fastest browser-only route: {FIVE_MINUTE_FIRST_PR}",
+            f"- Language review first PR kit: {LANGUAGE_REVIEW_KIT}",
             f"- Full no-install board: {NO_INSTALL_BOARD}",
             f"- Ask for a suggested issue: {HELP_DESK}",
             f"- Open a contributor interest issue: {CONTRIBUTOR_INTEREST}",

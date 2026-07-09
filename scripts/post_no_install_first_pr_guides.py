@@ -22,6 +22,7 @@ KOREAN_FIVE_MINUTE_FIRST_PR = "docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
 KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ko.yml"
 JAPANESE_FIVE_MINUTE_FIRST_PR = "docs/community/FIVE_MINUTE_FIRST_PR_JA.md"
 JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ja.yml"
+LANGUAGE_REVIEW_KIT = "docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md"
 
 
 @dataclass(frozen=True)
@@ -103,6 +104,7 @@ backend, STT/TTS engine, generated audio, private data, or API key is needed.
 - Korean contributor interest form: https://github.com/{repo}/issues/new?template={KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE}
 - Japanese five-minute first PR: https://github.com/{repo}/blob/main/{JAPANESE_FIVE_MINUTE_FIRST_PR}
 - Japanese contributor interest form: https://github.com/{repo}/issues/new?template={JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE}
+- Language review first PR kit: https://github.com/{repo}/blob/main/{LANGUAGE_REVIEW_KIT}
 - Source file: `{task.source_file}`
 - Direct edit link: {task.edit_url}
 - No-install board: https://github.com/{repo}/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md

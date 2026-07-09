@@ -29,6 +29,10 @@ Korean-speaking contributors can use the
 Japanese-speaking contributors can use the
 [日本語 5分 first PR guide](FIVE_MINUTE_FIRST_PR_JA.md).
 
+Language reviewers can use the
+[language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md) for safe
+JSON/CSV/TypeScript review boundaries and issue-specific starter routes.
+
 If you are not sure which issue fits your skills or time budget, use the
 [first issue matcher](FIRST_ISSUE_MATCHER.md).
 

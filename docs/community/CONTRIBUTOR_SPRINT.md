@@ -26,6 +26,7 @@ reviewable first contributions genuinely easy.
 - Five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR.md`
 - Korean five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR_KO.md`
 - Japanese five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR_JA.md`
+- Language review first PR kit: `docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
   with 27 browser-editable issue slots

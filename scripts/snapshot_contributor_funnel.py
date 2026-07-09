@@ -29,6 +29,7 @@ FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/do
 KOREAN_FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
 JAPANESE_FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
+LANGUAGE_REVIEW_KIT = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 KOREAN_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml"
 JAPANESE_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml"
@@ -261,6 +262,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
             f"- Korean five-minute first PR guide: {KOREAN_FIRST_PR_GUIDE}",
             f"- Japanese five-minute first PR guide: {JAPANESE_FIRST_PR_GUIDE}",
+            f"- Language review first PR kit: {LANGUAGE_REVIEW_KIT}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- First PR help desk: {HELP_DESK}",
             f"- Korean contributor interest form: {KOREAN_INTEREST_FORM}",
