@@ -20,6 +20,7 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/discussions/55`
 - Web demo prerelease:
   `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
+- First issue matcher: `docs/community/FIRST_ISSUE_MATCHER.md`
 - Five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
@@ -36,6 +37,8 @@ reviewable first contributions genuinely easy.
 - First PR recipes: `docs/community/FIRST_PR_RECIPES.md`
 - Good first issues:
   `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
+- First issue matcher page:
+  `https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html`
 - Discovery labels:
   `up-for-grabs` marks scoped external work; `first-timers-only` marks the
   lowest-context issues for a first OSS PR.

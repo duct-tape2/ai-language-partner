@@ -17,6 +17,7 @@ from unique external contributors count for the community-builder threshold.
 | Awesome for Non-Programmers | PR open | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` | `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475` |
 | Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` | `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535` |
 | Awesome Japanese | Deferred by maintainer until the app is more mature / app-store-ready | `https://github.com/yudataguy/awesome-japanese/issues/149` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md` | - |
+| Good First Issue | Locked until contributor count improves | `https://github.com/DeepSourceCorp/good-first-issue` requires at least 10 contributors before submitting a repository | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | Submit the form only after 10 real external contributors |
 
 Public sprint update:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914030370`
@@ -46,3 +47,5 @@ Automated status comment:
 - `good-first-issue` topic: `https://github.com/topics/good-first-issue`
 - `help-wanted` topic: `https://github.com/topics/help-wanted`
 - `language-learning` topic: `https://github.com/topics/language-learning`
+- Good First Issue project submission criteria:
+  `https://github.com/DeepSourceCorp/good-first-issue`

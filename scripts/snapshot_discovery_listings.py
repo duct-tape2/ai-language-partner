@@ -17,6 +17,8 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
+from export_claude_for_oss_evidence import collect_evidence, default_since
+
 
 MARKER = "<!-- discovery-listings-status -->"
 DEFAULT_REPO = "duct-tape2/ai-language-partner"
@@ -24,6 +26,8 @@ DEFAULT_ISSUE = 52
 DEMO_RELEASE_TAG = "demo-web-2026-07-09"
 DEMO_RELEASE_ASSET = "ai-language-partner-web-demo-2026-07-09.zip"
 HOSTED_DEMO_URL = "https://duct-tape2.github.io/ai-language-partner/demo/"
+GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-issue"
+GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
 
 
 @dataclass(frozen=True)
@@ -184,6 +188,26 @@ def fetch_demo_release(repo: str, token: str | None) -> dict[str, str]:
     return {"url": str(data.get("html_url") or ""), "asset": asset_url, "status": status}
 
 
+def directory_rows(repo: str, token: str | None) -> list[str]:
+    contributors = len(collect_evidence(repo, default_since(), set(), token))
+    state = "eligible" if contributors >= 10 else "locked"
+    next_step = (
+        "submit repository form"
+        if contributors >= 10
+        else f"requires 10 contributors; current {contributors}/10"
+    )
+    return [
+        "| Good First Issue | Directory | {state} | n/a | {next_step} | [link]({project}) | "
+        "[issues](https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md) | "
+        "[form]({form}) | README criteria |".format(
+            state=state,
+            next_step=next_step,
+            project=GOOD_FIRST_ISSUE_PROJECT_URL,
+            form=GOOD_FIRST_ISSUE_FORM_URL,
+        )
+    ]
+
+
 def build_markdown(repo: str, token: str | None) -> str:
     up_for_grabs = count_open_issues(repo, "up-for-grabs", token)
     first_timers = count_open_issues(repo, "first-timers-only", token)
@@ -209,6 +233,7 @@ def build_markdown(repo: str, token: str | None) -> str:
                 **status,
             )
         )
+    listing_rows.extend(directory_rows(repo, token))
 
     rows = [
         MARKER,

@@ -24,6 +24,7 @@ DEFAULT_REPO = "duct-tape2/ai-language-partner"
 DEFAULT_ISSUE = 52
 MAINTAINER_LOGINS = {"duct-tape2", "sinmb79"}
 HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
+FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md"
 FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
@@ -242,6 +243,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             "",
             f"- Hosted web demo: {HOSTED_DEMO}",
             f"- Call for contributors discussion: {CALL_DISCUSSION}",
+            f"- First issue matcher: {FIRST_ISSUE_MATCHER}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- First PR help desk: {HELP_DESK}",

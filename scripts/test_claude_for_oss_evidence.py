@@ -372,6 +372,7 @@ class ContributorSprintStatusTest(unittest.TestCase):
         self.assertIn(sprint_status.MARKER, markdown)
         self.assertIn("Unique external merged PR contributors: `3/20`", markdown)
         self.assertIn("Hosted web demo", markdown)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", markdown)
         self.assertIn("not Claude", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
@@ -437,6 +438,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Open contributor interest issues: `1`", markdown)
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("Call for contributors discussion", markdown)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("within 24 hours", markdown)
@@ -664,6 +666,15 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Language Learning", names)
         self.assertIn("Awesome Japanese", {listing.name for listing in discovery_snapshot.LISTING_ISSUES})
 
+    def test_good_first_issue_directory_is_locked_until_ten_contributors(self) -> None:
+        with patch.object(discovery_snapshot, "collect_evidence", return_value=[object(), object()]):
+            rows = discovery_snapshot.directory_rows("duct-tape2/ai-language-partner", token=None)
+
+        self.assertIn("Good First Issue", rows[0])
+        self.assertIn("locked", rows[0])
+        self.assertIn("current 2/10", rows[0])
+        self.assertIn("FIRST_ISSUE_MATCHER.md", rows[0])
+
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
             "name": "Example Listing",
@@ -700,6 +711,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             discovery_snapshot, "fetch_demo_release", return_value=release_status
         ), patch.object(discovery_snapshot, "fetch_listing_pr", return_value=listing_status), patch.object(
             discovery_snapshot, "fetch_listing_issue", return_value=issue_status
+        ), patch.object(
+            discovery_snapshot, "directory_rows", return_value=["| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://example.test/gfi) | [issues](https://example.test/first) | - | README criteria |"]
         ):
             markdown = discovery_snapshot.build_markdown("duct-tape2/ai-language-partner", token=None)
 
@@ -713,6 +726,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("https://example.test/releases/demo.zip", markdown)
         self.assertIn("[link](https://example.test/pull/1)", markdown)
         self.assertIn("[update](https://example.test/pull/1#comment)", markdown)
+        self.assertIn("Good First Issue", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 
     def test_closed_listing_issue_is_not_reported_as_waiting(self) -> None:
