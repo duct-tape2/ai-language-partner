@@ -1,0 +1,39 @@
+name: Contributor Call Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 2 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "docs/community/CALL_FOR_CONTRIBUTORS.md"
+      - "docs/community/FIRST_ISSUE_MATCHER.md"
+      - "docs/community/FIVE_MINUTE_FIRST_PR.md"
+      - "docs/community/NO_INSTALL_FIRST_PRS.md"
+      - "scripts/post_contributor_call_update.py"
+      - ".github/workflows/contributor-call-update.yml"
+
+permissions:
+  contents: read
+  discussions: write
+
+jobs:
+  contributor-call-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted base branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update public contributor call discussion
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/post_contributor_call_update.py --repo duct-tape2/ai-language-partner --discussion 55 --comment

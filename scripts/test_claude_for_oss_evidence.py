@@ -31,6 +31,7 @@ import post_contributor_sprint_status as sprint_status  # noqa: E402
 import update_claude_application_evidence as evidence_update  # noqa: E402
 import snapshot_contributor_funnel as contributor_funnel  # noqa: E402
 import audit_claude_for_oss_account as account_audit  # noqa: E402
+import post_contributor_call_update as contributor_call_update  # noqa: E402
 
 
 def issue_item(
@@ -606,6 +607,38 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertGreaterEqual(len(items), 22)
         self.assertTrue(any(item["posted_url"] == "https://github.com/duct-tape2/ai-language-partner/discussions/55" for item in posted))
         self.assertTrue(any(item["id"] == "outreach_00" and item["status"] == "posted" for item in items))
+
+    def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
+        comment = contributor_call_update.render_comment(
+            "duct-tape2/ai-language-partner",
+            "2025-07-09",
+            "2026-07-09",
+            contributor_count=3,
+            no_install_count=27,
+        )
+
+        self.assertIn(contributor_call_update.MARKER, comment)
+        self.assertIn("Unique external merged PR contributors: `3/20`", comment)
+        self.assertIn("Remaining contributors needed: `17`", comment)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", comment)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.md", comment)
+        self.assertIn("awesome-local-first/pull/46", comment)
+        self.assertIn("not Claude for OSS evidence by", comment)
+
+    def test_contributor_call_update_workflow_writes_discussions(self) -> None:
+        workflow = Path(".github/workflows/contributor-call-update.yml").read_text(encoding="utf-8")
+
+        self.assertIn("post_contributor_call_update.py", workflow)
+        self.assertIn("discussions: write", workflow)
+        self.assertIn("--discussion 55", workflow)
+        self.assertIn("Checkout trusted base branch", workflow)
+
+    def test_contributor_call_update_discussion_lookup_uses_marker_comment(self) -> None:
+        source = Path("scripts/post_contributor_call_update.py").read_text(encoding="utf-8")
+
+        self.assertIn("addDiscussionComment", source)
+        self.assertIn("updateDiscussionComment", source)
+        self.assertIn("ai-language-partner:contributor-call-update", source)
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):
