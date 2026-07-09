@@ -320,9 +320,12 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("FIRST_ISSUE_MATCHER.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", workflow)
         self.assertIn("기여 분야", workflow)
+        self.assertIn("貢献分野", workflow)
         self.assertIn("Korean docs or learner notes", workflow)
         self.assertIn("Japanese naturalness review", workflow)
+        self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", workflow)
         self.assertIn("FIRST_PR_RECIPES.md", workflow)
         self.assertIn("github.rest.issues.createComment", workflow)
 
@@ -335,6 +338,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
         self.assertIn("contributor_interest_ko.yml", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
+        self.assertIn("contributor_interest_ja.yml", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
 
     def test_issue_claim_guidance_workflow_handles_claim_comments(self) -> None:
         workflow = Path(".github/workflows/issue-claim-guidance.yml").read_text(encoding="utf-8")
@@ -397,6 +402,7 @@ class ContributorSprintStatusTest(unittest.TestCase):
         self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", markdown)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", markdown)
         self.assertIn("not Claude", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("Maintainer-authored PRs, bots", markdown)
@@ -421,6 +427,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertEqual([issue.number for issue in issues], [54])
         self.assertIn('is:issue is:open "Contribution lane"', calls)
         self.assertIn('is:issue is:open "기여 분야"', calls)
+        self.assertIn('is:issue is:open "貢献分野"', calls)
 
     def test_render_funnel_status_tracks_open_prs_claims_and_entry_points(self) -> None:
         pr = contributor_funnel.IssueItem(
@@ -472,6 +479,8 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", markdown)
         self.assertIn("contributor_interest_ko.yml", markdown)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", markdown)
+        self.assertIn("contributor_interest_ja.yml", markdown)
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("within 24 hours", markdown)
@@ -602,6 +611,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html", page)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", page)
         self.assertIn("FIRST_ISSUE_MATCHER.md", page)
+        self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", page)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", page)
+        self.assertIn("contributor_interest_ja.yml", page)
         self.assertIn("No-install first PR board", page)
         self.assertIn("20+ unique external contributors", page)
         self.assertIn("Maintainer PRs", page)
@@ -640,6 +652,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", comment)
         self.assertIn("CALL_FOR_CONTRIBUTORS_KO.html", comment)
         self.assertIn("contributor_interest_ko.yml", comment)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", comment)
+        self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", comment)
+        self.assertIn("contributor_interest_ja.yml", comment)
         self.assertIn("awesome-local-first/pull/46", comment)
         self.assertIn("not Claude for OSS evidence by", comment)
 
@@ -679,10 +694,34 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
         self.assertIn("숫자를 채우기 위한", guide)
 
+    def test_japanese_first_pr_route_is_publicly_linked(self) -> None:
+        guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_JA.md").read_text(encoding="utf-8")
+        call = Path("docs/community/CALL_FOR_CONTRIBUTORS_JA.md").read_text(encoding="utf-8")
+        template = Path(".github/ISSUE_TEMPLATE/contributor_interest.yml").read_text(encoding="utf-8")
+        ja_template = Path(".github/ISSUE_TEMPLATE/contributor_interest_ja.yml").read_text(encoding="utf-8")
+        readme = Path("README.md").read_text(encoding="utf-8")
+        ja_index = Path("docs/ja/index.md").read_text(encoding="utf-8")
+
+        self.assertIn("日本語 5分 first PR", call)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", template)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", ja_template)
+        self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", ja_template)
+        self.assertIn("貢献分野", ja_template)
+        self.assertIn("contributor_interest_ja.yml", guide)
+        self.assertIn("contributor_interest_ja.yml", call)
+        self.assertIn("contributor_interest_ja.yml", readme)
+        self.assertIn("contributor_interest_ja.yml", ja_index)
+        self.assertIn("Closes #ISSUE_NUMBER", guide)
+        self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
+        self.assertIn("数字を増やすため", guide)
+
     def test_readiness_required_files_include_korean_contributor_routes(self) -> None:
         self.assertIn(".github/ISSUE_TEMPLATE/contributor_interest_ko.yml", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/CALL_FOR_CONTRIBUTORS_KO.md", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_KO.md", readiness.REQUIRED_FILES)
+        self.assertIn(".github/ISSUE_TEMPLATE/contributor_interest_ja.yml", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/CALL_FOR_CONTRIBUTORS_JA.md", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_JA.md", readiness.REQUIRED_FILES)
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):
@@ -721,6 +760,8 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("FIRST_ISSUE_MATCHER.md", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", comment)
         self.assertIn("contributor_interest_ko.yml", comment)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", comment)
+        self.assertIn("contributor_interest_ja.yml", comment)
         self.assertIn("Closes #44", comment)
         self.assertIn("Tiny split", comment)
 
@@ -738,6 +779,8 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("Hosted web demo", comments)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", comments)
         self.assertIn("contributor_interest_ko.yml", comments)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_JA.md", comments)
+        self.assertIn("contributor_interest_ja.yml", comments)
         self.assertIn("Closes #1", comments)
         self.assertIn("Closes #24", comments)
         self.assertIn("Closes #44", comments)

@@ -26,7 +26,8 @@ jobs:
               issue.title.toLowerCase().includes("contributor interest") ||
               (labels.includes("community") &&
                 ((issue.body || "").includes("Contribution lane") ||
-                  (issue.body || "").includes("기여 분야")));
+                  (issue.body || "").includes("기여 분야") ||
+                  (issue.body || "").includes("貢献分野")));
             if (!isInterest) {
               return;
             }
@@ -61,6 +62,8 @@ jobs:
                 title: "Japanese naturalness review",
                 links: [
                   "Japanese guide: https://duct-tape2.github.io/ai-language-partner/ja/",
+                  "Japanese contributor call: https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html",
+                  "Japanese five-minute first PR: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md",
                   "Language-review issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22",
                   "Yui beginner naturalness issue: https://github.com/duct-tape2/ai-language-partner/issues/8",
                 ],
@@ -118,6 +121,7 @@ jobs:
                 "First issue matcher: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
                 "Five-minute first PR: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md",
                 "Korean five-minute first PR: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md",
+                "Japanese five-minute first PR: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md",
                 "Starter issue index: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md",
                 "First PR recipes: https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_PR_RECIPES.md",
                 "First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53",

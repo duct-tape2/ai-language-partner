@@ -21,10 +21,12 @@ Start here:
 - [Hosted web demo](demo/)
 - [Call for contributors](community/CALL_FOR_CONTRIBUTORS.md)
 - [한국어 기여자 모집](community/CALL_FOR_CONTRIBUTORS_KO.md)
+- [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.md)
 - [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
 - [First issue matcher](community/FIRST_ISSUE_MATCHER.md)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
 - [한국어 5분 첫 PR](community/FIVE_MINUTE_FIRST_PR_KO.md)
+- [日本語 5分 first PR](community/FIVE_MINUTE_FIRST_PR_JA.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
 - [Starter issue index](community/STARTER_ISSUE_INDEX.md)
@@ -36,6 +38,7 @@ Start here:
 - [First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 - [Contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml)
 - [한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml)
+- [日本語 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml)
 
 Useful first contribution lanes:
 

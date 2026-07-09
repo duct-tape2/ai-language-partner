@@ -17,6 +17,7 @@ reviewable first contributions genuinely easy.
 - Contributor landing: `docs/community/CONTRIBUTOR_LANDING.md`
 - Call for contributors: `docs/community/CALL_FOR_CONTRIBUTORS.md`
 - Korean call for contributors: `docs/community/CALL_FOR_CONTRIBUTORS_KO.md`
+- Japanese call for contributors: `docs/community/CALL_FOR_CONTRIBUTORS_JA.md`
 - Call for contributors discussion:
   `https://github.com/duct-tape2/ai-language-partner/discussions/55`
 - Web demo prerelease:
@@ -24,6 +25,7 @@ reviewable first contributions genuinely easy.
 - First issue matcher: `docs/community/FIRST_ISSUE_MATCHER.md`
 - Five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR.md`
 - Korean five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR_KO.md`
+- Japanese five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR_JA.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
   with 27 browser-editable issue slots
@@ -92,6 +94,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 - Korean contributor interest form:
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
+- Japanese contributor interest form:
+  `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml`
 - Contributor interest triage workflow:
   `.github/workflows/contributor-interest-triage.yml`
 - Issue claim guidance workflow:

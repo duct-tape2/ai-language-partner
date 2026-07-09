@@ -6,6 +6,8 @@ private data.
 
 Korean-speaking contributors can use the
 [한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.md).
+Japanese-speaking contributors can use the
+[日本語 5分 first PR guide](FIVE_MINUTE_FIRST_PR_JA.md).
 
 Pick one row, open the edit link, make one focused improvement, and create a
 pull request from GitHub's web editor.

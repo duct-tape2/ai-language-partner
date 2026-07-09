@@ -1,0 +1,64 @@
+name: 日本語コントリビューター相談 / issue claim
+description: 日本語で自己紹介、貢献分野の選択、starter issue の相談をします。
+title: "community: contributor interest ja"
+labels: ["community", "help wanted", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `ai-language-partner` に関心を持っていただきありがとうございます。
+
+        ローカル音声エンジン、生成音声、private data、API key がなくても、有用な最初の PR を送れます。
+
+        日本語 5分 first PR guide:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md
+
+        日本語 contributor call:
+        https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html
+
+        30秒 issue matcher:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
+        この form を送ると、選んだ分野に合わせて starter issue を案内する自動コメントが付きます。
+
+        Contribution lane / 貢献分野を下から選んでください。
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Contribution lane / 貢献分野
+      description: いちばん近い分野を選んでください。後で変わっても大丈夫です。
+      options:
+        - 日本語の自然さレビュー (Japanese naturalness review)
+        - 会話コンテンツレビュー (Dialogue content review)
+        - 韓国語 docs または学習者ノート (Korean docs or learner notes)
+        - モバイルアクセシビリティ (Mobile accessibility)
+        - FastAPI/OpenAPI examples
+        - Tests/tooling
+        - Release/community process
+        - まだわからない (Not sure yet)
+    validations:
+      required: true
+  - type: input
+    id: issue
+    attributes:
+      label: 作業したい issue
+      description: すでに選んだ issue があれば URL または番号を貼ってください。
+      placeholder: "https://github.com/duct-tape2/ai-language-partner/issues/..."
+  - type: textarea
+    id: context
+    attributes:
+      label: できること
+      description: どんなレビューや修正ができるかを書いてください。
+      placeholder: "例: 初級者向け日本語の自然さ、敬語、終助詞、文化メモをレビューできます。"
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: 制約または希望
+      description: maintainer が issue を提案する前に知っておくべきことを書いてください。
+      value: |
+        - [ ] docs-only または content-review の作業が必要です。
+        - [ ] backend Python check を実行できます。
+        - [ ] mobile TypeScript check を実行できます。
+        - [ ] 日本語/韓国語の文をレビューできます。

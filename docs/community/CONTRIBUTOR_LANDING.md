@@ -11,7 +11,8 @@ Start with the [public contributor page](https://duct-tape2.github.io/ai-languag
 the [hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/),
 the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [한국어 contributor call](CALL_FOR_CONTRIBUTORS_KO.md), the
-[日本語 guide](https://duct-tape2.github.io/ai-language-partner/ja/), or the
+[日本語 guide](https://duct-tape2.github.io/ai-language-partner/ja/), the
+[日本語 contributor call](CALL_FOR_CONTRIBUTORS_JA.md), or the
 [starter issue index](STARTER_ISSUE_INDEX.md) if you want a lane-by-lane list
 of currently open tasks.
 
@@ -24,6 +25,9 @@ browser-editable issues and includes a PR body template.
 
 Korean-speaking contributors can use the
 [한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.md).
+
+Japanese-speaking contributors can use the
+[日本語 5分 first PR guide](FIVE_MINUTE_FIRST_PR_JA.md).
 
 If you are not sure which issue fits your skills or time budget, use the
 [first issue matcher](FIRST_ISSUE_MATCHER.md).
@@ -53,6 +57,10 @@ comment on the
 [20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
 with the lane you prefer, or open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
+Korean-speaking contributors can use the
+[한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml),
+and Japanese-speaking contributors can use the
+[日本語 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml).
 
 ## Fastest First PR Path
 

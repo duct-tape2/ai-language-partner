@@ -22,8 +22,14 @@ HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 KOREAN_CONTRIBUTOR_CALL = (
     "https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html"
 )
+JAPANESE_CONTRIBUTOR_CALL = (
+    "https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html"
+)
 KOREAN_FIVE_MINUTE_FIRST_PR = (
     "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
+)
+JAPANESE_FIVE_MINUTE_FIRST_PR = (
+    "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md"
 )
 FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md"
 FIVE_MINUTE_FIRST_PR = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
@@ -34,6 +40,9 @@ CONTRIBUTOR_INTEREST = (
 )
 KOREAN_CONTRIBUTOR_INTEREST = (
     "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml"
+)
+JAPANESE_CONTRIBUTOR_INTEREST = (
+    "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml"
 )
 DISCOVERY_STATUS = "https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370"
 FUNNEL_STATUS = "https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4921732560"
@@ -92,13 +101,16 @@ def render_comment(repo: str, since: str, generated_on: str, contributor_count: 
             "",
             f"- Try the hosted mock-mode demo: {HOSTED_DEMO}",
             f"- Korean contributor call: {KOREAN_CONTRIBUTOR_CALL}",
+            f"- Japanese contributor call: {JAPANESE_CONTRIBUTOR_CALL}",
             f"- Korean five-minute first PR: {KOREAN_FIVE_MINUTE_FIRST_PR}",
+            f"- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}",
             f"- Pick by time/skill: {FIRST_ISSUE_MATCHER}",
             f"- Fastest browser-only route: {FIVE_MINUTE_FIRST_PR}",
             f"- Full no-install board: {NO_INSTALL_BOARD}",
             f"- Ask for a suggested issue: {HELP_DESK}",
             f"- Open a contributor interest issue: {CONTRIBUTOR_INTEREST}",
             f"- Open a Korean contributor interest issue: {KOREAN_CONTRIBUTOR_INTEREST}",
+            f"- Open a Japanese contributor interest issue: {JAPANESE_CONTRIBUTOR_INTEREST}",
             "",
             "## Discovery Channels",
             "",
