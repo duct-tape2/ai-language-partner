@@ -347,6 +347,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("contributor_interest_ko.yml", status_script)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", status_script)
         self.assertIn("contributor_interest_ja.yml", status_script)
+        self.assertIn("CODESPACES_FIRST_PR.html", status_script)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", status_script)
 
     def test_issue_claim_guidance_workflow_handles_claim_comments(self) -> None:
@@ -410,6 +411,7 @@ class ContributorSprintStatusTest(unittest.TestCase):
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("FIRST_ISSUE_MATCHER.html", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", markdown)
+        self.assertIn("CODESPACES_FIRST_PR.html", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", markdown)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", markdown)
@@ -487,6 +489,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("Call for contributors discussion", markdown)
         self.assertIn("FIRST_ISSUE_MATCHER.html", markdown)
+        self.assertIn("CODESPACES_FIRST_PR.html", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", markdown)
         self.assertIn("contributor_interest_ko.yml", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_JA.html", markdown)
@@ -662,6 +665,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Remaining contributors needed: `17`", comment)
         self.assertIn("FIRST_ISSUE_MATCHER.html", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", comment)
+        self.assertIn("CODESPACES_FIRST_PR.html", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.html", comment)
         self.assertIn("CALL_FOR_CONTRIBUTORS_KO.html", comment)
         self.assertIn("contributor_interest_ko.yml", comment)

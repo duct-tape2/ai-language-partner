@@ -30,6 +30,7 @@ KOREAN_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
 JAPANESE_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
+CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
 NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
@@ -104,6 +105,7 @@ def render_comment(repo: str, since: str, generated_on: str, contributor_count: 
             f"- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}",
             f"- Pick by time/skill: {FIRST_ISSUE_MATCHER}",
             f"- Fastest browser-only route: {FIVE_MINUTE_FIRST_PR}",
+            f"- Run checks in Codespaces: {CODESPACES_FIRST_PR}",
             f"- Language review first PR kit: {LANGUAGE_REVIEW_KIT}",
             f"- Full no-install board: {NO_INSTALL_BOARD}",
             f"- Ask for a suggested issue: {HELP_DESK}",

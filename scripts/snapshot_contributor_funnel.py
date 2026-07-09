@@ -27,6 +27,7 @@ HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
+CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
 KOREAN_FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
 JAPANESE_FIRST_PR_GUIDE = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
 NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
@@ -261,6 +262,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Call for contributors discussion: {CALL_DISCUSSION}",
             f"- First issue matcher: {FIRST_ISSUE_MATCHER}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
+            f"- Codespaces first PR guide: {CODESPACES_FIRST_PR}",
             f"- Korean five-minute first PR guide: {KOREAN_FIRST_PR_GUIDE}",
             f"- Japanese five-minute first PR guide: {JAPANESE_FIRST_PR_GUIDE}",
             f"- Language review first PR kit: {LANGUAGE_REVIEW_KIT}",
