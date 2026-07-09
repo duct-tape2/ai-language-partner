@@ -26,6 +26,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
+브라우저 데모:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
 이슈 색인:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
@@ -51,6 +54,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
 
+ブラウザデモ:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
 
@@ -75,6 +81,9 @@ https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
+
+Hosted web demo:
+https://duct-tape2.github.io/ai-language-partner/demo/
 
 Starter issue index:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md
