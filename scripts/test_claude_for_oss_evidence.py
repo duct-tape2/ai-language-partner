@@ -30,6 +30,7 @@ import post_pr_review_packet as pr_review_comment  # noqa: E402
 import post_contributor_sprint_status as sprint_status  # noqa: E402
 import update_claude_application_evidence as evidence_update  # noqa: E402
 import snapshot_contributor_funnel as contributor_funnel  # noqa: E402
+import audit_claude_for_oss_account as account_audit  # noqa: E402
 
 
 def issue_item(
@@ -431,6 +432,99 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("within 24 hours", markdown)
+
+
+class AccountEligibilityAuditTest(unittest.TestCase):
+    def test_merged_external_prs_excludes_maintainers_and_bots(self) -> None:
+        pulls = [
+            {
+                "merged_at": "2026-07-01T00:00:00Z",
+                "html_url": "https://example.test/pull/1",
+                "user": {"login": "duct-tape2", "type": "User"},
+            },
+            {
+                "merged_at": "2026-07-02T00:00:00Z",
+                "html_url": "https://example.test/pull/2",
+                "user": {"login": "dependabot[bot]", "type": "Bot"},
+            },
+            {
+                "merged_at": "2026-07-03T00:00:00Z",
+                "html_url": "https://example.test/pull/3",
+                "user": {"login": "hana-reviewer", "type": "User"},
+            },
+            {
+                "merged_at": "2024-07-03T00:00:00Z",
+                "html_url": "https://example.test/pull/4",
+                "user": {"login": "old-helper", "type": "User"},
+            },
+        ]
+
+        authors, merged_count, samples = account_audit.merged_external_prs_from_payloads(
+            pulls, "2025-07-09", {"duct-tape2", "sinmb79"}
+        )
+
+        self.assertEqual(authors, ("hana-reviewer",))
+        self.assertEqual(merged_count, 1)
+        self.assertEqual(samples, ("https://example.test/pull/3",))
+
+    def test_account_audit_renders_not_ready_counts(self) -> None:
+        repo = account_audit.RepoSummary(
+            full_name="duct-tape2/ai-language-partner",
+            url="https://github.com/duct-tape2/ai-language-partner",
+            fork=False,
+            archived=False,
+            pushed_at="2026-07-09T00:00:00Z",
+        )
+        audit = account_audit.AccountAudit(
+            owner="duct-tape2",
+            login="duct-tape2",
+            since="2025-07-09",
+            generated_on="2026-07-09",
+            maintained_repos=(repo,),
+            community_repos=(account_audit.ExternalContributorSummary(repo, (), 0, ()),),
+            active_contributor=account_audit.ActiveContributorSummary(
+                "duct-tape2",
+                2,
+                ("https://github.com/up-for-grabs/up-for-grabs.net/pull/5916",),
+            ),
+        )
+
+        markdown = account_audit.render_markdown(audit)
+
+        self.assertIn("Overall verified status from GitHub API: `NOT READY`", markdown)
+        self.assertIn("`duct-tape2/ai-language-partner`", markdown)
+        self.assertIn("2/100", markdown)
+        self.assertIn("0/20", markdown)
+
+    def test_account_audit_prefers_target_repo_when_counts_tie(self) -> None:
+        profile = account_audit.RepoSummary(
+            full_name="duct-tape2/duct-tape2",
+            url="https://github.com/duct-tape2/duct-tape2",
+            fork=False,
+            archived=False,
+            pushed_at="2026-07-09T00:00:00Z",
+        )
+        target = account_audit.RepoSummary(
+            full_name="duct-tape2/ai-language-partner",
+            url="https://github.com/duct-tape2/ai-language-partner",
+            fork=False,
+            archived=False,
+            pushed_at="2026-07-09T00:00:00Z",
+        )
+        audit = account_audit.AccountAudit(
+            owner="duct-tape2",
+            login="duct-tape2",
+            since="2025-07-09",
+            generated_on="2026-07-09",
+            maintained_repos=(profile, target),
+            community_repos=(
+                account_audit.ExternalContributorSummary(profile, (), 0, ()),
+                account_audit.ExternalContributorSummary(target, (), 0, ()),
+            ),
+            active_contributor=account_audit.ActiveContributorSummary("duct-tape2", 0, ()),
+        )
+
+        self.assertEqual(audit.best_community_repo.repo.full_name, "duct-tape2/ai-language-partner")
 
 
 class ApplicationEvidenceUpdateTest(unittest.TestCase):

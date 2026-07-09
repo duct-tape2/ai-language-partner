@@ -15,6 +15,7 @@ program.
 - Project: local-first Japanese speaking practice for Korean learners
 - Program page checked: `https://claude.com/contact-sales/claude-for-oss`
   on `2026-07-09`
+- Account eligibility audit: `docs/CLAUDE_FOR_OSS_ACCOUNT_AUDIT.md`
 - Core principle: no runtime LLM or external generation API on the Daily Talk
   request path
 
@@ -117,6 +118,7 @@ git shortlog -sn --since=2025-07-09 --all
 find . -type f | grep -Ei 'local_engines|artifacts|handoff|reference_archive|\\.sqlite|\\.zip|\\.wav|\\.npy' && exit 1 || true
 git grep -nE 'sk-[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}' -- .
 python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since=2025-07-09
+python scripts/audit_claude_for_oss_account.py --owner duct-tape2 --since=2025-07-09 --out docs/CLAUDE_FOR_OSS_ACCOUNT_AUDIT.md
 python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since=2025-07-09
 python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 ```
