@@ -14,7 +14,7 @@ from unique external contributors count for the community-builder threshold.
 | GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` | - |
 | Up For Grabs | Merged and live | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` | - |
 | Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` | `https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431` |
-| Awesome for Non-Programmers | PR open | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` | `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475` |
+| Awesome for Non-Programmers | Merged and live | `https://github.com/szabgab/awesome-for-non-programmers/pull/107` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/CONTRIBUTOR_LANDING.md` | `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475` |
 | Awesome Language Learning | PR open, mergeable | `https://github.com/Vuizur/awesome-language-learning/pull/31` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md` | `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535` |
 | Awesome Japanese Learning Resources | PR open | `https://github.com/ailanguagetutor/awesome-japanese-learning-resources/pull/5` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
 | Awesome Japanese Study Materials | PR open | `https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8` | `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md` | - |
@@ -27,6 +27,12 @@ Public sprint update:
 
 Automated status comment:
 `https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370`
+
+Public contributor call:
+`https://github.com/duct-tape2/ai-language-partner/discussions/55`
+
+Canonical auto-updated contributor call comment:
+`https://github.com/duct-tape2/ai-language-partner/discussions/55#discussioncomment-17582510`
 
 ## Maintainer Follow-Up
 

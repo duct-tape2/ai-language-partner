@@ -54,7 +54,7 @@ reviewable first contributions genuinely easy.
   `https://github.com/MunGell/awesome-for-beginners/pull/2072`
   hosted-demo follow-up:
   `https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431`
-- Awesome for Non-Programmers listing PR:
+- Awesome for Non-Programmers listing PR: merged and live
   `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
   hosted-demo follow-up:
   `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475`

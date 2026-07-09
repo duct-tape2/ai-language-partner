@@ -98,7 +98,8 @@ threshold is not met yet. Do not submit Phase B with this status.
   `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR: `https://github.com/MunGell/awesome-for-beginners/pull/2072`
   - Hosted-demo follow-up: `https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431`
-- Awesome for Non-Programmers listing PR: `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
+- Awesome for Non-Programmers listing PR: merged and live
+  `https://github.com/szabgab/awesome-for-non-programmers/pull/107`
   - Hosted-demo follow-up: `https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475`
 - Awesome Language Learning listing PR: `https://github.com/Vuizur/awesome-language-learning/pull/31`
   - Hosted-demo follow-up: `https://github.com/Vuizur/awesome-language-learning/pull/31#issuecomment-4921750535`
