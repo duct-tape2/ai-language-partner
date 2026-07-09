@@ -24,16 +24,26 @@ DESCRIPTION = (
     "pre-authored dialogue banks and local STT/TTS, with no runtime LLM calls."
 )
 TOPICS = [
-    "language-learning",
-    "japanese",
-    "korean",
-    "local-first",
-    "fastapi",
-    "react-native",
     "expo",
-    "tts",
+    "fastapi",
+    "language-learning",
+    "local-first",
+    "react-native",
     "stt",
-    "open-source-education",
+    "tts",
+    "accessibility",
+    "education",
+    "good-first-issue",
+    "help-wanted",
+    "japanese-learning",
+    "openapi",
+    "voicevox",
+    "korean-learners",
+    "beginner-friendly",
+    "first-timers-only",
+    "japanese-language",
+    "korean-language",
+    "up-for-grabs",
 ]
 
 

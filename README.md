@@ -14,6 +14,7 @@
 [Contributor discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
+[First issue matcher](docs/community/FIRST_ISSUE_MATCHER.md) ·
 [Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
 [Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
 [No-install first PRs](docs/community/NO_INSTALL_FIRST_PRS.md) ·
@@ -41,6 +42,7 @@ and metric-only changes are excluded.
 | Tests/tooling | [tests issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests) | small fixture tests or verification scripts |
 
 Start with the [call for contributors](docs/community/CALL_FOR_CONTRIBUTORS.md),
+the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),
 the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
 the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
 the [no-install first PR board](docs/community/NO_INSTALL_FIRST_PRS.md),

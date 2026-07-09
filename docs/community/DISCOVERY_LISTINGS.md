@@ -8,7 +8,7 @@ from unique external contributors count for the community-builder threshold.
 
 | Channel | Status | Evidence | Contributor entry point | Follow-up |
 |---|---|---|---|---|
-| GitHub topics | Active | `up-for-grabs`, `first-timers-only`, `beginner-friendly` topics are on the repo | `https://github.com/duct-tape2/ai-language-partner` | - |
+| GitHub topics | Active | `help-wanted`, `good-first-issue`, `up-for-grabs`, `first-timers-only`, and `beginner-friendly` topics are on the repo | `https://github.com/duct-tape2/ai-language-partner` | - |
 | Hosted web demo | Active mock-mode demo | `https://duct-tape2.github.io/ai-language-partner/demo/` | `https://duct-tape2.github.io/ai-language-partner/` | - |
 | GitHub release | Active prerelease | `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09` | `https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip` | - |
 | GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` | - |
@@ -44,4 +44,5 @@ Automated status comment:
 - `first-timers-only`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Afirst-timers-only`
 - `good first issue`: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22`
 - `good-first-issue` topic: `https://github.com/topics/good-first-issue`
+- `help-wanted` topic: `https://github.com/topics/help-wanted`
 - `language-learning` topic: `https://github.com/topics/language-learning`

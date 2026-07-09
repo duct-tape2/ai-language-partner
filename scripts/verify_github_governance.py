@@ -11,6 +11,15 @@ import urllib.error
 import urllib.request
 
 
+DISCOVERY_TOPICS = {
+    "beginner-friendly",
+    "first-timers-only",
+    "good-first-issue",
+    "help-wanted",
+    "up-for-grabs",
+}
+
+
 def github_json(path_or_url: str, token: str | None) -> object:
     url = path_or_url if path_or_url.startswith("https://") else f"https://api.github.com{path_or_url}"
     headers = {
@@ -69,6 +78,17 @@ def main(argv: list[str]) -> int:
         "homepage is contributor page",
         str(repo_data.get("homepage")) == f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[1]}/",
         str(repo_data.get("homepage")),
+    )
+
+    topics = github_json(f"/repos/{repo}/topics", token)
+    if not isinstance(topics, dict):
+        raise TypeError("topics response was not an object")
+    topic_names = set(str(name) for name in topics.get("names", []) if isinstance(name, str))
+    missing_topics = sorted(DISCOVERY_TOPICS - topic_names)
+    passed &= check(
+        "contributor discovery topics",
+        not missing_topics,
+        "missing " + ", ".join(missing_topics) if missing_topics else ", ".join(sorted(DISCOVERY_TOPICS)),
     )
 
     pages = github_json(f"/repos/{repo}/pages", token)

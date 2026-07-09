@@ -23,6 +23,9 @@ TEMPLATES = {
 5분 첫 PR 가이드:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+첫 이슈 매처:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
@@ -54,6 +57,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 5分で始める最初の PR:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
 
@@ -84,6 +90,9 @@ Suggested issue/list:
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/

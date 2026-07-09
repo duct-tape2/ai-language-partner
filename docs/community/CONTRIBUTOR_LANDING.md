@@ -21,6 +21,9 @@ For the lowest-friction route, use the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md). It links directly to
 browser-editable issues and includes a PR body template.
 
+If you are not sure which issue fits your skills or time budget, use the
+[first issue matcher](FIRST_ISSUE_MATCHER.md).
+
 For step-by-step issue-specific guidance, see the
 [first PR recipes](FIRST_PR_RECIPES.md).
 

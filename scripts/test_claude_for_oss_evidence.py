@@ -247,6 +247,13 @@ class GovernanceCheckTest(unittest.TestCase):
         self.assertIn("20 contributor sprint kickoff pinned", source)
         self.assertIn("issue.get(\"number\") == 52", source)
 
+    def test_governance_script_checks_discovery_topics(self) -> None:
+        source = Path("scripts/verify_github_governance.py").read_text(encoding="utf-8")
+
+        self.assertIn("DISCOVERY_TOPICS", source)
+        self.assertIn("help-wanted", source)
+        self.assertIn("contributor discovery topics", source)
+
 
 class FirstPrRecipeTest(unittest.TestCase):
     def test_recipe_infers_backend_files_and_checks(self) -> None:
@@ -296,6 +303,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
         self.assertIn("ai-language-partner:contributor-interest-triage", workflow)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("Korean docs or learner notes", workflow)
         self.assertIn("Japanese naturalness review", workflow)
@@ -558,6 +566,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("layout: page", page)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html", page)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", page)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", page)
         self.assertIn("No-install first PR board", page)
         self.assertIn("20+ unique external contributors", page)
         self.assertIn("Maintainer PRs", page)
@@ -568,6 +577,7 @@ class ContributorCallPageTest(unittest.TestCase):
 
         self.assertIn("CALL_FOR_CONTRIBUTORS.html", messages)
         self.assertIn("Contributor call", messages)
+        self.assertIn("FIRST_ISSUE_MATCHER.md", messages)
 
     def test_outreach_queue_tracks_public_discussion_post(self) -> None:
         payload = json.loads(Path("docs/community/OUTREACH_QUEUE.json").read_text(encoding="utf-8"))
@@ -580,6 +590,15 @@ class ContributorCallPageTest(unittest.TestCase):
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):
+    def test_first_issue_matcher_has_direct_routes_and_counting_guardrails(self) -> None:
+        matcher = Path("docs/community/FIRST_ISSUE_MATCHER.md").read_text(encoding="utf-8")
+
+        self.assertIn("Thirty-Second Match", matcher)
+        self.assertIn("https://github.com/duct-tape2/ai-language-partner/edit/main/", matcher)
+        self.assertIn("Closes #ISSUE_NUMBER", matcher)
+        self.assertIn("20+ unique external contributors", matcher)
+        self.assertIn("metric-only changes do not count", matcher)
+
     def test_no_install_board_links_browser_edit_tasks_and_guardrails(self) -> None:
         board = Path("docs/community/NO_INSTALL_FIRST_PRS.md").read_text(encoding="utf-8")
 

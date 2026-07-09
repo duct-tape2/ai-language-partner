@@ -25,6 +25,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/55
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -65,6 +68,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 5분 첫 PR 가이드:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+첫 이슈 매처:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -107,6 +113,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/34
 5분 첫 PR 가이드:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+첫 이슈 매처:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
@@ -147,6 +156,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 5分で始める最初の PR:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
@@ -189,6 +201,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/35
 5分で始める最初の PR:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/ja/
 
@@ -229,6 +244,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -271,6 +289,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/36
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -311,6 +332,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -353,6 +377,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/39
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -393,6 +420,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -435,6 +465,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/40
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -475,6 +508,9 @@ https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -517,6 +553,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/22
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -557,6 +596,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/45
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -599,6 +641,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/31
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -639,6 +684,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/41
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -681,6 +729,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/44
 5분 첫 PR 가이드:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+첫 이슈 매처:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
 
@@ -721,6 +772,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/46
 
 5분 첫 PR 가이드:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+첫 이슈 매처:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 기여자 페이지:
 https://duct-tape2.github.io/ai-language-partner/ko/
@@ -763,6 +817,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/13
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -803,6 +860,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/6
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
@@ -845,6 +905,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/43
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
 
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
 
@@ -885,6 +948,9 @@ https://github.com/duct-tape2/ai-language-partner/issues/54
 
 Five-minute first PR guide:
 https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md
+
+First issue matcher:
+https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
 
 Contributor page:
 https://duct-tape2.github.io/ai-language-partner/
