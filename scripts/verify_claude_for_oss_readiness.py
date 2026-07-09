@@ -72,6 +72,7 @@ REQUIRED_FILES = [
     "docs/community/CONTRIBUTOR_SPRINT.md",
     "docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md",
     "docs/community/FIRST_PR_RECIPES.md",
+    "docs/community/SHARE_KIT.md",
     "docs/community/OUTREACH_QUEUE.json",
     "docs/community/OUTREACH_MESSAGES.md",
     "docs/community/PUBLISHING_AND_APPLICATION_CHECKLIST.md",

@@ -61,4 +61,6 @@ The Claude for OSS approval target is the community-builder criterion:
 > wording review, docs, accessibility, FastAPI examples, Expo polish, and tests.
 
 See `docs/community/OUTREACH_PLAYBOOK.md` for Korean, Japanese, and English
-variants plus the weekly recruitment cadence.
+variants plus the weekly recruitment cadence. Use
+`docs/community/SHARE_KIT.md` for short community posts and direct-message
+variants.

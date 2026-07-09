@@ -749,6 +749,27 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("FIRST_ISSUE_MATCHER.html", messages)
         self.assertIn("CODESPACES_FIRST_PR.html", messages)
 
+    def test_contributor_share_kit_is_publicly_linked_and_counting_safe(self) -> None:
+        share_kit = Path("docs/community/SHARE_KIT.md").read_text(encoding="utf-8")
+        readme = Path("README.md").read_text(encoding="utf-8")
+        index = Path("docs/index.md").read_text(encoding="utf-8")
+        landing = Path("docs/community/CONTRIBUTOR_LANDING.md").read_text(encoding="utf-8")
+        playbook = Path("docs/community/OUTREACH_PLAYBOOK.md").read_text(encoding="utf-8")
+
+        self.assertIn("layout: page", share_kit)
+        self.assertIn("30-Second Posts", share_kit)
+        self.assertIn("Do not mass-post identical messages", share_kit)
+        self.assertIn("Only useful merged PRs", share_kit)
+        self.assertIn("external contributors count", share_kit)
+        self.assertIn("FIRST_ISSUE_MATCHER.html", share_kit)
+        self.assertIn("NO_INSTALL_FIRST_PRS.html", share_kit)
+        self.assertIn("OUTREACH_QUEUE.json", share_kit)
+        self.assertIn("verify_outreach_queue.py", share_kit)
+        self.assertIn("SHARE_KIT.md", readme)
+        self.assertIn("SHARE_KIT.html", index)
+        self.assertIn("SHARE_KIT.html", landing)
+        self.assertIn("SHARE_KIT.md", playbook)
+
     def test_outreach_queue_tracks_public_discussion_post(self) -> None:
         payload = json.loads(Path("docs/community/OUTREACH_QUEUE.json").read_text(encoding="utf-8"))
         items = payload["items"]
@@ -886,6 +907,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/pr-triage-labels.yml", readiness.REQUIRED_FILES)
         self.assertIn(".github/workflows/pr-merge-followup.yml", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/SHARE_KIT.md", readiness.REQUIRED_FILES)
 
     def test_language_review_first_pr_kit_is_reviewable_and_counting_safe(self) -> None:
         kit = Path("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md").read_text(encoding="utf-8")

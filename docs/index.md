@@ -32,6 +32,7 @@ Start here:
 - [Call for contributors](community/CALL_FOR_CONTRIBUTORS.html)
 - [한국어 기여자 모집](community/CALL_FOR_CONTRIBUTORS_KO.html)
 - [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.html)
+- [Contributor share kit](community/SHARE_KIT.html)
 - [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
 - [First issue matcher](community/FIRST_ISSUE_MATCHER.html)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.html)

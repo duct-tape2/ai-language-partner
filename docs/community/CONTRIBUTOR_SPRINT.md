@@ -111,6 +111,7 @@ reviewable first contributions genuinely easy.
   `.github/workflows/claude-oss-evidence-refresh.yml`
 - Outreach queue: `docs/community/OUTREACH_QUEUE.json`
 - Outreach messages: `docs/community/OUTREACH_MESSAGES.md`
+- Contributor share kit: `docs/community/SHARE_KIT.md`
 - Starter issue index workflow: `.github/workflows/starter-issue-index.yml`
   opens a refresh PR instead of pushing directly to protected `main`.
 - Maintainer review runbook: `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`

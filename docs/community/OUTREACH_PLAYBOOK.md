@@ -135,3 +135,5 @@ python scripts/render_outreach_messages.py
 ```
 
 Rendered copy/paste messages live in `docs/community/OUTREACH_MESSAGES.md`.
+For shorter community posts, direct messages, and after-posting steps, use
+`docs/community/SHARE_KIT.md`.

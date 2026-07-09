@@ -12,7 +12,8 @@ the [hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/),
 the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
 [한국어 contributor call](CALL_FOR_CONTRIBUTORS_KO.html), the
 [日本語 guide](https://duct-tape2.github.io/ai-language-partner/ja/), the
-[日本語 contributor call](CALL_FOR_CONTRIBUTORS_JA.html), or the
+[日本語 contributor call](CALL_FOR_CONTRIBUTORS_JA.html), the
+[contributor share kit](SHARE_KIT.html), or the
 [starter issue index](STARTER_ISSUE_INDEX.html) if you want a lane-by-lane list
 of currently open tasks.
 
