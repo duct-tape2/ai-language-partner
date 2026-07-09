@@ -81,6 +81,12 @@ LISTING_PRS = [
         number=5,
         contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
     ),
+    ListingPr(
+        name="Awesome Japanese Study Materials",
+        repo="naghim/Awesome-Japanese-Study-Materials",
+        number=8,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md",
+    ),
 ]
 
 
