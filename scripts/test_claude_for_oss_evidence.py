@@ -857,6 +857,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("locked", rows[0])
         self.assertIn("current 2/10", rows[0])
         self.assertIn("FIRST_ISSUE_MATCHER.html", rows[0])
+        self.assertIn("CodeTriage", rows[1])
+        self.assertIn("requires maintainer GitHub OAuth login", rows[1])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
@@ -895,6 +897,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         ), patch.object(discovery_snapshot, "fetch_listing_pr", return_value=listing_status), patch.object(
             discovery_snapshot, "fetch_listing_issue", return_value=issue_status
         ), patch.object(
+            discovery_snapshot, "fetch_repo_topics", return_value=["good-first-issue", "language-learning"]
+        ), patch.object(
             discovery_snapshot, "directory_rows", return_value=["| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://example.test/gfi) | [issues](https://example.test/first) | - | README criteria |"]
         ):
             markdown = discovery_snapshot.build_markdown("duct-tape2/ai-language-partner", token=None)
@@ -905,6 +909,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("do not", markdown)
         self.assertIn("count as Claude for OSS contributor evidence", markdown)
         self.assertIn("Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/", markdown)
+        self.assertIn("GitHub topics: `good-first-issue`, `language-learning`", markdown)
         self.assertIn("Web demo prerelease: `active`", markdown)
         self.assertIn("https://example.test/releases/demo.zip", markdown)
         self.assertIn("[link](https://example.test/pull/1)", markdown)

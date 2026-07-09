@@ -33,6 +33,8 @@ FIVE_MINUTE_FIRST_PR_URL = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 INSTALLABLE_DEMO_PLAN_URL = f"{COMMUNITY_PAGES}/INSTALLABLE_DEMO_RELEASE_PLAN.html"
 GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-issue"
 GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
+CODETRIAGE_URL = "https://www.codetriage.com/"
+CODETRIAGE_SUBMIT_URL = "https://www.codetriage.com/repos/new"
 
 
 @dataclass(frozen=True)
@@ -246,7 +248,10 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
             next_step=next_step,
             project=GOOD_FIRST_ISSUE_PROJECT_URL,
             form=GOOD_FIRST_ISSUE_FORM_URL,
-        )
+        ),
+        "| CodeTriage | Directory | pending | n/a | requires maintainer GitHub OAuth login | "
+        f"[link]({CODETRIAGE_URL}) | [entry](https://github.com/{repo}/issues) | "
+        f"[submit]({CODETRIAGE_SUBMIT_URL}) | login required |",
     ]
 
 
@@ -323,6 +328,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  before reopening.",
         "- Track that maturity work in",
         "  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.",
+        "- For CodeTriage, complete the GitHub OAuth login and repository form only",
+        "  after explicit maintainer approval.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
         "## Useful Search Links",
