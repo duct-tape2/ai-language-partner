@@ -29,6 +29,7 @@ Official program page checked on `2026-07-09`:
 - No-install first PR board: 27 browser-editable issue slots with generated
   issue comments, tracked in `docs/community/NO_INSTALL_FIRST_PRS.md` and
   `docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
+- Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
 - Discovery labels: 34 open `up-for-grabs` issues, 24 open
   `first-timers-only` issues, and 26 open `good first issue` items
 - Up For Grabs listing: merged and live
@@ -79,6 +80,7 @@ The public repo includes:
 - security, code of conduct, contribution docs, PR template, issue templates
 - 51 scoped issues for first-time and external contributors
 - 27 browser-editable no-install first PR paths with issue-specific comments
+- downloadable Expo web demo prerelease with SHA-256 and mock-mode notes
 - contributor sprint kickoff, PR welcome, issue welcome, and weekly Claude OSS
   monitor workflows
 - fixture-tested contributor evidence counting rules
@@ -107,5 +109,6 @@ python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner 
 - Recent green hygiene run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827790`
 - Recent green Pages deployment: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827257`
 - Recent green no-install guide run: `https://github.com/duct-tape2/ai-language-partner/actions/runs/28940827750`
+- Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
 - No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - Contributor evidence doc: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/CLAUDE_FOR_OSS_APPLICATION.md`

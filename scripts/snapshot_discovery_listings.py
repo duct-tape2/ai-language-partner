@@ -21,6 +21,8 @@ from pathlib import Path
 MARKER = "<!-- discovery-listings-status -->"
 DEFAULT_REPO = "duct-tape2/ai-language-partner"
 DEFAULT_ISSUE = 52
+DEMO_RELEASE_TAG = "demo-web-2026-07-09"
+DEMO_RELEASE_ASSET = "ai-language-partner-web-demo-2026-07-09.zip"
 
 
 @dataclass(frozen=True)
@@ -159,9 +161,26 @@ def fetch_listing_issue(issue: ListingIssue, token: str | None) -> dict[str, obj
     }
 
 
+def fetch_demo_release(repo: str, token: str | None) -> dict[str, str]:
+    try:
+        data = github_json(f"https://api.github.com/repos/{repo}/releases/tags/{DEMO_RELEASE_TAG}", token)
+    except Exception:
+        return {"url": "", "asset": "", "status": "missing"}
+    if not isinstance(data, dict):
+        return {"url": "", "asset": "", "status": "missing"}
+    asset_url = ""
+    for asset in data.get("assets", []):
+        if isinstance(asset, dict) and asset.get("name") == DEMO_RELEASE_ASSET:
+            asset_url = str(asset.get("browser_download_url") or "")
+            break
+    status = "active" if asset_url else "release found, asset missing"
+    return {"url": str(data.get("html_url") or ""), "asset": asset_url, "status": status}
+
+
 def build_markdown(repo: str, token: str | None) -> str:
     up_for_grabs = count_open_issues(repo, "up-for-grabs", token)
     first_timers = count_open_issues(repo, "first-timers-only", token)
+    demo_release = fetch_demo_release(repo, token)
     listing_rows = []
     for pr in LISTING_PRS:
         status = fetch_listing_pr(pr, token)
@@ -193,6 +212,9 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"- Repository: `https://github.com/{repo}`",
         f"- Open `up-for-grabs` issues: `{up_for_grabs}`",
         f"- Open `first-timers-only` issues: `{first_timers}`",
+        f"- Web demo prerelease: `{demo_release['status']}`"
+        + (f" - {demo_release['url']}" if demo_release["url"] else ""),
+        f"- Web demo asset: {demo_release['asset'] or 'missing'}",
         "",
         "| Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Checks |",
         "|---|---|---|---|---|---|---|---|",

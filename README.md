@@ -15,6 +15,7 @@
 [Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
 [No-install first PRs](docs/community/NO_INSTALL_FIRST_PRS.md) ·
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) ·
+[Web demo release](https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09) ·
 [Demo/release plan](docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md)
 
 ---
@@ -58,6 +59,11 @@ operator- or release-generated assets, not source code.
 The tracked sample packs contain `story.json`, `manifest.json`, and
 `variants.csv` so contributors can review dialogue structure and run backend
 tests without large binary assets.
+
+The first generated web demo artifact is published as a GitHub prerelease:
+[`demo-web-2026-07-09`](https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09).
+It is a downloadable Expo web build snapshot for contributors and directory
+reviewers, not an app-store release.
 
 ---
 

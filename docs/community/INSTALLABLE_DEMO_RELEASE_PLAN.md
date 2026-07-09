@@ -55,6 +55,20 @@ A public demo is ready when all of these are true:
 - The README links to either a hosted demo URL or a release artifact with clear
   "what works in this build" notes.
 
+## Published Demo Artifact
+
+Current prerelease:
+
+- Release: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
+- Download: `https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip`
+- SHA-256:
+  `10adfbeed89e3d3af5904533e8bc3b8f19c3710dc0c74ee102d76522c32e6c8d`
+- Source commit: `5d1cf3be1e8fdba86e89a7b2ca949c9edd7ed9e1`
+
+This satisfies the downloadable release-artifact step. A hosted web demo or
+app-store/TestFlight-style build would be stronger for mainstream directory
+listings.
+
 ## Local Verification Log
 
 Verified on `2026-07-09`:

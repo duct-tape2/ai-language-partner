@@ -445,9 +445,17 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             "contributor_link": "https://example.test/first-pr",
         }
 
+        release_status = {
+            "status": "active",
+            "url": "https://example.test/releases/demo",
+            "asset": "https://example.test/releases/demo.zip",
+        }
+
         with patch.object(discovery_snapshot, "count_open_issues", side_effect=[18, 16]), patch.object(
-            discovery_snapshot, "fetch_listing_pr", return_value=listing_status
-        ), patch.object(discovery_snapshot, "fetch_listing_issue", return_value=issue_status):
+            discovery_snapshot, "fetch_demo_release", return_value=release_status
+        ), patch.object(discovery_snapshot, "fetch_listing_pr", return_value=listing_status), patch.object(
+            discovery_snapshot, "fetch_listing_issue", return_value=issue_status
+        ):
             markdown = discovery_snapshot.build_markdown("duct-tape2/ai-language-partner", token=None)
 
         self.assertIn(discovery_snapshot.MARKER, markdown)
@@ -455,6 +463,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Open `first-timers-only` issues: `16`", markdown)
         self.assertIn("do not", markdown)
         self.assertIn("count as Claude for OSS contributor evidence", markdown)
+        self.assertIn("Web demo prerelease: `active`", markdown)
+        self.assertIn("https://example.test/releases/demo.zip", markdown)
         self.assertIn("[link](https://example.test/pull/1)", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 

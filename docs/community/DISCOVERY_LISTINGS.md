@@ -9,6 +9,7 @@ from unique external contributors count for the community-builder threshold.
 | Channel | Status | Evidence | Contributor entry point |
 |---|---|---|---|
 | GitHub topics | Active | `up-for-grabs`, `first-timers-only`, `beginner-friendly` topics are on the repo | `https://github.com/duct-tape2/ai-language-partner` |
+| GitHub release | Active prerelease | `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09` | `https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip` |
 | GitHub issue labels | Active | 34 open `up-for-grabs` issues, 24 open `first-timers-only` issues, and 26 open `good first issue` items on 2026-07-09 | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Up For Grabs | Merged and live | `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916` | `https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs` |
 | Awesome for Beginners | PR open | `https://github.com/MunGell/awesome-for-beginners/pull/2072` | `https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only` |
