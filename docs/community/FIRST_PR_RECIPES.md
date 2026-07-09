@@ -29,7 +29,7 @@ Acceptance: backend setup works without STT/TTS engines; Korean instructions inc
 **Suggested checks**
 
 - `python3 scripts/check_public_tree.py`
-- `cd apps/api && python -m pytest`
+- `cd apps/api && .venv/bin/python -m pytest`
 
 **PR body checklist**
 
@@ -43,8 +43,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -83,8 +87,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -122,8 +130,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -161,8 +173,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -200,8 +216,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -241,8 +261,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -281,8 +305,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -320,8 +348,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -359,8 +391,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -399,8 +435,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -440,8 +480,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -466,7 +510,7 @@ Acceptance: includes mock, fallback, and local engine examples.
 **Suggested checks**
 
 - `python3 scripts/check_public_tree.py`
-- `cd apps/api && python -m pytest`
+- `cd apps/api && .venv/bin/python -m pytest`
 
 **PR body checklist**
 
@@ -480,8 +524,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -505,7 +553,7 @@ Acceptance: `..` and slash injection return 400/404 safely.
 **Suggested checks**
 
 - `python3 scripts/check_public_tree.py`
-- `cd apps/api && python -m pytest`
+- `cd apps/api && .venv/bin/python -m pytest`
 - `python3 -m unittest discover -s scripts -p 'test_*.py'`
 
 **PR body checklist**
@@ -520,8 +568,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -559,8 +611,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -598,8 +654,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -638,8 +698,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -664,7 +728,7 @@ Acceptance: covers common Python venv, pip, and macOS command-line tools failure
 **Suggested checks**
 
 - `python3 scripts/check_public_tree.py`
-- `cd apps/api && python -m pytest`
+- `cd apps/api && .venv/bin/python -m pytest`
 
 **PR body checklist**
 
@@ -678,8 +742,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -718,8 +786,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -758,8 +830,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -784,7 +860,7 @@ Acceptance: `contracts/openapi_v0.yaml` includes a realistic response example fo
 **Suggested checks**
 
 - `python3 scripts/check_public_tree.py`
-- `cd apps/api && python -m pytest`
+- `cd apps/api && .venv/bin/python -m pytest`
 
 **PR body checklist**
 
@@ -798,8 +874,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -823,7 +903,7 @@ Acceptance: CI or a repo script fails if `docs/community/ISSUE_SEEDS.md` parses 
 **Suggested checks**
 
 - `python3 scripts/check_public_tree.py`
-- `cd apps/api && python -m pytest`
+- `cd apps/api && .venv/bin/python -m pytest`
 - `python3 -m unittest discover -s scripts -p 'test_*.py'`
 
 **PR body checklist**
@@ -838,8 +918,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -878,8 +962,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -916,8 +1004,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -957,8 +1049,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -997,8 +1093,12 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
 
 
@@ -1036,6 +1136,10 @@ Useful links:
 
 - Contributor page: https://duct-tape2.github.io/ai-language-partner/
 - First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
 - Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
 - First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 - Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html

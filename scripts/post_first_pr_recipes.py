@@ -18,6 +18,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "docs" / "community" / "FIRST_PR_RECIPES.md"
 MARKER = "<!-- ai-language-partner:first-pr-recipe -->"
+COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
+FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
+FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
+CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
+LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
+NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
+FIRST_PR_WALKTHROUGH = f"{COMMUNITY_PAGES}/FIRST_PR_WALKTHROUGH.html"
+COUNTING_POLICY = f"{COMMUNITY_PAGES}/PR_REVIEW_AND_COUNTING_POLICY.html"
+FIRST_PR_HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 
 
 @dataclass(frozen=True)
@@ -173,7 +182,7 @@ def suggested_checks(issue: Issue, files: list[str]) -> list[str]:
     checks = ["python3 scripts/check_public_tree.py"]
     labels = {label.lower() for label in issue.labels}
     if "backend" in labels or any(path.startswith("apps/api/") or path.startswith("contracts/") for path in files):
-        checks.append("cd apps/api && python -m pytest")
+        checks.append("cd apps/api && .venv/bin/python -m pytest")
     if "mobile" in labels or any(path.startswith("apps/mobile/") for path in files):
         checks.append("cd apps/mobile && npm run verify")
     if "tests" in labels or any(path.startswith("scripts/") for path in files):
@@ -228,10 +237,14 @@ change focused and avoid generated/private assets.
 Useful links:
 
 - Contributor page: https://{owner}.github.io/{name}/
-- First issue matcher: https://{owner}.github.io/{name}/community/FIRST_ISSUE_MATCHER.html
-- Language review first PR kit: https://{owner}.github.io/{name}/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://{owner}.github.io/{name}/community/FIRST_PR_WALKTHROUGH.html
-- Counting policy: https://{owner}.github.io/{name}/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- First issue matcher: {FIRST_ISSUE_MATCHER}
+- Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
+- Codespaces first PR guide: {CODESPACES_FIRST_PR}
+- No-install first PR board: {NO_INSTALL_BOARD}
+- Language review first PR kit: {LANGUAGE_REVIEW_KIT}
+- First PR walkthrough: {FIRST_PR_WALKTHROUGH}
+- First PR help desk: {FIRST_PR_HELP_DESK}
+- Counting policy: {COUNTING_POLICY}
 """
 
 

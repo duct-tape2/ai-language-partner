@@ -303,9 +303,13 @@ class FirstPrRecipeTest(unittest.TestCase):
 
         self.assertIn(first_pr_recipes.MARKER, recipe)
         self.assertIn("FIRST_ISSUE_MATCHER.html", recipe)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.html", recipe)
+        self.assertIn("CODESPACES_FIRST_PR.html", recipe)
+        self.assertIn("NO_INSTALL_FIRST_PRS.html", recipe)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", recipe)
+        self.assertIn("discussions/53", recipe)
         self.assertIn("contracts/openapi_v0.yaml", recipe)
-        self.assertIn("cd apps/api && python -m pytest", recipe)
+        self.assertIn("cd apps/api && .venv/bin/python -m pytest", recipe)
         self.assertIn("Closes #40", recipe)
 
     def test_recipe_infers_language_review_manual_check(self) -> None:
@@ -322,6 +326,8 @@ class FirstPrRecipeTest(unittest.TestCase):
         self.assertIn("packs/yui/v1/story.json", recipe)
         self.assertIn("manual language/content review", recipe)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", recipe)
+        self.assertIn("FIVE_MINUTE_FIRST_PR.html", recipe)
+        self.assertIn("CODESPACES_FIRST_PR.html", recipe)
         self.assertIn("generated/private assets", recipe)
 
 
@@ -355,6 +361,18 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", workflow)
         self.assertIn("FIRST_PR_RECIPES.html", workflow)
         self.assertIn("github.rest.issues.createComment", workflow)
+
+    def test_first_pr_recipes_workflow_upserts_issue_comments(self) -> None:
+        workflow = Path(".github/workflows/first-pr-recipes.yml").read_text(encoding="utf-8")
+        starter_workflow = Path(".github/workflows/starter-issue-index.yml").read_text(encoding="utf-8")
+
+        self.assertIn("issues:", workflow)
+        self.assertIn("Checkout trusted main", workflow)
+        self.assertIn("post_first_pr_recipes.py", workflow)
+        self.assertIn("--apply", workflow)
+        self.assertIn("issues: write", workflow)
+        self.assertNotIn("pull_request", workflow)
+        self.assertIn("scripts/post_first_pr_recipes.py", starter_workflow)
 
     def test_contributor_sprint_status_workflow_posts_single_status_comment(self) -> None:
         workflow = Path(".github/workflows/contributor-sprint-status.yml").read_text(encoding="utf-8")

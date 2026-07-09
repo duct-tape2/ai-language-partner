@@ -1,0 +1,49 @@
+name: First PR Recipes
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited, labeled, unlabeled, reopened]
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/post_first_pr_recipes.py"
+      - "docs/community/FIRST_PR_RECIPES.md"
+      - ".github/workflows/first-pr-recipes.yml"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: first-pr-recipes-${{ github.repository }}
+  cancel-in-progress: true
+
+jobs:
+  first-pr-recipes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Render first PR recipes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/post_first_pr_recipes.py duct-tape2/ai-language-partner --date "$(date -u +%F)"
+
+      - name: Post first PR recipe comments
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/post_first_pr_recipes.py duct-tape2/ai-language-partner --date "$(date -u +%F)" --apply
+
+      - name: Write job summary
+        run: cat docs/community/FIRST_PR_RECIPES.md >> "$GITHUB_STEP_SUMMARY"
