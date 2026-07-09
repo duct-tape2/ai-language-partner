@@ -7,6 +7,18 @@ maintainer can review it quickly.
 You do not need generated audio, local speech engines, private data, API keys,
 or app-store builds for any issue in the browser-only section.
 
+## Pick In One Minute
+
+1. Choose the row that matches your language, docs, mobile, API, or test skill.
+2. Open the issue and comment `/claim` if you want the maintainer to reserve it
+   for you.
+3. Open the edit link, make one focused change, and put
+   `Closes #ISSUE_NUMBER` in the PR body.
+
+If you are here from an external directory, the safest first PR routes are
+docs, wording review, beginner dialogue examples, API examples, and focused
+tests. They are useful even when you do not run the full mobile/backend stack.
+
 ## Thirty-Second Match
 
 | If you can help with... | Time | Start with | Edit path | Check |
@@ -21,6 +33,39 @@ or app-store builds for any issue in the browser-only section.
 | Mobile accessibility | 30-60 min | [#13 bottom tab touch targets](https://github.com/duct-tape2/ai-language-partner/issues/13) | [mobile source](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/mobile/src) | `npm run verify` if possible |
 | Python tests | 30-60 min | [#22 path traversal rejection test](https://github.com/duct-tape2/ai-language-partner/issues/22) | [API tests](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/api/tests) | `python -m pytest` |
 | Repo/community process | 10-30 min | [#45 maintainer checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | [edit review runbook](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md) | Docs review only |
+
+## Low-Collision 20-Issue Menu
+
+The project is trying to reach 20 unique external contributors with useful
+merged PRs. These routes spread first PRs across different files and review
+lanes so contributors do not all collide on the same edit.
+
+| Slot | Best for | Issue | First file |
+|---:|---|---|---|
+| 1 | Korean setup docs | [#1](https://github.com/duct-tape2/ai-language-partner/issues/1) | [`docs/backend/API_RUNBOOK.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
+| 2 | Japanese mobile docs | [#2](https://github.com/duct-tape2/ai-language-partner/issues/2) | [`docs/ja/index.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ja/index.md) |
+| 3 | macOS STT setup docs | [#3](https://github.com/duct-tape2/ai-language-partner/issues/3) | [`docs/backend/API_RUNBOOK.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
+| 4 | Local TTS setup docs | [#4](https://github.com/duct-tape2/ai-language-partner/issues/4) | [`docs/backend/API_RUNBOOK.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
+| 5 | Architecture glossary | [#5](https://github.com/duct-tape2/ai-language-partner/issues/5) | [`docs/ARCHITECTURE.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ARCHITECTURE.md) |
+| 6 | API curl examples | [#6](https://github.com/duct-tape2/ai-language-partner/issues/6) | [`docs/backend/API_RUNBOOK.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
+| 7 | Korean translation review | [#7](https://github.com/duct-tape2/ai-language-partner/issues/7) | [`packs/yui/v1/story.json`](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json) |
+| 8 | Japanese naturalness | [#8](https://github.com/duct-tape2/ai-language-partner/issues/8) | [`packs/yui/v1/story.json`](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json) |
+| 9 | Korean learner notes | [#11](https://github.com/duct-tape2/ai-language-partner/issues/11) | [`docs/ko/index.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md) |
+| 10 | Cultural review checklist | [#12](https://github.com/duct-tape2/ai-language-partner/issues/12) | [`docs/community/CONTRIBUTOR_LANDING.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/CONTRIBUTOR_LANDING.md) |
+| 11 | Mock-mode docs | [#16](https://github.com/duct-tape2/ai-language-partner/issues/16) | [`docs/ARCHITECTURE.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ARCHITECTURE.md) |
+| 12 | Korean UI consistency | [#18](https://github.com/duct-tape2/ai-language-partner/issues/18) | [`apps/mobile/src/i18n.ts`](https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/i18n.ts) |
+| 13 | Provider-status examples | [#19](https://github.com/duct-tape2/ai-language-partner/issues/19) | [`docs/backend/API_RUNBOOK.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
+| 14 | Match-threshold explanation | [#20](https://github.com/duct-tape2/ai-language-partner/issues/20) | [`docs/ARCHITECTURE.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ARCHITECTURE.md) |
+| 15 | OpenAPI examples | [#24](https://github.com/duct-tape2/ai-language-partner/issues/24) | [`contracts/openapi_v0.yaml`](https://github.com/duct-tape2/ai-language-partner/edit/main/contracts/openapi_v0.yaml) |
+| 16 | Local-first FAQ | [#31](https://github.com/duct-tape2/ai-language-partner/issues/31) | [`docs/index.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/index.md) |
+| 17 | Restaurant examples | [#36](https://github.com/duct-tape2/ai-language-partner/issues/36) | [`packs/yui/v1/variants.csv`](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/variants.csv) |
+| 18 | Fallback labels | [#41](https://github.com/duct-tape2/ai-language-partner/issues/41) | [`docs/backend/API_RUNBOOK.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
+| 19 | Sentence-final particles | [#46](https://github.com/duct-tape2/ai-language-partner/issues/46) | [`docs/ko/index.md`](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md) |
+| 20 | Cultural-safety examples | [#47](https://github.com/duct-tape2/ai-language-partner/issues/47) | [`apps/mobile/src/culture/cultureNotes.ts`](https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/culture/cultureNotes.ts) |
+
+If your first choice is already claimed, pick another row in the same skill
+area or ask in the
+[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53).
 
 If a listed issue is already claimed, use the
 [no-install first PR board](NO_INSTALL_FIRST_PRS.md) for more browser-editable

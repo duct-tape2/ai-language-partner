@@ -10,37 +10,37 @@ keys to make a useful first PR.
 Start with the [public contributor page](https://duct-tape2.github.io/ai-language-partner/),
 the [hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/),
 the [한국어 guide](https://duct-tape2.github.io/ai-language-partner/ko/), the
-[한국어 contributor call](CALL_FOR_CONTRIBUTORS_KO.md), the
+[한국어 contributor call](CALL_FOR_CONTRIBUTORS_KO.html), the
 [日本語 guide](https://duct-tape2.github.io/ai-language-partner/ja/), the
-[日本語 contributor call](CALL_FOR_CONTRIBUTORS_JA.md), or the
-[starter issue index](STARTER_ISSUE_INDEX.md) if you want a lane-by-lane list
+[日本語 contributor call](CALL_FOR_CONTRIBUTORS_JA.html), or the
+[starter issue index](STARTER_ISSUE_INDEX.html) if you want a lane-by-lane list
 of currently open tasks.
 
 If you want to help make the project easier for non-contributors to try, see
-the [installable demo release plan](INSTALLABLE_DEMO_RELEASE_PLAN.md).
+the [installable demo release plan](INSTALLABLE_DEMO_RELEASE_PLAN.html).
 
 For the lowest-friction route, use the
-[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md). It links directly to
+[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.html). It links directly to
 browser-editable issues and includes a PR body template.
 
 Korean-speaking contributors can use the
-[한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.md).
+[한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.html).
 
 Japanese-speaking contributors can use the
-[日本語 5分 first PR guide](FIVE_MINUTE_FIRST_PR_JA.md).
+[日本語 5分 first PR guide](FIVE_MINUTE_FIRST_PR_JA.html).
 
 Language reviewers can use the
-[language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md) for safe
+[language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.html) for safe
 JSON/CSV/TypeScript review boundaries and issue-specific starter routes.
 
 If you are not sure which issue fits your skills or time budget, use the
-[first issue matcher](FIRST_ISSUE_MATCHER.md).
+[first issue matcher](FIRST_ISSUE_MATCHER.html).
 
 For step-by-step issue-specific guidance, see the
-[first PR recipes](FIRST_PR_RECIPES.md).
+[first PR recipes](FIRST_PR_RECIPES.html).
 
 If you want to contribute without installing anything, start with the
-[no-install first PR board](NO_INSTALL_FIRST_PRS.md). It links directly to
+[no-install first PR board](NO_INSTALL_FIRST_PRS.html). It links directly to
 GitHub web-editor tasks for docs, Korean/Japanese review, and beginner dialogue
 content.
 
@@ -71,13 +71,13 @@ and Japanese-speaking contributors can use the
 1. Pick one issue from the table above.
 2. Comment `/claim` on the issue if you want to avoid duplicate work; the repo
    will add the `claimed` label for maintainer triage.
-3. Read the [first PR walkthrough](FIRST_PR_WALKTHROUGH.md).
+3. Read the [first PR walkthrough](FIRST_PR_WALKTHROUGH.html).
 4. Make one focused change.
 5. Open a PR that links the issue and names the check you ran.
 
 For docs or language review, the fastest path is the
-[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md) or the
-[no-install first PR board](NO_INSTALL_FIRST_PRS.md): pick a row, use the
+[five-minute first PR guide](FIVE_MINUTE_FIRST_PR.html) or the
+[no-install first PR board](NO_INSTALL_FIRST_PRS.html): pick a row, use the
 direct edit link, and submit a focused browser-only PR.
 
 If you need a maintainer to suggest a first issue, use the
@@ -111,4 +111,4 @@ This project is building toward the Claude for OSS community-builder route:
 
 Only real external contributors count. Maintainer-authored PRs, bots, duplicate
 identities, and trivial metric-only PRs are excluded. See the
-[PR review and counting policy](PR_REVIEW_AND_COUNTING_POLICY.md).
+[PR review and counting policy](PR_REVIEW_AND_COUNTING_POLICY.html).

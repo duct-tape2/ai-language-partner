@@ -19,23 +19,23 @@ keys to make a useful first contribution.
 Start here:
 
 - [Hosted web demo](demo/)
-- [Call for contributors](community/CALL_FOR_CONTRIBUTORS.md)
-- [한국어 기여자 모집](community/CALL_FOR_CONTRIBUTORS_KO.md)
-- [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.md)
+- [Call for contributors](community/CALL_FOR_CONTRIBUTORS.html)
+- [한국어 기여자 모집](community/CALL_FOR_CONTRIBUTORS_KO.html)
+- [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.html)
 - [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
-- [First issue matcher](community/FIRST_ISSUE_MATCHER.md)
-- [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
-- [한국어 5분 첫 PR](community/FIVE_MINUTE_FIRST_PR_KO.md)
-- [日本語 5分 first PR](community/FIVE_MINUTE_FIRST_PR_JA.md)
-- [Language review first PR kit](community/LANGUAGE_REVIEW_FIRST_PR_KIT.md)
+- [First issue matcher](community/FIRST_ISSUE_MATCHER.html)
+- [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.html)
+- [한국어 5분 첫 PR](community/FIVE_MINUTE_FIRST_PR_KO.html)
+- [日本語 5分 first PR](community/FIVE_MINUTE_FIRST_PR_JA.html)
+- [Language review first PR kit](community/LANGUAGE_REVIEW_FIRST_PR_KIT.html)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
-- [Starter issue index](community/STARTER_ISSUE_INDEX.md)
-- [No-install first PR board](community/NO_INSTALL_FIRST_PRS.md)
-- [First PR recipes](community/FIRST_PR_RECIPES.md)
-- [Contributor landing](community/CONTRIBUTOR_LANDING.md)
-- [First PR walkthrough](community/FIRST_PR_WALKTHROUGH.md)
-- [Installable demo release plan](community/INSTALLABLE_DEMO_RELEASE_PLAN.md)
+- [Starter issue index](community/STARTER_ISSUE_INDEX.html)
+- [No-install first PR board](community/NO_INSTALL_FIRST_PRS.html)
+- [First PR recipes](community/FIRST_PR_RECIPES.html)
+- [Contributor landing](community/CONTRIBUTOR_LANDING.html)
+- [First PR walkthrough](community/FIRST_PR_WALKTHROUGH.html)
+- [Installable demo release plan](community/INSTALLABLE_DEMO_RELEASE_PLAN.html)
 - [First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 - [Contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml)
 - [한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml)
@@ -68,9 +68,9 @@ This repository is building toward the Claude for OSS community-builder route:
 
 Current evidence and counting rules are public:
 
-- [Claude for OSS application evidence](CLAUDE_FOR_OSS_APPLICATION.md)
-- [PR review and counting policy](community/PR_REVIEW_AND_COUNTING_POLICY.md)
-- [20 contributor sprint](community/CONTRIBUTOR_SPRINT.md)
+- [Claude for OSS application evidence](CLAUDE_FOR_OSS_APPLICATION.html)
+- [PR review and counting policy](community/PR_REVIEW_AND_COUNTING_POLICY.html)
+- [20 contributor sprint](community/CONTRIBUTOR_SPRINT.html)
 
 Only real external contributors with useful merged PRs count. Maintainer-authored
 PRs, bots, duplicate identities, and metric-only changes are excluded.

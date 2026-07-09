@@ -39,12 +39,12 @@ private data, API key가 없어도 앱의 흐름을 보고 첫 PR을 만들 수 
 
 더 고르기 쉬운 링크:
 
-- First issue matcher: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md`
-- 한국어 5분 첫 PR: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md`
-- Language review first PR kit: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md`
-- 5분 첫 PR: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md`
-- 설치 없이 가능한 첫 PR 목록: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
-- Starter issue index: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md`
+- First issue matcher: `https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html`
+- 한국어 5분 첫 PR: `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_KO.html`
+- Language review first PR kit: `https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html`
+- 5분 첫 PR: `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html`
+- 설치 없이 가능한 첫 PR 목록: `https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html`
+- Starter issue index: `https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html`
 - 한국어 contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
 
 ## 진행 방법

@@ -12,7 +12,7 @@
 [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [Call for contributors](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html) ·
 [한국어 기여자 모집](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html) ·
-[日本語 contributor call](docs/community/CALL_FOR_CONTRIBUTORS_JA.md) ·
+[日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html) ·
 [Contributor discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55) ·
 [한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
@@ -48,7 +48,7 @@ and metric-only changes are excluded.
 
 Start with the [call for contributors](docs/community/CALL_FOR_CONTRIBUTORS.md),
 the [한국어 기여자 모집](docs/community/CALL_FOR_CONTRIBUTORS_KO.md),
-the [日本語 contributor call](docs/community/CALL_FOR_CONTRIBUTORS_JA.md),
+the [日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html),
 the [first issue matcher](docs/community/FIRST_ISSUE_MATCHER.md),
 the [five-minute first PR route](docs/community/FIVE_MINUTE_FIRST_PR.md),
 the [한국어 5분 첫 PR route](docs/community/FIVE_MINUTE_FIRST_PR_KO.md),

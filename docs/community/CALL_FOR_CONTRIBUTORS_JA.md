@@ -37,11 +37,11 @@ private data、API key がなくても、アプリの方向性を見て最初の
 
 選びやすいリンク:
 
-- 日本語 5分 first PR: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_JA.md`
-- Language review first PR kit: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md`
-- First issue matcher: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md`
-- No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
-- Starter issue index: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md`
+- 日本語 5分 first PR: `https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_JA.html`
+- Language review first PR kit: `https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html`
+- First issue matcher: `https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html`
+- No-install first PR board: `https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html`
+- Starter issue index: `https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html`
 - 日本語 contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml`
 
 ## 進め方
