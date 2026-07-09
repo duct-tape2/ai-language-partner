@@ -41,6 +41,8 @@ COLORS = {
     "community": "c5def5",
     "needs-triage": "ededed",
     "claimed": "d4c5f9",
+    "external-pr": "1d76db",
+    "needs-maintainer-review": "fbca04",
 }
 
 

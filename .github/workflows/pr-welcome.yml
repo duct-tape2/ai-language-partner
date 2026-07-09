@@ -46,6 +46,7 @@ jobs:
               "- Do not add generated audio, archives, SQLite files, local engine folders, or secrets.",
               "- Preserve the no-runtime-LLM rule for the Daily Talk path.",
               "- Mention the smallest relevant check you ran, or why the PR is docs/content-only.",
+              "- The repo labels external PRs for maintainer review; that label is triage only, not evidence by itself.",
               "",
               "Useful links:",
               "",

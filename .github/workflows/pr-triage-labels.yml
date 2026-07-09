@@ -1,0 +1,59 @@
+name: PR Triage Labels
+
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review, synchronize, converted_to_draft, closed]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  label-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label external PRs for maintainer review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr || !pr.user || pr.user.type === "Bot") {
+              return;
+            }
+
+            const { owner, repo } = context.repo;
+            const login = pr.user.login.toLowerCase();
+            const ownerLogin = owner.toLowerCase();
+            const association = pr.author_association || "";
+            const maintainerAssociations = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
+            const isMaintainer = login === ownerLogin || maintainerAssociations.has(association);
+            if (isMaintainer) {
+              return;
+            }
+
+            const addLabels = ["external-pr"];
+            if (!pr.draft && pr.state === "open") {
+              addLabels.push("needs-maintainer-review");
+            }
+
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: pr.number,
+              labels: addLabels,
+            });
+
+            if (pr.draft || pr.state !== "open") {
+              try {
+                await github.rest.issues.removeLabel({
+                  owner,
+                  repo,
+                  issue_number: pr.number,
+                  name: "needs-maintainer-review",
+                });
+              } catch (error) {
+                if (error.status !== 404) {
+                  throw error;
+                }
+              }
+            }

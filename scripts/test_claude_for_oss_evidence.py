@@ -426,6 +426,26 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
         self.assertIn("Closes #123", workflow)
         self.assertIn("CODESPACES_FIRST_PR.html", workflow)
+        self.assertIn("labels external PRs for maintainer review", workflow)
+
+    def test_pr_triage_labels_workflow_marks_external_prs_without_counting_claim(self) -> None:
+        workflow = Path(".github/workflows/pr-triage-labels.yml").read_text(encoding="utf-8")
+        labels_doc = Path("docs/community/LABELS.md").read_text(encoding="utf-8")
+        label_script = Path("scripts/create_github_labels.py").read_text(encoding="utf-8")
+
+        self.assertIn("pull_request_target:", workflow)
+        self.assertIn("external-pr", workflow)
+        self.assertIn("needs-maintainer-review", workflow)
+        self.assertIn("OWNER", workflow)
+        self.assertIn("MEMBER", workflow)
+        self.assertIn("COLLABORATOR", workflow)
+        self.assertIn("issues.addLabels", workflow)
+        self.assertIn("issues.removeLabel", workflow)
+        self.assertNotIn("counted", workflow.lower())
+        self.assertIn("external-pr", labels_doc)
+        self.assertIn("needs-maintainer-review", labels_doc)
+        self.assertIn("\"external-pr\"", label_script)
+        self.assertIn("\"needs-maintainer-review\"", label_script)
 
     def test_pull_request_template_collects_countable_pr_signals(self) -> None:
         template = Path(".github/PULL_REQUEST_TEMPLATE.md").read_text(encoding="utf-8")
@@ -833,6 +853,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("docs/community/CALL_FOR_CONTRIBUTORS_JA.md", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_JA.md", readiness.REQUIRED_FILES)
         self.assertIn("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md", readiness.REQUIRED_FILES)
+        self.assertIn(".github/workflows/pr-triage-labels.yml", readiness.REQUIRED_FILES)
 
     def test_language_review_first_pr_kit_is_reviewable_and_counting_safe(self) -> None:
         kit = Path("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md").read_text(encoding="utf-8")

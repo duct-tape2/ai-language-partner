@@ -20,6 +20,8 @@ Use these labels consistently when opening the 30+ starter issues.
 | `community` | Contributor onboarding, labels, issue hygiene, and review process |
 | `needs-triage` | Newly opened issue that still needs maintainer shaping |
 | `claimed` | A contributor has signaled they are working on the issue |
+| `external-pr` | Pull request opened by an external non-maintainer contributor |
+| `needs-maintainer-review` | External pull request is ready for human maintainer response |
 
 Do not use labels to imply an issue is easy unless the acceptance criteria are
 clear and the likely file paths are named.
