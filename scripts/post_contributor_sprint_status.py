@@ -21,6 +21,7 @@ from post_no_install_first_pr_guides import parse_board as parse_no_install_boar
 MARKER = "<!-- ai-language-partner:contributor-sprint-status -->"
 DEFAULT_ISSUE = 52
 FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
+KOREAN_FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
 FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
@@ -172,6 +173,7 @@ def render_status(
             f"- Hosted web demo: {HOSTED_DEMO}",
             f"- First issue matcher: {FIRST_ISSUE_MATCHER}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
+            f"- Korean five-minute first PR guide: {KOREAN_FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- Browser-only no-install issue slots: `{no_install_count}`",
             f"- First PR help desk: {HELP_DESK}",

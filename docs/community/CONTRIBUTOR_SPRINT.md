@@ -23,6 +23,7 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
 - First issue matcher: `docs/community/FIRST_ISSUE_MATCHER.md`
 - Five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR.md`
+- Korean five-minute first PR guide: `docs/community/FIVE_MINUTE_FIRST_PR_KO.md`
 - Starter issue index: `docs/community/STARTER_ISSUE_INDEX.md`
 - No-install first PR board: `docs/community/NO_INSTALL_FIRST_PRS.md`
   with 27 browser-editable issue slots

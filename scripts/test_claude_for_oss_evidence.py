@@ -330,6 +330,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("--comment", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
 
     def test_issue_claim_guidance_workflow_handles_claim_comments(self) -> None:
         workflow = Path(".github/workflows/issue-claim-guidance.yml").read_text(encoding="utf-8")
@@ -391,6 +392,7 @@ class ContributorSprintStatusTest(unittest.TestCase):
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", markdown)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", markdown)
         self.assertIn("not Claude", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("Maintainer-authored PRs, bots", markdown)
@@ -457,6 +459,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("Call for contributors discussion", markdown)
         self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", markdown)
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("within 24 hours", markdown)

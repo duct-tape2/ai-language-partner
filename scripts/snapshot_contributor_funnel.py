@@ -26,6 +26,7 @@ MAINTAINER_LOGINS = {"duct-tape2", "sinmb79"}
 HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md"
 FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md"
+KOREAN_FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 CALL_DISCUSSION = "https://github.com/duct-tape2/ai-language-partner/discussions/55"
@@ -247,6 +248,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Call for contributors discussion: {CALL_DISCUSSION}",
             f"- First issue matcher: {FIRST_ISSUE_MATCHER}",
             f"- Five-minute first PR guide: {FIRST_PR_GUIDE}",
+            f"- Korean five-minute first PR guide: {KOREAN_FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- First PR help desk: {HELP_DESK}",
             "",
