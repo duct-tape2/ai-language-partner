@@ -115,7 +115,9 @@ fifty issues.
 
 Contributors can comment `/claim` on an issue before starting. The
 `Issue Claim Guidance` workflow replies once with the short PR checklist and
-reminds them to link the issue from the PR body.
+reminds them to link the issue from the PR body. It also applies the
+`claimed` label so maintainers can avoid routing two first-time contributors
+to the same issue.
 
 | Lane | Target contributors | Starter issues | What counts |
 |---|---|---|---|

@@ -13,7 +13,8 @@ open the hosted mock-mode demo:
 `https://duct-tape2.github.io/ai-language-partner/demo/`
 
 If you want to avoid duplicate work, comment `/claim` on the issue first. An
-automated reply will point you back to the PR checklist for that issue.
+automated reply will point you back to the PR checklist for that issue and add
+the `claimed` label for maintainer triage.
 
 Only real, useful PRs count toward Claude for OSS evidence. Do not split
 trivial typo fixes into separate PRs just to increase numbers.

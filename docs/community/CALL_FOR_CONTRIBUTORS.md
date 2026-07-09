@@ -52,13 +52,14 @@ More choices:
 ## How To Claim
 
 1. Pick one issue.
-2. Comment `/claim` on the issue if you want to avoid duplicate work.
+2. Comment `/claim` on the issue if you want to avoid duplicate work; the repo
+   will add the `claimed` label for maintainer triage.
 3. Make one focused change.
 4. Open a PR with `Closes #ISSUE_NUMBER` in the body.
 5. Mention the check you ran, or say it was docs/content/language review only.
 
 The repo replies automatically with first-PR guidance when someone comments
-`/claim`.
+`/claim` and marks the issue with the `claimed` label.
 
 ## Guardrails
 

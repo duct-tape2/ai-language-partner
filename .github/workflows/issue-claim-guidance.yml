@@ -30,6 +30,23 @@ jobs:
 
             const marker = "<!-- ai-language-partner:issue-claim-guidance -->";
             const { owner, repo } = context.repo;
+            const claimLabel = "claimed";
+            const existingLabels = Array.isArray(issue.labels) ? issue.labels : [];
+            const alreadyClaimed = existingLabels.some((label) => label.name === claimLabel);
+            if (!alreadyClaimed) {
+              try {
+                await github.rest.issues.addLabels({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  labels: [claimLabel],
+                });
+                core.info(`Added ${claimLabel} label to #${issue.number}.`);
+              } catch (error) {
+                core.warning(`Could not add ${claimLabel} label to #${issue.number}: ${error.message}`);
+              }
+            }
+
             const { data: comments } = await github.rest.issues.listComments({
               owner,
               repo,
@@ -48,6 +65,7 @@ jobs:
               "Quick context:",
               "",
               "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
+              "- Claim status: maintainers use the `claimed` label and funnel monitor to avoid duplicate work.",
               "",
               "Fast path to a first PR:",
               "",

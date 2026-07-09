@@ -329,6 +329,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("FIRST_ISSUE_MATCHER.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("issues: write", workflow)
+        self.assertIn("github.rest.issues.addLabels", workflow)
+        self.assertIn("claimed", workflow)
         self.assertIn("issue.pull_request", workflow)
 
     def test_contributor_funnel_monitor_uses_trusted_base_checkout(self) -> None:
@@ -428,7 +430,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         ), patch.object(contributor_funnel, "issue_claim_signals", return_value=[claim]), patch.object(
             contributor_funnel, "contributor_interest_issues", return_value=[interest]
         ), patch.object(contributor_funnel, "open_starter_issues", return_value=[]), patch.object(
-            contributor_funnel, "count_open_issues", side_effect=[34, 24]
+            contributor_funnel, "count_open_issues", side_effect=[34, 24, 3]
         ), patch.object(
             contributor_funnel, "no_install_task_count", return_value=27
         ):
@@ -439,6 +441,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Open external PRs needing maintainer attention: `1`", markdown)
         self.assertIn("Active claim signals on open issues: `1`", markdown)
         self.assertIn("Open contributor interest issues: `1`", markdown)
+        self.assertIn("Open `claimed` issues: `3`", markdown)
         self.assertIn("Hosted web demo", markdown)
         self.assertIn("Call for contributors discussion", markdown)
         self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)

@@ -40,6 +40,7 @@ COLORS = {
     "security": "b60205",
     "community": "c5def5",
     "needs-triage": "ededed",
+    "claimed": "d4c5f9",
 }
 
 

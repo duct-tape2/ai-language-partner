@@ -34,7 +34,8 @@ options.
 4. Open a PR with `Closes #ISSUE_NUMBER` in the body.
 5. Mention the check you ran, or write `Docs/content review only`.
 
-The repo will reply automatically with first-PR guidance after `/claim`.
+The repo will reply automatically with first-PR guidance after `/claim` and
+mark the issue with the `claimed` label for maintainer triage.
 
 ## Good PR Shape
 

@@ -17,7 +17,7 @@ The Claude for OSS approval target is the community-builder criterion:
 2. Open the issues from `docs/community/ISSUE_SEEDS.md`.
 3. Add labels: `good first issue`, `help wanted`, `docs`, `content`,
    `language-review`, `accessibility`, `tests`, `backend`, `mobile`,
-   `security`, and `community`.
+   `security`, `community`, and `claimed`.
 4. Invite contributors from language-learning, Korean/Japanese, Expo, FastAPI,
    and local-first AI communities.
 5. Merge only reviewable, useful PRs.
@@ -36,6 +36,8 @@ The Claude for OSS approval target is the community-builder criterion:
   so outreach, issue assignment, review, and evidence updates stay auditable.
 - Keep the contributor funnel monitor current so open external PRs, claim
   signals, and contributor interest issues are visible from the kickoff issue.
+- Use the `claimed` label from `/claim` comments to avoid assigning duplicate
+  work; redirect second claimers to a nearby first issue when needed.
 - Regenerate evidence weekly:
   `python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner`.
 

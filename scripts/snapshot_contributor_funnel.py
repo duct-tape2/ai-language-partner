@@ -214,6 +214,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
     starter_issues = open_starter_issues(repo, token)
     up_for_grabs = count_open_issues(repo, "up-for-grabs", token)
     first_timers = count_open_issues(repo, "first-timers-only", token)
+    claimed = count_open_issues(repo, "claimed", token)
     needed = max(0, 20 - len(evidence))
     phase = "ready" if len(evidence) >= 20 else "not ready"
 
@@ -237,6 +238,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Open contributor interest issues: `{len(interests)}`",
             f"- Open `up-for-grabs` issues: `{up_for_grabs}`",
             f"- Open `first-timers-only` issues: `{first_timers}`",
+            f"- Open `claimed` issues: `{claimed}`",
             f"- Browser-only no-install issue slots: `{no_install_task_count()}`",
             "",
             "## Fastest Contributor Entry Points",
@@ -275,6 +277,8 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             "## Maintainer SLA",
             "",
             "- Reply to external PRs and claim signals within 24 hours when possible.",
+            "- Check the `claimed` label before directing a second contributor to the",
+            "  same issue.",
             "- Merge only focused, useful PRs after human review.",
             "- Do not count bots, duplicate identities, maintainer-authored PRs, or",
             "  metric-only changes.",
