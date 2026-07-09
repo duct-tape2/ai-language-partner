@@ -93,6 +93,8 @@ threshold is not met yet. Do not submit Phase B with this status.
 - No-install first PR board: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - Korean five-minute first PR:
   `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md`
+- Korean contributor interest form:
+  `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
 - No-install issue guide comments: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`

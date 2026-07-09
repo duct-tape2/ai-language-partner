@@ -1,0 +1,64 @@
+name: 한국어 기여 문의 / 이슈 claim
+description: 한국어로 자기소개, 기여 분야 선택, starter issue 추천 요청을 남깁니다.
+title: "community: contributor interest ko"
+labels: ["community", "help wanted", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `ai-language-partner`에 관심 가져주셔서 감사합니다.
+
+        로컬 음성 엔진, 생성 음성 파일, private data, API key가 없어도 의미 있는 첫 PR을 보낼 수 있습니다.
+
+        한국어 5분 첫 PR 가이드:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md
+
+        한국어 기여자 모집 페이지:
+        https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html
+
+        30초 이슈 추천:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIRST_ISSUE_MATCHER.md
+
+        이 form을 제출하면 자동 triage 댓글이 분야별 starter issue를 추천합니다.
+
+        Contribution lane / 기여 분야를 아래에서 골라주세요.
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Contribution lane / 기여 분야
+      description: 가장 가까운 분야를 고르세요. 나중에 바뀌어도 괜찮습니다.
+      options:
+        - 한국어 문서 또는 학습자 노트 (Korean docs or learner notes)
+        - 일본어 자연스러움 검수 (Japanese naturalness review)
+        - 대화 콘텐츠 검수 (Dialogue content review)
+        - 모바일 접근성 (Mobile accessibility)
+        - FastAPI/OpenAPI 예시 (FastAPI/OpenAPI examples)
+        - 테스트/도구 (Tests/tooling)
+        - 릴리스/커뮤니티 프로세스 (Release/community process)
+        - 아직 모르겠어요 (Not sure yet)
+    validations:
+      required: true
+  - type: input
+    id: issue
+    attributes:
+      label: 작업하고 싶은 이슈
+      description: 이미 고른 이슈가 있으면 URL이나 번호를 붙여주세요.
+      placeholder: "https://github.com/duct-tape2/ai-language-partner/issues/..."
+  - type: textarea
+    id: context
+    attributes:
+      label: 가능한 도움
+      description: 어떤 검수나 수정을 할 수 있는지 적어주세요.
+      placeholder: "예: 초급 일본어 표현 자연스러움과 한국어 설명을 검수할 수 있습니다."
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: 제약 또는 선호
+      description: maintainer가 이슈를 추천하기 전에 알아야 할 내용을 체크하거나 적어주세요.
+      value: |
+        - [ ] 문서 또는 콘텐츠 검수만 가능한 작업이 필요합니다.
+        - [ ] backend Python check를 실행할 수 있습니다.
+        - [ ] mobile TypeScript check를 실행할 수 있습니다.
+        - [ ] 한국어/일본어 문장 검수가 가능합니다.

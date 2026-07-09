@@ -44,6 +44,7 @@ private data, API key가 없어도 앱의 흐름을 보고 첫 PR을 만들 수 
 - 5분 첫 PR: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR.md`
 - 설치 없이 가능한 첫 PR 목록: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md`
 - Starter issue index: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/STARTER_ISSUE_INDEX.md`
+- 한국어 contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
 
 ## 진행 방법
 

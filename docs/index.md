@@ -35,6 +35,7 @@ Start here:
 - [Installable demo release plan](community/INSTALLABLE_DEMO_RELEASE_PLAN.md)
 - [First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 - [Contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml)
+- [한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml)
 
 Useful first contribution lanes:
 

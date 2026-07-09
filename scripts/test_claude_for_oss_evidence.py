@@ -32,6 +32,7 @@ import update_claude_application_evidence as evidence_update  # noqa: E402
 import snapshot_contributor_funnel as contributor_funnel  # noqa: E402
 import audit_claude_for_oss_account as account_audit  # noqa: E402
 import post_contributor_call_update as contributor_call_update  # noqa: E402
+import verify_claude_for_oss_readiness as readiness  # noqa: E402
 
 
 def issue_item(
@@ -318,6 +319,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("ai-language-partner:contributor-interest-triage", workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", workflow)
+        self.assertIn("기여 분야", workflow)
         self.assertIn("Korean docs or learner notes", workflow)
         self.assertIn("Japanese naturalness review", workflow)
         self.assertIn("FIRST_PR_RECIPES.md", workflow)
@@ -331,6 +334,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues: write", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
+        self.assertIn("contributor_interest_ko.yml", Path("scripts/post_contributor_sprint_status.py").read_text(encoding="utf-8"))
 
     def test_issue_claim_guidance_workflow_handles_claim_comments(self) -> None:
         workflow = Path(".github/workflows/issue-claim-guidance.yml").read_text(encoding="utf-8")
@@ -405,11 +409,18 @@ class ContributorFunnelStatusTest(unittest.TestCase):
             contributor_funnel.IssueItem(53, "community: maintainer note", "https://example.test/53", "duct-tape2", "", "", ()),
             contributor_funnel.IssueItem(54, "community: contributor interest", "https://example.test/54", "new-helper", "", "", ()),
         ]
+        calls: list[str] = []
 
-        with patch.object(contributor_funnel, "search_issues", return_value=fixtures):
+        def fake_search(repo: str, query: str, token: str | None, limit: int) -> list[contributor_funnel.IssueItem]:
+            calls.append(query)
+            return fixtures
+
+        with patch.object(contributor_funnel, "search_issues", side_effect=fake_search):
             issues = contributor_funnel.contributor_interest_issues("duct-tape2/ai-language-partner", token=None)
 
         self.assertEqual([issue.number for issue in issues], [54])
+        self.assertIn('is:issue is:open "Contribution lane"', calls)
+        self.assertIn('is:issue is:open "기여 분야"', calls)
 
     def test_render_funnel_status_tracks_open_prs_claims_and_entry_points(self) -> None:
         pr = contributor_funnel.IssueItem(
@@ -460,6 +471,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Call for contributors discussion", markdown)
         self.assertIn("FIRST_ISSUE_MATCHER.md", markdown)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", markdown)
+        self.assertIn("contributor_interest_ko.yml", markdown)
         self.assertIn("[#88: docs: improve setup]", markdown)
         self.assertIn("[#1: docs: add Korean quick-start]", markdown)
         self.assertIn("within 24 hours", markdown)
@@ -627,6 +639,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("FIVE_MINUTE_FIRST_PR.md", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", comment)
         self.assertIn("CALL_FOR_CONTRIBUTORS_KO.html", comment)
+        self.assertIn("contributor_interest_ko.yml", comment)
         self.assertIn("awesome-local-first/pull/46", comment)
         self.assertIn("not Claude for OSS evidence by", comment)
 
@@ -651,12 +664,25 @@ class ContributorCallPageTest(unittest.TestCase):
         guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_KO.md").read_text(encoding="utf-8")
         call = Path("docs/community/CALL_FOR_CONTRIBUTORS_KO.md").read_text(encoding="utf-8")
         template = Path(".github/ISSUE_TEMPLATE/contributor_interest.yml").read_text(encoding="utf-8")
+        ko_template = Path(".github/ISSUE_TEMPLATE/contributor_interest_ko.yml").read_text(encoding="utf-8")
+        readme = Path("README.md").read_text(encoding="utf-8")
 
         self.assertIn("한국어 5분 첫 PR", call)
         self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", template)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", ko_template)
+        self.assertIn("CALL_FOR_CONTRIBUTORS_KO.html", ko_template)
+        self.assertIn("기여 분야", ko_template)
+        self.assertIn("contributor_interest_ko.yml", guide)
+        self.assertIn("contributor_interest_ko.yml", call)
+        self.assertIn("contributor_interest_ko.yml", readme)
         self.assertIn("Closes #ISSUE_NUMBER", guide)
         self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
         self.assertIn("숫자를 채우기 위한", guide)
+
+    def test_readiness_required_files_include_korean_contributor_routes(self) -> None:
+        self.assertIn(".github/ISSUE_TEMPLATE/contributor_interest_ko.yml", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/CALL_FOR_CONTRIBUTORS_KO.md", readiness.REQUIRED_FILES)
+        self.assertIn("docs/community/FIVE_MINUTE_FIRST_PR_KO.md", readiness.REQUIRED_FILES)
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):

@@ -70,5 +70,5 @@ Notes:
 - 무엇을 고를지 모르겠으면
   [첫 PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
   또는
-  [contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml)을
+  [한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml)을
   사용하세요.

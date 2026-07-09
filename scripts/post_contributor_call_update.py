@@ -32,6 +32,9 @@ HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 CONTRIBUTOR_INTEREST = (
     "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
 )
+KOREAN_CONTRIBUTOR_INTEREST = (
+    "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml"
+)
 DISCOVERY_STATUS = "https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4914054370"
 FUNNEL_STATUS = "https://github.com/duct-tape2/ai-language-partner/issues/52#issuecomment-4921732560"
 LOCAL_FIRST_PR = "https://github.com/alexanderop/awesome-local-first/pull/46"
@@ -95,6 +98,7 @@ def render_comment(repo: str, since: str, generated_on: str, contributor_count: 
             f"- Full no-install board: {NO_INSTALL_BOARD}",
             f"- Ask for a suggested issue: {HELP_DESK}",
             f"- Open a contributor interest issue: {CONTRIBUTOR_INTEREST}",
+            f"- Open a Korean contributor interest issue: {KOREAN_CONTRIBUTOR_INTEREST}",
             "",
             "## Discovery Channels",
             "",

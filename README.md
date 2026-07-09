@@ -56,6 +56,8 @@ the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), the
 If you want a maintainer to suggest a task, ask in the
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) or open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
+Korean-speaking contributors can use the
+[한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml).
 
 ---
 

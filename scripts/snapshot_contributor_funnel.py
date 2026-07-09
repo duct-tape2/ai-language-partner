@@ -29,6 +29,7 @@ FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/do
 KOREAN_FIRST_PR_GUIDE = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md"
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
+KOREAN_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml"
 CALL_DISCUSSION = "https://github.com/duct-tape2/ai-language-partner/discussions/55"
 CLAIM_RE = re.compile(
     r"(^|\n)\s*/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bcan i take this\b|"
@@ -140,7 +141,15 @@ def open_external_prs(repo: str, token: str | None) -> list[IssueItem]:
 
 
 def contributor_interest_issues(repo: str, token: str | None) -> list[IssueItem]:
-    return [item for item in search_issues(repo, 'is:issue is:open "Contribution lane"', token, limit=20) if is_external(item)]
+    seen: set[int] = set()
+    issues: list[IssueItem] = []
+    for query in ('is:issue is:open "Contribution lane"', 'is:issue is:open "기여 분야"'):
+        for item in search_issues(repo, query, token, limit=20):
+            if item.number in seen or not is_external(item):
+                continue
+            seen.add(item.number)
+            issues.append(item)
+    return issues
 
 
 def open_starter_issues(repo: str, token: str | None) -> list[IssueItem]:
@@ -251,6 +260,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Korean five-minute first PR guide: {KOREAN_FIRST_PR_GUIDE}",
             f"- No-install first PR board: {NO_INSTALL_BOARD}",
             f"- First PR help desk: {HELP_DESK}",
+            f"- Korean contributor interest form: {KOREAN_INTEREST_FORM}",
             "",
             "## Open External PRs",
             "",

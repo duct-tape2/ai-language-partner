@@ -26,6 +26,7 @@ FIRST_ISSUE_MATCHER = "https://github.com/duct-tape2/ai-language-partner/blob/ma
 NO_INSTALL_BOARD = "https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PRS.md"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
+KOREAN_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml"
 HOSTED_DEMO = "https://duct-tape2.github.io/ai-language-partner/demo/"
 
 
@@ -178,6 +179,7 @@ def render_status(
             f"- Browser-only no-install issue slots: `{no_install_count}`",
             f"- First PR help desk: {HELP_DESK}",
             f"- Contributor interest form: {INTEREST_FORM}",
+            f"- Korean contributor interest form: {KOREAN_INTEREST_FORM}",
             "",
             "## Current Starter Issue Spotlight",
             "",

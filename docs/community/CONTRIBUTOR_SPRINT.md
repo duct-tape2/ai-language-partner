@@ -90,6 +90,8 @@ reviewable first contributions genuinely easy.
   `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form:
   `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
+- Korean contributor interest form:
+  `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml`
 - Contributor interest triage workflow:
   `.github/workflows/contributor-interest-triage.yml`
 - Issue claim guidance workflow:
