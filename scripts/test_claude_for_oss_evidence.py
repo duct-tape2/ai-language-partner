@@ -643,6 +643,17 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("github-actions[bot]", source)
         self.assertIn("preferred_author", source)
 
+    def test_korean_first_pr_route_is_publicly_linked(self) -> None:
+        guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_KO.md").read_text(encoding="utf-8")
+        call = Path("docs/community/CALL_FOR_CONTRIBUTORS_KO.md").read_text(encoding="utf-8")
+        template = Path(".github/ISSUE_TEMPLATE/contributor_interest.yml").read_text(encoding="utf-8")
+
+        self.assertIn("한국어 5분 첫 PR", call)
+        self.assertIn("FIVE_MINUTE_FIRST_PR_KO.md", template)
+        self.assertIn("Closes #ISSUE_NUMBER", guide)
+        self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
+        self.assertIn("숫자를 채우기 위한", guide)
+
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):
     def test_first_issue_matcher_has_direct_routes_and_counting_guardrails(self) -> None:

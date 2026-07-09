@@ -20,6 +20,9 @@ body:
         Korean contributor call:
         https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html
 
+        Korean five-minute first PR guide:
+        https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/FIVE_MINUTE_FIRST_PR_KO.md
+
         After you submit this form, an automated triage comment will suggest lane-specific starter issues.
   - type: dropdown
     id: lane

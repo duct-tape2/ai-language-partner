@@ -24,6 +24,7 @@ Start here:
 - [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
 - [First issue matcher](community/FIRST_ISSUE_MATCHER.md)
 - [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.md)
+- [한국어 5분 첫 PR](community/FIVE_MINUTE_FIRST_PR_KO.md)
 - [한국어 기여자 안내](ko/)
 - [日本語コントリビューター向け案内](ja/)
 - [Starter issue index](community/STARTER_ISSUE_INDEX.md)

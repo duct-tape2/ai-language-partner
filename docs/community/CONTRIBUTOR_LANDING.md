@@ -22,6 +22,9 @@ For the lowest-friction route, use the
 [five-minute first PR guide](FIVE_MINUTE_FIRST_PR.md). It links directly to
 browser-editable issues and includes a PR body template.
 
+Korean-speaking contributors can use the
+[한국어 5분 첫 PR guide](FIVE_MINUTE_FIRST_PR_KO.md).
+
 If you are not sure which issue fits your skills or time budget, use the
 [first issue matcher](FIRST_ISSUE_MATCHER.md).
 
