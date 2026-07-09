@@ -65,6 +65,8 @@ reviewable first contributions genuinely easy.
   update marker-based comments.
 - Evidence packet: `docs/CLAUDE_FOR_OSS_APPLICATION.md`
 - Kickoff issue: `https://github.com/duct-tape2/ai-language-partner/issues/52`
+- Kickoff issue is pinned on the repository issue list for contributor
+  discovery.
 - First PR help desk discussion:
   `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form:

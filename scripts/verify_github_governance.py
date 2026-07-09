@@ -25,6 +25,25 @@ def github_json(path_or_url: str, token: str | None) -> object:
         return json.loads(response.read().decode("utf-8"))
 
 
+def github_graphql(query: str, variables: dict[str, object], token: str | None) -> object:
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json",
+        "User-Agent": "ai-language-partner-governance-check",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    request = urllib.request.Request(
+        "https://api.github.com/graphql",
+        data=json.dumps({"query": query, "variables": variables}).encode("utf-8"),
+        headers=headers,
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
 def check(name: str, passed: bool, detail: str) -> bool:
     marker = "PASS" if passed else "FAIL"
     print(f"{marker}: {name} - {detail}")
@@ -63,6 +82,35 @@ def main(argv: list[str]) -> int:
     if not isinstance(profile, dict):
         raise TypeError("community profile response was not an object")
     passed &= check("community profile health", int(profile.get("health_percentage") or 0) >= 100, str(profile.get("health_percentage")))
+
+    owner, name = repo.split("/", 1)
+    pinned = github_graphql(
+        """
+        query($owner: String!, $name: String!) {
+          repository(owner: $owner, name: $name) {
+            pinnedIssues(first: 6) {
+              nodes {
+                issue {
+                  number
+                  title
+                  url
+                }
+              }
+            }
+          }
+        }
+        """,
+        {"owner": owner, "name": name},
+        token,
+    )
+    if not isinstance(pinned, dict):
+        raise TypeError("pinned issues response was not an object")
+    repo_payload = pinned.get("data", {}).get("repository", {}) if isinstance(pinned.get("data"), dict) else {}
+    pinned_nodes = repo_payload.get("pinnedIssues", {}).get("nodes", []) if isinstance(repo_payload, dict) else []
+    pinned_issues = [node.get("issue", {}) for node in pinned_nodes if isinstance(node, dict)]
+    sprint_pin = next((issue for issue in pinned_issues if isinstance(issue, dict) and issue.get("number") == 52), None)
+    pinned_detail = ", ".join(f"#{issue.get('number')}: {issue.get('title')}" for issue in pinned_issues if isinstance(issue, dict))
+    passed &= check("20 contributor sprint kickoff pinned", sprint_pin is not None, pinned_detail or "no pinned issues")
 
     try:
         protection = github_json(f"/repos/{repo}/branches/main/protection", token)

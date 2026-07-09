@@ -239,6 +239,13 @@ class GovernanceCheckTest(unittest.TestCase):
         self.assertIn("PASS: example - ok", stream.getvalue())
         self.assertIn("FAIL: example - not ok", stream.getvalue())
 
+    def test_governance_script_checks_pinned_sprint_issue(self) -> None:
+        source = Path("scripts/verify_github_governance.py").read_text(encoding="utf-8")
+
+        self.assertIn("pinnedIssues", source)
+        self.assertIn("20 contributor sprint kickoff pinned", source)
+        self.assertIn("issue.get(\"number\") == 52", source)
+
 
 class FirstPrRecipeTest(unittest.TestCase):
     def test_recipe_infers_backend_files_and_checks(self) -> None:
