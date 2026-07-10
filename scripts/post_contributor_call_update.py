@@ -77,6 +77,11 @@ def no_install_task_count() -> int:
         return 0
 
 
+def normalized_login(login: str) -> str:
+    """Normalize REST and GraphQL spellings for GitHub App bot logins."""
+    return login.removesuffix("[bot]")
+
+
 def render_comment(repo: str, since: str, generated_on: str, contributor_count: int, no_install_count: int) -> str:
     needed = max(0, 20 - contributor_count)
     phase = "ready" if contributor_count >= 20 else "not ready"
@@ -178,12 +183,10 @@ def discussion_and_marker_comment(
             author = comment.get("author") if isinstance(comment.get("author"), dict) else {}
             login = str(author.get("login") or "")
             candidate = (discussion_id, str(comment.get("id") or ""), str(comment.get("url") or ""))
-            if preferred_author and login == preferred_author:
+            if preferred_author and normalized_login(login) == normalized_login(preferred_author):
                 return candidate
             if fallback is None:
                 fallback = candidate
-    if preferred_author:
-        return discussion_id, None, None
     if fallback:
         return fallback
     return discussion_id, None, None

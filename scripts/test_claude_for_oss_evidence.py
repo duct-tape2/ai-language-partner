@@ -1011,6 +1011,75 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("github-actions[bot]", source)
         self.assertIn("preferred_author", source)
 
+    @patch.object(contributor_call_update, "graphql")
+    def test_contributor_call_update_reuses_graphql_bot_login(self, graphql_mock) -> None:
+        graphql_mock.return_value = {
+            "data": {
+                "repository": {
+                    "discussion": {
+                        "id": "discussion-id",
+                        "comments": {
+                            "nodes": [
+                                {
+                                    "id": "comment-id",
+                                    "body": f"{contributor_call_update.MARKER}\nstatus",
+                                    "url": "https://example.test/discussioncomment/1",
+                                    "author": {"login": "github-actions"},
+                                }
+                            ]
+                        },
+                    }
+                }
+            }
+        }
+
+        result = contributor_call_update.discussion_and_marker_comment(
+            "duct-tape2/ai-language-partner",
+            55,
+            "token",
+            preferred_author="github-actions[bot]",
+        )
+
+        self.assertEqual(
+            result,
+            (
+                "discussion-id",
+                "comment-id",
+                "https://example.test/discussioncomment/1",
+            ),
+        )
+
+    @patch.object(contributor_call_update, "graphql")
+    def test_contributor_call_update_falls_back_to_existing_marker(self, graphql_mock) -> None:
+        graphql_mock.return_value = {
+            "data": {
+                "repository": {
+                    "discussion": {
+                        "id": "discussion-id",
+                        "comments": {
+                            "nodes": [
+                                {
+                                    "id": "comment-id",
+                                    "body": f"{contributor_call_update.MARKER}\nstatus",
+                                    "url": "https://example.test/discussioncomment/2",
+                                    "author": {"login": "unexpected-app-name"},
+                                }
+                            ]
+                        },
+                    }
+                }
+            }
+        }
+
+        result = contributor_call_update.discussion_and_marker_comment(
+            "duct-tape2/ai-language-partner",
+            55,
+            "token",
+            preferred_author="github-actions[bot]",
+        )
+
+        self.assertEqual(result[1], "comment-id")
+
     def test_korean_first_pr_route_is_publicly_linked(self) -> None:
         guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_KO.md").read_text(encoding="utf-8")
         call = Path("docs/community/CALL_FOR_CONTRIBUTORS_KO.md").read_text(encoding="utf-8")
