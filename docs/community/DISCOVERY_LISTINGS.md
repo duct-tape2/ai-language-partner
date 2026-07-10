@@ -15,6 +15,7 @@ merged in this repository.
 
 | Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Follow-up | Checks |
 |---|---|---|---|---|---|---|---|---|
+| For Good First Issue | PR | open | False | True | [link](https://github.com/github/forgoodfirstissue/pull/494) | [entry](https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html) | - | none reported |
 | Up For Grabs | PR | closed | True | None | [link](https://github.com/up-for-grabs/up-for-grabs.net/pull/5916) | [entry](https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs) | - | content: completed success; upload: completed success; javascript: completed success; docker: completed success; site: completed success; Redirect rules - up-for-grabs-test-bench: completed neutral; Header rules - up-for-grabs-test-bench: completed neutral; Pages changed - up-for-grabs-test-bench: completed neutral; Project Changes: completed success |
 | Awesome for Beginners | PR | open | False | True | [link](https://github.com/MunGell/awesome-for-beginners/pull/2072) | [entry](https://github.com/duct-tape2/ai-language-partner/labels/first-timers-only) | [update](https://github.com/MunGell/awesome-for-beginners/pull/2072#issuecomment-4921750431) | none reported |
 | Awesome for Non-Programmers | PR | closed | True | None | [link](https://github.com/szabgab/awesome-for-non-programmers/pull/107) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | [update](https://github.com/szabgab/awesome-for-non-programmers/pull/107#issuecomment-4921750475) | none reported |
@@ -26,7 +27,6 @@ merged in this repository.
 | Awesome Language Learning Japanese Page | PR | open | False | True | [link](https://github.com/jqhoogland/awesome-language-learning/pull/20) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
-| For Good First Issue | PR-ready local branch | pending push | n/a | token required to push fork and open PR | [link](https://github.com/github/forgoodfirstissue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html) | `/private/tmp/forgoodfirstissue:add-ai-language-partner` | prepared locally; not contributor evidence |
 | Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 | CodeTriage | Directory | pending | n/a | requires maintainer GitHub OAuth login | [link](https://www.codetriage.com/) | [entry](https://github.com/duct-tape2/ai-language-partner/issues) | [submit](https://www.codetriage.com/repos/new) | login required |
 
@@ -55,9 +55,7 @@ merged in this repository.
   `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - For CodeTriage, complete the GitHub OAuth login and repository form only
   after explicit maintainer approval.
-- For Good First Issue has a local fork branch prepared; push and open the
-  PR after a GitHub token is available, then replace the local-branch row
-  with the real PR URL.
+- Track For Good First Issue PR #494 until it is merged or reviewed.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
 ## Useful Search Links

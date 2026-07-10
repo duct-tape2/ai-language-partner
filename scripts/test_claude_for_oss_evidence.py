@@ -1177,6 +1177,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
     def test_listing_prs_track_current_external_channels(self) -> None:
         names = {listing.name for listing in discovery_snapshot.LISTING_PRS}
 
+        self.assertIn("For Good First Issue", names)
         self.assertIn("Up For Grabs", names)
         self.assertIn("Awesome for Beginners", names)
         self.assertIn("Awesome for Non-Programmers", names)
@@ -1189,15 +1190,15 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Open Source School", names)
         self.assertIn("Awesome Japanese", {listing.name for listing in discovery_snapshot.LISTING_ISSUES})
 
-    def test_pending_local_listing_rows_track_pr_ready_branches(self) -> None:
-        rows = discovery_snapshot.pending_local_listing_rows()
-
-        self.assertEqual(len(rows), 1)
-        self.assertIn("For Good First Issue", rows[0])
-        self.assertIn("pending push", rows[0])
-        self.assertIn("DIRECTORY_FIRST_PR.html", rows[0])
-        self.assertIn("/private/tmp/forgoodfirstissue:add-ai-language-partner", rows[0])
-        self.assertIn("not contributor evidence", rows[0])
+    def test_for_good_first_issue_tracks_public_pr(self) -> None:
+        for_good_first_issue = next(
+            listing
+            for listing in discovery_snapshot.LISTING_PRS
+            if listing.name == "For Good First Issue"
+        )
+        self.assertEqual(for_good_first_issue.repo, "github/forgoodfirstissue")
+        self.assertEqual(for_good_first_issue.number, 494)
+        self.assertIn("DIRECTORY_FIRST_PR.html", for_good_first_issue.contributor_link)
 
     def test_good_first_issue_directory_is_locked_until_ten_contributors(self) -> None:
         with patch.object(discovery_snapshot, "collect_evidence", return_value=[object(), object()]):
@@ -1248,10 +1249,6 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             discovery_snapshot, "fetch_listing_issue", return_value=issue_status
         ), patch.object(
             discovery_snapshot, "fetch_repo_topics", return_value=["good-first-issue", "language-learning"]
-        ), patch.object(
-            discovery_snapshot,
-            "pending_local_listing_rows",
-            return_value=["| For Good First Issue | PR-ready local branch | pending push | n/a | token required | [link](https://example.test/fgfi) | [entry](https://example.test/directory) | `/tmp/branch` | prepared locally |"],
         ), patch.object(
             discovery_snapshot, "directory_rows", return_value=["| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://example.test/gfi) | [issues](https://example.test/first) | - | README criteria |"]
         ):
