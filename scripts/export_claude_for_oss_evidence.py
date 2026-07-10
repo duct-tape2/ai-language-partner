@@ -47,8 +47,12 @@ def request_json(url: str, token: str | None) -> dict[str, object]:
         return json.loads(response.read().decode("utf-8"))
 
 
+def utc_today() -> dt.date:
+    return dt.datetime.now(dt.timezone.utc).date()
+
+
 def default_since() -> str:
-    return (dt.date.today() - dt.timedelta(days=365)).isoformat()
+    return (utc_today() - dt.timedelta(days=365)).isoformat()
 
 
 def is_bot(login: str, user_type: str | None) -> bool:
