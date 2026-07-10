@@ -13,6 +13,7 @@ import sys
 import tempfile
 from pathlib import Path
 
+import pytest
 import yaml
 from fastapi.routing import APIRoute
 from fastapi.testclient import TestClient
@@ -1849,6 +1850,20 @@ def test_voice_gallery_dialogue_pack_match_and_unmatched_log(tmp_path):
     assert status["providers"]["dialogue"]["engine"] == "bank"
     assert status["providers"]["dialogue"]["runtimeLlmCalls"] is False
 
+@pytest.mark.parametrize(
+    "bad_persona_id",
+    [
+        "..",
+        "../x",
+        "..%2Fx",
+        "%2e%2e",
+        "%2e%2e%2Fx",
+    ],
+)
+def test_dialogue_pack_zip_rejects_path_traversal(tmp_path, bad_persona_id):
+    client = make_client(tmp_path)
+    response = client.get(f"/v1/dialogue/packs/{bad_persona_id}/v1.zip")
+    assert response.status_code in (400, 404)
 
 def test_dialogue_authoring_validation_scripts_are_green():
     result = subprocess.run(
