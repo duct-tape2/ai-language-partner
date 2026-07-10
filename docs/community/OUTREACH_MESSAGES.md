@@ -621,9 +621,9 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 ## outreach_13: OSS maintainer communities
 
 - Lane: `Release/community`
-- Status: `draft`
-- Posted URL: `TBD`
-- Notes: Ask for maintainer review checklist improvements.
+- Status: `posted`
+- Posted URL: `https://dev.to/ducttape2/designing-first-prs-that-do-not-require-a-local-environment-4ikb`
+- Notes: Value-first DEV article asks maintainers which browser-only contribution tasks work and links the public first-issue paths.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
