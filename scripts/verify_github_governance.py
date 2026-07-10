@@ -29,12 +29,15 @@ DOMAIN_TOPICS = {
     "expo",
     "fastapi",
     "japanese-language",
-    "japanese-learning",
     "korean-language",
-    "korean-learners",
     "language-learning",
     "local-first",
     "react-native",
+}
+
+PROGRAM_TOPICS = {
+    "edulinkup",
+    "elusoc",
 }
 
 
@@ -115,6 +118,14 @@ def main(argv: list[str]) -> int:
         "missing " + ", ".join(missing_domain_topics)
         if missing_domain_topics
         else ", ".join(sorted(DOMAIN_TOPICS)),
+    )
+    missing_program_topics = sorted(PROGRAM_TOPICS - topic_names)
+    passed &= check(
+        "active contributor program topics",
+        not missing_program_topics,
+        "missing " + ", ".join(missing_program_topics)
+        if missing_program_topics
+        else ", ".join(sorted(PROGRAM_TOPICS)),
     )
 
     pages = github_json(f"/repos/{repo}/pages", token)

@@ -6,8 +6,8 @@ title: Directory First PR Fast Lane
 # Directory First PR Fast Lane
 
 Use this page if you found `ai-language-partner` through GitHub topics, Up For
-Grabs, For Good First Issue, CodeTriage, 24 Pull Requests, an awesome list, or
-another good-first-issue directory.
+Grabs, For Good First Issue, CodeTriage, 24 Pull Requests, Help Wanted, an
+awesome list, or another good-first-issue directory.
 
 You can make a useful first PR without local speech engines, generated audio,
 private data, API keys, or app-store builds.

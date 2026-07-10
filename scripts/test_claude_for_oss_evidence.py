@@ -274,10 +274,13 @@ class GovernanceCheckTest(unittest.TestCase):
 
         self.assertIn("DISCOVERY_TOPICS", source)
         self.assertIn("DOMAIN_TOPICS", source)
+        self.assertIn("PROGRAM_TOPICS", source)
         self.assertIn("help-wanted", source)
-        self.assertIn("korean-learners", source)
+        self.assertIn("edulinkup", source)
+        self.assertIn("elusoc", source)
         self.assertIn("contributor discovery topics", source)
         self.assertIn("domain discovery topics", source)
+        self.assertIn("active contributor program topics", source)
         self.assertIn('build_type == "workflow"', source)
 
     def test_pages_workflow_deploys_docs_with_jekyll(self) -> None:
@@ -1222,6 +1225,10 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("projects?page=9", rows[3])
         self.assertIn("public project #3564", rows[3])
         self.assertIn("contribulator score 39", rows[3])
+        self.assertIn("Help Wanted", rows[4])
+        self.assertIn("active", rows[4])
+        self.assertIn("37 indexed help-wanted issues", rows[4])
+        self.assertIn("helpwanted.dev/projects/duct-tape2/ai-language-partner", rows[4])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
