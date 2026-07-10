@@ -1007,6 +1007,14 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertTrue(any(item["id"] == "outreach_00" and item["status"] == "posted" for item in items))
         self.assertTrue(any(item["id"] == "outreach_23" and item["status"] == "draft" for item in items))
         self.assertTrue(any(item["issue_query"].endswith("/issues/63") for item in items))
+        beginner_docs = next(item for item in items if item["id"] == "outreach_27")
+        self.assertEqual(beginner_docs["status"], "posted")
+        self.assertEqual(beginner_docs["issue_query"], "https://github.com/duct-tape2/ai-language-partner/issues/16")
+        self.assertEqual(
+            beginner_docs["posted_url"],
+            "https://github.com/orgs/community/discussions/200218#discussioncomment-17599687",
+        )
+        self.assertIn("browser-only", beginner_docs["notes"])
 
     def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
         comment = contributor_call_update.render_comment(

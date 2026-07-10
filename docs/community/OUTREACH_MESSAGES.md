@@ -5,7 +5,7 @@ identical messages. A posted message is not Claude for OSS evidence; only
 useful merged external PRs count.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
-- Items: `27`
+- Items: `28`
 
 ## outreach_00: Repository visitors and GitHub topic browsers
 
@@ -1243,6 +1243,53 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from React Native, TypeScript, and UI/UX contributors.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/14
+
+Five-minute first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+
+Codespaces first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+
+First issue matcher:
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
+Hosted web demo:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
+
+Starter issue index:
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
+
+Contributor landing:
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
+
+Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
+```
+
+## outreach_27: Beginner web developers learning GitHub and Python
+
+- Lane: `Mobile/docs`
+- Status: `posted`
+- Posted URL: `https://github.com/orgs/community/discussions/200218#discussioncomment-17599687`
+- Notes: Tailored one-time reply to a beginner explicitly learning HTML, CSS, JavaScript, Python, and GitHub and asking how to contribute; transparently states that the repo is React Native/TypeScript and links only the unassigned browser-only mock-mode documentation issue.
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for a small, useful contribution from Beginner web developers learning GitHub and Python.
+Suggested issue/list:
+https://github.com/duct-tape2/ai-language-partner/issues/16
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
