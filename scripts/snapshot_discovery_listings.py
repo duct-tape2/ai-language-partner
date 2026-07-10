@@ -58,6 +58,13 @@ class ListingIssue:
 
 LISTING_PRS = [
     ListingPr(
+        name="First Contributions Project Discovery",
+        repo="firstcontributions/firstcontributions.github.io",
+        number=721,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/contribute",
+        followup_url="https://github.com/firstcontributions/firstcontributions.github.io/issues/1#issuecomment-4931220251",
+    ),
+    ListingPr(
         name="For Good First Issue",
         repo="github/forgoodfirstissue",
         number=494,

@@ -1177,6 +1177,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
     def test_listing_prs_track_current_external_channels(self) -> None:
         names = {listing.name for listing in discovery_snapshot.LISTING_PRS}
 
+        self.assertIn("First Contributions Project Discovery", names)
         self.assertIn("For Good First Issue", names)
         self.assertIn("Up For Grabs", names)
         self.assertIn("Awesome for Beginners", names)
