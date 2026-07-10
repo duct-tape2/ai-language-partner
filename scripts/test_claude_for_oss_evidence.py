@@ -247,7 +247,8 @@ class PrReviewPacketCommentTest(unittest.TestCase):
         self.assertIn("pull_request_target:", workflow)
         self.assertIn("Checkout trusted base branch", workflow)
         self.assertIn("ref: ${{ github.event.pull_request.base.ref }}", workflow)
-        self.assertIn("pull-requests: read", workflow)
+        self.assertIn("issues: write", workflow)
+        self.assertIn("pull-requests: write", workflow)
         self.assertIn("python scripts/post_pr_review_packet.py", workflow)
         self.assertNotIn("github.event.pull_request.head", workflow)
 
@@ -429,6 +430,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         workflow = Path(".github/workflows/pr-welcome.yml").read_text(encoding="utf-8")
 
         self.assertIn("pull_request_target:", workflow)
+        self.assertIn("issues: write", workflow)
+        self.assertIn("pull-requests: write", workflow)
         self.assertIn("ai-language-partner:pr-welcome", workflow)
         self.assertIn("issues.listComments", workflow)
         self.assertIn("PR welcome comment already exists", workflow)
