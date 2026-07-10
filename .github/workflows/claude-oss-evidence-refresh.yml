@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since 2025-07-08 --allow-not-ready
+          python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --allow-not-ready
 
       - name: Check for evidence changes
         id: diff
