@@ -23,7 +23,7 @@ jobs:
 
             const body = comment.body || "";
             const claimPattern =
-              /(^|\n)\s*\/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bcan i take this\b|제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます/i;
+              /(^|\n)\s*\/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bi(?:'d| would) like to (?:work on|take) this\b|\bcan i take this\b|\bcould you assign (?:it|this) to me\b|제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます/i;
             if (!claimPattern.test(body)) {
               return;
             }
@@ -47,6 +47,39 @@ jobs:
               }
             }
 
+            const existingAssignees = Array.isArray(issue.assignees) ? issue.assignees : [];
+            let assignmentAdded = existingAssignees.some(
+              (assignee) => assignee.login === comment.user.login,
+            );
+            if (!alreadyClaimed && existingAssignees.length === 0 && !assignmentAdded) {
+              try {
+                await github.rest.issues.addAssignees({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  assignees: [comment.user.login],
+                });
+                assignmentAdded = true;
+                core.info(`Assigned #${issue.number} to ${comment.user.login}.`);
+              } catch (error) {
+                core.warning(
+                  `Could not assign #${issue.number} to ${comment.user.login}: ${error.message}`,
+                );
+              }
+            }
+
+            let claimStatus;
+            if (alreadyClaimed) {
+              claimStatus =
+                "- Claim status: this issue already had the `claimed` label before your comment. Maintainers may split the scope or redirect you to a nearby unclaimed issue.";
+            } else if (assignmentAdded) {
+              claimStatus =
+                `- Claim status: assigned to @${comment.user.login} and marked with the \`claimed\` label.`;
+            } else {
+              claimStatus =
+                "- Claim status: marked with the `claimed` label. A maintainer will confirm assignment if GitHub did not allow automatic assignment.";
+            }
+
             const { data: comments } = await github.rest.issues.listComments({
               owner,
               repo,
@@ -65,9 +98,7 @@ jobs:
               "Quick context:",
               "",
               "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
-              alreadyClaimed
-                ? "- Claim status: this issue already had the `claimed` label before your comment. Maintainers may split the scope or redirect you to a nearby unclaimed issue."
-                : "- Claim status: maintainers use the `claimed` label and funnel monitor to avoid duplicate work.",
+              claimStatus,
               "",
               "Fast path to a first PR:",
               "",
