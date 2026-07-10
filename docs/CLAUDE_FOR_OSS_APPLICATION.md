@@ -131,6 +131,9 @@ threshold is not met yet. Do not submit Phase B with this status.
   `https://github.com/github/forgoodfirstissue/pull/494`
 - CodeTriage project profile: active with public issue sync
   `https://www.codetriage.com/duct-tape2/ai-language-partner`
+- Good First Issue.org indexing request: public Q&A submitted after its GitHub
+  OAuth authorization action was disabled
+  `https://github.com/orgs/goodfirstissueorg/discussions/1`
 - Awesome Japanese listing suggestion issue: deferred until the project has a
   clearer app-store/release-build path; hosted demo is now the first maturity
   step
