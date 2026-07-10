@@ -34,6 +34,8 @@ FIVE_MINUTE_FIRST_PR_URL = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 INSTALLABLE_DEMO_PLAN_URL = f"{COMMUNITY_PAGES}/INSTALLABLE_DEMO_RELEASE_PLAN.html"
 GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-issue"
 GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
+GOOD_FIRST_ISSUE_ORG_GUIDE_URL = "https://www.goodfirstissue.org/for-maintainers"
+GOOD_FIRST_ISSUE_ORG_REQUEST_URL = "https://github.com/orgs/goodfirstissueorg/discussions/1"
 FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
 
 
@@ -265,6 +267,12 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
         "| CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | "
         f"[link]({codetriage_repo_url}) | [entry](https://github.com/{repo}/contribute) | "
         f"[subscribe]({codetriage_repo_url}) | public profile and issue sync active |",
+        "| Good First Issue.org | Directory request | awaiting response | n/a | "
+        "GitHub OAuth authorization is disabled; public Q&A submitted | "
+        f"[link]({GOOD_FIRST_ISSUE_ORG_GUIDE_URL}) | "
+        f"[entry](https://github.com/{repo}/contribute) | "
+        f"[request]({GOOD_FIRST_ISSUE_ORG_REQUEST_URL}) | "
+        "public request submitted 2026-07-10 |",
     ]
 
 
@@ -343,6 +351,9 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.",
         "- Monitor the CodeTriage profile for new subscribers and confirm its issue",
         "  feed remains synchronized.",
+        "- Monitor Good First Issue.org Discussion #1. If its GitHub OAuth flow is",
+        "  restored, complete the supported submission once instead of duplicating",
+        "  the public request.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
@@ -365,6 +376,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"  `{FOR_GOOD_FIRST_ISSUE_URL}`",
         "- CodeTriage project profile:",
         f"  `https://www.codetriage.com/{repo}`",
+        "- Good First Issue.org indexing request:",
+        f"  `{GOOD_FIRST_ISSUE_ORG_REQUEST_URL}`",
     ]
     return "\n".join(rows)
 

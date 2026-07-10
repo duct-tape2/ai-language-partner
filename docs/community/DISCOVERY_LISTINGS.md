@@ -29,6 +29,7 @@ merged in this repository.
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
 | Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 | CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | [link](https://www.codetriage.com/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [subscribe](https://www.codetriage.com/duct-tape2/ai-language-partner) | public profile and issue sync active |
+| Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
 
 ## Public Status Links
 
@@ -55,6 +56,9 @@ merged in this repository.
   `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - Monitor the CodeTriage profile for new subscribers and confirm its issue
   feed remains synchronized.
+- Monitor Good First Issue.org Discussion #1. If its GitHub OAuth flow is
+  restored, complete the supported submission once instead of duplicating
+  the public request.
 - Track For Good First Issue PR #494 until it is merged or reviewed.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
@@ -77,3 +81,5 @@ merged in this repository.
   `https://github.com/github/forgoodfirstissue`
 - CodeTriage project profile:
   `https://www.codetriage.com/duct-tape2/ai-language-partner`
+- Good First Issue.org indexing request:
+  `https://github.com/orgs/goodfirstissueorg/discussions/1`
