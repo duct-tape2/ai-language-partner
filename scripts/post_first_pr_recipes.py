@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "docs" / "community" / "FIRST_PR_RECIPES.md"
 MARKER = "<!-- ai-language-partner:first-pr-recipe -->"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
+DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
@@ -237,6 +238,7 @@ change focused and avoid generated/private assets.
 Useful links:
 
 - Contributor page: https://{owner}.github.io/{name}/
+- Directory first PR fast lane: {DIRECTORY_FIRST_PR}
 - First issue matcher: {FIRST_ISSUE_MATCHER}
 - Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
 - Codespaces first PR guide: {CODESPACES_FIRST_PR}

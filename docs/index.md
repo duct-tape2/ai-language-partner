@@ -3,99 +3,109 @@ layout: home
 title: AI Language Partner
 ---
 
-# AI Language Partner
+<section class="alp-hero">
+  <img
+    class="alp-hero__art"
+    src="{{ '/demo/assets/assets/shirokuma_hero.6c8fb37dee19e50ef04fe3b223fa08a0.png' | relative_url }}"
+    alt="Yui, Haruka, and Ren, the Japanese practice partners"
+    width="1254"
+    height="1254"
+  />
+  <div class="alp-shell alp-hero__inner">
+    <div class="alp-hero__copy">
+      <p class="alp-kicker">OPEN SOURCE · LOCAL FIRST · 한국어 / 日本語</p>
+      <h1>AI Language Partner</h1>
+      <p class="alp-lead">
+        Japanese speaking practice for Korean learners, built with reviewed
+        dialogue banks and local STT/TTS instead of runtime LLM calls.
+      </p>
+      <div class="alp-actions" aria-label="Primary actions">
+        <a class="alp-button alp-button--primary" href="demo/">Try the demo</a>
+        <a class="alp-button alp-button--secondary" href="community/DIRECTORY_FIRST_PR.html">Start a first PR</a>
+      </div>
+      <p class="alp-note">
+        27 browser-editable tasks. Maintainer response target: within 24 hours
+        whenever possible.
+      </p>
+    </div>
+  </div>
+</section>
 
-Local-first Japanese speaking practice for Korean learners.
+<section class="alp-band" id="first-pr">
+  <div class="alp-shell alp-section">
+    <p class="alp-kicker">YOUR FIRST CONTRIBUTION</p>
+    <h2>Choose one lane. Start today.</h2>
+    <p class="alp-section__intro">
+      Useful docs-only and language-review pull requests are welcome. Pick a
+      task, comment <code>/claim</code>, and edit in your browser.
+    </p>
+    <p class="alp-utility">
+      If you arrived from GitHub topics or a contributor directory, use the
+      <a href="community/CODESPACES_FIRST_PR.html">Codespaces route</a> or
+      <a href="community/SHARE_KIT.html">open the contributor share kit</a>.
+    </p>
+    <div class="alp-lanes">
+      <a class="alp-lane" href="community/LANGUAGE_REVIEW_FIRST_PR_KIT.html">
+        <span class="alp-lane__number">01</span>
+        <span class="alp-lane__body">
+          <strong>Korean or Japanese review</strong>
+          <span>Check naturalness, learner notes, tone, or cultural safety.</span>
+        </span>
+        <span class="alp-lane__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="alp-lane" href="community/NO_INSTALL_FIRST_PRS.html">
+        <span class="alp-lane__number">02</span>
+        <span class="alp-lane__body">
+          <strong>Docs or API examples</strong>
+          <span>Choose from 27 no-install issue slots with direct edits.</span>
+        </span>
+        <span class="alp-lane__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="alp-lane" href="community/FIRST_ISSUE_MATCHER.html">
+        <span class="alp-lane__number">03</span>
+        <span class="alp-lane__body">
+          <strong>Code, accessibility, or tests</strong>
+          <span>Match by skill/time in 30 seconds.</span>
+        </span>
+        <span class="alp-lane__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-The project uses reviewed dialogue banks, local STT/TTS, and an Expo + FastAPI
-stack. The Daily Talk path avoids runtime LLM calls so beginner dialogue can be
-reviewed, low-latency, privacy-conscious, and low-cost to deploy.
+<section class="alp-proof">
+  <div class="alp-shell alp-proof__inner">
+    <div>
+      <p class="alp-kicker">WHY LOCAL FIRST</p>
+      <h2>A narrow runtime that contributors can inspect.</h2>
+    </div>
+    <dl class="alp-proof__list">
+      <div>
+        <dt>01 · Transcribe</dt>
+        <dd>Learner audio is handled by local speech recognition.</dd>
+      </div>
+      <div>
+        <dt>02 · Match</dt>
+        <dd>Text is matched against reviewed dialogue-bank lines.</dd>
+      </div>
+      <div>
+        <dt>03 · Answer</dt>
+        <dd>The app responds with local TTS or prebuilt voice assets.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
 
-## First PRs Welcome
-
-You do not need local speech engines, generated audio, private data, or API
-keys to make a useful first contribution.
-
-If you arrived from GitHub topics, Up For Grabs, or a good-first-issue
-directory, use one of these setup-free routes first:
-
-- [Match by skill/time in 30 seconds](community/FIRST_ISSUE_MATCHER.html)
-- [Open a browser-only five-minute PR](community/FIVE_MINUTE_FIRST_PR.html)
-- [Choose from 27 no-install issue slots](community/NO_INSTALL_FIRST_PRS.html)
-- [Ask for a suggested issue](https://github.com/duct-tape2/ai-language-partner/discussions/53)
-
-Start here:
-
-- [Hosted web demo](demo/)
-- [GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute)
-- [Open in Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1293331196)
-- [Call for contributors](community/CALL_FOR_CONTRIBUTORS.html)
-- [한국어 기여자 모집](community/CALL_FOR_CONTRIBUTORS_KO.html)
-- [日本語 contributor call](community/CALL_FOR_CONTRIBUTORS_JA.html)
-- [Contributor share kit](community/SHARE_KIT.html)
-- [Call for contributors discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55)
-- [First issue matcher](community/FIRST_ISSUE_MATCHER.html)
-- [Five-minute first PR](community/FIVE_MINUTE_FIRST_PR.html)
-- [Codespaces first PR](community/CODESPACES_FIRST_PR.html)
-- [한국어 5분 첫 PR](community/FIVE_MINUTE_FIRST_PR_KO.html)
-- [日本語 5分 first PR](community/FIVE_MINUTE_FIRST_PR_JA.html)
-- [Language review first PR kit](community/LANGUAGE_REVIEW_FIRST_PR_KIT.html)
-- [한국어 기여자 안내](ko/)
-- [日本語コントリビューター向け案内](ja/)
-- [Starter issue index](community/STARTER_ISSUE_INDEX.html)
-- [No-install first PR board](community/NO_INSTALL_FIRST_PRS.html)
-- [First PR recipes](community/FIRST_PR_RECIPES.html)
-- [Contributor landing](community/CONTRIBUTOR_LANDING.html)
-- [First PR walkthrough](community/FIRST_PR_WALKTHROUGH.html)
-- [Installable demo release plan](community/INSTALLABLE_DEMO_RELEASE_PLAN.html)
-- [First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53)
-- [Contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml)
-- [한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml)
-- [日本語 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml)
-
-Useful first contribution lanes:
-
-| Lane | Good contribution shape |
-|---|---|
-| Korean/Japanese docs | Setup notes, learner-facing explanations, glossary improvements |
-| Japanese naturalness review | Beginner-safe wording, tone consistency, cultural-safety review |
-| Dialogue content | Reviewed `story.json` or `variants.csv` source changes |
-| Mobile accessibility | Labels, touch targets, contrast, small-screen layout fixes |
-| FastAPI/OpenAPI examples | Curl examples, provider-status docs, local STT/TTS setup notes |
-| Tests/tooling | Small fixture tests, repo checks, CI-safe verification scripts |
-
-## Project Links
-
-- [GitHub repository](https://github.com/duct-tape2/ai-language-partner)
-- [Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/)
-- [GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute)
-- [Open in Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1293331196)
-- [Open issues](https://github.com/duct-tape2/ai-language-partner/issues)
-- [Good first issues](https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-- [Discussions](https://github.com/duct-tape2/ai-language-partner/discussions)
-- [Actions](https://github.com/duct-tape2/ai-language-partner/actions)
-
-## Claude for OSS Evidence
-
-This repository is building toward the Claude for OSS community-builder route:
-20+ unique external contributors with useful merged PRs in the last 12 months.
-
-Current evidence and counting rules are public:
-
-- [Claude for OSS application evidence](CLAUDE_FOR_OSS_APPLICATION.html)
-- [PR review and counting policy](community/PR_REVIEW_AND_COUNTING_POLICY.html)
-- [20 contributor sprint](community/CONTRIBUTOR_SPRINT.html)
-
-Only real external contributors with useful merged PRs count. Maintainer-authored
-PRs, bots, duplicate identities, and metric-only changes are excluded.
-
-## Local-First Shape
-
-The runtime flow is intentionally narrow:
-
-1. Learner audio is transcribed locally.
-2. The transcript is matched against reviewed dialogue-bank lines.
-3. The app answers with local TTS or prebuilt voice assets.
-
-The public repo is source-only. Generated audio, local engines, databases,
-archives, screenshots, private notes, and secrets stay out of Git.
+<section class="alp-band alp-final">
+  <div class="alp-shell alp-final__inner">
+    <div>
+      <p class="alp-kicker">READY WHEN YOU ARE</p>
+      <h2>Make one focused improvement.</h2>
+      <p>Every counted PR is reviewed for real learner or contributor value.</p>
+    </div>
+    <div class="alp-actions">
+      <a class="alp-button alp-button--primary" href="https://github.com/duct-tape2/ai-language-partner/contribute">Open GitHub /contribute</a>
+      <a class="alp-text-link" href="https://github.com/duct-tape2/ai-language-partner/discussions/53">Ask the first PR help desk →</a>
+    </div>
+  </div>
+</section>

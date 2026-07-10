@@ -31,6 +31,49 @@ scripts/bootstrap_from_clipboard_token.sh duct-tape2/ai-language-partner
 The clipboard helper refuses non-GitHub-looking text and clears the clipboard
 after the bootstrap exits.
 
+For later branch pushes after a token has been copied, use the current-branch
+helper instead of pasting the token into the terminal:
+
+Preferred one-shot publish for the pending Claude OSS work:
+
+```bash
+cd /Users/ijeong-geun/OSS/ai-language-partner
+scripts/publish_pending_claude_oss_work_from_clipboard_token.sh
+```
+
+That command pushes `codex/directory-first-pr-fast-lane`, opens or reuses the
+internal draft PR, then pushes `/private/tmp/forgoodfirstissue` and opens or
+reuses the `github/forgoodfirstissue` listing PR. It reads the copied token
+once, uses it through one-shot credential helpers, and clears the clipboard.
+
+Manual internal PR path:
+
+```bash
+cd /Users/ijeong-geun/OSS/ai-language-partner
+scripts/push_current_branch_from_clipboard_token.sh origin codex/directory-first-pr-fast-lane
+scripts/create_pr_from_clipboard_token.py \
+  --repo duct-tape2/ai-language-partner \
+  --head duct-tape2:codex/directory-first-pr-fast-lane \
+  --title "docs: add directory first PR fast lane" \
+  --body "Adds the directory visitor first-PR fast lane, maintainer response snippets, and token-safe resume helpers."
+```
+
+For an external listing fork that uses a `fork` remote, run the same helper from
+that checkout:
+
+```bash
+cd /private/tmp/forgoodfirstissue
+/Users/ijeong-geun/OSS/ai-language-partner/scripts/push_current_branch_from_clipboard_token.sh fork add-ai-language-partner
+/Users/ijeong-geun/OSS/ai-language-partner/scripts/create_pr_from_clipboard_token.py \
+  --repo github/forgoodfirstissue \
+  --head duct-tape2:add-ai-language-partner \
+  --title "Add AI Language Partner" \
+  --body "Repository issues page: https://github.com/duct-tape2/ai-language-partner/issues"
+```
+
+The helpers use one-shot GitHub token handling and clear the clipboard when
+they exit.
+
 For a classic personal access token, use the narrowest practical scopes for
 this public repo bootstrap: `public_repo` and `workflow`. The `workflow` scope
 is required because this repository intentionally tracks GitHub Actions files.

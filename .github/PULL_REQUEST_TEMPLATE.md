@@ -34,6 +34,7 @@ Closes #ISSUE_NUMBER
 ## New Contributor Route
 
 - Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
 - Codespaces first PR: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
 - First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 

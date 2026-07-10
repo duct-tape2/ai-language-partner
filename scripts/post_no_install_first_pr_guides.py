@@ -19,6 +19,7 @@ BOARD = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PRS.md"
 DEFAULT_OUT = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PR_COMMENTS.md"
 MARKER = "<!-- ai-language-partner:no-install-first-pr -->"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
+DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
 FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
@@ -105,6 +106,7 @@ backend, STT/TTS engine, generated audio, private data, or API key is needed.
 **Start here**
 
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
+- Directory first PR fast lane: {DIRECTORY_FIRST_PR}
 - First issue matcher: {FIRST_ISSUE_MATCHER}
 - Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
 - Codespaces first PR guide: {CODESPACES_FIRST_PR}

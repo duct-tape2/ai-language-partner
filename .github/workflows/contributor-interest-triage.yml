@@ -121,6 +121,7 @@ jobs:
             const selected = laneMap.find((lane) => body.includes(lane.match)) || {
               title: "Not sure yet",
               links: [
+                "Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html",
                 "First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html",
                 "Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
                 "Korean five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR_KO.html",
@@ -142,6 +143,7 @@ jobs:
               "",
               "Fastest first-PR paths:",
               "",
+              "- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html",
               "- Browser-only no-install board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
               "- Codespaces no-local-setup guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html",
               "- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53",

@@ -28,7 +28,7 @@ jobs:
               return;
             }
 
-            const marker = "<!-- ai-language-partner:issue-claim-guidance -->";
+            const claimantMarker = `<!-- ai-language-partner:issue-claim-guidance:${comment.user.login} -->`;
             const { owner, repo } = context.repo;
             const claimLabel = "claimed";
             const existingLabels = Array.isArray(issue.labels) ? issue.labels : [];
@@ -53,36 +53,40 @@ jobs:
               issue_number: issue.number,
               per_page: 100,
             });
-            if (comments.some((existing) => existing.body && existing.body.includes(marker))) {
-              core.info("Issue claim guidance already exists.");
+            if (comments.some((existing) => existing.body && existing.body.includes(claimantMarker))) {
+              core.info("Issue claim guidance already exists for this claimant.");
               return;
             }
 
             const response = [
-              marker,
+              claimantMarker,
               `Thanks, @${comment.user.login}. Treating this as a claim signal for #${issue.number}.`,
               "",
               "Quick context:",
               "",
               "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
-              "- Claim status: maintainers use the `claimed` label and funnel monitor to avoid duplicate work.",
+              alreadyClaimed
+                ? "- Claim status: this issue already had the `claimed` label before your comment. Maintainers may split the scope or redirect you to a nearby unclaimed issue."
+                : "- Claim status: maintainers use the `claimed` label and funnel monitor to avoid duplicate work.",
               "",
               "Fast path to a first PR:",
               "",
-              "1. Use the first issue matcher if you want a shorter menu: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html",
-              "2. Use the five-minute first PR guide for the browser-edit flow: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
-              "3. Use the no-install board if you want a direct GitHub web-editor task: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
-              "4. Use Codespaces if you want tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html",
-              "5. For Japanese/Korean/content review, use the language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html",
-              "6. Keep the change focused on this issue.",
-              `7. In the PR body, write \`Closes #${issue.number}\` or \`Refs #${issue.number}\`.`,
-              "8. Mention the check you ran, or say it was docs/content/language review only.",
+              "1. Use the directory first PR fast lane if you came from an external listing: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html",
+              "2. Use the first issue matcher if you want a shorter menu: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html",
+              "3. Use the five-minute first PR guide for the browser-edit flow: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
+              "4. Use the no-install board if you want a direct GitHub web-editor task: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
+              "5. Use Codespaces if you want tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html",
+              "6. For Japanese/Korean/content review, use the language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html",
+              "7. Keep the change focused on this issue.",
+              `8. In the PR body, write \`Closes #${issue.number}\` or \`Refs #${issue.number}\`.`,
+              "9. Mention the check you ran, or say it was docs/content/language review only.",
               "",
               "Guardrails:",
               "",
               "- Do not add generated audio, archives, SQLite files, screenshots, local engine folders, secrets, private notes, or API keys.",
               "- Preserve the no-runtime-LLM rule for the Daily Talk path.",
               "- If two people claim the same issue, maintainers will help split or redirect the work.",
+              "- If this issue was already claimed, pick a backup from the matcher or no-install board so your first PR is not blocked.",
               "",
               "This comment is contributor guidance, not Claude for OSS evidence. Only useful merged PRs from real external contributors count.",
             ].join("\n");

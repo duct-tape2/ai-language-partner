@@ -50,7 +50,8 @@ Use a lightweight but visible review process:
    with `scripts/export_claude_for_oss_evidence.py`.
 
 See `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md` for the full command
-sequence.
+sequence and `docs/community/MAINTAINER_RESPONSE_SNIPPETS.md` for copy-ready
+maintainer replies that keep the review trail consistent.
 
 ## Evidence Command
 

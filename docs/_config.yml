@@ -1,3 +1,8 @@
 title: AI Language Partner
 description: Local-first Japanese speaking practice for Korean learners.
 theme: minima
+header_pages:
+  - community/DIRECTORY_FIRST_PR.md
+  - community/NO_INSTALL_FIRST_PRS.md
+  - ko/index.md
+  - ja/index.md

@@ -28,6 +28,7 @@ DEMO_RELEASE_ASSET = "ai-language-partner-web-demo-2026-07-09.zip"
 HOSTED_DEMO_URL = "https://duct-tape2.github.io/ai-language-partner/demo/"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 CONTRIBUTOR_LANDING_URL = f"{COMMUNITY_PAGES}/CONTRIBUTOR_LANDING.html"
+DIRECTORY_FIRST_PR_URL = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
 FIRST_ISSUE_MATCHER_URL = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR_URL = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 INSTALLABLE_DEMO_PLAN_URL = f"{COMMUNITY_PAGES}/INSTALLABLE_DEMO_RELEASE_PLAN.html"
@@ -35,6 +36,8 @@ GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-iss
 GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
 CODETRIAGE_URL = "https://www.codetriage.com/"
 CODETRIAGE_SUBMIT_URL = "https://www.codetriage.com/repos/new"
+FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
+FOR_GOOD_FIRST_ISSUE_LOCAL_BRANCH = "/private/tmp/forgoodfirstissue:add-ai-language-partner"
 
 
 @dataclass(frozen=True)
@@ -261,6 +264,15 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
     ]
 
 
+def pending_local_listing_rows() -> list[str]:
+    return [
+        "| For Good First Issue | PR-ready local branch | pending push | n/a | "
+        "token required to push fork and open PR | "
+        f"[link]({FOR_GOOD_FIRST_ISSUE_URL}) | [entry]({DIRECTORY_FIRST_PR_URL}) | "
+        f"`{FOR_GOOD_FIRST_ISSUE_LOCAL_BRANCH}` | prepared locally; not contributor evidence |"
+    ]
+
+
 def build_markdown(repo: str, token: str | None) -> str:
     up_for_grabs = count_open_issues(repo, "up-for-grabs", token)
     first_timers = count_open_issues(repo, "first-timers-only", token)
@@ -288,6 +300,7 @@ def build_markdown(repo: str, token: str | None) -> str:
                 **status,
             )
         )
+    listing_rows.extend(pending_local_listing_rows())
     listing_rows.extend(directory_rows(repo, token))
 
     rows = [
@@ -336,6 +349,9 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.",
         "- For CodeTriage, complete the GitHub OAuth login and repository form only",
         "  after explicit maintainer approval.",
+        "- For Good First Issue has a local fork branch prepared; push and open the",
+        "  PR after a GitHub token is available, then replace the local-branch row",
+        "  with the real PR URL.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
         "## Useful Search Links",
@@ -353,6 +369,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- `react-native` topic: `https://github.com/topics/react-native`",
         "- Good First Issue project submission criteria:",
         "  `https://github.com/DeepSourceCorp/good-first-issue`",
+        "- For Good First Issue repository:",
+        f"  `{FOR_GOOD_FIRST_ISSUE_URL}`",
     ]
     return "\n".join(rows)
 
