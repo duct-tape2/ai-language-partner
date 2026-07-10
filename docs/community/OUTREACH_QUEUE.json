@@ -202,13 +202,13 @@
     },
     {
       "id": "outreach_19",
-      "audience": "API example writers",
+      "audience": "Backend learners working in Node.js",
       "lane": "Backend/API docs",
-      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/6",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/19",
       "message_template": "short-english",
-      "status": "draft",
-      "posted_url": "",
-      "notes": "Daily Talk endpoint curl examples."
+      "status": "posted",
+      "posted_url": "https://github.com/orgs/community/discussions/200857#discussioncomment-17594866",
+      "notes": "Tailored reply to a GitHub Community newcomer explicitly learning backend and Node.js; disclosed the FastAPI stack and linked only the unassigned provider-status response example issue."
     },
     {
       "id": "outreach_20",

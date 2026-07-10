@@ -900,20 +900,20 @@ If an issue looks good, comment `/claim` on it and the repo will reply with a sh
 Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
 ```
 
-## outreach_19: API example writers
+## outreach_19: Backend learners working in Node.js
 
 - Lane: `Backend/API docs`
-- Status: `draft`
-- Posted URL: `TBD`
-- Notes: Daily Talk endpoint curl examples.
+- Status: `posted`
+- Posted URL: `https://github.com/orgs/community/discussions/200857#discussioncomment-17594866`
+- Notes: Tailored reply to a GitHub Community newcomer explicitly learning backend and Node.js; disclosed the FastAPI stack and linked only the unassigned provider-status response example issue.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
 The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
 
-I'm looking for a small, useful contribution from API example writers.
+I'm looking for a small, useful contribution from Backend learners working in Node.js.
 Suggested issue/list:
-https://github.com/duct-tape2/ai-language-partner/issues/6
+https://github.com/duct-tape2/ai-language-partner/issues/19
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
