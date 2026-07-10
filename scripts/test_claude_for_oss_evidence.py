@@ -549,6 +549,22 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("official platform confirms", packet)
         self.assertIn("ELUSOC_PROJECT_ADMIN_APPLICATION.md", growth_plan)
 
+    def test_osl_internship_draft_matches_template_without_claiming_submission(self) -> None:
+        draft = Path("docs/community/OPEN_SCIENCE_LABS_INTERNSHIP_IDEA_DRAFT.md").read_text(
+            encoding="utf-8"
+        )
+        affiliation = Path("docs/community/OPEN_SCIENCE_LABS_AFFILIATION_PROPOSAL.md").read_text(
+            encoding="utf-8"
+        )
+        normalized_draft = " ".join(draft.split())
+
+        self.assertIn("has not been submitted", normalized_draft)
+        self.assertIn("Expected Time: 350 hours", draft)
+        self.assertIn("mentor availability", draft)
+        self.assertIn("Compensation", draft)
+        self.assertIn("Submission Gate", draft)
+        self.assertIn("OPEN_SCIENCE_LABS_INTERNSHIP_IDEA_DRAFT.md", affiliation)
+
 
 class ContributorSprintStatusTest(unittest.TestCase):
     def test_render_status_links_fastest_first_pr_and_counting_rules(self) -> None:

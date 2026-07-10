@@ -73,8 +73,10 @@ through:
 
 If affiliated, the project would first ask OSL for community and project-health
 review. After confirming mentor availability and OSL fit, the maintainer would
-prepare a separate internship project idea using OSL's required template and
-minimum-hour guidance.
+use the pre-submission internship draft in
+`docs/community/OPEN_SCIENCE_LABS_INTERNSHIP_IDEA_DRAFT.md`. The draft follows
+OSL's required template and 350-hour minimum but is not submitted or advertised
+until affiliation and mentor availability are confirmed.
 
 Potential work packages include:
 
@@ -122,3 +124,5 @@ The maintainer requests:
   https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/PR_REVIEW_AND_COUNTING_POLICY.md
 - CI workflows:
   https://github.com/duct-tape2/ai-language-partner/actions
+- OSL internship idea draft:
+  https://duct-tape2.github.io/ai-language-partner/community/OPEN_SCIENCE_LABS_INTERNSHIP_IDEA_DRAFT.html
