@@ -346,6 +346,22 @@ class FirstPrRecipeTest(unittest.TestCase):
         self.assertIn("CODESPACES_FIRST_PR.html", recipe)
         self.assertIn("generated/private assets", recipe)
 
+    def test_recipe_infers_malformed_multipart_test_and_handler_files(self) -> None:
+        issue = first_pr_recipes.Issue(
+            number=49,
+            title="backend: add malformed multipart upload test for STT endpoint",
+            url="https://example.test/issues/49",
+            body="Acceptance: missing multipart file returns 422.",
+            labels=("good first issue", "backend", "tests"),
+        )
+
+        recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
+
+        self.assertIn("apps/api/tests/test_api_contract.py", recipe)
+        self.assertIn("apps/api/app/main.py", recipe)
+        self.assertNotIn("contracts/openapi_v0.yaml", recipe)
+        self.assertIn("cd apps/api && .venv/bin/python -m pytest", recipe)
+
     def test_recipe_extracts_markdown_acceptance_section_without_flattening_issue_body(self) -> None:
         issue = first_pr_recipes.Issue(
             number=13,
@@ -1029,6 +1045,14 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertTrue(openapi_docs["issue_query"].endswith("/issues/24"))
         self.assertTrue(security_tests["issue_query"].endswith("/issues/49"))
         self.assertTrue(tooling_docs["issue_query"].endswith("/issues/26"))
+        security_student = next(item for item in items if item["id"] == "outreach_28")
+        self.assertEqual(security_student["status"], "posted")
+        self.assertEqual(security_student["issue_query"], "https://github.com/duct-tape2/ai-language-partner/issues/49")
+        self.assertEqual(
+            security_student["posted_url"],
+            "https://github.com/orgs/community/discussions/197632#discussioncomment-17599912",
+        )
+        self.assertIn("rather than a security toolkit", security_student["notes"])
 
     def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
         comment = contributor_call_update.render_comment(
