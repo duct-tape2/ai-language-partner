@@ -196,9 +196,9 @@
       "lane": "Accessibility/mobile",
       "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/13",
       "message_template": "short-english",
-      "status": "draft",
-      "posted_url": "",
-      "notes": "Touch target audit in bottom tabs."
+      "status": "posted",
+      "posted_url": "https://github.com/orgs/community/discussions/190753#discussioncomment-17594299",
+      "notes": "Posted once in a GitHub Community thread explicitly asking for beginner-friendly TypeScript projects; links only the unassigned bottom-tab touch-target issue and hosted demo."
     },
     {
       "id": "outreach_19",

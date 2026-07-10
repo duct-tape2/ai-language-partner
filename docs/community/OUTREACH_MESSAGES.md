@@ -856,9 +856,9 @@ https://github.com/duct-tape2/ai-language-partner/discussions/53
 ## outreach_18: Mobile UI reviewers
 
 - Lane: `Accessibility/mobile`
-- Status: `draft`
-- Posted URL: `TBD`
-- Notes: Touch target audit in bottom tabs.
+- Status: `posted`
+- Posted URL: `https://github.com/orgs/community/discussions/190753#discussioncomment-17594299`
+- Notes: Posted once in a GitHub Community thread explicitly asking for beginner-friendly TypeScript projects; links only the unassigned bottom-tab touch-target issue and hosted demo.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
