@@ -1096,6 +1096,16 @@ class ContributorCallPageTest(unittest.TestCase):
 
         self.assertEqual(result, ("discussion-id", None, None))
 
+    @patch.object(contributor_call_update, "build_comment", return_value="rendered status")
+    def test_contributor_call_update_cli_render_mode_needs_no_token(self, build_comment_mock) -> None:
+        output = StringIO()
+        with patch.dict(contributor_call_update.os.environ, {}, clear=True), redirect_stdout(output):
+            result = contributor_call_update.main(["post_contributor_call_update.py"])
+
+        self.assertEqual(result, 0)
+        self.assertEqual(output.getvalue().strip(), "rendered status")
+        build_comment_mock.assert_called_once()
+
     def test_korean_first_pr_route_is_publicly_linked(self) -> None:
         guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_KO.md").read_text(encoding="utf-8")
         call = Path("docs/community/CALL_FOR_CONTRIBUTORS_KO.md").read_text(encoding="utf-8")
