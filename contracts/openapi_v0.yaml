@@ -1542,6 +1542,31 @@ paths:
               schema:
                 type: array
                 items: { $ref: '#/components/schemas/DialoguePackSummary' }
+              example:
+                - personaId: yui
+                  packVersion: v2
+                  sizeBytes: 217760
+                  topics: [food_order, greetings_intro, hobbies, today, weather_seasons]
+                  levels: [N5, N4]
+                  scenarioCount: 10
+                  lineCount: 75
+                  audioCount: 75
+                - personaId: haruka
+                  packVersion: v3
+                  sizeBytes: 232756
+                  topics: [food_order, greetings_intro, hobbies, today, weather_seasons]
+                  levels: [N5, N4]
+                  scenarioCount: 10
+                  lineCount: 75
+                  audioCount: 75
+                - personaId: ren
+                  packVersion: v3
+                  sizeBytes: 217529
+                  topics: [food_order, greetings_intro, hobbies, today, weather_seasons]
+                  levels: [N5, N4]
+                  scenarioCount: 10
+                  lineCount: 75
+                  audioCount: 75
   /v1/dialogue/packs/{personaId}/{packVersion}.zip:
     get:
       operationId: getDialoguePackZip
