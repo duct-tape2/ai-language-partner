@@ -1542,17 +1542,6 @@ paths:
               schema:
                 type: array
                 items: { $ref: '#/components/schemas/DialoguePackSummary' }
-                /v1/dialogue/packs:
-    get:
-      operationId: listDialoguePacks
-      responses:
-        '200':
-          description: downloadable dialogue persona packs
-          content:
-            application/json:
-              schema:
-                type: array
-                items: { $ref: '#/components/schemas/DialoguePackSummary' }
               example:
                 - personaId: yui
                   packVersion: v2
