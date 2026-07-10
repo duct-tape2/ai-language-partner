@@ -150,7 +150,7 @@ def likely_files(issue: Issue) -> list[str]:
     elif "issue-label taxonomy" in title:
         files += ["docs/community/LABELS.md", "docs/community/ISSUE_SEEDS.md"]
     elif "first pr walkthrough" in title:
-        files += ["docs/community/FIRST_PR_WALKTHROUGH.md", "docs/ko/index.md", "docs/ja/index.md"]
+        files += ["docs/community/FIRST_PR_WALKTHROUGH.md"]
     elif "why no runtime llm" in title:
         files += ["README.md", "docs/ARCHITECTURE.md", "docs/index.md"]
     elif "maintainer review checklist" in title:
@@ -182,6 +182,8 @@ def likely_files(issue: Issue) -> list[str]:
 
 
 def suggested_checks(issue: Issue, files: list[str]) -> list[str]:
+    if "first pr walkthrough" in issue.title.lower():
+        return ["manual docs review: use GitHub Markdown preview and verify links and wording"]
     checks = ["python3 scripts/check_public_tree.py"]
     labels = {label.lower() for label in issue.labels}
     if "backend" in labels or any(path.startswith("apps/api/") or path.startswith("contracts/") for path in files):
