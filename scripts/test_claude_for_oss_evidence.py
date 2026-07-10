@@ -506,6 +506,7 @@ class WorkflowFixtureTest(unittest.TestCase):
 
         self.assertIn("pull_request_target:", workflow)
         self.assertIn("types: [closed]", workflow)
+        self.assertIn("pull-requests: write", workflow)
         self.assertIn("pr.merged", workflow)
         self.assertIn("merged-external-pr-candidate", workflow)
         self.assertIn("not a final Claude for OSS counting decision", workflow)
