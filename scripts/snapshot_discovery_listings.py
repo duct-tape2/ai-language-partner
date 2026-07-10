@@ -37,6 +37,8 @@ GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6
 GOOD_FIRST_ISSUE_ORG_GUIDE_URL = "https://www.goodfirstissue.org/for-maintainers"
 GOOD_FIRST_ISSUE_ORG_REQUEST_URL = "https://github.com/orgs/goodfirstissueorg/discussions/1"
 FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
+TWENTY_FOUR_PULL_REQUESTS_URL = "https://24pullrequests.com/projects?page=9"
+TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL = "https://24pullrequests.com/my_suggestions"
 
 
 @dataclass(frozen=True)
@@ -280,6 +282,11 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
         f"[entry](https://github.com/{repo}/contribute) | "
         f"[request]({GOOD_FIRST_ISSUE_ORG_REQUEST_URL}) | "
         "public request submitted 2026-07-10 |",
+        "| 24 Pull Requests | Directory | active | n/a | public project #3564 | "
+        f"[link]({TWENTY_FOUR_PULL_REQUESTS_URL}) | "
+        f"[entry](https://github.com/{repo}/contribute) | "
+        f"[manage]({TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL}) | "
+        "TypeScript; tests; good first issue; contribulator score 39 |",
     ]
 
 
@@ -361,6 +368,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- Monitor Good First Issue.org Discussion #1. If its GitHub OAuth flow is",
         "  restored, complete the supported submission once instead of duplicating",
         "  the public request.",
+        "- Keep the 24 Pull Requests project active while reviewable starter issues",
+        "  remain open; update its labels if the public taxonomy changes.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
@@ -385,6 +394,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"  `https://www.codetriage.com/{repo}`",
         "- Good First Issue.org indexing request:",
         f"  `{GOOD_FIRST_ISSUE_ORG_REQUEST_URL}`",
+        "- 24 Pull Requests public project listing:",
+        f"  `{TWENTY_FOUR_PULL_REQUESTS_URL}` (project `3564`)",
     ]
     return "\n".join(rows)
 

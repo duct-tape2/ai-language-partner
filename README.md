@@ -29,6 +29,7 @@ and language-review PRs are welcome.
 [Try the hosted demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
 [Open GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute) ·
 [Find us on CodeTriage](https://www.codetriage.com/duct-tape2/ai-language-partner) ·
+[Find us on 24 Pull Requests](https://24pullrequests.com/projects?page=9) ·
 [한국어 안내](https://duct-tape2.github.io/ai-language-partner/ko/) ·
 [日本語ガイド](https://duct-tape2.github.io/ai-language-partner/ja/) ·
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
