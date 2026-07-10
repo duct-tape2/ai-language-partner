@@ -37,7 +37,6 @@ GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6
 CODETRIAGE_URL = "https://www.codetriage.com/"
 CODETRIAGE_SUBMIT_URL = "https://www.codetriage.com/repos/new"
 FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
-FOR_GOOD_FIRST_ISSUE_LOCAL_BRANCH = "/private/tmp/forgoodfirstissue:add-ai-language-partner"
 
 
 @dataclass(frozen=True)
@@ -58,6 +57,12 @@ class ListingIssue:
 
 
 LISTING_PRS = [
+    ListingPr(
+        name="For Good First Issue",
+        repo="github/forgoodfirstissue",
+        number=494,
+        contributor_link=DIRECTORY_FIRST_PR_URL,
+    ),
     ListingPr(
         name="Up For Grabs",
         repo="up-for-grabs/up-for-grabs.net",
@@ -264,15 +269,6 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
     ]
 
 
-def pending_local_listing_rows() -> list[str]:
-    return [
-        "| For Good First Issue | PR-ready local branch | pending push | n/a | "
-        "token required to push fork and open PR | "
-        f"[link]({FOR_GOOD_FIRST_ISSUE_URL}) | [entry]({DIRECTORY_FIRST_PR_URL}) | "
-        f"`{FOR_GOOD_FIRST_ISSUE_LOCAL_BRANCH}` | prepared locally; not contributor evidence |"
-    ]
-
-
 def build_markdown(repo: str, token: str | None) -> str:
     up_for_grabs = count_open_issues(repo, "up-for-grabs", token)
     first_timers = count_open_issues(repo, "first-timers-only", token)
@@ -300,7 +296,6 @@ def build_markdown(repo: str, token: str | None) -> str:
                 **status,
             )
         )
-    listing_rows.extend(pending_local_listing_rows())
     listing_rows.extend(directory_rows(repo, token))
 
     rows = [
@@ -349,9 +344,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.",
         "- For CodeTriage, complete the GitHub OAuth login and repository form only",
         "  after explicit maintainer approval.",
-        "- For Good First Issue has a local fork branch prepared; push and open the",
-        "  PR after a GitHub token is available, then replace the local-branch row",
-        "  with the real PR URL.",
+        "- Track For Good First Issue PR #494 until it is merged or reviewed.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
         "## Useful Search Links",
