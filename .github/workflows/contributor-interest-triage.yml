@@ -101,7 +101,7 @@ jobs:
                 links: [
                   "Backend docs issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Abackend+label%3Adocs",
                   "Provider-status example: https://github.com/duct-tape2/ai-language-partner/issues/19",
-                  "Dialogue pack listing example: https://github.com/duct-tape2/ai-language-partner/issues/40",
+                  "Daily Talk curl examples: https://github.com/duct-tape2/ai-language-partner/issues/6",
                 ],
               },
               {
@@ -109,8 +109,8 @@ jobs:
                 title: "Tests / tooling",
                 links: [
                   "Tests issues: https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3Atests",
-                  "Path traversal test: https://github.com/duct-tape2/ai-language-partner/issues/22",
-                  "Issue seed count check: https://github.com/duct-tape2/ai-language-partner/issues/42",
+                  "Mobile script inventory check: https://github.com/duct-tape2/ai-language-partner/issues/27",
+                  "Malformed STT upload test: https://github.com/duct-tape2/ai-language-partner/issues/49",
                 ],
               },
               {

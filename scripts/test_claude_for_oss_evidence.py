@@ -408,6 +408,12 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("CALL_FOR_CONTRIBUTORS_JA.html", workflow)
         self.assertIn("FIRST_PR_RECIPES.html", workflow)
         self.assertIn("github.rest.issues.createComment", workflow)
+        self.assertIn("issues/6", workflow)
+        self.assertIn("issues/27", workflow)
+        self.assertIn("issues/49", workflow)
+        self.assertNotIn("issues/22", workflow)
+        self.assertNotIn("issues/40", workflow)
+        self.assertNotIn("issues/42", workflow)
 
     def test_first_pr_recipes_workflow_upserts_issue_comments(self) -> None:
         workflow = Path(".github/workflows/first-pr-recipes.yml").read_text(encoding="utf-8")
@@ -938,6 +944,8 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Closes #ISSUE_NUMBER", guide)
         self.assertIn("Only useful merged external PRs count", guide)
         self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
+        self.assertIn("issues/49", guide)
+        self.assertNotIn("issues/22", guide)
         self.assertIn("DIRECTORY_FIRST_PR.md", readme)
         self.assertIn("DIRECTORY_FIRST_PR.html", index)
         self.assertIn("DIRECTORY_FIRST_PR.html", landing)
@@ -1015,6 +1023,12 @@ class ContributorCallPageTest(unittest.TestCase):
             "https://github.com/orgs/community/discussions/200218#discussioncomment-17599687",
         )
         self.assertIn("browser-only", beginner_docs["notes"])
+        openapi_docs = next(item for item in items if item["id"] == "outreach_10")
+        security_tests = next(item for item in items if item["id"] == "outreach_12")
+        tooling_docs = next(item for item in items if item["id"] == "outreach_20")
+        self.assertTrue(openapi_docs["issue_query"].endswith("/issues/24"))
+        self.assertTrue(security_tests["issue_query"].endswith("/issues/49"))
+        self.assertTrue(tooling_docs["issue_query"].endswith("/issues/26"))
 
     def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
         comment = contributor_call_update.render_comment(
@@ -1323,6 +1337,8 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("Closes #ISSUE_NUMBER", matcher)
         self.assertIn("20+ unique external contributors", matcher)
         self.assertIn("metric-only changes do not count", matcher)
+        self.assertIn("issues/49", matcher)
+        self.assertNotIn("issues/22", matcher)
 
     def test_no_install_board_links_browser_edit_tasks_and_guardrails(self) -> None:
         board = Path("docs/community/NO_INSTALL_FIRST_PRS.md").read_text(encoding="utf-8")

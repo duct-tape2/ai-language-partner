@@ -114,11 +114,11 @@
       "id": "outreach_10",
       "audience": "OpenAPI documentation contributors",
       "lane": "Backend/API docs",
-      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/40",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/24",
       "message_template": "short-english",
       "status": "draft",
       "posted_url": "",
-      "notes": "Ask for dialogue pack listing response examples."
+      "notes": "Ask for self-attested and public-key device trust examples."
     },
     {
       "id": "outreach_11",
@@ -134,11 +134,11 @@
       "id": "outreach_12",
       "audience": "Security-minded test contributors",
       "lane": "Tests/tooling",
-      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/22",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/49",
       "message_template": "short-english",
       "status": "draft",
       "posted_url": "",
-      "notes": "Path traversal rejection test is scoped and useful."
+      "notes": "Malformed STT upload handling is scoped and protects clear 4xx responses."
     },
     {
       "id": "outreach_13",
@@ -214,11 +214,11 @@
       "id": "outreach_20",
       "audience": "Repo tooling contributors",
       "lane": "Tests/tooling",
-      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/43",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/26",
       "message_template": "short-english",
       "status": "draft",
       "posted_url": "",
-      "notes": "Contributor evidence script fixture tests."
+      "notes": "Validate that documented backend commands continue to reference real scripts."
     },
     {
       "id": "outreach_21",

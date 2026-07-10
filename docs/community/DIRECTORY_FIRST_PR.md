@@ -33,7 +33,7 @@ private data, API keys, or app-store builds.
 | Backend/API examples | [#19 provider-status examples](https://github.com/duct-tape2/ai-language-partner/issues/19) | [edit API runbook](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
 | Local-first explanation | [#31 no-runtime-LLM FAQ](https://github.com/duct-tape2/ai-language-partner/issues/31) | [edit project page](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/index.md) |
 | Mobile accessibility | [#13 bottom tab touch targets](https://github.com/duct-tape2/ai-language-partner/issues/13) | [mobile source](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/mobile/src) |
-| Focused tests | [#22 path traversal rejection test](https://github.com/duct-tape2/ai-language-partner/issues/22) | [API tests](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/api/tests) |
+| Focused tests | [#49 malformed STT upload test](https://github.com/duct-tape2/ai-language-partner/issues/49) | [API tests](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/api/tests) |
 
 If the issue you picked is already claimed, use the
 [first issue matcher](FIRST_ISSUE_MATCHER.html), the
