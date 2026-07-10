@@ -5,7 +5,7 @@ identical messages. A posted message is not Claude for OSS evidence; only
 useful merged external PRs count.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
-- Items: `22`
+- Items: `23`
 
 ## outreach_00: Repository visitors and GitHub topic browsers
 
@@ -1008,6 +1008,53 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from OSS release and demo maintainers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/54
+
+Five-minute first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+
+Codespaces first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+
+First issue matcher:
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
+Hosted web demo:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
+
+Starter issue index:
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
+
+Contributor landing:
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
+
+Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
+```
+
+## outreach_22: r/LearnJapanese learners and Japanese language reviewers
+
+- Lane: `Japanese review`
+- Status: `posted`
+- Posted URL: `https://www.reddit.com/r/LearnJapanese/comments/1uqciro/comment/own71bd/`
+- Notes: Posted once in the subreddit's designated weekly materials and self-promotion thread; asks for naturalness, honorific, cultural-note, and beginner-explanation review.
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for a small, useful contribution from r/LearnJapanese learners and Japanese language reviewers.
+Suggested issue/list:
+https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html

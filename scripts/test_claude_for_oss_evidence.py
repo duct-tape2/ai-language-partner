@@ -888,6 +888,13 @@ class ContributorCallPageTest(unittest.TestCase):
 
         self.assertGreaterEqual(len(items), 22)
         self.assertTrue(any(item["posted_url"] == "https://github.com/duct-tape2/ai-language-partner/discussions/55" for item in posted))
+        self.assertTrue(
+            any(
+                item["posted_url"]
+                == "https://www.reddit.com/r/LearnJapanese/comments/1uqciro/comment/own71bd/"
+                for item in posted
+            )
+        )
         self.assertTrue(any(item["id"] == "outreach_00" and item["status"] == "posted" for item in items))
 
     def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
