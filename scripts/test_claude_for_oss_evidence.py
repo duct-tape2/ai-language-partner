@@ -374,6 +374,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("pull_request_target:", workflow)
         self.assertIn("github.event.pull_request.merged == true", workflow)
         self.assertIn("--allow-not-ready", workflow)
+        self.assertNotIn("--since", workflow)
         self.assertIn("automation/claude-oss-evidence", workflow)
         self.assertIn("github.rest.pulls.create", workflow)
         self.assertIn("ref: main", workflow)
