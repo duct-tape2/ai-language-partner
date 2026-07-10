@@ -573,6 +573,12 @@ class WorkflowFixtureTest(unittest.TestCase):
 
         self.assertIn("Applicant enters directly", packet)
         self.assertIn("Password / login secret", packet)
+        self.assertIn("Student` or `Professional", packet)
+        self.assertIn("WhatsApp number", packet)
+        self.assertIn("Telegram username", packet)
+        self.assertIn("under the form's 200-word limit", packet)
+        self.assertIn("TypeScript, React Native, Expo, Python, FastAPI", packet)
+        self.assertIn("do not complete or submit", packet)
         self.assertIn("0 verified unique external merged-PR contributors", packet)
         self.assertIn("do not apply `elusoc`", packet)
         self.assertIn("official platform confirms", packet)

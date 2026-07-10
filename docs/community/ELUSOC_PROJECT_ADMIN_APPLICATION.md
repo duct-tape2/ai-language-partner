@@ -15,6 +15,8 @@ profile, and any other personal fields directly.
 - Official project-admin window: April 5 through July 15, 2026.
 - Unstop registration: required before EduLinkUp registration.
 - EduLinkUp account/profile: requires the applicant's own name and login.
+- The live form also requires the applicant to choose `Student` or
+  `Professional` and provide contact/profile details before submission.
 - GitHub repository topics: `edulinkup` and `elusoc` are already present.
 - Repository registration: not complete until the official platform confirms
   the project-admin application.
@@ -34,11 +36,17 @@ Do not infer or generate these values:
 
 | Field | Value |
 |---|---|
-| Applicant name | Applicant enters directly |
+| User type | Applicant selects `Student` or `Professional` truthfully |
+| Full name | Applicant enters directly |
+| College / university | Applicant answers truthfully; ask the organizer if it is not applicable |
+| Branch / major | Applicant enters directly if applicable |
+| Graduation year | Applicant selects directly if applicable |
 | Email | Applicant confirms directly |
 | Password / login secret | Applicant enters directly |
-| LinkedIn profile | Applicant supplies or leaves blank if permitted |
-| Country, institution, role | Applicant answers truthfully |
+| LinkedIn URL | Applicant supplies directly; the live form marks it required |
+| WhatsApp number and country code | Applicant supplies directly |
+| Telegram username | Applicant supplies directly |
+| Unstop registration confirmation | Applicant completes and confirms directly |
 | Availability and time commitment | Applicant confirms directly |
 
 ## Project Fields
@@ -55,6 +63,51 @@ Do not infer or generate these values:
 | Domain | Education, language learning, accessibility, local-first software |
 | Target audience | Korean-speaking learners of Japanese |
 | Current contributor count | 0 verified unique external merged-PR contributors |
+
+## Paste-Ready Live Form Values
+
+The live project-admin form was inspected on 2026-07-10. These values cover
+only public project fields; they do not complete or submit the application.
+
+**GitHub username**
+
+```text
+duct-tape2
+```
+
+**Repository URL**
+
+```text
+https://github.com/duct-tape2/ai-language-partner
+```
+
+**Description (under the form's 200-word limit)**
+
+```text
+AI Language Partner is an MIT-licensed, local-first Japanese speaking-practice app for Korean learners. It combines an Expo/React Native client, FastAPI backend, curated dialogue-bank content, local speech-to-text, and local text-to-speech. The Daily Talk path does not require a runtime LLM or paid hosted model API, keeping practice predictable, reviewable, and suitable for low-cost deployments. Contributors can work on Korean and Japanese content review, mobile accessibility, API examples, local provider documentation, and focused regression tests. The repository includes a hosted fixture-backed demo, scoped issues, contribution governance, and public CI.
+```
+
+**Tech-stack tags**
+
+```text
+TypeScript, React Native, Expo, Python, FastAPI, OpenAPI, GitHub Actions
+```
+
+**Deployment link**
+
+```text
+https://duct-tape2.github.io/ai-language-partner/demo/
+```
+
+**Project admin / mentorship plan**
+
+```text
+I will assign one clearly scoped issue to one contributor on a first-come, first-served basis, keep acceptance criteria and verification commands in each issue, and review first-time contributor PRs within 24 hours whenever possible. Every merged contribution must link its issue, pass the relevant checks, and receive a human review comment. I will reject copied, spammy, secret-bearing, binary-asset, or metric-only submissions. Difficulty labels will reflect actual complexity, and program scoring will remain separate from the project's Claude for OSS evidence record.
+```
+
+Do not select the Unstop or Code of Conduct confirmations until the applicant
+has personally completed the required registration and reviewed the linked
+terms.
 
 ## Short Project Description
 
@@ -145,6 +198,8 @@ than collect superficial pull requests.
 
 - [ ] Applicant completed Unstop registration personally.
 - [ ] Applicant completed EduLinkUp profile and GitHub OAuth personally.
+- [ ] Applicant supplied the mandatory full name, institution, LinkedIn,
+  WhatsApp, and Telegram fields personally.
 - [ ] Project-admin form uses the repository and demo URLs above.
 - [ ] Personal fields were entered or confirmed by the applicant.
 - [ ] Repository topics still include `edulinkup` and `elusoc`.
