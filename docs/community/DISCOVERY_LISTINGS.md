@@ -6,7 +6,7 @@ count as Claude for OSS contributor evidence until real external PRs are
 merged in this repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `japanese-learning`, `korean-language`, `korean-learners`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
+- GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `edulinkup`, `elusoc`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `korean-language`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
 - Open `up-for-grabs` issues: `34`
 - Open `first-timers-only` issues: `24`
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
@@ -32,6 +32,7 @@ merged in this repository.
 | CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | [link](https://www.codetriage.com/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [subscribe](https://www.codetriage.com/duct-tape2/ai-language-partner) | public profile and issue sync active |
 | Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
 | 24 Pull Requests | Directory | active | n/a | public project #3564 | [link](https://24pullrequests.com/projects?page=9) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [manage](https://24pullrequests.com/my_suggestions) | TypeScript; tests; good first issue; contribulator score 39 |
+| Help Wanted | Directory | active | n/a | 37 indexed help-wanted issues | [link](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [browse](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | public project page and sitemap confirmed 2026-07-10 |
 
 ## Public Status Links
 
@@ -63,6 +64,7 @@ merged in this repository.
   the public request.
 - Keep the 24 Pull Requests project active while reviewable starter issues
   remain open; update its labels if the public taxonomy changes.
+- Monitor the Help Wanted project page and keep its indexed issue set current.
 - Track For Good First Issue PR #494 until it is merged or reviewed.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
@@ -89,3 +91,5 @@ merged in this repository.
   `https://github.com/orgs/goodfirstissueorg/discussions/1`
 - 24 Pull Requests public project listing:
   `https://24pullrequests.com/projects?page=9` (project `3564`)
+- Help Wanted indexed project page:
+  `https://helpwanted.dev/projects/duct-tape2/ai-language-partner` (37 issues observed 2026-07-10)

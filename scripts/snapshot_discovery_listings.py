@@ -39,6 +39,7 @@ GOOD_FIRST_ISSUE_ORG_REQUEST_URL = "https://github.com/orgs/goodfirstissueorg/di
 FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
 TWENTY_FOUR_PULL_REQUESTS_URL = "https://24pullrequests.com/projects?page=9"
 TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL = "https://24pullrequests.com/my_suggestions"
+HELP_WANTED_PROJECT_URL = "https://helpwanted.dev/projects/duct-tape2/ai-language-partner"
 
 
 @dataclass(frozen=True)
@@ -287,6 +288,11 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
         f"[entry](https://github.com/{repo}/contribute) | "
         f"[manage]({TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL}) | "
         "TypeScript; tests; good first issue; contribulator score 39 |",
+        "| Help Wanted | Directory | active | n/a | 37 indexed help-wanted issues | "
+        f"[link]({HELP_WANTED_PROJECT_URL}) | "
+        f"[entry](https://github.com/{repo}/contribute) | "
+        f"[browse]({HELP_WANTED_PROJECT_URL}) | "
+        "public project page and sitemap confirmed 2026-07-10 |",
     ]
 
 
@@ -370,6 +376,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  the public request.",
         "- Keep the 24 Pull Requests project active while reviewable starter issues",
         "  remain open; update its labels if the public taxonomy changes.",
+        "- Monitor the Help Wanted project page and keep its indexed issue set current.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
@@ -396,6 +403,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"  `{GOOD_FIRST_ISSUE_ORG_REQUEST_URL}`",
         "- 24 Pull Requests public project listing:",
         f"  `{TWENTY_FOUR_PULL_REQUESTS_URL}` (project `3564`)",
+        "- Help Wanted indexed project page:",
+        f"  `{HELP_WANTED_PROJECT_URL}` (37 issues observed 2026-07-10)",
     ]
     return "\n".join(rows)
 
