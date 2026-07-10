@@ -129,6 +129,8 @@ threshold is not met yet. Do not submit Phase B with this status.
   `https://github.com/zefanja/awesome-opensource-school/pull/16`
 - For Good First Issue listing PR:
   `https://github.com/github/forgoodfirstissue/pull/494`
+- First Contributions project discovery PR:
+  `https://github.com/firstcontributions/firstcontributions.github.io/pull/721`
 - CodeTriage project profile: active with public issue sync
   `https://www.codetriage.com/duct-tape2/ai-language-partner`
 - Good First Issue.org indexing request: public Q&A submitted after its GitHub
