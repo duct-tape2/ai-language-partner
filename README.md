@@ -17,28 +17,20 @@ Pick a first PR in 30 seconds:
 [27 no-install issue slots](docs/community/NO_INSTALL_FIRST_PRS.md) ·
 [ask for a suggested issue](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
-[Contributor page](https://duct-tape2.github.io/ai-language-partner/) ·
-[Hosted web demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
-[GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute) ·
-[Open in Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1293331196) ·
-[Call for contributors](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html) ·
-[한국어 기여자 모집](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_KO.html) ·
-[日本語 contributor call](https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS_JA.html) ·
-[Contributor share kit](docs/community/SHARE_KIT.md) ·
-[Contributor discussion](https://github.com/duct-tape2/ai-language-partner/discussions/55) ·
-[한국어](https://duct-tape2.github.io/ai-language-partner/ko/) ·
-[日本語](https://duct-tape2.github.io/ai-language-partner/ja/) ·
-[Directory first PR](docs/community/DIRECTORY_FIRST_PR.md) ·
-[First issue matcher](docs/community/FIRST_ISSUE_MATCHER.md) ·
-[Five-minute first PR](docs/community/FIVE_MINUTE_FIRST_PR.md) ·
-[한국어 5분 첫 PR](docs/community/FIVE_MINUTE_FIRST_PR_KO.md) ·
-[日本語 5分 first PR](docs/community/FIVE_MINUTE_FIRST_PR_JA.md) ·
-[Language review first PR kit](docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md) ·
-[Starter issue index](docs/community/STARTER_ISSUE_INDEX.md) ·
-[No-install first PRs](docs/community/NO_INSTALL_FIRST_PRS.md) ·
-[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) ·
-[Web demo release](https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09) ·
-[Demo/release plan](docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md)
+| I can help with... | Best first step | Setup |
+|---|---|---|
+| Korean or Japanese review | [Pick a language-review task](docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md) | Browser only |
+| Docs or API examples | [Choose from 27 direct-edit tasks](docs/community/NO_INSTALL_FIRST_PRS.md) | Browser only |
+| Code, accessibility, or tests | [Match an issue by skill and time](docs/community/FIRST_ISSUE_MATCHER.md) | Codespaces or local |
+
+Maintainer response target: within 24 hours whenever possible. Useful docs-only
+and language-review PRs are welcome.
+
+[Try the hosted demo](https://duct-tape2.github.io/ai-language-partner/demo/) ·
+[Open GitHub /contribute](https://github.com/duct-tape2/ai-language-partner/contribute) ·
+[한국어 안내](https://duct-tape2.github.io/ai-language-partner/ko/) ·
+[日本語ガイド](https://duct-tape2.github.io/ai-language-partner/ja/) ·
+[First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 ---
 
