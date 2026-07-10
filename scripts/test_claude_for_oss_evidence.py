@@ -994,12 +994,12 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("awesome-local-first/pull/46", comment)
         self.assertIn("not Claude for OSS evidence by", comment)
 
-    def test_contributor_call_update_workflow_writes_discussions(self) -> None:
+    def test_contributor_call_update_workflow_renders_without_discussion_write(self) -> None:
         workflow = Path(".github/workflows/contributor-call-update.yml").read_text(encoding="utf-8")
 
         self.assertIn("post_contributor_call_update.py", workflow)
-        self.assertIn("discussions: write", workflow)
-        self.assertIn("--discussion 55", workflow)
+        self.assertNotIn("discussions: write", workflow)
+        self.assertNotIn("--comment", workflow)
         self.assertIn("Checkout trusted base branch", workflow)
 
     def test_contributor_call_update_discussion_lookup_uses_marker_comment(self) -> None:
@@ -1008,11 +1008,27 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("addDiscussionComment", source)
         self.assertIn("updateDiscussionComment", source)
         self.assertIn("ai-language-partner:contributor-call-update", source)
-        self.assertIn("github-actions[bot]", source)
+        self.assertIn("viewer { login }", source)
         self.assertIn("preferred_author", source)
 
+    def test_contributor_call_update_normalizes_bot_login_variants(self) -> None:
+        self.assertEqual(
+            contributor_call_update.normalized_login("github-actions[bot]"),
+            "github-actions",
+        )
+        self.assertEqual(
+            contributor_call_update.normalized_login("github-actions"),
+            "github-actions",
+        )
+
     @patch.object(contributor_call_update, "graphql")
-    def test_contributor_call_update_reuses_graphql_bot_login(self, graphql_mock) -> None:
+    def test_contributor_call_update_finds_viewer_login(self, graphql_mock) -> None:
+        graphql_mock.return_value = {"data": {"viewer": {"login": "duct-tape2"}}}
+
+        self.assertEqual(contributor_call_update.viewer_login("token"), "duct-tape2")
+
+    @patch.object(contributor_call_update, "graphql")
+    def test_contributor_call_update_reuses_matching_author_comment(self, graphql_mock) -> None:
         graphql_mock.return_value = {
             "data": {
                 "repository": {
@@ -1024,7 +1040,7 @@ class ContributorCallPageTest(unittest.TestCase):
                                     "id": "comment-id",
                                     "body": f"{contributor_call_update.MARKER}\nstatus",
                                     "url": "https://example.test/discussioncomment/1",
-                                    "author": {"login": "github-actions"},
+                                    "author": {"login": "duct-tape2"},
                                 }
                             ]
                         },
@@ -1037,7 +1053,7 @@ class ContributorCallPageTest(unittest.TestCase):
             "duct-tape2/ai-language-partner",
             55,
             "token",
-            preferred_author="github-actions[bot]",
+            preferred_author="duct-tape2",
         )
 
         self.assertEqual(
@@ -1050,7 +1066,7 @@ class ContributorCallPageTest(unittest.TestCase):
         )
 
     @patch.object(contributor_call_update, "graphql")
-    def test_contributor_call_update_falls_back_to_existing_marker(self, graphql_mock) -> None:
+    def test_contributor_call_update_does_not_edit_another_author(self, graphql_mock) -> None:
         graphql_mock.return_value = {
             "data": {
                 "repository": {
@@ -1075,10 +1091,10 @@ class ContributorCallPageTest(unittest.TestCase):
             "duct-tape2/ai-language-partner",
             55,
             "token",
-            preferred_author="github-actions[bot]",
+            preferred_author="duct-tape2",
         )
 
-        self.assertEqual(result[1], "comment-id")
+        self.assertEqual(result, ("discussion-id", None, None))
 
     def test_korean_first_pr_route_is_publicly_linked(self) -> None:
         guide = Path("docs/community/FIVE_MINUTE_FIRST_PR_KO.md").read_text(encoding="utf-8")

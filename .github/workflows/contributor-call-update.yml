@@ -16,7 +16,6 @@ on:
 
 permissions:
   contents: read
-  discussions: write
 
 jobs:
   contributor-call-update:
@@ -32,8 +31,8 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Update public contributor call discussion
+      - name: Render contributor call status
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python scripts/post_contributor_call_update.py --repo duct-tape2/ai-language-partner --discussion 55 --comment
+          python scripts/post_contributor_call_update.py --repo duct-tape2/ai-language-partner

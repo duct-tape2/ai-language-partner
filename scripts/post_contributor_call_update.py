@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
-import os
 import sys
 import urllib.request
 
@@ -80,6 +79,15 @@ def no_install_task_count() -> int:
 def normalized_login(login: str) -> str:
     """Normalize REST and GraphQL spellings for GitHub App bot logins."""
     return login.removesuffix("[bot]")
+
+
+def viewer_login(token: str) -> str:
+    data = graphql("query { viewer { login } }", {}, token)
+    viewer = data.get("data", {}).get("viewer")
+    login = str(viewer.get("login") or "") if isinstance(viewer, dict) else ""
+    if not login:
+        raise RuntimeError("GitHub viewer login was not returned")
+    return login
 
 
 def render_comment(repo: str, since: str, generated_on: str, contributor_count: int, no_install_count: int) -> str:
@@ -187,13 +195,15 @@ def discussion_and_marker_comment(
                 return candidate
             if fallback is None:
                 fallback = candidate
+    if preferred_author:
+        return discussion_id, None, None
     if fallback:
         return fallback
     return discussion_id, None, None
 
 
 def upsert_discussion_comment(repo: str, discussion_number: int, body: str, token: str) -> str:
-    preferred_author = "github-actions[bot]" if os.environ.get("GITHUB_ACTIONS") else None
+    preferred_author = viewer_login(token)
     discussion_id, comment_id, existing_url = discussion_and_marker_comment(
         repo,
         discussion_number,
