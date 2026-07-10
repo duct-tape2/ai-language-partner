@@ -636,6 +636,7 @@ class ContributorSprintStatusTest(unittest.TestCase):
 class ContributorFunnelStatusTest(unittest.TestCase):
     def test_claim_pattern_recognizes_natural_language_requests(self) -> None:
         self.assertIsNotNone(contributor_funnel.CLAIM_RE.search("I'd like to work on this"))
+        self.assertIsNotNone(contributor_funnel.CLAIM_RE.search("Im working it"))
         self.assertIsNotNone(
             contributor_funnel.CLAIM_RE.search(
                 "I'd like to take this as my first contribution. Could you assign it to me?"

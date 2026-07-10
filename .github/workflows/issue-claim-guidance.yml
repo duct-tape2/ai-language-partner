@@ -23,7 +23,7 @@ jobs:
 
             const body = comment.body || "";
             const claimPattern =
-              /(^|\n)\s*\/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bi(?:'d| would) like to (?:work on|take) this\b|\bcan i take this\b|\bcould you assign (?:it|this) to me\b|제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます/i;
+              /(^|\n)\s*\/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bi(?:'d| would) like to (?:work on|take) this\b|\bcan i take this\b|\bi(?:'m|m| am) working (?:on )?(?:this|it)\b|\bcould you assign (?:it|this) to me\b|제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます/i;
             if (!claimPattern.test(body)) {
               return;
             }

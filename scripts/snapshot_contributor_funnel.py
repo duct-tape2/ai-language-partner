@@ -41,6 +41,7 @@ CALL_DISCUSSION = "https://github.com/duct-tape2/ai-language-partner/discussions
 CLAIM_RE = re.compile(
     r"(^|\n)\s*/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|"
     r"\bi(?:'d| would) like to (?:work on|take) this\b|\bcan i take this\b|"
+    r"\bi(?:'m|m| am) working (?:on )?(?:this|it)\b|"
     r"\bcould you assign (?:it|this) to me\b|"
     r"제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます",
     re.IGNORECASE,
