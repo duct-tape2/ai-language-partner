@@ -634,6 +634,14 @@ class ContributorSprintStatusTest(unittest.TestCase):
 
 
 class ContributorFunnelStatusTest(unittest.TestCase):
+    def test_claim_pattern_recognizes_natural_language_requests(self) -> None:
+        self.assertIsNotNone(contributor_funnel.CLAIM_RE.search("I'd like to work on this"))
+        self.assertIsNotNone(
+            contributor_funnel.CLAIM_RE.search(
+                "I'd like to take this as my first contribution. Could you assign it to me?"
+            )
+        )
+
     def test_contributor_interest_issues_exclude_maintainer_and_bots(self) -> None:
         fixtures = [
             contributor_funnel.IssueItem(52, "community: sprint", "https://example.test/52", "github-actions[bot]", "", "", ()),
@@ -697,6 +705,7 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("Unique external merged PR contributors: `2/20`", markdown)
         self.assertIn("Open external PRs needing maintainer attention: `1`", markdown)
         self.assertIn("Active claim signals on open issues: `1`", markdown)
+        self.assertIn("Claim signals awaiting maintainer response: `1`", markdown)
         self.assertIn("Open contributor interest issues: `1`", markdown)
         self.assertIn("Maintainer response SLA target: `24h`", markdown)
         self.assertIn("Open external PRs over SLA: `1`", markdown)
@@ -719,6 +728,22 @@ class ContributorFunnelStatusTest(unittest.TestCase):
         self.assertIn("| Issue | Contributor | Claim comment | SLA |", markdown)
         self.assertIn("`overdue (", markdown)
         self.assertIn("within 24 hours", markdown)
+
+    def test_claim_rows_mark_maintainer_response(self) -> None:
+        claim = contributor_funnel.ClaimSignal(
+            issue_number=22,
+            issue_title="backend: cover traversal rejection",
+            issue_url="https://example.test/issues/22",
+            login="new-helper",
+            comment_url="https://example.test/issues/22#comment",
+            created_at="2026-07-08T00:00:00Z",
+            responded_at="2026-07-10T00:00:00Z",
+        )
+
+        rows = contributor_funnel.render_claim_rows([claim], "2026-07-10")
+
+        self.assertIn("`responded`", rows[0])
+        self.assertNotIn("overdue", rows[0])
 
 
 class AccountEligibilityAuditTest(unittest.TestCase):

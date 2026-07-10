@@ -39,7 +39,9 @@ KOREAN_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues
 JAPANESE_INTEREST_FORM = "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ja.yml"
 CALL_DISCUSSION = "https://github.com/duct-tape2/ai-language-partner/discussions/55"
 CLAIM_RE = re.compile(
-    r"(^|\n)\s*/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bcan i take this\b|"
+    r"(^|\n)\s*/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|"
+    r"\bi(?:'d| would) like to (?:work on|take) this\b|\bcan i take this\b|"
+    r"\bcould you assign (?:it|this) to me\b|"
     r"제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます",
     re.IGNORECASE,
 )
@@ -64,6 +66,7 @@ class ClaimSignal:
     login: str
     comment_url: str
     created_at: str
+    responded_at: str = ""
 
 
 def github_json(url: str, token: str | None, method: str = "GET", payload: object | None = None) -> object:
@@ -228,14 +231,35 @@ def issue_claim_signals(repo: str, token: str | None, max_issues: int = 100) -> 
         comments = github_json(f"{comments_url}?per_page=100", token)
         if not isinstance(comments, list):
             continue
+        assignees = issue.get("assignees") if isinstance(issue.get("assignees"), list) else []
+        assignee_logins = {
+            str(assignee.get("login") or "") for assignee in assignees if isinstance(assignee, dict)
+        }
         for comment in comments:
             if not isinstance(comment, dict):
                 continue
             body = str(comment.get("body") or "")
             user = comment.get("user") if isinstance(comment.get("user"), dict) else {}
             login = str(user.get("login", ""))
-            if login.endswith("[bot]") or not CLAIM_RE.search(body):
+            if login in MAINTAINER_LOGINS or login.endswith("[bot]") or not CLAIM_RE.search(body):
                 continue
+            created_at = str(comment.get("created_at", ""))
+            response_times: list[str] = []
+            claimant_marker = f"ai-language-partner:issue-claim-guidance:{login}"
+            for response in comments:
+                if not isinstance(response, dict):
+                    continue
+                response_created_at = str(response.get("created_at", ""))
+                if not response_created_at or response_created_at <= created_at:
+                    continue
+                response_user = response.get("user") if isinstance(response.get("user"), dict) else {}
+                response_login = str(response_user.get("login", ""))
+                response_body = str(response.get("body") or "")
+                if response_login in MAINTAINER_LOGINS or claimant_marker in response_body:
+                    response_times.append(response_created_at)
+            responded_at = min(response_times) if response_times else ""
+            if not responded_at and login in assignee_logins:
+                responded_at = str(issue.get("updated_at", ""))
             claims.append(
                 ClaimSignal(
                     issue_number=int(issue.get("number", 0)),
@@ -243,7 +267,8 @@ def issue_claim_signals(repo: str, token: str | None, max_issues: int = 100) -> 
                     issue_url=str(issue.get("html_url", "")),
                     login=login,
                     comment_url=str(comment.get("html_url", "")),
-                    created_at=str(comment.get("created_at", "")),
+                    created_at=created_at,
+                    responded_at=responded_at,
                 )
             )
     return sorted(claims, key=lambda claim: claim.created_at, reverse=True)
@@ -277,9 +302,10 @@ def render_claim_rows(claims: list[ClaimSignal], generated_on: str) -> list[str]
         return ["| No active claim signals found | - | - | - |"]
     rows = []
     for claim in claims[:10]:
+        status = "`responded`" if claim.responded_at else sla_cell(claim.created_at, generated_on)
         rows.append(
             f"| [#{claim.issue_number}: {escape_cell(claim.issue_title)}]({claim.issue_url}) | "
-            f"`{claim.login}` | [comment]({claim.comment_url}) | {sla_cell(claim.created_at, generated_on)} |"
+            f"`{claim.login}` | [comment]({claim.comment_url}) | {status} |"
         )
     return rows
 
@@ -296,7 +322,8 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
     needed = max(0, 20 - len(evidence))
     phase = "ready" if len(evidence) >= 20 else "not ready"
     external_prs_over_sla = over_sla_count([item.updated_at for item in external_prs], generated_on)
-    claims_over_sla = over_sla_count([claim.created_at for claim in claims], generated_on)
+    unanswered_claims = [claim for claim in claims if not claim.responded_at]
+    claims_over_sla = over_sla_count([claim.created_at for claim in unanswered_claims], generated_on)
     interests_over_sla = over_sla_count([item.updated_at for item in interests], generated_on)
 
     return "\n".join(
@@ -316,6 +343,7 @@ def build_markdown(repo: str, since: str, generated_on: str, token: str | None) 
             f"- Remaining contributors needed: `{needed}`",
             f"- Open external PRs needing maintainer attention: `{len(external_prs)}`",
             f"- Active claim signals on open issues: `{len(claims)}`",
+            f"- Claim signals awaiting maintainer response: `{len(unanswered_claims)}`",
             f"- Open contributor interest issues: `{len(interests)}`",
             f"- Maintainer response SLA target: `{MAINTAINER_SLA_HOURS}h`",
             f"- Open external PRs over SLA: `{external_prs_over_sla}`",
