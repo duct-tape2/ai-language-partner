@@ -883,17 +883,17 @@ change focused and avoid generated/private assets.
 **Likely files to inspect**
 
 - `docs/community/FIRST_PR_WALKTHROUGH.md`
-- `docs/ko/index.md`
-- `docs/ja/index.md`
 
 **Acceptance signal**
 
-Acceptance: improves `docs/community/FIRST_PR_WALKTHROUGH.md` with clearer
+- A first-time contributor can complete the change in GitHub without a local clone.
+- The walkthrough directly answers whether documentation PRs are taken seriously.
+- The new guidance distinguishes useful docs work from splitting trivial typo-only changes for metrics.
+- The PR changes only `docs/community/FIRST_PR_WALKTHROUGH.md` and includes `Closes #44`.
 
 **Suggested checks**
 
-- `python3 scripts/check_public_tree.py`
-- `manual docs review: verify links and wording`
+- `manual docs review: use GitHub Markdown preview and verify links and wording`
 
 **PR body checklist**
 

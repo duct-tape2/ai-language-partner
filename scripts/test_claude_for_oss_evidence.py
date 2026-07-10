@@ -362,6 +362,23 @@ class FirstPrRecipeTest(unittest.TestCase):
         self.assertNotIn("contracts/openapi_v0.yaml", recipe)
         self.assertIn("cd apps/api && .venv/bin/python -m pytest", recipe)
 
+    def test_first_pr_walkthrough_recipe_stays_browser_only_and_one_file(self) -> None:
+        issue = first_pr_recipes.Issue(
+            number=44,
+            title="docs: improve first PR walkthrough",
+            url="https://example.test/issues/44",
+            body="Acceptance: improve the browser-only walkthrough.",
+            labels=("good first issue", "docs", "community"),
+        )
+
+        recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
+
+        self.assertIn("docs/community/FIRST_PR_WALKTHROUGH.md", recipe)
+        self.assertNotIn("docs/ko/index.md", recipe)
+        self.assertNotIn("docs/ja/index.md", recipe)
+        self.assertIn("GitHub Markdown preview", recipe)
+        self.assertNotIn("python3 scripts/check_public_tree.py", recipe)
+
     def test_recipe_extracts_markdown_acceptance_section_without_flattening_issue_body(self) -> None:
         issue = first_pr_recipes.Issue(
             number=13,
@@ -1053,6 +1070,14 @@ class ContributorCallPageTest(unittest.TestCase):
             "https://github.com/orgs/community/discussions/197632#discussioncomment-17599912",
         )
         self.assertIn("rather than a security toolkit", security_student["notes"])
+        docs_first_timer = next(item for item in items if item["id"] == "outreach_29")
+        self.assertEqual(docs_first_timer["status"], "posted")
+        self.assertEqual(docs_first_timer["issue_query"], "https://github.com/duct-tape2/ai-language-partner/issues/44")
+        self.assertEqual(
+            docs_first_timer["posted_url"],
+            "https://github.com/orgs/community/discussions/198822#discussioncomment-17600005",
+        )
+        self.assertIn("documentation fixes are taken seriously", docs_first_timer["notes"])
 
     def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
         comment = contributor_call_update.render_comment(

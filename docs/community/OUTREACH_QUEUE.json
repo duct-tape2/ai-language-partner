@@ -299,6 +299,16 @@
       "status": "posted",
       "posted_url": "https://github.com/orgs/community/discussions/197632#discussioncomment-17599912",
       "notes": "Tailored one-time reply to a cybersecurity student explicitly learning Python, Linux, and networking and asking for a first OSS contribution; discloses that the repo is a language-learning API rather than a security toolkit and links only the scoped multipart request-validation issue."
+    },
+    {
+      "id": "outreach_29",
+      "audience": "First-time contributors considering documentation PRs",
+      "lane": "Release/community",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/44",
+      "message_template": "short-english",
+      "status": "posted",
+      "posted_url": "https://github.com/orgs/community/discussions/198822#discussioncomment-17600005",
+      "notes": "Tailored one-time reply to a newcomer explicitly asking whether documentation fixes are taken seriously; links only the one-file browser-edit walkthrough issue and explains why a focused issue-linked docs PR is meaningful."
     }
   ]
 }
