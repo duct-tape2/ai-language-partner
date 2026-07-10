@@ -16,7 +16,7 @@
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
     "@react-native-async-storage/async-storage": "1.23.1",
-    "expo": "~52.0.47",
+    "expo": "~57.0.4",
     "expo-asset": "~11.0.5",
     "expo-av": "~15.0.2",
     "expo-file-system": "~18.0.12",
