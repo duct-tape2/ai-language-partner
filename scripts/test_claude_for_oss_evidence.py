@@ -7,6 +7,7 @@ can be checked in CI without live API access.
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import sys
 import unittest
@@ -59,6 +60,14 @@ def issue_item(
 
 
 class EvidenceCountingTest(unittest.TestCase):
+    def test_default_since_uses_a_rolling_utc_date(self) -> None:
+        today = dt.date(2026, 7, 10)
+
+        with patch.object(evidence, "utc_today", return_value=today):
+            self.assertEqual(evidence.default_since(), "2025-07-10")
+        with patch.object(account_audit, "utc_today", return_value=today):
+            self.assertEqual(account_audit.default_since(), "2025-07-10")
+
     def test_collect_evidence_counts_unique_external_contributors_only(self) -> None:
         fixtures = [
             issue_item("duct-tape2", 10, "docs: maintainer update", association="OWNER"),

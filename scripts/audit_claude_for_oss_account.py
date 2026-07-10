@@ -92,8 +92,12 @@ class AccountAudit:
         return self.active_contributor.merged_pr_count is not None and self.active_contributor.merged_pr_count >= 100
 
 
+def utc_today() -> dt.date:
+    return dt.datetime.now(dt.timezone.utc).date()
+
+
 def default_since() -> str:
-    return (dt.date.today() - dt.timedelta(days=365)).isoformat()
+    return (utc_today() - dt.timedelta(days=365)).isoformat()
 
 
 def token_from_env() -> str | None:
@@ -254,7 +258,7 @@ def build_audit(owner: str, since: str, maintainers: set[str], token: str | None
         owner=owner,
         login=login,
         since=since,
-        generated_on=dt.date.today().isoformat(),
+        generated_on=utc_today().isoformat(),
         maintained_repos=source_repos,
         community_repos=community_summaries(repos, since, all_maintainers, token),
         active_contributor=active_contributor_summary(login, since, token),
