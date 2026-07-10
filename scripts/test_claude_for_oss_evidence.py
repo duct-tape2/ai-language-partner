@@ -896,6 +896,8 @@ class ContributorCallPageTest(unittest.TestCase):
             )
         )
         self.assertTrue(any(item["id"] == "outreach_00" and item["status"] == "posted" for item in items))
+        self.assertTrue(any(item["id"] == "outreach_23" and item["status"] == "draft" for item in items))
+        self.assertTrue(any(item["issue_query"].endswith("/issues/63") for item in items))
 
     def test_contributor_call_update_renders_live_discussion_comment(self) -> None:
         comment = contributor_call_update.render_comment(
@@ -1350,6 +1352,34 @@ class PagesDemoTest(unittest.TestCase):
             with self.subTest(js_file=js_file.name):
                 text = js_file.read_text(encoding="utf-8")
                 self.assertNotIn('uri:"/assets/', text)
+
+
+class SecurityAutomationTest(unittest.TestCase):
+    def test_codeql_scans_python_and_typescript_with_minimal_permissions(self) -> None:
+        workflow = Path(".github/workflows/codeql.yml").read_text(encoding="utf-8")
+
+        self.assertIn("javascript-typescript", workflow)
+        self.assertIn("- python", workflow)
+        self.assertIn("security-events: write", workflow)
+        self.assertIn("contents: read", workflow)
+        self.assertIn("github/codeql-action/init@v4", workflow)
+        self.assertIn("github/codeql-action/analyze@v4", workflow)
+
+    def test_dependency_review_blocks_new_high_severity_findings(self) -> None:
+        workflow = Path(".github/workflows/dependency-review.yml").read_text(encoding="utf-8")
+
+        self.assertIn("actions/dependency-review-action@v4", workflow)
+        self.assertIn("fail-on-severity: high", workflow)
+        self.assertIn('branches: ["main"]', workflow)
+
+    def test_dependabot_limits_and_groups_update_noise(self) -> None:
+        config = Path(".github/dependabot.yml").read_text(encoding="utf-8")
+
+        self.assertIn("package-ecosystem: npm", config)
+        self.assertIn("package-ecosystem: pip", config)
+        self.assertIn("package-ecosystem: github-actions", config)
+        self.assertEqual(config.count("open-pull-requests-limit: 3"), 3)
+        self.assertEqual(config.count("interval: weekly"), 3)
 
 
 if __name__ == "__main__":

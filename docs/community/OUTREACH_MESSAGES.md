@@ -5,7 +5,7 @@ identical messages. A posted message is not Claude for OSS evidence; only
 useful merged external PRs count.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
-- Items: `23`
+- Items: `25`
 
 ## outreach_00: Repository visitors and GitHub topic browsers
 
@@ -1055,6 +1055,100 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from r/LearnJapanese learners and Japanese language reviewers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22
+
+Five-minute first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+
+Codespaces first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+
+First issue matcher:
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
+Hosted web demo:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
+
+Starter issue index:
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
+
+Contributor landing:
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
+
+Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
+```
+
+## outreach_23: Korean developers on GeekNews Show GN
+
+- Lane: `Korean docs`
+- Status: `draft`
+- Posted URL: `TBD`
+- Notes: Use the hosted demo as the Show GN target; account signup is staged and awaits user-entered password plus email verification.
+
+```text
+한국어권 일본어 학습자를 위한 local-first OSS를 공개했습니다.
+런타임 LLM 없이 사전 저작 dialogue bank + 로컬 STT/TTS로 회화 연습을 만드는 프로젝트입니다.
+
+아래 이슈에서 작은 기여를 찾고 있어요.
+추천 이슈/목록:
+https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
+5분 첫 PR 가이드:
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+
+Codespaces 첫 PR 가이드:
+https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+
+첫 이슈 매처:
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+
+기여자 페이지:
+https://duct-tape2.github.io/ai-language-partner/ko/
+
+브라우저 데모:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
+기여자 모집 페이지:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
+
+이슈 색인:
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
+
+기여자 안내:
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
+
+질문/첫 PR 상담:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+원하는 이슈가 있으면 `/claim`이라고 댓글을 남기면 짧은 PR 체크리스트가 자동으로 달립니다.
+
+생성 음성, 로컬 엔진, private data 없이 문서/언어 검수 PR만으로도 실제 도움이 됩니다.
+```
+
+## outreach_24: Experienced Expo and React Native maintainers
+
+- Lane: `Accessibility/mobile`
+- Status: `draft`
+- Posted URL: `TBD`
+- Notes: Expo SDK 52 security migration with incremental SDK gates; explicitly not a first-timers-only task.
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for a small, useful contribution from Experienced Expo and React Native maintainers.
+Suggested issue/list:
+https://github.com/duct-tape2/ai-language-partner/issues/63
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html

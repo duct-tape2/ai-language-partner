@@ -239,6 +239,26 @@
       "status": "posted",
       "posted_url": "https://www.reddit.com/r/LearnJapanese/comments/1uqciro/comment/own71bd/",
       "notes": "Posted once in the subreddit's designated weekly materials and self-promotion thread; asks for naturalness, honorific, cultural-note, and beginner-explanation review."
+    },
+    {
+      "id": "outreach_23",
+      "audience": "Korean developers on GeekNews Show GN",
+      "lane": "Korean docs",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22",
+      "message_template": "short-korean",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Use the hosted demo as the Show GN target; account signup is staged and awaits user-entered password plus email verification."
+    },
+    {
+      "id": "outreach_24",
+      "audience": "Experienced Expo and React Native maintainers",
+      "lane": "Accessibility/mobile",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/63",
+      "message_template": "short-english",
+      "status": "draft",
+      "posted_url": "",
+      "notes": "Expo SDK 52 security migration with incremental SDK gates; explicitly not a first-timers-only task."
     }
   ]
 }
