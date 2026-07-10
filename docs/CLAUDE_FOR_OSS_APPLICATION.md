@@ -106,8 +106,8 @@ threshold is not met yet. Do not submit Phase B with this status.
 - No-install issue guide comments: `https://github.com/duct-tape2/ai-language-partner/blob/main/docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md`
 - Hosted web demo: `https://duct-tape2.github.io/ai-language-partner/demo/`
 - Web demo prerelease: `https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09`
-- Discovery labels: 34 open `up-for-grabs` issues, 24 open
-  `first-timers-only` issues, and 26 open `good first issue` items
+- Discovery labels: 37 open `up-for-grabs` issues, 27 open
+  `first-timers-only` issues, and 28 open `good first issue` items
 - Up For Grabs listing PR: merged and live
   `https://github.com/up-for-grabs/up-for-grabs.net/pull/5916`
 - Awesome for Beginners listing PR: `https://github.com/MunGell/awesome-for-beginners/pull/2072`

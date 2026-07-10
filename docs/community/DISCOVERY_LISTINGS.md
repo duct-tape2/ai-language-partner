@@ -7,8 +7,8 @@ merged in this repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `edulinkup`, `elusoc`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `korean-language`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
-- Open `up-for-grabs` issues: `35`
-- Open `first-timers-only` issues: `25`
+- Open `up-for-grabs` issues: `37`
+- Open `first-timers-only` issues: `27`
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Web demo prerelease: `active` - https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09
 - Web demo asset: https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip
