@@ -890,6 +890,8 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Contributor call", messages)
         self.assertIn("FIRST_ISSUE_MATCHER.html", messages)
         self.assertIn("CODESPACES_FIRST_PR.html", messages)
+        self.assertIn("- Status: `closed`", messages)
+        self.assertIn("- Posted URL: `n/a (closed)`", messages)
 
     def test_contributor_share_kit_is_publicly_linked_and_counting_safe(self) -> None:
         share_kit = Path("docs/community/SHARE_KIT.md").read_text(encoding="utf-8")
@@ -988,13 +990,10 @@ class ContributorCallPageTest(unittest.TestCase):
 
         self.assertGreaterEqual(len(items), 22)
         self.assertTrue(any(item["posted_url"] == "https://github.com/duct-tape2/ai-language-partner/discussions/55" for item in posted))
-        self.assertTrue(
-            any(
-                item["posted_url"]
-                == "https://www.reddit.com/r/LearnJapanese/comments/1uqciro/comment/own71bd/"
-                for item in posted
-            )
-        )
+        reddit = next(item for item in items if item["id"] == "outreach_22")
+        self.assertEqual(reddit["status"], "closed")
+        self.assertEqual(reddit["posted_url"], "")
+        self.assertIn("deleted", reddit["notes"])
         self.assertTrue(any(item["id"] == "outreach_00" and item["status"] == "posted" for item in items))
         self.assertTrue(any(item["id"] == "outreach_23" and item["status"] == "draft" for item in items))
         self.assertTrue(any(item["issue_query"].endswith("/issues/63") for item in items))

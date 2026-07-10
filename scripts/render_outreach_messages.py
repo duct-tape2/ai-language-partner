@@ -170,13 +170,14 @@ def main(argv: list[str]) -> int:
         item_id = str(item["id"])
         status = str(item["status"])
         posted_url = str(item["posted_url"])
+        posted_display = posted_url or ("n/a (closed)" if status == "closed" else "TBD")
         lines.extend(
             [
                 f"## {item_id}: {item['audience']}",
                 "",
                 f"- Lane: `{item['lane']}`",
                 f"- Status: `{status}`",
-                f"- Posted URL: `{posted_url or 'TBD'}`",
+                f"- Posted URL: `{posted_display}`",
                 f"- Notes: {item['notes']}",
                 "",
                 "```text",

@@ -236,9 +236,9 @@
       "lane": "Japanese review",
       "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+label%3A%22language-review%22",
       "message_template": "short-english",
-      "status": "posted",
-      "posted_url": "https://www.reddit.com/r/LearnJapanese/comments/1uqciro/comment/own71bd/",
-      "notes": "Posted once in the subreddit's designated weekly materials and self-promotion thread; asks for naturalness, honorific, cultural-note, and beginner-explanation review."
+      "status": "closed",
+      "posted_url": "",
+      "notes": "The post in the subreddit's designated weekly materials and self-promotion thread was deleted by 2026-07-11, so it is retained only as closed outreach history and is not treated as a live discovery channel."
     },
     {
       "id": "outreach_23",

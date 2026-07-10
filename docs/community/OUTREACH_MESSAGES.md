@@ -1044,9 +1044,9 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 ## outreach_22: r/LearnJapanese learners and Japanese language reviewers
 
 - Lane: `Japanese review`
-- Status: `posted`
-- Posted URL: `https://www.reddit.com/r/LearnJapanese/comments/1uqciro/comment/own71bd/`
-- Notes: Posted once in the subreddit's designated weekly materials and self-promotion thread; asks for naturalness, honorific, cultural-note, and beginner-explanation review.
+- Status: `closed`
+- Posted URL: `n/a (closed)`
+- Notes: The post in the subreddit's designated weekly materials and self-promotion thread was deleted by 2026-07-11, so it is retained only as closed outreach history and is not treated as a live discovery channel.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
