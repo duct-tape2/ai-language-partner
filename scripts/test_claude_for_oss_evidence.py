@@ -1192,7 +1192,21 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Local-First", names)
         self.assertIn("Awesome Language Learning Japanese Page", names)
         self.assertIn("Awesome Open Source School", names)
-        self.assertIn("Awesome Japanese", {listing.name for listing in discovery_snapshot.LISTING_ISSUES})
+        issue_names = {listing.name for listing in discovery_snapshot.LISTING_ISSUES}
+        self.assertIn("Awesome Japanese", issue_names)
+        self.assertIn("Meaningful Code", issue_names)
+
+    def test_meaningful_code_tracks_public_submission_issue(self) -> None:
+        listing = next(
+            issue
+            for issue in discovery_snapshot.LISTING_ISSUES
+            if issue.name == "Meaningful Code"
+        )
+
+        self.assertEqual(listing.repo, "Meaningful-Code/meaningfulcode-frontend")
+        self.assertEqual(listing.number, 147)
+        self.assertIn("impactful-project review", listing.open_next_step)
+        self.assertIn("education criteria", listing.check_note)
 
     def test_for_good_first_issue_tracks_public_pr(self) -> None:
         for_good_first_issue = next(

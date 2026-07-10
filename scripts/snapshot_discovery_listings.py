@@ -57,6 +57,8 @@ class ListingIssue:
     repo: str
     number: int
     contributor_link: str
+    open_next_step: str = "awaiting maintainer acknowledgement"
+    check_note: str = "issue submitted before PR per contribution guidelines"
 
 
 LISTING_PRS = [
@@ -141,6 +143,14 @@ LISTING_PRS = [
 
 LISTING_ISSUES = [
     ListingIssue(
+        name="Meaningful Code",
+        repo="Meaningful-Code/meaningfulcode-frontend",
+        number=147,
+        contributor_link=CONTRIBUTOR_LANDING_URL,
+        open_next_step="awaiting impactful-project review",
+        check_note="official project-submission issue template used; education criteria documented",
+    ),
+    ListingIssue(
         name="Awesome Japanese",
         repo="yudataguy/Awesome-Japanese",
         number=149,
@@ -215,7 +225,7 @@ def fetch_listing_issue(issue: ListingIssue, token: str | None) -> dict[str, obj
     state = str(data.get("state", ""))
     reason = str(data.get("state_reason") or "")
     if state == "open":
-        next_step = "awaiting maintainer acknowledgement"
+        next_step = issue.open_next_step
     else:
         reason_label = f" ({reason})" if reason else ""
         next_step = f"closed{reason_label}; follow up only after maturity changes"
@@ -227,7 +237,7 @@ def fetch_listing_issue(issue: ListingIssue, token: str | None) -> dict[str, obj
         "merged": "n/a",
         "mergeable": next_step,
         "draft": False,
-        "checks": ["issue submitted before PR per contribution guidelines"],
+        "checks": [issue.check_note],
         "contributor_link": issue.contributor_link,
         "followup_url": "",
     }
@@ -377,6 +387,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- Keep the 24 Pull Requests project active while reviewable starter issues",
         "  remain open; update its labels if the public taxonomy changes.",
         "- Monitor the Help Wanted project page and keep its indexed issue set current.",
+        "- Track Meaningful Code issue #147 until the project is reviewed or listed;",
+        "  do not duplicate it with the web form or a second PR.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
@@ -405,6 +417,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"  `{TWENTY_FOUR_PULL_REQUESTS_URL}` (project `3564`)",
         "- Help Wanted indexed project page:",
         f"  `{HELP_WANTED_PROJECT_URL}` (37 issues observed 2026-07-10)",
+        "- Meaningful Code project submission:",
+        "  `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`",
     ]
     return "\n".join(rows)
 

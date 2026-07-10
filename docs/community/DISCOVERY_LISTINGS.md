@@ -27,6 +27,7 @@ merged in this repository.
 | Awesome Local-First | PR | open | False | True | [link](https://github.com/alexanderop/awesome-local-first/pull/46) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Language Learning Japanese Page | PR | open | False | True | [link](https://github.com/jqhoogland/awesome-language-learning/pull/20) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
+| Meaningful Code | Issue | open | n/a | awaiting impactful-project review | [link](https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | official project-submission issue template used; education criteria documented |
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
 | Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 | CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | [link](https://www.codetriage.com/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [subscribe](https://www.codetriage.com/duct-tape2/ai-language-partner) | public profile and issue sync active |
@@ -65,6 +66,8 @@ merged in this repository.
 - Keep the 24 Pull Requests project active while reviewable starter issues
   remain open; update its labels if the public taxonomy changes.
 - Monitor the Help Wanted project page and keep its indexed issue set current.
+- Track Meaningful Code issue #147 until the project is reviewed or listed;
+  do not duplicate it with the web form or a second PR.
 - Track For Good First Issue PR #494 until it is merged or reviewed.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
@@ -93,3 +96,5 @@ merged in this repository.
   `https://24pullrequests.com/projects?page=9` (project `3564`)
 - Help Wanted indexed project page:
   `https://helpwanted.dev/projects/duct-tape2/ai-language-partner` (37 issues observed 2026-07-10)
+- Meaningful Code project submission:
+  `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`
