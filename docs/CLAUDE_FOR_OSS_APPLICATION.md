@@ -129,6 +129,8 @@ threshold is not met yet. Do not submit Phase B with this status.
   `https://github.com/zefanja/awesome-opensource-school/pull/16`
 - For Good First Issue listing PR:
   `https://github.com/github/forgoodfirstissue/pull/494`
+- CodeTriage project profile: active with public issue sync
+  `https://www.codetriage.com/duct-tape2/ai-language-partner`
 - Awesome Japanese listing suggestion issue: deferred until the project has a
   clearer app-store/release-build path; hosted demo is now the first maturity
   step

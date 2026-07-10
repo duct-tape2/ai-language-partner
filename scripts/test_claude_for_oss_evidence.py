@@ -1209,7 +1209,9 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("current 2/10", rows[0])
         self.assertIn("FIRST_ISSUE_MATCHER.html", rows[0])
         self.assertIn("CodeTriage", rows[1])
-        self.assertIn("requires maintainer GitHub OAuth login", rows[1])
+        self.assertIn("active", rows[1])
+        self.assertIn("https://www.codetriage.com/duct-tape2/ai-language-partner", rows[1])
+        self.assertIn("public profile and issue sync active", rows[1])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {

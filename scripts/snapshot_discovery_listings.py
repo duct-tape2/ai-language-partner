@@ -34,8 +34,6 @@ FIVE_MINUTE_FIRST_PR_URL = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 INSTALLABLE_DEMO_PLAN_URL = f"{COMMUNITY_PAGES}/INSTALLABLE_DEMO_RELEASE_PLAN.html"
 GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-issue"
 GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
-CODETRIAGE_URL = "https://www.codetriage.com/"
-CODETRIAGE_SUBMIT_URL = "https://www.codetriage.com/repos/new"
 FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
 
 
@@ -248,6 +246,7 @@ def fetch_repo_topics(repo: str, token: str | None) -> list[str]:
 
 def directory_rows(repo: str, token: str | None) -> list[str]:
     contributors = len(collect_evidence(repo, default_since(), set(), token))
+    codetriage_repo_url = f"https://www.codetriage.com/{repo}"
     state = "eligible" if contributors >= 10 else "locked"
     next_step = (
         "submit repository form"
@@ -263,9 +262,9 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
             project=GOOD_FIRST_ISSUE_PROJECT_URL,
             form=GOOD_FIRST_ISSUE_FORM_URL,
         ),
-        "| CodeTriage | Directory | pending | n/a | requires maintainer GitHub OAuth login | "
-        f"[link]({CODETRIAGE_URL}) | [entry](https://github.com/{repo}/issues) | "
-        f"[submit]({CODETRIAGE_SUBMIT_URL}) | login required |",
+        "| CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | "
+        f"[link]({codetriage_repo_url}) | [entry](https://github.com/{repo}/contribute) | "
+        f"[subscribe]({codetriage_repo_url}) | public profile and issue sync active |",
     ]
 
 
@@ -342,8 +341,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  before reopening.",
         "- Track that maturity work in",
         "  `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.",
-        "- For CodeTriage, complete the GitHub OAuth login and repository form only",
-        "  after explicit maintainer approval.",
+        "- Monitor the CodeTriage profile for new subscribers and confirm its issue",
+        "  feed remains synchronized.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
         "- Do not open duplicate listing PRs or use misleading beginner labels.",
         "",
@@ -364,6 +363,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  `https://github.com/DeepSourceCorp/good-first-issue`",
         "- For Good First Issue repository:",
         f"  `{FOR_GOOD_FIRST_ISSUE_URL}`",
+        "- CodeTriage project profile:",
+        f"  `https://www.codetriage.com/{repo}`",
     ]
     return "\n".join(rows)
 
