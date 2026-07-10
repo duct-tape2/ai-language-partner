@@ -7,8 +7,8 @@ merged in this repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `edulinkup`, `elusoc`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `korean-language`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
-- Open `up-for-grabs` issues: `34`
-- Open `first-timers-only` issues: `24`
+- Open `up-for-grabs` issues: `35`
+- Open `first-timers-only` issues: `25`
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Web demo prerelease: `active` - https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09
 - Web demo asset: https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip
@@ -34,6 +34,7 @@ merged in this repository.
 | Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
 | 24 Pull Requests | Directory | active | n/a | public project #3564 | [link](https://24pullrequests.com/projects?page=9) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [manage](https://24pullrequests.com/my_suggestions) | TypeScript; tests; good first issue; contribulator score 39 |
 | Help Wanted | Directory | active | n/a | 37 indexed help-wanted issues | [link](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [browse](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | public project page and sitemap confirmed 2026-07-10 |
+| Ovio | Directory submission | blocked | n/a | submission backend unavailable (`api: null`); awaiting fallback email response | [link](https://ovio.org/submit) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | fallback email sent 2026-07-10; do not resubmit while API is unavailable |
 
 ## Public Status Links
 
@@ -66,6 +67,8 @@ merged in this repository.
 - Keep the 24 Pull Requests project active while reviewable starter issues
   remain open; update its labels if the public taxonomy changes.
 - Monitor the Help Wanted project page and keep its indexed issue set current.
+- Monitor Ovio for a fallback-email response or a non-null submission API;
+  do not duplicate the existing email or submit through the broken form.
 - Track Meaningful Code issue #147 until the project is reviewed or listed;
   do not duplicate it with the web form or a second PR.
 - Track For Good First Issue PR #494 until it is merged or reviewed.
@@ -98,3 +101,5 @@ merged in this repository.
   `https://helpwanted.dev/projects/duct-tape2/ai-language-partner` (37 issues observed 2026-07-10)
 - Meaningful Code project submission:
   `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`
+- Ovio project submission form:
+  `https://ovio.org/submit` (`api: null` reconfirmed 2026-07-10)

@@ -40,6 +40,7 @@ FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
 TWENTY_FOUR_PULL_REQUESTS_URL = "https://24pullrequests.com/projects?page=9"
 TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL = "https://24pullrequests.com/my_suggestions"
 HELP_WANTED_PROJECT_URL = "https://helpwanted.dev/projects/duct-tape2/ai-language-partner"
+OVIO_SUBMIT_URL = "https://ovio.org/submit"
 
 
 @dataclass(frozen=True)
@@ -303,6 +304,11 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
         f"[entry](https://github.com/{repo}/contribute) | "
         f"[browse]({HELP_WANTED_PROJECT_URL}) | "
         "public project page and sitemap confirmed 2026-07-10 |",
+        "| Ovio | Directory submission | blocked | n/a | "
+        "submission backend unavailable (`api: null`); awaiting fallback email response | "
+        f"[link]({OVIO_SUBMIT_URL}) | "
+        f"[entry]({CONTRIBUTOR_LANDING_URL}) | - | "
+        "fallback email sent 2026-07-10; do not resubmit while API is unavailable |",
     ]
 
 
@@ -387,6 +393,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- Keep the 24 Pull Requests project active while reviewable starter issues",
         "  remain open; update its labels if the public taxonomy changes.",
         "- Monitor the Help Wanted project page and keep its indexed issue set current.",
+        "- Monitor Ovio for a fallback-email response or a non-null submission API;",
+        "  do not duplicate the existing email or submit through the broken form.",
         "- Track Meaningful Code issue #147 until the project is reviewed or listed;",
         "  do not duplicate it with the web form or a second PR.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
@@ -419,6 +427,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"  `{HELP_WANTED_PROJECT_URL}` (37 issues observed 2026-07-10)",
         "- Meaningful Code project submission:",
         "  `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`",
+        "- Ovio project submission form:",
+        f"  `{OVIO_SUBMIT_URL}` (`api: null` reconfirmed 2026-07-10)",
     ]
     return "\n".join(rows)
 

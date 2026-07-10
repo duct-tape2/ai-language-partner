@@ -1315,6 +1315,10 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("active", rows[4])
         self.assertIn("37 indexed help-wanted issues", rows[4])
         self.assertIn("helpwanted.dev/projects/duct-tape2/ai-language-partner", rows[4])
+        self.assertIn("Ovio", rows[5])
+        self.assertIn("blocked", rows[5])
+        self.assertIn("api: null", rows[5])
+        self.assertIn("fallback email sent", rows[5])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
