@@ -522,6 +522,13 @@ class WorkflowFixtureTest(unittest.TestCase):
         issue_workflow = Path(".github/workflows/issue-welcome.yml").read_text(encoding="utf-8")
         interest_workflow = Path(".github/workflows/contributor-interest-triage.yml").read_text(encoding="utf-8")
 
+        for workflow in (issue_workflow, interest_workflow):
+            self.assertIn("author_association", workflow)
+            self.assertIn("OWNER", workflow)
+            self.assertIn("MEMBER", workflow)
+            self.assertIn("COLLABORATOR", workflow)
+            self.assertIn('issue.user.type === "Bot"', workflow)
+
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", issue_workflow)
         self.assertIn("DIRECTORY_FIRST_PR.html", issue_workflow)
         self.assertIn("FIRST_ISSUE_MATCHER.html", issue_workflow)

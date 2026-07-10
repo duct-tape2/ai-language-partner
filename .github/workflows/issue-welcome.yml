@@ -16,7 +16,13 @@ jobs:
         with:
           script: |
             const issue = context.payload.issue;
-            if (!issue || issue.pull_request || issue.user.type === "Bot") {
+            const maintainerAssociations = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
+            if (
+              !issue ||
+              issue.pull_request ||
+              issue.user.type === "Bot" ||
+              maintainerAssociations.has(issue.author_association || "")
+            ) {
               return;
             }
 
