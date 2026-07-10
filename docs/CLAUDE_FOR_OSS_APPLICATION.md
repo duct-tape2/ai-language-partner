@@ -60,13 +60,14 @@ Fill this only with real merged PRs from unique external contributors. Do not
 count maintainer-authored PRs, bots, duplicate identities, or trivial spam.
 
 - Evidence generated from: `duct-tape2/ai-language-partner`
-- Since: `2025-07-10`
-- Unique external contributors counted: `0`
+- Since: `2025-07-08`
+- Unique external contributors counted: `1`
 - Status: `NOT READY for Phase B`
-- Remaining contributors needed: `20`
+- Remaining contributors needed: `19`
 
 | # | Contributor | PR URL | Area | Merged date | Review note |
 |---|---|---|---|---|---|
+| 1 | `Lastmile04` | [#73: test: cover dialogue pack path traversal rejection](https://github.com/duct-tape2/ai-language-partner/pull/73) | test | 2026-07-10 | Linked issue + maintainer review |
 
 Current table has fewer than 20 rows because the official community-builder
 threshold is not met yet. Do not submit Phase B with this status.
