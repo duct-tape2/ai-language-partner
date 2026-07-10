@@ -1,4 +1,7 @@
-# No-Install First PR Board
+---
+layout: page
+title: No-Install First PRs
+---
 
 These tasks can be started in the GitHub web editor. They are useful for
 contributors who can review Korean/Japanese wording, learner notes, setup docs,
