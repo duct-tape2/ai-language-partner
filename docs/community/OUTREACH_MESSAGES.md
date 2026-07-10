@@ -5,7 +5,7 @@ identical messages. A posted message is not Claude for OSS evidence; only
 useful merged external PRs count.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
-- Items: `26`
+- Items: `27`
 
 ## outreach_00: Repository visitors and GitHub topic browsers
 
@@ -1196,6 +1196,53 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 I'm looking for a small, useful contribution from Python testing and educational software newcomers.
 Suggested issue/list:
 https://github.com/duct-tape2/ai-language-partner/issues/21
+
+Five-minute first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+
+Codespaces first PR guide:
+https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+
+First issue matcher:
+https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+
+Contributor page:
+https://duct-tape2.github.io/ai-language-partner/
+
+Hosted web demo:
+https://duct-tape2.github.io/ai-language-partner/demo/
+
+Contributor call:
+https://duct-tape2.github.io/ai-language-partner/community/CALL_FOR_CONTRIBUTORS.html
+
+Starter issue index:
+https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html
+
+Contributor landing:
+https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html
+
+First PR help desk:
+https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+If an issue looks good, comment `/claim` on it and the repo will reply with a short PR checklist.
+
+Docs, content review, accessibility, API examples, and focused tests all help. No generated audio, local engines, private data, or API keys are needed for a useful first PR.
+```
+
+## outreach_26: React Native, TypeScript, and UI/UX contributors
+
+- Lane: `Accessibility/mobile`
+- Status: `posted`
+- Posted URL: `https://github.com/orgs/community/discussions/196309#discussioncomment-17595079`
+- Notes: Tailored reply to a React, TypeScript, mobile, i18n, and UI/UX developer explicitly asking how to contribute consistently; links only the scoped Voice Gallery screen-reader label issue.
+
+```text
+I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
+The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines, and local TTS assets.
+
+I'm looking for a small, useful contribution from React Native, TypeScript, and UI/UX contributors.
+Suggested issue/list:
+https://github.com/duct-tape2/ai-language-partner/issues/14
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html

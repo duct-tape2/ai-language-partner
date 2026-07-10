@@ -269,6 +269,16 @@
       "status": "posted",
       "posted_url": "https://github.com/orgs/community/discussions/200168#discussioncomment-17594988",
       "notes": "Tailored reply to a Python and React Native student explicitly seeking a serious first OSS contribution; links only the scoped malformed-manifest regression test."
+    },
+    {
+      "id": "outreach_26",
+      "audience": "React Native, TypeScript, and UI/UX contributors",
+      "lane": "Accessibility/mobile",
+      "issue_query": "https://github.com/duct-tape2/ai-language-partner/issues/14",
+      "message_template": "short-english",
+      "status": "posted",
+      "posted_url": "https://github.com/orgs/community/discussions/196309#discussioncomment-17595079",
+      "notes": "Tailored reply to a React, TypeScript, mobile, i18n, and UI/UX developer explicitly asking how to contribute consistently; links only the scoped Voice Gallery screen-reader label issue."
     }
   ]
 }
