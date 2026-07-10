@@ -25,8 +25,8 @@ merged in this repository.
 | Awesome Local-First | PR | open | False | True | [link](https://github.com/alexanderop/awesome-local-first/pull/46) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Language Learning Japanese Page | PR | open | False | True | [link](https://github.com/jqhoogland/awesome-language-learning/pull/20) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
-| For Good First Issue | PR-ready local branch | pending push | n/a | token required to push fork and open PR | [link](https://github.com/github/forgoodfirstissue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html) | `/private/tmp/forgoodfirstissue:add-ai-language-partner` | prepared locally; not contributor evidence |
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
+| For Good First Issue | PR-ready local branch | pending push | n/a | token required to push fork and open PR | [link](https://github.com/github/forgoodfirstissue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html) | `/private/tmp/forgoodfirstissue:add-ai-language-partner` | prepared locally; not contributor evidence |
 | Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 | CodeTriage | Directory | pending | n/a | requires maintainer GitHub OAuth login | [link](https://www.codetriage.com/) | [entry](https://github.com/duct-tape2/ai-language-partner/issues) | [submit](https://www.codetriage.com/repos/new) | login required |
 
@@ -55,9 +55,9 @@ merged in this repository.
   `docs/community/INSTALLABLE_DEMO_RELEASE_PLAN.md`.
 - For CodeTriage, complete the GitHub OAuth login and repository form only
   after explicit maintainer approval.
-- For Good First Issue has a local fork branch prepared; push and open the PR
-  after a GitHub token is available, then replace the local-branch row with the
-  real PR URL.
+- For Good First Issue has a local fork branch prepared; push and open the
+  PR after a GitHub token is available, then replace the local-branch row
+  with the real PR URL.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
 ## Useful Search Links

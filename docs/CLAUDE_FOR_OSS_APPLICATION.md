@@ -14,7 +14,7 @@ program.
 - License: MIT
 - Project: local-first Japanese speaking practice for Korean learners
 - Program page checked: `https://claude.com/contact-sales/claude-for-oss`
-  on `2026-07-09`
+  on `2026-07-10`
 - Account eligibility audit: `docs/CLAUDE_FOR_OSS_ACCOUNT_AUDIT.md`
 - Core principle: no runtime LLM or external generation API on the Daily Talk
   request path
@@ -25,7 +25,7 @@ program.
 |---|---|---|
 | Maintainer: 500 dependent repos / 100 dependent packages / 200k monthly downloads | Not yet met | New public OSS launch; package split is future work |
 | Core contributor to recognized foundation/language project | Not claimed | Not the basis for this application |
-| Active contributor: 100 merged PRs into repos not owned by maintainer in last 12 months | Not yet met | Possible long-term supporting route |
+| Active contributor: 100 merged PRs into repos not owned by maintainer in last 12 months | Not yet met | 3/100 verified on `2026-07-10`; possible long-term supporting route |
 | Community builder: one maintained repo has 20+ unique external contributors with merged PRs in last 12 months | Target route | Track in the table below after public launch |
 | Critical infrastructure: OpenSSF criticality score >= 0.4 | Not yet met | Not expected for initial launch |
 
@@ -60,7 +60,7 @@ Fill this only with real merged PRs from unique external contributors. Do not
 count maintainer-authored PRs, bots, duplicate identities, or trivial spam.
 
 - Evidence generated from: `duct-tape2/ai-language-partner`
-- Since: `2025-07-09`
+- Since: `2025-07-10`
 - Unique external contributors counted: `0`
 - Status: `NOT READY for Phase B`
 - Remaining contributors needed: `20`
@@ -139,12 +139,12 @@ threshold is not met yet. Do not submit Phase B with this status.
 Run these before applying:
 
 ```bash
-git shortlog -sn --since=2025-07-09 --all
+git shortlog -sn --since=2025-07-10 --all
 find . -type f | grep -Ei 'local_engines|artifacts|handoff|reference_archive|\\.sqlite|\\.zip|\\.wav|\\.npy' && exit 1 || true
 git grep -nE 'sk-[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}' -- .
-python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since=2025-07-09
-python scripts/audit_claude_for_oss_account.py --owner duct-tape2 --since=2025-07-09 --out docs/CLAUDE_FOR_OSS_ACCOUNT_AUDIT.md
-python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since=2025-07-09
+python scripts/export_claude_for_oss_evidence.py duct-tape2/ai-language-partner --since=2025-07-10
+python scripts/audit_claude_for_oss_account.py --owner duct-tape2 --since=2025-07-10 --out docs/CLAUDE_FOR_OSS_ACCOUNT_AUDIT.md
+python scripts/update_claude_application_evidence.py duct-tape2/ai-language-partner --since=2025-07-10
 python scripts/verify_claude_for_oss_readiness.py duct-tape2/ai-language-partner
 ```
 
