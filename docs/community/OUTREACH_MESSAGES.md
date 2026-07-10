@@ -482,7 +482,7 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 - Lane: `Backend/API docs`
 - Status: `draft`
 - Posted URL: `TBD`
-- Notes: Ask for dialogue pack listing response examples.
+- Notes: Ask for self-attested and public-key device trust examples.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
@@ -490,7 +490,7 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 
 I'm looking for a small, useful contribution from OpenAPI documentation contributors.
 Suggested issue/list:
-https://github.com/duct-tape2/ai-language-partner/issues/40
+https://github.com/duct-tape2/ai-language-partner/issues/24
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
@@ -576,7 +576,7 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 - Lane: `Tests/tooling`
 - Status: `draft`
 - Posted URL: `TBD`
-- Notes: Path traversal rejection test is scoped and useful.
+- Notes: Malformed STT upload handling is scoped and protects clear 4xx responses.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
@@ -584,7 +584,7 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 
 I'm looking for a small, useful contribution from Security-minded test contributors.
 Suggested issue/list:
-https://github.com/duct-tape2/ai-language-partner/issues/22
+https://github.com/duct-tape2/ai-language-partner/issues/49
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
@@ -952,7 +952,7 @@ Docs, content review, accessibility, API examples, and focused tests all help. N
 - Lane: `Tests/tooling`
 - Status: `draft`
 - Posted URL: `TBD`
-- Notes: Contributor evidence script fixture tests.
+- Notes: Validate that documented backend commands continue to reference real scripts.
 
 ```text
 I opened ai-language-partner, a local-first Japanese speaking practice app for Korean learners.
@@ -960,7 +960,7 @@ The core loop avoids runtime LLM calls: local STT, reviewed dialogue-bank lines,
 
 I'm looking for a small, useful contribution from Repo tooling contributors.
 Suggested issue/list:
-https://github.com/duct-tape2/ai-language-partner/issues/43
+https://github.com/duct-tape2/ai-language-partner/issues/26
 
 Five-minute first PR guide:
 https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html

@@ -153,8 +153,8 @@ to the same issue.
 | Japanese review | Japanese speakers and language reviewers | #2, #8, #35, #37 | Naturalness, beginner safety, tone consistency |
 | Dialogue content | Language teachers, JLPT reviewers, bilingual learners | #7, #9, #10, #36, #47 | Reviewed source text without generated audio/binaries |
 | Accessibility/mobile | Expo, React Native, accessibility reviewers | #13, #14, #18, #38, #39, #48 | Better labels, touch targets, no narrow-screen overlap |
-| Backend/API docs | FastAPI users and API docs contributors | #6, #19, #20, #40, #41 | OpenAPI examples, provider docs, threshold explanations |
-| Tests/tooling | Python/TypeScript contributors | #21, #22, #25, #28, #42, #43, #49 | Focused tests or repo checks that run locally/CI |
+| Backend/API docs | FastAPI users and API docs contributors | #6, #19, #20, #24, #41 | OpenAPI examples, provider docs, threshold explanations |
+| Tests/tooling | Python/TypeScript contributors | #17, #27, #28, #48, #49 | Focused tests or repo checks that run locally/CI |
 | Release/community | OSS maintainers and process reviewers | #29, #30, #45, #50, #54 | Cleaner labels, review checklist, roadmap, release/demo process |
 
 ## 20-Slot Contributor Board
@@ -203,8 +203,8 @@ review language, docs, or accessibility without installing local engines.
 | A | Korean Japanese learners | #1, #11, #34, #46 | Improve Korean explanations or setup notes |
 | B | Native/fluent Japanese reviewers | #8, #35, #37 | Review naturalness and beginner level |
 | C | React Native/accessibility contributors | #13, #14, #38, #39 | Audit labels, touch targets, small screens |
-| D | FastAPI/API docs contributors | #6, #19, #40, #41 | Add examples and provider/status docs |
-| E | Test-minded contributors | #21, #22, #25, #42, #49 | Add narrow tests or repo checks |
+| D | FastAPI/API docs contributors | #6, #19, #24, #41 | Add examples and provider/status docs |
+| E | Test-minded contributors | #17, #27, #28, #48, #49 | Add narrow tests or repo checks |
 
 ## Message Templates
 
