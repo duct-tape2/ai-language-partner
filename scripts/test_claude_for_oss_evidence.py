@@ -538,6 +538,17 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", interest_workflow)
         self.assertIn("DIRECTORY_FIRST_PR.html", interest_workflow)
 
+    def test_elusoc_application_packet_keeps_personal_data_and_program_claims_honest(self) -> None:
+        packet = Path("docs/community/ELUSOC_PROJECT_ADMIN_APPLICATION.md").read_text(encoding="utf-8")
+        growth_plan = Path("docs/community/CONTRIBUTOR_GROWTH_PLAN.md").read_text(encoding="utf-8")
+
+        self.assertIn("Applicant enters directly", packet)
+        self.assertIn("Password / login secret", packet)
+        self.assertIn("0 verified unique external merged-PR contributors", packet)
+        self.assertIn("do not apply `elusoc`", packet)
+        self.assertIn("official platform confirms", packet)
+        self.assertIn("ELUSOC_PROJECT_ADMIN_APPLICATION.md", growth_plan)
+
 
 class ContributorSprintStatusTest(unittest.TestCase):
     def test_render_status_links_fastest_first_pr_and_counting_rules(self) -> None:

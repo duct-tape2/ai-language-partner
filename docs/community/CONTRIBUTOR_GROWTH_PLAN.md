@@ -43,6 +43,10 @@ The Claude for OSS approval target is the community-builder criterion:
 
 ## Discovery Channel Follow-Up
 
+- ELUSOC project-admin registration remains a time-sensitive contributor
+  acquisition path. Use the verified project copy and personal-data boundary in
+  `docs/community/ELUSOC_PROJECT_ADMIN_APPLICATION.md`; do not add program
+  labels until the official platform confirms registration or acceptance.
 - Up For Grabs is the first live external contributor discovery channel.
 - The hosted web demo gives directory reviewers a click-to-inspect path:
   `https://duct-tape2.github.io/ai-language-partner/demo/`.
