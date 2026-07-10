@@ -1545,7 +1545,7 @@ paths:
               example:
                 - personaId: yui
                   packVersion: v2
-                  sizeBytes: 219821
+                  sizeBytes: 217760
                   topics: [food_order, greetings_intro, hobbies, today, weather_seasons]
                   levels: [N5, N4]
                   scenarioCount: 10
@@ -1553,7 +1553,7 @@ paths:
                   audioCount: 75
                 - personaId: haruka
                   packVersion: v3
-                  sizeBytes: 234817
+                  sizeBytes: 232756
                   topics: [food_order, greetings_intro, hobbies, today, weather_seasons]
                   levels: [N5, N4]
                   scenarioCount: 10
@@ -1561,7 +1561,7 @@ paths:
                   audioCount: 75
                 - personaId: ren
                   packVersion: v3
-                  sizeBytes: 219590
+                  sizeBytes: 217529
                   topics: [food_order, greetings_intro, hobbies, today, weather_seasons]
                   levels: [N5, N4]
                   scenarioCount: 10
