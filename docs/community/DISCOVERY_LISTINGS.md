@@ -31,6 +31,7 @@ merged in this repository.
 | Good First Issue | Directory | locked | n/a | requires 10 contributors; current 0/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 | CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | [link](https://www.codetriage.com/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [subscribe](https://www.codetriage.com/duct-tape2/ai-language-partner) | public profile and issue sync active |
 | Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
+| 24 Pull Requests | Directory | active | n/a | public project #3564 | [link](https://24pullrequests.com/projects?page=9) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [manage](https://24pullrequests.com/my_suggestions) | TypeScript; tests; good first issue; contribulator score 39 |
 
 ## Public Status Links
 
@@ -60,6 +61,8 @@ merged in this repository.
 - Monitor Good First Issue.org Discussion #1. If its GitHub OAuth flow is
   restored, complete the supported submission once instead of duplicating
   the public request.
+- Keep the 24 Pull Requests project active while reviewable starter issues
+  remain open; update its labels if the public taxonomy changes.
 - Track For Good First Issue PR #494 until it is merged or reviewed.
 - Do not open duplicate listing PRs or use misleading beginner labels.
 
@@ -84,3 +87,5 @@ merged in this repository.
   `https://www.codetriage.com/duct-tape2/ai-language-partner`
 - Good First Issue.org indexing request:
   `https://github.com/orgs/goodfirstissueorg/discussions/1`
+- 24 Pull Requests public project listing:
+  `https://24pullrequests.com/projects?page=9` (project `3564`)

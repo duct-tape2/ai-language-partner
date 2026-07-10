@@ -1217,6 +1217,11 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("awaiting response", rows[2])
         self.assertIn("https://github.com/orgs/goodfirstissueorg/discussions/1", rows[2])
         self.assertIn("OAuth authorization is disabled", rows[2])
+        self.assertIn("24 Pull Requests", rows[3])
+        self.assertIn("active", rows[3])
+        self.assertIn("projects?page=9", rows[3])
+        self.assertIn("public project #3564", rows[3])
+        self.assertIn("contribulator score 39", rows[3])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {

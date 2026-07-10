@@ -136,6 +136,9 @@ threshold is not met yet. Do not submit Phase B with this status.
 - Good First Issue.org indexing request: public Q&A submitted after its GitHub
   OAuth authorization action was disabled
   `https://github.com/orgs/goodfirstissueorg/discussions/1`
+- 24 Pull Requests project listing: active as project `3564` with TypeScript,
+  `tests`, and `good first issue` discovery links
+  `https://24pullrequests.com/projects?page=9`
 - Awesome Japanese listing suggestion issue: deferred until the project has a
   clearer app-store/release-build path; hosted demo is now the first maturity
   step
