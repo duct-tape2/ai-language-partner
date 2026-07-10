@@ -6,7 +6,7 @@ searching the whole repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Generated on: `2026-07-10`
-- Issues covered: `24`
+- Issues covered: `25`
 
 ## [#1: docs: add Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
 
@@ -1032,6 +1032,55 @@ Acceptance: includes examples of stereotypes to avoid and context-sensitive
 **PR body checklist**
 
 - Link this issue: `Closes #47` or `Refs #47`
+- Explain what changed and why it helps learners or contributors
+- Say which check you ran, or say that it was docs/content review only
+- Do not commit generated audio, archives, local engines, SQLite files, secrets,
+  screenshots, or private notes
+
+Useful links:
+
+- Contributor page: https://duct-tape2.github.io/ai-language-partner/
+- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
+- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
+- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
+- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
+- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
+- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+
+
+## [#49: backend: add malformed multipart upload test for STT endpoint](https://github.com/duct-tape2/ai-language-partner/issues/49)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Thanks for considering this issue. A small useful PR is enough; please keep the
+change focused and avoid generated/private assets.
+
+**Likely files to inspect**
+
+- `apps/api/tests/test_api_contract.py`
+- `apps/api/app/main.py`
+
+**Acceptance signal**
+
+- Missing multipart `file` returns `422`.
+- A non-upload value under `file` returns `422`.
+- An empty uploaded file returns `422`.
+- Error details are clear and do not expose tracebacks or filesystem paths.
+- Existing valid multipart upload and JSON mock-mode tests remain passing.
+
+**Suggested checks**
+
+- `python3 scripts/check_public_tree.py`
+- `cd apps/api && .venv/bin/python -m pytest`
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`
+
+**PR body checklist**
+
+- Link this issue: `Closes #49` or `Refs #49`
 - Explain what changed and why it helps learners or contributors
 - Say which check you ran, or say that it was docs/content review only
 - Do not commit generated audio, archives, local engines, SQLite files, secrets,

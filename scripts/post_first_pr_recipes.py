@@ -143,6 +143,8 @@ def likely_files(issue: Issue) -> list[str]:
         files += ["contracts/openapi_v0.yaml", "contracts/README_API_CONTRACT.md", "apps/api/tests/test_api_contract.py"]
     elif "path traversal" in title:
         files += ["apps/api/tests/test_api_contract.py", "apps/api/app/main.py"]
+    elif "malformed multipart" in title:
+        files += ["apps/api/tests/test_api_contract.py", "apps/api/app/main.py"]
     elif "forbidden-file scan" in title:
         files += ["scripts/check_public_tree.py", "scripts/test_claude_for_oss_evidence.py"]
     elif "issue-label taxonomy" in title:

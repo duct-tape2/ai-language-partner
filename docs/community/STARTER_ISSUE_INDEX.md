@@ -7,8 +7,8 @@ then follow the first PR walkthrough.
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - Generated on: `2026-07-10`
 - Open issues indexed: `48`
-- Good first issues: `24`
-- Help wanted issues: `18`
+- Good first issues: `25`
+- Help wanted issues: `19`
 - First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
@@ -64,7 +64,7 @@ FastAPI, OpenAPI, local STT/TTS setup, provider docs.
 | [#28: tests: add pack source schema check](https://github.com/duct-tape2/ai-language-partner/issues/28) | `help wanted`, `backend`, `tests` |
 | [#34: docs: add Korean troubleshooting notes for backend dependency install](https://github.com/duct-tape2/ai-language-partner/issues/34) | `good first issue`, `docs`, `backend`, `up-for-grabs`, `first-timers-only` |
 | [#41: backend: document provider fallback labels](https://github.com/duct-tape2/ai-language-partner/issues/41) | `docs`, `backend`, `up-for-grabs` |
-| [#49: backend: add malformed multipart upload test for STT endpoint](https://github.com/duct-tape2/ai-language-partner/issues/49) | `backend`, `tests` |
+| [#49: backend: add malformed multipart upload test for STT endpoint](https://github.com/duct-tape2/ai-language-partner/issues/49) | `help wanted`, `good first issue`, `backend`, `tests`, `up-for-grabs`, `first-timers-only` |
 
 ## Tests/tooling
 
