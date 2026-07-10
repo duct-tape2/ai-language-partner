@@ -371,7 +371,7 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- Public contributor call:",
         "  `https://github.com/duct-tape2/ai-language-partner/discussions/55`",
         "- Canonical auto-updated contributor call comment:",
-        "  `https://github.com/duct-tape2/ai-language-partner/discussions/55#discussioncomment-17582510`",
+        "  `https://github.com/duct-tape2/ai-language-partner/discussions/55#discussioncomment-17582486`",
         "",
         "## Maintainer Follow-Up",
         "",
