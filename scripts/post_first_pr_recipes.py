@@ -132,7 +132,7 @@ def likely_files(issue: Issue) -> list[str]:
     elif "particle" in title:
         files += ["docs/ko/index.md", "apps/mobile/src/grammar/grammarData.ts", "apps/mobile/src/mistakes/mistakesData.ts"]
     elif "bottom tabs" in title:
-        files += ["apps/mobile/App.tsx", "apps/mobile/src/theme.ts"]
+        files += ["apps/mobile/App.tsx", "apps/mobile/scripts/verify-frontend-regressions.mjs"]
     elif "daily talk" in title:
         files += ["apps/mobile/src/screens/DailyTalkScreen.tsx", "apps/mobile/src/dialogue/packManager.ts"]
     elif "korean ui" in title:
@@ -198,8 +198,22 @@ def suggested_checks(issue: Issue, files: list[str]) -> list[str]:
 def acceptance(issue: Issue) -> str:
     body = issue.body.strip()
     if body:
-        body = re.sub(r"\s+", " ", body)
-        return body[:350]
+        explicit = re.search(r"(?im)^Acceptance:\s*(.+)$", body)
+        if explicit:
+            return f"Acceptance: {explicit.group(1).strip()}"[:500]
+
+        section = re.search(
+            r"(?ims)^#{1,6}\s+Acceptance(?: criteria| signal)?\s*$\s*(.*?)(?=^#{1,6}\s|\Z)",
+            body,
+        )
+        if section:
+            lines = [line.rstrip() for line in section.group(1).strip().splitlines()]
+            excerpt = "\n".join(line for line in lines if line.strip())
+            return excerpt[:700]
+
+        first_paragraph = re.split(r"\n\s*\n", body, maxsplit=1)[0]
+        first_paragraph = re.sub(r"\s+", " ", first_paragraph)
+        return first_paragraph[:350]
     return "Make one focused, reviewable change that satisfies the issue title."
 
 

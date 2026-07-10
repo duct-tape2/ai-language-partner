@@ -5,7 +5,7 @@ also posted as issue comments so first-time contributors can start without
 searching the whole repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-09`
+- Generated on: `2026-07-10`
 - Issues covered: `26`
 
 ## [#1: docs: add Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
@@ -24,7 +24,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: backend setup works without STT/TTS engines; Korean instructions include Python venv, install, run, and health check.
+Acceptance: backend setup works without STT/TTS engines; Korean instructions
 
 **Suggested checks**
 
@@ -113,7 +113,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: defines persona, pack, node, lineId, variants, match, confirm, fallback, and global intent.
+Acceptance: defines persona, pack, node, lineId, variants, match, confirm,
 
 **Suggested checks**
 
@@ -291,7 +291,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: checklist avoids stereotypes and flags context-sensitive terms. ## Accessibility and Mobile UX
+Acceptance: checklist avoids stereotypes and flags context-sensitive terms.
 
 **Suggested checks**
 
@@ -332,11 +332,16 @@ change focused and avoid generated/private assets.
 **Likely files to inspect**
 
 - `apps/mobile/App.tsx`
-- `apps/mobile/src/theme.ts`
+- `apps/mobile/scripts/verify-frontend-regressions.mjs`
 
 **Acceptance signal**
 
-Acceptance: identifies and fixes any tab target below common mobile guidance.
+- Each of the five bottom tabs has a stable target height of at least 48 logical pixels.
+- Labels and icons remain centered and do not overlap at narrow mobile width.
+- Existing accessibility metadata remains intact.
+- `cd apps/mobile && npm run verify` passes.
+- `python3 scripts/check_public_tree.py` passes.
+- The PR body includes `Closes #13` and briefly explains the accessibility benefit.
 
 **Suggested checks**
 
@@ -470,7 +475,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: consistent honorifics and app terminology. ## Backend and API
+Acceptance: consistent honorifics and app terminology.
 
 **Suggested checks**
 
@@ -605,7 +610,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: CI fails if generated engines, databases, zip, wav, or npy files are committed.
+Acceptance: CI fails if generated engines, databases, zip, wav, or npy files
 
 **Suggested checks**
 
@@ -739,7 +744,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: covers common Python venv, pip, and macOS command-line tools failures without assuming private maintainer context.
+Acceptance: covers common Python venv, pip, and macOS command-line tools
 
 **Suggested checks**
 
@@ -784,7 +789,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: Japanese text explains cost, privacy, latency, and quality control tradeoffs neutrally.
+Acceptance: Japanese text explains cost, privacy, latency, and quality
 
 **Suggested checks**
 
@@ -829,7 +834,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: adds beginner-safe Japanese examples with Korean notes and does not introduce generated audio or binary assets.
+Acceptance: adds beginner-safe Japanese examples with Korean notes and does
 
 **Suggested checks**
 
@@ -874,7 +879,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: `contracts/openapi_v0.yaml` includes a realistic response example for `GET /v1/dialogue/packs`.
+Acceptance: `contracts/openapi_v0.yaml` includes a realistic response
 
 **Suggested checks**
 
@@ -918,7 +923,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: CI or a repo script fails if `docs/community/ISSUE_SEEDS.md` parses fewer than 30 issues.
+Acceptance: CI or a repo script fails if `docs/community/ISSUE_SEEDS.md`
 
 **Suggested checks**
 
@@ -964,7 +969,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: improves `docs/community/FIRST_PR_WALKTHROUGH.md` with clearer first-time contributor steps or localized Korean/Japanese notes.
+Acceptance: improves `docs/community/FIRST_PR_WALKTHROUGH.md` with clearer
 
 **Suggested checks**
 
@@ -1007,7 +1012,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: summarizes useful-review requirements before merging counted external PRs.
+Acceptance: summarizes useful-review requirements before merging counted
 
 **Suggested checks**
 
@@ -1052,7 +1057,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: covers よ, ね, よね, かな at a beginner-safe level with Korean explanations.
+Acceptance: covers よ, ね, よね, かな at a beginner-safe level with Korean
 
 **Suggested checks**
 
@@ -1097,7 +1102,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: includes examples of stereotypes to avoid and context-sensitive wording to review carefully.
+Acceptance: includes examples of stereotypes to avoid and context-sensitive
 
 **Suggested checks**
 
@@ -1142,7 +1147,7 @@ change focused and avoid generated/private assets.
 
 **Acceptance signal**
 
-Acceptance: lists planned persona/topic/JLPT pack areas and names which items are suitable for external language review.
+Acceptance: lists planned persona/topic/JLPT pack areas and names which
 
 **Suggested checks**
 

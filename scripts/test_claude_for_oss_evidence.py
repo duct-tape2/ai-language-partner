@@ -337,6 +337,35 @@ class FirstPrRecipeTest(unittest.TestCase):
         self.assertIn("CODESPACES_FIRST_PR.html", recipe)
         self.assertIn("generated/private assets", recipe)
 
+    def test_recipe_extracts_markdown_acceptance_section_without_flattening_issue_body(self) -> None:
+        issue = first_pr_recipes.Issue(
+            number=13,
+            title="mobile: audit touch target sizes in bottom tabs",
+            url="https://example.test/issues/13",
+            body="""## Goal
+
+Guarantee stable bottom navigation targets.
+
+## Acceptance criteria
+
+- Each tab has at least 48 logical pixels of target height.
+- The frontend regression check fails if the guarantee is removed.
+
+## Non-goals
+
+- No navigation redesign.
+""",
+            labels=("good first issue", "first-timers-only", "accessibility", "mobile"),
+        )
+
+        recipe = first_pr_recipes.render_recipe("duct-tape2/ai-language-partner", issue)
+
+        self.assertIn("apps/mobile/scripts/verify-frontend-regressions.mjs", recipe)
+        self.assertIn("Each tab has at least 48 logical pixels", recipe)
+        self.assertIn("frontend regression check fails", recipe)
+        self.assertNotIn("Guarantee stable bottom navigation targets", recipe)
+        self.assertNotIn("No navigation redesign", recipe)
+
 
 class WorkflowFixtureTest(unittest.TestCase):
     def test_claude_oss_evidence_refresh_opens_pr_not_direct_main_push(self) -> None:
