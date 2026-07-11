@@ -23,19 +23,13 @@ count하지 않습니다.
 
 ## 가장 빠른 선택지
 
-| 내가 할 수 있는 것 | 이슈 | 바로 수정 |
-|---|---|---|
-| 한국어 backend setup 설명 개선 | [#1](https://github.com/duct-tape2/ai-language-partner/issues/1) | [API runbook 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
-| 한국어 학습자 노트 추가 | [#11](https://github.com/duct-tape2/ai-language-partner/issues/11) | [한국어 guide 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md) |
-| 한국어 UI 문구 일관성 검수 | [#18](https://github.com/duct-tape2/ai-language-partner/issues/18) | [i18n 파일 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/i18n.ts) |
-| 한국어 dependency troubleshooting 추가 | [#34](https://github.com/duct-tape2/ai-language-partner/issues/34) | [API runbook 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
-| 일본어 종조사 한국어 설명 추가 | [#46](https://github.com/duct-tape2/ai-language-partner/issues/46) | [한국어 guide 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md) |
-| 일본어 자연스러움 검수 | [#8](https://github.com/duct-tape2/ai-language-partner/issues/8) | [story source 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json) |
-| 식당 취향 예문 보강 | [#36](https://github.com/duct-tape2/ai-language-partner/issues/36) | [variants CSV 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/variants.csv) |
-| 첫 PR 안내문 개선 | [#44](https://github.com/duct-tape2/ai-language-partner/issues/44) | [walkthrough 편집](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/FIRST_PR_WALKTHROUGH.md) |
+[현재 가능한 starter issue 목록](STARTER_ISSUE_INDEX.html)에서 이슈를 고르세요.
+이 목록은 예약되었거나 담당자가 있는 이슈를 제외하므로, 중복 작업을 피할 수
+있습니다. 한국어 문서, 일본어 자연스러움, dialogue content, 접근성, API 예시,
+테스트 중에서 한 가지를 고르면 됩니다.
 
-더 많은 선택지는 [설치 없이 가능한 첫 PR 목록](NO_INSTALL_FIRST_PRS.md)에
-있습니다.
+브라우저 편집이 가능한 후보의 전체 범위는 [설치 없이 가능한 첫 PR 목록](NO_INSTALL_FIRST_PRS.md)에
+있지만, 시작하기 전에는 반드시 현재 가능한 목록을 먼저 확인하세요.
 일본어/한국어/문화 메모 검수 범위를 고르기 어렵다면
 [Language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md)을 보세요.
 
@@ -68,7 +62,8 @@ Notes:
 - PR 본문에 `Closes #ISSUE_NUMBER`를 넣습니다.
 - `.wav`, `.zip`, `.npy`, `.sqlite`, `.db`, `.bin`, screenshot, local engine,
   private note, token, API key를 커밋하지 않습니다.
-- JSON/CSV/YAML을 수정할 때는 기존 구조와 ID를 유지합니다.
+- `story.json` 또는 `variants.csv`를 수정할 때는 기존 구조와 ID를 유지합니다.
+  CI가 schema, ID, reference, safety를 자동 검증하므로 로컬 설치는 필요하지 않습니다.
 - 무엇을 고를지 모르겠으면
   [첫 PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
   또는

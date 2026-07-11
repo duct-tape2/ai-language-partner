@@ -22,16 +22,13 @@ count しません。
 
 ## いちばん早い選択肢
 
-| できること | issue | すぐ編集 |
-|---|---|---|
-| 日本語 mobile setup 説明 | [#2](https://github.com/duct-tape2/ai-language-partner/issues/2) | [日本語 guide を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ja/index.md) |
-| 日本語の自然さレビュー | [#8](https://github.com/duct-tape2/ai-language-partner/issues/8) | [story source を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json) |
-| no-runtime-LLM 説明 | [#35](https://github.com/duct-tape2/ai-language-partner/issues/35) | [日本語 guide を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ja/index.md) |
-| レストランの好み表現 | [#36](https://github.com/duct-tape2/ai-language-partner/issues/36) | [variants CSV を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/variants.csv) |
-| 敬語・トーンの確認 | [#37](https://github.com/duct-tape2/ai-language-partner/issues/37) | [story source を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json) |
-| 文化安全性レビュー | [#47](https://github.com/duct-tape2/ai-language-partner/issues/47) | [culture notes を編集](https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/culture/cultureNotes.ts) |
+[現在利用できる starter issue 一覧](STARTER_ISSUE_INDEX.html) から選んでください。
+この一覧は予約済み・担当済みの issue を除くため、重複作業を避けられます。
+日本語の自然さ、韓国語/日本語ドキュメント、dialogue content、アクセシビリティ、
+API 例、テストの中から 1 つを選べます。
 
-さらに多くの候補は [No-install first PR board](NO_INSTALL_FIRST_PRS.md) にあります。
+ブラウザで編集できる候補の全体は [No-install first PR board](NO_INSTALL_FIRST_PRS.md) に
+ありますが、開始前に必ず現在利用できる一覧を確認してください。
 日本語・韓国語・文化メモのレビュー範囲で迷う場合は
 [Language review first PR kit](LANGUAGE_REVIEW_FIRST_PR_KIT.md) を見てください。
 
@@ -64,7 +61,8 @@ Notes:
 - PR body に `Closes #ISSUE_NUMBER` を入れます。
 - `.wav`, `.zip`, `.npy`, `.sqlite`, `.db`, `.bin`, screenshot, local engine,
   private note, token, API key を commit しません。
-- JSON/CSV/YAML を編集するときは、既存の構造と ID を保ちます。
+- `story.json` または `variants.csv` を編集するときは、既存の構造と ID を保ちます。
+  CI が schema、ID、reference、safety を自動検証するため、ローカル setup は不要です。
 - 何を選ぶか迷う場合は
   [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
   または

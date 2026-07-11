@@ -2,7 +2,7 @@ name: Starter Issue Index
 
 on:
   issues:
-    types: [opened, edited, labeled, unlabeled, closed, reopened]
+    types: [opened, edited, labeled, unlabeled, assigned, unassigned, closed, reopened]
   schedule:
     - cron: "30 9 * * 1"
   workflow_dispatch:

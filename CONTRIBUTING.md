@@ -41,9 +41,12 @@ tests:
   `/v1/providers/status` (e.g. `voicevox_compat_fallback_edge_tts`).
 - **Do not cross the `apps/api` <-> `apps/mobile` boundary.** A contract change
   is edited in the OpenAPI contract and both clients/servers that consume it.
-- **Definition of done:** backend `pytest` fully green **and**
-  `apps/api/scripts/backend_benchmark_105.py` passes, **and** mobile
-  `npm run typecheck` reports 0 errors. Do not declare done on a broken tree.
+- **Definition of done is task-specific.** Docs-only wording reviews need no
+  local setup. Pack `story.json` or `variants.csv` edits are checked by the
+  `Dialogue Pack Sources` CI workflow for schema, stable IDs, references, and
+  safety. Backend changes need the relevant `pytest` coverage; mobile changes
+  need `npm run typecheck`. Full-stack changes must keep all affected checks
+  green.
 - Generated speech engines, generated clips, generated pack archives, local
   databases, and screenshots are not committed. Keep the public tree source-only.
 

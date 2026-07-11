@@ -1,14 +1,17 @@
 # Starter Issue Index
 
-This is a snapshot of open issues that are useful for first-time
-contributors. Pick one focused issue, comment if you want to claim it,
-then follow the first PR walkthrough.
+This is a snapshot of currently available open issues that are useful
+for first-time contributors. Claimed or assigned issues are excluded so
+you can pick one focused task without duplicate work.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-10`
-- Open issues indexed: `48`
-- Good first issues: `25`
-- Help wanted issues: `19`
+- Generated on: `2026-07-11`
+- Open issues observed: `48`
+- Currently available starter issues: `47`
+- Reserved or assigned issues excluded: `1`
+- Available good first issues: `25`
+- Available help wanted issues: `23`
+- Live GitHub availability: `https://github.com/duct-tape2/ai-language-partner/issues?q=is%3Aissue+is%3Aopen+no%3Aassignee+-label%3Aclaimed`
 - First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
@@ -19,10 +22,10 @@ more PRs.
 
 ## Lane Summary
 
-| Lane | Open issues | Best for |
+| Lane | Available issues | Best for |
 |---|---:|---|
 | Mobile/accessibility | 12 | Expo, React Native, labels, touch targets, layout |
-| Backend/API docs | 12 | FastAPI, OpenAPI, local STT/TTS setup, provider docs |
+| Backend/API docs | 11 | FastAPI, OpenAPI, local STT/TTS setup, provider docs |
 | Tests/tooling | 1 | Python, TypeScript, CI, repo checks, fixtures |
 | Dialogue/content review | 11 | Japanese naturalness, Korean learner notes, JLPT review |
 | Release/community | 7 | Issue taxonomy, review process, roadmap, sprint coordination |
@@ -34,13 +37,13 @@ Expo, React Native, labels, touch targets, layout.
 
 | Issue | Labels |
 |---|---|
-| [#13: mobile: audit touch target sizes in bottom tabs](https://github.com/duct-tape2/ai-language-partner/issues/13) | `good first issue`, `accessibility`, `mobile`, `up-for-grabs`, `first-timers-only` |
+| [#13: mobile: audit touch target sizes in bottom tabs](https://github.com/duct-tape2/ai-language-partner/issues/13) | `help wanted`, `good first issue`, `accessibility`, `mobile`, `tests`, `up-for-grabs`, `first-timers-only` |
 | [#14: mobile: add accessibility labels to voice preview controls](https://github.com/duct-tape2/ai-language-partner/issues/14) | `help wanted`, `good first issue`, `accessibility`, `mobile`, `up-for-grabs`, `first-timers-only` |
 | [#15: mobile: improve empty state copy for Daily Talk pack loading](https://github.com/duct-tape2/ai-language-partner/issues/15) | `good first issue`, `mobile`, `up-for-grabs`, `first-timers-only` |
-| [#16: mobile: document mock mode indicators](https://github.com/duct-tape2/ai-language-partner/issues/16) | `good first issue`, `docs`, `mobile`, `up-for-grabs`, `first-timers-only` |
+| [#16: mobile: document mock mode indicators](https://github.com/duct-tape2/ai-language-partner/issues/16) | `help wanted`, `good first issue`, `docs`, `mobile`, `up-for-grabs`, `first-timers-only` |
 | [#17: mobile: add regression check for duplicate screen labels](https://github.com/duct-tape2/ai-language-partner/issues/17) | `help wanted`, `mobile`, `tests` |
 | [#18: mobile: review Korean UI strings for consistency](https://github.com/duct-tape2/ai-language-partner/issues/18) | `good first issue`, `language-review`, `mobile`, `up-for-grabs`, `first-timers-only` |
-| [#27: tests: add mobile package script inventory check](https://github.com/duct-tape2/ai-language-partner/issues/27) | `mobile`, `tests` |
+| [#27: tests: add mobile package script inventory check](https://github.com/duct-tape2/ai-language-partner/issues/27) | `help wanted`, `good first issue`, `mobile`, `tests`, `up-for-grabs`, `first-timers-only` |
 | [#33: mobile: plan Expo SDK upgrade for transitive security advisories](https://github.com/duct-tape2/ai-language-partner/issues/33) | `help wanted`, `mobile`, `security` |
 | [#38: mobile: add accessibility label audit for Daily Talk controls](https://github.com/duct-tape2/ai-language-partner/issues/38) | `help wanted`, `accessibility`, `mobile` |
 | [#39: mobile: improve small-screen layout for Voice Gallery cards](https://github.com/duct-tape2/ai-language-partner/issues/39) | `accessibility`, `mobile` |
@@ -56,9 +59,8 @@ FastAPI, OpenAPI, local STT/TTS setup, provider docs.
 | [#3: docs: clarify local whisper.cpp setup on macOS](https://github.com/duct-tape2/ai-language-partner/issues/3) | `help wanted`, `docs`, `stt`, `up-for-grabs` |
 | [#4: docs: clarify AivisSpeech and VOICEVOX-compatible setup](https://github.com/duct-tape2/ai-language-partner/issues/4) | `help wanted`, `docs`, `tts`, `up-for-grabs` |
 | [#6: docs: add API curl examples for Daily Talk endpoints](https://github.com/duct-tape2/ai-language-partner/issues/6) | `help wanted`, `docs`, `backend`, `up-for-grabs` |
-| [#19: backend: add provider-status example response to docs](https://github.com/duct-tape2/ai-language-partner/issues/19) | `good first issue`, `docs`, `backend`, `up-for-grabs`, `first-timers-only` |
+| [#19: backend: add provider-status example response to docs](https://github.com/duct-tape2/ai-language-partner/issues/19) | `help wanted`, `good first issue`, `docs`, `backend`, `up-for-grabs`, `first-timers-only` |
 | [#20: backend: add dialogue match threshold explanation](https://github.com/duct-tape2/ai-language-partner/issues/20) | `docs`, `backend`, `up-for-grabs` |
-| [#21: backend: add tests for malformed dialogue pack metadata](https://github.com/duct-tape2/ai-language-partner/issues/21) | `help wanted`, `good first issue`, `backend`, `tests`, `up-for-grabs`, `first-timers-only`, `claimed` |
 | [#23: backend: document Redis rate-limit optional setup](https://github.com/duct-tape2/ai-language-partner/issues/23) | `docs`, `backend`, `up-for-grabs` |
 | [#24: backend: add OpenAPI examples for auth device trust](https://github.com/duct-tape2/ai-language-partner/issues/24) | `docs`, `backend`, `up-for-grabs` |
 | [#28: tests: add pack source schema check](https://github.com/duct-tape2/ai-language-partner/issues/28) | `help wanted`, `backend`, `tests` |
@@ -100,7 +102,7 @@ Issue taxonomy, review process, roadmap, sprint coordination.
 |---|---|
 | [#29: chore: add issue-label taxonomy document](https://github.com/duct-tape2/ai-language-partner/issues/29) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#30: chore: add release checklist for generated voice assets](https://github.com/duct-tape2/ai-language-partner/issues/30) | `docs`, `release` |
-| [#44: docs: improve first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
+| [#44: docs: improve first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44) | `help wanted`, `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#45: docs: add maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#50: docs: add public roadmap for dialogue-bank packs](https://github.com/duct-tape2/ai-language-partner/issues/50) | `help wanted`, `good first issue`, `docs`, `community`, `up-for-grabs`, `first-timers-only` |
 | [#52: community: 20 contributor sprint kickoff](https://github.com/duct-tape2/ai-language-partner/issues/52) | `help wanted`, `community` |
