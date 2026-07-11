@@ -101,7 +101,7 @@ title: AI Language Partner
     <div>
       <p class="alp-kicker">READY WHEN YOU ARE</p>
       <h2>Make one focused improvement.</h2>
-      <p>Every counted PR is reviewed for real learner or contributor value.</p>
+      <p>Every contribution is reviewed for real learner or project value.</p>
     </div>
     <div class="alp-actions">
       <a class="alp-button alp-button--primary" href="https://github.com/duct-tape2/ai-language-partner/contribute">Open GitHub /contribute</a>

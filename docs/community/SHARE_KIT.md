@@ -11,8 +11,8 @@ contributors, FastAPI users, accessibility reviewers, local-first builders, or
 education OSS maintainers.
 
 Do not mass-post identical messages. Do not imply that a post, star, comment,
-or listing counts as Claude for OSS evidence. Only useful merged PRs from real
-external contributors count.
+or listing is a contribution; invite people to choose a focused issue that
+improves the learner experience or the project.
 
 ## Core Links
 

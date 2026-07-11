@@ -8,8 +8,9 @@ contributors who can review Korean/Japanese wording, learner notes, setup docs,
 or beginner dialogue content but do not want to install Expo, FastAPI, local
 STT/TTS engines, or generated voice assets.
 
-Only real, useful PRs count for Claude for OSS evidence. Do not split trivial
-typos into separate PRs just to increase the count.
+Choose a focused change that improves the learner experience or the project.
+Keep related corrections together instead of splitting trivial typos across
+separate PRs.
 
 ## How To Send A Browser-Only PR
 
@@ -68,7 +69,7 @@ For Japanese/Korean wording, dialogue, or cultural-safety review, use the
 | [#36: restaurant preference examples](https://github.com/duct-tape2/ai-language-partner/issues/36) | Add beginner-safe examples for expressing restaurant preferences | `packs/yui/v1/variants.csv` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/variants.csv) |
 | [#41: provider fallback labels](https://github.com/duct-tape2/ai-language-partner/issues/41) | Explain honest provider labels such as `mock` and `voicevox_compat_fallback_*` | `docs/backend/API_RUNBOOK.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
 | [#44: first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44) | Improve this repo's first-PR instructions for new contributors | `docs/community/FIRST_PR_WALKTHROUGH.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/FIRST_PR_WALKTHROUGH.md) |
-| [#45: maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | Improve the checklist maintainers use before merging counted external PRs | `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md) |
+| [#45: maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | Improve the checklist maintainers use before merging focused external PRs | `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md) |
 | [#46: Korean notes for sentence-final particles](https://github.com/duct-tape2/ai-language-partner/issues/46) | Add beginner-safe Korean explanations for よ, ね, よね, and かな | `docs/ko/index.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md) |
 | [#47: cultural-safety review examples](https://github.com/duct-tape2/ai-language-partner/issues/47) | Add examples of stereotype-prone or context-sensitive wording to review carefully | `apps/mobile/src/culture/cultureNotes.ts` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/apps/mobile/src/culture/cultureNotes.ts) |
 | [#50: dialogue-bank pack roadmap](https://github.com/duct-tape2/ai-language-partner/issues/50) | Add a public roadmap for persona, topic, JLPT, and language-review pack areas | `docs/community/CONTRIBUTOR_GROWTH_PLAN.md` | [edit](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/CONTRIBUTOR_GROWTH_PLAN.md) |

@@ -16,9 +16,8 @@ title: 5分 first PR guide
 重複作業を避けたい場合は、issue に `/claim` とコメントしてください。自動コメントが
 first PR checklist を案内し、maintainer triage 用の `claimed` label を付けます。
 
-Claude for OSS 基準では、実在する外部コントリビューターの有用な merged PR だけを
-count します。数字を増やすための小さな typo 分割、bot、重複アカウント、maintainer PR は
-count しません。
+学習者またはプロジェクトを良くする、集中した変更を選んでください。関連する修正は
+1 つの PR にまとめ、些細な typo 修正を別々の PR に分けないでください。
 
 ## いちばん早い選択肢
 

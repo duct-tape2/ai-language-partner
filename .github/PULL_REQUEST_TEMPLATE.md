@@ -38,8 +38,8 @@ Closes #ISSUE_NUMBER
 - Codespaces first PR: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
 - First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
-Maintainers: leave a human review comment before merging any PR that might be
-counted for Claude for OSS evidence. The automated welcome comment is not a
-review decision, and neither is the automated review-packet comment. Use
+Maintainers: leave a human review comment before merging. The automated welcome
+comment is not a review decision, and neither is the automated review-packet
+comment. Use
 `python scripts/build_pr_review_packet.py duct-tape2/ai-language-partner <PR_NUMBER>`
 or `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md` for the review sequence.

@@ -39,7 +39,7 @@ jobs:
               "- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
               "- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html",
               "- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html",
-              "- 20 contributor sprint kickoff: https://github.com/duct-tape2/ai-language-partner/issues/52",
+              "- Review and eligibility policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html",
               "",
               "For a first PR, please keep the change small and avoid generated audio, archives, SQLite files, local engine folders, secrets, or private notes.",
               "",

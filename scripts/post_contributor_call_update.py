@@ -10,7 +10,7 @@ import os
 import sys
 import urllib.request
 
-from export_claude_for_oss_evidence import collect_evidence, default_since
+from export_claude_for_oss_evidence import default_since
 from post_no_install_first_pr_guides import BOARD as NO_INSTALL_BOARD_PATH
 from post_no_install_first_pr_guides import parse_board as parse_no_install_board
 
@@ -34,6 +34,7 @@ CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
 NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
 SHARE_KIT = f"{COMMUNITY_PAGES}/SHARE_KIT.html"
+REVIEW_ELIGIBILITY_POLICY = f"{COMMUNITY_PAGES}/PR_REVIEW_AND_COUNTING_POLICY.html"
 HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 CONTRIBUTOR_INTEREST = (
     "https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml"
@@ -92,23 +93,16 @@ def viewer_login(token: str) -> str:
 
 
 def render_comment(repo: str, since: str, generated_on: str, contributor_count: int, no_install_count: int) -> str:
-    needed = max(0, 20 - contributor_count)
-    phase = "ready" if contributor_count >= 20 else "not ready"
-
     return "\n".join(
         [
             MARKER,
             "# Current Contributor Call Update",
             "",
             "This is the live entry point for people arriving from discovery lists,",
-            "GitHub topics, or shared links. It is not Claude for OSS evidence by",
-            "itself; only useful merged PRs from real external contributors count.",
+            "GitHub topics, or shared links. Start with a focused task that improves",
+            "the learner experience or makes the project easier to sustain.",
             "",
             f"- Updated: `{generated_on}`",
-            f"- Evidence window starts: `{since}`",
-            f"- Phase B readiness: `{phase}`",
-            f"- Unique external merged PR contributors: `{contributor_count}/20`",
-            f"- Remaining contributors needed: `{needed}`",
             f"- Browser-only no-install issue slots: `{no_install_count}`",
             "",
             "## Start Here",
@@ -136,14 +130,16 @@ def render_comment(repo: str, since: str, generated_on: str, contributor_count: 
             f"- Listing tracker: {DISCOVERY_STATUS}",
             f"- Contributor funnel tracker: {FUNNEL_STATUS}",
             "",
-            "## What Counts",
+            "## Contribution Guidelines",
             "",
-            "- One useful merged PR per unique external human contributor.",
             "- Docs, content review, Korean/Japanese wording, accessibility, API",
-            "  examples, tests, and setup docs can all count after human review.",
-            "- Maintainer-authored PRs, bots, duplicate identities, trivial typo",
-            "  splits, and metric-only changes do not count.",
+            "  examples, tests, and setup docs can all help learners or the project.",
+            "- Keep related corrections together instead of splitting trivial typo",
+            "  fixes across separate PRs.",
+            "- Link the issue or problem in your PR and name the smallest relevant",
+            "  check you ran.",
             "- If you want to avoid duplicate work, comment `/claim` on an issue.",
+            f"- Review and eligibility policy: {REVIEW_ELIGIBILITY_POLICY}",
             "",
             f"Repository: https://github.com/{repo}",
         ]
@@ -246,8 +242,7 @@ def upsert_discussion_comment(repo: str, discussion_number: int, body: str, toke
 
 
 def build_comment(repo: str, since: str, generated_on: str, token: str | None) -> str:
-    evidence = collect_evidence(repo, since, set(), token)
-    return render_comment(repo, since, generated_on, len(evidence), no_install_task_count())
+    return render_comment(repo, since, generated_on, 0, no_install_task_count())
 
 
 def main(argv: list[str]) -> int:

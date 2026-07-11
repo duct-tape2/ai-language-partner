@@ -46,7 +46,7 @@ jobs:
               "- Do not add generated audio, archives, SQLite files, local engine folders, or secrets.",
               "- Preserve the no-runtime-LLM rule for the Daily Talk path.",
               "- Mention the smallest relevant check you ran, or why the PR is docs/content-only.",
-              "- The repo labels external PRs for maintainer review; that label is triage only, not evidence by itself.",
+              "- The repo labels external PRs for maintainer review; labels support triage and do not decide merge outcomes.",
               "",
               "Useful links:",
               "",
@@ -54,11 +54,9 @@ jobs:
               "- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html",
               "- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html",
               "- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html",
-              "- Contributor sprint lanes: https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_SPRINT.html",
-              "- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html",
               "- Maintainer review runbook: https://duct-tape2.github.io/ai-language-partner/community/MAINTAINER_PR_REVIEW_RUNBOOK.html",
               "",
-              "For Claude for OSS evidence, only real external contributors with useful merged PRs are counted. Maintainer-authored PRs, bots, duplicate identities, and trivial metric-only PRs are excluded."
+              "We value focused work that improves the learner experience or makes the project easier to sustain; a maintainer will review this PR on its merits."
             ].join("\n");
 
             await github.rest.issues.createComment({

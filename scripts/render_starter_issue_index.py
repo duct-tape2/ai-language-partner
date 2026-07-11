@@ -159,9 +159,9 @@ def render_markdown(repo: str, issues: list[Issue], generated_on: str) -> str:
         "- Contributor interest form: "
         f"`https://github.com/{repo}/issues/new?template=contributor_interest.yml`",
         "",
-        "Only useful, reviewable PRs count toward the Claude for OSS",
-        "community-builder evidence. Do not split trivial changes just to create",
-        "more PRs.",
+        "Choose a useful, reviewable issue that improves the learner experience or the",
+        "project. Keep related corrections together instead of splitting trivial changes",
+        "across separate PRs.",
         "",
         "## Lane Summary",
         "",

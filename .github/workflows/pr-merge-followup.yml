@@ -67,8 +67,7 @@ jobs:
               marker,
               `Thanks again, @${pr.user.login}. This PR has been merged.`,
               "",
-              "Maintainers marked it as `merged-external-pr-candidate` for later evidence review.",
-              "That label is not a final Claude for OSS counting decision; the public counting policy still applies.",
+              "Your focused contribution helps make Japanese practice better for learners and the project more sustainable.",
               "",
               "Useful next links:",
               "",
@@ -76,7 +75,6 @@ jobs:
               "- Five-minute first PR guide: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
               "- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
               "- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53",
-              "- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html",
             ].join("\n");
 
             await github.rest.issues.createComment({

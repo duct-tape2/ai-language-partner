@@ -23,8 +23,9 @@ If you want to avoid duplicate work, comment `/claim` on the issue first. An
 automated reply will point you back to the PR checklist for that issue and add
 the `claimed` label for maintainer triage.
 
-Only real, useful PRs count toward Claude for OSS evidence. Do not split
-trivial typo fixes into separate PRs just to increase numbers.
+Choose a focused change that improves the learner experience or the project.
+Keep closely related corrections together instead of splitting trivial typo
+fixes across separate PRs.
 
 ## Fastest Routes
 

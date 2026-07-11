@@ -77,10 +77,9 @@ local engine folders, secrets, private notes, or private datasets.
 The Daily Talk path avoids runtime LLM/API calls. Contributions should preserve
 that local-first design.
 
-## Claude For OSS Note
+## Why Your Contribution Matters
 
-This project is building toward the Claude for OSS community-builder route:
-20+ unique external contributors with useful merged PRs in the last 12 months.
-
-Only real external contributors with useful merged PRs count. Maintainer PRs,
-bots, duplicate identities, and metric-only changes are excluded.
+We welcome focused work that makes Japanese practice clearer, safer, more
+accessible, or easier to maintain. Docs, language review, dialogue content,
+API examples, and focused tests all help when they solve a real learner or
+project need. Link the issue in your PR and name the smallest relevant check.

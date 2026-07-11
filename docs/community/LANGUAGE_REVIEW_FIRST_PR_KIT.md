@@ -9,10 +9,9 @@ Use this kit if you can review Japanese naturalness, Korean learner wording,
 dialogue examples, or cultural-safety notes but do not want to install Expo,
 FastAPI, local STT/TTS engines, generated audio, or API keys.
 
-The goal is one focused, useful PR from one real reviewer. A small docs or
-content review can count for the community-builder route when it improves the
-project and is merged after maintainer review. Do not split tiny typo-only
-changes just to increase contributor count.
+The goal is one focused, useful PR from one reviewer. A small docs or content
+review matters when it improves the learner experience or the project. Keep
+related corrections together instead of splitting tiny typo-only changes.
 
 ## Fastest Review Routes
 

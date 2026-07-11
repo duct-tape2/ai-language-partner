@@ -170,6 +170,7 @@ class StarterIssueIndexTest(unittest.TestCase):
         self.assertIn("| Mobile/accessibility | 1 |", markdown)
         self.assertIn("| Dialogue/content review | 1 |", markdown)
         self.assertIn("[#3: content: review yui](https://example.test/3)", markdown)
+        self.assertIn("improves the learner experience or the", markdown)
 
     def test_render_markdown_excludes_claimed_and_assigned_issues(self) -> None:
         issues = [
@@ -739,6 +740,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Closes #123", workflow)
         self.assertIn("CODESPACES_FIRST_PR.html", workflow)
         self.assertIn("labels external PRs for maintainer review", workflow)
+        self.assertIn("improves the learner experience or makes the project easier to sustain", workflow)
+        self.assertNotIn("Claude for OSS", workflow)
 
     def test_pr_triage_labels_workflow_marks_external_prs_without_counting_claim(self) -> None:
         workflow = Path(".github/workflows/pr-triage-labels.yml").read_text(encoding="utf-8")
@@ -759,7 +762,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("\"external-pr\"", label_script)
         self.assertIn("\"needs-maintainer-review\"", label_script)
 
-    def test_pr_merge_followup_marks_candidates_without_final_counting_claim(self) -> None:
+    def test_pr_merge_followup_marks_candidates_and_stays_contributor_first(self) -> None:
         workflow = Path(".github/workflows/pr-merge-followup.yml").read_text(encoding="utf-8")
         labels_doc = Path("docs/community/LABELS.md").read_text(encoding="utf-8")
         label_script = Path("scripts/create_github_labels.py").read_text(encoding="utf-8")
@@ -772,7 +775,8 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("pull-requests: write", workflow)
         self.assertIn("pr.merged", workflow)
         self.assertIn("merged-external-pr-candidate", workflow)
-        self.assertIn("not a final Claude for OSS counting decision", workflow)
+        self.assertIn("focused contribution helps make Japanese practice better", workflow)
+        self.assertNotIn("Claude for OSS", workflow)
         self.assertIn("issues.addLabels", workflow)
         self.assertIn("issues.removeLabel", workflow)
         self.assertIn("issues.createComment", workflow)
@@ -791,7 +795,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Not Counted But Appreciated", snippets)
         self.assertIn("Final Counting Checklist", snippets)
 
-    def test_pull_request_template_collects_countable_pr_signals(self) -> None:
+    def test_pull_request_template_collects_reviewable_pr_signals(self) -> None:
         template = Path(".github/PULL_REQUEST_TEMPLATE.md").read_text(encoding="utf-8")
 
         self.assertIn("Closes #ISSUE_NUMBER", template)
@@ -801,6 +805,44 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("DIRECTORY_FIRST_PR.html", template)
         self.assertIn("CODESPACES_FIRST_PR.html", template)
         self.assertIn("First PR help desk", template)
+        self.assertNotIn("Claude for OSS", template)
+
+    def test_contributing_states_opt_in_for_extra_attribution(self) -> None:
+        contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
+
+        self.assertIn("Normal GitHub authorship remains public", contributing)
+        self.assertIn("require your opt-in", contributing)
+        self.assertIn("without affecting review or merge decisions", contributing)
+
+    def test_primary_contributor_surfaces_are_not_metric_driven(self) -> None:
+        paths = (
+            "README.md",
+            "docs/index.md",
+            "docs/ja/index.md",
+            "docs/ko/index.md",
+            "docs/community/CONTRIBUTOR_LANDING.md",
+            "docs/community/CALL_FOR_CONTRIBUTORS.md",
+            "docs/community/CALL_FOR_CONTRIBUTORS_JA.md",
+            "docs/community/CALL_FOR_CONTRIBUTORS_KO.md",
+            ".github/PULL_REQUEST_TEMPLATE.md",
+            ".github/workflows/issue-welcome.yml",
+            ".github/workflows/pr-welcome.yml",
+            ".github/workflows/pr-merge-followup.yml",
+        )
+
+        for path in paths:
+            with self.subTest(path=path):
+                surface = Path(path).read_text(encoding="utf-8")
+                self.assertNotIn("Claude for OSS", surface)
+                self.assertNotIn("community-builder", surface)
+                self.assertNotIn("20 contributor sprint", surface)
+
+        landing = Path("docs/community/CONTRIBUTOR_LANDING.md").read_text(encoding="utf-8")
+        issue_welcome = Path(".github/workflows/issue-welcome.yml").read_text(encoding="utf-8")
+        self.assertIn("review and eligibility policy", landing)
+        self.assertIn("PR_REVIEW_AND_COUNTING_POLICY.html", landing)
+        self.assertIn("Review and eligibility policy", issue_welcome)
+        self.assertIn("PR_REVIEW_AND_COUNTING_POLICY.html", issue_welcome)
 
     def test_issue_templates_preserve_fast_lane_fields(self) -> None:
         good_first = Path(".github/ISSUE_TEMPLATE/good_first_issue.yml").read_text(encoding="utf-8")
@@ -1130,7 +1172,7 @@ class ApplicationEvidenceUpdateTest(unittest.TestCase):
 
 
 class ContributorCallPageTest(unittest.TestCase):
-    def test_contributor_call_page_is_shareable_and_honest(self) -> None:
+    def test_contributor_call_page_is_shareable_and_contributor_first(self) -> None:
         page = Path("docs/community/CALL_FOR_CONTRIBUTORS.md").read_text(encoding="utf-8")
 
         self.assertIn("layout: page", page)
@@ -1143,9 +1185,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", page)
         self.assertIn("contributor_interest_ja.yml", page)
         self.assertIn("No-install first PR board", page)
-        self.assertIn("20+ unique external contributors", page)
-        self.assertIn("Maintainer PRs", page)
-        self.assertIn("metric-only changes are excluded", page)
+        self.assertIn("Why Your Contribution Matters", page)
+        self.assertIn("focused work that makes Japanese practice", page)
+        self.assertIn("Link the issue in your PR", page)
 
     def test_outreach_messages_link_contributor_call(self) -> None:
         messages = Path("docs/community/OUTREACH_MESSAGES.md").read_text(encoding="utf-8")
@@ -1156,8 +1198,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("CODESPACES_FIRST_PR.html", messages)
         self.assertIn("- Status: `closed`", messages)
         self.assertIn("- Posted URL: `n/a (closed)`", messages)
+        self.assertIn("A posted message is an invitation, not a contribution", messages)
 
-    def test_contributor_share_kit_is_publicly_linked_and_counting_safe(self) -> None:
+    def test_contributor_share_kit_is_publicly_linked_and_value_focused(self) -> None:
         share_kit = Path("docs/community/SHARE_KIT.md").read_text(encoding="utf-8")
         readme = Path("README.md").read_text(encoding="utf-8")
         index = Path("docs/index.md").read_text(encoding="utf-8")
@@ -1167,8 +1210,8 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("layout: page", share_kit)
         self.assertIn("30-Second Posts", share_kit)
         self.assertIn("Do not mass-post identical messages", share_kit)
-        self.assertIn("Only useful merged PRs", share_kit)
-        self.assertIn("external contributors count", share_kit)
+        self.assertIn("or listing is a contribution", share_kit)
+        self.assertIn("improves the learner experience or the project", share_kit)
         self.assertIn("DIRECTORY_FIRST_PR.html", share_kit)
         self.assertIn("FIRST_ISSUE_MATCHER.html", share_kit)
         self.assertIn("NO_INSTALL_FIRST_PRS.html", share_kit)
@@ -1180,7 +1223,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("SHARE_KIT.html", landing)
         self.assertIn("SHARE_KIT.md", playbook)
 
-    def test_directory_first_pr_fast_lane_is_publicly_linked_and_counting_safe(self) -> None:
+    def test_directory_first_pr_fast_lane_is_publicly_linked_and_value_focused(self) -> None:
         guide = Path("docs/community/DIRECTORY_FIRST_PR.md").read_text(encoding="utf-8")
         readme = Path("README.md").read_text(encoding="utf-8")
         index = Path("docs/index.md").read_text(encoding="utf-8")
@@ -1190,7 +1233,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Start In 60 Seconds", guide)
         self.assertIn("For Good First Issue", guide)
         self.assertIn("Closes #ISSUE_NUMBER", guide)
-        self.assertIn("Only useful merged external PRs count", guide)
+        self.assertIn("choose a focused issue that improves the learner experience", guide)
         self.assertIn("STARTER_ISSUE_INDEX.html", guide)
         self.assertIn("excludes claimed and assigned tasks", guide)
         self.assertNotIn("issues/49", guide)
@@ -1304,8 +1347,7 @@ class ContributorCallPageTest(unittest.TestCase):
         )
 
         self.assertIn(contributor_call_update.MARKER, comment)
-        self.assertIn("Unique external merged PR contributors: `3/20`", comment)
-        self.assertIn("Remaining contributors needed: `17`", comment)
+        self.assertIn("the learner experience or makes the project easier to sustain", comment)
         self.assertIn("FIRST_ISSUE_MATCHER.html", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", comment)
         self.assertIn("CODESPACES_FIRST_PR.html", comment)
@@ -1318,7 +1360,12 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("SHARE_KIT.html", comment)
         self.assertIn("contributor_interest_ja.yml", comment)
         self.assertIn("awesome-local-first/pull/46", comment)
-        self.assertIn("not Claude for OSS evidence by", comment)
+        self.assertIn("## Contribution Guidelines", comment)
+        self.assertIn("Link the issue or problem in your PR", comment)
+        self.assertIn("Review and eligibility policy", comment)
+        self.assertIn("PR_REVIEW_AND_COUNTING_POLICY.html", comment)
+        self.assertNotIn("Claude for OSS", comment)
+        self.assertNotIn("Unique external", comment)
 
     def test_contributor_call_update_workflow_renders_without_discussion_write(self) -> None:
         workflow = Path(".github/workflows/contributor-call-update.yml").read_text(encoding="utf-8")
@@ -1455,7 +1502,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("STARTER_ISSUE_INDEX.html", guide)
         self.assertIn("예약되었거나 담당자가 있는 이슈를 제외", guide)
         self.assertIn("CI가 schema, ID, reference, safety를 자동 검증", guide)
-        self.assertIn("숫자를 채우기 위한", guide)
+        self.assertIn("학습자나 프로젝트를 더 좋게 만드는", guide)
 
     def test_readme_and_pages_link_github_contribute_route(self) -> None:
         readme = Path("README.md").read_text(encoding="utf-8")
@@ -1515,7 +1562,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("STARTER_ISSUE_INDEX.html", guide)
         self.assertIn("予約済み・担当済みの issue を除く", guide)
         self.assertIn("CI が schema、ID、reference、safety を自動検証", guide)
-        self.assertIn("数字を増やすため", guide)
+        self.assertIn("学習者またはプロジェクトを良くする", guide)
 
     def test_readiness_required_files_include_korean_contributor_routes(self) -> None:
         self.assertIn(".github/ISSUE_TEMPLATE/contributor_interest_ko.yml", readiness.REQUIRED_FILES)
@@ -1581,7 +1628,7 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("reads the copied token", checklist)
         self.assertIn("clears the clipboard", checklist)
 
-    def test_language_review_first_pr_kit_is_reviewable_and_counting_safe(self) -> None:
+    def test_language_review_first_pr_kit_is_reviewable_and_value_focused(self) -> None:
         kit = Path("docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md").read_text(encoding="utf-8")
         content_template = Path(".github/ISSUE_TEMPLATE/content_review.yml").read_text(encoding="utf-8")
 
@@ -1615,14 +1662,14 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertEqual(login, "duct-tape2")
         self.assertEqual(comment, owned)
 
-    def test_first_issue_matcher_has_direct_routes_and_counting_guardrails(self) -> None:
+    def test_first_issue_matcher_has_direct_routes_and_value_guardrails(self) -> None:
         matcher = Path("docs/community/FIRST_ISSUE_MATCHER.md").read_text(encoding="utf-8")
 
         self.assertIn("Thirty-Second Match", matcher)
         self.assertIn("https://github.com/duct-tape2/ai-language-partner/edit/main/", matcher)
         self.assertIn("Closes #ISSUE_NUMBER", matcher)
-        self.assertIn("20+ unique external contributors", matcher)
-        self.assertIn("metric-only changes do not count", matcher)
+        self.assertIn("What Makes a Useful Contribution", matcher)
+        self.assertIn("learner or project need", matcher)
         self.assertIn("issues/49", matcher)
         self.assertNotIn("issues/22", matcher)
 
@@ -1632,7 +1679,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn("https://github.com/duct-tape2/ai-language-partner/edit/main/", board)
         self.assertIn("first-timers-only", board)
         self.assertIn("No command-line check is required", board)
-        self.assertIn("Do not split trivial", board)
+        self.assertIn("Keep related corrections together", board)
         self.assertIn("Do not add `.wav`, `.zip`, `.npy`, `.sqlite`", board)
 
     def test_parse_no_install_board_and_render_comment(self) -> None:

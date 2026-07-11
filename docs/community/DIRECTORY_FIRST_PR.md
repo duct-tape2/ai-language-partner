@@ -63,5 +63,6 @@ Maintainers check that the PR:
 - is one focused contribution from one real external contributor
 
 Useful docs, language review, accessibility, API example, and test PRs are all
-welcome. Stars, comments, listings, and outreach posts do not count as Claude
-for OSS evidence by themselves. Only useful merged external PRs count.
+welcome. Stars, comments, listings, and outreach posts are not contributions
+by themselves; choose a focused issue that improves the learner experience or
+the project.
