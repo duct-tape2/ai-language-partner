@@ -61,14 +61,15 @@ count maintainer-authored PRs, bots, duplicate identities, or trivial spam.
 
 - Evidence generated from: `duct-tape2/ai-language-partner`
 - Since: `2025-07-11`
-- Unique external contributors counted: `2`
+- Unique external contributors counted: `3`
 - Status: `NOT READY for Phase B`
-- Remaining contributors needed: `18`
+- Remaining contributors needed: `17`
 
 | # | Contributor | PR URL | Area | Merged date | Review note |
 |---|---|---|---|---|---|
-| 1 | `Lastmile04` | [#73: test: cover dialogue pack path traversal rejection](https://github.com/duct-tape2/ai-language-partner/pull/73) | test | 2026-07-10 | Linked issue + maintainer review |
-| 2 | `BhashkarKumar2` | [#72: docs: add dialogue pack listing example](https://github.com/duct-tape2/ai-language-partner/pull/72) | docs | 2026-07-10 | Linked issue + maintainer review |
+| 1 | `MFA-G` | [#99: tests: add mobile README script inventory check](https://github.com/duct-tape2/ai-language-partner/pull/99) | tests | 2026-07-11 | Linked issue + maintainer review |
+| 2 | `Lastmile04` | [#73: test: cover dialogue pack path traversal rejection](https://github.com/duct-tape2/ai-language-partner/pull/73) | test | 2026-07-10 | Linked issue + maintainer review |
+| 3 | `BhashkarKumar2` | [#72: docs: add dialogue pack listing example](https://github.com/duct-tape2/ai-language-partner/pull/72) | docs | 2026-07-10 | Linked issue + maintainer review |
 
 Current table has fewer than 20 rows because the official community-builder
 threshold is not met yet. Do not submit Phase B with this status.
