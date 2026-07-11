@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import sys
 import unittest
 from contextlib import redirect_stdout
@@ -1811,13 +1812,22 @@ class SecurityAutomationTest(unittest.TestCase):
         self.assertIn("- python", workflow)
         self.assertIn("security-events: write", workflow)
         self.assertIn("contents: read", workflow)
-        self.assertIn("github/codeql-action/init@v4", workflow)
-        self.assertIn("github/codeql-action/analyze@v4", workflow)
+        self.assertIn(
+            "github/codeql-action/init@99df26d4f13ea111d4ec1a7dddef6063f76b97e9 # v4",
+            workflow,
+        )
+        self.assertIn(
+            "github/codeql-action/analyze@99df26d4f13ea111d4ec1a7dddef6063f76b97e9 # v4",
+            workflow,
+        )
 
     def test_dependency_review_blocks_new_high_severity_findings(self) -> None:
         workflow = Path(".github/workflows/dependency-review.yml").read_text(encoding="utf-8")
 
-        self.assertIn("actions/dependency-review-action@v4", workflow)
+        self.assertIn(
+            "actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0",
+            workflow,
+        )
         self.assertIn("fail-on-severity: high", workflow)
         self.assertIn('branches: ["main"]', workflow)
 
@@ -1831,6 +1841,16 @@ class SecurityAutomationTest(unittest.TestCase):
         self.assertIn("actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5", workflow)
         self.assertIn("Definition of done is task-specific", contributing)
         self.assertIn("Dialogue Pack Sources", contributing)
+
+    def test_workflow_actions_are_pinned_by_full_commit_sha(self) -> None:
+        pattern = re.compile(r"^[^@]+@[0-9a-f]{40}(?:\s+#.*)?$")
+        for workflow_path in sorted(Path(".github/workflows").glob("*.yml")):
+            for line_number, line in enumerate(workflow_path.read_text(encoding="utf-8").splitlines(), 1):
+                if "uses:" not in line:
+                    continue
+                with self.subTest(workflow=workflow_path.name, line=line_number):
+                    action = line.split("uses:", 1)[1].strip()
+                    self.assertRegex(action, pattern)
 
     def test_dependabot_limits_and_groups_update_noise(self) -> None:
         config = Path(".github/dependabot.yml").read_text(encoding="utf-8")
