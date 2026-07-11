@@ -254,12 +254,14 @@ class PrReviewPacketCommentTest(unittest.TestCase):
         workflow = Path(".github/workflows/pr-review-packet.yml").read_text(encoding="utf-8")
 
         self.assertIn("pull_request_target:", workflow)
+        self.assertIn("branches: [main]", workflow)
         self.assertIn("Checkout trusted base branch", workflow)
-        self.assertIn("ref: ${{ github.event.pull_request.base.ref }}", workflow)
+        self.assertIn("ref: main", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("pull-requests: write", workflow)
         self.assertIn("python scripts/post_pr_review_packet.py", workflow)
         self.assertNotIn("github.event.pull_request.head", workflow)
+        self.assertNotIn("github.event.pull_request.base.ref", workflow)
 
 
 class GovernanceCheckTest(unittest.TestCase):
@@ -316,6 +318,43 @@ class GovernanceCheckTest(unittest.TestCase):
         self.assertIn("publish_results: true", workflow)
         self.assertIn("github/codeql-action/upload-sarif@e46ed2cbd01164d986452f91f178727624ae40d7", workflow)
         self.assertNotIn("pull_request:", workflow)
+
+    def test_security_workflows_use_least_privilege_defaults(self) -> None:
+        for path in (
+            ".github/workflows/api-docker-smoke.yml",
+            ".github/workflows/mobile-verify.yml",
+            ".github/workflows/repo-hygiene.yml",
+        ):
+            with self.subTest(path=path):
+                workflow = Path(path).read_text(encoding="utf-8")
+                self.assertIn("permissions:\n  contents: read", workflow)
+                self.assertIn("actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5", workflow)
+
+        for path in (
+            ".github/workflows/claude-oss-evidence-refresh.yml",
+            ".github/workflows/starter-issue-index.yml",
+        ):
+            with self.subTest(path=path):
+                workflow = Path(path).read_text(encoding="utf-8")
+                self.assertIn("permissions: read-all", workflow)
+                self.assertIn("permissions:\n      contents: write", workflow)
+                self.assertIn("issues: read", workflow)
+                self.assertIn("pull-requests: write", workflow)
+                self.assertIn("actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5", workflow)
+                self.assertIn("actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065", workflow)
+
+        review_packet = Path(".github/workflows/pr-review-packet.yml").read_text(encoding="utf-8")
+        mobile = Path(".github/workflows/mobile-verify.yml").read_text(encoding="utf-8")
+        self.assertIn("actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065", review_packet)
+        self.assertIn("actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020", mobile)
+
+    def test_security_policy_has_private_reporting_link_and_timeline(self) -> None:
+        policy = Path("SECURITY.md").read_text(encoding="utf-8")
+
+        self.assertIn("security/advisories/new", policy)
+        self.assertIn("14\ndays", policy)
+        self.assertIn("90\ndays", policy)
+        self.assertIn("coordinated-disclosure", policy)
 
 
 class FirstPrRecipeTest(unittest.TestCase):
