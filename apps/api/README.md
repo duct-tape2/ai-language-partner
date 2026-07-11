@@ -10,11 +10,15 @@ learner-scoped conversations, course catalog, review cards, events, XP/gamificat
 
 ```bash
 cd apps/api
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install --require-hashes -r requirements.txt
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+The backend requires Python 3.11 or newer. The committed requirement files are
+hash-locked; regenerate them from the corresponding `.in` source files when
+updating dependencies.
 
 Optional DB override:
 

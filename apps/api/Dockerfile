@@ -7,7 +7,7 @@ ENV AI_LANGUAGE_PARTNER_DB_PATH=/data/language_partner.sqlite3
 WORKDIR /app
 
 COPY requirements-prod.txt .
-RUN pip install --no-cache-dir -r requirements-prod.txt
+RUN pip install --no-cache-dir --require-hashes -r requirements-prod.txt
 
 COPY app ./app
 RUN adduser --disabled-password --gecos "" appuser \
