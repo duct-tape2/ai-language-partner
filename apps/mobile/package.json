@@ -8,10 +8,11 @@
     "ios": "expo start --ios",
     "android": "expo start --android",
     "web": "expo start --web",
-    "verify": "npm run typecheck && npm run verify:frontend-regressions",
+    "verify": "npm run typecheck && npm run verify:frontend-regressions && npm run verify:readme-scripts",
     "typecheck": "tsc --noEmit",
     "verify:frontend-regressions": "node scripts/verify-frontend-regressions.mjs",
-    "verify:prod-no-secret": "node scripts/verify-prod-no-attestation-secret.mjs"
+    "verify:prod-no-secret": "node scripts/verify-prod-no-attestation-secret.mjs",
+    "verify:readme-scripts": "node scripts/verify-readme-scripts.mjs && node scripts/test-verify-readme-scripts.mjs"
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
