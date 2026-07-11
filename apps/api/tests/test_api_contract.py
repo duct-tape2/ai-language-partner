@@ -3849,3 +3849,19 @@ def test_docker_artifact_static_verification_script_is_green():
     assert payload["dockerfileStaticChecks"]["EXPOSE 8000"] is True
     assert payload["prodRequirementStaticChecks"]["pythonMultipartForSttMultipart"] is True
     assert payload["prodRequirementStaticChecks"]["pythonMultipartSecurityFloor"] is True
+
+def stt_multipart_missingfile(client):
+    response=client.post("/v1/stt/transcribe",data={"language":"ja"})
+    assert response.status_code==422
+    assert "Missing or bad audio file" in response.json()["detail"]
+
+def stt_multipart_filetype(client):
+    response=client.post("/v1/stt/transcribe", data={"file":"not an audio file"})
+    assert response.status_code==422
+    assert "Missing or bad audio file" in response.json()["detail"]
+
+def stt_multipart_empty(client):
+    empty_file=b""
+    response=client.post("/v1/stt/transcribe", files={"file":("empty.wav",empty_file,"audio/wav")})
+    assert response.status_code==422
+    assert "Audio file is empty" in response.json()["detail"]

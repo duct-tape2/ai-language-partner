@@ -1642,8 +1642,13 @@ async def _stt_payload_from_request(request: Request) -> Dict[str, Any]:
         form = await request.form()
         upload = form.get("file")
         audio_base64 = None
-        if upload is not None and hasattr(upload, "read"):
+
+        if upload is None or not hasattr(upload,"read"):
+            raise HTTPException(status_code=422, detail="Missing or bad audio file")
+        else:
             audio_bytes = await upload.read()
+            if not audio_bytes:
+                raise HTTPException(status_code=422,detail="Audio file is empty")
             media_type = getattr(upload, "content_type", None) or "audio/wav"
             audio_base64 = f"data:{media_type};base64," + base64.b64encode(audio_bytes).decode("ascii")
         raw_hint_values: list[Any] = []
