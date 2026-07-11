@@ -22,7 +22,7 @@ count しません。
 
 ## いちばん早い選択肢
 
-[現在利用できる starter issue 一覧](STARTER_ISSUE_INDEX.md) から選んでください。
+[現在利用できる starter issue 一覧](STARTER_ISSUE_INDEX.html) から選んでください。
 この一覧は予約済み・担当済みの issue を除くため、重複作業を避けられます。
 日本語の自然さ、韓国語/日本語ドキュメント、dialogue content、アクセシビリティ、
 API 例、テストの中から 1 つを選べます。

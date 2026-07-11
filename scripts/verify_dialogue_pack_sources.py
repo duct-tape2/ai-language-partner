@@ -79,6 +79,7 @@ def validate_pack(pack_dir: Path) -> dict[str, Any]:
 
     scenario_nodes: dict[str, set[str]] = {}
     choice_line_ids: set[str] = set()
+    choice_locations: dict[str, tuple[str, str]] = {}
     assistant_line_ids: list[str] = []
     scenario_count = 0
     if story is not None:
@@ -154,6 +155,8 @@ def validate_pack(pack_dir: Path) -> dict[str, Any]:
                         line_id = str(line_id)
                         if line_id in choice_line_ids:
                             errors.append(f"{choice_location}: duplicate choice lineId {line_id}")
+                        else:
+                            choice_locations[line_id] = (scenario_id, node_id)
                         choice_line_ids.add(line_id)
                     validate_safe_text(choice.get("text"), f"{choice_location}.text", errors)
                     validate_safe_text(choice.get("ko"), f"{choice_location}.ko", errors)
@@ -197,6 +200,10 @@ def validate_pack(pack_dir: Path) -> dict[str, Any]:
                     errors.append(f"{location}: unknown nodeId {row['nodeId']}")
                 if row["lineId"] not in choice_line_ids:
                     errors.append(f"{location}: lineId {row['lineId']} is not a story choice")
+                elif choice_locations[row["lineId"]] != (row["scenarioId"], row["nodeId"]):
+                    errors.append(
+                        f"{location}: lineId {row['lineId']} does not match the story scenarioId/nodeId"
+                    )
                 variant_line_ids.add(row["lineId"])
                 validate_safe_text(row["text"], f"{location}.text", errors)
                 validate_safe_text(row["ko"], f"{location}.ko", errors)

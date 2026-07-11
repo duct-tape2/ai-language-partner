@@ -23,7 +23,7 @@ count하지 않습니다.
 
 ## 가장 빠른 선택지
 
-[현재 가능한 starter issue 목록](STARTER_ISSUE_INDEX.md)에서 이슈를 고르세요.
+[현재 가능한 starter issue 목록](STARTER_ISSUE_INDEX.html)에서 이슈를 고르세요.
 이 목록은 예약되었거나 담당자가 있는 이슈를 제외하므로, 중복 작업을 피할 수
 있습니다. 한국어 문서, 일본어 자연스러움, dialogue content, 접근성, API 예시,
 테스트 중에서 한 가지를 고르면 됩니다.
