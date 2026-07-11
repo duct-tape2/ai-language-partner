@@ -16,7 +16,8 @@ private data, API keys, or app-store builds.
 
 1. Try the hosted demo:
    `https://duct-tape2.github.io/ai-language-partner/demo/`
-2. Pick one issue from the table below.
+2. Open the [current available starter issue index](STARTER_ISSUE_INDEX.html).
+   It excludes claimed and assigned tasks.
 3. Comment `/claim` on the issue if you want the maintainer to reserve it for
    review.
 4. Use the browser edit link or Codespaces.
@@ -24,20 +25,15 @@ private data, API keys, or app-store builds.
 
 ## Pick One Lane
 
-| I can help with... | Best issue | First edit |
-|---|---|---|
-| Korean learner docs | [#46 sentence-final particles](https://github.com/duct-tape2/ai-language-partner/issues/46) | [edit Korean guide](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/ko/index.md) |
-| Japanese naturalness | [#8 yui dialogue wording](https://github.com/duct-tape2/ai-language-partner/issues/8) | [edit story source](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/story.json) |
-| Beginner dialogue examples | [#36 restaurant preferences](https://github.com/duct-tape2/ai-language-partner/issues/36) | [edit variants CSV](https://github.com/duct-tape2/ai-language-partner/edit/main/packs/yui/v1/variants.csv) |
-| First-time contributor docs | [#44 first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44) | [edit walkthrough](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/FIRST_PR_WALKTHROUGH.md) |
-| Backend/API examples | [#19 provider-status examples](https://github.com/duct-tape2/ai-language-partner/issues/19) | [edit API runbook](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/backend/API_RUNBOOK.md) |
-| Local-first explanation | [#31 no-runtime-LLM FAQ](https://github.com/duct-tape2/ai-language-partner/issues/31) | [edit project page](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/index.md) |
-| Mobile accessibility | [#13 bottom tab touch targets](https://github.com/duct-tape2/ai-language-partner/issues/13) | [mobile source](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/mobile/src) |
-| Focused tests | [#49 malformed STT upload test](https://github.com/duct-tape2/ai-language-partner/issues/49) | [API tests](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/api/tests) |
+The [current available starter issue index](STARTER_ISSUE_INDEX.html) is the
+canonical task board for Korean/Japanese language review, docs, API examples,
+mobile accessibility, and focused tests. Its generated rows show only open,
+unassigned, unclaimed issues, so choose directly from that page rather than a
+cached directory listing.
 
-If the issue you picked is already claimed, use the
-[first issue matcher](FIRST_ISSUE_MATCHER.html), the
-[no-install first PR board](NO_INSTALL_FIRST_PRS.html), or ask in the
+If you need a browser-only route after opening the current index, use the
+[no-install first PR board](NO_INSTALL_FIRST_PRS.html). If the scope still
+feels unclear, ask in the
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53).
 
 ## PR Body Template

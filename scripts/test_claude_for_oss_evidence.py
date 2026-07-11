@@ -162,11 +162,27 @@ class StarterIssueIndexTest(unittest.TestCase):
 
         markdown = issue_index.render_markdown("duct-tape2/ai-language-partner", issues, "2026-07-08")
 
-        self.assertIn("Open issues indexed: `3`", markdown)
+        self.assertIn("Open issues observed: `3`", markdown)
+        self.assertIn("Currently available starter issues: `3`", markdown)
         self.assertIn("| Backend/API docs | 1 |", markdown)
         self.assertIn("| Mobile/accessibility | 1 |", markdown)
         self.assertIn("| Dialogue/content review | 1 |", markdown)
         self.assertIn("[#3: content: review yui](https://example.test/3)", markdown)
+
+    def test_render_markdown_excludes_claimed_and_assigned_issues(self) -> None:
+        issues = [
+            issue_index.Issue(1, "docs: available", "https://example.test/1", ("docs",)),
+            issue_index.Issue(2, "docs: claimed", "https://example.test/2", ("docs", "claimed")),
+            issue_index.Issue(3, "docs: assigned", "https://example.test/3", ("docs",), ("new-helper",)),
+        ]
+
+        markdown = issue_index.render_markdown("duct-tape2/ai-language-partner", issues, "2026-07-08")
+
+        self.assertIn("Currently available starter issues: `1`", markdown)
+        self.assertIn("Reserved or assigned issues excluded: `2`", markdown)
+        self.assertIn("[#1: docs: available](https://example.test/1)", markdown)
+        self.assertNotIn("[#2: docs: claimed]", markdown)
+        self.assertNotIn("[#3: docs: assigned]", markdown)
 
 
 class PrReviewPacketTest(unittest.TestCase):
@@ -1098,9 +1114,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("For Good First Issue", guide)
         self.assertIn("Closes #ISSUE_NUMBER", guide)
         self.assertIn("Only useful merged external PRs count", guide)
-        self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
-        self.assertIn("issues/49", guide)
-        self.assertNotIn("issues/22", guide)
+        self.assertIn("STARTER_ISSUE_INDEX.html", guide)
+        self.assertIn("excludes claimed and assigned tasks", guide)
+        self.assertNotIn("issues/49", guide)
         self.assertIn("DIRECTORY_FIRST_PR.md", readme)
         self.assertIn("DIRECTORY_FIRST_PR.html", index)
         self.assertIn("DIRECTORY_FIRST_PR.html", landing)
@@ -1359,7 +1375,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.md", guide)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", call)
         self.assertIn("Closes #ISSUE_NUMBER", guide)
-        self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
+        self.assertIn("STARTER_ISSUE_INDEX.md", guide)
+        self.assertIn("예약되었거나 담당자가 있는 이슈를 제외", guide)
+        self.assertIn("CI가 schema, ID, reference, safety를 자동 검증", guide)
         self.assertIn("숫자를 채우기 위한", guide)
 
     def test_readme_and_pages_link_github_contribute_route(self) -> None:
@@ -1373,8 +1391,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("Pick a first PR in 30 seconds", readme)
         self.assertIn("27 no-install issue slots", readme)
         self.assertIn("arrived from GitHub topics", index)
-        self.assertIn("Match by skill/time in 30 seconds", index)
-        self.assertIn("27 no-install issue slots", index)
+        self.assertIn("Current available starter issues", index)
+        self.assertIn("claimed or assigned tasks are excluded", index)
+        self.assertIn("Browse current unclaimed tasks", index)
 
     def test_codespaces_first_pr_route_is_publicly_linked(self) -> None:
         devcontainer = json.loads(Path(".devcontainer/devcontainer.json").read_text(encoding="utf-8"))
@@ -1416,7 +1435,9 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", call)
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", ja_index)
         self.assertIn("Closes #ISSUE_NUMBER", guide)
-        self.assertIn("github.com/duct-tape2/ai-language-partner/edit/main", guide)
+        self.assertIn("STARTER_ISSUE_INDEX.md", guide)
+        self.assertIn("予約済み・担当済みの issue を除く", guide)
+        self.assertIn("CI が schema、ID、reference、safety を自動検証", guide)
         self.assertIn("数字を増やすため", guide)
 
     def test_readiness_required_files_include_korean_contributor_routes(self) -> None:
@@ -1799,6 +1820,17 @@ class SecurityAutomationTest(unittest.TestCase):
         self.assertIn("actions/dependency-review-action@v4", workflow)
         self.assertIn("fail-on-severity: high", workflow)
         self.assertIn('branches: ["main"]', workflow)
+
+    def test_dialogue_pack_sources_are_checked_in_ci(self) -> None:
+        workflow = Path(".github/workflows/dialogue-pack-sources.yml").read_text(encoding="utf-8")
+        contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
+
+        self.assertIn('"packs/**"', workflow)
+        self.assertIn("verify_dialogue_pack_sources.py", workflow)
+        self.assertIn("contents: read", workflow)
+        self.assertIn("actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5", workflow)
+        self.assertIn("Definition of done is task-specific", contributing)
+        self.assertIn("Dialogue Pack Sources", contributing)
 
     def test_dependabot_limits_and_groups_update_noise(self) -> None:
         config = Path(".github/dependabot.yml").read_text(encoding="utf-8")

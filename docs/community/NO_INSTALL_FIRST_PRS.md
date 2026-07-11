@@ -22,8 +22,11 @@ typos into separate PRs just to increase the count.
 7. In the PR body, write `Closes #ISSUE_NUMBER` and mention that the change is
    docs/content review.
 
-No command-line check is required for plain wording review. If you edit JSON,
-CSV, YAML, or TypeScript data, keep the existing structure unchanged.
+No command-line check is required for plain wording review. If you edit
+`story.json` or `variants.csv`, CI runs `Dialogue Pack Sources` automatically
+to validate schema, stable IDs, references, and safety; keep the existing
+structure unchanged. YAML and TypeScript edits still need the relevant project
+check when practical.
 
 Useful issue searches:
 

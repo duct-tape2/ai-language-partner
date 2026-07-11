@@ -24,8 +24,8 @@ title: AI Language Partner
         <a class="alp-button alp-button--secondary" href="community/DIRECTORY_FIRST_PR.html">Start a first PR</a>
       </div>
       <p class="alp-note">
-        27 browser-editable tasks. Maintainer response target: within 24 hours
-        whenever possible.
+        <a href="community/STARTER_ISSUE_INDEX.html">Current available starter issues</a>
+        are generated from GitHub; claimed or assigned tasks are excluded.
       </p>
     </div>
   </div>
@@ -53,19 +53,19 @@ title: AI Language Partner
         </span>
         <span class="alp-lane__arrow" aria-hidden="true">→</span>
       </a>
-      <a class="alp-lane" href="community/NO_INSTALL_FIRST_PRS.html">
+      <a class="alp-lane" href="community/STARTER_ISSUE_INDEX.html">
         <span class="alp-lane__number">02</span>
         <span class="alp-lane__body">
           <strong>Docs or API examples</strong>
-          <span>Choose from 27 no-install issue slots with direct edits.</span>
+          <span>Browse current unclaimed tasks, including browser-only routes.</span>
         </span>
         <span class="alp-lane__arrow" aria-hidden="true">→</span>
       </a>
-      <a class="alp-lane" href="community/FIRST_ISSUE_MATCHER.html">
+      <a class="alp-lane" href="community/STARTER_ISSUE_INDEX.html">
         <span class="alp-lane__number">03</span>
         <span class="alp-lane__body">
           <strong>Code, accessibility, or tests</strong>
-          <span>Match by skill/time in 30 seconds.</span>
+          <span>Pick an available task grouped by skill and review lane.</span>
         </span>
         <span class="alp-lane__arrow" aria-hidden="true">→</span>
       </a>

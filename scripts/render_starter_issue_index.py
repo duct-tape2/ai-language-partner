@@ -34,6 +34,7 @@ class Issue:
     title: str
     url: str
     labels: tuple[str, ...]
+    assignees: tuple[str, ...] = ()
 
 
 def github_json(url: str, token: str | None) -> object:
@@ -66,6 +67,11 @@ def fetch_open_issues(repo: str, token: str | None) -> list[Issue]:
                     title=str(item.get("title", "")),
                     url=str(item.get("html_url", "")),
                     labels=tuple(str(label.get("name", "")) for label in labels if isinstance(label, dict)),
+                    assignees=tuple(
+                        str(assignee.get("login", ""))
+                        for assignee in (item.get("assignees") or [])
+                        if isinstance(assignee, dict) and assignee.get("login")
+                    ),
                 )
             )
         if len(data) < 100:
@@ -87,6 +93,7 @@ def load_issues_from_file(path: Path) -> list[Issue]:
                 title=str(item["title"]),
                 url=str(item["url"]),
                 labels=tuple(str(label) for label in item.get("labels", [])),
+                assignees=tuple(str(login) for login in item.get("assignees", [])),
             )
         )
     return sorted(issues, key=lambda issue: issue.number)
@@ -116,25 +123,36 @@ def badge_labels(issue: Issue) -> str:
     return ", ".join(f"`{label}`" for label in issue.labels)
 
 
+def is_available(issue: Issue) -> bool:
+    labels = {label.casefold() for label in issue.labels}
+    return "claimed" not in labels and not issue.assignees
+
+
 def render_markdown(repo: str, issues: list[Issue], generated_on: str) -> str:
+    available_issues = [issue for issue in issues if is_available(issue)]
+    unavailable_count = len(issues) - len(available_issues)
     grouped: dict[str, list[Issue]] = {lane: [] for lane, _ in LANES}
-    for issue in issues:
+    for issue in available_issues:
         grouped.setdefault(lane_for(issue), []).append(issue)
 
-    good_first = sum(1 for issue in issues if "good first issue" in {label.lower() for label in issue.labels})
-    help_wanted = sum(1 for issue in issues if "help wanted" in {label.lower() for label in issue.labels})
+    good_first = sum(1 for issue in available_issues if "good first issue" in {label.lower() for label in issue.labels})
+    help_wanted = sum(1 for issue in available_issues if "help wanted" in {label.lower() for label in issue.labels})
     lines = [
         "# Starter Issue Index",
         "",
-        "This is a snapshot of open issues that are useful for first-time",
-        "contributors. Pick one focused issue, comment if you want to claim it,",
-        "then follow the first PR walkthrough.",
+        "This is a snapshot of currently available open issues that are useful",
+        "for first-time contributors. Claimed or assigned issues are excluded so",
+        "you can pick one focused task without duplicate work.",
         "",
         f"- Repository: `https://github.com/{repo}`",
         f"- Generated on: `{generated_on}`",
-        f"- Open issues indexed: `{len(issues)}`",
-        f"- Good first issues: `{good_first}`",
-        f"- Help wanted issues: `{help_wanted}`",
+        f"- Open issues observed: `{len(issues)}`",
+        f"- Currently available starter issues: `{len(available_issues)}`",
+        f"- Reserved or assigned issues excluded: `{unavailable_count}`",
+        f"- Available good first issues: `{good_first}`",
+        f"- Available help wanted issues: `{help_wanted}`",
+        "- Live GitHub availability: "
+        f"`https://github.com/{repo}/issues?q=is%3Aissue+is%3Aopen+no%3Aassignee+-label%3Aclaimed`",
         "- First PR walkthrough: [docs/community/FIRST_PR_WALKTHROUGH.md](FIRST_PR_WALKTHROUGH.md)",
         "- First PR help desk: "
         f"`https://github.com/{repo}/discussions/53`",
@@ -147,7 +165,7 @@ def render_markdown(repo: str, issues: list[Issue], generated_on: str) -> str:
         "",
         "## Lane Summary",
         "",
-        "| Lane | Open issues | Best for |",
+        "| Lane | Available issues | Best for |",
         "|---|---:|---|",
     ]
     for lane, description in LANES:
