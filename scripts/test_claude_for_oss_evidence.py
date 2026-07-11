@@ -1829,6 +1829,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Japanese Study Materials", names)
         self.assertIn("Awesome Japanese Resources", names)
         self.assertIn("Awesome Local-First", names)
+        self.assertIn("LoFi Local-First Directory", names)
         self.assertIn("Awesome Language Learning Japanese Page", names)
         self.assertIn("Awesome Open Source School", names)
         self.assertIn("Awesomo", names)
@@ -1865,6 +1866,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             "alvinreal/awesome-opensource-ai",
         )
         self.assertEqual(listings["Awesome Open Source AI"].number, 582)
+        self.assertEqual(listings["LoFi Local-First Directory"].repo, "mylofi/lofi.so")
+        self.assertEqual(listings["LoFi Local-First Directory"].number, 86)
 
     def test_for_good_first_issue_tracks_public_pr(self) -> None:
         for_good_first_issue = next(
