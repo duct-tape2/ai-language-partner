@@ -19,14 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "docs" / "community" / "FIRST_PR_RECIPES.md"
 MARKER = "<!-- ai-language-partner:first-pr-recipe -->"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
-DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
-FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
-LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
-NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
-FIRST_PR_WALKTHROUGH = f"{COMMUNITY_PAGES}/FIRST_PR_WALKTHROUGH.html"
-COUNTING_POLICY = f"{COMMUNITY_PAGES}/PR_REVIEW_AND_COUNTING_POLICY.html"
 FIRST_PR_HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 
 
@@ -223,8 +217,7 @@ def acceptance(issue: Issue) -> str:
     return "Make one focused, reviewable change that satisfies the issue title."
 
 
-def render_recipe(repo: str, issue: Issue) -> str:
-    owner, name = repo.split("/", 1)
+def render_recipe(_repo: str, issue: Issue) -> str:
     files = likely_files(issue)
     checks = suggested_checks(issue, files)
     file_lines = "\n".join(f"- `{path}`" for path in files) or "- Ask in the issue for a suggested file."
@@ -232,41 +225,32 @@ def render_recipe(repo: str, issue: Issue) -> str:
     return f"""{MARKER}
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 {file_lines}
 
-**Acceptance signal**
+**Done when**
 
 {acceptance(issue)}
 
-**Suggested checks**
+**Verify**
 
 {check_lines}
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #{issue.number}` or `Refs #{issue.number}`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #{issue.number}` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://{owner}.github.io/{name}/
-- Directory first PR fast lane: {DIRECTORY_FIRST_PR}
-- First issue matcher: {FIRST_ISSUE_MATCHER}
-- Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
-- Codespaces first PR guide: {CODESPACES_FIRST_PR}
-- No-install first PR board: {NO_INSTALL_BOARD}
-- Language review first PR kit: {LANGUAGE_REVIEW_KIT}
-- First PR walkthrough: {FIRST_PR_WALKTHROUGH}
-- First PR help desk: {FIRST_PR_HELP_DESK}
-- Counting policy: {COUNTING_POLICY}
+- Browser edit: {FIVE_MINUTE_FIRST_PR}
+- Code or tests without local setup: {CODESPACES_FIRST_PR}
+- Ask a maintainer: {FIRST_PR_HELP_DESK}
 """
 
 

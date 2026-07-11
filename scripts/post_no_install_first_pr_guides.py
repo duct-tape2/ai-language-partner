@@ -19,16 +19,7 @@ BOARD = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PRS.md"
 DEFAULT_OUT = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PR_COMMENTS.md"
 MARKER = "<!-- ai-language-partner:no-install-first-pr -->"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
-DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
-FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
-CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
-KOREAN_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
-KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ko.yml"
-JAPANESE_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
-JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ja.yml"
-LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
-NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 FIRST_PR_HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 
 
@@ -92,45 +83,33 @@ def parse_board(text: str) -> list[NoInstallTask]:
     return tasks
 
 
-def render_comment(repo: str, task: NoInstallTask) -> str:
+def render_comment(_repo: str, task: NoInstallTask) -> str:
     return f"""{MARKER}
-### No-install first PR path
+### Edit this issue in your browser
 
-This issue can be started in the GitHub web editor. No local Expo app, FastAPI
-backend, STT/TTS engine, generated audio, private data, or API key is needed.
+No local app, backend, speech engine, private data, or API key is required.
 
-**Suggested browser-only change**
+**Change**
 
 {task.good_pr_shape}
 
-**Start here**
+**Edit**
 
-- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
-- Directory first PR fast lane: {DIRECTORY_FIRST_PR}
-- First issue matcher: {FIRST_ISSUE_MATCHER}
-- Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
-- Codespaces first PR guide: {CODESPACES_FIRST_PR}
-- Korean five-minute first PR: {KOREAN_FIVE_MINUTE_FIRST_PR}
-- Korean contributor interest form: https://github.com/{repo}/issues/new?template={KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE}
-- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}
-- Japanese contributor interest form: https://github.com/{repo}/issues/new?template={JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE}
-- Language review first PR kit: {LANGUAGE_REVIEW_KIT}
-- First PR help desk: {FIRST_PR_HELP_DESK}
-- Source file: `{task.source_file}`
-- Direct edit link: {task.edit_url}
-- No-install board: {NO_INSTALL_BOARD}
+- File: `{task.source_file}`
+- [Open the direct edit page]({task.edit_url})
 
-**PR checklist**
+**Finish**
 
-- Keep the PR focused on this issue.
-- In the PR body, write `Closes #{task.number}`.
-- Say that this was docs/content/language review only if no command-line check
-  was needed.
-- Do not add generated `.wav`, `.zip`, `.npy`, `.sqlite`, screenshot, local
-  engine, secret, private note, or private dataset files.
+- Comment `/claim`, make only this change, and write `Closes #{task.number}` in
+  the PR body.
+- Name the review you completed; no command-line check is required.
+- Do not add generated media, archives, databases, screenshots, secrets, local
+  engines, or private data. Do not split trivial changes across PRs.
 
-Only useful, reviewable PRs count toward Claude for OSS evidence. Tiny split
-PRs made only to increase the count do not count.
+**Help**
+
+- [Five-minute browser guide]({FIVE_MINUTE_FIRST_PR})
+- [Ask the first PR help desk]({FIRST_PR_HELP_DESK})
 """
 
 
