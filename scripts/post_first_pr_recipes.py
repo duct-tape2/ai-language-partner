@@ -51,6 +51,13 @@ def github_json(url: str, token: str | None, method: str = "GET", payload: dict[
         return json.loads(response.read().decode("utf-8"))
 
 
+def authenticated_login(token: str) -> str:
+    data = github_json("https://api.github.com/user", token)
+    if not isinstance(data, dict) or not data.get("login"):
+        raise TypeError("GitHub authenticated-user response did not include a login")
+    return str(data["login"])
+
+
 def fetch_issues(repo: str, token: str | None, label: str) -> list[Issue]:
     issues: list[Issue] = []
     encoded_label = urllib.parse.quote(label)
@@ -75,7 +82,12 @@ def fetch_issues(repo: str, token: str | None, label: str) -> list[Issue]:
     return sorted(issues, key=lambda issue: issue.number)
 
 
-def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[str, object] | None:
+def existing_recipe_comment(
+    repo: str,
+    number: int,
+    token: str | None,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> dict[str, object] | None:
     for page in range(1, 6):
         url = f"https://api.github.com/repos/{repo}/issues/{number}/comments?per_page=100&page={page}"
         comments = github_json(url, token)
@@ -86,7 +98,7 @@ def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[s
             if (
                 isinstance(comment, dict)
                 and isinstance(user, dict)
-                and user.get("login") == TRUSTED_COMMENT_LOGIN
+                and user.get("login") == trusted_login
                 and MARKER in str(comment.get("body") or "")
             ):
                 return comment
@@ -95,8 +107,14 @@ def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[s
     return None
 
 
-def upsert_recipe(repo: str, number: int, token: str, body: str) -> tuple[str, str]:
-    existing = existing_recipe_comment(repo, number, token)
+def upsert_recipe(
+    repo: str,
+    number: int,
+    token: str,
+    body: str,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> tuple[str, str]:
+    existing = existing_recipe_comment(repo, number, token, trusted_login)
     if existing:
         if str(existing.get("body") or "") == body:
             return "unchanged", str(existing.get("html_url") or "")
@@ -286,6 +304,11 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--out", default=str(DEFAULT_OUT), help="Markdown file to write")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help="Generated date")
     parser.add_argument("--apply", action="store_true", help="Post missing recipe comments to GitHub issues")
+    parser.add_argument(
+        "--comment-login",
+        default="",
+        help="Expected author for existing marker comments; PAT runs auto-detect it",
+    )
     args = parser.parse_args(argv[1:])
 
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -303,8 +326,15 @@ def main(argv: list[str]) -> int:
         posted = 0
         updated = 0
         unchanged = 0
+        trusted_login = args.comment_login or authenticated_login(token)
         for issue in issues:
-            action, url = upsert_recipe(args.repo, issue.number, token, render_recipe(args.repo, issue))
+            action, url = upsert_recipe(
+                args.repo,
+                issue.number,
+                token,
+                render_recipe(args.repo, issue),
+                trusted_login,
+            )
             if action == "posted":
                 posted += 1
             elif action == "updated":

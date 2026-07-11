@@ -53,6 +53,13 @@ def github_json(url: str, token: str | None, method: str = "GET", payload: dict[
         return json.loads(raw) if raw else {}
 
 
+def authenticated_login(token: str) -> str:
+    data = github_json("https://api.github.com/user", token)
+    if not isinstance(data, dict) or not data.get("login"):
+        raise TypeError("GitHub authenticated-user response did not include a login")
+    return str(data["login"])
+
+
 def strip_inline_code(value: str) -> str:
     value = value.strip()
     if value.startswith("`") and value.endswith("`"):
@@ -145,7 +152,12 @@ def render_markdown(repo: str, tasks: list[NoInstallTask], generated_on: str) ->
     return "\n".join(lines).rstrip() + "\n"
 
 
-def existing_guide_comment(repo: str, number: int, token: str) -> dict[str, object] | None:
+def existing_guide_comment(
+    repo: str,
+    number: int,
+    token: str,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> dict[str, object] | None:
     for page in range(1, 6):
         comments_url = (
             f"https://api.github.com/repos/{repo}/issues/{number}/comments"
@@ -159,7 +171,7 @@ def existing_guide_comment(repo: str, number: int, token: str) -> dict[str, obje
             if (
                 isinstance(comment, dict)
                 and isinstance(user, dict)
-                and user.get("login") == TRUSTED_COMMENT_LOGIN
+                and user.get("login") == trusted_login
                 and MARKER in str(comment.get("body") or "")
             ):
                 return comment
@@ -168,9 +180,14 @@ def existing_guide_comment(repo: str, number: int, token: str) -> dict[str, obje
     return None
 
 
-def upsert_comment(repo: str, task: NoInstallTask, token: str) -> tuple[str, str]:
+def upsert_comment(
+    repo: str,
+    task: NoInstallTask,
+    token: str,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> tuple[str, str]:
     body = render_comment(repo, task)
-    existing = existing_guide_comment(repo, task.number, token)
+    existing = existing_guide_comment(repo, task.number, token, trusted_login)
     if existing:
         if str(existing.get("body") or "") == body:
             return "unchanged", str(existing.get("html_url") or "")
@@ -196,6 +213,11 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--out", default=str(DEFAULT_OUT), help="Markdown file to write")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help="Generated date")
     parser.add_argument("--apply", action="store_true", help="Create or update GitHub issue comments")
+    parser.add_argument(
+        "--comment-login",
+        default="",
+        help="Expected author for existing marker comments; PAT runs auto-detect it",
+    )
     args = parser.parse_args(argv[1:])
 
     tasks = parse_board(Path(args.board).read_text(encoding="utf-8"))
@@ -217,8 +239,9 @@ def main(argv: list[str]) -> int:
         created = 0
         updated = 0
         unchanged = 0
+        trusted_login = args.comment_login or authenticated_login(token)
         for task in tasks:
-            action, url = upsert_comment(args.repo, task, token)
+            action, url = upsert_comment(args.repo, task, token, trusted_login)
             if action == "created":
                 created += 1
             elif action == "updated":

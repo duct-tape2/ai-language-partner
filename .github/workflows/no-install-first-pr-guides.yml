@@ -39,7 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python scripts/post_no_install_first_pr_guides.py duct-tape2/ai-language-partner --date "$(date -u +%F)" --apply
+          python scripts/post_no_install_first_pr_guides.py duct-tape2/ai-language-partner --date "$(date -u +%F)" --apply --comment-login 'github-actions[bot]'
 
       - name: Write job summary
         run: cat docs/community/NO_INSTALL_FIRST_PR_COMMENTS.md >> "$GITHUB_STEP_SUMMARY"

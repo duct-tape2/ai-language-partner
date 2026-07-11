@@ -376,6 +376,23 @@ class GovernanceCheckTest(unittest.TestCase):
 
 
 class FirstPrRecipeTest(unittest.TestCase):
+    def test_recipe_apply_uses_authenticated_comment_owner(self) -> None:
+        owned = {
+            "id": 1,
+            "user": {"login": "duct-tape2"},
+            "body": first_pr_recipes.MARKER,
+        }
+
+        with patch.object(first_pr_recipes, "github_json", return_value={"login": "duct-tape2"}):
+            login = first_pr_recipes.authenticated_login("token")
+        with patch.object(first_pr_recipes, "github_json", return_value=[owned]):
+            comment = first_pr_recipes.existing_recipe_comment(
+                "duct-tape2/ai-language-partner", 44, "token", login
+            )
+
+        self.assertEqual(login, "duct-tape2")
+        self.assertEqual(comment, owned)
+
     def test_recipe_infers_backend_files_and_checks(self) -> None:
         issue = first_pr_recipes.Issue(
             number=40,
@@ -613,6 +630,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("issues:", workflow)
         self.assertIn("Checkout trusted main", workflow)
         self.assertIn("post_first_pr_recipes.py", workflow)
+        self.assertIn("--comment-login 'github-actions[bot]'", workflow)
         self.assertIn("--apply", workflow)
         self.assertIn("issues: write", workflow)
         self.assertNotIn("pull_request", workflow)
@@ -1580,6 +1598,23 @@ class ContributorCallPageTest(unittest.TestCase):
 
 
 class NoInstallFirstPrBoardTest(unittest.TestCase):
+    def test_no_install_apply_uses_authenticated_comment_owner(self) -> None:
+        owned = {
+            "id": 1,
+            "user": {"login": "duct-tape2"},
+            "body": no_install_guides.MARKER,
+        }
+
+        with patch.object(no_install_guides, "github_json", return_value={"login": "duct-tape2"}):
+            login = no_install_guides.authenticated_login("token")
+        with patch.object(no_install_guides, "github_json", return_value=[owned]):
+            comment = no_install_guides.existing_guide_comment(
+                "duct-tape2/ai-language-partner", 44, "token", login
+            )
+
+        self.assertEqual(login, "duct-tape2")
+        self.assertEqual(comment, owned)
+
     def test_first_issue_matcher_has_direct_routes_and_counting_guardrails(self) -> None:
         matcher = Path("docs/community/FIRST_ISSUE_MATCHER.md").read_text(encoding="utf-8")
 
@@ -1703,6 +1738,7 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         workflow = Path(".github/workflows/no-install-first-pr-guides.yml").read_text(encoding="utf-8")
 
         self.assertIn("post_no_install_first_pr_guides.py", workflow)
+        self.assertIn("--comment-login 'github-actions[bot]'", workflow)
         self.assertIn("github.event_name != 'pull_request'", workflow)
 
     def test_generated_no_install_comments_cover_board_tasks(self) -> None:
