@@ -1631,10 +1631,14 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("active", rows[4])
         self.assertIn("37 indexed help-wanted issues", rows[4])
         self.assertIn("helpwanted.dev/projects/duct-tape2/ai-language-partner", rows[4])
-        self.assertIn("Ovio", rows[5])
-        self.assertIn("blocked", rows[5])
-        self.assertIn("api: null", rows[5])
-        self.assertIn("fallback email sent", rows[5])
+        self.assertIn("LibHunt", rows[5])
+        self.assertIn("active", rows[5])
+        self.assertIn("libhunt.com/r/ai-language-partner", rows[5])
+        self.assertIn("no contributor-count claim", rows[5])
+        self.assertIn("Ovio", rows[6])
+        self.assertIn("blocked", rows[6])
+        self.assertIn("api: null", rows[6])
+        self.assertIn("fallback email sent", rows[6])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
@@ -1692,6 +1696,8 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("[update](https://example.test/pull/1#comment)", markdown)
         self.assertIn("For Good First Issue", markdown)
         self.assertIn("Good First Issue", markdown)
+        self.assertIn("LibHunt", markdown)
+        self.assertIn("libhunt.com/r/ai-language-partner", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 
     def test_closed_listing_issue_is_not_reported_as_waiting(self) -> None:

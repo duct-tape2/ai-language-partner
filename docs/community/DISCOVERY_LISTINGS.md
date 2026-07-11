@@ -37,6 +37,7 @@ merged in this repository.
 | Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
 | 24 Pull Requests | Directory | active | n/a | public project #3564 | [link](https://24pullrequests.com/projects?page=9) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [manage](https://24pullrequests.com/my_suggestions) | TypeScript; tests; good first issue; contribulator score 39 |
 | Help Wanted | Directory | active | n/a | 37 indexed help-wanted issues | [link](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [browse](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | public project page and sitemap confirmed 2026-07-10 |
+| LibHunt | Directory | active | n/a | public project page available | [link](https://www.libhunt.com/r/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | - | project submitted and public page verified 2026-07-11; no contributor-count claim |
 | Ovio | Directory submission | blocked | n/a | submission backend unavailable (`api: null`); awaiting fallback email response | [link](https://ovio.org/submit) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | fallback email sent 2026-07-10; do not resubmit while API is unavailable |
 
 ## Public Status Links
@@ -70,6 +71,8 @@ merged in this repository.
 - Keep the 24 Pull Requests project active while reviewable starter issues
   remain open; update its labels if the public taxonomy changes.
 - Monitor the Help Wanted project page and keep its indexed issue set current.
+- Monitor the LibHunt project page and keep its repository description and
+  contributor link current; do not resubmit a duplicate project.
 - Monitor Ovio for a fallback-email response or a non-null submission API;
   do not duplicate the existing email or submit through the broken form.
 - Track Meaningful Code issue #147 until the project is reviewed or listed;
@@ -102,6 +105,8 @@ merged in this repository.
   `https://24pullrequests.com/projects?page=9` (project `3564`)
 - Help Wanted indexed project page:
   `https://helpwanted.dev/projects/duct-tape2/ai-language-partner` (37 issues observed 2026-07-10)
+- LibHunt project page:
+  `https://www.libhunt.com/r/ai-language-partner` (public page verified 2026-07-11)
 - Meaningful Code project submission:
   `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`
 - Ovio project submission form:
