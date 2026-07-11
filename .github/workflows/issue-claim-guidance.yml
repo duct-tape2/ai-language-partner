@@ -27,16 +27,18 @@ jobs:
             }
 
             const body = comment.body || "";
+            const renewPattern = /(^|\n)\s*\/renew\b/i;
             const claimPattern =
               /(^|\n)\s*\/claim\b|(^|\n)\s*claim\b|\bi can work on this\b|\bi'll take this\b|\bi(?:'d| would) like to (?:work on|take) this\b|\bcan i take this\b|\bi(?:'m|m| am) working (?:on )?(?:this|it)\b|\bcould you assign (?:it|this) to me\b|제가\s*(해볼게요|하겠습니다|맡겠습니다)|작업해도\s*될까요|やります|担当します|取り組みます/i;
-            if (!claimPattern.test(body)) {
+            const isRenewal = renewPattern.test(body);
+            if (!isRenewal && !claimPattern.test(body)) {
               return;
             }
 
             const eventMarker = `<!-- ai-language-partner:issue-claim-event:${comment.id} -->`;
             const claimantMarker = `<!-- ai-language-partner:issue-claim-guidance:${comment.user.login} -->`;
             const { owner, repo } = context.repo;
-            const { data: comments } = await github.rest.issues.listComments({
+            const comments = await github.paginate(github.rest.issues.listComments, {
               owner,
               repo,
               issue_number: issue.number,
@@ -45,7 +47,7 @@ jobs:
             if (
               comments.some(
                 (existing) =>
-                  existing.user?.type === "Bot" &&
+                  existing.user?.login === "github-actions[bot]" &&
                   existing.body &&
                   existing.body.includes(eventMarker),
               )
@@ -69,6 +71,96 @@ jobs:
             const alreadyClaimed =
               existingLabels.some((label) => label.name === claimLabel) ||
               existingAssignees.length > 0;
+            const claimantAlreadyAssigned = existingAssignees.some(
+              (assignee) => assignee.login === comment.user.login,
+            );
+            const startedAt = new Date(comment.created_at || Date.now());
+            const trustedBotLogin = "github-actions[bot]";
+            const existingGuidance = comments.find(
+              (existing) =>
+                existing.user?.login === trustedBotLogin &&
+                existing.body &&
+                existing.body.includes(claimantMarker),
+            );
+            const activeLeases = comments
+              .flatMap((existing, index) => {
+                if (existing.user?.login !== trustedBotLogin || !existing.body) {
+                  return [];
+                }
+                const matches = existing.body.matchAll(
+                  /<!-- ai-language-partner:claim-lease:([^:>]+):([^>]+) -->/g,
+                );
+                return Array.from(matches, (match) => ({
+                  login: match[1],
+                  expiresAt: new Date(match[2]),
+                  index,
+                }));
+              })
+              .filter(
+                (lease) =>
+                  Number.isFinite(lease.expiresAt.getTime()) && lease.expiresAt > startedAt,
+              )
+              .sort(
+                (left, right) =>
+                  right.expiresAt.getTime() - left.expiresAt.getTime() || right.index - left.index,
+              );
+            const currentLeaseOwner = activeLeases[0]?.login || "";
+            const expiresAt = new Date(startedAt.getTime() + leaseHours * 60 * 60 * 1000);
+            const leaseMarker =
+              `<!-- ai-language-partner:claim-lease:${comment.user.login}:${expiresAt.toISOString()} -->`;
+
+            if (isRenewal) {
+              const renewalAllowed =
+                existingAssignees.length > 0
+                  ? claimantAlreadyAssigned
+                  : alreadyClaimed && currentLeaseOwner === comment.user.login;
+              if (!renewalAllowed) {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  body: [
+                    eventMarker,
+                    `@${comment.user.login}, this issue is not currently reserved for you, so the lease was not renewed.`,
+                    "Choose an unassigned task from https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html and comment `/claim` there.",
+                  ].join("\n\n"),
+                });
+                return;
+              }
+
+              const renewalLine =
+                `- Reservation check-in: renewed through ${expiresAt.toISOString()} (${leaseHours} hours). A linked open PR keeps the reservation active.`;
+              if (existingGuidance) {
+                let renewedBody = existingGuidance.body
+                  .replace(/<!-- ai-language-partner:claim-lease:[^>]+ -->\n?/g, "")
+                  .replace(/- Reservation check-in:[^\n]*/g, renewalLine);
+                if (!renewedBody.includes(renewalLine)) {
+                  renewedBody = `${renewedBody.trim()}\n\n${renewalLine}`;
+                }
+                await github.rest.issues.updateComment({
+                  owner,
+                  repo,
+                  comment_id: existingGuidance.id,
+                  body: `${leaseMarker}\n${renewedBody.trim()}\n${eventMarker}`,
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  body: [
+                    eventMarker,
+                    claimantMarker,
+                    leaseMarker,
+                    `Thanks, @${comment.user.login}. Your reservation for #${issue.number} is renewed.`,
+                    renewalLine,
+                    `Open a focused PR with \`Closes #${issue.number}\` and name the check you ran.`,
+                  ].join("\n\n"),
+                });
+              }
+              return;
+            }
+
             let claimLabelAdded = false;
             if (!alreadyClaimed) {
               try {
@@ -85,9 +177,7 @@ jobs:
               }
             }
 
-            let assignmentAdded = existingAssignees.some(
-              (assignee) => assignee.login === comment.user.login,
-            );
+            let assignmentAdded = claimantAlreadyAssigned;
             if (
               !alreadyClaimed &&
               claimLabelAdded &&
@@ -133,8 +223,6 @@ jobs:
               }
             }
 
-            const startedAt = new Date(comment.created_at || Date.now());
-            const expiresAt = new Date(startedAt.getTime() + leaseHours * 60 * 60 * 1000);
             let claimStatus;
             if (alreadyClaimed) {
               claimStatus =
@@ -153,12 +241,6 @@ jobs:
                 "- Claim status: GitHub did not allow automatic assignment or labeling. A maintainer must confirm before this issue is reserved.";
             }
 
-            const existingGuidance = comments.find(
-              (existing) =>
-                existing.user?.type === "Bot" &&
-                existing.body &&
-                existing.body.includes(claimantMarker),
-            );
             if (alreadyClaimed && existingGuidance) {
               await github.rest.issues.updateComment({
                 owner,
@@ -173,11 +255,9 @@ jobs:
             const response = [
               eventMarker,
               claimantMarker,
+              ...(claimRegistered ? [leaseMarker] : []),
               `Thanks, @${comment.user.login}. Treating this as a claim signal for #${issue.number}.`,
               "",
-              "Quick context:",
-              "",
-              "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
               claimStatus,
               ...(claimRegistered
                 ? [
@@ -186,26 +266,16 @@ jobs:
                   ]
                 : []),
               "",
-              "Fast path to a first PR:",
+              "Fast path:",
               "",
-              "1. Use the directory first PR fast lane if you came from an external listing: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html",
-              "2. Use the first issue matcher if you want a shorter menu: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html",
-              "3. Use the five-minute first PR guide for the browser-edit flow: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
-              "4. Use the no-install board if you want a direct GitHub web-editor task: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html",
-              "5. Use Codespaces if you want tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html",
-              "6. For Japanese/Korean/content review, use the language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html",
-              "7. Keep the change focused on this issue.",
-              `8. In the PR body, write \`Closes #${issue.number}\` or \`Refs #${issue.number}\`.`,
-              "9. Mention the check you ran, or say it was docs/content/language review only.",
+              "1. Follow the first-PR recipe already posted on this issue and keep the change focused.",
+              "2. For a browser-only edit, use https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html",
+              `3. In the PR body, write \`Closes #${issue.number}\` or \`Refs #${issue.number}\`.`,
+              "4. Name the check you ran, or say it was docs/content/language review only.",
               "",
-              "Guardrails:",
+              "Need help? Ask at https://github.com/duct-tape2/ai-language-partner/discussions/53. If this issue was already claimed, pick a nearby unclaimed issue from https://duct-tape2.github.io/ai-language-partner/community/STARTER_ISSUE_INDEX.html.",
               "",
-              "- Do not add generated audio, archives, SQLite files, screenshots, local engine folders, secrets, private notes, or API keys.",
-              "- Preserve the no-runtime-LLM rule for the Daily Talk path.",
-              "- If two people claim the same issue, maintainers will help split or redirect the work.",
-              "- If this issue was already claimed, pick a backup from the matcher or no-install board so your first PR is not blocked.",
-              "",
-              "This comment is contributor guidance, not Claude for OSS evidence. Only useful merged PRs from real external contributors count.",
+              "Do not add generated audio, archives, SQLite files, screenshots, local engines, secrets, or private notes. Only useful reviewed PRs from real contributors count.",
             ].join("\n");
 
             await github.rest.issues.createComment({
