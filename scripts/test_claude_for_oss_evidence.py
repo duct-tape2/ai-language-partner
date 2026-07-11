@@ -10,6 +10,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import re
+import subprocess
 import sys
 import unittest
 from contextlib import redirect_stdout
@@ -603,7 +604,11 @@ class WorkflowFixtureTest(unittest.TestCase):
 
         self.assertIn("issue_comment:", workflow)
         self.assertIn("/claim", workflow)
+        self.assertIn("/renew", workflow)
+        self.assertIn("renewPattern", workflow)
+        self.assertIn("isRenewal", workflow)
         self.assertIn("ai-language-partner:issue-claim-guidance", workflow)
+        self.assertIn("ai-language-partner:claim-lease", workflow)
         self.assertIn("claimantMarker", workflow)
         self.assertIn("(?:'d| would) like to (?:work on|take) this", workflow)
         self.assertIn("could you assign", workflow)
@@ -611,13 +616,10 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("existingAssignees.length === 0", workflow)
         self.assertIn("already had the `claimed` label or an assignee", workflow)
         self.assertIn("nearby unclaimed issue", workflow)
-        self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
-        self.assertIn("DIRECTORY_FIRST_PR.html", workflow)
-        self.assertIn("FIRST_ISSUE_MATCHER.html", workflow)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", workflow)
-        self.assertIn("NO_INSTALL_FIRST_PRS.html", workflow)
-        self.assertIn("CODESPACES_FIRST_PR.html", workflow)
-        self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", workflow)
+        self.assertIn("STARTER_ISSUE_INDEX.html", workflow)
+        self.assertIn("discussions/53", workflow)
+        self.assertNotIn("CODESPACES_FIRST_PR.html", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("github.rest.issues.addLabels", workflow)
         self.assertIn("github.rest.issues.removeLabel", workflow)
@@ -632,13 +634,30 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("claimLabelAdded &&", workflow)
         self.assertIn("alreadyClaimed &&", workflow)
         self.assertIn("comments.find(", workflow)
+        self.assertIn("github.paginate(github.rest.issues.listComments", workflow)
         self.assertIn("ai-language-partner:issue-claim-event", workflow)
         self.assertIn("This issue claim event was already handled", workflow)
-        self.assertIn('existing.user?.type === "Bot"', workflow)
+        self.assertIn('existing.user?.login === "github-actions[bot]"', workflow)
         self.assertIn("github.rest.issues.updateComment", workflow)
+        self.assertIn("renewalAllowed", workflow)
+        self.assertIn("currentLeaseOwner", workflow)
+        self.assertIn('trustedBotLogin = "github-actions[bot]"', workflow)
+        self.assertIn("right.expiresAt.getTime() - left.expiresAt.getTime()", workflow)
+        self.assertIn("Your reservation for #${issue.number} is renewed", workflow)
         self.assertIn("Reservation check-in", workflow)
         self.assertIn("Maintainers review stale claims before releasing them", workflow)
         self.assertIn("issue.pull_request", workflow)
+
+    def test_issue_claim_guidance_behavior(self) -> None:
+        result = subprocess.run(
+            ["node", "scripts/test_issue_claim_guidance.mjs"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+        self.assertEqual(result.returncode, 0, msg=result.stdout + result.stderr)
+        self.assertIn("claim guidance behavior OK", result.stdout)
 
     def test_contributor_funnel_monitor_uses_trusted_base_checkout(self) -> None:
         workflow = Path(".github/workflows/contributor-funnel-monitor.yml").read_text(encoding="utf-8")
