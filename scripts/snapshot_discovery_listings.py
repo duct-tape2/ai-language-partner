@@ -129,6 +129,12 @@ LISTING_PRS = [
         contributor_link=FIRST_ISSUE_MATCHER_URL,
     ),
     ListingPr(
+        name="LoFi Local-First Directory",
+        repo="mylofi/lofi.so",
+        number=86,
+        contributor_link=CONTRIBUTOR_LANDING_URL,
+    ),
+    ListingPr(
         name="Awesome Language Learning Japanese Page",
         repo="jqhoogland/awesome-language-learning",
         number=20,

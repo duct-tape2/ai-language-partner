@@ -7,8 +7,8 @@ merged in this repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `edulinkup`, `elusoc`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `korean-language`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
-- Open `up-for-grabs` issues: `34`
-- Open `first-timers-only` issues: `25`
+- Open `up-for-grabs` issues: `33`
+- Open `first-timers-only` issues: `24`
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Web demo prerelease: `active` - https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09
 - Web demo asset: https://github.com/duct-tape2/ai-language-partner/releases/download/demo-web-2026-07-09/ai-language-partner-web-demo-2026-07-09.zip
@@ -25,6 +25,7 @@ merged in this repository.
 | Awesome Japanese Study Materials | PR | open | False | True | [link](https://github.com/naghim/Awesome-Japanese-Study-Materials/pull/8) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Japanese Resources | PR | open | False | True | [link](https://github.com/Sara-Lib/Awesome-Japanese-resources/pull/1) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | none reported |
 | Awesome Local-First | PR | open | False | True | [link](https://github.com/alexanderop/awesome-local-first/pull/46) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
+| LoFi Local-First Directory | PR | open | False | True | [link](https://github.com/mylofi/lofi.so/pull/86) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | none reported |
 | Awesome Language Learning Japanese Page | PR | open | False | True | [link](https://github.com/jqhoogland/awesome-language-learning/pull/20) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Awesomo | PR | open | False | True | [link](https://github.com/lk-geimfari/awesomo/pull/479) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
@@ -32,7 +33,7 @@ merged in this repository.
 | Awesome Open Source AI | PR | open | False | True | [link](https://github.com/alvinreal/awesome-opensource-ai/pull/582) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Meaningful Code | Issue | open | n/a | awaiting impactful-project review | [link](https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | official project-submission issue template used; education criteria documented |
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
-| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 2/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
+| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 3/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
 | CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | [link](https://www.codetriage.com/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [subscribe](https://www.codetriage.com/duct-tape2/ai-language-partner) | public profile and issue sync active |
 | Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
 | 24 Pull Requests | Directory | active | n/a | public project #3564 | [link](https://24pullrequests.com/projects?page=9) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [manage](https://24pullrequests.com/my_suggestions) | TypeScript; tests; good first issue; contribulator score 39 |
