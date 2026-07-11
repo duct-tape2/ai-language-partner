@@ -18,8 +18,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BOARD = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PRS.md"
 DEFAULT_OUT = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PR_COMMENTS.md"
 MARKER = "<!-- ai-language-partner:no-install-first-pr -->"
+TRUSTED_COMMENT_LOGIN = "github-actions[bot]"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
+CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
 FIRST_PR_HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 
 
@@ -83,6 +85,17 @@ def parse_board(text: str) -> list[NoInstallTask]:
     return tasks
 
 
+def verification(task: NoInstallTask) -> str:
+    source = task.source_file.lower()
+    if source.endswith((".ts", ".tsx")):
+        return "Run `cd apps/mobile && npm run verify` in Codespaces or let the PR checks run it."
+    if source.endswith((".yaml", ".yml")):
+        return "Run `cd apps/api && .venv/bin/python -m pytest` in Codespaces or rely on the PR checks."
+    if source.endswith(("story.json", "variants.csv")):
+        return "Run `python3 scripts/verify_dialogue_pack_sources.py` or let `Dialogue Pack Sources` CI validate it."
+    return "Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required."
+
+
 def render_comment(_repo: str, task: NoInstallTask) -> str:
     return f"""{MARKER}
 ### Edit this issue in your browser
@@ -102,13 +115,14 @@ No local app, backend, speech engine, private data, or API key is required.
 
 - Comment `/claim`, make only this change, and write `Closes #{task.number}` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- {verification(task)}
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide]({FIVE_MINUTE_FIRST_PR})
+- [Run checks in Codespaces]({CODESPACES_FIRST_PR})
 - [Ask the first PR help desk]({FIRST_PR_HELP_DESK})
 """
 
@@ -131,18 +145,39 @@ def render_markdown(repo: str, tasks: list[NoInstallTask], generated_on: str) ->
     return "\n".join(lines).rstrip() + "\n"
 
 
+def existing_guide_comment(repo: str, number: int, token: str) -> dict[str, object] | None:
+    for page in range(1, 6):
+        comments_url = (
+            f"https://api.github.com/repos/{repo}/issues/{number}/comments"
+            f"?per_page=100&page={page}"
+        )
+        comments = github_json(comments_url, token)
+        if not isinstance(comments, list):
+            raise TypeError("GitHub comments response was not a list")
+        for comment in comments:
+            user = comment.get("user") if isinstance(comment, dict) else None
+            if (
+                isinstance(comment, dict)
+                and isinstance(user, dict)
+                and user.get("login") == TRUSTED_COMMENT_LOGIN
+                and MARKER in str(comment.get("body") or "")
+            ):
+                return comment
+        if len(comments) < 100:
+            break
+    return None
+
+
 def upsert_comment(repo: str, task: NoInstallTask, token: str) -> tuple[str, str]:
-    comments_url = f"https://api.github.com/repos/{repo}/issues/{task.number}/comments?per_page=100"
-    comments = github_json(comments_url, token)
-    if not isinstance(comments, list):
-        raise TypeError("GitHub comments response was not a list")
     body = render_comment(repo, task)
-    for comment in comments:
-        if isinstance(comment, dict) and MARKER in str(comment.get("body") or ""):
-            updated = github_json(str(comment["url"]), token, method="PATCH", payload={"body": body})
-            if not isinstance(updated, dict):
-                raise TypeError("GitHub comment response was not an object")
-            return "updated", str(updated.get("html_url") or "")
+    existing = existing_guide_comment(repo, task.number, token)
+    if existing:
+        if str(existing.get("body") or "") == body:
+            return "unchanged", str(existing.get("html_url") or "")
+        updated = github_json(str(existing["url"]), token, method="PATCH", payload={"body": body})
+        if not isinstance(updated, dict):
+            raise TypeError("GitHub comment response was not an object")
+        return "updated", str(updated.get("html_url") or "")
     created = github_json(
         f"https://api.github.com/repos/{repo}/issues/{task.number}/comments",
         token,
@@ -181,14 +216,17 @@ def main(argv: list[str]) -> int:
             return 2
         created = 0
         updated = 0
+        unchanged = 0
         for task in tasks:
             action, url = upsert_comment(args.repo, task, token)
             if action == "created":
                 created += 1
-            else:
+            elif action == "updated":
                 updated += 1
+            else:
+                unchanged += 1
             print(f"{action} #{task.number}: {url}")
-        print(f"created={created} updated={updated}")
+        print(f"created={created} updated={updated} unchanged={unchanged}")
 
     return 0
 

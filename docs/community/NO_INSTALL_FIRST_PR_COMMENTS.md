@@ -28,13 +28,14 @@ Add or clarify Korean setup notes for running the backend in mock mode
 
 - Comment `/claim`, make only this change, and write `Closes #1` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -58,13 +59,14 @@ Add Japanese notes for running the mobile app without local engines
 
 - Comment `/claim`, make only this change, and write `Closes #2` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -88,13 +90,14 @@ Clarify ffmpeg, model path, env vars, and fallback behavior for local STT setup
 
 - Comment `/claim`, make only this change, and write `Closes #3` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -118,13 +121,14 @@ Clarify local TTS engine process setup, licensing boundaries, and the `/speakers
 
 - Comment `/claim`, make only this change, and write `Closes #4` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -148,13 +152,14 @@ Define learner-facing terms such as dialogue bank, pack, node, line, fallback
 
 - Comment `/claim`, make only this change, and write `Closes #5` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -178,13 +183,14 @@ Add curl examples for packs, match, unmatched, voices, and provider status
 
 - Comment `/claim`, make only this change, and write `Closes #6` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -208,13 +214,14 @@ Review beginner Korean translations without touching generated audio
 
 - Comment `/claim`, make only this change, and write `Closes #7` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Run `python3 scripts/verify_dialogue_pack_sources.py` or let `Dialogue Pack Sources` CI validate it.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -238,13 +245,14 @@ Review Japanese dialogue for natural beginner-safe wording while keeping line ID
 
 - Comment `/claim`, make only this change, and write `Closes #8` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Run `python3 scripts/verify_dialogue_pack_sources.py` or let `Dialogue Pack Sources` CI validate it.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -268,13 +276,14 @@ Add concise Korean notes about common Japanese particle mistakes
 
 - Comment `/claim`, make only this change, and write `Closes #11` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -298,13 +307,14 @@ Add a short checklist for reviewing cultural notes without stereotypes or overge
 
 - Comment `/claim`, make only this change, and write `Closes #12` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -328,13 +338,14 @@ Document how fixture-backed mock mode differs from live API-backed mode
 
 - Comment `/claim`, make only this change, and write `Closes #16` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -358,13 +369,14 @@ Review Korean labels and suggest consistent wording
 
 - Comment `/claim`, make only this change, and write `Closes #18` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Run `cd apps/mobile && npm run verify` in Codespaces or let the PR checks run it.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -388,13 +400,14 @@ Add example `/v1/providers/status` responses for mock, fallback, and local engin
 
 - Comment `/claim`, make only this change, and write `Closes #19` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -418,13 +431,14 @@ Explain match, confirm, and fallback thresholds in learner-friendly language
 
 - Comment `/claim`, make only this change, and write `Closes #20` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -448,13 +462,14 @@ Document optional Redis rate-limit setup for local and production use without ex
 
 - Comment `/claim`, make only this change, and write `Closes #23` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -478,13 +493,14 @@ Add or improve OpenAPI examples for self-attested and public-key device trust fl
 
 - Comment `/claim`, make only this change, and write `Closes #24` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Run `cd apps/api && .venv/bin/python -m pytest` in Codespaces or rely on the PR checks.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -508,13 +524,14 @@ Clarify when to use each public issue label
 
 - Comment `/claim`, make only this change, and write `Closes #29` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -538,13 +555,14 @@ Add a short FAQ answer explaining the local-first dialogue-bank design
 
 - Comment `/claim`, make only this change, and write `Closes #31` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -568,13 +586,14 @@ Add Korean troubleshooting notes for Python dependency install failures
 
 - Comment `/claim`, make only this change, and write `Closes #34` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -598,13 +617,14 @@ Add neutral Japanese explanation of cost, privacy, latency, and quality-control 
 
 - Comment `/claim`, make only this change, and write `Closes #35` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -628,13 +648,14 @@ Add beginner-safe examples for expressing restaurant preferences
 
 - Comment `/claim`, make only this change, and write `Closes #36` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Run `python3 scripts/verify_dialogue_pack_sources.py` or let `Dialogue Pack Sources` CI validate it.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -658,13 +679,14 @@ Explain honest provider labels such as `mock` and `voicevox_compat_fallback_*`
 
 - Comment `/claim`, make only this change, and write `Closes #41` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -688,13 +710,14 @@ Improve this repo's first-PR instructions for new contributors
 
 - Comment `/claim`, make only this change, and write `Closes #44` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -718,13 +741,14 @@ Improve the checklist maintainers use before merging counted external PRs
 
 - Comment `/claim`, make only this change, and write `Closes #45` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -748,13 +772,14 @@ Add beginner-safe Korean explanations for よ, ね, よね, and かな
 
 - Comment `/claim`, make only this change, and write `Closes #46` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -778,13 +803,14 @@ Add examples of stereotype-prone or context-sensitive wording to review carefull
 
 - Comment `/claim`, make only this change, and write `Closes #47` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Run `cd apps/mobile && npm run verify` in Codespaces or let the PR checks run it.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
 
@@ -808,11 +834,12 @@ Add a public roadmap for persona, topic, JLPT, and language-review pack areas
 
 - Comment `/claim`, make only this change, and write `Closes #50` in
   the PR body.
-- Name the review you completed; no command-line check is required.
+- Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required.
 - Do not add generated media, archives, databases, screenshots, secrets, local
   engines, or private data. Do not split trivial changes across PRs.
 
 **Help**
 
 - [Five-minute browser guide](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html)
+- [Run checks in Codespaces](https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html)
 - [Ask the first PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)

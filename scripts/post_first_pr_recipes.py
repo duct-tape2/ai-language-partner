@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "docs" / "community" / "FIRST_PR_RECIPES.md"
 MARKER = "<!-- ai-language-partner:first-pr-recipe -->"
+TRUSTED_COMMENT_LOGIN = "github-actions[bot]"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
@@ -81,7 +82,13 @@ def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[s
         if not isinstance(comments, list):
             raise TypeError("GitHub comments response was not a list")
         for comment in comments:
-            if isinstance(comment, dict) and MARKER in str(comment.get("body") or ""):
+            user = comment.get("user") if isinstance(comment, dict) else None
+            if (
+                isinstance(comment, dict)
+                and isinstance(user, dict)
+                and user.get("login") == TRUSTED_COMMENT_LOGIN
+                and MARKER in str(comment.get("body") or "")
+            ):
                 return comment
         if len(comments) < 100:
             break

@@ -526,6 +526,46 @@ Guarantee stable bottom navigation targets.
             payload={"body": "new recipe"},
         )
 
+    def test_existing_recipe_comment_ignores_foreign_marker_and_finds_page_two(self) -> None:
+        foreign = {
+            "id": 1,
+            "user": {"login": "other-app[bot]"},
+            "body": first_pr_recipes.MARKER,
+        }
+        page_one = [foreign] + [
+            {"id": index + 2, "user": {"login": "someone"}, "body": "plain"}
+            for index in range(99)
+        ]
+        owned = {
+            "id": 200,
+            "user": {"login": first_pr_recipes.TRUSTED_COMMENT_LOGIN},
+            "body": first_pr_recipes.MARKER,
+        }
+
+        with patch.object(first_pr_recipes, "github_json", side_effect=[page_one, [owned]]) as github_json:
+            result = first_pr_recipes.existing_recipe_comment(
+                "duct-tape2/ai-language-partner", 44, "token"
+            )
+
+        self.assertEqual(result, owned)
+        self.assertEqual(github_json.call_count, 2)
+        self.assertIn("page=2", github_json.call_args_list[1].args[0])
+
+    def test_existing_recipe_comment_uses_first_owned_duplicate(self) -> None:
+        first = {
+            "id": 10,
+            "user": {"login": first_pr_recipes.TRUSTED_COMMENT_LOGIN},
+            "body": first_pr_recipes.MARKER,
+        }
+        second = {**first, "id": 11}
+
+        with patch.object(first_pr_recipes, "github_json", return_value=[first, second]):
+            result = first_pr_recipes.existing_recipe_comment(
+                "duct-tape2/ai-language-partner", 44, "token"
+            )
+
+        self.assertEqual(result, first)
+
 
 class WorkflowFixtureTest(unittest.TestCase):
     def test_claude_oss_evidence_refresh_opens_pr_not_direct_main_push(self) -> None:
@@ -1575,13 +1615,89 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn(no_install_guides.MARKER, comment)
         self.assertIn("Open the direct edit page", comment)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", comment)
+        self.assertIn("CODESPACES_FIRST_PR.html", comment)
         self.assertIn("discussions/53", comment)
         self.assertNotIn("FIRST_ISSUE_MATCHER.html", comment)
-        self.assertNotIn("CODESPACES_FIRST_PR.html", comment)
-        self.assertEqual(comment.count("https://"), 3)
+        self.assertEqual(comment.count("https://"), 4)
         self.assertLess(len(comment), 1_600)
         self.assertIn("Closes #44", comment)
         self.assertIn("Do not split trivial", comment)
+
+    def test_no_install_verification_matches_source_type(self) -> None:
+        base = dict(
+            number=1,
+            title="task",
+            issue_url="https://example.test/1",
+            good_pr_shape="Make one change",
+            edit_url="https://example.test/edit",
+        )
+
+        docs = no_install_guides.NoInstallTask(source_file="docs/index.md", **base)
+        mobile = no_install_guides.NoInstallTask(source_file="apps/mobile/src/i18n.ts", **base)
+        openapi = no_install_guides.NoInstallTask(source_file="contracts/openapi_v0.yaml", **base)
+        dialogue = no_install_guides.NoInstallTask(source_file="packs/yui/v1/story.json", **base)
+
+        self.assertIn("no CLI check is required", no_install_guides.verification(docs))
+        self.assertIn("npm run verify", no_install_guides.verification(mobile))
+        self.assertIn("pytest", no_install_guides.verification(openapi))
+        self.assertIn("verify_dialogue_pack_sources.py", no_install_guides.verification(dialogue))
+
+    def test_no_install_existing_comment_is_owned_paginated_and_duplicate_safe(self) -> None:
+        foreign = {
+            "id": 1,
+            "user": {"login": "other-app[bot]"},
+            "body": no_install_guides.MARKER,
+        }
+        page_one = [foreign] + [
+            {"id": index + 2, "user": {"login": "someone"}, "body": "plain"}
+            for index in range(99)
+        ]
+        first_owned = {
+            "id": 200,
+            "user": {"login": no_install_guides.TRUSTED_COMMENT_LOGIN},
+            "body": no_install_guides.MARKER,
+        }
+        duplicate = {**first_owned, "id": 201}
+
+        with patch.object(
+            no_install_guides,
+            "github_json",
+            side_effect=[page_one, [first_owned, duplicate]],
+        ) as github_json:
+            result = no_install_guides.existing_guide_comment(
+                "duct-tape2/ai-language-partner", 44, "token"
+            )
+
+        self.assertEqual(result, first_owned)
+        self.assertEqual(github_json.call_count, 2)
+        self.assertIn("page=2", github_json.call_args_list[1].args[0])
+
+    def test_no_install_upsert_skips_unchanged_owned_comment(self) -> None:
+        task = no_install_guides.NoInstallTask(
+            number=44,
+            title="first PR walkthrough",
+            issue_url="https://example.test/44",
+            good_pr_shape="Improve the walkthrough",
+            source_file="docs/community/FIRST_PR_WALKTHROUGH.md",
+            edit_url="https://example.test/edit",
+        )
+        body = no_install_guides.render_comment("duct-tape2/ai-language-partner", task)
+        existing = {
+            "url": "https://api.github.test/comments/1",
+            "html_url": "https://github.test/issues/44#issuecomment-1",
+            "body": body,
+        }
+
+        with patch.object(
+            no_install_guides, "existing_guide_comment", return_value=existing
+        ), patch.object(no_install_guides, "github_json") as github_json:
+            action, url = no_install_guides.upsert_comment(
+                "duct-tape2/ai-language-partner", task, "token"
+            )
+
+        self.assertEqual(action, "unchanged")
+        self.assertEqual(url, existing["html_url"])
+        github_json.assert_not_called()
 
     def test_no_install_workflow_posts_only_outside_pull_requests(self) -> None:
         workflow = Path(".github/workflows/no-install-first-pr-guides.yml").read_text(encoding="utf-8")
@@ -1596,9 +1712,9 @@ class NoInstallFirstPrBoardTest(unittest.TestCase):
         self.assertIn(no_install_guides.MARKER, comments)
         self.assertIn("Open the direct edit page", comments)
         self.assertIn("FIVE_MINUTE_FIRST_PR.html", comments)
+        self.assertIn("CODESPACES_FIRST_PR.html", comments)
         self.assertIn("discussions/53", comments)
         self.assertNotIn("DIRECTORY_FIRST_PR.html", comments)
-        self.assertNotIn("CODESPACES_FIRST_PR.html", comments)
         self.assertIn("Closes #1", comments)
         self.assertIn("Closes #24", comments)
         self.assertIn("Closes #44", comments)
