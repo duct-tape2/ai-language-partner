@@ -85,6 +85,9 @@ reviewable first contributions genuinely easy.
   `https://github.com/ReactNativeNews/React-Native-Apps/pull/259`
 - Awesome Open Source AI listing PR:
   `https://github.com/alvinreal/awesome-opensource-ai/pull/582`
+- LibHunt project page: active and public; it points to the hosted demo and
+  repository metadata but is not contributor-count evidence
+  `https://www.libhunt.com/r/ai-language-partner`
 - Awesome Japanese listing suggestion issue: deferred until the app has a
   stronger app-store/release-build path; the hosted web demo is the first
   maturity step

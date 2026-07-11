@@ -40,6 +40,7 @@ FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
 TWENTY_FOUR_PULL_REQUESTS_URL = "https://24pullrequests.com/projects?page=9"
 TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL = "https://24pullrequests.com/my_suggestions"
 HELP_WANTED_PROJECT_URL = "https://helpwanted.dev/projects/duct-tape2/ai-language-partner"
+LIBHUNT_PROJECT_URL = "https://www.libhunt.com/r/ai-language-partner"
 OVIO_SUBMIT_URL = "https://ovio.org/submit"
 
 
@@ -322,6 +323,10 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
         f"[entry](https://github.com/{repo}/contribute) | "
         f"[browse]({HELP_WANTED_PROJECT_URL}) | "
         "public project page and sitemap confirmed 2026-07-10 |",
+        "| LibHunt | Directory | active | n/a | public project page available | "
+        f"[link]({LIBHUNT_PROJECT_URL}) | "
+        f"[entry](https://github.com/{repo}/contribute) | - | "
+        "project submitted and public page verified 2026-07-11; no contributor-count claim |",
         "| Ovio | Directory submission | blocked | n/a | "
         "submission backend unavailable (`api: null`); awaiting fallback email response | "
         f"[link]({OVIO_SUBMIT_URL}) | "
@@ -411,6 +416,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         "- Keep the 24 Pull Requests project active while reviewable starter issues",
         "  remain open; update its labels if the public taxonomy changes.",
         "- Monitor the Help Wanted project page and keep its indexed issue set current.",
+        "- Monitor the LibHunt project page and keep its repository description and",
+        "  contributor link current; do not resubmit a duplicate project.",
         "- Monitor Ovio for a fallback-email response or a non-null submission API;",
         "  do not duplicate the existing email or submit through the broken form.",
         "- Track Meaningful Code issue #147 until the project is reviewed or listed;",
@@ -443,6 +450,8 @@ def build_markdown(repo: str, token: str | None) -> str:
         f"  `{TWENTY_FOUR_PULL_REQUESTS_URL}` (project `3564`)",
         "- Help Wanted indexed project page:",
         f"  `{HELP_WANTED_PROJECT_URL}` (37 issues observed 2026-07-10)",
+        "- LibHunt project page:",
+        f"  `{LIBHUNT_PROJECT_URL}` (public page verified 2026-07-11)",
         "- Meaningful Code project submission:",
         "  `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`",
         "- Ovio project submission form:",

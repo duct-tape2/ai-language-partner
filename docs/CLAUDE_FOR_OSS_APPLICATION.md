@@ -149,6 +149,9 @@ threshold is not met yet. Do not submit Phase B with this status.
   `https://24pullrequests.com/projects?page=9`
 - Help Wanted project page: active with 37 indexed starter issues
   `https://helpwanted.dev/projects/duct-tape2/ai-language-partner`
+- LibHunt project page: active; public project metadata points to the hosted
+  demo and contributor guide, but does not count as contributor evidence
+  `https://www.libhunt.com/r/ai-language-partner`
 - Awesome Japanese listing suggestion issue: deferred until the project has a
   clearer app-store/release-build path; hosted demo is now the first maturity
   step
