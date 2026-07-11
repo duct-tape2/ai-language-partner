@@ -302,6 +302,21 @@ class GovernanceCheckTest(unittest.TestCase):
         self.assertIn("pages: write", workflow)
         self.assertIn("id-token: write", workflow)
 
+    def test_scorecard_workflow_uses_pinned_default_branch_analysis(self) -> None:
+        workflow = Path(".github/workflows/scorecard.yml").read_text(encoding="utf-8")
+
+        self.assertIn("branches: [main]", workflow)
+        self.assertIn("schedule:", workflow)
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertIn("permissions: read-all", workflow)
+        self.assertIn("security-events: write", workflow)
+        self.assertIn("id-token: write", workflow)
+        self.assertIn("persist-credentials: false", workflow)
+        self.assertIn("ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a", workflow)
+        self.assertIn("publish_results: true", workflow)
+        self.assertIn("github/codeql-action/upload-sarif@e46ed2cbd01164d986452f91f178727624ae40d7", workflow)
+        self.assertNotIn("pull_request:", workflow)
+
 
 class FirstPrRecipeTest(unittest.TestCase):
     def test_recipe_infers_backend_files_and_checks(self) -> None:
