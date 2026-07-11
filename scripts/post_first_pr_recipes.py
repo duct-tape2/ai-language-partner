@@ -97,6 +97,8 @@ def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[s
 def upsert_recipe(repo: str, number: int, token: str, body: str) -> tuple[str, str]:
     existing = existing_recipe_comment(repo, number, token)
     if existing:
+        if str(existing.get("body") or "") == body:
+            return "unchanged", str(existing.get("html_url") or "")
         result = github_json(str(existing["url"]), token, method="PATCH", payload={"body": body})
         if not isinstance(result, dict):
             raise TypeError("GitHub comment response was not an object")
@@ -309,14 +311,17 @@ def main(argv: list[str]) -> int:
             return 2
         posted = 0
         updated = 0
+        unchanged = 0
         for issue in issues:
             action, url = upsert_recipe(args.repo, issue.number, token, render_recipe(args.repo, issue))
             if action == "posted":
                 posted += 1
-            else:
+            elif action == "updated":
                 updated += 1
+            else:
+                unchanged += 1
             print(f"{action} #{issue.number}: {url}")
-        print(f"posted={posted} updated={updated}")
+        print(f"posted={posted} updated={updated} unchanged={unchanged}")
     return 0
 
 

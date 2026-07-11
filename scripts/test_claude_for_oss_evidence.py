@@ -408,6 +408,54 @@ Guarantee stable bottom navigation targets.
         self.assertNotIn("Guarantee stable bottom navigation targets", recipe)
         self.assertNotIn("No navigation redesign", recipe)
 
+    def test_upsert_recipe_skips_patch_when_comment_is_unchanged(self) -> None:
+        existing = {
+            "url": "https://api.github.test/comments/1",
+            "html_url": "https://github.test/issues/1#issuecomment-1",
+            "body": "same recipe",
+        }
+
+        with patch.object(first_pr_recipes, "existing_recipe_comment", return_value=existing), patch.object(
+            first_pr_recipes, "github_json"
+        ) as github_json:
+            action, url = first_pr_recipes.upsert_recipe(
+                "duct-tape2/ai-language-partner",
+                1,
+                "token",
+                "same recipe",
+            )
+
+        self.assertEqual(action, "unchanged")
+        self.assertEqual(url, existing["html_url"])
+        github_json.assert_not_called()
+
+    def test_upsert_recipe_patches_when_comment_changed(self) -> None:
+        existing = {
+            "url": "https://api.github.test/comments/1",
+            "html_url": "https://github.test/issues/1#issuecomment-1",
+            "body": "old recipe",
+        }
+        updated = {"html_url": existing["html_url"]}
+
+        with patch.object(first_pr_recipes, "existing_recipe_comment", return_value=existing), patch.object(
+            first_pr_recipes, "github_json", return_value=updated
+        ) as github_json:
+            action, url = first_pr_recipes.upsert_recipe(
+                "duct-tape2/ai-language-partner",
+                1,
+                "token",
+                "new recipe",
+            )
+
+        self.assertEqual(action, "updated")
+        self.assertEqual(url, existing["html_url"])
+        github_json.assert_called_once_with(
+            existing["url"],
+            "token",
+            method="PATCH",
+            payload={"body": "new recipe"},
+        )
+
 
 class WorkflowFixtureTest(unittest.TestCase):
     def test_claude_oss_evidence_refresh_opens_pr_not_direct_main_push(self) -> None:
@@ -458,6 +506,9 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("--apply", workflow)
         self.assertIn("issues: write", workflow)
         self.assertNotIn("pull_request", workflow)
+        self.assertIn("types: [opened, edited, labeled, reopened]", workflow)
+        self.assertNotIn("unlabeled", workflow)
+        self.assertIn("github.event.label.name == 'good first issue'", workflow)
         self.assertIn("scripts/post_first_pr_recipes.py", starter_workflow)
 
     def test_contributor_sprint_status_workflow_posts_single_status_comment(self) -> None:
@@ -487,7 +538,7 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("could you assign", workflow)
         self.assertIn("github.rest.issues.addAssignees", workflow)
         self.assertIn("existingAssignees.length === 0", workflow)
-        self.assertIn("already had the `claimed` label", workflow)
+        self.assertIn("already had the `claimed` label or an assignee", workflow)
         self.assertIn("nearby unclaimed issue", workflow)
         self.assertIn("https://duct-tape2.github.io/ai-language-partner/demo/", workflow)
         self.assertIn("DIRECTORY_FIRST_PR.html", workflow)
@@ -498,7 +549,24 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("LANGUAGE_REVIEW_FIRST_PR_KIT.html", workflow)
         self.assertIn("issues: write", workflow)
         self.assertIn("github.rest.issues.addLabels", workflow)
+        self.assertIn("github.rest.issues.removeLabel", workflow)
         self.assertIn("claimed", workflow)
+        self.assertIn("leaseHours = 72", workflow)
+        self.assertIn("up-for-grabs", workflow)
+        self.assertIn("issue-claim-${{ github.repository }}-${{ github.event.issue.number }}", workflow)
+        self.assertIn("queue: max", workflow)
+        self.assertIn("github.rest.issues.get", workflow)
+        self.assertIn("currentIssue.labels", workflow)
+        self.assertIn("currentIssue.assignees", workflow)
+        self.assertIn("claimLabelAdded &&", workflow)
+        self.assertIn("alreadyClaimed &&", workflow)
+        self.assertIn("comments.find(", workflow)
+        self.assertIn("ai-language-partner:issue-claim-event", workflow)
+        self.assertIn("This issue claim event was already handled", workflow)
+        self.assertIn('existing.user?.type === "Bot"', workflow)
+        self.assertIn("github.rest.issues.updateComment", workflow)
+        self.assertIn("Reservation check-in", workflow)
+        self.assertIn("Maintainers review stale claims before releasing them", workflow)
         self.assertIn("issue.pull_request", workflow)
 
     def test_contributor_funnel_monitor_uses_trusted_base_checkout(self) -> None:
