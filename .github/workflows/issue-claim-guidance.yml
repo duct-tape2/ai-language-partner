@@ -7,6 +7,11 @@ on:
 permissions:
   issues: write
 
+concurrency:
+  group: issue-claim-${{ github.repository }}-${{ github.event.issue.number }}
+  cancel-in-progress: false
+  queue: max
+
 jobs:
   claim-guidance:
     runs-on: ubuntu-latest
@@ -28,11 +33,43 @@ jobs:
               return;
             }
 
+            const eventMarker = `<!-- ai-language-partner:issue-claim-event:${comment.id} -->`;
             const claimantMarker = `<!-- ai-language-partner:issue-claim-guidance:${comment.user.login} -->`;
             const { owner, repo } = context.repo;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: issue.number,
+              per_page: 100,
+            });
+            if (
+              comments.some(
+                (existing) =>
+                  existing.user?.type === "Bot" &&
+                  existing.body &&
+                  existing.body.includes(eventMarker),
+              )
+            ) {
+              core.info("This issue claim event was already handled.");
+              return;
+            }
+
+            const { data: currentIssue } = await github.rest.issues.get({
+              owner,
+              repo,
+              issue_number: issue.number,
+            });
             const claimLabel = "claimed";
-            const existingLabels = Array.isArray(issue.labels) ? issue.labels : [];
-            const alreadyClaimed = existingLabels.some((label) => label.name === claimLabel);
+            const leaseHours = 72;
+            const availabilityLabels = ["help wanted", "up-for-grabs", "first-timers-only"];
+            const existingLabels = Array.isArray(currentIssue.labels) ? currentIssue.labels : [];
+            const existingAssignees = Array.isArray(currentIssue.assignees)
+              ? currentIssue.assignees
+              : [];
+            const alreadyClaimed =
+              existingLabels.some((label) => label.name === claimLabel) ||
+              existingAssignees.length > 0;
+            let claimLabelAdded = false;
             if (!alreadyClaimed) {
               try {
                 await github.rest.issues.addLabels({
@@ -41,17 +78,22 @@ jobs:
                   issue_number: issue.number,
                   labels: [claimLabel],
                 });
+                claimLabelAdded = true;
                 core.info(`Added ${claimLabel} label to #${issue.number}.`);
               } catch (error) {
                 core.warning(`Could not add ${claimLabel} label to #${issue.number}: ${error.message}`);
               }
             }
 
-            const existingAssignees = Array.isArray(issue.assignees) ? issue.assignees : [];
             let assignmentAdded = existingAssignees.some(
               (assignee) => assignee.login === comment.user.login,
             );
-            if (!alreadyClaimed && existingAssignees.length === 0 && !assignmentAdded) {
+            if (
+              !alreadyClaimed &&
+              claimLabelAdded &&
+              existingAssignees.length === 0 &&
+              !assignmentAdded
+            ) {
               try {
                 await github.rest.issues.addAssignees({
                   owner,
@@ -68,30 +110,68 @@ jobs:
               }
             }
 
+            const claimRegistered = !alreadyClaimed && claimLabelAdded;
+            const removedAvailabilityLabels = [];
+            if (claimRegistered) {
+              const existingLabelNames = new Set(existingLabels.map((label) => label.name));
+              for (const label of availabilityLabels) {
+                if (!existingLabelNames.has(label)) {
+                  continue;
+                }
+                try {
+                  await github.rest.issues.removeLabel({
+                    owner,
+                    repo,
+                    issue_number: issue.number,
+                    name: label,
+                  });
+                  removedAvailabilityLabels.push(label);
+                  core.info(`Removed availability label ${label} from claimed issue #${issue.number}.`);
+                } catch (error) {
+                  core.warning(`Could not remove ${label} from #${issue.number}: ${error.message}`);
+                }
+              }
+            }
+
+            const startedAt = new Date(comment.created_at || Date.now());
+            const expiresAt = new Date(startedAt.getTime() + leaseHours * 60 * 60 * 1000);
             let claimStatus;
             if (alreadyClaimed) {
               claimStatus =
-                "- Claim status: this issue already had the `claimed` label before your comment. Maintainers may split the scope or redirect you to a nearby unclaimed issue.";
-            } else if (assignmentAdded) {
+                "- Claim status: this issue already had the `claimed` label or an assignee before your comment. Maintainers may split the scope or redirect you to a nearby unclaimed issue.";
+            } else if (assignmentAdded && claimLabelAdded) {
               claimStatus =
                 `- Claim status: assigned to @${comment.user.login} and marked with the \`claimed\` label.`;
-            } else {
+            } else if (assignmentAdded) {
+              claimStatus =
+                `- Claim status: assigned to @${comment.user.login}; GitHub did not allow the workflow to add the \`claimed\` label.`;
+            } else if (claimLabelAdded) {
               claimStatus =
                 "- Claim status: marked with the `claimed` label. A maintainer will confirm assignment if GitHub did not allow automatic assignment.";
+            } else {
+              claimStatus =
+                "- Claim status: GitHub did not allow automatic assignment or labeling. A maintainer must confirm before this issue is reserved.";
             }
 
-            const { data: comments } = await github.rest.issues.listComments({
-              owner,
-              repo,
-              issue_number: issue.number,
-              per_page: 100,
-            });
-            if (comments.some((existing) => existing.body && existing.body.includes(claimantMarker))) {
+            const existingGuidance = comments.find(
+              (existing) =>
+                existing.user?.type === "Bot" &&
+                existing.body &&
+                existing.body.includes(claimantMarker),
+            );
+            if (alreadyClaimed && existingGuidance) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existingGuidance.id,
+                body: `${existingGuidance.body}\n${eventMarker}`,
+              });
               core.info("Issue claim guidance already exists for this claimant.");
               return;
             }
 
             const response = [
+              eventMarker,
               claimantMarker,
               `Thanks, @${comment.user.login}. Treating this as a claim signal for #${issue.number}.`,
               "",
@@ -99,6 +179,12 @@ jobs:
               "",
               "- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/",
               claimStatus,
+              ...(claimRegistered
+                ? [
+                    `- Reservation check-in: please reply with progress or \`/renew\` by ${expiresAt.toISOString()} (${leaseHours} hours). Maintainers review stale claims before releasing them; a linked open PR keeps the reservation active.`,
+                    `- Availability labels removed while reserved: ${removedAvailabilityLabels.length ? removedAvailabilityLabels.map((label) => `\`${label}\``).join(", ") : "none"}.`,
+                  ]
+                : []),
               "",
               "Fast path to a first PR:",
               "",

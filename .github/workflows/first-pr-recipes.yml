@@ -3,7 +3,7 @@ name: First PR Recipes
 on:
   workflow_dispatch:
   issues:
-    types: [opened, edited, labeled, unlabeled, reopened]
+    types: [opened, edited, labeled, reopened]
   push:
     branches: ["main"]
     paths:
@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   first-pr-recipes:
+    if: github.event_name != 'issues' || github.event.action != 'labeled' || github.event.label.name == 'good first issue'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout trusted main
