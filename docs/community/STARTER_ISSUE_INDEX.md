@@ -16,9 +16,9 @@ you can pick one focused task without duplicate work.
 - First PR help desk: `https://github.com/duct-tape2/ai-language-partner/discussions/53`
 - Contributor interest form: `https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml`
 
-Only useful, reviewable PRs count toward the Claude for OSS
-community-builder evidence. Do not split trivial changes just to create
-more PRs.
+Choose a useful, reviewable issue that improves the learner experience or the
+project. Keep related corrections together instead of splitting trivial changes
+across separate PRs.
 
 ## Lane Summary
 

@@ -12,9 +12,14 @@ bank** under `packs/`. Contributions must preserve that guarantee. See
 
 New contributors can start with
 `docs/community/FIRST_PR_WALKTHROUGH.md` and the GitHub issues labeled
-`good first issue`. Maintainers coordinating the Claude for OSS
-community-builder route should use `docs/community/CONTRIBUTOR_SPRINT.md` for
-issue lanes, outreach batches, and counting decisions.
+`good first issue`. `docs/community/CONTRIBUTOR_LANDING.md` collects the
+available routes, issue lanes, and maintainer contacts.
+
+## Contributor trust and attribution
+
+Normal GitHub authorship remains public in the repository history. Profile
+spotlights, case studies, and any extra attribution require your opt-in; you
+may decline without affecting review or merge decisions.
 
 If you do not want to install Python, Node, Expo, or FastAPI locally, open the
 repo in Codespaces:

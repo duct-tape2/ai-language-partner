@@ -1,8 +1,8 @@
 # Outreach Messages
 
 Copy these manually and tailor them to each community. Do not mass-post
-identical messages. A posted message is not Claude for OSS evidence; only
-useful merged external PRs count.
+identical messages. A posted message is an invitation, not a contribution;
+invite people to choose focused work that helps learners or the project.
 
 - Source queue: `docs/community/OUTREACH_QUEUE.json`
 - Items: `30`

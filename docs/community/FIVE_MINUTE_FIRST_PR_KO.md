@@ -17,9 +17,8 @@ title: 5분 첫 PR 가이드
 댓글이 첫 PR 체크리스트를 안내하고 maintainer triage용 `claimed` 라벨을
 붙입니다.
 
-Claude for OSS 기준에는 실제 외부 기여자의 유용한 merged PR만 count됩니다.
-숫자를 채우기 위한 사소한 typo 쪼개기, bot, 중복 계정, maintainer PR은
-count하지 않습니다.
+학습자나 프로젝트를 더 좋게 만드는 집중된 변경을 선택해 주세요. 관련된 수정은 하나의
+PR에 함께 넣고, 사소한 typo 수정을 여러 PR로 나누지 마세요.
 
 ## 가장 빠른 선택지
 

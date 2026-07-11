@@ -64,12 +64,9 @@ Daily Talk の中心的な会話フローは、実行時の LLM/API 呼び出し
 local TTS または事前準備済み音声アセットで応答します。貢献もこの
 local-first 設計を保つ方向でお願いします。
 
-## Claude for OSS メモ
+## 貢献が役立つ理由
 
-この repo は Claude for OSS community-builder route を目標にしています。
-基準は、過去 12 か月で 20 名以上の unique external contributors による
-useful merged PR がある repo になることです。
-
-実在する外部コントリビューターの有用な merged PR だけを count します。
-maintainer PR、bot、重複アカウント、数字を増やすだけの無意味な PR は
-count しません。
+日本語練習をより分かりやすく、安全に、使いやすくする、またはプロジェクトを
+維持しやすくする変更を歓迎します。docs、日本語レビュー、dialogue content、
+API の例、focused test は、学習者またはプロジェクトの実際の課題を解決するときに
+役立ちます。PR では issue をリンクし、実行した最小限の check を書いてください。

@@ -34,11 +34,11 @@ tests. They are useful even when you do not run the full mobile/backend stack.
 | Python tests | 30-60 min | [#49 malformed STT upload test](https://github.com/duct-tape2/ai-language-partner/issues/49) | [API tests](https://github.com/duct-tape2/ai-language-partner/tree/main/apps/api/tests) | `python -m pytest` |
 | Repo/community process | 10-30 min | [#45 maintainer checklist](https://github.com/duct-tape2/ai-language-partner/issues/45) | [edit review runbook](https://github.com/duct-tape2/ai-language-partner/edit/main/docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md) | Docs review only |
 
-## Low-Collision 20-Issue Menu
+## Low-Collision Starter-Issue Menu
 
-The project is trying to reach 20 unique external contributors with useful
-merged PRs. These routes spread first PRs across different files and review
-lanes so contributors do not all collide on the same edit.
+These routes spread first PRs across different files and review lanes so
+contributors can choose work that improves the learner experience or project
+without all colliding on the same edit.
 
 | Slot | Best for | Issue | First file |
 |---:|---|---|---|
@@ -98,11 +98,8 @@ Notes:
   or local engine files.
 ```
 
-## What Counts
+## What Makes a Useful Contribution
 
-The project is building toward the Claude for OSS community-builder route:
-20+ unique external contributors with useful merged PRs in the last 12 months.
-
-Useful docs, content review, accessibility, API example, and test PRs can all
-count after maintainer review. Maintainer-authored PRs, bots, duplicate
-identities, trivial typo splits, and metric-only changes do not count.
+Useful docs, content review, accessibility, API examples, and tests solve a
+learner or project need. Keep the work focused, link the issue or problem in
+your PR, and avoid splitting trivial typo fixes across separate PRs.

@@ -37,13 +37,11 @@ and language-review PRs are welcome.
 
 ---
 
-## Community sprint: first PRs welcome
+## First PRs that improve the learning experience
 
-This repo is building a real public contribution record for the Claude for OSS
-community-builder route. Current evidence status is tracked in
-[`docs/CLAUDE_FOR_OSS_APPLICATION.md`](docs/CLAUDE_FOR_OSS_APPLICATION.md):
-only useful external PRs count, and maintainer PRs, bots, duplicate identities,
-and metric-only changes are excluded.
+Contributions are welcome when they make Japanese practice clearer, safer, more
+accessible, or easier to maintain. Choose one focused issue, link it in your
+PR, and mention the smallest relevant check you ran.
 
 Fastest path:
 
@@ -77,9 +75,8 @@ the [日本語 5分 first PR route](docs/community/FIVE_MINUTE_FIRST_PR_JA.md),
 the [language review first PR kit](docs/community/LANGUAGE_REVIEW_FIRST_PR_KIT.md),
 the [starter issue index](docs/community/STARTER_ISSUE_INDEX.md),
 the [no-install first PR board](docs/community/NO_INSTALL_FIRST_PRS.md),
-the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), the
-[first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md), or the
-[20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52).
+the [contributor landing page](docs/community/CONTRIBUTOR_LANDING.md), or the
+[first PR walkthrough](docs/community/FIRST_PR_WALKTHROUGH.md).
 If you want a maintainer to suggest a task, ask in the
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53) or open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).

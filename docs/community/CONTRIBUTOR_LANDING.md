@@ -66,9 +66,7 @@ content.
 
 If you are not sure where to start, ask in the
 [First PR help desk discussion](https://github.com/duct-tape2/ai-language-partner/discussions/53),
-comment on the
-[20 contributor sprint kickoff issue](https://github.com/duct-tape2/ai-language-partner/issues/52)
-with the lane you prefer, or open a
+or open a
 [contributor interest issue](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest.yml).
 Korean-speaking contributors can use the
 [한국어 contributor interest form](https://github.com/duct-tape2/ai-language-partner/issues/new?template=contributor_interest_ko.yml),
@@ -117,11 +115,14 @@ The Daily Talk path avoids runtime LLM/API calls. Learner audio is transcribed
 locally, matched against reviewed dialogue-bank lines, and answered with local
 TTS assets. Contributions should preserve that local-first design.
 
-## Claude for OSS Note
+## What Makes a Contribution Useful
 
-This project is building toward the Claude for OSS community-builder route:
-20+ unique external contributors with useful merged PRs in the last 12 months.
+Choose a focused issue that improves the learner experience or makes the
+project easier to sustain. Clear Korean/Japanese explanations, beginner-safe
+dialogue review, accessibility fixes, API examples, and focused tests all make
+a real difference. Link the issue in your PR and name the smallest relevant
+check you ran.
 
-Only real external contributors count. Maintainer-authored PRs, bots, duplicate
-identities, and trivial metric-only PRs are excluded. See the
-[PR review and counting policy](PR_REVIEW_AND_COUNTING_POLICY.html).
+For a transparent explanation of human review, authorship, duplicate identity
+handling, and optional program eligibility, read the
+[review and eligibility policy](PR_REVIEW_AND_COUNTING_POLICY.html).
