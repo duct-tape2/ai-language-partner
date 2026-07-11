@@ -18,15 +18,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "docs" / "community" / "FIRST_PR_RECIPES.md"
 MARKER = "<!-- ai-language-partner:first-pr-recipe -->"
+TRUSTED_COMMENT_LOGIN = "github-actions[bot]"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
-DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
-FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
-LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
-NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
-FIRST_PR_WALKTHROUGH = f"{COMMUNITY_PAGES}/FIRST_PR_WALKTHROUGH.html"
-COUNTING_POLICY = f"{COMMUNITY_PAGES}/PR_REVIEW_AND_COUNTING_POLICY.html"
 FIRST_PR_HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 
 
@@ -56,6 +51,13 @@ def github_json(url: str, token: str | None, method: str = "GET", payload: dict[
         return json.loads(response.read().decode("utf-8"))
 
 
+def authenticated_login(token: str) -> str:
+    data = github_json("https://api.github.com/user", token)
+    if not isinstance(data, dict) or not data.get("login"):
+        raise TypeError("GitHub authenticated-user response did not include a login")
+    return str(data["login"])
+
+
 def fetch_issues(repo: str, token: str | None, label: str) -> list[Issue]:
     issues: list[Issue] = []
     encoded_label = urllib.parse.quote(label)
@@ -80,22 +82,39 @@ def fetch_issues(repo: str, token: str | None, label: str) -> list[Issue]:
     return sorted(issues, key=lambda issue: issue.number)
 
 
-def existing_recipe_comment(repo: str, number: int, token: str | None) -> dict[str, object] | None:
+def existing_recipe_comment(
+    repo: str,
+    number: int,
+    token: str | None,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> dict[str, object] | None:
     for page in range(1, 6):
         url = f"https://api.github.com/repos/{repo}/issues/{number}/comments?per_page=100&page={page}"
         comments = github_json(url, token)
         if not isinstance(comments, list):
             raise TypeError("GitHub comments response was not a list")
         for comment in comments:
-            if isinstance(comment, dict) and MARKER in str(comment.get("body") or ""):
+            user = comment.get("user") if isinstance(comment, dict) else None
+            if (
+                isinstance(comment, dict)
+                and isinstance(user, dict)
+                and user.get("login") == trusted_login
+                and MARKER in str(comment.get("body") or "")
+            ):
                 return comment
         if len(comments) < 100:
             break
     return None
 
 
-def upsert_recipe(repo: str, number: int, token: str, body: str) -> tuple[str, str]:
-    existing = existing_recipe_comment(repo, number, token)
+def upsert_recipe(
+    repo: str,
+    number: int,
+    token: str,
+    body: str,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> tuple[str, str]:
+    existing = existing_recipe_comment(repo, number, token, trusted_login)
     if existing:
         if str(existing.get("body") or "") == body:
             return "unchanged", str(existing.get("html_url") or "")
@@ -223,8 +242,7 @@ def acceptance(issue: Issue) -> str:
     return "Make one focused, reviewable change that satisfies the issue title."
 
 
-def render_recipe(repo: str, issue: Issue) -> str:
-    owner, name = repo.split("/", 1)
+def render_recipe(_repo: str, issue: Issue) -> str:
     files = likely_files(issue)
     checks = suggested_checks(issue, files)
     file_lines = "\n".join(f"- `{path}`" for path in files) or "- Ask in the issue for a suggested file."
@@ -232,41 +250,32 @@ def render_recipe(repo: str, issue: Issue) -> str:
     return f"""{MARKER}
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 {file_lines}
 
-**Acceptance signal**
+**Done when**
 
 {acceptance(issue)}
 
-**Suggested checks**
+**Verify**
 
 {check_lines}
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #{issue.number}` or `Refs #{issue.number}`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #{issue.number}` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://{owner}.github.io/{name}/
-- Directory first PR fast lane: {DIRECTORY_FIRST_PR}
-- First issue matcher: {FIRST_ISSUE_MATCHER}
-- Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
-- Codespaces first PR guide: {CODESPACES_FIRST_PR}
-- No-install first PR board: {NO_INSTALL_BOARD}
-- Language review first PR kit: {LANGUAGE_REVIEW_KIT}
-- First PR walkthrough: {FIRST_PR_WALKTHROUGH}
-- First PR help desk: {FIRST_PR_HELP_DESK}
-- Counting policy: {COUNTING_POLICY}
+- Browser edit: {FIVE_MINUTE_FIRST_PR}
+- Code or tests without local setup: {CODESPACES_FIRST_PR}
+- Ask a maintainer: {FIRST_PR_HELP_DESK}
 """
 
 
@@ -295,6 +304,11 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--out", default=str(DEFAULT_OUT), help="Markdown file to write")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help="Generated date")
     parser.add_argument("--apply", action="store_true", help="Post missing recipe comments to GitHub issues")
+    parser.add_argument(
+        "--comment-login",
+        default="",
+        help="Expected author for existing marker comments; PAT runs auto-detect it",
+    )
     args = parser.parse_args(argv[1:])
 
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -312,8 +326,15 @@ def main(argv: list[str]) -> int:
         posted = 0
         updated = 0
         unchanged = 0
+        trusted_login = args.comment_login or authenticated_login(token)
         for issue in issues:
-            action, url = upsert_recipe(args.repo, issue.number, token, render_recipe(args.repo, issue))
+            action, url = upsert_recipe(
+                args.repo,
+                issue.number,
+                token,
+                render_recipe(args.repo, issue),
+                trusted_login,
+            )
             if action == "posted":
                 posted += 1
             elif action == "updated":

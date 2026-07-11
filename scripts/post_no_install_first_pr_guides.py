@@ -18,17 +18,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BOARD = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PRS.md"
 DEFAULT_OUT = ROOT / "docs" / "community" / "NO_INSTALL_FIRST_PR_COMMENTS.md"
 MARKER = "<!-- ai-language-partner:no-install-first-pr -->"
+TRUSTED_COMMENT_LOGIN = "github-actions[bot]"
 COMMUNITY_PAGES = "https://duct-tape2.github.io/ai-language-partner/community"
-DIRECTORY_FIRST_PR = f"{COMMUNITY_PAGES}/DIRECTORY_FIRST_PR.html"
-FIRST_ISSUE_MATCHER = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 CODESPACES_FIRST_PR = f"{COMMUNITY_PAGES}/CODESPACES_FIRST_PR.html"
-KOREAN_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_KO.html"
-KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ko.yml"
-JAPANESE_FIVE_MINUTE_FIRST_PR = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR_JA.html"
-JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE = "contributor_interest_ja.yml"
-LANGUAGE_REVIEW_KIT = f"{COMMUNITY_PAGES}/LANGUAGE_REVIEW_FIRST_PR_KIT.html"
-NO_INSTALL_BOARD = f"{COMMUNITY_PAGES}/NO_INSTALL_FIRST_PRS.html"
 FIRST_PR_HELP_DESK = "https://github.com/duct-tape2/ai-language-partner/discussions/53"
 
 
@@ -58,6 +51,13 @@ def github_json(url: str, token: str | None, method: str = "GET", payload: dict[
     with urllib.request.urlopen(request, timeout=30) as response:
         raw = response.read().decode("utf-8")
         return json.loads(raw) if raw else {}
+
+
+def authenticated_login(token: str) -> str:
+    data = github_json("https://api.github.com/user", token)
+    if not isinstance(data, dict) or not data.get("login"):
+        raise TypeError("GitHub authenticated-user response did not include a login")
+    return str(data["login"])
 
 
 def strip_inline_code(value: str) -> str:
@@ -92,45 +92,45 @@ def parse_board(text: str) -> list[NoInstallTask]:
     return tasks
 
 
-def render_comment(repo: str, task: NoInstallTask) -> str:
+def verification(task: NoInstallTask) -> str:
+    source = task.source_file.lower()
+    if source.endswith((".ts", ".tsx")):
+        return "Run `cd apps/mobile && npm run verify` in Codespaces or let the PR checks run it."
+    if source.endswith((".yaml", ".yml")):
+        return "Run `cd apps/api && .venv/bin/python -m pytest` in Codespaces or rely on the PR checks."
+    if source.endswith(("story.json", "variants.csv")):
+        return "Run `python3 scripts/verify_dialogue_pack_sources.py` or let `Dialogue Pack Sources` CI validate it."
+    return "Use GitHub preview and name the wording, links, or examples you reviewed; no CLI check is required."
+
+
+def render_comment(_repo: str, task: NoInstallTask) -> str:
     return f"""{MARKER}
-### No-install first PR path
+### Edit this issue in your browser
 
-This issue can be started in the GitHub web editor. No local Expo app, FastAPI
-backend, STT/TTS engine, generated audio, private data, or API key is needed.
+No local app, backend, speech engine, private data, or API key is required.
 
-**Suggested browser-only change**
+**Change**
 
 {task.good_pr_shape}
 
-**Start here**
+**Edit**
 
-- Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
-- Directory first PR fast lane: {DIRECTORY_FIRST_PR}
-- First issue matcher: {FIRST_ISSUE_MATCHER}
-- Five-minute first PR: {FIVE_MINUTE_FIRST_PR}
-- Codespaces first PR guide: {CODESPACES_FIRST_PR}
-- Korean five-minute first PR: {KOREAN_FIVE_MINUTE_FIRST_PR}
-- Korean contributor interest form: https://github.com/{repo}/issues/new?template={KOREAN_CONTRIBUTOR_INTEREST_TEMPLATE}
-- Japanese five-minute first PR: {JAPANESE_FIVE_MINUTE_FIRST_PR}
-- Japanese contributor interest form: https://github.com/{repo}/issues/new?template={JAPANESE_CONTRIBUTOR_INTEREST_TEMPLATE}
-- Language review first PR kit: {LANGUAGE_REVIEW_KIT}
-- First PR help desk: {FIRST_PR_HELP_DESK}
-- Source file: `{task.source_file}`
-- Direct edit link: {task.edit_url}
-- No-install board: {NO_INSTALL_BOARD}
+- File: `{task.source_file}`
+- [Open the direct edit page]({task.edit_url})
 
-**PR checklist**
+**Finish**
 
-- Keep the PR focused on this issue.
-- In the PR body, write `Closes #{task.number}`.
-- Say that this was docs/content/language review only if no command-line check
-  was needed.
-- Do not add generated `.wav`, `.zip`, `.npy`, `.sqlite`, screenshot, local
-  engine, secret, private note, or private dataset files.
+- Comment `/claim`, make only this change, and write `Closes #{task.number}` in
+  the PR body.
+- {verification(task)}
+- Do not add generated media, archives, databases, screenshots, secrets, local
+  engines, or private data. Do not split trivial changes across PRs.
 
-Only useful, reviewable PRs count toward Claude for OSS evidence. Tiny split
-PRs made only to increase the count do not count.
+**Help**
+
+- [Five-minute browser guide]({FIVE_MINUTE_FIRST_PR})
+- [Run checks in Codespaces]({CODESPACES_FIRST_PR})
+- [Ask the first PR help desk]({FIRST_PR_HELP_DESK})
 """
 
 
@@ -152,18 +152,49 @@ def render_markdown(repo: str, tasks: list[NoInstallTask], generated_on: str) ->
     return "\n".join(lines).rstrip() + "\n"
 
 
-def upsert_comment(repo: str, task: NoInstallTask, token: str) -> tuple[str, str]:
-    comments_url = f"https://api.github.com/repos/{repo}/issues/{task.number}/comments?per_page=100"
-    comments = github_json(comments_url, token)
-    if not isinstance(comments, list):
-        raise TypeError("GitHub comments response was not a list")
+def existing_guide_comment(
+    repo: str,
+    number: int,
+    token: str,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> dict[str, object] | None:
+    for page in range(1, 6):
+        comments_url = (
+            f"https://api.github.com/repos/{repo}/issues/{number}/comments"
+            f"?per_page=100&page={page}"
+        )
+        comments = github_json(comments_url, token)
+        if not isinstance(comments, list):
+            raise TypeError("GitHub comments response was not a list")
+        for comment in comments:
+            user = comment.get("user") if isinstance(comment, dict) else None
+            if (
+                isinstance(comment, dict)
+                and isinstance(user, dict)
+                and user.get("login") == trusted_login
+                and MARKER in str(comment.get("body") or "")
+            ):
+                return comment
+        if len(comments) < 100:
+            break
+    return None
+
+
+def upsert_comment(
+    repo: str,
+    task: NoInstallTask,
+    token: str,
+    trusted_login: str = TRUSTED_COMMENT_LOGIN,
+) -> tuple[str, str]:
     body = render_comment(repo, task)
-    for comment in comments:
-        if isinstance(comment, dict) and MARKER in str(comment.get("body") or ""):
-            updated = github_json(str(comment["url"]), token, method="PATCH", payload={"body": body})
-            if not isinstance(updated, dict):
-                raise TypeError("GitHub comment response was not an object")
-            return "updated", str(updated.get("html_url") or "")
+    existing = existing_guide_comment(repo, task.number, token, trusted_login)
+    if existing:
+        if str(existing.get("body") or "") == body:
+            return "unchanged", str(existing.get("html_url") or "")
+        updated = github_json(str(existing["url"]), token, method="PATCH", payload={"body": body})
+        if not isinstance(updated, dict):
+            raise TypeError("GitHub comment response was not an object")
+        return "updated", str(updated.get("html_url") or "")
     created = github_json(
         f"https://api.github.com/repos/{repo}/issues/{task.number}/comments",
         token,
@@ -182,6 +213,11 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--out", default=str(DEFAULT_OUT), help="Markdown file to write")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help="Generated date")
     parser.add_argument("--apply", action="store_true", help="Create or update GitHub issue comments")
+    parser.add_argument(
+        "--comment-login",
+        default="",
+        help="Expected author for existing marker comments; PAT runs auto-detect it",
+    )
     args = parser.parse_args(argv[1:])
 
     tasks = parse_board(Path(args.board).read_text(encoding="utf-8"))
@@ -202,14 +238,18 @@ def main(argv: list[str]) -> int:
             return 2
         created = 0
         updated = 0
+        unchanged = 0
+        trusted_login = args.comment_login or authenticated_login(token)
         for task in tasks:
-            action, url = upsert_comment(args.repo, task, token)
+            action, url = upsert_comment(args.repo, task, token, trusted_login)
             if action == "created":
                 created += 1
-            else:
+            elif action == "updated":
                 updated += 1
+            else:
+                unchanged += 1
             print(f"{action} #{task.number}: {url}")
-        print(f"created={created} updated={updated}")
+        print(f"created={created} updated={updated} unchanged={unchanged}")
 
     return 0
 

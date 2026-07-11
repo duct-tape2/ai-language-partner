@@ -5,52 +5,43 @@ also posted as issue comments so first-time contributors can start without
 searching the whole repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-10`
-- Issues covered: `25`
+- Generated on: `2026-07-11`
+- Issues covered: `26`
 
 ## [#1: docs: add Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
 
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ko/index.md`
 - `apps/api/README.md`
 - `README.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: backend setup works without STT/TTS engines; Korean instructions
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/api && .venv/bin/python -m pytest`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #1` or `Refs #1`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #1` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#2: docs: add Japanese quick-start for mobile mock mode](https://github.com/duct-tape2/ai-language-partner/issues/2)
@@ -58,44 +49,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ja/index.md`
 - `apps/mobile/README.md`
 - `README.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: mobile setup covers npm install, Expo web, and mock API defaults.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #2` or `Refs #2`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #2` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#5: docs: add architecture glossary for dialogue-bank terms](https://github.com/duct-tape2/ai-language-partner/issues/5)
@@ -103,43 +85,34 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ARCHITECTURE.md`
 - `README.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: defines persona, pack, node, lineId, variants, match, confirm,
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual docs review: verify links and wording`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #5` or `Refs #5`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #5` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#7: content: review yui v1 beginner dialogue Korean translations](https://github.com/duct-tape2/ai-language-partner/issues/7)
@@ -147,43 +120,34 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `packs/yui/v1/story.json`
 - `packs/yui/v1/variants.csv`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: PR fixes unnatural Korean explanations without changing line IDs.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #7` or `Refs #7`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #7` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#8: content: review yui v1 Japanese naturalness](https://github.com/duct-tape2/ai-language-partner/issues/8)
@@ -191,43 +155,34 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `packs/yui/v1/story.json`
 - `packs/yui/v1/variants.csv`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: PR improves Japanese dialogue while preserving beginner level.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #8` or `Refs #8`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #8` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#11: content: add notes for Korean learners on particle mistakes](https://github.com/duct-tape2/ai-language-partner/issues/11)
@@ -235,45 +190,36 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ko/index.md`
 - `apps/mobile/src/grammar/grammarData.ts`
 - `apps/mobile/src/mistakes/mistakesData.ts`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: adds concise examples for は/が, を/に, and で/に.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #11` or `Refs #11`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #11` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#12: content: add beginner-safe cultural note review checklist](https://github.com/duct-tape2/ai-language-partner/issues/12)
@@ -281,44 +227,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/community/CONTRIBUTOR_LANDING.md`
 - `apps/mobile/src/culture/cultureNotes.ts`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: checklist avoids stereotypes and flags context-sensitive terms.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #12` or `Refs #12`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #12` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#13: mobile: audit touch target sizes in bottom tabs](https://github.com/duct-tape2/ai-language-partner/issues/13)
@@ -326,15 +263,14 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/mobile/App.tsx`
 - `apps/mobile/scripts/verify-frontend-regressions.mjs`
 
-**Acceptance signal**
+**Done when**
 
 - Each of the five bottom tabs has a stable target height of at least 48 logical pixels.
 - Labels and icons remain centered and do not overlap at narrow mobile width.
@@ -343,31 +279,24 @@ change focused and avoid generated/private assets.
 - `python3 scripts/check_public_tree.py` passes.
 - The PR body includes `Closes #13` and briefly explains the accessibility benefit.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #13` or `Refs #13`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #13` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#14: mobile: add accessibility labels to voice preview controls](https://github.com/duct-tape2/ai-language-partner/issues/14)
@@ -375,16 +304,15 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/mobile/App.tsx`
 - `apps/mobile/src/screens/`
 - `apps/mobile/src/components.tsx`
 
-**Acceptance signal**
+**Done when**
 
 - An idle voice card announces the play action and identifies the character/style.
 - The currently playing card announces its playing state and the same voice identity.
@@ -392,31 +320,23 @@ change focused and avoid generated/private assets.
 - Existing Voice Gallery behavior and TypeScript checks remain passing.
 - The PR body includes `Closes #14` and names the checks run.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #14` or `Refs #14`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #14` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#15: mobile: improve empty state copy for Daily Talk pack loading](https://github.com/duct-tape2/ai-language-partner/issues/15)
@@ -424,43 +344,34 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/mobile/src/screens/DailyTalkScreen.tsx`
 - `apps/mobile/src/dialogue/packManager.ts`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: no technical jargon; tells learner what to do next.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #15` or `Refs #15`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #15` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#16: mobile: document mock mode indicators](https://github.com/duct-tape2/ai-language-partner/issues/16)
@@ -468,44 +379,38 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ARCHITECTURE.md`
 - `docs/ja/index.md`
 - `docs/ko/index.md`
 
-**Acceptance signal**
+**Done when**
 
-Acceptance: explains when UI is fixture-backed versus live API-backed.
+- A small table or equivalent compact section distinguishes **mock**, **real with healthy API**, and **real with a read fallback**.
+- Every documented label and fallback statement matches current source behavior.
+- The documentation does not imply that selecting real mode guarantees a live speech engine.
+- The PR changes only `docs/ARCHITECTURE.md` and includes `Closes #16`.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #16` or `Refs #16`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #16` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#18: mobile: review Korean UI strings for consistency](https://github.com/duct-tape2/ai-language-partner/issues/18)
@@ -513,45 +418,36 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/mobile/src/i18n.ts`
 - `apps/mobile/src/text.ts`
 - `apps/mobile/src/screens/`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: consistent honorifics and app terminology.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #18` or `Refs #18`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #18` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#19: backend: add provider-status example response to docs](https://github.com/duct-tape2/ai-language-partner/issues/19)
@@ -559,44 +455,39 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/api/README.md`
 - `docs/backend/API_RUNBOOK.md`
 - `contracts/openapi_v0.yaml`
 
-**Acceptance signal**
+**Done when**
 
-Acceptance: includes mock, fallback, and local engine examples.
+- All three labeled examples are present and valid JSON after replacing explanatory placeholders with JSON strings.
+- Field names and nesting match the current implementation.
+- The surrounding text explains that `externalApiKeysRequired` is `false` and that fallback status is diagnostic rather than proof that a live external engine succeeded.
+- The change stays within `docs/backend/API_RUNBOOK.md`.
+- The PR body includes `Closes #19`.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/api && .venv/bin/python -m pytest`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #19` or `Refs #19`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #19` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#21: backend: add tests for malformed dialogue pack metadata](https://github.com/duct-tape2/ai-language-partner/issues/21)
@@ -604,48 +495,80 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/api/README.md`
 - `contracts/openapi_v0.yaml`
 - `apps/api/tests/test_api_contract.py`
 
-**Acceptance signal**
+**Done when**
 
 - Invalid manifest JSON does not crash pack listing.
 - Safe default metadata is asserted explicitly.
 - Existing valid dialogue-pack behavior remains covered and passing.
 - The PR body includes `Closes #21` and names the checks run.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/api && .venv/bin/python -m pytest`
 - `python3 -m unittest discover -s scripts -p 'test_*.py'`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #21` or `Refs #21`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #21` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
+
+
+## [#27: tests: add mobile package script inventory check](https://github.com/duct-tape2/ai-language-partner/issues/27)
+
+<!-- ai-language-partner:first-pr-recipe -->
+### First PR recipe
+
+Keep this to one useful change for this issue.
+
+**Inspect**
+
+- `apps/mobile/App.tsx`
+- `apps/mobile/src/screens/`
+- `apps/mobile/src/components.tsx`
+
+**Done when**
+
+- Current documented mobile commands pass the new check.
+- A fixture containing `npm run missing-script` is reported and produces a failing result.
+- The error identifies both the Markdown path and missing script.
+- `npm run verify` executes the new check.
+- Existing mobile verification remains passing.
+
+**Verify**
+
+- `python3 scripts/check_public_tree.py`
+- `cd apps/mobile && npm run verify`
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`
+
+**Open the PR**
+
+- Write `Closes #27` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
+
+**Need a route?**
+
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#29: chore: add issue-label taxonomy document](https://github.com/duct-tape2/ai-language-partner/issues/29)
@@ -653,43 +576,34 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/community/LABELS.md`
 - `docs/community/ISSUE_SEEDS.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: documents labels and when maintainers apply them.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual docs review: verify links and wording`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #29` or `Refs #29`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #29` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#31: docs: add FAQ about why no runtime LLM is used](https://github.com/duct-tape2/ai-language-partner/issues/31)
@@ -697,44 +611,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `README.md`
 - `docs/ARCHITECTURE.md`
 - `docs/index.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: explains cost, latency, privacy, and quality-control tradeoffs.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual docs review: verify links and wording`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #31` or `Refs #31`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #31` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#34: docs: add Korean troubleshooting notes for backend dependency install](https://github.com/duct-tape2/ai-language-partner/issues/34)
@@ -742,44 +647,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/api/README.md`
 - `contracts/openapi_v0.yaml`
 - `apps/api/tests/test_api_contract.py`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: covers common Python venv, pip, and macOS command-line tools
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/api && .venv/bin/python -m pytest`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #34` or `Refs #34`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #34` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#35: docs: add Japanese explanation of the no-runtime-LLM design](https://github.com/duct-tape2/ai-language-partner/issues/35)
@@ -787,44 +683,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ja/index.md`
 - `docs/index.md`
 - `docs/ARCHITECTURE.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: Japanese text explains cost, privacy, latency, and quality
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #35` or `Refs #35`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #35` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#36: content: add beginner examples for giving restaurant preferences](https://github.com/duct-tape2/ai-language-partner/issues/36)
@@ -832,44 +719,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `packs/yui/v1/story.json`
 - `packs/haruka/v1/story.json`
 - `authoring/scenarios/`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: adds beginner-safe Japanese examples with Korean notes and does
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #36` or `Refs #36`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #36` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#44: docs: improve first PR walkthrough](https://github.com/duct-tape2/ai-language-partner/issues/44)
@@ -877,44 +755,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/community/FIRST_PR_WALKTHROUGH.md`
 
-**Acceptance signal**
+**Done when**
 
 - A first-time contributor can complete the change in GitHub without a local clone.
 - The walkthrough directly answers whether documentation PRs are taken seriously.
 - The new guidance distinguishes useful docs work from splitting trivial typo-only changes for metrics.
 - The PR changes only `docs/community/FIRST_PR_WALKTHROUGH.md` and includes `Closes #44`.
 
-**Suggested checks**
+**Verify**
 
 - `manual docs review: use GitHub Markdown preview and verify links and wording`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #44` or `Refs #44`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #44` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#45: docs: add maintainer review checklist](https://github.com/duct-tape2/ai-language-partner/issues/45)
@@ -922,42 +791,33 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/community/MAINTAINER_PR_REVIEW_RUNBOOK.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: summarizes useful-review requirements before merging counted
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual docs review: verify links and wording`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #45` or `Refs #45`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #45` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#46: content: add Korean notes for Japanese sentence-final particles](https://github.com/duct-tape2/ai-language-partner/issues/46)
@@ -965,45 +825,36 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/ko/index.md`
 - `apps/mobile/src/grammar/grammarData.ts`
 - `apps/mobile/src/mistakes/mistakesData.ts`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: covers よ, ね, よね, かな at a beginner-safe level with Korean
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #46` or `Refs #46`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #46` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#47: content: add cultural-safety review examples](https://github.com/duct-tape2/ai-language-partner/issues/47)
@@ -1011,44 +862,35 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/mobile/src/culture/cultureNotes.ts`
 - `docs/community/CONTRIBUTOR_LANDING.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: includes examples of stereotypes to avoid and context-sensitive
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/mobile && npm run verify`
 - `manual language/content review: explain what wording you checked`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #47` or `Refs #47`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #47` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#49: backend: add malformed multipart upload test for STT endpoint](https://github.com/duct-tape2/ai-language-partner/issues/49)
@@ -1056,15 +898,14 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `apps/api/tests/test_api_contract.py`
 - `apps/api/app/main.py`
 
-**Acceptance signal**
+**Done when**
 
 - Missing multipart `file` returns `422`.
 - A non-upload value under `file` returns `422`.
@@ -1072,32 +913,24 @@ change focused and avoid generated/private assets.
 - Error details are clear and do not expose tracebacks or filesystem paths.
 - Existing valid multipart upload and JSON mock-mode tests remain passing.
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `cd apps/api && .venv/bin/python -m pytest`
 - `python3 -m unittest discover -s scripts -p 'test_*.py'`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #49` or `Refs #49`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #49` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
 
 
 ## [#50: docs: add public roadmap for dialogue-bank packs](https://github.com/duct-tape2/ai-language-partner/issues/50)
@@ -1105,40 +938,31 @@ Useful links:
 <!-- ai-language-partner:first-pr-recipe -->
 ### First PR recipe
 
-Thanks for considering this issue. A small useful PR is enough; please keep the
-change focused and avoid generated/private assets.
+Keep this to one useful change for this issue.
 
-**Likely files to inspect**
+**Inspect**
 
 - `docs/community/CONTRIBUTOR_GROWTH_PLAN.md`
 - `docs/community/CONTRIBUTOR_SPRINT.md`
 
-**Acceptance signal**
+**Done when**
 
 Acceptance: lists planned persona/topic/JLPT pack areas and names which
 
-**Suggested checks**
+**Verify**
 
 - `python3 scripts/check_public_tree.py`
 - `manual docs review: verify links and wording`
 
-**PR body checklist**
+**Open the PR**
 
-- Link this issue: `Closes #50` or `Refs #50`
-- Explain what changed and why it helps learners or contributors
-- Say which check you ran, or say that it was docs/content review only
-- Do not commit generated audio, archives, local engines, SQLite files, secrets,
-  screenshots, or private notes
+- Write `Closes #50` in the PR body.
+- Say what changed and name the check or review you completed.
+- Do not add generated media, archives, local engines, databases, secrets,
+  screenshots, or private data.
 
-Useful links:
+**Need a route?**
 
-- Contributor page: https://duct-tape2.github.io/ai-language-partner/
-- Directory first PR fast lane: https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html
-- First issue matcher: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
-- Five-minute first PR: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Codespaces first PR guide: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- No-install first PR board: https://duct-tape2.github.io/ai-language-partner/community/NO_INSTALL_FIRST_PRS.html
-- Language review first PR kit: https://duct-tape2.github.io/ai-language-partner/community/LANGUAGE_REVIEW_FIRST_PR_KIT.html
-- First PR walkthrough: https://duct-tape2.github.io/ai-language-partner/community/FIRST_PR_WALKTHROUGH.html
-- First PR help desk: https://github.com/duct-tape2/ai-language-partner/discussions/53
-- Counting policy: https://duct-tape2.github.io/ai-language-partner/community/PR_REVIEW_AND_COUNTING_POLICY.html
+- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
+- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
+- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
