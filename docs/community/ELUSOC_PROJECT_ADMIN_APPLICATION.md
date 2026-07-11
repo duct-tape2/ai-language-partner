@@ -18,6 +18,11 @@ profile, and any other personal fields directly.
 - The live form also requires the applicant to choose `Student` or
   `Professional` and provide contact/profile details before submission.
 - GitHub repository topics: `edulinkup` and `elusoc` are already present.
+- The signed-in EduLinkUp session reaches the project-admin form and the public
+  repository fields are prefilled, but the applicant profile and required
+  personal fields are not complete.
+- Unstop registration is not complete; its candidate profile still requires
+  applicant-selected identity/contact fields, user type, and terms review.
 - Repository registration: not complete until the official platform confirms
   the project-admin application.
 - Program labels: do not apply `elusoc`, `newbie`, `adventurer`, or `veteran`
@@ -62,11 +67,11 @@ Do not infer or generate these values:
 | Other technologies | React Native, Expo, FastAPI, Python, OpenAPI, GitHub Actions |
 | Domain | Education, language learning, accessibility, local-first software |
 | Target audience | Korean-speaking learners of Japanese |
-| Current contributor count | 0 verified unique external merged-PR contributors |
+| Current contributor count | 2 verified unique external merged-PR contributors as of 2026-07-11 |
 
 ## Paste-Ready Live Form Values
 
-The live project-admin form was inspected on 2026-07-10. These values cover
+The live project-admin form was rechecked on 2026-07-11. These values cover
 only public project fields; they do not complete or submit the application.
 
 **GitHub username**
