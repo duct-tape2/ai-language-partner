@@ -139,6 +139,24 @@ LISTING_PRS = [
         number=16,
         contributor_link="https://duct-tape2.github.io/ai-language-partner/demo/",
     ),
+    ListingPr(
+        name="Awesomo",
+        repo="lk-geimfari/awesomo",
+        number=479,
+        contributor_link=FIRST_ISSUE_MATCHER_URL,
+    ),
+    ListingPr(
+        name="React Native Apps",
+        repo="ReactNativeNews/React-Native-Apps",
+        number=259,
+        contributor_link="https://github.com/duct-tape2/ai-language-partner/contribute",
+    ),
+    ListingPr(
+        name="Awesome Open Source AI",
+        repo="alvinreal/awesome-opensource-ai",
+        number=582,
+        contributor_link=HOSTED_DEMO_URL,
+    ),
 ]
 
 
