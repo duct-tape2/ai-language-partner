@@ -129,6 +129,12 @@ threshold is not met yet. Do not submit Phase B with this status.
   `https://github.com/jqhoogland/awesome-language-learning/pull/20`
 - Awesome Open Source School listing PR:
   `https://github.com/zefanja/awesome-opensource-school/pull/16`
+- Awesomo listing PR:
+  `https://github.com/lk-geimfari/awesomo/pull/479`
+- React Native Apps listing PR:
+  `https://github.com/ReactNativeNews/React-Native-Apps/pull/259`
+- Awesome Open Source AI listing PR:
+  `https://github.com/alvinreal/awesome-opensource-ai/pull/582`
 - For Good First Issue listing PR:
   `https://github.com/github/forgoodfirstissue/pull/494`
 - First Contributions project discovery PR:

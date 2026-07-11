@@ -1546,6 +1546,9 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesome Local-First", names)
         self.assertIn("Awesome Language Learning Japanese Page", names)
         self.assertIn("Awesome Open Source School", names)
+        self.assertIn("Awesomo", names)
+        self.assertIn("React Native Apps", names)
+        self.assertIn("Awesome Open Source AI", names)
         issue_names = {listing.name for listing in discovery_snapshot.LISTING_ISSUES}
         self.assertIn("Awesome Japanese", issue_names)
         self.assertIn("Meaningful Code", issue_names)
@@ -1561,6 +1564,22 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertEqual(listing.number, 147)
         self.assertIn("impactful-project review", listing.open_next_step)
         self.assertIn("education criteria", listing.check_note)
+
+    def test_new_active_listing_prs_have_exact_public_targets(self) -> None:
+        listings = {listing.name: listing for listing in discovery_snapshot.LISTING_PRS}
+
+        self.assertEqual(listings["Awesomo"].repo, "lk-geimfari/awesomo")
+        self.assertEqual(listings["Awesomo"].number, 479)
+        self.assertEqual(
+            listings["React Native Apps"].repo,
+            "ReactNativeNews/React-Native-Apps",
+        )
+        self.assertEqual(listings["React Native Apps"].number, 259)
+        self.assertEqual(
+            listings["Awesome Open Source AI"].repo,
+            "alvinreal/awesome-opensource-ai",
+        )
+        self.assertEqual(listings["Awesome Open Source AI"].number, 582)
 
     def test_for_good_first_issue_tracks_public_pr(self) -> None:
         for_good_first_issue = next(

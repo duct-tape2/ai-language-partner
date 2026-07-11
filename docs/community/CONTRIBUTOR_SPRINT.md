@@ -79,6 +79,12 @@ reviewable first contributions genuinely easy.
   `https://github.com/jqhoogland/awesome-language-learning/pull/20`
 - Awesome Open Source School listing PR:
   `https://github.com/zefanja/awesome-opensource-school/pull/16`
+- Awesomo listing PR:
+  `https://github.com/lk-geimfari/awesomo/pull/479`
+- React Native Apps listing PR:
+  `https://github.com/ReactNativeNews/React-Native-Apps/pull/259`
+- Awesome Open Source AI listing PR:
+  `https://github.com/alvinreal/awesome-opensource-ai/pull/582`
 - Awesome Japanese listing suggestion issue: deferred until the app has a
   stronger app-store/release-build path; the hosted web demo is the first
   maturity step
