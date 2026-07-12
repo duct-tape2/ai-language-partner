@@ -1571,6 +1571,15 @@ class ContributorCallPageTest(unittest.TestCase):
         self.assertIn("claimed or assigned tasks are excluded", index)
         self.assertIn("Browse current unclaimed tasks", index)
 
+    def test_new_issue_chooser_offers_short_contributor_routes(self) -> None:
+        config = Path(".github/ISSUE_TEMPLATE/config.yml").read_text(encoding="utf-8")
+
+        self.assertIn("Pick a first issue in 30 seconds", config)
+        self.assertIn("FIRST_ISSUE_MATCHER.html", config)
+        self.assertIn("Ask for one suggested issue", config)
+        self.assertIn("discussions/53", config)
+        self.assertIn("Security reports", config)
+
     def test_codespaces_first_pr_route_is_publicly_linked(self) -> None:
         devcontainer = json.loads(Path(".devcontainer/devcontainer.json").read_text(encoding="utf-8"))
         guide = Path("docs/community/CODESPACES_FIRST_PR.md").read_text(encoding="utf-8")
