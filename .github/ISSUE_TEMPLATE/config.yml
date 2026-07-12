@@ -1,6 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Pick a first issue in 30 seconds
+    url: https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html
+    about: Choose one unclaimed task by skill, language, time, and setup.
+  - name: Ask for one suggested issue
+    url: https://github.com/duct-tape2/ai-language-partner/discussions/53
+    about: Tell the maintainer what you can review or run and get one focused task.
   - name: Security reports
     url: https://github.com/duct-tape2/ai-language-partner/security/advisories
     about: Please use a private advisory for security issues when available.
-
