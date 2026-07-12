@@ -42,6 +42,13 @@ and language-review PRs are welcome.
 [日本語ガイド](https://duct-tape2.github.io/ai-language-partner/ja/) ·
 [First PR help desk](https://github.com/duct-tape2/ai-language-partner/discussions/53)
 
+**Commercial help:** Need an original Japanese-learning deck packaged or a
+local-first language project scoped? Use the
+[paid project inquiry](https://github.com/duct-tape2/duct-tape2/issues/new?template=paid-inquiry.yml).
+Scope, price, acceptance criteria, and payout route are agreed before work;
+credentials, private learner data, and unauthorized copyrighted material are
+not accepted.
+
 ---
 
 ## First PRs that improve the learning experience
