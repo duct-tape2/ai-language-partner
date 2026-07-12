@@ -841,7 +841,9 @@ class WorkflowFixtureTest(unittest.TestCase):
         mobile_package = json.loads(Path("apps/mobile/package.json").read_text(encoding="utf-8"))
 
         self.assertIn("npm audit --audit-level=moderate", workflow)
-        self.assertIn("pip-audit==2.10.1", workflow)
+        self.assertIn("pypa/gh-action-pip-audit@1220774d901786e6f652ae159f7b6bc8fea6d266", workflow)
+        self.assertIn("require-hashes: true", workflow)
+        self.assertIn("no-deps: true", workflow)
         self.assertIn("apps/api/requirements-prod.txt", workflow)
         self.assertIn("apps/api/requirements.txt", workflow)
         self.assertEqual(mobile_package["overrides"]["@xmldom/xmldom"], "0.8.13")
@@ -1962,6 +1964,11 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("blocked", rows[6])
         self.assertIn("api: null", rows[6])
         self.assertIn("fallback email sent", rows[6])
+        self.assertIn("OSS Gate", rows[7])
+        self.assertIn("2026-10-03", rows[7])
+        self.assertIn("Open Developers Conference 2026", rows[8])
+        self.assertIn("2026-07-21", rows[8])
+        self.assertIn("ODC_2026_PROPOSAL.html", rows[8])
 
     def test_build_markdown_keeps_listings_separate_from_contributor_evidence(self) -> None:
         listing_status = {
@@ -2021,6 +2028,9 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Good First Issue", markdown)
         self.assertIn("LibHunt", markdown)
         self.assertIn("libhunt.com/r/ai-language-partner", markdown)
+        self.assertIn("OSS Gate", markdown)
+        self.assertIn("2026-07-21", markdown)
+        self.assertIn("ODC_2026_PROPOSAL.html", markdown)
         self.assertIn("awaiting maintainer acknowledgement", markdown)
 
     def test_closed_listing_issue_is_not_reported_as_waiting(self) -> None:

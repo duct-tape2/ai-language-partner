@@ -7,6 +7,7 @@
 [![Repo Hygiene](https://github.com/duct-tape2/ai-language-partner/actions/workflows/repo-hygiene.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/repo-hygiene.yml)
 [![Mobile Verify](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/mobile-verify.yml)
 [![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
+[![CodeTriage](https://www.codetriage.com/duct-tape2/ai-language-partner/badges/users.svg)](https://www.codetriage.com/duct-tape2/ai-language-partner)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
 Security and release posture: [security policy](SECURITY.md) ·
