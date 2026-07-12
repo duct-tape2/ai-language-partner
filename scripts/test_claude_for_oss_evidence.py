@@ -1871,6 +1871,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
     def test_listing_prs_track_current_external_channels(self) -> None:
         names = {listing.name for listing in discovery_snapshot.LISTING_PRS}
 
+        self.assertIn("Mozilla Codetribute", names)
         self.assertIn("First Contributions Project Discovery", names)
         self.assertIn("For Good First Issue", names)
         self.assertIn("Up For Grabs", names)
@@ -1906,6 +1907,15 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
     def test_new_active_listing_prs_have_exact_public_targets(self) -> None:
         listings = {listing.name: listing for listing in discovery_snapshot.LISTING_PRS}
 
+        self.assertEqual(
+            listings["Mozilla Codetribute"].repo,
+            "mozilla-frontend-infra/codetribute",
+        )
+        self.assertEqual(listings["Mozilla Codetribute"].number, 650)
+        self.assertIn(
+            "FIRST_ISSUE_MATCHER.html",
+            listings["Mozilla Codetribute"].contributor_link,
+        )
         self.assertEqual(listings["Awesomo"].repo, "lk-geimfari/awesomo")
         self.assertEqual(listings["Awesomo"].number, 479)
         self.assertEqual(
