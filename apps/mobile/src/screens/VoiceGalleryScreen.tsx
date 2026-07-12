@@ -111,9 +111,14 @@ export function VoiceGalleryScreen({ app }: { app: AppController }) {
 
           {shown.map((v, i) => {
             const active = playingId === v.voiceId;
+            const accessibilityLabel = [
+              active ? STRINGS.voiceGallery.playing : STRINGS.voiceGallery.play,
+              v.characterName,
+              v.styleName,
+            ].join(', ');
             return (
               <Fade key={v.voiceId} delay={Math.min(200, 60 + i * 10)}>
-                <Pressable onPress={() => playSample(v)} accessibilityRole="button">
+                <Pressable onPress={() => playSample(v)} accessibilityRole="button" accessibilityLabel={accessibilityLabel}>
                   <Card style={active ? { borderColor: theme.colors.accent, borderWidth: 1.5 } : undefined}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <View style={{ flex: 1 }}>
