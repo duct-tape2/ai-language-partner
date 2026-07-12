@@ -33,7 +33,7 @@ FIRST_ISSUE_MATCHER_URL = f"{COMMUNITY_PAGES}/FIRST_ISSUE_MATCHER.html"
 FIVE_MINUTE_FIRST_PR_URL = f"{COMMUNITY_PAGES}/FIVE_MINUTE_FIRST_PR.html"
 INSTALLABLE_DEMO_PLAN_URL = f"{COMMUNITY_PAGES}/INSTALLABLE_DEMO_RELEASE_PLAN.html"
 GOOD_FIRST_ISSUE_PROJECT_URL = "https://github.com/DeepSourceCorp/good-first-issue"
-GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform"
+GOOD_FIRST_ISSUE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header"
 GOOD_FIRST_ISSUE_ORG_GUIDE_URL = "https://www.goodfirstissue.org/for-maintainers"
 GOOD_FIRST_ISSUE_ORG_REQUEST_URL = "https://github.com/orgs/goodfirstissueorg/discussions/1"
 FOR_GOOD_FIRST_ISSUE_URL = "https://github.com/github/forgoodfirstissue"
@@ -42,6 +42,11 @@ TWENTY_FOUR_PULL_REQUESTS_MANAGE_URL = "https://24pullrequests.com/my_suggestion
 HELP_WANTED_PROJECT_URL = "https://helpwanted.dev/projects/duct-tape2/ai-language-partner"
 LIBHUNT_PROJECT_URL = "https://www.libhunt.com/r/ai-language-partner"
 OVIO_SUBMIT_URL = "https://ovio.org/submit"
+OSS_GATE_URL = "https://oss-gate.github.io/"
+OSS_GATE_EVENT_URL = "https://oss-gate.doorkeeper.jp/events/197019"
+ODC_2026_URL = "https://event.ospn.jp/odc2026/"
+ODC_2026_CONTACT_URL = "https://event.ospn.jp/odc2026/contact"
+ODC_2026_PROPOSAL_URL = f"{COMMUNITY_PAGES}/ODC_2026_PROPOSAL.html"
 
 
 @dataclass(frozen=True)
@@ -338,6 +343,18 @@ def directory_rows(repo: str, token: str | None) -> list[str]:
         f"[link]({OVIO_SUBMIT_URL}) | "
         f"[entry]({CONTRIBUTOR_LANDING_URL}) | - | "
         "fallback email sent 2026-07-10; do not resubmit while API is unavailable |",
+        "| OSS Gate | Community workshop | active opportunity | n/a | "
+        "coordinate a real beginner workshop or supporter presence; no unsolicited bulk outreach | "
+        f"[link]({OSS_GATE_URL}) | "
+        f"[entry]({FIVE_MINUTE_FIRST_PR_URL}) | "
+        f"[event]({OSS_GATE_EVENT_URL}) | "
+        "OSS Gate Pass 2026 is scheduled for 2026-10-03 in Tokyo; participation requires maintainer coordination |",
+        "| Open Developers Conference 2026 | Conference CFP | open until 2026-07-21 | n/a | "
+        "community seminar proposal prepared; contact form requires real maintainer identity and email | "
+        f"[link]({ODC_2026_URL}) | "
+        f"[entry]({ODC_2026_PROPOSAL_URL}) | "
+        f"[contact]({ODC_2026_CONTACT_URL}) | "
+        "event is 2026-08-29 in Tokyo; community applications are seminar-only |",
     ]
 
 
@@ -426,6 +443,10 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  contributor link current; do not resubmit a duplicate project.",
         "- Monitor Ovio for a fallback-email response or a non-null submission API;",
         "  do not duplicate the existing email or submit through the broken form.",
+        "- For OSS Gate, coordinate a genuine workshop or supporter role before",
+        "  mentioning the repository; do not treat an event registration as contributor evidence.",
+        "- Keep the ODC 2026 proposal ready before the 2026-07-21 deadline. The",
+        "  contact step requires the maintainer's real name and email and must not be guessed.",
         "- Track Meaningful Code issue #147 until the project is reviewed or listed;",
         "  do not duplicate it with the web form or a second PR.",
         "- Track For Good First Issue PR #494 until it is merged or reviewed.",
@@ -462,6 +483,10 @@ def build_markdown(repo: str, token: str | None) -> str:
         "  `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`",
         "- Ovio project submission form:",
         f"  `{OVIO_SUBMIT_URL}` (`api: null` reconfirmed 2026-07-10)",
+        "- OSS Gate and its next announced conference:",
+        f"  `{OSS_GATE_URL}`; `{OSS_GATE_EVENT_URL}` (2026-10-03)",
+        "- Open Developers Conference 2026 community seminar call:",
+        f"  `{ODC_2026_URL}` (deadline 2026-07-21); proposal: `{ODC_2026_PROPOSAL_URL}`",
     ]
     return "\n".join(rows)
 

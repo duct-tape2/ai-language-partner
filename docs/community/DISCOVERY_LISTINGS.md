@@ -29,17 +29,19 @@ merged in this repository.
 | Awesome Language Learning Japanese Page | PR | open | False | True | [link](https://github.com/jqhoogland/awesome-language-learning/pull/20) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Awesomo | PR | open | False | True | [link](https://github.com/lk-geimfari/awesomo/pull/479) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
-| React Native Apps | PR | open | False | True | [link](https://github.com/ReactNativeNews/React-Native-Apps/pull/259) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | - | none reported |
-| Awesome Open Source AI | PR | open | False | True | [link](https://github.com/alvinreal/awesome-opensource-ai/pull/582) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
+| React Native Apps | PR | closed | True | None | [link](https://github.com/ReactNativeNews/React-Native-Apps/pull/259) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | - | none reported |
+| Awesome Open Source AI | PR | open | False | None | [link](https://github.com/alvinreal/awesome-opensource-ai/pull/582) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Meaningful Code | Issue | open | n/a | awaiting impactful-project review | [link](https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | official project-submission issue template used; education criteria documented |
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
-| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 3/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSdVUqZHnl6W1S_5mA7SJtEb-lbiXf6tF1uKk5wMFu3HfM9HDQ/viewform) | README criteria |
+| Good First Issue | Directory | locked | n/a | requires 10 contributors; current 3/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header) | README criteria |
 | CodeTriage | Directory | active | n/a | invite contributors to subscribe for issue triage | [link](https://www.codetriage.com/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [subscribe](https://www.codetriage.com/duct-tape2/ai-language-partner) | public profile and issue sync active |
 | Good First Issue.org | Directory request | awaiting response | n/a | GitHub OAuth authorization is disabled; public Q&A submitted | [link](https://www.goodfirstissue.org/for-maintainers) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [request](https://github.com/orgs/goodfirstissueorg/discussions/1) | public request submitted 2026-07-10 |
 | 24 Pull Requests | Directory | active | n/a | public project #3564 | [link](https://24pullrequests.com/projects?page=9) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [manage](https://24pullrequests.com/my_suggestions) | TypeScript; tests; good first issue; contribulator score 39 |
 | Help Wanted | Directory | active | n/a | 37 indexed help-wanted issues | [link](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [browse](https://helpwanted.dev/projects/duct-tape2/ai-language-partner) | public project page and sitemap confirmed 2026-07-10 |
 | LibHunt | Directory | active | n/a | public project page available | [link](https://www.libhunt.com/r/ai-language-partner) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | - | project submitted and public page verified 2026-07-11; no contributor-count claim |
 | Ovio | Directory submission | blocked | n/a | submission backend unavailable (`api: null`); awaiting fallback email response | [link](https://ovio.org/submit) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | fallback email sent 2026-07-10; do not resubmit while API is unavailable |
+| OSS Gate | Community workshop | active opportunity | n/a | coordinate a real beginner workshop or supporter presence; no unsolicited bulk outreach | [link](https://oss-gate.github.io/) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | [event](https://oss-gate.doorkeeper.jp/events/197019) | OSS Gate Pass 2026 is scheduled for 2026-10-03 in Tokyo; participation requires maintainer coordination |
+| Open Developers Conference 2026 | Conference CFP | open until 2026-07-21 | n/a | community seminar proposal prepared; contact form requires real maintainer identity and email | [link](https://event.ospn.jp/odc2026/) | [entry](https://duct-tape2.github.io/ai-language-partner/community/ODC_2026_PROPOSAL.html) | [contact](https://event.ospn.jp/odc2026/contact) | event is 2026-08-29 in Tokyo; community applications are seminar-only |
 
 ## Public Status Links
 
@@ -76,6 +78,10 @@ merged in this repository.
   contributor link current; do not resubmit a duplicate project.
 - Monitor Ovio for a fallback-email response or a non-null submission API;
   do not duplicate the existing email or submit through the broken form.
+- For OSS Gate, coordinate a genuine workshop or supporter role before
+  mentioning the repository; do not treat an event registration as contributor evidence.
+- Keep the ODC 2026 proposal ready before the 2026-07-21 deadline. The
+  contact step requires the maintainer's real name and email and must not be guessed.
 - Track Meaningful Code issue #147 until the project is reviewed or listed;
   do not duplicate it with the web form or a second PR.
 - Track For Good First Issue PR #494 until it is merged or reviewed.
@@ -112,3 +118,7 @@ merged in this repository.
   `https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147`
 - Ovio project submission form:
   `https://ovio.org/submit` (`api: null` reconfirmed 2026-07-10)
+- OSS Gate and its next announced conference:
+  `https://oss-gate.github.io/`; `https://oss-gate.doorkeeper.jp/events/197019` (2026-10-03)
+- Open Developers Conference 2026 community seminar call:
+  `https://event.ospn.jp/odc2026/` (deadline 2026-07-21); proposal: `https://duct-tape2.github.io/ai-language-partner/community/ODC_2026_PROPOSAL.html`
