@@ -96,6 +96,26 @@ title: AI Language Partner
   </div>
 </section>
 
+<section class="alp-band" id="commercial-help">
+  <div class="alp-shell alp-section">
+    <p class="alp-kicker">COMMERCIAL HELP</p>
+    <h2>Need a custom deck or language-learning project scoped?</h2>
+    <p class="alp-section__intro">
+      Ask about original Japanese-learning deck packaging or a focused
+      local-first implementation. Scope, price, acceptance criteria, and the
+      payout route are agreed before work begins.
+    </p>
+    <p class="alp-utility">
+      Credentials, private learner data, and unauthorized copyrighted material
+      are not accepted.
+    </p>
+    <div class="alp-actions">
+      <a class="alp-button alp-button--primary" href="https://github.com/duct-tape2/duct-tape2/issues/new?template=paid-inquiry.yml">Open a paid project inquiry</a>
+      <a class="alp-text-link" href="https://duct-tape2.github.io/design/">View selected work →</a>
+    </div>
+  </div>
+</section>
+
 <section class="alp-band alp-final">
   <div class="alp-shell alp-final__inner">
     <div>
