@@ -181,6 +181,12 @@ LISTING_PRS = [
         number=582,
         contributor_link=HOSTED_DEMO_URL,
     ),
+    ListingPr(
+        name="Awesome Python Applications",
+        repo="mahmoud/awesome-python-applications",
+        number=233,
+        contributor_link=HOSTED_DEMO_URL,
+    ),
 ]
 
 

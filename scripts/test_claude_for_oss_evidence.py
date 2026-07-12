@@ -1924,6 +1924,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
         self.assertIn("Awesomo", names)
         self.assertIn("React Native Apps", names)
         self.assertIn("Awesome Open Source AI", names)
+        self.assertIn("Awesome Python Applications", names)
         issue_names = {listing.name for listing in discovery_snapshot.LISTING_ISSUES}
         self.assertIn("Awesome Japanese", issue_names)
         self.assertIn("Meaningful Code", issue_names)
@@ -1973,6 +1974,11 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
             "alvinreal/awesome-opensource-ai",
         )
         self.assertEqual(listings["Awesome Open Source AI"].number, 582)
+        self.assertEqual(
+            listings["Awesome Python Applications"].repo,
+            "mahmoud/awesome-python-applications",
+        )
+        self.assertEqual(listings["Awesome Python Applications"].number, 233)
         self.assertEqual(listings["LoFi Local-First Directory"].repo, "mylofi/lofi.so")
         self.assertEqual(listings["LoFi Local-First Directory"].number, 86)
 
