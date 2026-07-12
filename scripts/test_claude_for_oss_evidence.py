@@ -371,8 +371,8 @@ class GovernanceCheckTest(unittest.TestCase):
         policy = Path("SECURITY.md").read_text(encoding="utf-8")
 
         self.assertIn("security/advisories/new", policy)
-        self.assertIn("14\ndays", policy)
-        self.assertIn("90\ndays", policy)
+        self.assertIn("within 14 days", policy)
+        self.assertIn("within 90 days", policy)
         self.assertIn("coordinated-disclosure", policy)
 
 
@@ -813,6 +813,56 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Normal GitHub authorship remains public", contributing)
         self.assertIn("require your opt-in", contributing)
         self.assertIn("without affecting review or merge decisions", contributing)
+
+    def test_openssf_preassessment_is_linked_without_claiming_a_badge(self) -> None:
+        readme = Path("README.md").read_text(encoding="utf-8")
+        contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
+        security = Path("SECURITY.md").read_text(encoding="utf-8")
+        releasing = Path("RELEASING.md").read_text(encoding="utf-8")
+        readiness = Path("docs/community/OPENSSF_BEST_PRACTICES_READINESS.md").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("OpenSSF Best Practices pre-assessment", readme)
+        self.assertIn("No OpenSSF Best Practices badge is claimed", readme)
+        self.assertIn("Contributor preview only", security)
+        self.assertIn("acknowledge any vulnerability report within 14 days", security)
+        self.assertIn("Semantic Versioning", releasing)
+        self.assertIn("Major new functionality includes automated coverage", contributing)
+        self.assertIn("has not been registered or awarded", readiness)
+        self.assertIn("Do not display a badge", readiness)
+        self.assertIn("Registration is currently blocked", readiness)
+        self.assertIn("tests_are_added", readiness)
+        self.assertIn("Items That Still Need Confirmation", readiness)
+        self.assertIn("https://www.bestpractices.dev/en/criteria/0", readiness)
+
+    def test_dependency_audit_covers_locked_node_and_python_dependencies(self) -> None:
+        workflow = Path(".github/workflows/dependency-audit.yml").read_text(encoding="utf-8")
+        mobile_package = json.loads(Path("apps/mobile/package.json").read_text(encoding="utf-8"))
+
+        self.assertIn("npm audit --audit-level=moderate", workflow)
+        self.assertIn("pip-audit==2.10.1", workflow)
+        self.assertIn("apps/api/requirements-prod.txt", workflow)
+        self.assertIn("apps/api/requirements.txt", workflow)
+        self.assertEqual(mobile_package["overrides"]["@xmldom/xmldom"], "0.8.13")
+        self.assertEqual(mobile_package["overrides"]["tar"], "7.5.16")
+        self.assertEqual(mobile_package["overrides"]["uuid"], "11.1.1")
+        self.assertEqual(mobile_package["overrides"]["postcss"], "8.5.10")
+
+    def test_development_requirement_input_contains_the_production_set(self) -> None:
+        def direct_requirements(path: str) -> set[str]:
+            return {
+                line.strip()
+                for line in Path(path).read_text(encoding="utf-8").splitlines()
+                if line.strip() and not line.lstrip().startswith("#")
+            }
+
+        production = direct_requirements("apps/api/requirements-prod.in")
+        development = direct_requirements("apps/api/requirements.in")
+
+        self.assertTrue(production)
+        self.assertTrue(production.issubset(development))
+        self.assertFalse(any(line.startswith(("-r ", "--requirement ")) for line in development))
 
     def test_primary_contributor_surfaces_are_not_metric_driven(self) -> None:
         paths = (

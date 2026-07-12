@@ -222,9 +222,31 @@ def verify_redis_rate_limit_readiness(env: Optional[Mapping[str, str]] = None) -
     }
 
 
+def _public_readiness_result(result: dict[str, Any]) -> dict[str, Any]:
+    checks = result.get("checks", {})
+    return {
+        "passed": bool(result.get("passed")),
+        "realRedisEvidenceComplete": bool(result.get("realRedisEvidenceComplete")),
+        "summary": {
+            str(key): int(value)
+            for key, value in result.get("summary", {}).items()
+            if isinstance(value, int) and not isinstance(value, bool)
+        },
+        "checks": {
+            str(check_id): {
+                "id": str(item.get("id", check_id)),
+                "status": str(item.get("status", "unknown")),
+                "configured": bool(item.get("configured")),
+            }
+            for check_id, item in checks.items()
+            if isinstance(item, Mapping)
+        },
+    }
+
+
 def main() -> int:
     result = verify_redis_rate_limit_readiness()
-    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    print(json.dumps(_public_readiness_result(result), ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result["passed"] else 1
 
 

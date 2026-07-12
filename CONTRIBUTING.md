@@ -52,6 +52,10 @@ tests:
   safety. Backend changes need the relevant `pytest` coverage; mobile changes
   need `npm run typecheck`. Full-stack changes must keep all affected checks
   green.
+- **Major new functionality includes automated coverage.** Add or update the
+  relevant pytest case, mobile regression script, or other automated check with
+  the feature. If automation is not practical, explain why in the PR and record
+  the maintainer-approved manual verification instead of silently omitting it.
 - Generated speech engines, generated clips, generated pack archives, local
   databases, and screenshots are not committed. Keep the public tree source-only.
 
@@ -61,7 +65,7 @@ tests:
 
 | Tool | Version / note |
 |---|---|
-| Python | 3.9+ (`apps/api/pyproject.toml` sets `requires-python = ">=3.9"`) |
+| Python | 3.11+ (`apps/api/pyproject.toml` sets `requires-python = ">=3.11"`) |
 | Node.js | LTS; npm for the mobile workspace |
 | Expo | SDK 52 (installed via `apps/mobile` deps; no global CLI needed) |
 | ffmpeg | Only for local whisper.cpp STT (16 kHz mono normalization) |

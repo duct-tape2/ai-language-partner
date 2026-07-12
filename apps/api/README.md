@@ -68,6 +68,12 @@ DELETE /v1/auth/account
 
 Passwords are stored as PBKDF2 hashes. Access tokens are returned as HS256 JWT bearer tokens with `accessTokenFormat: jwt_hs256`; refresh tokens remain opaque. Only token hashes are stored in SQLite. In production/hosted mode, set `AI_LANGUAGE_PARTNER_JWT_SECRET` or `AI_LANGUAGE_PARTNER_AUTH_SECRET`. Refresh rotates sessions; reusing an already-rotated refresh token returns `401`, revokes that account's sessions, and writes `auth_refresh_reuse_detected` to the audit log. Logout revokes sessions, password change revokes prior sessions, and account deletion requires password re-authentication before learner-scoped privacy deletion/account disable. Supplying `deviceId` at register/login/refresh/change-password enables optional `X-Device-Id` binding for that session and records the device as `untrusted`; `/v1/auth/devices/attestation/challenge` issues one-time challenges for configured HMAC attestation, local RS256 public-key proof-of-possession, and WebAuthn-style ES256 public-key assertion; `/v1/auth/devices/trust` can either mark the current bound device trusted by account confirmation, verify signed HMAC evidence as `signed_challenge_hmac`, verify RSA public JWK evidence as `public_key_challenge_rs256`, or verify P-256 WebAuthn assertion evidence as `webauthn_assertion_es256` with challenge, origin, RP ID hash, user-presence, authenticatorData, and clientDataJSON checks; `/v1/auth/devices/{deviceId}` revokes matching sessions and blocks future reuse of the same device id. Native Apple App Attest/Play Integrity production verification and real platform-authenticator WebAuthn ceremony evidence are still separate gaps. Login failures are throttled with `AI_LANGUAGE_PARTNER_AUTH_MAX_FAILURES` and `AI_LANGUAGE_PARTNER_AUTH_FAILURE_WINDOW_SECONDS`; account creation bursts are independently throttled with `AI_LANGUAGE_PARTNER_AUTH_REGISTER_MAX_ATTEMPTS` and `AI_LANGUAGE_PARTNER_AUTH_REGISTER_WINDOW_SECONDS`.
 
+Pseudonymous email identifiers use secret-keyed PBKDF2-HMAC-SHA256. Set
+`AI_LANGUAGE_PARTNER_EMAIL_HASH_SECRET` to an independent stable secret, or the
+service derives the key from `AI_LANGUAGE_PARTNER_JWT_SECRET` /
+`AI_LANGUAGE_PARTNER_AUTH_SECRET`. With none configured, local/test mode uses a
+process-local random key and hashes are intentionally not stable across restarts.
+
 Account session management can list active sessions, revoke a specific remote session, or revoke all sessions with optional `keepCurrent=true`.
 
 Memory summary is implemented at `GET /v1/memory/summary`. Review cards expose HLR-inspired `memoryStrengthDays`, `memoryDifficulty`, `recallProbability`, and `recallRisk`; recommendations include `memorySummary` for tag-level recall pressure. `scripts/evaluate_learner_model.py` trains/evaluates an offline logistic learner-memory model from local review-grade rows plus deterministic fixtures and writes a reproducible JSON artifact; this is readiness evidence, not a production-trained Birdbrain replacement. `scripts/evaluate_reputation_model.py` does the same for XP abuse/reputation profiles; it is anti-cheat model readiness evidence, not production learned enforcement.
@@ -200,7 +206,8 @@ AI_LANGUAGE_PARTNER_CORS_ORIGINS=http://localhost:8000,http://localhost:8081,htt
 .venv/bin/python -m pytest
 ```
 
-Latest local result: `52 passed`.
+The same API suite runs in the `API Docker Smoke` GitHub Actions workflow for
+every pull request that changes `apps/api`.
 
 ## Frontend connection
 

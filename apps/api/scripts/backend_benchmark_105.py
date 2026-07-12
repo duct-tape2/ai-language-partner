@@ -53,6 +53,8 @@ TEST_WEBAUTHN_PUBLIC_JWK = {key: value for key, value in TEST_WEBAUTHN_PRIVATE_J
 
 
 def pkce_s256_challenge(verifier: str) -> str:
+    # RFC 7636 section 4.2 requires BASE64URL-ENCODE(SHA256(ASCII(code_verifier))) for PKCE S256.
+    # This is a protocol proof transform, not password storage; do not substitute a password hash.
     return base64.urlsafe_b64encode(hashlib.sha256(verifier.encode("ascii")).digest()).rstrip(b"=").decode("ascii")
 
 
@@ -2573,9 +2575,18 @@ def run_benchmark() -> dict:
         return {"score": score, "target": 105, "passed": all(checks.values()), "checks": checks, "evidence": evidence}
 
 
+def _public_benchmark_result(result: dict) -> dict:
+    return {
+        "score": int(result.get("score", 0)),
+        "target": int(result.get("target", 0)),
+        "passed": bool(result.get("passed")),
+        "checks": {str(key): bool(value) for key, value in result.get("checks", {}).items()},
+    }
+
+
 def main() -> int:
     result = run_benchmark()
-    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    print(json.dumps(_public_benchmark_result(result), ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result["score"] >= result["target"] and result["passed"] else 1
 
 
