@@ -849,6 +849,21 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertEqual(mobile_package["overrides"]["uuid"], "11.1.1")
         self.assertEqual(mobile_package["overrides"]["postcss"], "8.5.10")
 
+    def test_development_requirement_input_contains_the_production_set(self) -> None:
+        def direct_requirements(path: str) -> set[str]:
+            return {
+                line.strip()
+                for line in Path(path).read_text(encoding="utf-8").splitlines()
+                if line.strip() and not line.lstrip().startswith("#")
+            }
+
+        production = direct_requirements("apps/api/requirements-prod.in")
+        development = direct_requirements("apps/api/requirements.in")
+
+        self.assertTrue(production)
+        self.assertTrue(production.issubset(development))
+        self.assertFalse(any(line.startswith(("-r ", "--requirement ")) for line in development))
+
     def test_primary_contributor_surfaces_are_not_metric_driven(self) -> None:
         paths = (
             "README.md",
