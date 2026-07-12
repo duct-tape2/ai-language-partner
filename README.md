@@ -9,6 +9,12 @@
 [![API Docker Smoke](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml/badge.svg)](https://github.com/duct-tape2/ai-language-partner/actions/workflows/api-docker-smoke.yml)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
+Security and release posture: [security policy](SECURITY.md) ·
+[release policy](RELEASING.md) ·
+[OpenSSF Best Practices pre-assessment](docs/community/OPENSSF_BEST_PRACTICES_READINESS.md).
+No OpenSSF Best Practices badge is claimed until the official project status is
+passing.
+
 New here from GitHub topics, Up For Grabs, or a good-first-issue directory?
 Pick a first PR in 30 seconds:
 [directory fast lane](docs/community/DIRECTORY_FIRST_PR.md) ·

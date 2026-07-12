@@ -36,6 +36,9 @@ jobs:
       - name: Install locked verifier dependencies
         run: python -m pip install --require-hashes -r requirements.txt
 
+      - name: Run API tests
+        run: python -m pytest -q tests
+
       - name: Run required Docker smoke
         run: |
           set -o pipefail

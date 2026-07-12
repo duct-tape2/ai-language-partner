@@ -5,8 +5,10 @@ import base64
 import hashlib
 import html
 import hmac
+import ipaddress
 import io
 import json
+import logging
 import os
 import secrets
 import sqlite3
@@ -19,12 +21,15 @@ from pathlib import Path
 from typing import Any, Dict, Literal, Optional, Union
 
 import genanki
+from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding, rsa
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, Response
 from pydantic import BaseModel, Field, ValidationError
 
-from .dialogue_match import DialogueMatcher, list_dialogue_packs, pack_root
+from .dialogue_match import DialogueMatcher, list_dialogue_packs
 from .learner_model import MODEL_NAME as OFFLINE_LEARNER_MEMORY_MODEL_NAME
 from .paths import resolve_project_root
 from .providers import MockLLMProvider, MockPronunciationScorer, MockSTTProvider, MockTTSProvider, build_provider_stack, load_voice_catalog, tts_cache_key
@@ -34,9 +39,23 @@ from .store import ApiStore, audit_subject_hash, default_db_path, normalize_expe
 
 PROJECT_ID = "ai-language-partner-mobile-shared-20260629-v1"
 PROJECT_ROOT = resolve_project_root(Path(__file__))
+DIALOGUE_PACKS_ROOT = PROJECT_ROOT / "packs"
 MAX_STT_HINT_LINE_IDS = 100
 MAX_STT_HINT_LINE_ID_LENGTH = 160
-RSA_SHA256_DIGEST_INFO_PREFIX = bytes.fromhex("3031300d060960864801650304020105000420")
+LOGGER = logging.getLogger(__name__)
+_EMAIL_HASH_SECRET = (
+    os.environ.get("AI_LANGUAGE_PARTNER_EMAIL_HASH_SECRET")
+    or os.environ.get("AI_LANGUAGE_PARTNER_JWT_SECRET")
+    or os.environ.get("AI_LANGUAGE_PARTNER_AUTH_SECRET")
+    or ""
+).strip()
+_EMAIL_HASH_KEY = (
+    hmac.new(_EMAIL_HASH_SECRET.encode("utf-8"), b"ai-language-partner:email-hash:v1", hashlib.sha256).digest()
+    if _EMAIL_HASH_SECRET
+    else secrets.token_bytes(32)
+)
+_LOCAL_ANKI_CONNECT_V4_URL = "http://127.0.0.1:8765/"
+_LOCAL_ANKI_CONNECT_V6_URL = "http://[::1]:8765/"
 P256_P = int("ffffffff00000001000000000000000000000000ffffffffffffffffffffffff", 16)
 P256_A = -3
 P256_B = int("5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b", 16)
@@ -515,42 +534,53 @@ def _jwk_int(jwk: Dict[str, Any], key: str) -> int:
     return int.from_bytes(_b64url_decode(value), "big")
 
 
-def _rsa_sha256_encoded_message(signing_input: str, key_bytes: int) -> Optional[bytes]:
-    digest_info = RSA_SHA256_DIGEST_INFO_PREFIX + hashlib.sha256(signing_input.encode("utf-8")).digest()
-    padding_length = key_bytes - len(digest_info) - 3
-    if padding_length < 8:
-        return None
-    return b"\x00\x01" + (b"\xff" * padding_length) + b"\x00" + digest_info
+def _rsa_public_key_from_jwk(jwk: Dict[str, Any]) -> rsa.RSAPublicKey:
+    if jwk.get("kty") != "RSA" or jwk.get("use", "sig") != "sig":
+        raise ValueError("JWK is not an RSA signing key")
+    if jwk.get("alg") not in {None, "RS256"}:
+        raise ValueError("JWK does not permit RS256")
+    return rsa.RSAPublicNumbers(_jwk_int(jwk, "e"), _jwk_int(jwk, "n")).public_key()
+
+
+def _rsa_private_key_from_jwk(jwk: Dict[str, Any]) -> rsa.RSAPrivateKey:
+    public_numbers = _rsa_public_key_from_jwk(jwk).public_numbers()
+    d = _jwk_int(jwk, "d")
+    if "p" in jwk and "q" in jwk:
+        p = _jwk_int(jwk, "p")
+        q = _jwk_int(jwk, "q")
+    else:
+        p, q = rsa.rsa_recover_prime_factors(public_numbers.n, public_numbers.e, d)
+    return rsa.RSAPrivateNumbers(
+        p=p,
+        q=q,
+        d=d,
+        dmp1=rsa.rsa_crt_dmp1(d, p),
+        dmq1=rsa.rsa_crt_dmq1(d, q),
+        iqmp=rsa.rsa_crt_iqmp(p, q),
+        public_numbers=public_numbers,
+    ).private_key()
 
 
 def _verify_rs256_with_jwk(signing_input: str, signature: str, jwk: Dict[str, Any]) -> bool:
-    if jwk.get("kty") != "RSA" or jwk.get("use", "sig") != "sig":
-        return False
-    if jwk.get("alg") not in {None, "RS256"}:
-        return False
     try:
-        n = _jwk_int(jwk, "n")
-        e = _jwk_int(jwk, "e")
-        signature_bytes = _b64url_decode(signature)
-    except Exception:
+        _rsa_public_key_from_jwk(jwk).verify(
+            _b64url_decode(signature),
+            signing_input.encode("ascii"),
+            padding.PKCS1v15(),
+            hashes.SHA256(),
+        )
+    except (InvalidSignature, ValueError, TypeError, OverflowError):
         return False
-    key_bytes = (n.bit_length() + 7) // 8
-    expected = _rsa_sha256_encoded_message(signing_input, key_bytes)
-    if not expected:
-        return False
-    actual = pow(int.from_bytes(signature_bytes, "big"), e, n).to_bytes(key_bytes, "big")
-    return hmac.compare_digest(actual, expected)
+    return True
 
 
 def _sign_rs256_with_jwk(signing_input: str, private_jwk: Dict[str, Any]) -> str:
-    n = _jwk_int(private_jwk, "n")
-    d = _jwk_int(private_jwk, "d")
-    key_bytes = (n.bit_length() + 7) // 8
-    encoded_message = _rsa_sha256_encoded_message(signing_input, key_bytes)
-    if not encoded_message:
-        raise ValueError("RSA key is too small for RS256")
-    signature_int = pow(int.from_bytes(encoded_message, "big"), d, n)
-    return _b64url_encode(signature_int.to_bytes(key_bytes, "big"))
+    signature = _rsa_private_key_from_jwk(private_jwk).sign(
+        signing_input.encode("ascii"),
+        padding.PKCS1v15(),
+        hashes.SHA256(),
+    )
+    return _b64url_encode(signature)
 
 
 def _verify_rs256_with_jwks(signing_input: str, signature: str, header: Dict[str, Any], jwks: Optional[Dict[str, Any]]) -> bool:
@@ -1134,7 +1164,7 @@ def _normalize_email(email: str) -> str:
 
 
 def _default_account_learner_id(email: str) -> str:
-    return "learner_" + hashlib.sha256(email.encode("utf-8")).hexdigest()[:16]
+    return "learner_" + _email_hash(email)
 
 
 def _device_id_hash(device_id: Optional[str]) -> Optional[str]:
@@ -1151,7 +1181,79 @@ def _client_hash(request: Request) -> str:
 
 
 def _email_hash(email: str) -> str:
-    return hashlib.sha256(email.encode("utf-8")).hexdigest()[:16]
+    return hmac.new(_EMAIL_HASH_KEY, email.encode("utf-8"), hashlib.sha256).hexdigest()[:16]
+
+
+def _safe_path_segment(value: str, label: str) -> str:
+    if (
+        not value
+        or len(value) > 160
+        or value != value.strip()
+        or any(not (char.isalnum() or char in {"_", "-"}) for char in value)
+    ):
+        raise HTTPException(status_code=400, detail=f"Invalid {label}")
+    return value
+
+
+def _resolve_contained_path(root: Path, *segments: str) -> Path:
+    try:
+        root_path = root.resolve()
+        candidate = root_path.joinpath(*segments).resolve()
+    except (OSError, RuntimeError):
+        raise HTTPException(status_code=400, detail="Invalid resource path") from None
+    try:
+        candidate.relative_to(root_path)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid resource path") from None
+    return candidate
+
+
+class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request: Any, fp: Any, code: int, msg: str, headers: Any, newurl: str) -> None:
+        return None
+
+
+def _local_anki_connect_url(url: str) -> str:
+    try:
+        parsed = urllib.parse.urlsplit((url or "").strip())
+        port = parsed.port
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid AnkiConnect URL") from None
+    host = parsed.hostname
+    if (
+        parsed.scheme.lower() != "http"
+        or not host
+        or parsed.username
+        or parsed.password
+        or port != 8765
+        or parsed.path not in {"", "/"}
+        or parsed.query
+        or parsed.fragment
+    ):
+        raise HTTPException(status_code=400, detail="AnkiConnect URL must use the local service")
+    if host == "localhost":
+        address = ipaddress.ip_address("127.0.0.1")
+    else:
+        try:
+            address = ipaddress.ip_address(host)
+        except ValueError:
+            raise HTTPException(status_code=400, detail="AnkiConnect URL must use the local service") from None
+    if not address.is_loopback:
+        raise HTTPException(status_code=400, detail="AnkiConnect URL must use the local service")
+    return _LOCAL_ANKI_CONNECT_V6_URL if address.version == 6 else _LOCAL_ANKI_CONNECT_V4_URL
+
+
+def _post_to_local_anki_connect(url: str, body: bytes) -> Dict[str, Any]:
+    request = urllib.request.Request(
+        url,
+        data=body,
+        method="POST",
+        headers={"Content-Type": "application/json"},
+    )
+    # Never let a process-wide proxy reroute data intended for local AnkiConnect.
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), _NoRedirectHandler())
+    with opener.open(request, timeout=10) as response:
+        return json.loads(response.read().decode("utf-8"))
 
 
 def create_signed_learner_token(learner_id: str, secret: str, ttl_seconds: int = 3600) -> str:
@@ -1301,7 +1403,7 @@ class AnkiConnectExportRequest(BaseModel):
     deckName: str = "AI Language Partner"
     modelName: str = "Basic"
     apply: bool = False
-    ankiConnectUrl: str = "http://127.0.0.1:8765"
+    ankiConnectUrl: str = Field(default="http://127.0.0.1:8765", max_length=128)
 
 
 class AuthRegisterRequest(BaseModel):
@@ -2870,15 +2972,17 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
             )
             return {"ok": True, "job": completed, "result": result_payload}
         except Exception as exc:
-            failed = store.fail_content_operation_job(job["id"], str(exc), result_payload={"ok": False})
+            error_code = "content_operation_failed"
+            LOGGER.warning("Content operation job failed: %s", exc.__class__.__name__)
+            failed = store.fail_content_operation_job(job["id"], error_code, result_payload={"ok": False, "errorCode": error_code})
             store.audit_log(
                 "content_operation_job_failed",
                 actor=actor,
                 target_type="content_operation_job",
                 target_id=job["id"],
-                payload={"jobType": job["jobType"], "error": str(exc)[:300]},
+                payload={"jobType": job["jobType"], "errorCode": error_code, "errorType": exc.__class__.__name__[:80]},
             )
-            return {"ok": False, "job": failed or store.get_content_operation_job(job["id"]), "error": str(exc)}
+            return {"ok": False, "job": failed or store.get_content_operation_job(job["id"]), "error": "Content operation failed"}
 
     @api.get("/v1/content/operations/jobs")
     def list_content_operation_jobs(
@@ -2982,7 +3086,8 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
                 release_limit=req.releaseLimit,
             )
         except ValueError as exc:
-            raise HTTPException(status_code=409, detail=str(exc))
+            LOGGER.warning("Content scheduler could not start: %s", exc.__class__.__name__)
+            raise HTTPException(status_code=409, detail="Content scheduler is currently unavailable") from None
         release_result: Dict[str, Any] = {}
         operation_job_runs: list[Dict[str, Any]] = []
         try:
@@ -3039,6 +3144,8 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
                 "operationJobs": operation_job_runs,
             }
         except Exception as exc:
+            error_code = "content_scheduler_failed"
+            LOGGER.warning("Content scheduler run failed: %s", exc.__class__.__name__)
             result_payload = {
                 "ok": False,
                 "releaseWorker": release_result,
@@ -3046,20 +3153,25 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
                 "operationJobsRunCount": len(operation_job_runs),
                 "operationJobsFailedCount": len([item for item in operation_job_runs if not item.get("ok")]),
             }
-            failed = store.complete_content_scheduler_run(run["id"], result_payload, status="failed", error=str(exc))
+            failed = store.complete_content_scheduler_run(run["id"], result_payload, status="failed", error=error_code)
             store.audit_log(
                 "content_scheduler_run_failed",
                 actor=context["actor"],
                 target_type="content_scheduler_run",
                 target_id=run["id"],
-                payload={"schedulerKey": run["schedulerKey"], "leaseOwner": run["leaseOwner"], "error": str(exc)[:300]},
+                payload={
+                    "schedulerKey": run["schedulerKey"],
+                    "leaseOwner": run["leaseOwner"],
+                    "errorCode": error_code,
+                    "errorType": exc.__class__.__name__[:80],
+                },
             )
             return {
                 "ok": False,
                 "run": failed or store.get_content_scheduler_run(run["id"]),
                 "releaseWorker": release_result,
                 "operationJobs": operation_job_runs,
-                "error": str(exc),
+                "error": "Content scheduler failed",
             }
 
     @api.post("/v1/content/releases/run-due")
@@ -4529,12 +4641,17 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
 
     @api.get("/v1/voices/samples/{voiceId}.wav")
     def voice_sample(voiceId: str) -> Response:
+        voice_id = _safe_path_segment(voiceId, "voice identifier")
         voices = {str(voice.get("voiceId")): voice for voice in load_voice_catalog()}
-        voice = voices.get(voiceId)
+        voice = voices.get(voice_id)
         if not voice:
             raise HTTPException(status_code=404, detail="Voice not found")
-        sample_file = PROJECT_ROOT / "artifacts" / "voices" / "catalog_samples" / f"{voiceId}.wav"
-        if sample_file.exists():
+        catalog_voice_id = _safe_path_segment(str(voice.get("voiceId") or ""), "voice identifier")
+        sample_file = _resolve_contained_path(
+            PROJECT_ROOT / "artifacts" / "voices" / "catalog_samples",
+            f"{catalog_voice_id}.wav",
+        )
+        if sample_file.is_file():
             return Response(content=sample_file.read_bytes(), media_type="audio/wav")
         sample = MockTTSProvider().synthesize(
             {
@@ -4593,18 +4710,32 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
 
     @api.get("/v1/dialogue/packs/{personaId}/{packVersion}.zip")
     def dialogue_pack_zip(personaId: str, packVersion: str) -> Response:
-        if "/" in personaId or "/" in packVersion or ".." in personaId or ".." in packVersion:
-            raise HTTPException(status_code=400, detail="Invalid pack path")
-        version_dir = pack_root(personaId, packVersion)
+        persona_id = _safe_path_segment(personaId, "persona identifier")
+        pack_version = _safe_path_segment(packVersion, "pack version")
+        pack = next(
+            (
+                item
+                for item in list_dialogue_packs()
+                if item.get("personaId") == persona_id and item.get("packVersion") == pack_version
+            ),
+            None,
+        )
+        if not pack:
+            raise HTTPException(status_code=404, detail="Dialogue pack not found")
+        catalog_persona_id = _safe_path_segment(str(pack["personaId"]), "persona identifier")
+        catalog_pack_version = _safe_path_segment(str(pack["packVersion"]), "pack version")
+        version_dir = _resolve_contained_path(DIALOGUE_PACKS_ROOT, catalog_persona_id, catalog_pack_version)
         if not version_dir.exists() or not version_dir.is_dir():
             raise HTTPException(status_code=404, detail="Dialogue pack not found")
-        prebuilt_zip = version_dir / "pack.zip"
-        if prebuilt_zip.exists():
+        prebuilt_zip = _resolve_contained_path(version_dir, "pack.zip")
+        if prebuilt_zip.is_file():
             return Response(content=prebuilt_zip.read_bytes(), media_type="application/zip")
         buffer = io.BytesIO()
         with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
             for path in sorted(item for item in version_dir.rglob("*") if item.is_file() and item.name != "pack.zip"):
-                archive.write(path, path.relative_to(version_dir))
+                relative_path = path.relative_to(version_dir)
+                contained_path = _resolve_contained_path(version_dir, *relative_path.parts)
+                archive.write(contained_path, contained_path.relative_to(version_dir))
         return Response(content=buffer.getvalue(), media_type="application/zip")
 
     @api.post("/v1/dialogue/unmatched", status_code=202)
@@ -5098,17 +5229,13 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
             return {"ok": True, "dryRun": True, "notes": notes, "count": len(notes)}
         payload = {"action": "addNotes", "version": 6, "params": {"notes": notes}}
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-        request = urllib.request.Request(
-            req.ankiConnectUrl,
-            data=body,
-            method="POST",
-            headers={"Content-Type": "application/json"},
-        )
+        local_url = _local_anki_connect_url(req.ankiConnectUrl)
         try:
-            with urllib.request.urlopen(request, timeout=10) as response:
-                data = json.loads(response.read().decode("utf-8"))
-        except Exception as exc:
-            raise HTTPException(status_code=502, detail=f"AnkiConnect export failed: {exc.__class__.__name__}")
+            data = _post_to_local_anki_connect(local_url, body)
+        except Exception:
+            raise HTTPException(status_code=502, detail="AnkiConnect export failed") from None
+        if not isinstance(data, dict):
+            raise HTTPException(status_code=502, detail="AnkiConnect export failed")
         return {"ok": data.get("error") is None, "dryRun": False, "count": len(notes), "ankiConnect": data}
 
     @api.get("/v1/grammar/jlpt")

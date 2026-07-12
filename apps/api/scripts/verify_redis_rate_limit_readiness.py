@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from app.rate_limit import build_rate_limiter
+from scripts.verify_external_provider_readiness import environment_secret_values, safe_json_output
 
 
 def _enabled(value: Optional[str]) -> bool:
@@ -224,7 +225,7 @@ def verify_redis_rate_limit_readiness(env: Optional[Mapping[str, str]] = None) -
 
 def main() -> int:
     result = verify_redis_rate_limit_readiness()
-    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    print(safe_json_output(result, environment_secret_values(os.environ)))
     return 0 if result["passed"] else 1
 
 

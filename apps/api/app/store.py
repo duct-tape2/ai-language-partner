@@ -3187,7 +3187,7 @@ class ApiStore:
         normalized_provider = provider.strip().lower()
         normalized_subject = subject.strip()
         normalized_email = email.strip().lower()
-        normalized_learner = normalize_learner_id(learner_id or f"{normalized_provider}_{hashlib.sha256(normalized_subject.encode('utf-8')).hexdigest()[:16]}")
+        requested_learner_id = normalize_learner_id(learner_id) if learner_id else None
         now = now_iso()
         with self.connect() as conn:
             identity_row = conn.execute(
@@ -3224,12 +3224,16 @@ class ApiStore:
                     account_id = account_row["id"]
                 else:
                     account_id = new_id("acct")
+                    # The identity row supplies stable provider-subject lookup.
+                    # Learner IDs are client-visible and must not derive from the subject.
+                    generated_learner_id = f"learner_{uuid.uuid4().hex}"
+                    account_learner_id = requested_learner_id or generated_learner_id
                     conn.execute(
                         """
                         INSERT INTO accounts (id, email, learner_id, password_hash, disabled_at, created_at, updated_at)
                         VALUES (?, ?, ?, ?, NULL, ?, ?)
                         """,
-                        (account_id, normalized_email, normalized_learner, password_hash, now, now),
+                        (account_id, normalized_email, account_learner_id, password_hash, now, now),
                     )
                     conn.execute(
                         """
@@ -3238,7 +3242,7 @@ class ApiStore:
                         VALUES (?, 'ko', 'ja', 'beginner', 'N5', ?, ?, 'yui', ?, ?)
                         """,
                         (
-                            normalized_learner,
+                            account_learner_id,
                             _json(["daily_speaking", "japanese_friend_conversation"]),
                             _json(["감정표현", "동사시제"]),
                             now,

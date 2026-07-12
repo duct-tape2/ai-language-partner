@@ -3,6 +3,7 @@
 fastapi==0.139.0
 uvicorn[standard]==0.51.0
 pydantic==2.13.4
+cryptography==48.0.1
 genanki==0.13.1
 redis==6.4.0
 python-multipart==0.0.32

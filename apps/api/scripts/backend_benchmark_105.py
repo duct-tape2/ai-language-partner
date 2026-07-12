@@ -24,7 +24,11 @@ from app.reputation_model import reputation_profiles_to_examples, train_evaluate
 from app.seed import COURSE_CATALOG, PRACTICE_ROOMS
 from scripts.validate_openapi_contract import validate_contract
 from scripts.verify_docker_smoke import verify_docker_smoke
-from scripts.verify_external_provider_readiness import verify_external_provider_readiness
+from scripts.verify_external_provider_readiness import (
+    environment_secret_values,
+    safe_json_output,
+    verify_external_provider_readiness,
+)
 from scripts.verify_hosted_scheduler_readiness import verify_hosted_scheduler_readiness
 from scripts.verify_redis_rate_limit_readiness import verify_redis_rate_limit_readiness
 
@@ -53,6 +57,8 @@ TEST_WEBAUTHN_PUBLIC_JWK = {key: value for key, value in TEST_WEBAUTHN_PRIVATE_J
 
 
 def pkce_s256_challenge(verifier: str) -> str:
+    # RFC 7636 section 4.2 requires BASE64URL-ENCODE(SHA256(ASCII(code_verifier))) for PKCE S256.
+    # This is a protocol proof transform, not password storage; do not substitute a password hash.
     return base64.urlsafe_b64encode(hashlib.sha256(verifier.encode("ascii")).digest()).rstrip(b"=").decode("ascii")
 
 
@@ -2575,7 +2581,7 @@ def run_benchmark() -> dict:
 
 def main() -> int:
     result = run_benchmark()
-    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    print(safe_json_output(result, environment_secret_values(os.environ)))
     return 0 if result["score"] >= result["target"] and result["passed"] else 1
 
 

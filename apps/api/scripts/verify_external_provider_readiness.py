@@ -3,12 +3,13 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Any, Mapping, Optional
+from typing import Any, Iterable, Mapping, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_ROOT = ROOT.parents[1]
@@ -21,6 +22,39 @@ if str(ROOT) not in sys.path:
 from app.providers import STRUCTURED_TURN_SCHEMA_VERSION, _mock_wav_base64, _post_audio_transcription
 
 
+LOCAL_OIDC_MOCK_HOST = "local-oidc.example"
+SENSITIVE_VALUE = "<redacted>"
+SENSITIVE_KEY_NAMES = frozenset(
+    {
+        "apikey",
+        "authorization",
+        "authorizationheader",
+        "authheader",
+        "accesstoken",
+        "refreshtoken",
+        "idtoken",
+        "token",
+        "password",
+        "passphrase",
+        "credential",
+        "credentials",
+        "secret",
+        "clientsecret",
+        "privatekey",
+        "code",
+        "codeverifier",
+        "nonce",
+        "signature",
+    }
+)
+URL_USERINFO = re.compile(r"(?P<scheme>\b[a-z][a-z0-9+.-]*://)(?P<userinfo>[^/?#@\s]+)@", re.IGNORECASE)
+SECRET_ASSIGNMENT = re.compile(
+    r"(?P<prefix>\b(?:api[_-]?key|access[_-]?token|refresh[_-]?token|id[_-]?token|token|secret|password|credential)\s*[=:]\s*)[^\s,;&]+",
+    re.IGNORECASE,
+)
+AUTHORIZATION_VALUE = re.compile(r"\b(?P<scheme>bearer|basic)\s+[A-Za-z0-9._~+/=-]+", re.IGNORECASE)
+
+
 def _enabled(value: Optional[str]) -> bool:
     return (value or "").strip().lower() in {"1", "true", "yes", "on"}
 
@@ -31,6 +65,54 @@ def _env_bool(env: Mapping[str, str], key: str) -> bool:
 
 def _redacted_env(env: Mapping[str, str], key: str) -> dict[str, Any]:
     return {"name": key, "present": _env_bool(env, key), "valueReturned": False}
+
+
+def _normalized_key_name(key: object) -> str:
+    return re.sub(r"[^a-z0-9]", "", str(key).lower())
+
+
+def _is_sensitive_key(key: object) -> bool:
+    normalized = _normalized_key_name(key)
+    return normalized in SENSITIVE_KEY_NAMES or normalized.endswith(
+        ("apikey", "token", "secret", "password", "credential", "privatekey", "codeverifier")
+    )
+
+
+def environment_secret_values(env: Mapping[str, str]) -> tuple[str, ...]:
+    """Return configured secret values only for output-boundary redaction."""
+    return tuple(value for key, value in env.items() if value and _is_sensitive_key(key))
+
+
+def _redact_text(value: str, secret_values: Iterable[str]) -> str:
+    redacted = URL_USERINFO.sub(r"\g<scheme>" + SENSITIVE_VALUE + "@", value)
+    for secret in sorted(set(secret_values), key=len, reverse=True):
+        if secret:
+            redacted = redacted.replace(secret, SENSITIVE_VALUE)
+    redacted = SECRET_ASSIGNMENT.sub(r"\g<prefix>" + SENSITIVE_VALUE, redacted)
+    return AUTHORIZATION_VALUE.sub(r"\g<scheme> " + SENSITIVE_VALUE, redacted)
+
+
+def _redact_for_public_output(value: Any, secret_values: tuple[str, ...]) -> Any:
+    if isinstance(value, Mapping):
+        return {
+            str(key): (SENSITIVE_VALUE if _is_sensitive_key(key) and not isinstance(item, bool) else _redact_for_public_output(item, secret_values))
+            for key, item in value.items()
+        }
+    if isinstance(value, (list, tuple)):
+        return [_redact_for_public_output(item, secret_values) for item in value]
+    if isinstance(value, str):
+        return _redact_text(value, secret_values)
+    return value
+
+
+def safe_json_output(value: Any, secret_values: Iterable[str] = ()) -> str:
+    """Serialize CI evidence after removing credential-bearing values and URL userinfo."""
+    return json.dumps(
+        _redact_for_public_output(value, tuple(secret_values)),
+        ensure_ascii=False,
+        indent=2,
+        sort_keys=True,
+    )
 
 
 def _provider_env_key(provider: str) -> str:
@@ -89,12 +171,27 @@ def _oidc_issuer(env: Mapping[str, str], provider: str) -> Optional[str]:
     return env.get(f"AI_LANGUAGE_PARTNER_OIDC_{key}_ISSUER") or env.get("AI_LANGUAGE_PARTNER_OIDC_ISSUER")
 
 
+def _is_local_oidc_mock_issuer(issuer: str) -> bool:
+    """Recognize only the exact local mock host; never trust a textual URL prefix."""
+    try:
+        parsed = urllib.parse.urlsplit(issuer)
+        return (
+            parsed.scheme.lower() == "https"
+            and parsed.hostname == LOCAL_OIDC_MOCK_HOST
+            and parsed.username is None
+            and parsed.password is None
+            and parsed.port in {None, 443}
+        )
+    except ValueError:
+        return False
+
+
 def verify_oidc_discovery(env: Mapping[str, str], real_calls: bool, timeout: int) -> dict[str, Any]:
     providers = _oidc_providers(env)
     configured = []
     for provider in providers:
         issuer = (_oidc_issuer(env, provider) or "").rstrip("/")
-        if issuer and not issuer.startswith("https://local-oidc.example"):
+        if issuer and not _is_local_oidc_mock_issuer(issuer):
             configured.append({"provider": provider, "issuer": issuer})
     if not configured:
         return _skip("oidc_discovery", "no_real_oidc_issuer_configured", configured=False)
@@ -277,7 +374,7 @@ def verify_external_provider_readiness(env: Optional[Mapping[str, str]] = None) 
 
 def main() -> int:
     result = verify_external_provider_readiness()
-    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    print(safe_json_output(result, environment_secret_values(os.environ)))
     return 0 if result["passed"] else 1
 
 
