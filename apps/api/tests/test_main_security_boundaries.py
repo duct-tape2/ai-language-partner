@@ -117,13 +117,20 @@ def test_filesystem_resource_paths_reject_traversal_and_symlink_escape(tmp_path:
     assert error.value.status_code == 400
 
 
-def test_email_hash_is_keyed_not_a_plain_sha256(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_email_hash_is_keyed_not_a_plain_fast_hash(monkeypatch: pytest.MonkeyPatch) -> None:
     email = "learner@example.com"
     monkeypatch.setattr(main, "_EMAIL_HASH_KEY", b"test-email-hash-key")
 
     digest = main._email_hash(email)
 
     assert digest == main._email_hash(email)
+    assert digest == hashlib.pbkdf2_hmac(
+        "sha256",
+        email.encode("utf-8"),
+        b"test-email-hash-key",
+        120_000,
+        dklen=8,
+    ).hex()
     assert digest != hashlib.sha256(email.encode("utf-8")).hexdigest()[:16]
     assert main._default_account_learner_id(email) == f"learner_{digest}"
 

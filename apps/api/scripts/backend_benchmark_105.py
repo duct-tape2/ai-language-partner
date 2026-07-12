@@ -24,11 +24,7 @@ from app.reputation_model import reputation_profiles_to_examples, train_evaluate
 from app.seed import COURSE_CATALOG, PRACTICE_ROOMS
 from scripts.validate_openapi_contract import validate_contract
 from scripts.verify_docker_smoke import verify_docker_smoke
-from scripts.verify_external_provider_readiness import (
-    environment_secret_values,
-    safe_json_output,
-    verify_external_provider_readiness,
-)
+from scripts.verify_external_provider_readiness import verify_external_provider_readiness
 from scripts.verify_hosted_scheduler_readiness import verify_hosted_scheduler_readiness
 from scripts.verify_redis_rate_limit_readiness import verify_redis_rate_limit_readiness
 
@@ -2579,9 +2575,18 @@ def run_benchmark() -> dict:
         return {"score": score, "target": 105, "passed": all(checks.values()), "checks": checks, "evidence": evidence}
 
 
+def _public_benchmark_result(result: dict) -> dict:
+    return {
+        "score": int(result.get("score", 0)),
+        "target": int(result.get("target", 0)),
+        "passed": bool(result.get("passed")),
+        "checks": {str(key): bool(value) for key, value in result.get("checks", {}).items()},
+    }
+
+
 def main() -> int:
     result = run_benchmark()
-    print(safe_json_output(result, environment_secret_values(os.environ)))
+    print(json.dumps(_public_benchmark_result(result), ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result["score"] >= result["target"] and result["passed"] else 1
 
 

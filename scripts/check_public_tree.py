@@ -50,9 +50,10 @@ def main() -> int:
         if SECRET_LIKE.search(text):
             bad_secret_hits.append(path)
     if bad_secret_hits:
-        print("Secret-like tokens found:", file=sys.stderr)
-        for path in bad_secret_hits:
-            print(f"  {_safe_path_diagnostic(path)}", file=sys.stderr)
+        print(
+            f"Secret-like tokens found in {len(bad_secret_hits)} tracked file(s); paths are withheld from CI output.",
+            file=sys.stderr,
+        )
         return 1
     print("Public tree check passed.")
     return 0

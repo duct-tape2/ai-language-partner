@@ -1181,7 +1181,13 @@ def _client_hash(request: Request) -> str:
 
 
 def _email_hash(email: str) -> str:
-    return hmac.new(_EMAIL_HASH_KEY, email.encode("utf-8"), hashlib.sha256).hexdigest()[:16]
+    return hashlib.pbkdf2_hmac(
+        "sha256",
+        email.encode("utf-8"),
+        _EMAIL_HASH_KEY,
+        120_000,
+        dklen=8,
+    ).hex()
 
 
 def _safe_path_segment(value: str, label: str) -> str:

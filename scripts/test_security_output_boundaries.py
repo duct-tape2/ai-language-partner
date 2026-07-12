@@ -57,7 +57,7 @@ class SecurityOutputBoundariesTest(unittest.TestCase):
             "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM",
         )
 
-    def test_json_entrypoints_redact_credentials_but_keep_ci_evidence(self) -> None:
+    def test_json_entrypoints_exclude_credentials_but_keep_ci_evidence(self) -> None:
         reports = [
             (external_provider, "verify_external_provider_readiness", {"passed": True, "checks": {"smoke": "passed"}}),
             (redis_readiness, "verify_redis_rate_limit_readiness", {"passed": True, "checks": {"redis": "passed"}}),
@@ -81,14 +81,17 @@ class SecurityOutputBoundariesTest(unittest.TestCase):
             output = stdout.getvalue()
             self.assertNotIn(OUTPUT_SECRET, output)
             self.assertNotIn("ci-user", output)
-            self.assertIn("redis.example:6379/0", output)
             self.assertIn('"passed": true', output)
+            if module is external_provider:
+                self.assertIn("redis.example:6379/0", output)
+            else:
+                self.assertNotIn("redis.example", output)
 
-    def test_benchmark_entrypoint_uses_the_redacting_output_serializer(self) -> None:
+    def test_benchmark_entrypoint_outputs_only_the_public_summary(self) -> None:
         source = (API_ROOT / "scripts" / "backend_benchmark_105.py").read_text(encoding="utf-8")
-        self.assertIn("print(safe_json_output(result, environment_secret_values(os.environ)))", source)
+        self.assertIn("print(json.dumps(_public_benchmark_result(result)", source)
 
-    def test_public_tree_diagnostics_redact_path_credentials_and_tokens(self) -> None:
+    def test_public_tree_forbidden_path_diagnostics_redact_credentials_and_tokens(self) -> None:
         token = "ghp_" + ("A" * 36)
         unsafe_path = f"artifacts/redis://ci-user:{OUTPUT_SECRET}@redis.example/0/{token}.log"
         stderr = io.StringIO()
@@ -99,6 +102,20 @@ class SecurityOutputBoundariesTest(unittest.TestCase):
         self.assertNotIn("ci-user", output)
         self.assertNotIn(token, output)
         self.assertIn("redis.example", output)
+
+    def test_public_tree_secret_hits_withhold_paths_from_ci_output(self) -> None:
+        token = "ghp_" + ("A" * 36)
+        stderr = io.StringIO()
+        with (
+            mock.patch.object(check_public_tree, "tracked_files", return_value=["docs/private-token-note.txt"]),
+            mock.patch("builtins.open", mock.mock_open(read_data=token)),
+            contextlib.redirect_stderr(stderr),
+        ):
+            self.assertEqual(check_public_tree.main(), 1)
+        output = stderr.getvalue()
+        self.assertNotIn(token, output)
+        self.assertNotIn("private-token-note", output)
+        self.assertIn("1 tracked file(s)", output)
 
 
 if __name__ == "__main__":
