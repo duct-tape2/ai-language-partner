@@ -788,8 +788,8 @@ def test_content_version_snapshot_can_be_published_later_with_audit(tmp_path):
     assert "/v1/content/bulk-qa" in content_console.text
     assert "/v1/content/translation-memory/suggest" in content_console.text
     assert "/v1/content/translation-memory" in content_console.text
-    assert f"/v1/content/versions/__versionId__/branch" in content_console.text
-    assert f"/v1/content/versions/__versionId__/assign" in content_console.text
+    assert "/v1/content/versions/__versionId__/branch" in content_console.text
+    assert "/v1/content/versions/__versionId__/assign" in content_console.text
     assert "contentConsoleResult" in content_console.text
     assert scheduler_version_id in content_console.text
     release_list = client.get("/v1/content/releases", headers=viewer_headers).json()["releases"]
