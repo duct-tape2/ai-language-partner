@@ -1871,6 +1871,7 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
     def test_listing_prs_track_current_external_channels(self) -> None:
         names = {listing.name for listing in discovery_snapshot.LISTING_PRS}
 
+        self.assertIn("Open Source Observer OSS Directory", names)
         self.assertIn("Mozilla Codetribute", names)
         self.assertIn("First Contributions Project Discovery", names)
         self.assertIn("For Good First Issue", names)
@@ -1907,6 +1908,15 @@ class DiscoveryListingSnapshotTest(unittest.TestCase):
     def test_new_active_listing_prs_have_exact_public_targets(self) -> None:
         listings = {listing.name: listing for listing in discovery_snapshot.LISTING_PRS}
 
+        self.assertEqual(
+            listings["Open Source Observer OSS Directory"].repo,
+            "opensource-observer/oss-directory",
+        )
+        self.assertEqual(listings["Open Source Observer OSS Directory"].number, 1114)
+        self.assertIn(
+            "CONTRIBUTOR_LANDING.html",
+            listings["Open Source Observer OSS Directory"].contributor_link,
+        )
         self.assertEqual(
             listings["Mozilla Codetribute"].repo,
             "mozilla-frontend-infra/codetribute",

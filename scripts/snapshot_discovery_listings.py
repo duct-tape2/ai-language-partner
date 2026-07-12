@@ -70,6 +70,12 @@ class ListingIssue:
 
 LISTING_PRS = [
     ListingPr(
+        name="Open Source Observer OSS Directory",
+        repo="opensource-observer/oss-directory",
+        number=1114,
+        contributor_link=CONTRIBUTOR_LANDING_URL,
+    ),
+    ListingPr(
         name="Mozilla Codetribute",
         repo="mozilla-frontend-infra/codetribute",
         number=650,
