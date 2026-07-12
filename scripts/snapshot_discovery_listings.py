@@ -70,6 +70,12 @@ class ListingIssue:
 
 LISTING_PRS = [
     ListingPr(
+        name="Mozilla Codetribute",
+        repo="mozilla-frontend-infra/codetribute",
+        number=650,
+        contributor_link=FIRST_ISSUE_MATCHER_URL,
+    ),
+    ListingPr(
         name="First Contributions Project Discovery",
         repo="firstcontributions/firstcontributions.github.io",
         number=721,

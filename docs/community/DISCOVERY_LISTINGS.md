@@ -7,7 +7,7 @@ merged in this repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
 - GitHub topics: `accessibility`, `beginner-friendly`, `contributions-welcome`, `education`, `edulinkup`, `elusoc`, `expo`, `fastapi`, `first-contributions`, `first-timers-only`, `good-first-issue`, `good-first-pr`, `help-wanted`, `japanese-language`, `korean-language`, `language-learning`, `learn-japanese`, `local-first`, `react-native`, `up-for-grabs`
-- Open `up-for-grabs` issues: `33`
+- Open `up-for-grabs` issues: `34`
 - Open `first-timers-only` issues: `24`
 - Hosted web demo: https://duct-tape2.github.io/ai-language-partner/demo/
 - Web demo prerelease: `active` - https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09
@@ -15,6 +15,7 @@ merged in this repository.
 
 | Listing | Kind | State | Merged | Mergeable | Listing item | Contributor link | Follow-up | Checks |
 |---|---|---|---|---|---|---|---|---|
+| Mozilla Codetribute | PR | open | False | True | [link](https://github.com/mozilla-frontend-infra/codetribute/pull/650) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | yarn lint: queued None; yarn test: queued None; yarn build: queued None; Redirect rules - mozilla-codetribute: in_progress None; Header rules - mozilla-codetribute: in_progress None; Pages changed - mozilla-codetribute: completed neutral |
 | First Contributions Project Discovery | PR | open | False | True | [link](https://github.com/firstcontributions/firstcontributions.github.io/pull/721) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | [update](https://github.com/firstcontributions/firstcontributions.github.io/issues/1#issuecomment-4931220251) | none reported |
 | For Good First Issue | PR | open | False | True | [link](https://github.com/github/forgoodfirstissue/pull/494) | [entry](https://duct-tape2.github.io/ai-language-partner/community/DIRECTORY_FIRST_PR.html) | - | none reported |
 | Up For Grabs | PR | closed | True | None | [link](https://github.com/up-for-grabs/up-for-grabs.net/pull/5916) | [entry](https://github.com/duct-tape2/ai-language-partner/labels/up-for-grabs) | - | content: completed success; upload: completed success; javascript: completed success; docker: completed success; site: completed success; Redirect rules - up-for-grabs-test-bench: completed neutral; Header rules - up-for-grabs-test-bench: completed neutral; Pages changed - up-for-grabs-test-bench: completed neutral; Project Changes: completed success |
@@ -30,7 +31,7 @@ merged in this repository.
 | Awesome Open Source School | PR | open | False | True | [link](https://github.com/zefanja/awesome-opensource-school/pull/16) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Awesomo | PR | open | False | True | [link](https://github.com/lk-geimfari/awesomo/pull/479) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | - | none reported |
 | React Native Apps | PR | closed | True | None | [link](https://github.com/ReactNativeNews/React-Native-Apps/pull/259) | [entry](https://github.com/duct-tape2/ai-language-partner/contribute) | - | none reported |
-| Awesome Open Source AI | PR | open | False | None | [link](https://github.com/alvinreal/awesome-opensource-ai/pull/582) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
+| Awesome Open Source AI | PR | open | False | True | [link](https://github.com/alvinreal/awesome-opensource-ai/pull/582) | [entry](https://duct-tape2.github.io/ai-language-partner/demo/) | - | none reported |
 | Meaningful Code | Issue | open | n/a | awaiting impactful-project review | [link](https://github.com/Meaningful-Code/meaningfulcode-frontend/issues/147) | [entry](https://duct-tape2.github.io/ai-language-partner/community/CONTRIBUTOR_LANDING.html) | - | official project-submission issue template used; education criteria documented |
 | Awesome Japanese | Issue | closed | n/a | closed (completed); follow up only after maturity changes | [link](https://github.com/yudataguy/awesome-japanese/issues/149) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html) | - | issue submitted before PR per contribution guidelines |
 | Good First Issue | Directory | locked | n/a | requires 10 contributors; current 3/10 | [link](https://github.com/DeepSourceCorp/good-first-issue) | [entry](https://duct-tape2.github.io/ai-language-partner/community/FIRST_ISSUE_MATCHER.html) | [form](https://docs.google.com/forms/d/e/1FAIpQLSfHSt8UHvACokWv8uwiImidTIhuSCAUXnvSGs-TULshdLl9Qw/viewform?usp=header) | README criteria |
