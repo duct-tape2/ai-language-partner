@@ -3850,17 +3850,23 @@ def test_docker_artifact_static_verification_script_is_green():
     assert payload["prodRequirementStaticChecks"]["pythonMultipartForSttMultipart"] is True
     assert payload["prodRequirementStaticChecks"]["pythonMultipartSecurityFloor"] is True
 
-def stt_multipart_missingfile(client):
-    response=client.post("/v1/stt/transcribe",data={"language":"ja"})
+
+def test_stt_multipart_missingfile(tmp_path):
+    client=make_client(tmp_path)
+    response=client.post("/v1/stt/transcribe", files={"language": (None, "ja")})
     assert response.status_code==422
     assert "Missing or bad audio file" in response.json()["detail"]
 
-def stt_multipart_filetype(client):
-    response=client.post("/v1/stt/transcribe", data={"file":"not an audio file"})
-    assert response.status_code==422
-    assert "Missing or bad audio file" in response.json()["detail"]
 
-def stt_multipart_empty(client):
+def test_stt_multipart_filetype(tmp_path):
+    client=make_client(tmp_path)
+    response=client.post("/v1/stt/transcribe", files={"file": ("test.txt", b"not an audio file", "text/plain")})
+    assert response.status_code==422
+    assert "File must be an audio type." in response.json()["detail"]
+
+
+def test_stt_multipart_empty(tmp_path):
+    client=make_client(tmp_path)
     empty_file=b""
     response=client.post("/v1/stt/transcribe", files={"file":("empty.wav",empty_file,"audio/wav")})
     assert response.status_code==422
