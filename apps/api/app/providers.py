@@ -387,7 +387,6 @@ def _wav_features(audio_base64: str) -> Dict[str, Any]:
         if sample_width != 2:
             return {"ok": False, "error": f"unsupported_sample_width_{sample_width}"}
         samples = []
-        step = max(1, channels)
         for index in range(0, len(frames), sample_width * channels):
             value = int.from_bytes(frames[index : index + sample_width], "little", signed=True)
             samples.append(value / 32768.0)

@@ -107,7 +107,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 `requirements.txt` pins: `fastapi`, `uvicorn[standard]`, `pydantic`,
-`pytest`, `httpx`, `PyYAML`, `genanki`, `redis`, `edge-tts`,
+`pytest`, `httpx`, `PyYAML`, `ruff`, `genanki`, `redis`, `edge-tts`,
 `python-multipart>=0.0.9`.
 
 Data persists in SQLite at `apps/api/data/language_partner.sqlite3`. Override
@@ -205,6 +205,13 @@ success.
 ---
 
 ## Running tests
+
+Python lint runs from the repository root and covers application, test, and
+maintenance code:
+
+```bash
+apps/api/.venv/bin/python -m ruff check apps/api/app apps/api/tests apps/api/scripts scripts
+```
 
 ### Backend
 

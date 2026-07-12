@@ -831,7 +831,9 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertIn("Major new functionality includes automated coverage", contributing)
         self.assertIn("has not been registered or awarded", readiness)
         self.assertIn("Do not display a badge", readiness)
-        self.assertIn("Registration is currently blocked", readiness)
+        self.assertIn("Registration remains gated", readiness)
+        self.assertIn("pinned Ruff checks", readiness)
+        self.assertIn("required Docker runtime smoke", readiness)
         self.assertIn("tests_are_added", readiness)
         self.assertIn("Items That Still Need Confirmation", readiness)
         self.assertIn("https://www.bestpractices.dev/en/criteria/0", readiness)
@@ -850,6 +852,30 @@ class WorkflowFixtureTest(unittest.TestCase):
         self.assertEqual(mobile_package["overrides"]["tar"], "7.5.16")
         self.assertEqual(mobile_package["overrides"]["uuid"], "11.1.1")
         self.assertEqual(mobile_package["overrides"]["postcss"], "8.5.10")
+
+    def test_python_lint_is_pinned_and_enforced(self) -> None:
+        workflow = Path(".github/workflows/python-lint.yml").read_text(encoding="utf-8")
+        config = Path("ruff.toml").read_text(encoding="utf-8")
+        pyproject = Path("apps/api/pyproject.toml").read_text(encoding="utf-8")
+        requirements_input = Path("apps/api/requirements.in").read_text(encoding="utf-8")
+        contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
+
+        self.assertIn("ruff==0.15.21", requirements_input)
+        self.assertIn('"ruff>=0.15.21,<0.16.0"', pyproject)
+        self.assertIn('select = ["E4", "E7", "E9", "F"]', config)
+        self.assertIn('"apps/api/scripts/*.py" = ["E402"]', config)
+        self.assertIn('"apps/api/tests/*.py" = ["E402"]', config)
+        self.assertIn("actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5", workflow)
+        self.assertIn("actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065", workflow)
+        self.assertIn("python -m pip install --require-hashes -r apps/api/requirements.txt", workflow)
+        self.assertIn(
+            "python -m ruff check apps/api/app apps/api/tests apps/api/scripts scripts",
+            workflow,
+        )
+        self.assertIn(
+            "apps/api/.venv/bin/python -m ruff check apps/api/app apps/api/tests apps/api/scripts scripts",
+            contributing,
+        )
 
     def test_development_requirement_input_contains_the_production_set(self) -> None:
         def direct_requirements(path: str) -> set[str]:
