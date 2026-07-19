@@ -3,7 +3,7 @@
 # Keep this production block synchronized with requirements-prod.in. Dependabot's
 # dependency-graph runner does not copy nested .in references into its temporary
 # evaluation directory.
-fastapi==0.139.0
+fastapi==0.139.2
 uvicorn[standard]==0.51.0
 pydantic==2.13.4
 cryptography==48.0.1
@@ -14,4 +14,4 @@ edge-tts==7.2.8
 pytest==9.1.1
 httpx==0.28.1
 PyYAML==6.0.3
-ruff==0.15.21
+ruff==0.15.22
