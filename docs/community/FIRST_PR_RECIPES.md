@@ -5,8 +5,8 @@ also posted as issue comments so first-time contributors can start without
 searching the whole repository.
 
 - Repository: `https://github.com/duct-tape2/ai-language-partner`
-- Generated on: `2026-07-11`
-- Issues covered: `26`
+- Generated on: `2026-07-20`
+- Issues covered: `25`
 
 ## [#1: docs: add Korean quick-start for backend mock mode](https://github.com/duct-tape2/ai-language-partner/issues/1)
 
@@ -519,47 +519,6 @@ Keep this to one useful change for this issue.
 **Open the PR**
 
 - Write `Closes #21` in the PR body.
-- Say what changed and name the check or review you completed.
-- Do not add generated media, archives, local engines, databases, secrets,
-  screenshots, or private data.
-
-**Need a route?**
-
-- Browser edit: https://duct-tape2.github.io/ai-language-partner/community/FIVE_MINUTE_FIRST_PR.html
-- Code or tests without local setup: https://duct-tape2.github.io/ai-language-partner/community/CODESPACES_FIRST_PR.html
-- Ask a maintainer: https://github.com/duct-tape2/ai-language-partner/discussions/53
-
-
-## [#27: tests: add mobile package script inventory check](https://github.com/duct-tape2/ai-language-partner/issues/27)
-
-<!-- ai-language-partner:first-pr-recipe -->
-### First PR recipe
-
-Keep this to one useful change for this issue.
-
-**Inspect**
-
-- `apps/mobile/App.tsx`
-- `apps/mobile/src/screens/`
-- `apps/mobile/src/components.tsx`
-
-**Done when**
-
-- Current documented mobile commands pass the new check.
-- A fixture containing `npm run missing-script` is reported and produces a failing result.
-- The error identifies both the Markdown path and missing script.
-- `npm run verify` executes the new check.
-- Existing mobile verification remains passing.
-
-**Verify**
-
-- `python3 scripts/check_public_tree.py`
-- `cd apps/mobile && npm run verify`
-- `python3 -m unittest discover -s scripts -p 'test_*.py'`
-
-**Open the PR**
-
-- Write `Closes #27` in the PR body.
 - Say what changed and name the check or review you completed.
 - Do not add generated media, archives, local engines, databases, secrets,
   screenshots, or private data.
