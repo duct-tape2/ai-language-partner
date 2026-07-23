@@ -60,7 +60,7 @@ Fill this only with real merged PRs from unique external contributors. Do not
 count maintainer-authored PRs, bots, duplicate identities, or trivial spam.
 
 - Evidence generated from: `duct-tape2/ai-language-partner`
-- Since: `2025-07-11`
+- Since: `2025-07-23`
 - Unique external contributors counted: `3`
 - Status: `NOT READY for Phase B`
 - Remaining contributors needed: `17`
