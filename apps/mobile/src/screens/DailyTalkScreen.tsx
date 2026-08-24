@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, Pressable, Text, View } from 'react-native';
-import { Audio } from 'expo-av';
+import { AudioModule, RecordingPresets, setAudioModeAsync, useAudioRecorder, type RecordingOptions } from 'expo-audio';
 import { useTheme } from '../ThemeContext';
 import { STRINGS } from '../i18n';
 import { personaColor } from '../personaStyle';
@@ -26,12 +26,14 @@ const TOPICS = [
 const LEVELS = ['N5', 'N4'];
 
 // 16kHz mono recording — iOS default preset is 44.1kHz, so override (contract §6.1).
-function recordingOptions(): Audio.RecordingOptions {
-  const base = Audio.RecordingOptionsPresets.HIGH_QUALITY;
+function recordingOptions(): RecordingOptions {
+  const base = RecordingPresets.HIGH_QUALITY;
   return {
     ...base,
-    android: { ...base.android, sampleRate: 16000, numberOfChannels: 1 },
-    ios: { ...base.ios, sampleRate: 16000, numberOfChannels: 1 },
+    sampleRate: 16000,
+    numberOfChannels: 1,
+    android: { ...base.android, sampleRate: 16000 },
+    ios: { ...base.ios, sampleRate: 16000 },
   };
 }
 
@@ -58,7 +60,8 @@ export function DailyTalkScreen({ app }: { app: AppController }) {
   const runnerRef = React.useRef<DialogueRunner | null>(null);
   const packRef = React.useRef<LoadedPack | null>(null);
   const queueRef = React.useRef<AudioQueue | null>(null);
-  const recRef = React.useRef<Audio.Recording | null>(null);
+  const recorderOptions = React.useMemo(() => recordingOptions(), []);
+  const recorder = useAudioRecorder(recorderOptions);
   const color = personaColor(personaId);
 
   // Show the human display name ("유이"), never the raw pack id ("yui"). Pack ids
@@ -81,8 +84,7 @@ export function DailyTalkScreen({ app }: { app: AppController }) {
     return () => {
       queue().cancel();
       clearAudioCache();
-      void recRef.current?.stopAndUnloadAsync().catch(() => undefined);
-      recRef.current = null;
+      if (recorder.isRecording) void recorder.stop().catch(() => undefined);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -235,12 +237,10 @@ export function DailyTalkScreen({ app }: { app: AppController }) {
       await runMatch(guess);
       return;
     }
-    if (recRef.current) {
+    if (recorder.isRecording) {
       try {
-        const rec = recRef.current;
-        recRef.current = null;
-        await rec.stopAndUnloadAsync();
-        const uri = rec.getURI();
+        await recorder.stop();
+        const uri = recorder.uri;
         setStatus('recognizing');
         if (!uri) return;
         const type = Platform.OS === 'ios' ? 'audio/wav' : Platform.OS === 'web' ? 'audio/webm' : 'audio/m4a';
@@ -253,29 +253,19 @@ export function DailyTalkScreen({ app }: { app: AppController }) {
       }
       return;
     }
-    const perm = await Audio.requestPermissionsAsync();
+    const perm = await AudioModule.requestRecordingPermissionsAsync();
     if (!perm.granted) {
       setMicDenied(true);
       app.track('stt_failed', { reason: 'permission_denied' });
       return;
     }
-    await Audio.setAudioModeAsync({ allowsRecordingIOS: true, playsInSilentModeIOS: true });
-    let rec: Audio.Recording | null = null;
+    await setAudioModeAsync({ allowsRecording: true, playsInSilentMode: true });
     try {
-      rec = new Audio.Recording();
-      await rec.prepareToRecordAsync(recordingOptions());
-      await rec.startAsync();
-      recRef.current = rec;
-      rec = null; // ownership transferred to recRef
+      await recorder.prepareToRecordAsync();
+      recorder.record();
       setStatus('listening');
     } catch {
-      if (rec) {
-        try {
-          await rec.stopAndUnloadAsync();
-        } catch {
-          // already unloaded
-        }
-      }
+      if (recorder.isRecording) await recorder.stop().catch(() => undefined);
       setMicDenied(true);
       app.track('stt_failed', { reason: 'record_error' });
       setStatus('userTurn');

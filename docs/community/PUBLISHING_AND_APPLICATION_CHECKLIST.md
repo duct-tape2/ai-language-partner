@@ -166,8 +166,9 @@ Expected current baseline:
 - Public tree scan passes
 - Backend pytest passes in mock mode
 - Mobile TypeScript/regression verification passes
-- `npm audit` still reports Expo SDK 52 transitive advisories; track this as a
-  real public issue rather than force-upgrading blindly
+- `npm audit --omit=dev` still reports documented Expo SDK 53 transitive
+  advisories; review [`docs/EXPO_SDK_53_MIGRATION.md`](../EXPO_SDK_53_MIGRATION.md)
+  rather than force-upgrading blindly
 
 ## 4. Phase A application
 

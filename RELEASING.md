@@ -32,6 +32,13 @@ alerts. A release must not knowingly ship an unaddressed critical vulnerability.
 Any accepted medium or high risk must be documented with its impact and
 mitigation instead of being silently omitted.
 
+## Current mobile compatibility baseline
+
+- Expo SDK 53.0.27 with React Native 0.79.6 and React 19.0.0.
+- Node.js 20 or later; Expo SDK 53 does not support Node 18.
+- `expo-audio` 0.4.9 provides mobile recording and playback; `expo-speech`
+  remains the device-TTS fallback.
+
 ## Current Preview
 
 [`demo-web-2026-07-09`](https://github.com/duct-tape2/ai-language-partner/releases/tag/demo-web-2026-07-09)

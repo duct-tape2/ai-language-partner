@@ -1,7 +1,8 @@
 # AI Language Partner Mobile (apps/mobile)
 
-Expo React Native (TypeScript) phone app. Korean learners practice speaking
-Japanese with an AI partner. Frontend owner: Claude. First vertical slice:
+Expo React Native (TypeScript) phone app targeting Expo SDK 53, React Native
+0.79.6, and React 19. Korean learners practice speaking Japanese with an AI
+partner. Frontend owner: Claude. First vertical slice:
 `tired_today`.
 
 ## Run
@@ -67,9 +68,10 @@ never invents endpoints or renames fields. Shared/contract files are
 read-only for frontend-only PRs; proposed contract changes should update the
 OpenAPI spec and backend implementation in the same PR.
 
-## Voice
+## Voice and audio
 
-TTS uses `expo-speech` (device speech, `ja-JP`) plus the
+Recording and pack playback use `expo-audio`. TTS uses `expo-speech` (device
+speech, `ja-JP`) plus the
 `/v1/tts/synthesize` contract call. STT is mock in this slice
 (`今日めっちゃ疲れた`) via `/v1/stt/transcribe`.
 

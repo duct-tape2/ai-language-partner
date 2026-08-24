@@ -67,7 +67,7 @@ tests:
 |---|---|
 | Python | 3.11+ (`apps/api/pyproject.toml` sets `requires-python = ">=3.11"`) |
 | Node.js | LTS; npm for the mobile workspace |
-| Expo | SDK 52 (installed via `apps/mobile` deps; no global CLI needed) |
+| Expo | SDK 53 (React Native 0.79.6 / React 19; installed via `apps/mobile` deps; no global CLI needed) |
 | ffmpeg | Only for local whisper.cpp STT (16 kHz mono normalization) |
 | whisper.cpp | Optional, local STT engine |
 | AivisSpeech / VOICEVOX | Optional, local TTS engine on `127.0.0.1:10101` |
@@ -271,7 +271,7 @@ ai-language-partner/
 │   │   │   └── persona_voices.json 8 personas -> voice/emotion map
 │   │   ├── scripts/               benchmark, readiness verifiers, importers
 │   │   └── tests/test_api_contract.py
-│   ├── mobile/                    Expo SDK 52 app
+│   ├── mobile/                    Expo SDK 53 app
 │   │   ├── App.tsx                screen switch + 5-tab bottom bar
 │   │   └── src/
 │   │       ├── store.ts           useApp() controller, Screen union, navigation
