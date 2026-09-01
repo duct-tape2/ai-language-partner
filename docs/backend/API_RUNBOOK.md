@@ -1098,6 +1098,8 @@ curl http://localhost:8000/v1/providers/status
 
 Rate-limit keys include client host and learner hint, so separate `X-Learner-Id` values on localhost do not immediately collide in local testing.
 
+Avoid printing `AI_LANGUAGE_PARTNER_REDIS_URL` in logs, error messages, or shared config examples, since it can carry an embedded password (`redis://user:password@host:6379/0`). When sharing configuration, redact the credentials portion and show only the host and port, for example `redis://***:***@host:6379/0`.
+
 ## Recommendations
 
 `/v1/recommendations/today` returns `signalSummary`, which includes recent correction categories, lapse tags, recent practice rooms, today's completed rooms, and pressure tags used by the simple recommendation scorer.
