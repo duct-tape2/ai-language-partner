@@ -13,10 +13,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verify_dialogue_pack_sources as verifier  # noqa: E402
 
 
-def write_pack(root: Path, *, story: object | None = None, variants: list[dict[str, str]] | None = None) -> Path:
+def write_pack(
+    root: Path,
+    *,
+    manifest: dict[str, object] | None = None,
+    story: object | None = None,
+    variants: list[dict[str, str]] | None = None,
+) -> Path:
     pack = root / "yui" / "v1"
     pack.mkdir(parents=True)
-    manifest = {
+    default_manifest = {
         "schemaVersion": "dialogue_bank_manifest_v1",
         "personaId": "yui",
         "packVersion": "v1",
@@ -62,7 +68,9 @@ def write_pack(root: Path, *, story: object | None = None, variants: list[dict[s
             "intent": "choice",
         }
     ]
-    (pack / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
+    (pack / "manifest.json").write_text(
+        json.dumps(default_manifest if manifest is None else manifest, ensure_ascii=False), encoding="utf-8"
+    )
     (pack / "story.json").write_text(json.dumps(default_story if story is None else story, ensure_ascii=False), encoding="utf-8")
     with (pack / "variants.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=verifier.REQUIRED_VARIANT_COLUMNS)
@@ -210,3 +218,77 @@ class DialoguePackSourceValidationTest(unittest.TestCase):
 
         self.assertFalse(report["ok"])
         self.assertTrue(any("blocked by dialogue safety policy" in error for error in report["errors"]))
+
+
+    def test_rejects_invalid_manifest_json(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            pack = write_pack(root)
+            (pack / "manifest.json").write_text("{not valid json", encoding="utf-8")
+
+            report = verifier.validate_packs(root)
+
+        self.assertFalse(report["ok"])
+        self.assertTrue(any("invalid JSON" in error for error in report["errors"]))
+
+    def test_rejects_missing_manifest_source(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            pack = write_pack(root)
+            (pack / "manifest.json").unlink()
+
+            report = verifier.validate_packs(root)
+
+        self.assertFalse(report["ok"])
+        self.assertTrue(any("manifest.json: missing file" in error for error in report["errors"]))
+
+    def test_rejects_missing_variants_source(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            pack = write_pack(root)
+            (pack / "variants.csv").unlink()
+
+            report = verifier.validate_packs(root)
+
+        self.assertFalse(report["ok"])
+        self.assertTrue(any("variants.csv: missing file" in error for error in report["errors"]))
+
+    def test_rejects_manifest_scenario_count_mismatch(self) -> None:
+        manifest = {
+            "schemaVersion": "dialogue_bank_manifest_v1",
+            "personaId": "yui",
+            "packVersion": "v1",
+            "scenarioCount": 99,
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write_pack(root, manifest=manifest)
+
+            report = verifier.validate_packs(root)
+
+        self.assertFalse(report["ok"])
+        self.assertTrue(any("scenarioCount does not match story" in error for error in report["errors"]))
+
+    def test_rejects_variant_row_missing_required_field(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write_pack(
+                root,
+                variants=[
+                    {
+                        "personaId": "yui",
+                        "packVersion": "v1",
+                        "scenarioId": "greeting",
+                        "nodeId": "node_01",
+                        "lineId": "yui_greeting_u01",
+                        "text": "",
+                        "ko": "안녕하세요",
+                        "intent": "choice",
+                    }
+                ],
+            )
+
+            report = verifier.validate_packs(root)
+
+        self.assertFalse(report["ok"])
+        self.assertTrue(any("required column is blank" in error for error in report["errors"]))
