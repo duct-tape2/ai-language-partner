@@ -100,6 +100,17 @@ def test_anki_connect_disables_environment_proxies(monkeypatch: pytest.MonkeyPat
     assert result == {"result": [], "error": None}
 
 
+def test_filesystem_resource_paths_reject_embedded_nul(tmp_path: Path) -> None:
+    root = tmp_path / "root"
+    root.mkdir()
+
+    with pytest.raises(HTTPException) as error:
+        main._resolve_contained_path(root, "bad\x00path")
+
+    assert error.value.status_code == 400
+    assert error.value.detail == "Invalid resource path"
+
+
 def test_filesystem_resource_paths_reject_traversal_and_symlink_escape(tmp_path: Path) -> None:
     assert main._safe_path_segment("aivis_まお_ノーマル_1", "voice identifier") == "aivis_まお_ノーマル_1"
     for value in ("..", "../secret", "voice.name", "voice\\name", " voice"):
