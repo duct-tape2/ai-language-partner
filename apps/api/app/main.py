@@ -1205,7 +1205,7 @@ def _resolve_contained_path(root: Path, *segments: str) -> Path:
     try:
         root_path = root.resolve()
         candidate = root_path.joinpath(*segments).resolve()
-    except (OSError, RuntimeError):
+    except (OSError, RuntimeError, ValueError):
         raise HTTPException(status_code=400, detail="Invalid resource path") from None
     try:
         candidate.relative_to(root_path)
