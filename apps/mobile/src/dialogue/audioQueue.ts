@@ -1,11 +1,11 @@
-// F4. Sentence-level audio queue. Real packs play pre-synthesized wav via expo-av;
+// F4. Sentence-level audio queue. Real packs play pre-synthesized wav via expo-audio;
 // the fixture (uri === null) falls back to device TTS (expo-speech) so the full
 // flow is demoable without real audio. cancel() powers barge-in.
 //
 // Plays are SERIALIZED on an internal chain so overlapping play() calls never run
 // concurrently and corrupt shared state. Cancellation is scoped to a token so a new
 // play() sequence cannot un-cancel an in-flight barge-in.
-import { Audio } from 'expo-av';
+import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
 import { personaVoice } from '../personaStyle';
 
@@ -17,8 +17,15 @@ export type PlayItem = {
 
 type CancelToken = { cancelled: boolean };
 
+// A corrupt or unavailable pack clip must not block every later item in the
+// serialized queue forever. Normal dialogue clips are much shorter than this;
+// the timeout is only a last-resort escape hatch for platforms that do not
+// surface media-load errors through playbackStatusUpdate.
+const PLAYBACK_TIMEOUT_MS = 15_000;
+
 export class AudioQueue {
-  private current: Audio.Sound | null = null;
+  private current: AudioPlayer | null = null;
+  private finishCurrent: (() => void) | null = null;
   private tail: Promise<void> = Promise.resolve();
   private token: CancelToken = { cancelled: false };
   private active = 0;
@@ -51,25 +58,44 @@ export class AudioQueue {
   }
 
   private async playUri(uri: string, token: CancelToken): Promise<void> {
-    let sound: Audio.Sound | null = null;
+    let player: AudioPlayer | null = null;
+    let subscription: { remove: () => void } = { remove: () => undefined };
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     try {
-      const created = await Audio.Sound.createAsync({ uri }, { shouldPlay: true });
-      sound = created.sound;
+      player = createAudioPlayer({ uri });
       if (token.cancelled) return;
-      this.current = sound;
+      this.current = player;
       await new Promise<void>((resolve) => {
-        sound!.setOnPlaybackStatusUpdate((status) => {
-          if (!status.isLoaded || status.didJustFinish) resolve();
+        let settled = false;
+        const finish = () => {
+          if (settled) return;
+          settled = true;
+          resolve();
+        };
+        this.finishCurrent = finish;
+        subscription = player!.addListener('playbackStatusUpdate', (status) => {
+          if (
+            status.didJustFinish ||
+            status.playbackState === 'failed' ||
+            status.playbackState === 'error'
+          ) {
+            finish();
+          }
         });
+        timeoutId = setTimeout(finish, PLAYBACK_TIMEOUT_MS);
+        try {
+          player!.play();
+        } catch {
+          finish();
+        }
       });
     } finally {
-      if (sound) {
-        try {
-          await sound.unloadAsync();
-        } catch {
-          // already unloaded
-        }
-        if (this.current === sound) this.current = null;
+      if (timeoutId !== null) clearTimeout(timeoutId);
+      subscription.remove();
+      this.finishCurrent = null;
+      if (player) {
+        player.remove();
+        if (this.current === player) this.current = null;
       }
     }
   }
@@ -95,11 +121,12 @@ export class AudioQueue {
     this.token = { cancelled: false }; // future play() calls start fresh
     this.tail = Promise.resolve(); // drop the cancelled chain
     Speech.stop();
+    this.finishCurrent?.();
+    this.finishCurrent = null;
     const s = this.current;
     this.current = null;
     if (s) {
-      s.stopAsync().catch(() => undefined);
-      s.unloadAsync().catch(() => undefined);
+      s.pause();
     }
   }
 }

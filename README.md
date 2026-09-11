@@ -169,7 +169,7 @@ Because the app holds the conversation state (which scene/node the learner is in
 ```
                         AI LANGUAGE PARTNER — dialogue-bank runtime (no runtime LLM)
 
-  ┌──────────────────────────── apps/mobile (Expo SDK 52, iOS / Android / Web) ────────────────────────────┐
+  ┌──────────────────────────── apps/mobile (Expo SDK 53, iOS / Android / Web) ────────────────────────────┐
   │                                                                                                          │
   │   DailyTalkScreen ──> dialogue/packManager  (GET packs, download {p}/{v}.zip, fflate unzip,             │
   │        │                                       audio index over dialogue|filler|confirm|fallback)        │
@@ -232,8 +232,8 @@ The dialogue pack shipped on disk uses a **node-graph** story format (not ink). 
 
 | Layer | Stack |
 |---|---|
-| Mobile | React Native 0.76.9, Expo SDK 52.0.47, React 18.3.1, TypeScript 5.3 |
-| Mobile audio/files | expo-av (record/play), expo-file-system (pack cache), fflate (zip unpack), expo-speech (device-TTS fallback), @react-native-async-storage/async-storage |
+| Mobile | React Native 0.79.6, Expo SDK 53.0.27, React 19.0.0, TypeScript 5.8.3 |
+| Mobile audio/files | expo-audio (record/play), expo-file-system (pack cache), fflate (zip unpack), expo-speech (device-TTS fallback), @react-native-async-storage/async-storage |
 | SRS | ts-fsrs 5.4.1 |
 | Backend | FastAPI, Uvicorn, Pydantic, PyYAML, python-multipart, genanki, redis (optional rate limit), edge-tts (optional provider) |
 | STT (local) | whisper.cpp (ggml-medium), ffmpeg |

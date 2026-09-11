@@ -115,7 +115,7 @@ One Daily Talk turn:
  mobile: DailyTalkScreen + DialogueRunner            apps/api (FastAPI, stateless match)
  ───────────────────────────────────────            ─────────────────────────────────
  1. runner.current() → persona line + choices
- 2. audioQueue.play(persona clip)  ── uri from pack.audioBytes[lineId] (expo-av)
+ 2. audioQueue.play(persona clip)  ── uri from pack.audioBytes[lineId] (expo-audio)
                                        └─ fixture (uri=null) → device TTS (expo-speech)
  3. show choices as suggested-reply chips
  4. user taps mic → record 16 kHz mono ──(multipart /v1/stt/transcribe)──▶ whisper.cpp
