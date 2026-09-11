@@ -17,6 +17,39 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## 한국어 빠른 시작: mock mode
+
+로컬 STT/TTS 엔진이나 외부 API 키가 없어도 백엔드를 실행할 수 있습니다. 기본
+설정은 모든 provider가 로컬 mock provider를 사용하는 모드입니다.
+
+macOS/Linux에서는 저장소 루트에서 다음을 실행합니다.
+
+```bash
+cd apps/api
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --require-hashes -r requirements.txt
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+Windows PowerShell에서는 같은 `apps/api` 디렉터리에서 다음을 실행합니다.
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --require-hashes -r requirements.txt
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+서버가 실행된 뒤 다른 터미널에서 health check를 실행합니다.
+
+```bash
+curl http://localhost:8000/health
+```
+
+응답에 `"ok": true`가 포함되면 기본 mock mode의 백엔드가 실행된 것입니다. 음성
+엔진을 나중에 연결하더라도 이 첫 실행에는 필요하지 않습니다.
+
 ## Run
 
 ```bash
