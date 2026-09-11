@@ -149,6 +149,24 @@ Notes tied to source:
   line is spoken by device TTS and the client-side `matchMock` (bigram Dice)
   stands in for the server matcher — the full flow is demoable with no backend.
 
+### Mobile mode indicators and read fallbacks
+
+The mobile client selects its mode from `EXPO_PUBLIC_USE_MOCK_API`: `USE_MOCK` is
+true unless the value is exactly `false`. The visible labels describe that
+selection, while the developer-only health check diagnoses the backend separately.
+
+| Client state | Visible indicators | Runtime behavior |
+|---|---|---|
+| Mock (`USE_MOCK=true`) | Daily Talk uses `STRINGS.dailyTalk.demoBadge`; Courses shows `학습 코스 (오프라인 미리보기)`. | Requests return checked-in shared fixtures immediately. Daily Talk loads the bundled dialogue pack; missing fixture audio is spoken with device TTS. |
+| Real with a healthy API | Daily Talk uses `STRINGS.dailyTalk.liveBadge`; Courses shows `학습 코스`. | Requests use `API_BASE` and return the API response. Daily Talk downloads the API-served pack and can use its pre-synthesized audio. |
+| Real with a read fallback | The labels remain the real-mode labels above, so they do not prove that the API is healthy. | A read-style request may return its checked-in fixture after a network or HTTP failure. A mutation or personal-data request marked `noFallbackInReal` surfaces the error instead of pretending that fixture data was saved. |
+
+When `SHOW_DEV_TOOLS` is enabled in a development build, Settings also shows the
+raw API mode, `API_BASE`, and the result of the separate backend health check.
+This diagnostic panel is not an end-user production indicator. In particular,
+`STRINGS.dailyTalk.liveBadge` reports only the selected client mode; it does not
+prove that the backend or a local STT/TTS engine is reachable and healthy.
+
 ---
 
 ## 4. API contract (dialogue-bank + core surface)
