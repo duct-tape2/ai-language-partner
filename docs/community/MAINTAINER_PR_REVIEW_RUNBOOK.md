@@ -3,6 +3,30 @@
 Use this when an external contributor opens a PR that might become Claude for
 OSS evidence.
 
+## Pre-merge checklist
+
+Complete these checks before merging a focused external PR:
+
+- [ ] **Scope:** The PR addresses one linked issue or clearly stated problem and
+  does not bundle unrelated cleanup.
+- [ ] **Contribution:** The author is an external contributor, not the
+  maintainer, a bot, or a duplicate identity.
+- [ ] **Usefulness:** The change improves a real user, contributor,
+  documentation, test, accessibility, language-review, or maintainability
+  workflow.
+- [ ] **Safety:** The diff contains no generated media, private data, secrets,
+  local engines, databases, archives, or unnecessary runtime-LLM dependency.
+- [ ] **Validation:** The relevant automated check or manual review is named and
+  its result is understood.
+- [ ] **Review trail:** A human maintainer has reviewed the change and left a
+  comment that records what was verified.
+- [ ] **Merge decision:** Required status checks pass, the acceptance criteria
+  are satisfied, and any remaining concerns are resolved before merging.
+
+After merging, place the PR in the evidence-review queue only if the manual
+review agrees that it is a useful external contribution. The queue label is a
+review cue, not an automatic counting decision.
+
 ## 1. Build the review packet
 
 ```bash
