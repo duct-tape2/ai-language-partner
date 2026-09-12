@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
 import urllib.request
 from pathlib import Path
@@ -111,7 +112,12 @@ def test_filesystem_resource_paths_reject_traversal_and_symlink_escape(tmp_path:
     root.mkdir()
     outside = tmp_path / "outside.wav"
     outside.write_bytes(b"not-a-sample")
-    (root / "sample.wav").symlink_to(outside)
+    try:
+        (root / "sample.wav").symlink_to(outside)
+    except OSError as exc:
+        if os.name == "nt" and getattr(exc, "winerror", None) == 1314:
+            pytest.skip("Windows symlink tests require SeCreateSymbolicLinkPrivilege")
+        raise
     with pytest.raises(HTTPException) as error:
         main._resolve_contained_path(root, "sample.wav")
     assert error.value.status_code == 400

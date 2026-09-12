@@ -127,7 +127,8 @@ def test_frontend_track_events_are_allowed_by_backend_contract():
 
 def test_project_root_resolution_handles_local_and_docker_layouts():
     assert resolve_project_root(API_ROOT / "app" / "main.py") == PROJECT_ROOT
-    assert resolve_project_root(Path("/app/app/main.py")) == Path("/app")
+    docker_module = Path("/app/app/main.py")
+    assert resolve_project_root(docker_module) == Path("/app").resolve()
 
 
 def test_external_provider_readiness_harness_skips_without_real_keys():

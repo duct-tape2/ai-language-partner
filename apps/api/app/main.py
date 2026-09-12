@@ -5213,10 +5213,16 @@ def create_app(db_path: Optional[Union[str, Path]] = None) -> FastAPI:
                     tags=["ai_language_partner"] + [_anki_tag(tag) for tag in card.get("tags") or []],
                 )
             )
-        with tempfile.NamedTemporaryFile(suffix=".apkg") as handle:
-            genanki.Package(deck).write_to_file(handle.name)
-            handle.seek(0)
-            content_base64 = base64.b64encode(handle.read()).decode("ascii")
+        temp_fd, temp_path = tempfile.mkstemp(suffix=".apkg")
+        os.close(temp_fd)
+        try:
+            genanki.Package(deck).write_to_file(temp_path)
+            content_base64 = base64.b64encode(Path(temp_path).read_bytes()).decode("ascii")
+        finally:
+            try:
+                os.unlink(temp_path)
+            except FileNotFoundError:
+                pass
         return {
             "format": "apkg",
             "filename": "ai_language_partner_review_cards.apkg",
