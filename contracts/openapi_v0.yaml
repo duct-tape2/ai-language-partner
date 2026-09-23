@@ -1274,6 +1274,12 @@ paths:
         content:
           application/json:
             schema: { $ref: '#/components/schemas/AuthDeviceAttestationChallengeRequest' }
+            examples:
+              public_key_challenge:
+                summary: Public key challenge device attestation challenge request
+                value:
+                  attestationProvider: public_key_challenge
+                  attestationSubject: optional subject or JWK for public key challenge
       responses:
         '200':
           description: one-time signed challenge for the current bound device
@@ -1290,6 +1296,27 @@ paths:
         content:
           application/json:
             schema: { $ref: '#/components/schemas/AuthTrustDeviceRequest' }
+            examples:
+              self_attested:
+                summary: Self-attested device trust request
+                value:
+                  confirmation: trust-this-device
+                  attestationProvider: self_attested
+                  deviceLabel: My Laptop
+                  platform: windows
+              public_key_challenge:
+                summary: Public key challenge device trust request with RS256 evidence
+                value:
+                  confirmation: trust-this-device
+                  attestationProvider: public_key_challenge
+                  attestationSubject: "{\"kty\":\"RSA\",\"e\":\"AQAB\",\"n\":\"u-iFLpDztQy_GLIMmxpUbdVvAm6ZaUbGjRrh0FH7-sWu78M79goEYr1rrfNf-KPEXUMl38AWwBpMzXi_tM8Q3kF2fRYcosR7hXbTFJcYuIJmD-NauRujY9USSSw-dOYR0LJa716zMJHu3uq2yhSv7o7yEHCARVKe_pqE3yktZ9E\"}"
+                  evidence:
+                    algorithm: rs256
+                    challengeId: example-challenge-id
+                    challenge: example-challenge-string
+                    signature: example-signature
+                  deviceLabel: My Laptop
+                  platform: windows
       responses:
         '200':
           description: current bound device trusted by account-session confirmation
