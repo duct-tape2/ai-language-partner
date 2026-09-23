@@ -1274,6 +1274,17 @@ paths:
         content:
           application/json:
             schema: { $ref: '#/components/schemas/AuthDeviceAttestationChallengeRequest' }
+            examples:
+              self_attested:
+                summary: Self-attested device attestation challenge request
+                value:
+                  attestationProvider: self_attested
+                  attestationSubject: optional subject or JWK for self-attested
+              public_key_challenge:
+                summary: Public key challenge device attestation challenge request
+                value:
+                  attestationProvider: public_key_challenge
+                  attestationSubject: optional subject or JWK for public key challenge
       responses:
         '200':
           description: one-time signed challenge for the current bound device
@@ -1290,6 +1301,26 @@ paths:
         content:
           application/json:
             schema: { $ref: '#/components/schemas/AuthTrustDeviceRequest' }
+            examples:
+              self_attested:
+                summary: Self-attested device trust request
+                value:
+                  confirmation: trust-this-device
+                  attestationProvider: self_attested
+                  deviceLabel: My Laptop
+                  platform: windows
+              public_key_challenge:
+                summary: Public key challenge device trust request with RS256 evidence
+                value:
+                  confirmation: trust-this-device
+                  attestationProvider: public_key_challenge
+                  attestationSubject: "{\"kty\":\"RSA\",\"e\":\"AQAB\",\"n\":\"example_modulus\"}"
+                  evidence:
+                    challengeId: example-challenge-id
+                    challenge: example-challenge-string
+                    signature: example-signature
+                  deviceLabel: My Laptop
+                  platform: windows
       responses:
         '200':
           description: current bound device trusted by account-session confirmation
