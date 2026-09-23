@@ -1275,11 +1275,6 @@ paths:
           application/json:
             schema: { $ref: '#/components/schemas/AuthDeviceAttestationChallengeRequest' }
             examples:
-              self_attested:
-                summary: Self-attested device attestation challenge request
-                value:
-                  attestationProvider: self_attested
-                  attestationSubject: optional subject or JWK for self-attested
               public_key_challenge:
                 summary: Public key challenge device attestation challenge request
                 value:
@@ -1314,8 +1309,9 @@ paths:
                 value:
                   confirmation: trust-this-device
                   attestationProvider: public_key_challenge
-                  attestationSubject: "{\"kty\":\"RSA\",\"e\":\"AQAB\",\"n\":\"example_modulus\"}"
+                  attestationSubject: "{\"kty\":\"RSA\",\"e\":\"AQAB\",\"n\":\"example-modulus-for-openapi-documentation\"}"
                   evidence:
+                    algorithm: rs256
                     challengeId: example-challenge-id
                     challenge: example-challenge-string
                     signature: example-signature
