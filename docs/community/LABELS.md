@@ -1,6 +1,6 @@
 # Label Taxonomy
 
-Use these labels consistently when opening the 30+ starter issues.
+Use these labels consistently when opening and triaging issues. Apply a label only when its definition below matches the issue's purpose, scope, or contributor workflow.
 
 | Label | Use |
 |---|---|
