@@ -50,9 +50,31 @@ Consequences that ripple through the design:
 > with JSON-schema repair). That is a separate, opt-in surface — it is **not**
 > on the Daily Talk dialogue-bank path and defaults to a deterministic mock.
 
+## 2. Dialogue-Bank Terminology
+
+Recurring terms that appear in the dialogue-bank architecture:
+
+- **Persona** – A conversation character, such as Yui, Haruka, or Ren, with its own voice, dialogue pack, and learning scenarios.
+
+- **Pack** – A versioned collection of dialogue resources for a persona. A pack contains the dialogue graph, audio clips, metadata, and other files the app needs during a conversation.
+
+- **Node** – This is a singular point in a conversation where the learner either listens or responds before moving to the next part of the dialogue.
+
+- **lineId** – This is a unique identifier assigned to each line so the client and the backend of the application can reference it for bits of dialogue, audio clips, and match results.
+
+- **Variants** – These are the alternative responses a learner can give that are considered a match and help facilitate natural language differences.
+
+- **Match** – This is a successful result where the learner's spoken response matches one of the acceptable dialogue variants and allows the user to continue the conversation.
+
+- **Confirm** – This is where the application's matcher is confident in the dialogue a learner spoke but wants to reaffirm with the user for increased confidence before moving on. 
+
+- **Fallback** – The default response the application gives a learner when the dialogue that was input cannot be confirmed as a match. The learner's dialogue is logged for review and possible future expansions. 
+
+- **Global intent** – Commands that work regardless of where the learner is in the conversation, such as asking for a hint, repeating a line, slowing the speech, or ending the conversation.
+
 ---
 
-## 2. Offline dialogue-bank pipeline (authoring)
+## 3. Offline dialogue-bank pipeline (authoring)
 
 The pipeline runs **off the request path** and produces the `packs/` artifacts.
 It is a node-graph story compile + variant expansion + hash embeddings + batch
@@ -107,7 +129,7 @@ Key facts, verified in source:
 
 ---
 
-## 3. Runtime data flow (STT → match → pre-synth audio)
+## 4. Runtime data flow (STT → match → pre-synth audio)
 
 One Daily Talk turn:
 
@@ -151,7 +173,7 @@ Notes tied to source:
 
 ---
 
-## 4. API contract (dialogue-bank + core surface)
+## 5. API contract (dialogue-bank + core surface)
 
 Routes are registered as `@api.get` / `@api.post` inside
 `create_app()` in `apps/api/app/main.py`; the module-level `app = create_app()`
@@ -189,7 +211,7 @@ packs).
 
 ---
 
-## 5. Provider fallback chains
+## 6. Provider fallback chains
 
 All providers live in `apps/api/app/providers.py`. `build_provider_stack()`
 selects each from env vars; every real adapter subclasses its Mock and **falls
@@ -247,7 +269,7 @@ Pronunciation (_build_pronunciation):
 
 ---
 
-## 6. Scaling & cost logic
+## 7. Scaling & cost logic
 
 The economics follow directly from §1.
 
@@ -280,7 +302,7 @@ The economics follow directly from §1.
 
 ---
 
-## 7. Mobile module map
+## 8. Mobile module map
 
 `apps/mobile` is a plain string-union router (no react-navigation): `store.ts`
 holds the `Screen` union and current screen; `App.tsx` renders
