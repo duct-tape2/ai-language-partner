@@ -9,7 +9,7 @@ dependencies = [
     "pydantic>=2.13.4,<2.14.0",
     "cryptography>=48.0.1,<49.0.0",
     "genanki>=0.13.1,<0.14.0",
-    "redis>=6.4.0,<6.5.0",
+    "redis>=6.4.0,<8.1.0",
     "python-multipart>=0.0.32,<0.1.0",
 ]
 
