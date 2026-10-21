@@ -96,6 +96,24 @@ title: AI Language Partner
   </div>
 </section>
 
+<section class="alp-band" id="runtime-llm-faq">
+  <div class="alp-shell alp-section">
+    <p class="alp-kicker">FAQ</p>
+    <h2>Why doesn't Daily Talk use a runtime LLM?</h2>
+    <p class="alp-section__intro">
+      Daily Talk transcribes speech, matches it to a reviewed line for the
+      current scene, and answers with a prepared voice clip. This avoids
+      per-turn LLM charges and a model-provider round trip, while keeping
+      replies bounded and human-reviewed. A learner's turn is not sent to an
+      external LLM to generate a reply. For privacy, this applies to reply
+      generation: transcription and other app requests still follow their
+      configured providers. The tradeoff is less open-ended conversation;
+      replies stay within prepared scenarios.
+      <a href="https://duct-tape2.github.io/ai-language-partner/ARCHITECTURE.html">Read the architecture notes.</a>
+    </p>
+  </div>
+</section>
+
 <section class="alp-band" id="commercial-help">
   <div class="alp-shell alp-section">
     <p class="alp-kicker">COMMERCIAL HELP</p>
