@@ -109,7 +109,7 @@ title: AI Language Partner
       generation: transcription and other app requests still follow their
       configured providers. The tradeoff is less open-ended conversation;
       replies stay within prepared scenarios.
-      <a href="{{ '/ARCHITECTURE.html' | relative_url }}">Read the architecture notes.</a>
+      <a href="https://duct-tape2.github.io/ai-language-partner/ARCHITECTURE.html">Read the architecture notes.</a>
     </p>
   </div>
 </section>
