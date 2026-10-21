@@ -12,10 +12,36 @@ For account sessions, use `Authorization: Bearer ...`; that account learner scop
 
 ```bash
 cd apps/api
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install --require-hashes -r requirements.txt
 ```
+
+### Python 의존성 설치 문제 해결 (macOS 포함)
+
+- **Python 또는 가상 환경 오류** (`No module named venv`, `ensurepip is not available`): 백엔드에는
+  Python 3.11 이상이 필요합니다. `python3.11 --version`으로 버전을 확인하고, 기본 `python`이
+  다른 버전을 가리키면 `python3.11 -m venv .venv`처럼 인터프리터를 명시하세요. `venv` 모듈이나
+  `ensurepip`가 없다면 같은 Python 버전에 맞는 구성 요소를 해당 운영체제의 공식 설치 방법으로
+  추가하세요.
+- **pip 명령 또는 패키지 설치 오류**: 가상 환경이 활성화되어 있는지 확인하고, `pip` 대신
+  `.venv/bin/python -m pip --version`과
+  `.venv/bin/python -m pip install --require-hashes -r requirements.txt`를 사용하세요.
+  `requirements.txt`는 해시로 고정되어 있습니다. 해시 오류가 나면 체크아웃한 버전과 파일이
+  일치하는지 확인하고 `--require-hashes`를 제거하거나 잠금 파일을 임의로 수정하지 마세요.
+  네트워크, 인증서 또는 패키지 인덱스 오류는 개발 도구 설치로 해결되지 않습니다.
+- **macOS의 `xcrun` 또는 `clang` 오류**: pip가 패키지를 소스에서 빌드하면서 이 도구들이 없다고
+  보고할 때만 Xcode Command Line Tools가 필요할 수 있습니다. `xcode-select -p`와
+  `clang --version`으로 설치 및 선택 상태를 확인하세요. 도구가 없다면 Terminal에서
+  `xcode-select --install`을 실행하고, 표시되는 설치 창에서 설치를 마친 뒤 두 명령으로 다시
+  확인하세요. 도구는 설치되어 있지만 선택한 개발자 디렉터리가 유효하지 않다면 Xcode의
+  **Settings > Locations > Command Line Tools**에서 설치된 도구를 선택하세요. macOS 업그레이드
+  뒤 도구가 호환되지 않으면 Software Update에서 해당 macOS용 업데이트를 확인하세요. Apple의
+  [설치 안내](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools/)와
+  [도구 선택 안내](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings)를
+  참조하세요.
+
+Command Line Tools는 이 프로젝트의 모든 설치에 필요한 것은 아닙니다. pip가 미리 빌드된 패키지를 설치하는 경우에는 보통 컴파일러가 필요하지 않습니다.
 
 ## Run
 
