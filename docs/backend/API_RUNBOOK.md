@@ -1028,6 +1028,22 @@ This validates the checked-in Dockerfile/Compose wiring but does not replace a r
 The API defaults to mock providers and never requires external API keys for local development.
 To test adapter wiring without leaking secrets, set provider env vars and inspect `/v1/providers/status`.
 
+On an uncached speech response, `provider` identifies the adapter that supplied the
+result; `/v1/providers/status` shows the selected adapter configuration. `mock`
+means the mock provider supplied the transcript or audio. For STT,
+`whisper_cpp_fallback_mock` means whisper.cpp did not produce a transcript and
+mock STT handled the request. Voicevox-compatible TTS labels a fallback as
+`voicevox_compat_fallback_<provider>`, preserving the next provider's label:
+`voicevox_compat_fallback_edge_tts` means Edge TTS supplied the audio, while
+`voicevox_compat_fallback_edge_tts_fallback_mock` means Edge TTS also fell back
+to mock.
+
+For TTS, check `cacheHit` before treating `provider` as audio provenance. A cache
+hit (`cacheHit: true`) reports the currently selected TTS adapter because the
+cache stores the audio, not the provider label that produced it. Honest labels
+distinguish mock output from engine output and help troubleshoot fallback
+behavior.
+
 ```bash
 AI_LANGUAGE_PARTNER_LLM_PROVIDER=openai_compatible
 AI_LANGUAGE_PARTNER_LLM_API_KEY=...
