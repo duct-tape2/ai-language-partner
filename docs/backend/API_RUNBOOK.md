@@ -1144,3 +1144,40 @@ AI_LANGUAGE_PARTNER_CORS_ORIGINS=http://localhost:8000,http://localhost:8081,htt
 cd apps/mobile
 EXPO_PUBLIC_USE_MOCK_API=false EXPO_PUBLIC_API_BASE_URL=http://localhost:8000 npx expo start
 ```
+
+### Provider Status Examples
+
+Note: `externalApiKeysRequired` is false, and fallback status is diagnostic rather than proof that a live external engine succeeded.
+
+**1. Default mock mode:**
+```json
+{
+  "mode": "mock_open_core",
+  "providers": {
+    "llm": { "active": "mock" },
+    "tts": { "active": "mock" },
+    "stt": { "active": "mock" }
+  },
+  "externalConfigured": false,
+  "replaceable": true
+}
+
+{
+  "operations": {
+    "rateLimit": "memory"
+  },
+  "backend": "memory",
+  "requestedBackend": "redis",
+  "fallbackReason": "placeholder_reason"
+}
+
+{
+  "providers": {
+    "tts": { 
+      "active": "voicevox_compat", 
+      "engine": "voicevox", 
+      "fallback": false 
+    },
+    "stt": { "active": "whisper_cpp" }
+  }
+}
